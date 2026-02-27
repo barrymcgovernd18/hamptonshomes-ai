@@ -20,14 +20,7 @@ export async function POST(request: NextRequest) {
 
     const emailLower = email.toLowerCase();
 
-    // Get count for agent_number
-    const { count } = await supabase
-      .from('agent_requests')
-      .select('*', { count: 'exact', head: true });
-
-    const agentNumber = (count || 0) + 1;
-
-    // Upsert the agent request
+    // Upsert the agent request (using existing table structure)
     const { data, error } = await supabase
       .from('agent_requests')
       .upsert({
@@ -36,12 +29,10 @@ export async function POST(request: NextRequest) {
         phone: phone || null,
         license_number,
         broker_company,
-        agent_number: agentNumber,
         status: 'pending',
         rejection_reason: null,
         submitted_at: new Date().toISOString(),
         reviewed_at: null,
-        sign_in_method: sign_in_method || 'email',
       }, { onConflict: 'email' })
       .select()
       .single();
