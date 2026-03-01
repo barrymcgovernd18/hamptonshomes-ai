@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-dark-900 text-cream font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .article-content p {
+    @apply mb-6 leading-relaxed text-cream/90;
+  }
+  
+  .article-content h2 {
+    @apply text-2xl font-serif text-cream mt-10 mb-4;
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, #c4a265 0%, #d4b87a 50%, #c4a265 100%);
+  }
+
+  .hover-gold {
+    @apply transition-colors duration-200 hover:text-gold;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c4a265;
+}
