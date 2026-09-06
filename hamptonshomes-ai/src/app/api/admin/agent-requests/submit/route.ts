@@ -1,10 +1,14 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_KEY! // Use service key for writes
-);
+function getSupabase(): SupabaseClient {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_KEY;
+  if (!url || !key) {
+    throw new Error('Supabase not configured');
+  }
+  return createClient(url, key);
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,6 +23,7 @@ export async function POST(request: NextRequest) {
     }
 
     const emailLower = email.toLowerCase();
+    const supabase = getSupabase();
 
     // Upsert the agent request (using existing table structure)
     const { data, error } = await supabase
