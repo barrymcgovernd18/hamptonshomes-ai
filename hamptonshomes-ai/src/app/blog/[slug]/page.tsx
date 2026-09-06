@@ -38,7 +38,7 @@ function renderContent(content: string) {
 
     if (line.startsWith("## ")) {
       elements.push(
-        <h2 key={i} className="font-serif text-2xl text-white mt-16 mb-6">
+        <h2 key={i} className="font-serif text-2xl text-ink mt-16 mb-6">
           {line.replace("## ", "")}
         </h2>
       );
@@ -50,21 +50,21 @@ function renderContent(content: string) {
       );
     } else if (line.startsWith("- **")) {
       elements.push(
-        <li key={i} className="text-white/50 text-[15px] leading-[1.8] ml-4 mb-2" dangerouslySetInnerHTML={{
-          __html: line.replace("- ", "").replace(/\*\*(.*?)\*\*/g, '<strong class="text-white/70">$1</strong>')
+        <li key={i} className="text-ink-muted text-[15px] leading-[1.8] ml-4 mb-2" dangerouslySetInnerHTML={{
+          __html: line.replace("- ", "").replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>')
         }} />
       );
     } else if (line.startsWith("1. ") || line.startsWith("2. ") || line.startsWith("3. ") || line.startsWith("4. ")) {
       elements.push(
-        <li key={i} className="text-white/50 text-[15px] leading-[1.8] ml-4 mb-2 list-decimal" dangerouslySetInnerHTML={{
-          __html: line.replace(/^\d+\.\s/, "").replace(/\*\*(.*?)\*\*/g, '<strong class="text-white/70">$1</strong>')
+        <li key={i} className="text-ink-muted text-[15px] leading-[1.8] ml-4 mb-2 list-decimal" dangerouslySetInnerHTML={{
+          __html: line.replace(/^\d+\.\s/, "").replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>')
         }} />
       );
     } else if (line.startsWith("---")) {
-      elements.push(<hr key={i} className="border-white/5 my-12" />);
+      elements.push(<hr key={i} className="border-line my-12" />);
     } else if (line.startsWith("*") && line.endsWith("*") && !line.startsWith("**")) {
       elements.push(
-        <p key={i} className="text-white/30 text-[13px] leading-[1.8] italic mt-8">
+        <p key={i} className="text-ink-faint text-[13px] leading-[1.8] italic mt-8">
           {line.replace(/^\*|\*$/g, "")}
         </p>
       );
@@ -72,8 +72,8 @@ function renderContent(content: string) {
       // skip
     } else {
       elements.push(
-        <p key={i} className="text-white/50 text-[15px] leading-[1.9] mb-4" dangerouslySetInnerHTML={{
-          __html: line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white/70">$1</strong>')
+        <p key={i} className="text-ink-muted text-[15px] leading-[1.9] mb-4" dangerouslySetInnerHTML={{
+          __html: line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>')
         }} />
       );
     }
@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: Props) {
   };
 
   return (
-    <div className="bg-ocean-deep">
+    <div className="bg-paper">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -117,7 +117,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="max-w-3xl mx-auto px-8">
           <Link
             href="/blog"
-            className="text-white/20 text-[11px] tracking-[0.2em] uppercase hover:text-ocean transition-colors duration-500 mb-10 block"
+            className="text-ink-faint text-[11px] tracking-[0.2em] uppercase hover:text-ocean transition-colors duration-500 mb-10 block"
           >
             ← All Insights
           </Link>
@@ -126,20 +126,20 @@ export default async function BlogPostPage({ params }: Props) {
             {post.category} · {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
           </p>
 
-          <h1 className="font-serif text-3xl md:text-5xl text-white leading-tight mb-4">
+          <h1 className="font-serif text-3xl md:text-5xl text-ink leading-tight mb-4">
             {post.title}
           </h1>
 
-          <p className="text-white/30 text-[13px] mb-16">
+          <p className="text-ink-faint text-[13px] mb-16">
             By {post.author} · Hedgerow Exclusive Properties
           </p>
 
           <div>{renderContent(post.content)}</div>
 
           {/* CTA */}
-          <div className="border border-white/5 p-10 mt-16 text-center">
-            <p className="font-serif text-xl text-white mb-3">Ready to discuss the market?</p>
-            <p className="text-white/30 text-[14px] mb-6">Confidential consultations and complimentary valuations.</p>
+          <div className="border border-line bg-paper-soft p-10 mt-16 text-center">
+            <p className="font-serif text-xl text-ink mb-3">Ready to discuss the market?</p>
+            <p className="text-ink-faint text-[14px] mb-6">Confidential consultations and complimentary valuations.</p>
             <Link
               href="/contact"
               className="inline-block border border-ocean/40 text-ocean text-[11px] tracking-[0.3em] uppercase px-8 py-3 hover:bg-ocean/10 transition-all duration-500"
