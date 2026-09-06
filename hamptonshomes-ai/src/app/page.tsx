@@ -10,23 +10,23 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative flex min-h-[720px] h-[92svh] max-h-[980px] items-end overflow-hidden bg-ocean-deep">
-        <Image src="/images/hero-waterfront.jpg" alt="Waterfront estate compound on the East End" fill className="object-cover object-center" priority quality={90} sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/75 via-ocean-deep/25 to-ocean-deep/5" />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 md:px-8 md:pb-24">
-          <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-white/55">
+      <section className="relative flex min-h-[720px] h-[92svh] max-h-[980px] items-start overflow-hidden bg-ocean-deep">
+        <Image src="/images/hero-waterfront.jpg" alt="Waterfront estate compound on the East End" fill className="object-cover object-[center_20%]" priority quality={90} sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/70 via-ocean-deep/35 to-transparent" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-28 md:px-8 md:pt-36">
+          <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-white/80 drop-shadow">
             Discover what&apos;s behind Hedgerow
           </p>
-          <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] text-white md:text-7xl">
+          <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] text-white drop-shadow-md md:text-7xl">
             Barry McGovern
           </h1>
-          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/70">
+          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/90 drop-shadow">
             Oceanfront and estate specialist
           </p>
           <div className="mt-12">
             <Link
               href="/contact"
-              className="inline-block border border-white/35 bg-transparent px-7 py-3 text-[12px] uppercase tracking-[0.22em] text-white/90 transition-colors hover:border-white hover:bg-white/10"
+              className="inline-block border border-white/50 bg-ocean-deep/40 px-7 py-3 text-[12px] uppercase tracking-[0.22em] text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-ocean-deep/60"
             >
               Explore private opportunities
             </Link>
