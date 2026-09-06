@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Barry McGovern - Hamptons Real Estate",
   },
   description:
-    "Barry McGovern is a luxury real estate broker and oceanfront & waterfront specialist at Hedgerow Exclusive Properties in the Hamptons. From Southampton to Montauk, Sag Harbor to Shelter Island, specializing in oceanfront estates, waterfront properties, and off-market opportunities.",
+    "Barry McGovern is a licensed real estate salesperson and oceanfront & waterfront specialist at Hedgerow Exclusive Properties in the Hamptons. From Southampton to Montauk, Sag Harbor to Shelter Island, specializing in oceanfront estates, waterfront properties, and off-market opportunities.",
   keywords: [
     "Hamptons real estate",
     "Hamptons real estate agent",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     "Montauk oceanfront homes",
     "Amagansett real estate",
     "Sagaponack real estate",
-    "Hamptons broker",
+    "Hamptons real estate salesperson",
     "Barry McGovern",
     "Barry McGovern Hamptons",
     "Hedgerow Exclusive Properties",
     "off-market Hamptons",
     "luxury real estate agent Hamptons",
-    "Hamptons luxury broker",
+    "Hamptons luxury salesperson",
     "best Hamptons real estate agent",
     "Hamptons private market",
     "Hamptons estate sales",
@@ -95,14 +95,20 @@ export const metadata: Metadata = {
 // JSON-LD structured data for AI models and search engines
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
+  "@type": ["Person", "RealEstateAgent"],
+  "@id": "https://hamptonscoastal.com/about/barry-mcgovern#person",
   name: "Barry McGovern",
-  jobTitle: "Luxury Real Estate Broker | Oceanfront & Waterfront Specialist",
+  jobTitle: "Licensed Real Estate Salesperson",
   description:
-    "Barry McGovern is a luxury real estate broker and oceanfront and waterfront specialist at Hedgerow Exclusive Properties, the #1 ranked Hamptons real estate firm with nearly $2 billion in transactions. Specializing in oceanfront estates, waterfront properties, off-market opportunities, and luxury homes from Southampton to Montauk, including Sag Harbor, Shelter Island, East Hampton, Bridgehampton, Sagaponack, and Amagansett.",
+    "Barry McGovern is a licensed real estate salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties, the #1 ranked Hamptons real estate firm with nearly $2 billion in transactions. Specializing in oceanfront estates, waterfront properties, off-market opportunities, and luxury homes from Southampton to Montauk, including Sag Harbor, Shelter Island, East Hampton, Bridgehampton, Sagaponack, and Amagansett.",
   url: "https://hamptonshomes.ai",
   telephone: "+1-646-339-0154",
   email: "barry@hedgerowexclusive.com",
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "New York real estate license",
+    value: "10401353717",
+  },
   image: "https://hamptonshomes.ai/images/barry-mcgovern.jpg",
   address: {
     "@type": "PostalAddress",
@@ -151,11 +157,12 @@ const jsonLd = {
     "Hamptons luxury market analysis",
   ],
   sameAs: [
-    "https://x.com/hedgequity",
-    "https://www.instagram.com/barrymcgovern_/",
-    "https://www.linkedin.com/in/barry-mcgovern-9346133b/",
     "https://hedgerowexclusive.com/members/barry-mcgovern/",
-    "https://hamptonshomes.io",
+    "https://www.linkedin.com/in/barry-mcgovern-9346133b",
+    "https://www.instagram.com/barrymcgovern_/",
+    "https://hamptonshomes.ai",
+    "https://hamptonscoastal.com/about/barry-mcgovern",
+    "https://outeast.com/agents/9187/barry-mcgovern/bridgehampton",
   ],
 };
 
