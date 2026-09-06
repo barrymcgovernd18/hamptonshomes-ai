@@ -14,10 +14,16 @@ export default function Home() {
         <Image src="/images/33-lily-pond.jpg" alt="Oceanfront residence on Lily Pond Lane with beach and Atlantic Ocean" fill className="object-cover" priority quality={90} sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/75 via-ocean-deep/25 to-ocean-deep/5" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 md:px-8 md:pb-24">
-          <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-white/75">East End representation · Southampton to Montauk</p>
-          <h1 className="max-w-5xl font-serif text-5xl leading-[1.02] text-white md:text-7xl lg:text-8xl">Barry McGovern<br /><span className="font-normal italic text-white/85">Oceanfront &amp; Waterfront</span></h1>
-          <p className="mt-7 max-w-md text-[15px] leading-relaxed text-white/80">A considered approach to distinctive homes, shoreline properties, and private opportunities across the East End.</p>
-          <div className="mt-9 flex flex-wrap gap-3"><Link href="/contact" className="bg-paper px-7 py-3.5 text-sm text-ink transition-colors hover:bg-white">Inquire</Link><Link href="/sales" className="border border-white/65 px-7 py-3.5 text-sm text-white transition-colors hover:bg-white hover:text-ink">View Portfolio</Link></div>
+          <h1 className="max-w-4xl font-serif text-5xl leading-[1.02] text-white md:text-7xl lg:text-8xl">
+            Barry McGovern
+            <br />
+            <span className="font-normal italic text-white/85">Oceanfront &amp; Waterfront</span>
+          </h1>
+          <div className="mt-10">
+            <Link href="/contact" className="inline-block bg-paper px-8 py-3.5 text-sm text-ink transition-colors hover:bg-white">
+              Inquire
+            </Link>
+          </div>
         </div>
       </section>
 
