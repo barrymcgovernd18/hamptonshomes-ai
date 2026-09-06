@@ -10,25 +10,33 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative flex min-h-[720px] h-[92svh] max-h-[980px] items-start overflow-hidden bg-ocean-deep">
-        <Image src="/images/hero-waterfront.jpg" alt="Waterfront estate compound on the East End" fill className="object-cover object-[center_20%]" priority quality={90} sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/70 via-ocean-deep/35 to-transparent" />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-28 md:px-8 md:pt-36">
-          <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-white/80 drop-shadow">
-            Discover what&apos;s behind Hedgerow
-          </p>
-          <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] text-white drop-shadow-md md:text-7xl">
+      <section className="relative flex min-h-[640px] h-[82svh] max-h-[900px] items-end overflow-hidden bg-ocean-deep">
+        <Image
+          src="/images/hero-waterfront.jpg"
+          alt="Waterfront estate compound on the East End"
+          fill
+          className="object-cover object-[center_48%]"
+          priority
+          quality={90}
+          sizes="100vw"
+        />
+        {/* Keep nav readable without crushing the aerial */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-ocean-deep/55 to-transparent" />
+        {/* Bottom scrim so type sits on quiet dark, photo stays open above */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/35 to-transparent" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 md:px-8 md:pb-20">
+          <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] tracking-tight text-white md:text-7xl">
             Barry McGovern
           </h1>
-          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/90 drop-shadow">
+          <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-white/88 md:text-base">
             Oceanfront and estate specialist
           </p>
-          <div className="mt-12">
+          <div className="mt-10">
             <Link
               href="/contact"
-              className="inline-block border border-white/50 bg-ocean-deep/40 px-7 py-3 text-[12px] uppercase tracking-[0.22em] text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-ocean-deep/60"
+              className="inline-block border border-white/55 bg-white/10 px-8 py-3.5 text-[11px] uppercase tracking-[0.24em] text-white backdrop-blur-[2px] transition-colors hover:border-white hover:bg-white/20"
             >
-              Explore private opportunities
+              Inquire
             </Link>
           </div>
         </div>
