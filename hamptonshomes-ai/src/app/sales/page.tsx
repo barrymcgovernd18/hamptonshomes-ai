@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notableSales, personalVolume, teamVolume } from "@/lib/sales";
+import { activeListings } from "@/lib/listings";
 
 export const metadata: Metadata = {
   title: "Portfolio | Barry McGovern Notable Sales",
@@ -27,6 +28,44 @@ export default function SalesPage() {
               <div><p className="font-serif text-2xl text-paper">{teamVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/45">Team volume</p></div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-6 py-20 md:px-8 md:py-28">
+        <div className="mb-12 flex items-end justify-between gap-6">
+          <div>
+            <p className="mb-3 text-[10px] uppercase tracking-[0.4em] text-ocean">Available now</p>
+            <h2 className="font-serif text-4xl md:text-5xl">Current opportunities</h2>
+          </div>
+          <p className="hidden max-w-xs text-right text-[12px] leading-relaxed text-ink-muted md:block">
+            Select for-sale, in-contract, and rental opportunities represented by Barry.
+          </p>
+        </div>
+        <div className="grid gap-8 md:grid-cols-2">
+          {activeListings.map((listing) => (
+            <article key={listing.slug} className="group border border-line bg-paper">
+              <div className="relative aspect-[16/10] overflow-hidden bg-paper-deep">
+                <Image
+                  src={listing.image}
+                  alt={`${listing.address}, ${listing.area}`}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="flex items-start justify-between gap-4 border-t border-line p-6">
+                <div>
+                  <p className="mb-2 text-[10px] uppercase tracking-[0.25em] text-ocean">{listing.status} · {listing.area}</p>
+                  <h3 className="font-serif text-2xl text-ink">{listing.address}</h3>
+                  <p className="mt-2 text-[12px] text-ink-muted">
+                    {[listing.beds && `${listing.beds} BD`, listing.baths && `${listing.baths} BA`, listing.acres && `${listing.acres} acres`]
+                      .filter(Boolean)
+                      .join(" · ")}
+                  </p>
+                </div>
+                <p className="font-serif text-xl text-ocean">{listing.price}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-8 md:py-28">
