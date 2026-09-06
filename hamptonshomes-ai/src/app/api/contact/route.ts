@@ -86,7 +86,7 @@ export async function POST(request: Request) {
       await sendSmsAlert(smsBody.slice(0, 320));
     } catch (smsErr) {
       console.error("SMS alert error:", smsErr);
-      // Email already sent — don't fail the lead
+      // Email already sent; don't fail the lead
     }
 
     return NextResponse.json({ success: true, id: data?.id });
