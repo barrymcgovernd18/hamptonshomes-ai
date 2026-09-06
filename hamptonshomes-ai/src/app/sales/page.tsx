@@ -21,7 +21,7 @@ export default function SalesPage() {
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
               <h1 className="font-serif text-5xl leading-tight md:text-7xl">Notable<br /><span className="font-normal italic text-paper/65">Sales</span></h1>
-              <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-paper/65">A record of selected oceanfront, waterfront, village, and private transactions. These are Barry McGovern's portfolio records—not a feed of third-party listings.</p>
+              <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-paper/65">A record of selected oceanfront, waterfront, village, and private transactions. These are Barry McGovern's portfolio records, not a feed of third-party listings.</p>
             </div>
             <div className="grid grid-cols-2 gap-8 text-left md:text-right">
               <div><p className="font-serif text-2xl text-paper">{personalVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/45">Personal volume</p></div>
