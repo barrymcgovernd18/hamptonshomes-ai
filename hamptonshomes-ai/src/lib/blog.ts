@@ -13,15 +13,15 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "ai-ipo-wealth-san-francisco-hamptons-market-2026",
-    title: "AI IPOs Are Minting a New Wealth Class. San Francisco Is Already Pricing It In. The Hamptons Will Too.",
+    title: "AI IPOs Are Minting a New Wealth Class. San Francisco Ultra-Luxury Is Already Pricing It In. The Hamptons Will Too.",
     excerpt:
-      "OpenAI and Anthropic are lining up public debuts at a scale that dwarfs ordinary IPO history. San Francisco home prices are already ripping higher on AI cash. On the East End, supply is fixed and demand only grows.",
+      "OpenAI and Anthropic are lining up public debuts at a scale that dwarfs ordinary IPO history. San Francisco's high end is already talking three thousand dollars a square foot, with five thousand in sight. On the East End, oceanfront supply is fixed and the buyer pool only gets richer.",
     date: "2026-09-06",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hero-waterfront.jpg",
     metaDescription:
-      "How OpenAI and Anthropic IPOs, AI wealth, and San Francisco's housing surge connect to Hamptons scarcity and rising East End demand. Analysis by Barry McGovern.",
+      "How OpenAI and Anthropic IPOs and AI wealth connect to San Francisco ultra-luxury pricing and Hamptons oceanfront scarcity. Analysis by Barry McGovern.",
     content: `
 ## The IPO Cycle That Breaks the Scale
 
@@ -29,43 +29,43 @@ Something is happening in public markets that most real estate conversations sti
 
 SpaceX already priced the largest IPO in history in June 2026, raising about $75 billion. That alone is roughly three times Saudi Aramco's old record. OpenAI and Anthropic are next in the queue, with confidential filings in the books and valuation talk in the trillion-dollar range. Analyst estimates put the three-deal cluster near $200 billion in combined proceeds. That is more capital raised than all traditional U.S. IPOs from 2022 through early 2026 combined.
 
-A line that has been circulating from the All In podcast this week lands the same point in plainer English: the AI listings are not "big tech IPOs." They are wealth events measured against the entire historical stack. Whether you frame Anthropic as a record in its own right, or OpenAI as so large that everything else looks like a fraction of it, the direction is the same. These are not normal debuts. They mint liquidity at a scale the housing market has never had to absorb from a single industry cohort.
+A point circulating from market podcasts this week lands the same idea in plainer English: these AI listings are not ordinary tech debuts. They are wealth events measured against the entire historical IPO stack. Whether you frame one of them as a record in its own right, or so large that everything else looks like a fraction of it, the direction is the same. They mint liquidity at a scale the trophy housing market has never had to absorb from a single industry cohort.
 
-That liquidity does not stay in brokerage accounts forever. It finds homes. Literally.
+That liquidity does not stay in brokerage accounts forever. It finds irreplaceable real estate.
 
-## San Francisco Is the Preview
+## San Francisco's High End Is the Preview
 
-Look west if you want the early tape.
+Look west if you want the early tape. Not the citywide average. The ultra-luxury book.
 
-San Francisco spent years as the poster child for post-pandemic soft demand. That story is over. AI compensation, equity, and the anticipation of OpenAI and Anthropic liquidity have flipped the city into one of the hottest housing markets in the country.
+San Francisco's best neighborhoods are already repricing on AI cash, equity, and the anticipation of OpenAI and Anthropic liquidity. The conversation at the top of that market is no longer about conventional city medians. It is about price per square foot on true high-end product: currently around $3,000 a foot in the circles that matter, with a credible path toward $5,000 as more AI wealth clears into housing.
 
-Recent reporting has median San Francisco sale prices in the high $1 millions to low $2 millions, with year-over-year gains in the mid-teens to mid-twenties depending on the month and data set. Homes are trading faster. All-cash deals are rising. Luxury neighborhoods are seeing bids well over ask. Redfin's analysis of potential OpenAI and Anthropic employee IPO proceeds put the after-tax pile large enough, on paper, to buy roughly 29% of San Francisco's entire housing stock. That is not a forecast that every employee will buy a house on the same Tuesday. It is a measure of how absurd the purchasing power is relative to a finite city.
+That is the frame that matters for anyone who buys and sells scarce trophy inventory. Bids over ask. All-cash at the top. Competition for the few houses that actually clear the taste and location bar. Redfin's analysis of potential OpenAI and Anthropic employee IPO proceeds put the after-tax pile large enough, on paper, to buy a huge slice of San Francisco's housing stock. Treat that as a purchasing-power thought experiment, not a literal shopping list. The point stands: the high end is staring at a buyer pool with absurd firepower relative to finite prime inventory.
 
-Important nuance: a lot of the heat is already here from cash compensation and secondary share sales, before either company has even rung the opening bell. The IPOs are not the start of the wealth wave. They are the amplification.
+Important nuance: a lot of this heat is already here from cash compensation and secondary share sales, before either company has rung the opening bell. The IPOs are not the start of the wealth wave. They are the amplification of a market that is already behaving like a squeeze at the top.
 
-When a city's housing stock cannot expand as fast as its new millionaires, prices do the adjusting.
+When prime housing stock cannot expand as fast as newly liquid AI wealth, price per foot does the adjusting.
 
 ## Wealth Is Mobile. Coastline Is Not.
 
 Here is the part that matters for the East End.
 
-San Francisco is where a huge share of this wealth is being created. It is not where all of it will be spent. Newly liquid founders, investors, and senior AI talent already own or want second homes, third homes, and lifestyle hedges outside the Bay. The Hamptons have always been a preferred destination for that exact buyer: finance, tech, media, and anyone who wants ocean, privacy, and a short flight or a clean drive from the places where capital actually lives.
+San Francisco is where a huge share of this wealth is being created. It is not where all of it will be spent. Newly liquid founders, investors, and senior AI talent already own or want second homes, third homes, and lifestyle hedges outside the Bay. The Hamptons have always been a preferred destination for that exact buyer: finance, tech, media, and anyone who wants ocean, privacy, and proximity to where capital actually lives.
 
 The difference between San Francisco and the Hamptons is structural.
 
-San Francisco can, over time, add density. Controversially, slowly, and never enough for the bull case, but the physical constraint is not absolute. The Hamptons oceanfront is different. There are roughly 27 miles of ocean coastline from Southampton to Montauk. That is the inventory. You cannot IPO a new barrier beach. You cannot raise a Series H and manufacture another oceanfront parcel in Sagaponack. Every serious sale removes a scarce asset from circulation, often for a generation.
+Even San Francisco's luxury pockets can, over long cycles, see some new product. The Hamptons oceanfront is different. There are roughly 27 miles of ocean coastline from Southampton to Montauk. That is the inventory. You cannot IPO a new barrier beach. You cannot raise a Series H and manufacture another oceanfront parcel in Sagaponack. Every serious sale removes a scarce asset from circulation, often for a generation.
 
 Limited supply plus a buyer pool that keeps getting richer is not a complicated thesis. It is the entire East End story, only now the buyer pool is about to get a new tranche of capital that makes prior bonus seasons look polite.
 
 ## What the Hamptons Already Showed Us
 
-We do not need to invent the pattern. Wall Street already ran a smaller version of this experiment.
+We do not need to invent the pattern. Wall Street already ran a smaller version of this experiment at the top of the market.
 
-In 2025, Hamptons sales volume hit about $6.2 billion, up roughly 26% year over year. Financiers made up over half of buyers. The median price jumped more than 30%. Trades above $20 million surged. Bonus season compressed the calendar. Off-market share stayed high because the best inventory never needs a public bidding war to clear.
+In 2025, Hamptons sales volume hit about $6.2 billion, up roughly 26% year over year. Financiers made up over half of buyers. Trades above $20 million surged. Bonus season compressed the calendar. Off-market share stayed high because the best inventory never needs a public bidding war to clear.
 
-That was finance wealth recycling into a fixed geography. AI wealth is finance wealth's louder cousin: larger paper fortunes, younger balance sheets, and a cultural preference for trophy lifestyle assets once liquidity hits. San Francisco is proving the demand side in real time. The Hamptons prove the supply side every summer: fewer true oceanfront and compound offerings, more capital chasing them, and price discovery that keeps resetting higher whenever a rare listing appears.
+That was finance wealth recycling into a fixed geography. AI wealth is finance wealth's louder cousin: larger paper fortunes, younger balance sheets, and a cultural preference for trophy lifestyle assets once liquidity hits. San Francisco is proving the demand side in real time at three thousand dollars a foot and climbing. The Hamptons prove the supply side every season: fewer true oceanfront and compound offerings, more capital chasing them, and price discovery that keeps resetting higher whenever a rare listing appears.
 
-If you believe OpenAI and Anthropic list at anything close to the valuations being discussed, you should also believe a non-trivial share of that new net worth shows up in limited-supply markets. Not all of it. Enough of it.
+If you believe OpenAI and Anthropic list at anything close to the valuations being discussed, you should also believe a non-trivial share of that new net worth shows up in limited-supply trophy markets. Not all of it. Enough of it.
 
 ## Why This Is Different From "Tech Buyers Are Coming"
 
@@ -73,25 +73,25 @@ Every cycle has a narrative about the next buyer. Sometimes it is crypto. Someti
 
 Size: we are talking about company-level liquidity events that can exceed years of the entire U.S. IPO market. Employee and early-investor proceeds alone are large enough that housing analysts are measuring them against whole-city housing stock.
 
-Timing: the wealth is arriving into a Hamptons market that is already inventory-constrained. We are not starting from a soft book of vacant oceanfront. We are starting from a market where the best properties trade quietly, rentals book early, and every acre of true waterfront feels more finite than it did five years ago.
+Timing: the wealth is arriving into a Hamptons market that is already inventory-constrained at the top. We are not starting from a soft book of vacant oceanfront. We are starting from a market where the best properties trade quietly, rentals book early, and every acre of true waterfront feels more finite than it did five years ago.
 
-Put those together and you get the same physics San Francisco is living through, applied to a coastline that cannot sprawl.
+Put those together and you get the same physics San Francisco's ultra-luxury market is living through, applied to a coastline that cannot sprawl.
 
 ## What I Am Watching
 
 **Liquidity dates.** Confidential filings are not closings. Roadshows slip. Valuations get negotiated down. But the direction of travel is clear enough that waiting for the exact ticker day is a luxury buyers in scarce markets often regret.
 
-**Secondary markets first.** Before the IPO bells, secondary share sales and high cash comp already move housing. After the bells, lockups and staged selling stretch the wealth into the market over quarters, not a single weekend. That is a multi-season demand story, not a one-week headline.
+**Secondary markets first.** Before the IPO bells, secondary share sales and high cash comp already move housing. After the bells, lockups and staged selling stretch the wealth into the market over quarters, not a single weekend. That is a multi-season demand story for trophy inventory, not a one-week headline.
 
-**Trophy and compound inventory.** The first dollars usually chase the irreplaceable: oceanfront, bayfront with depth, gated acreage, village-adjacent privacy. That is exactly the slice of the East End that is shortest.
+**Oceanfront and compound inventory.** The first dollars usually chase the irreplaceable: oceanfront, bayfront with depth, gated acreage, village-adjacent privacy. That is exactly the slice of the East End that is shortest.
 
 **Cross-coast capital.** Some of this money stays in the Bay. Some of it diversifies. The Hamptons compete with Miami, Aspen, and the rest of the trophy circuit. Our edge is not "cheaper." It is specific: Atlantic oceanfront, New York adjacency, and a social calendar that still concentrates decision-makers in one place for a season.
 
 ## The Bottom Line
 
-AI IPOs are going to create a class of liquid wealth that makes ordinary IPO seasons look small. San Francisco is already pricing that future into house prices, with medians ripping higher and inventory behaving like a squeeze. The Hamptons cannot print more ocean. Demand from newly rich households keeps expanding. Inventory does not.
+AI IPOs are going to create a class of liquid wealth that makes ordinary IPO seasons look small. San Francisco's ultra-luxury market is already pricing that future in, with high-end talk moving from roughly $3,000 a square foot toward $5,000. The Hamptons cannot print more ocean. Demand from newly rich households keeps expanding. True inventory does not.
 
-That is not a tip to panic-buy anything with a shingle. It is a clear-eyed read on the setup: when historically large liquidity events meet a market defined by scarcity, price is the release valve. We have seen the finance version of this. We are watching the AI version start in San Francisco. The East End will feel it wherever true limited supply still sits on the water.
+That is not a tip to panic-buy anything with a shingle. It is a clear-eyed read on the setup: when historically large liquidity events meet a market defined by scarcity at the top, price is the release valve. We have seen the finance version of this. We are watching the AI version start in San Francisco's high end. The East End will feel it wherever true limited supply still sits on the water.
 
 ---
 
