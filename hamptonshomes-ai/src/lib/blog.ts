@@ -12,6 +12,93 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ai-ipo-wealth-san-francisco-hamptons-market-2026",
+    title: "AI IPOs Are Minting a New Wealth Class. San Francisco Is Already Pricing It In. The Hamptons Will Too.",
+    excerpt:
+      "OpenAI and Anthropic are lining up public debuts at a scale that dwarfs ordinary IPO history. San Francisco home prices are already ripping higher on AI cash. On the East End, supply is fixed and demand only grows.",
+    date: "2026-09-06",
+    author: "Barry McGovern",
+    category: "Market Report",
+    image: "/images/hero-waterfront.jpg",
+    metaDescription:
+      "How OpenAI and Anthropic IPOs, AI wealth, and San Francisco's housing surge connect to Hamptons scarcity and rising East End demand. Analysis by Barry McGovern.",
+    content: `
+## The IPO Cycle That Breaks the Scale
+
+Something is happening in public markets that most real estate conversations still treat as background noise.
+
+SpaceX already priced the largest IPO in history in June 2026, raising about $75 billion. That alone is roughly three times Saudi Aramco's old record. OpenAI and Anthropic are next in the queue, with confidential filings in the books and valuation talk in the trillion-dollar range. Analyst estimates put the three-deal cluster near $200 billion in combined proceeds. That is more capital raised than all traditional U.S. IPOs from 2022 through early 2026 combined.
+
+A line that has been circulating from the All In podcast this week lands the same point in plainer English: the AI listings are not "big tech IPOs." They are wealth events measured against the entire historical stack. Whether you frame Anthropic as a record in its own right, or OpenAI as so large that everything else looks like a fraction of it, the direction is the same. These are not normal debuts. They mint liquidity at a scale the housing market has never had to absorb from a single industry cohort.
+
+That liquidity does not stay in brokerage accounts forever. It finds homes. Literally.
+
+## San Francisco Is the Preview
+
+Look west if you want the early tape.
+
+San Francisco spent years as the poster child for post-pandemic soft demand. That story is over. AI compensation, equity, and the anticipation of OpenAI and Anthropic liquidity have flipped the city into one of the hottest housing markets in the country.
+
+Recent reporting has median San Francisco sale prices in the high $1 millions to low $2 millions, with year-over-year gains in the mid-teens to mid-twenties depending on the month and data set. Homes are trading faster. All-cash deals are rising. Luxury neighborhoods are seeing bids well over ask. Redfin's analysis of potential OpenAI and Anthropic employee IPO proceeds put the after-tax pile large enough, on paper, to buy roughly 29% of San Francisco's entire housing stock. That is not a forecast that every employee will buy a house on the same Tuesday. It is a measure of how absurd the purchasing power is relative to a finite city.
+
+Important nuance: a lot of the heat is already here from cash compensation and secondary share sales, before either company has even rung the opening bell. The IPOs are not the start of the wealth wave. They are the amplification.
+
+When a city's housing stock cannot expand as fast as its new millionaires, prices do the adjusting.
+
+## Wealth Is Mobile. Coastline Is Not.
+
+Here is the part that matters for the East End.
+
+San Francisco is where a huge share of this wealth is being created. It is not where all of it will be spent. Newly liquid founders, investors, and senior AI talent already own or want second homes, third homes, and lifestyle hedges outside the Bay. The Hamptons have always been a preferred destination for that exact buyer: finance, tech, media, and anyone who wants ocean, privacy, and a short flight or a clean drive from the places where capital actually lives.
+
+The difference between San Francisco and the Hamptons is structural.
+
+San Francisco can, over time, add density. Controversially, slowly, and never enough for the bull case, but the physical constraint is not absolute. The Hamptons oceanfront is different. There are roughly 27 miles of ocean coastline from Southampton to Montauk. That is the inventory. You cannot IPO a new barrier beach. You cannot raise a Series H and manufacture another oceanfront parcel in Sagaponack. Every serious sale removes a scarce asset from circulation, often for a generation.
+
+Limited supply plus a buyer pool that keeps getting richer is not a complicated thesis. It is the entire East End story, only now the buyer pool is about to get a new tranche of capital that makes prior bonus seasons look polite.
+
+## What the Hamptons Already Showed Us
+
+We do not need to invent the pattern. Wall Street already ran a smaller version of this experiment.
+
+In 2025, Hamptons sales volume hit about $6.2 billion, up roughly 26% year over year. Financiers made up over half of buyers. The median price jumped more than 30%. Trades above $20 million surged. Bonus season compressed the calendar. Off-market share stayed high because the best inventory never needs a public bidding war to clear.
+
+That was finance wealth recycling into a fixed geography. AI wealth is finance wealth's louder cousin: larger paper fortunes, younger balance sheets, and a cultural preference for trophy lifestyle assets once liquidity hits. San Francisco is proving the demand side in real time. The Hamptons prove the supply side every summer: fewer true oceanfront and compound offerings, more capital chasing them, and price discovery that keeps resetting higher whenever a rare listing appears.
+
+If you believe OpenAI and Anthropic list at anything close to the valuations being discussed, you should also believe a non-trivial share of that new net worth shows up in limited-supply markets. Not all of it. Enough of it.
+
+## Why This Is Different From "Tech Buyers Are Coming"
+
+Every cycle has a narrative about the next buyer. Sometimes it is crypto. Sometimes it is private equity. Sometimes it is international capital. Those waves matter. This one is different in size and in timing.
+
+Size: we are talking about company-level liquidity events that can exceed years of the entire U.S. IPO market. Employee and early-investor proceeds alone are large enough that housing analysts are measuring them against whole-city housing stock.
+
+Timing: the wealth is arriving into a Hamptons market that is already inventory-constrained. We are not starting from a soft book of vacant oceanfront. We are starting from a market where the best properties trade quietly, rentals book early, and every acre of true waterfront feels more finite than it did five years ago.
+
+Put those together and you get the same physics San Francisco is living through, applied to a coastline that cannot sprawl.
+
+## What I Am Watching
+
+**Liquidity dates.** Confidential filings are not closings. Roadshows slip. Valuations get negotiated down. But the direction of travel is clear enough that waiting for the exact ticker day is a luxury buyers in scarce markets often regret.
+
+**Secondary markets first.** Before the IPO bells, secondary share sales and high cash comp already move housing. After the bells, lockups and staged selling stretch the wealth into the market over quarters, not a single weekend. That is a multi-season demand story, not a one-week headline.
+
+**Trophy and compound inventory.** The first dollars usually chase the irreplaceable: oceanfront, bayfront with depth, gated acreage, village-adjacent privacy. That is exactly the slice of the East End that is shortest.
+
+**Cross-coast capital.** Some of this money stays in the Bay. Some of it diversifies. The Hamptons compete with Miami, Aspen, and the rest of the trophy circuit. Our edge is not "cheaper." It is specific: Atlantic oceanfront, New York adjacency, and a social calendar that still concentrates decision-makers in one place for a season.
+
+## The Bottom Line
+
+AI IPOs are going to create a class of liquid wealth that makes ordinary IPO seasons look small. San Francisco is already pricing that future into house prices, with medians ripping higher and inventory behaving like a squeeze. The Hamptons cannot print more ocean. Demand from newly rich households keeps expanding. Inventory does not.
+
+That is not a tip to panic-buy anything with a shingle. It is a clear-eyed read on the setup: when historically large liquidity events meet a market defined by scarcity, price is the release valve. We have seen the finance version of this. We are watching the AI version start in San Francisco. The East End will feel it wherever true limited supply still sits on the water.
+
+---
+
+*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
+    `,
+  },
+  {
     slug: "hamptons-30-million-compound-sale-february-2026",
     title: "Why the $30M East Hampton Compound Sale Signals a Massive Spring",
     excerpt:
