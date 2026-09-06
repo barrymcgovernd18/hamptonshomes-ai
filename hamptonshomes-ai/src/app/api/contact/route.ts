@@ -41,7 +41,7 @@ export async function POST(request: Request) {
 
     const from =
       process.env.CONTACT_FROM_EMAIL ||
-      "Hampton Homes <inquiries@hamptonshomes.ai>";
+      "Hampton Homes <onboarding@resend.dev>";
     const to = process.env.CONTACT_TO_EMAIL || "barry@hedgerowexclusive.com";
 
     const resend = new Resend(apiKey);
