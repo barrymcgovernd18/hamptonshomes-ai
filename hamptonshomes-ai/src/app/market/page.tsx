@@ -83,14 +83,14 @@ export default function MarketPage() {
             <div className="my-16 relative h-64 md:h-80 overflow-hidden">
               <Image
                 src="/images/67-surfside.jpg"
-                alt="70-71 Cobb Lane, Water Mill - Record $121.5M sale"
+                alt="67 Surfside Drive, Bridgehampton - documented $32M portfolio sale"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/60 to-transparent" />
               <p className="absolute bottom-4 left-6 text-white/40 text-[11px] tracking-[0.2em]">
-                70-71 Cobb Lane, Water Mill · $121.5M Record Sale
+                67 Surfside Drive, Bridgehampton · $32M Documented Portfolio Sale
               </p>
             </div>
 
@@ -116,14 +116,14 @@ export default function MarketPage() {
             <div className="my-16 relative h-64 md:h-80 overflow-hidden">
               <Image
                 src="/images/33-lily-pond.jpg"
-                alt="Further Lane, East Hampton - Premium oceanfront corridor"
+                alt="33 Lily Pond Lane, East Hampton - documented oceanfront portfolio sale"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/60 to-transparent" />
               <p className="absolute bottom-4 left-6 text-white/40 text-[11px] tracking-[0.2em]">
-                Further Lane, East Hampton · Premium Oceanfront Corridor
+                33 Lily Pond Lane, East Hampton · Documented Oceanfront Portfolio Sale
               </p>
             </div>
 
