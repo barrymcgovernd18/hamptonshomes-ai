@@ -17,7 +17,7 @@ export default function Home() {
           <h1 className="max-w-4xl font-serif text-5xl leading-[1.02] text-white md:text-7xl lg:text-8xl">
             Barry McGovern
             <br />
-            <span className="font-normal italic text-white/85">Oceanfront &amp; Waterfront</span>
+            <span className="font-normal italic text-white/85">Oceanfront · East End</span>
           </h1>
           <div className="mt-10">
             <Link href="/contact" className="inline-block bg-paper px-8 py-3.5 text-sm text-ink transition-colors hover:bg-white">
