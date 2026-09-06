@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <section className="relative flex min-h-[720px] h-[92svh] max-h-[980px] items-end overflow-hidden bg-ocean-deep">
-        <Image src="/images/67-surfside.jpg" alt="Oceanfront residence on Surfside Drive, Bridgehampton" fill className="object-cover object-center" priority quality={90} sizes="100vw" />
+        <Image src="/images/hero-waterfront.jpg" alt="Waterfront estate compound on the East End" fill className="object-cover object-center" priority quality={90} sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/75 via-ocean-deep/25 to-ocean-deep/5" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 md:px-8 md:pb-24">
           <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-white/55">
