@@ -40,6 +40,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     },
     {
+      url: 'https://hamptonscoastal.com/about/barry-mcgovern',
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: 'https://hamptonscoastal.com/markets/sag-harbor-waterfront-2026',
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+
+    {
       url: 'https://hamptonscoastal.com/download',
       lastModified: new Date(),
       changeFrequency: 'monthly',
