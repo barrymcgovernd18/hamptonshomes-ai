@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Barry McGovern",
   description:
-    "Barry McGovern is a luxury real estate broker and oceanfront & waterfront specialist at Hedgerow Exclusive Properties. 6 years in the Hamptons luxury market, covering oceanfront estates and waterfront homes from Southampton to Montauk, Sag Harbor, and Shelter Island.",
+    "Barry McGovern is a licensed real estate salesperson and oceanfront & waterfront specialist at Hedgerow Exclusive Properties. 6 years in the Hamptons luxury market, covering oceanfront estates and waterfront homes from Southampton to Montauk, Sag Harbor, and Shelter Island.",
   alternates: { canonical: "https://hamptonshomes.ai/about" },
 };
 
@@ -35,13 +35,14 @@ export default function AboutPage() {
             <div className="md:col-span-7">
               <div className="space-y-6 text-white/35 text-[15px] leading-[1.95]">
                 <p className="text-white/50 text-xl leading-[1.7]">
-                  Oceanfront and waterfront specialist. Luxury real estate broker at{" "}
+                  Oceanfront and waterfront specialist. Licensed real estate salesperson at{" "}
                   <a href="https://hedgerowexclusive.com" target="_blank" rel="noopener" className="text-gold hover:text-gold-light transition-colors duration-500">
                     Hedgerow Exclusive Properties
                   </a>
                 , the firm behind nearly $2 billion in Hamptons transactions and the most expensive 
                   sale in Hamptons history.
                 </p>
+                <p className="text-white/50">New York real estate salesperson license #10401353717.</p>
                 <p>
                   As part of the Hedgerow team, Barry has been involved in some of the most significant 
                   real estate transactions on the East End, from record-setting oceanfront trades to 
@@ -104,7 +105,7 @@ export default function AboutPage() {
 
               {/* Hedgerow */}
               <div className="border border-white/5 p-8">
-                <p className="text-gold/60 text-[10px] tracking-[0.5em] uppercase mb-4">Brokerage</p>
+                <p className="text-gold/60 text-[10px] tracking-[0.5em] uppercase mb-4">Firm</p>
                 <p className="font-serif text-xl text-white mb-4">Hedgerow Exclusive Properties</p>
                 <p className="text-white/30 text-[13px] leading-[1.8]">
                   Boutique luxury firm based in Bridgehampton. Founded 2020. Nearly $2 billion in transactions 

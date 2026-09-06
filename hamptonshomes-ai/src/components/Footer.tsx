@@ -8,8 +8,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-12 gap-16">
           <div className="md:col-span-5">
             <p className="font-serif text-white text-4xl mb-2">Barry McGovern</p>
-            <p className="text-gold/60 text-[10px] tracking-[0.4em] uppercase mb-8">
+            <p className="text-gold/60 text-[10px] tracking-[0.4em] uppercase mb-3">
               Hedgerow Exclusive Properties
+            </p>
+            <p className="text-white/25 text-[11px] mb-8">
+              Licensed Real Estate Salesperson · NY License #10401353717
             </p>
             <p className="text-[13px] leading-relaxed max-w-sm">
               Luxury real estate in the Hamptons. High-end properties and 

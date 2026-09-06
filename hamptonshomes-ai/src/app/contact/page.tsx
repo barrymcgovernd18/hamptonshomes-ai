@@ -55,6 +55,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
+                  <p className="text-white/30 text-[13px]">Licensed Real Estate Salesperson · NY License #10401353717</p>
+                </div>
+
+                <div>
                   <p className="text-[10px] tracking-[0.4em] uppercase text-white/15 mb-4">Social</p>
                   <div className="flex gap-6">
                     {[
