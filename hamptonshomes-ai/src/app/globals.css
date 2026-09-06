@@ -3,23 +3,19 @@
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
-  --color-black: #0a0a0a;
-  --color-black-light: #111111;
-  --color-black-mid: #1a1a1a;
-  --color-charcoal: #222222;
-  --color-dark: #2a2a2a;
-  --color-gold: #c4a265;
-  --color-gold-light: #d4b478;
-  --color-gold-muted: #8b7a55;
-  --color-cream: #f8f6f1;
-  --color-warm: #f2efe8;
-  --color-stone-light: #e8e4dc;
+  --color-paper: #f4f0e8;
+  --color-paper-deep: #ebe5da;
+  --color-paper-soft: #faf8f3;
+  --color-ink: #111111;
+  --color-ink-muted: #5e625f;
+  --color-ink-faint: #858982;
+  --color-ocean: #1f3a44;
+  --color-ocean-deep: #162d35;
+  --color-ocean-soft: #dce6e5;
+  --color-stone: #d8d1c5;
+  --color-line: #d5cec2;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-::selection {
-  background-color: #c4a26533;
-}
+html { scroll-behavior: smooth; }
+body { background: #f4f0e8; color: #111111; }
+::selection { background-color: #1f3a4430; color: #111111; }
