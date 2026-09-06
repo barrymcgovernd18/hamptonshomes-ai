@@ -240,7 +240,7 @@ export default async function AreaPage({ params }: Props) {
 
       <section className="border-t border-line py-12">
         <div className="max-w-7xl mx-auto px-8">
-          <p className="text-ink-faint text-[11px] leading-relaxed max-w-2xl">Barry McGovern is a luxury real estate broker and oceanfront &amp; waterfront specialist at Hedgerow Exclusive Properties, the #1 ranked Hamptons firm by WSJ/RealTrends with nearly $2 billion in transactions. Specializing in {area.name} oceanfront estates, waterfront homes, off-market properties, and luxury real estate. Serving {area.name}, Southampton, Bridgehampton, Sag Harbor, Sagaponack, East Hampton, Amagansett, Montauk, and Shelter Island.</p>
+          <p className="text-ink-faint text-[11px] leading-relaxed max-w-2xl">Barry McGovern is a Licensed Real Estate Salesperson and oceanfront &amp; waterfront specialist at Hedgerow Exclusive Properties, a leading Hamptons firm with nearly $2 billion in firm transactions. Specializing in {area.name} oceanfront estates, waterfront homes, off-market properties, and luxury real estate. Serving {area.name}, Southampton, Bridgehampton, Sag Harbor, Sagaponack, East Hampton, Amagansett, Montauk, and Shelter Island.</p>
         </div>
       </section>
     </div>

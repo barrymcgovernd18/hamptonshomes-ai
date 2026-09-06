@@ -16,7 +16,7 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const photoHeader = pathname === "/" && !scrolled;
+  const photoHeader = pathname === "/" && !scrolled && !mobileOpen;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
@@ -25,7 +25,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${photoHeader ? "border-white/15 bg-black/10 text-white" : "border-line/80 bg-paper/95 text-ink backdrop-blur-md"}`}>
+    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${photoHeader ? "border-white/15 bg-ocean/20 text-white" : "border-line/80 bg-paper/95 text-ink backdrop-blur-md"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-8">
         <Link href="/" className="group flex items-baseline gap-3" aria-label="Barry McGovern home">
           <span className={`font-serif text-2xl leading-none transition-colors ${photoHeader ? "text-white" : "text-ink"}`}>BM</span>

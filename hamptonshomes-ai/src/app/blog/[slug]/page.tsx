@@ -44,7 +44,7 @@ function renderContent(content: string) {
       );
     } else if (line.startsWith("### ")) {
       elements.push(
-        <h3 key={i} className="font-serif text-xl text-gold/80 mt-10 mb-4">
+        <h3 key={i} className="font-serif text-xl text-ocean/80 mt-10 mb-4">
           {line.replace("### ", "")}
         </h3>
       );
@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       "@type": "Person",
       name: "Barry McGovern",
-      jobTitle: "Luxury Real Estate Broker | Oceanfront & Waterfront Specialist",
+      jobTitle: "Licensed Real Estate Salesperson | Oceanfront & Waterfront Specialist",
       worksFor: { "@type": "RealEstateAgent", name: "Hedgerow Exclusive Properties" },
     },
     publisher: {
@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: Props) {
   };
 
   return (
-    <div className="bg-black">
+    <div className="bg-ocean-deep">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -117,12 +117,12 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="max-w-3xl mx-auto px-8">
           <Link
             href="/blog"
-            className="text-white/20 text-[11px] tracking-[0.2em] uppercase hover:text-gold transition-colors duration-500 mb-10 block"
+            className="text-white/20 text-[11px] tracking-[0.2em] uppercase hover:text-ocean transition-colors duration-500 mb-10 block"
           >
             ← All Insights
           </Link>
 
-          <p className="text-gold/60 text-[10px] tracking-[0.5em] uppercase mb-4">
+          <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-4">
             {post.category} · {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
           </p>
 
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="text-white/30 text-[14px] mb-6">Confidential consultations and complimentary valuations.</p>
             <Link
               href="/contact"
-              className="inline-block border border-gold/40 text-gold text-[11px] tracking-[0.3em] uppercase px-8 py-3 hover:bg-gold/10 transition-all duration-500"
+              className="inline-block border border-ocean/40 text-ocean text-[11px] tracking-[0.3em] uppercase px-8 py-3 hover:bg-ocean/10 transition-all duration-500"
             >
               Get in Touch
             </Link>

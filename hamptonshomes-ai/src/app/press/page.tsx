@@ -94,7 +94,7 @@ const pressItems: PressItem[] = [
   },
   {
     outlet: "The Hollywood Reporter",
-    title: "New York Power Broker Awards Nominees, Hedgerow Exclusive Properties",
+    title: "New York Real Estate Awards Nominees, Hedgerow Exclusive Properties",
     url: "https://hedgerowexclusive.com/press/the-hollywood-reporter-announces-new-york-power-broker-awards-nominees/",
   },
   {
@@ -121,8 +121,8 @@ const pressItems: PressItem[] = [
   },
   {
     outlet: "The Real Deal",
-    title: "Hamptons' Top Brokerages Navigate Dragging Market, Uptick in Competition",
-    url: "https://hedgerowexclusive.com/press/hamptons-top-brokerages-navigate-dragging-market-uptick-in-competition/",
+    title: "Hamptons' Top Firms Navigate Dragging Market, Uptick in Competition",
+    url: "https://hedgerowexclusive.com/press/hamptons-top-firms-navigate-dragging-market-uptick-in-competition/",
   },
   {
     outlet: "New York Post",
@@ -176,11 +176,11 @@ export default function PressPage() {
   const textOnly = remaining.filter((p) => !p.image);
 
   return (
-    <div className="bg-black">
+    <div className="bg-ocean-deep">
       {/* Hero */}
       <section className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-8">
-          <p className="text-gold/60 text-[10px] tracking-[0.5em] uppercase mb-4">Press</p>
+          <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-4">Press</p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-tight">
             In the
             <br />
@@ -199,7 +199,7 @@ export default function PressPage() {
                 href={item.url}
                 target="_blank"
                 rel="noopener"
-                className="border border-white/5 hover:border-gold/30 transition-all duration-700 group block overflow-hidden"
+                className="border border-white/5 hover:border-ocean/30 transition-all duration-700 group block overflow-hidden"
               >
                 {item.image && (
                   <div className="relative h-56 md:h-64 overflow-hidden">
@@ -210,22 +210,22 @@ export default function PressPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    <p className="absolute bottom-4 left-6 text-gold text-[10px] tracking-[0.4em] uppercase">
+                    <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/80 via-ocean-deep/20 to-transparent" />
+                    <p className="absolute bottom-4 left-6 text-ocean text-[10px] tracking-[0.4em] uppercase">
                       {item.outlet}
                     </p>
                   </div>
                 )}
                 <div className="p-10">
                   {!item.image && (
-                    <p className="text-gold text-[10px] tracking-[0.4em] uppercase mb-4">
+                    <p className="text-ocean text-[10px] tracking-[0.4em] uppercase mb-4">
                       {item.outlet}
                     </p>
                   )}
-                  <h2 className="font-serif text-xl md:text-2xl text-white group-hover:text-gold transition-colors duration-500 leading-snug">
+                  <h2 className="font-serif text-xl md:text-2xl text-white group-hover:text-ocean transition-colors duration-500 leading-snug">
                     {item.title}
                   </h2>
-                  <p className="text-white/20 text-[11px] tracking-[0.2em] uppercase mt-6 group-hover:text-gold/50 transition-colors duration-500">
+                  <p className="text-white/20 text-[11px] tracking-[0.2em] uppercase mt-6 group-hover:text-ocean/50 transition-colors duration-500">
                     Read Article →
                   </p>
                 </div>
@@ -239,7 +239,7 @@ export default function PressPage() {
       {barryPress.length > 0 && (
         <section className="pb-20">
           <div className="max-w-7xl mx-auto px-8">
-            <p className="text-gold/60 text-[10px] tracking-[0.5em] uppercase mb-10">
+            <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-10">
               Featuring Barry McGovern
             </p>
             <div className="space-y-px">
@@ -249,14 +249,14 @@ export default function PressPage() {
                   href={item.url}
                   target="_blank"
                   rel="noopener"
-                  className="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-white/5 hover:border-gold/20 transition-all duration-500 group block"
+                  className="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-white/5 hover:border-ocean/20 transition-all duration-500 group block"
                 >
                   <div className="flex-1">
                     <p className="text-white/60 group-hover:text-white transition-colors duration-500 text-[15px]">
                       {item.title}
                     </p>
                   </div>
-                  <p className="text-gold/40 text-[11px] tracking-[0.2em] uppercase mt-2 md:mt-0 md:ml-8 shrink-0">
+                  <p className="text-ocean/40 text-[11px] tracking-[0.2em] uppercase mt-2 md:mt-0 md:ml-8 shrink-0">
                     {item.outlet}
                   </p>
                 </a>
@@ -270,7 +270,7 @@ export default function PressPage() {
       {withImages.length > 0 && (
         <section className="pb-20">
           <div className="max-w-7xl mx-auto px-8">
-            <p className="text-gold/60 text-[10px] tracking-[0.5em] uppercase mb-10">
+            <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-10">
               In the Press
             </p>
             <div className="grid md:grid-cols-3 gap-5">
@@ -280,7 +280,7 @@ export default function PressPage() {
                   href={item.url}
                   target="_blank"
                   rel="noopener"
-                  className="group block overflow-hidden border border-white/5 hover:border-gold/20 transition-all duration-500"
+                  className="group block overflow-hidden border border-white/5 hover:border-ocean/20 transition-all duration-500"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -290,10 +290,10 @@ export default function PressPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/70 to-transparent" />
                   </div>
                   <div className="p-6">
-                    <p className="text-gold/50 text-[9px] tracking-[0.4em] uppercase mb-3">
+                    <p className="text-ocean/50 text-[9px] tracking-[0.4em] uppercase mb-3">
                       {item.outlet}
                     </p>
                     <p className="text-white/70 group-hover:text-white text-[14px] leading-relaxed transition-colors duration-500">
@@ -310,7 +310,7 @@ export default function PressPage() {
       {/* Text-only articles */}
       <section className="pb-32">
         <div className="max-w-7xl mx-auto px-8">
-          <p className="text-gold/60 text-[10px] tracking-[0.5em] uppercase mb-10">
+          <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-10">
             More Coverage
           </p>
           <div className="space-y-px">
@@ -320,7 +320,7 @@ export default function PressPage() {
                 href={item.url}
                 target="_blank"
                 rel="noopener"
-                className="flex flex-col md:flex-row md:items-center justify-between py-5 border-b border-white/5 hover:border-gold/20 transition-all duration-500 group block"
+                className="flex flex-col md:flex-row md:items-center justify-between py-5 border-b border-white/5 hover:border-ocean/20 transition-all duration-500 group block"
               >
                 <div className="flex-1">
                   <p className="text-white/40 group-hover:text-white/70 transition-colors duration-500 text-[14px]">

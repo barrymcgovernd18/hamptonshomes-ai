@@ -11,21 +11,21 @@ export const metadata: Metadata = {
 
 export default function MarketPage() {
   return (
-    <div className="bg-black">
+    <div className="bg-ocean-deep">
       {/* Hero with image */}
       <section className="relative pt-32 pb-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/listings/946-ocean-road.jpg"
+            src="/images/109-duck-pond.jpg"
             alt="Hamptons oceanfront estate"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/70 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep via-ocean-deep/70 to-ocean-deep" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 pb-16">
-          <p className="text-gold/60 text-[10px] tracking-[0.5em] uppercase mb-4">Insights</p>
+          <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-4">Insights</p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-tight">
             Market
             <br />
@@ -38,7 +38,7 @@ export default function MarketPage() {
         <div className="max-w-4xl mx-auto px-8">
           <article>
             <div className="flex items-center gap-4 mb-12">
-              <p className="text-gold text-[10px] tracking-[0.4em] uppercase">February 2026</p>
+              <p className="text-ocean text-[10px] tracking-[0.4em] uppercase">February 2026</p>
               <div className="flex-1 h-px bg-white/5" />
             </div>
 
@@ -54,7 +54,7 @@ export default function MarketPage() {
               </p>
               <p>
                 What&apos;s particularly notable this cycle is the speed at which summer rental inventory is being 
-                absorbed. Brokers report that most prime summer 2026 inventory was locked up before February, 
+                absorbed. Sales professionals report that most prime summer 2026 inventory was locked up before February, 
                 significantly earlier than typical years.
               </p>
               <p>
@@ -71,8 +71,8 @@ export default function MarketPage() {
                 { value: "$5M+", label: "Luxury Segment", sub: "Low inventory" },
                 { value: "2026", label: "Summer Rentals", sub: "Committed" },
               ].map((stat) => (
-                <div key={stat.label} className="bg-black p-8">
-                  <p className="font-serif text-2xl text-gold mb-1">{stat.value}</p>
+                <div key={stat.label} className="bg-ocean-deep p-8">
+                  <p className="font-serif text-2xl text-ocean mb-1">{stat.value}</p>
                   <p className="text-white/25 text-[10px] tracking-[0.2em] uppercase">{stat.label}</p>
                   <p className="text-white/15 text-[11px] mt-1">{stat.sub}</p>
                 </div>
@@ -82,21 +82,21 @@ export default function MarketPage() {
             {/* Inline property photo */}
             <div className="my-16 relative h-64 md:h-80 overflow-hidden">
               <Image
-                src="/images/listings/70-71-cobb-lane.jpg"
-                alt="70-71 Cobb Lane, Water Mill - Record $121.5M sale"
+                src="/images/67-surfside.jpg"
+                alt="67 Surfside Drive, Bridgehampton - documented $32M portfolio sale"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/60 to-transparent" />
               <p className="absolute bottom-4 left-6 text-white/40 text-[11px] tracking-[0.2em]">
-                70-71 Cobb Lane, Water Mill · $121.5M Record Sale
+                67 Surfside Drive, Bridgehampton · $32M Documented Portfolio Sale
               </p>
             </div>
 
             <div className="text-white/35 text-[15px] leading-[2] space-y-8">
               <div>
-                <p className="text-gold/60 text-[10px] tracking-[0.4em] uppercase mb-4">For Buyers</p>
+                <p className="text-ocean/60 text-[10px] tracking-[0.4em] uppercase mb-4">For Buyers</p>
                 <p>
                   The window for negotiation is narrowing. Properties in desirable locations move quickly, 
                   often before reaching the public market. Access to off-market inventory is essential.
@@ -104,7 +104,7 @@ export default function MarketPage() {
               </div>
 
               <div>
-                <p className="text-gold/60 text-[10px] tracking-[0.4em] uppercase mb-4">For Sellers</p>
+                <p className="text-ocean/60 text-[10px] tracking-[0.4em] uppercase mb-4">For Sellers</p>
                 <p>
                   Market conditions are exceptionally favorable. Record prices, strong demand, limited 
                   competition. A complimentary valuation reveals your property&apos;s current position.
@@ -115,21 +115,21 @@ export default function MarketPage() {
             {/* Second property photo */}
             <div className="my-16 relative h-64 md:h-80 overflow-hidden">
               <Image
-                src="/images/listings/448-further-lane.jpg"
-                alt="Further Lane, East Hampton - Premium oceanfront corridor"
+                src="/images/33-lily-pond.jpg"
+                alt="33 Lily Pond Lane, East Hampton - documented oceanfront portfolio sale"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/60 to-transparent" />
               <p className="absolute bottom-4 left-6 text-white/40 text-[11px] tracking-[0.2em]">
-                Further Lane, East Hampton · Premium Oceanfront Corridor
+                33 Lily Pond Lane, East Hampton · Documented Oceanfront Portfolio Sale
               </p>
             </div>
 
             <div className="text-white/35 text-[15px] leading-[2] space-y-8">
               <div>
-                <p className="text-gold/60 text-[10px] tracking-[0.4em] uppercase mb-4">Strongest Markets</p>
+                <p className="text-ocean/60 text-[10px] tracking-[0.4em] uppercase mb-4">Strongest Markets</p>
                 <p>
                   East Hampton oceanfront, Sag Harbor village, and Bridgehampton south see the most 
                   competitive activity. Shelter Island is emerging as a sought-after market for buyers 
@@ -148,9 +148,9 @@ export default function MarketPage() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/80 via-ocean-deep/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-gold text-[10px] tracking-[0.4em] uppercase mb-2">East Hampton</p>
+                  <p className="text-ocean text-[10px] tracking-[0.4em] uppercase mb-2">East Hampton</p>
                   <p className="text-white/50 text-[13px]">Lily Pond, Further Lane, West End Road. The highest per-SF premiums in the Hamptons.</p>
                 </div>
               </div>
@@ -162,9 +162,9 @@ export default function MarketPage() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/80 via-ocean-deep/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-gold text-[10px] tracking-[0.4em] uppercase mb-2">Bridgehampton</p>
+                  <p className="text-ocean text-[10px] tracking-[0.4em] uppercase mb-2">Bridgehampton</p>
                   <p className="text-white/50 text-[13px]">Surfside Drive emerged as a hot corridor. Multiple $20M+ trades in 2025.</p>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default function MarketPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-gold text-black px-8 py-3.5 text-[11px] tracking-[0.3em] uppercase hover:bg-gold-light transition-all duration-500"
+              className="inline-block bg-ocean text-paper px-8 py-3.5 text-[11px] tracking-[0.3em] uppercase hover:bg-ocean-light transition-all duration-500"
             >
               Get Market Updates
             </Link>
