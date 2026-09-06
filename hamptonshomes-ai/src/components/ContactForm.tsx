@@ -39,11 +39,11 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="flex flex-col items-center justify-center py-20">
-        <p className="text-gold font-serif text-2xl mb-3">Message Sent</p>
+        <p className="text-ocean font-serif text-2xl mb-3">Message Sent</p>
         <p className="text-white/30 text-[14px]">Barry will be in touch shortly.</p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-8 text-white/20 text-[11px] tracking-[0.2em] uppercase hover:text-gold transition-colors duration-500"
+          className="mt-8 text-white/20 text-[11px] tracking-[0.2em] uppercase hover:text-ocean transition-colors duration-500"
         >
           Send Another
         </button>
@@ -66,7 +66,7 @@ export default function ContactForm() {
             type={field.type}
             id={field.id}
             name={field.id}
-            className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-white text-[15px] focus:outline-none focus:border-gold/50 transition-colors duration-500 placeholder:text-white/10"
+            className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-white text-[15px] focus:outline-none focus:border-ocean/50 transition-colors duration-500 placeholder:text-white/10"
             required={field.required}
           />
         </div>
@@ -79,13 +79,13 @@ export default function ContactForm() {
         <select
           id="interest"
           name="interest"
-          className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-white/50 text-[15px] focus:outline-none focus:border-gold/50 transition-colors duration-500 appearance-none"
+          className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-white/50 text-[15px] focus:outline-none focus:border-ocean/50 transition-colors duration-500 appearance-none"
         >
-          <option value="buying" className="bg-black">Buying</option>
-          <option value="selling" className="bg-black">Selling</option>
-          <option value="renting" className="bg-black">Renting</option>
-          <option value="valuation" className="bg-black">Property Valuation</option>
-          <option value="other" className="bg-black">Other</option>
+          <option value="buying" className="bg-ocean-deep">Buying</option>
+          <option value="selling" className="bg-ocean-deep">Selling</option>
+          <option value="renting" className="bg-ocean-deep">Renting</option>
+          <option value="valuation" className="bg-ocean-deep">Property Valuation</option>
+          <option value="other" className="bg-ocean-deep">Other</option>
         </select>
       </div>
 
@@ -97,14 +97,14 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={3}
-          className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-white text-[15px] focus:outline-none focus:border-gold/50 transition-colors duration-500 resize-none"
+          className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-white text-[15px] focus:outline-none focus:border-ocean/50 transition-colors duration-500 resize-none"
         />
       </div>
 
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full bg-gold text-black py-4 text-[11px] tracking-[0.3em] uppercase hover:bg-gold-light transition-all duration-500 font-medium mt-4 disabled:opacity-50"
+        className="w-full bg-ocean text-paper py-4 text-[11px] tracking-[0.3em] uppercase hover:bg-ocean-light transition-all duration-500 font-medium mt-4 disabled:opacity-50"
       >
         {status === "sending" ? "Sending..." : status === "error" ? "Try Again" : "Send Message"}
       </button>

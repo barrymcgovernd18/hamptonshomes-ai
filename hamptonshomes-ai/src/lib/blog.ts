@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-26",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/listings/70-71-cobb-lane.jpg",
+    image: "/images/67-surfside.jpg",
     metaDescription:
       "East Hampton compound sells for $30 million as Hamptons luxury market surges. Analysis of Wall Street bonus impact and spring 2026 market outlook by Barry McGovern.",
     content: `
@@ -61,7 +61,7 @@ Here's something the $30M compound sale highlights: the best properties often tr
 
 This isn't about secrecy for secrecy's sake. It's about efficiency. A seller gets complete privacy, control over the timeline, and access to pre-qualified buyers. A buyer gets first access to inventory that would generate bidding wars if it hit the public market.
 
-For serious buyers in this environment, working with a brokerage that operates at this level isn't optional. The best properties, especially oceanfront and large acreage compounds, often trade before they reach public portals.
+For serious buyers in this environment, working with a firm that operates at this level isn't optional. The best properties, especially oceanfront and large acreage compounds, often trade before they reach public portals.
 
 ## What Wall Street Money Looks Like on the Ground
 
@@ -91,7 +91,7 @@ The $30 million compound sale wasn't just a transaction. It was a statement abou
 
 ---
 
-*Barry McGovern is a luxury real estate broker and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
+*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
     `,
   },
   {
@@ -102,7 +102,7 @@ The $30 million compound sale wasn't just a transaction. It was a statement abou
     date: "2026-02-23",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/listings/70-71-cobb-lane.jpg",
+    image: "/images/36-chase-court.jpg",
     metaDescription:
       "Hamptons real estate surges to $6.2 billion in sales volume as Wall Street bonuses drive record demand. Analysis of the spring 2026 market by oceanfront specialist Barry McGovern.",
     content: `
@@ -160,7 +160,7 @@ Here's something the public data doesn't capture: an increasing share of signifi
 
 A recent example: a Bridgehampton oceanfront property sold for $50 million in an entirely private transaction that was never publicly listed. The seller got complete discretion, and the buyer got access to a property they would never have found through conventional search.
 
-For serious buyers in this market, working with a brokerage that operates at this level isn't optional. The best properties often trade before they reach public portals.
+For serious buyers in this market, working with a firm that operates at this level isn't optional. The best properties often trade before they reach public portals.
 
 ## Looking Ahead
 
@@ -174,7 +174,7 @@ The $6.2 billion surge wasn't just a number. It was a signal. The Hamptons luxur
 
 ---
 
-*Barry McGovern is a luxury real estate broker and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
+*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
     `,
   },
   {
@@ -185,7 +185,7 @@ The $6.2 billion surge wasn't just a number. It was a signal. The Hamptons luxur
     date: "2026-02-19",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/listings/70-71-cobb-lane.jpg",
+    image: "/images/109-duck-pond.jpg",
     metaDescription:
       "How Wall Street's 2025 bonus season is fueling Hamptons real estate in 2026: record prices, early rental bookings, and surging demand for oceanfront luxury homes.",
     content: `
@@ -240,13 +240,13 @@ And it's not just the trophy segment. The $2 million to $5 million range, which 
 
 Don't wait for spring to start looking. The best properties are trading now, and many of the most significant opportunities never reach the public market. At Hedgerow, roughly a third of our volume happens off-market, through private networks and relationships built over years.
 
-If you're a bonus-season buyer thinking about the Hamptons, here's my advice: get pre-qualified, identify your target area, and have a broker who can show you inventory that isn't on Zillow. The competition is real, but the opportunity is equally real. Hamptons real estate, particularly oceanfront and waterfront, has proven to be one of the most resilient luxury asset classes in the country.
+If you're a bonus-season buyer thinking about the Hamptons, here's my advice: get pre-qualified, identify your target area, and have a salesperson who can show you inventory that isn't on Zillow. The competition is real, but the opportunity is equally real. Hamptons real estate, particularly oceanfront and waterfront, has proven to be one of the most resilient luxury asset classes in the country.
 
 For sellers, this is as strong a market as we've seen. Pricing is at historic highs, demand is deep, and the window is wide open. If you've been considering a sale, a confidential conversation about positioning and timing could make a meaningful difference in your outcome.
 
 ---
 
-*Barry McGovern is a luxury real estate broker and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
+*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
     `,
   },
   {
@@ -257,7 +257,7 @@ For sellers, this is as strong a market as we've seen. Pricing is at historic hi
     date: "2026-02-17",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/listings/70-71-cobb-lane.jpg",
+    image: "/images/55-halsey-lane.jpg",
     metaDescription:
       "Hamptons real estate market update Q4 2025: record median prices of $2.34M, average $3.76M, and oceanfront trades exceeding $30M. Analysis by Barry McGovern at Hedgerow Exclusive Properties.",
     content: `
@@ -276,7 +276,7 @@ The Hamptons luxury real estate market closed 2025 with a statement. After a per
 
 The headline story of 2025 was oceanfront. Multiple trades north of $30 million closed in Q4 alone, with Bridgehampton's Surfside Drive and East Hampton's Lily Pond Lane corridor seeing the most significant activity.
 
-At Hedgerow Exclusive Properties, we facilitated close to $200 million in trades in the 2025 season, spanning on-market, off-market, and in-contract deals across the full East End.
+At Hedgerow Exclusive Properties, our 2025 work spanned on-market, off-market, and in-contract opportunities across the full East End.
 
 Notable Q4 closings included:
 - **67 Surfside Drive, Bridgehampton**. $32,000,000 (oceanfront, 6,714 SF on 2.2 acres)
@@ -320,7 +320,7 @@ For sellers: this is an exceptional window. Pricing is at historic highs, and de
 
 ---
 
-*Barry McGovern is a luxury real estate broker and oceanfront & waterfront specialist at Hedgerow Exclusive Properties, the #1 ranked Hamptons firm by WSJ/RealTrends. For a confidential consultation or complimentary property valuation, call 646-339-0154.*
+*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront & waterfront specialist at Hedgerow Exclusive Properties, the #1 ranked Hamptons firm by WSJ/RealTrends. For a confidential consultation or complimentary property valuation, call 646-339-0154.*
     `,
   },
   {
@@ -331,7 +331,7 @@ For sellers: this is an exceptional window. Pricing is at historic highs, and de
     date: "2026-02-17",
     author: "Barry McGovern",
     category: "Insights",
-    image: "/images/listings/448-further-lane.jpg",
+    image: "/images/40-hedges-banks.jpg",
     metaDescription:
       "Why Hamptons oceanfront real estate is a unique asset class: finite inventory, record-breaking prices, and unmatched proximity to New York City. By Barry McGovern, oceanfront specialist.",
     content: `
@@ -359,9 +359,9 @@ That proximity creates a buyer pool with virtually unlimited purchasing power. W
 
 ## The Off-Market Factor
 
-The ultra-luxury oceanfront segment operates largely in private. Many of the most significant oceanfront properties never appear on Zillow, Realtor.com, or even the MLS. They trade through private networks, relationship-based introductions, and brokerages with access to off-market inventory.
+The ultra-luxury oceanfront segment operates largely in private. Many of the most significant oceanfront properties never appear on Zillow, Realtor.com, or even the MLS. They trade through private networks, relationship-based introductions, and firms with access to off-market inventory.
 
-At Hedgerow Exclusive Properties, over $700 million in sales volume since 2020 has been facilitated off-market, nearly a third of the firm's total transactions. For buyers seeking oceanfront, working with a brokerage that operates at this level isn't optional; it's the only way to access inventory that never reaches the public market.
+At Hedgerow Exclusive Properties, a meaningful share of the firm's transactions has been facilitated off-market. For buyers seeking oceanfront, working with a firm that operates at this level isn't optional; it's the only way to access inventory that never reaches the public market.
 
 ## The Key Corridors
 
@@ -381,14 +381,14 @@ Not all Hamptons oceanfront is created equal. The premium streets where the reco
 
 ---
 
-*Barry McGovern is a luxury real estate broker and oceanfront & waterfront specialist at Hedgerow Exclusive Properties, the #1 ranked Hamptons firm by WSJ/RealTrends. For a confidential consultation, call 646-339-0154.*
+*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront & waterfront specialist at Hedgerow Exclusive Properties, the #1 ranked Hamptons firm by WSJ/RealTrends. For a confidential consultation, call 646-339-0154.*
     `,
   },
   {
     slug: "off-market-hamptons-explained",
     title: "Off-Market in the Hamptons: What It Means and Why It Matters",
     excerpt:
-      "Over 30% of Hedgerow's transactions happen off-market, totaling over $700M in private sales since 2020. Here's how the Hamptons private market works and why it matters for buyers and sellers.",
+      "A meaningful share of Hedgerow's transactions happen off-market. Here's how the Hamptons private market works and why it matters for buyers and sellers.",
     date: "2026-02-17",
     author: "Barry McGovern",
     category: "Insights",
@@ -398,7 +398,7 @@ Not all Hamptons oceanfront is created equal. The premium streets where the reco
     content: `
 ## The Private Market Is the Real Market
 
-In the Hamptons luxury segment, some of the most significant properties never appear on Zillow, Realtor.com, or even the local MLS. They trade privately. through trusted broker networks, relationship-based introductions, and word of mouth.
+In the Hamptons luxury segment, some of the most significant properties never appear on Zillow, Realtor.com, or even the local MLS. They trade privately. through trusted firm networks, relationship-based introductions, and word of mouth.
 
 This isn't new, but the scale has grown dramatically. At Hedgerow Exclusive Properties, over $700 million in sales volume since 2020 has been facilitated off-market. That represents nearly a third of the firm's total transactions, including some of the most notable trades on the East End.
 
@@ -416,16 +416,16 @@ This isn't new, but the scale has grown dramatically. At Hedgerow Exclusive Prop
 
 If you're searching for Hamptons luxury real estate exclusively through public listings, you're seeing less than 70% of available inventory in the ultra-luxury segment ($10M+).
 
-The remaining 30%+ exists in private networks. accessible only through brokerages with the relationships, reputation, and deal flow to participate.
+The remaining 30%+ exists in private networks. accessible only through firms with the relationships, reputation, and deal flow to participate.
 
-This is where firm selection matters. A brokerage like Hedgerow, with nearly $2 billion in total transactions and deep relationships across the East End, has visibility into opportunities that simply don't exist for the general market.
+This is where firm selection matters. A firm like Hedgerow, with nearly $2 billion in total transactions and deep relationships across the East End, has visibility into opportunities that simply don't exist for the general market.
 
 ## How It Works in Practice
 
 A typical off-market transaction:
 
-1. **Seller engages a trusted brokerage** and signals willingness to sell at a target price
-2. **The brokerage discreetly introduces the property** to a curated group of qualified buyers
+1. **Seller engages a trusted firm** and signals willingness to sell at a target price
+2. **The firm discreetly introduces the property** to a curated group of qualified buyers
 3. **Showings happen privately**, often with NDAs
 4. **Negotiations and closing proceed confidentially**, sometimes before the property was ever publicly known to be available
 
@@ -439,13 +439,198 @@ For the seller, this meant complete privacy. For the buyer, it meant access to a
 
 ## Accessing the Private Market
 
-Working with a brokerage that operates at the top of the Hamptons market isn't a luxury, it's a necessity for serious buyers and sellers. The private market rewards relationships, reputation, and trust.
+Working with a firm that operates at the top of the Hamptons market isn't a luxury, it's a necessity for serious buyers and sellers. The private market rewards relationships, reputation, and trust.
 
 If you're considering buying or selling in the Hamptons and want access to the full market, not just what's publicly listed. a confidential conversation is the first step.
 
 ---
 
-*Barry McGovern is a luxury real estate broker and oceanfront & waterfront specialist at Hedgerow Exclusive Properties. For a confidential consultation or to discuss off-market opportunities, call 646-339-0154.*
+*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront & waterfront specialist at Hedgerow Exclusive Properties. For a confidential consultation or to discuss off-market opportunities, call 646-339-0154.*
+    `,
+  },
+
+  {
+    slug: "oceanfront-scarcity-southampton-montauk-2025",
+    title: "Barry McGovern on Oceanfront Scarcity from Southampton to Montauk",
+    excerpt: "Why irreplaceable coastline, frontage, and access—not a simple town average—shape oceanfront decisions from Southampton to Montauk.",
+    date: "2025-06-18",
+    author: "Barry McGovern",
+    category: "Market Report",
+    image: "/images/67-surfside.jpg",
+    metaDescription: "Barry McGovern explains how oceanfront scarcity, frontage, access, and micro-location shape Hamptons decisions from Southampton through Montauk.",
+    content: `
+## The coastline is the constraint
+
+From Southampton to Montauk, the Hamptons oceanfront market is defined by a fact that cannot be solved with new construction: there is only so much coast. A buyer can renovate a house, improve a landscape, or rework a floor plan. No buyer can create a second row of ocean frontage, move a favored beach closer to Manhattan, or reproduce the exact relationship between dune, bluff, beach, and horizon. That is why a useful oceanfront conversation begins with scarcity and only then moves to finishes, square footage, and amenities.
+
+The same principle applies across very different settings. Southampton can offer a legacy estate corridor, a village-adjacent home, or a quieter ocean-facing property. Bridgehampton brings bluff-top drama and its own relationship to the village and reserve. East Hampton and Amagansett offer famous lanes, deep privacy, and distinct beach conditions. Montauk adds a more elemental coastline, surf culture, harbor access, and a year-round identity. Calling all of those homes simply oceanfront hides the decisions that matter.
+
+## Frontage is more than a number
+
+When I review an oceanfront property with a buyer, I want to understand the usable experience of the frontage. How does the house meet the land? Is there a direct beach path, a protected dune system, a bluff, or a view that depends on a neighboring parcel? How do prevailing winds, erosion exposure, access rules, and coastal regulations affect the way the property can be enjoyed? A listing can state a frontage measurement, but the daily experience requires a closer reading of the site.
+
+The portfolio gives useful reference points without pretending that any one sale is a universal comp. 67 Surfside Drive in Bridgehampton, documented at $32,000,000, offered 187 feet of ocean frontage on 2.20 acres. 33 Lily Pond Lane in East Hampton, documented at $31,500,000, offered 171 feet of private ocean frontage on 1.81 acres. Those records are Barry McGovern portfolio transactions, not a promise that every property with a similar number of feet belongs in the same pricing conversation. Orientation, elevation, improvements, privacy, and timing still matter.
+
+Southampton adds another layer. 109 Duck Pond Lane is a waterfront estate with pond and Atlantic views, documented at $20,000,000 in the portfolio. Its value story is not interchangeable with a pure oceanfront bluff: the water relationship, the house, the approach, and the combination of pond and ocean outlook create a particular kind of setting. Buyers who understand that distinction can compare properties more intelligently and avoid paying for a label rather than a lived experience.
+
+## A practical comparison process
+
+First, define the water relationship. “Oceanfront” can mean direct beach frontage, a bluff, a dune-side position, or a home with an ocean view but no private path. “Waterfront” can mean pond, bay, harbor, or cove. Those categories behave differently in insurance, maintenance, access, and resale conversations.
+
+Second, map the daily route. A buyer should test the drive to the village, the beach access, the nearest market, and the practical commute. Southampton and Montauk can both deliver extraordinary coastline while producing entirely different patterns of use. If a home is meant to be a weekend base, a summer compound, or a year-round retreat, the correct micro-market may change.
+
+Third, ask what is durable. Architecture and interiors can age well when they respond to light, weather, and the site. A pool, guest house, studio, or dock can be valuable, but only when the permitting, maintenance, and setting support the improvement. The best oceanfront decisions are not built around a single feature; they are built around a durable relationship with the land.
+
+Fourth, plan for diligence early. Coastal properties require attention to surveys, flood exposure, insurance availability, shoreline conditions, easements, septic systems, and local approvals. A confident buyer is not the buyer who skips those questions. It is the buyer who asks them before becoming emotionally committed and understands which findings are manageable and which alter the value proposition.
+
+## The buyer and seller lens
+
+For buyers, scarcity argues for preparation rather than panic. Establish the preferred coastline, the minimum water relationship, and the compromises that are acceptable before a property appears. Keep financial and legal advisors ready, and make sure the search includes quiet conversations where appropriate. The most useful first step is often a confidential market map, not a public portal saved-search list.
+
+For sellers, scarcity is not a substitute for positioning. A rare address still needs accurate photography, a precise story, and a launch plan that respects privacy. Buyers at this level want to understand why a setting is difficult to replace. That can mean explaining a beach path, an orientation, a protected view, or the history of a lane—not simply repeating “oceanfront” in larger type.
+
+The Hamptons coastline rewards specificity. Southampton through Montauk is not one market and oceanfront is not one product. Barry McGovern’s role as a Licensed Real Estate Salesperson is to help clients compare the physical setting, the public record, and the private context with discipline. For a confidential conversation about an oceanfront search or valuation, visit /contact.
+    `,
+  },
+  {
+    slug: "sag-harbor-waterfront-village-demand-2025",
+    title: "Barry McGovern’s Guide to Sag Harbor Waterfront and Village Demand",
+    excerpt: "Sag Harbor’s value is the combination of walkability, working waterfront, and quiet coves. Barry McGovern breaks down how buyers can read the village and its surrounding micro-markets.",
+    date: "2025-09-16",
+    author: "Barry McGovern",
+    category: "Insights",
+    image: "/images/117-main-st.jpg",
+    metaDescription: "Barry McGovern shares a practical guide to Sag Harbor waterfront demand, village walkability, docks, coves, and buyer diligence.",
+    content: `
+## A waterfront market with a village center
+
+Sag Harbor is compelling because it is not only a summer address. The village has a working history, a compact center, restaurants, galleries, a theater, a marina, and a year-round community. Waterfront demand grows from that combination. Buyers are not choosing only a view; they are choosing a pattern of life that can include a walk for coffee, a boat in the harbor, a meal downtown, or a quieter home in Noyac or North Haven.
+
+That broad appeal also makes simple comparisons unreliable. A harborfront residence, a bayfront home, a cove-side property, and a village house a few blocks from Main Street may all be described as Sag Harbor. Their experiences, constraints, and buyer pools can be entirely different. A useful analysis starts by asking what “waterfront” is meant to deliver: a dock, a sunset, a short walk, a protected anchorage, a beach, or simply a sense of connection to the water.
+
+## Walkability is a form of value
+
+In Sag Harbor Village, the walk to the center can be as important as the water view. A historic home with a thoughtful renovation may appeal to a buyer who wants to leave the car behind for dinner or the theater. A home farther from the village may offer more land, privacy, or a better dock, but it may trade that convenience for a different rhythm. There is no universal answer. The right property is the one that matches how the household expects to use the East End.
+
+117 Main Street is a useful portfolio reference because it combines a historic investment property in the heart of the business district with a residence, retail space, period details, and a pool. It is documented as an off-market Barry McGovern portfolio record at $5,950,000. The lesson is not that every Main Street opportunity should be priced alike. The lesson is that use, history, and location can create a value story that is different from a conventional waterfront house.
+
+Market records show a broad spectrum as well. Recent town-page records include 100 Bay Street at $11.25M, 40 Redwood Road at $7.5M, and 6 Harding Terrace at $5.5M. These are market records and not Barry’s sales. They demonstrate why a buyer should ask what each property actually offers rather than applying a single village-wide price expectation.
+
+## The water has to work in real life
+
+A dock is not a decorative line in a brochure. Buyers should ask about water depth, access, tidal conditions, permits, maintenance, and the type of boat the property can realistically support. Harbor and cove settings may be protected, but that protection can affect water access. A sunset view can be extraordinary while a particular shoreline may be less convenient for launching, swimming, or storing equipment.
+
+The same diligence applies to flood exposure and insurance. Waterfront ownership means understanding elevation, storm history, drainage, bulkheads, septic systems, and the likely cost of ongoing care. A buyer should bring the right surveyor, engineer, insurance professional, and attorney into the process early. These questions do not diminish the romance of Sag Harbor. They protect it by making the ownership plan realistic.
+
+## How to search the micro-markets
+
+I recommend that buyers divide a Sag Harbor search into four lanes. Start with village walkability. Then consider harbor and bay frontage, where the water relationship may be the primary driver. Add North Haven and Noyac for larger parcels, coves, and a more private setting. Finally, review village-fringe properties for the possibility of access, views, or proximity without the same level of waterfront premium.
+
+For each lane, track the elements that cannot easily be changed: street, orientation, water access, privacy, lot geometry, and distance to the village. Treat finishes as important but replaceable. A house that needs a kitchen update may still be stronger than a polished home with a compromised setting. Conversely, a beautiful interior cannot solve a water relationship that does not match the buyer’s intended use.
+
+Sellers should tell the most specific version of the story. If the home is genuinely walkable, show the route and the neighborhood context. If a dock or cove is the differentiator, document the practical details. If the property is historic, explain the restoration with care. Sag Harbor buyers respond to authenticity, and an accurate narrative helps the right buyer understand why a property belongs in their shortlist.
+
+## A measured outlook
+
+Demand for Sag Harbor is likely to remain resilient because the village offers several reasons to own, not just one. A buyer can value the arts, the harbor, year-round community, or a quieter setting while still participating in the broader East End. That diversity can support the market, but it does not mean every property will perform equally. Micro-location, condition, access, and clarity of use remain decisive.
+
+Barry McGovern works with buyers and sellers as a Licensed Real Estate Salesperson, using public market records and private context without confusing either with a guarantee. If you are considering a Sag Harbor waterfront purchase, a village home, or a discreet valuation, visit /contact for a confidential conversation.
+    `,
+  },
+  {
+    slug: "off-market-vs-public-listing-hamptons-2025",
+    title: "Barry McGovern: Off-Market or Public Listing? A Practical HNW Strategy",
+    excerpt: "For high-net-worth buyers and sellers, the choice between a public launch and a private introduction is a strategy decision. Here is how to evaluate the tradeoffs.",
+    date: "2025-11-20",
+    author: "Barry McGovern",
+    category: "Insights",
+    image: "/images/press/bridgehampton-50m.jpg",
+    metaDescription: "Barry McGovern explains when a Hamptons luxury property may suit a public launch or an off-market strategy, with practical guidance for HNW clients.",
+    content: `
+## Privacy is not the only question
+
+In the Hamptons, high-net-worth buyers and sellers often ask whether a property should be marketed publicly or introduced privately. Privacy matters, but it is only one part of the decision. The right strategy depends on the property, the owner’s timing, the likely buyer pool, the evidence needed to support value, and the seller’s tolerance for exposure. A private process can be highly effective, but it is not automatically better. A public launch can create transparency and competition, but it is not automatically necessary.
+
+The first step is to define the desired outcome. Is the seller testing a price, protecting a family’s privacy, coordinating a move, or seeking the broadest possible audience? Is the buyer looking for a specific oceanfront corridor, a village property, or an opportunity that may never be advertised? Clarity about the objective makes the marketing choice more precise.
+
+## What a public listing can do
+
+A public listing creates a searchable record. It can provide a clear launch date, broad distribution, professional photography, and a straightforward way for qualified agents and buyers to understand the offering. For a property that benefits from scale, competition, or a wide set of possible buyers, that reach may be valuable. The public market can also help establish a record of positioning and response, provided the pricing and presentation are disciplined.
+
+Public does not mean indiscriminate. A seller can still set showing protocols, require financial qualification, manage photography, and protect sensitive information. The best public campaigns are curated. They explain the property’s setting, identify the correct comparison set, and create a clear path for serious buyers to engage.
+
+## What an off-market process can do
+
+An off-market process can be appropriate when discretion is essential, when the seller wants to test demand without a public days-on-market clock, or when the property is so specific that a short list of likely buyers is more useful than broad exposure. It can also help a buyer learn about an opportunity before it reaches a portal. In the luxury segment, relationships and trust often determine whether a buyer hears about a property early.
+
+117 Main Street is a documented Barry McGovern portfolio example of an off-market transaction. The property’s historic character, business-district location, residence, retail component, and pool created a story that called for context. The record is shown at $5,950,000, but the broader lesson is strategic: private marketing can pair a specific property with a specific audience without presenting it as a generic listing.
+
+Barry’s documented portfolio also includes 18 South Harbor Drive in Sag Harbor, a private sale recorded at $3,600,000, and 55 Marine Boulevard in Amagansett, a private sale recorded at $9,000,000. Those records should not be treated as current availability or as a price guide for another home. They illustrate the range of situations in which a private transaction may be used.
+
+## The buyer’s decision framework
+
+For a buyer, off-market access is useful only when the search brief is well formed. Start with the non-negotiables: town, water relationship, minimum privacy, timing, and intended use. Then define what can flex. A vague request produces vague introductions; a thoughtful brief helps a salesperson advocate for access and understand whether a quiet opportunity is genuinely suitable.
+
+Ask how the property was sourced, what is known about the seller’s motivation, what diligence is available, and whether the property may later be marketed publicly. Confirm representation, confidentiality expectations, and the process for making an offer. A private introduction should not mean skipping surveys, inspections, title review, zoning analysis, or financial underwriting.
+
+## The seller’s decision framework
+
+For a seller, compare strategies on audience, control, evidence, and timing. A quiet test may be the right first step, but establish a review date and a clear decision rule. If qualified interest is limited, the next step might be a revised narrative, adjusted expectations, or a public launch. The goal is not to protect a price in the abstract; it is to create the strongest credible path to a successful transaction.
+
+Presentation still matters off-market. A private buyer expects accurate information, strong photography, a clean data room, and an explanation of the property’s strengths and constraints. Discretion should feel organized, not vague. The seller should know who has received the material, what feedback is being gathered, and how confidentiality is being handled.
+
+## The answer is often a sequence
+
+Public and private are not always opposing choices. A seller might begin with a discreet introduction to a small group, learn which questions arise, and then decide whether a broader campaign adds value. Another seller may know from the outset that the audience must be wide. The most effective strategy is the one that matches the asset and the owner’s priorities, not the one that sounds most exclusive.
+
+Barry McGovern is a Licensed Real Estate Salesperson at Hedgerow Exclusive Properties. He helps clients evaluate public and private paths with a clear distinction between documented portfolio records, current market records, and confidential opportunities. For a thoughtful conversation about buying or selling discreetly, visit /contact.
+    `,
+  },
+  {
+    slug: "east-hampton-lily-pond-further-lane-2026",
+    title: "Barry McGovern on the East Hampton, Lily Pond, and Further Lane Prestige Corridor",
+    excerpt: "The East Hampton prestige corridor is a collection of micro-markets, not one address. Barry McGovern explains how to compare Lily Pond, Further Lane, village access, and privacy.",
+    date: "2026-01-15",
+    author: "Barry McGovern",
+    category: "Market Report",
+    image: "/images/33-lily-pond.jpg",
+    metaDescription: "Barry McGovern analyzes East Hampton’s Lily Pond Lane and Further Lane prestige corridor, including privacy, frontage, village access, and buyer strategy.",
+    content: `
+## Prestige is built from several coordinates
+
+East Hampton’s most recognizable luxury addresses are often discussed as if they were one continuous market. Lily Pond Lane, Further Lane, the village estate section, Georgica, and the lanes near Main Beach each carry prestige, but the reasons are not identical. A buyer choosing among them is comparing privacy, beach access, frontage, village convenience, acreage, architecture, and the feeling of arrival. The correct question is not simply which street is most famous. It is which combination of coordinates is most important to the way the home will be used.
+
+The corridor also has a powerful supply dynamic. Large, well-positioned properties tend to be held for long periods. When one trades, it can reset expectations for the immediate setting without creating a new supply of comparable land. That is why a careful reading of each property matters more than a headline number.
+
+## Lily Pond Lane and the ocean relationship
+
+Lily Pond Lane is associated with direct oceanfront living, large lots, and a sense of arrival that is difficult to reproduce. 33 Lily Pond Lane is a documented Barry McGovern portfolio sale at $31,500,000, with 171 feet of private ocean frontage on 1.81 acres. The record is useful because it shows how frontage, acreage, improvements, and a famous address can reinforce one another. It is not a universal comp for every home near the lane.
+
+For a buyer, the diligence questions should go beyond the view. How is the beach accessed? How does the house sit relative to wind, dunes, and storm exposure? Which improvements are permitted and maintainable? How private is the approach, and what is likely to remain protected? A property may be emotionally compelling while still requiring a disciplined understanding of coastal ownership.
+
+## Further Lane and the value of space
+
+Further Lane can offer a different expression of prestige. The corridor is known for privacy, generous parcels, and a relationship to the ocean that varies by location. Some buyers prioritize direct water access; others value a quiet lane, a protected setting, or the ability to create a compound with room for guests and outdoor life. The best choice depends on the hierarchy of needs.
+
+The portfolio includes 40 Hedges Banks Drive, an East Hampton waterfront property documented at $5,550,000, which illustrates why “East Hampton waterfront” is not a single price category. A bay or pond setting, a village-fringe location, and an oceanfront estate may all sit within the same broad town conversation while offering different daily experiences. Treating them as interchangeable can obscure the real reasons one property feels stronger than another.
+
+## Village access changes the equation
+
+A prestige property is not only an asset; it is a base for living. Some households want an easy drive to Main Street, schools, restaurants, and Main Beach. Others want a private arrival and are comfortable trading convenience for acreage and quiet. A buyer should test those routes at the times they will actually be used, not rely on a map estimate during a quiet weekday.
+
+The village estate section can be especially interesting for buyers who want architectural character and access without the full exposure of a front-row oceanfront setting. Georgica and nearby lanes may offer pond views, privacy, and a strong sense of place. These are not substitutes for Lily Pond or Further Lane, but they can satisfy a different brief with a different balance of land and convenience.
+
+## How to compare the corridor
+
+I suggest a four-part scorecard. First, record the physical setting: frontage, elevation, orientation, lot shape, and water access. Second, record the practical setting: beach route, village route, driveway, service access, and year-round usability. Third, record the improvement story: architecture, renovation quality, pool, guest space, utilities, and permits. Fourth, record the privacy story: neighboring parcels, protected views, screening, and the visibility of the arrival.
+
+Then separate what can be changed from what cannot. Paint, landscaping, and some interiors can evolve. Street, frontage, access, and the fundamental relationship to the horizon cannot. This does not mean a buyer should dismiss a home that needs work. It means the renovation budget should be evaluated against the setting rather than used to excuse a setting that does not fit.
+
+Sellers should present that hierarchy with precision. A Lily Pond property should not be marketed only with a list of rooms. A Further Lane property should explain its privacy and land. A village property should make access and character tangible. Accurate context helps the right buyer see the asset clearly and reduces the temptation to compare unlike homes.
+
+## A disciplined prestige search
+
+East Hampton’s prestige corridor will continue to attract buyers who value scarcity, privacy, and proximity to the village and ocean. The market is strongest when the story is specific and the diligence is complete. Barry McGovern is a Licensed Real Estate Salesperson who helps clients read that specificity—separating portfolio records and market records from current availability and confidential opportunities. For a confidential East Hampton search or valuation, visit /contact.
     `,
   },
 ];
