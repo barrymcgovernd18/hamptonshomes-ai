@@ -9,6 +9,11 @@ export interface Area {
   vibe: string;
   zipCode: string;
   domain?: string;
+  editorial?: string;
+  marketBrief?: string;
+  buyerLens?: string;
+  sellerLens?: string;
+  heroImage?: string;
 }
 
 export const areas: Area[] = [
@@ -26,6 +31,15 @@ export const areas: Area[] = [
       "Historic estates dating to the 1600s alongside modern architectural masterpieces",
     ],
     beaches: ["Main Beach", "Two Mile Hollow", "Egypt Beach", "Georgica Beach", "Wiborg Beach"],
+    editorial:
+      "East Hampton is a market of contrasts: a walkable village core, old lanes lined with cedar-shingled houses, and an oceanfront estate belt where land scarcity does the talking. The most useful distinction is not simply village versus beach, but how a property relates to Main Beach, Georgica, Lily Pond, and the quiet western edge. Buyers who understand those micro-markets can find very different forms of privacy within the same 11937 address.",
+    marketBrief:
+      "Recent records show the breadth of East Hampton pricing. The 24 & 36 Jeffreys Lane sale reached $36.25M on November 18, 2025, while 32 St Marys Lane traded at $23M the day before; at a more accessible scale, 10 Wagon Lane sold for $4.8M on January 9, 2026. Together, they point to a market that rewards frontage, acreage, and finish rather than a single village-wide average.",
+    buyerLens:
+      "For a buyer, the decision is often between a legacy address with irreplaceable setting and a quieter village-fringe compound with more flexibility. Recent sales suggest that both can work when the land, water relationship, and renovation story are clear.",
+    sellerLens:
+      "For a seller, presentation needs to explain the property’s micro-market—not just its room count. A well-positioned East Hampton home should make its approach to the beach, village, or protected landscape legible before a buyer ever visits.",
+    heroImage: "/images/33-lily-pond.jpg",
     priceRange: "$2M – $150M+",
     vibe: "Old money elegance meets modern luxury. Private, prestigious, and timeless.",
     zipCode: "11937",
@@ -45,6 +59,15 @@ export const areas: Area[] = [
       "Protected harbor with world-class marina and boating access",
     ],
     beaches: ["Long Beach (Noyac)", "Havens Beach", "Foster Memorial Beach"],
+    editorial:
+      "Sag Harbor feels less like a seasonal resort than a working village with a remarkable waterfront. The center is compact and social; just beyond it, Noyac, North Haven, and the coves open into a quieter vocabulary of docks, sunsets, and wooded lots. That mix gives Sag Harbor unusual resilience: a buyer can be close to the theater and restaurants without giving up the privacy or boating access that makes the harbor valuable.",
+    marketBrief:
+      "The latest records show a wide but coherent Sag Harbor spectrum: 100 Bay Street sold for $11.25M on December 15, 2025, 40 Redwood Road for $7.5M on January 14, 2026, and 6 Harding Terrace for $5.5M two days later. These are different property types, but each sale reinforces the premium for a strong village or waterfront relationship; smaller in-town homes still trade actively below that tier.",
+    buyerLens:
+      "For a buyer, start with the daily route: walkability, harbor access, or a quieter Noyac setting. Sag Harbor rewards clarity about that choice more than a generic search for ‘waterfront.’",
+    sellerLens:
+      "For a seller, the strongest story is specific: a dock, a village walk, a protected view, or a renovation that respects the home’s history. Those details help a property stand apart in a market with many superficially similar listings.",
+    heroImage: "/images/117-main-st.jpg",
     priceRange: "$1.5M – $35M+",
     vibe: "Creative, cultured, and community-driven. The anti-scene scene.",
     zipCode: "11963",
@@ -102,6 +125,15 @@ export const areas: Area[] = [
       "Convenient access to Manhattan and the full East End",
     ],
     beaches: ["Cooper’s Beach", "Flying Point Beach", "Cryder Beach", "Little Plains Beach"],
+    editorial:
+      "Southampton is the East End’s broadest luxury market, spanning a real village downtown, the estate scale of Meadow Lane and Gin Lane, and inland neighborhoods where a pool, light, and privacy can matter more than a famous street name. Cooper’s Beach is a landmark, but the market’s depth comes from the number of distinct ways to live here—from a walkable historic house to a bayfront compound with room for generations.",
+    marketBrief:
+      "Recent Southampton sales make the segmentation visible. 346 Meadow Lane sold for $28M on January 13, 2026, 109 Duck Pond Lane for $20M on January 16, and 344 Great Plains Road for $11.75M two days earlier; 16 Kings Lane, a smaller inland sale, closed at $1.5375M on January 12. The range is not noise—it reflects frontage, village proximity, acreage, and the difference between South of the Highway and North of the Highway micro-markets.",
+    buyerLens:
+      "For a buyer, Southampton offers the most room to calibrate: beach access and legacy prestige at one end, village convenience and value discipline at the other. A precise brief can uncover more than a broad ‘Southampton’ search.",
+    sellerLens:
+      "For a seller, the address should be framed by its strongest local comparison set. Meadow Lane, the village estate section, and inland Southampton each speak to a different buyer and deserve different evidence.",
+    heroImage: "/images/109-duck-pond.jpg",
     priceRange: "$2M – $100M+",
     vibe: "Established, elegant, and quietly expansive. The Hamptons at its most classic.",
     zipCode: "11968",
