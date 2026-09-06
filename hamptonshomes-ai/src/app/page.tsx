@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <section className="relative flex min-h-[720px] h-[92svh] max-h-[980px] items-end overflow-hidden bg-ocean-deep">
-        <Image src="/images/listings/16-wills-point.jpg" alt="Aerial ocean view of the Wills Point shingle estate and pool" fill className="object-cover" priority quality={90} sizes="100vw" />
+        <Image src="/images/33-lily-pond.jpg" alt="Oceanfront residence on Lily Pond Lane with beach and Atlantic Ocean" fill className="object-cover" priority quality={90} sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/5" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 md:px-8 md:pb-24">
           <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-white/75">East End representation · Southampton to Montauk</p>
