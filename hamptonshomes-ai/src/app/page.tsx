@@ -29,7 +29,7 @@ export default function Home() {
             Barry McGovern
           </h1>
           <p className="mt-5 max-w-md text-[12px] font-light uppercase leading-relaxed tracking-[0.18em] text-white/85 md:text-[13px]">
-            Waterfront and Estate Specialist
+            Waterfront and Estate Section
             <span className="mx-2 text-white/40" aria-hidden="true">·</span>
             Private Market Specialist
           </p>
