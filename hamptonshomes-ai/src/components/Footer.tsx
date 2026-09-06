@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="space-y-3 text-[13px]">
               <a href="tel:+16463390154" className="block transition-colors hover:text-ocean">646-339-0154</a>
               <a href="mailto:barry@hedgerowexclusive.com" className="block transition-colors hover:text-ocean">Email Barry</a>
-              <div className="flex gap-5 pt-2 text-[10px] uppercase tracking-[0.2em]"><a href="https://x.com/hedgequity" target="_blank" rel="noopener" className="hover:text-ocean">X</a><a href="https://www.instagram.com/barrymcgovern_/" target="_blank" rel="noopener" className="hover:text-ocean">IG</a><a href="https://www.linkedin.com/in/barry-mcgovern-9346133b/" target="_blank" rel="noopener" className="hover:text-ocean">LI</a></div>
+              <div className="flex gap-5 pt-2 text-[10px] uppercase tracking-[0.2em]"><a href="https://www.instagram.com/barrymcgovern_/" target="_blank" rel="noopener" className="hover:text-ocean">IG</a><a href="https://www.linkedin.com/in/barry-mcgovern-9346133b/" target="_blank" rel="noopener" className="hover:text-ocean">LI</a></div>
             </div>
           </div>
         </div>
