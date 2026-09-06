@@ -166,7 +166,7 @@ For serious buyers in this market, working with a firm that operates at this lev
 
 The spring market is setting up to be the strongest in years. Bonus checks are clearing, buyer inquiries are spiking, and inventory remains constrained. Properties that are well-positioned, well-priced, and well-presented are trading quickly, often with multiple offers.
 
-For buyers: the window is now. The best properties, especially oceanfront and waterfront, are moving fast. Having pre-approval, clear criteria, and representation with access to off-market opportunities isn't just recommended – it's essential.
+For buyers: the window is now. The best properties, especially oceanfront and waterfront, are moving fast. Having pre-approval, clear criteria, and representation with access to off-market opportunities isn't just recommended; it's essential.
 
 For sellers: this is an exceptional moment. Pricing is at historic highs, demand significantly outpaces supply, and the buyer pool has never been more capitalized. If you've been considering a sale, the conversation should happen now.
 
@@ -452,7 +452,7 @@ If you're considering buying or selling in the Hamptons and want access to the f
   {
     slug: "oceanfront-scarcity-southampton-montauk-2025",
     title: "Barry McGovern on Oceanfront Scarcity from Southampton to Montauk",
-    excerpt: "Why irreplaceable coastline, frontage, and access—not a simple town average—shape oceanfront decisions from Southampton to Montauk.",
+    excerpt: "Why irreplaceable coastline, frontage, and access, not a simple town average, shape oceanfront decisions from Southampton to Montauk.",
     date: "2025-06-18",
     author: "Barry McGovern",
     category: "Market Report",
@@ -487,7 +487,7 @@ Fourth, plan for diligence early. Coastal properties require attention to survey
 
 For buyers, scarcity argues for preparation rather than panic. Establish the preferred coastline, the minimum water relationship, and the compromises that are acceptable before a property appears. Keep financial and legal advisors ready, and make sure the search includes quiet conversations where appropriate. The most useful first step is often a confidential market map, not a public portal saved-search list.
 
-For sellers, scarcity is not a substitute for positioning. A rare address still needs accurate photography, a precise story, and a launch plan that respects privacy. Buyers at this level want to understand why a setting is difficult to replace. That can mean explaining a beach path, an orientation, a protected view, or the history of a lane—not simply repeating “oceanfront” in larger type.
+For sellers, scarcity is not a substitute for positioning. A rare address still needs accurate photography, a precise story, and a launch plan that respects privacy. Buyers at this level want to understand why a setting is difficult to replace. That can mean explaining a beach path, an orientation, a protected view, or the history of a lane, not simply repeating “oceanfront” in larger type.
 
 The Hamptons coastline rewards specificity. Southampton through Montauk is not one market and oceanfront is not one product. Barry McGovern’s role as a Licensed Real Estate Salesperson is to help clients compare the physical setting, the public record, and the private context with discipline. For a confidential conversation about an oceanfront search or valuation, visit /contact.
     `,
@@ -630,7 +630,7 @@ Sellers should present that hierarchy with precision. A Lily Pond property shoul
 
 ## A disciplined prestige search
 
-East Hampton’s prestige corridor will continue to attract buyers who value scarcity, privacy, and proximity to the village and ocean. The market is strongest when the story is specific and the diligence is complete. Barry McGovern is a Licensed Real Estate Salesperson who helps clients read that specificity—separating portfolio records and market records from current availability and confidential opportunities. For a confidential East Hampton search or valuation, visit /contact.
+East Hampton’s prestige corridor will continue to attract buyers who value scarcity, privacy, and proximity to the village and ocean. The market is strongest when the story is specific and the diligence is complete. Barry McGovern is a Licensed Real Estate Salesperson who helps clients read that specificity, separating portfolio records and market records from current availability and confidential opportunities. For a confidential East Hampton search or valuation, visit /contact.
     `,
   },
 ];
