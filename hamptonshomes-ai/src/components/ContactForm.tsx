@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 
+const fieldClass =
+  "w-full border border-line bg-paper px-4 py-3 text-[15px] text-ink placeholder:text-ink-faint focus:border-ocean focus:outline-none";
+
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -38,12 +41,12 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="flex flex-col items-center justify-center py-20">
-        <p className="text-ocean font-serif text-2xl mb-3">Message Sent</p>
-        <p className="text-white/30 text-[14px]">Barry will be in touch shortly.</p>
+      <div className="flex flex-col items-center justify-center py-12">
+        <p className="mb-3 font-serif text-2xl text-ocean">Message Sent</p>
+        <p className="text-[14px] text-ink-muted">Barry will be in touch shortly.</p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-8 text-white/20 text-[11px] tracking-[0.2em] uppercase hover:text-ocean transition-colors duration-500"
+          className="mt-8 text-[11px] uppercase tracking-[0.2em] text-ink-faint transition-colors hover:text-ocean"
         >
           Send Another
         </button>
@@ -52,65 +55,61 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {[
         { id: "name", label: "Name", type: "text", required: true },
         { id: "email", label: "Email", type: "email", required: true },
         { id: "phone", label: "Phone", type: "tel", required: false },
       ].map((field) => (
         <div key={field.id}>
-          <label htmlFor={field.id} className="text-[10px] tracking-[0.3em] uppercase text-white/15 block mb-3">
+          <label htmlFor={field.id} className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-ink-faint">
             {field.label}
           </label>
           <input
             type={field.type}
             id={field.id}
             name={field.id}
-            className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-white text-[15px] focus:outline-none focus:border-ocean/50 transition-colors duration-500 placeholder:text-white/10"
+            className={fieldClass}
             required={field.required}
           />
         </div>
       ))}
 
       <div>
-        <label htmlFor="interest" className="text-[10px] tracking-[0.3em] uppercase text-white/15 block mb-3">
+        <label htmlFor="interest" className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-ink-faint">
           Interest
         </label>
-        <select
-          id="interest"
-          name="interest"
-          className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-white/50 text-[15px] focus:outline-none focus:border-ocean/50 transition-colors duration-500 appearance-none"
-        >
-          <option value="buying" className="bg-ocean-deep">Buying</option>
-          <option value="selling" className="bg-ocean-deep">Selling</option>
-          <option value="renting" className="bg-ocean-deep">Renting</option>
-          <option value="valuation" className="bg-ocean-deep">Property Valuation</option>
-          <option value="other" className="bg-ocean-deep">Other</option>
+        <select id="interest" name="interest" className={`${fieldClass} h-12`}>
+          <option value="buying">Buying</option>
+          <option value="selling">Selling</option>
+          <option value="renting">Renting</option>
+          <option value="valuation">Property Valuation</option>
+          <option value="other">Other</option>
         </select>
       </div>
 
       <div>
-        <label htmlFor="message" className="text-[10px] tracking-[0.3em] uppercase text-white/15 block mb-3">
+        <label htmlFor="message" className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-ink-faint">
           Message
         </label>
         <textarea
           id="message"
           name="message"
-          rows={3}
-          className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-white text-[15px] focus:outline-none focus:border-ocean/50 transition-colors duration-500 resize-none"
+          rows={4}
+          className={`${fieldClass} min-h-[96px] max-h-[160px] resize-y`}
         />
       </div>
 
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full bg-ocean text-paper py-4 text-[11px] tracking-[0.3em] uppercase hover:bg-ocean-light transition-all duration-500 font-medium mt-4 disabled:opacity-50"
+        className="mt-2 w-full bg-ocean py-3.5 text-[11px] font-medium uppercase tracking-[0.3em] text-paper transition-all hover:bg-ocean-deep disabled:opacity-50"
       >
         {status === "sending" ? "Sending..." : status === "error" ? "Try Again" : "Send Message"}
       </button>
 
       {status === "error" && (
-        <p className="text-red-400/60 text-[12px] text-center">Something went wrong. Try calling instead.</p>
+        <p className="text-center text-[12px] text-red-700/70">Something went wrong. Try calling instead.</p>
       )}
     </form>
   );
