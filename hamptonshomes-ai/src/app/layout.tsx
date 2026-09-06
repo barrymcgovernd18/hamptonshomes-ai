@@ -69,8 +69,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@hedgequity",
-    creator: "@hedgequity",
     title: "Barry McGovern | Oceanfront & Waterfront Specialist | Hamptons",
     description:
       "Oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Luxury homes from Southampton to Montauk.",
