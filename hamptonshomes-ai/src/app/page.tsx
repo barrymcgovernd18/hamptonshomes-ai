@@ -25,13 +25,15 @@ export default function Home() {
         {/* Bottom scrim so type sits on quiet dark, photo stays open above */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/35 to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 md:px-8 md:pb-20">
-          <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] tracking-tight text-white md:text-7xl">
+          <h1 className="max-w-2xl font-serif text-[2rem] font-light leading-[1.15] tracking-[0.04em] text-white md:text-5xl">
             Barry McGovern
           </h1>
-          <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-white/88 md:text-base">
-            Oceanfront and estate specialist
+          <p className="mt-5 max-w-md text-[12px] font-light uppercase leading-relaxed tracking-[0.18em] text-white/85 md:text-[13px]">
+            Waterfront and Estate Specialist
+            <span className="mx-2 text-white/40" aria-hidden="true">·</span>
+            Private Market Specialist
           </p>
-          <div className="mt-10">
+          <div className="mt-9">
             <Link
               href="/contact"
               className="inline-block border border-white/55 bg-white/10 px-8 py-3.5 text-[11px] uppercase tracking-[0.24em] text-white backdrop-blur-[2px] transition-colors hover:border-white hover:bg-white/20"
