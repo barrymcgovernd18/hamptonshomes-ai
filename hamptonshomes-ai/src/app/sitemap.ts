@@ -1,25 +1,40 @@
 import type { MetadataRoute } from "next";
+import { areas } from "@/lib/areas";
+import { blogPosts } from "@/lib/blog";
+
+const baseUrl = "https://hamptonshomes.ai";
+
+function validLastModified(date: string): string | undefined {
+  return Number.isNaN(Date.parse(`${date}T00:00:00.000Z`)) ? undefined : date;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://hamptonshomes.ai";
+  const areaRoutes: MetadataRoute.Sitemap = areas.map((area) => ({
+    url: `${baseUrl}/${area.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
+
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => {
+    const lastModified = validLastModified(post.date);
+
+    return {
+      url: `${baseUrl}/blog/${post.slug}`,
+      ...(lastModified ? { lastModified } : {}),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    };
+  });
 
   return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/sales`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/market`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/press`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/east-hampton`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/sag-harbor`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/bridgehampton`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/sagaponack`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/blog/hamptons-30-million-compound-sale-february-2026`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/blog/hamptons-62-billion-sales-surge-march-2026`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/blog/wall-street-bonus-season-hamptons-2026`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/blog/hamptons-market-update-q4-2025`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/blog/why-hamptons-oceanfront-different`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/blog/off-market-hamptons-explained`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: baseUrl, changeFrequency: "weekly", priority: 1 },
+    { url: `${baseUrl}/about`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/sales`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/market`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/press`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/blog`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/contact`, changeFrequency: "monthly", priority: 0.7 },
+    ...areaRoutes,
+    ...blogRoutes,
   ];
 }
