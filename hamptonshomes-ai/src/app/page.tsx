@@ -14,14 +14,21 @@ export default function Home() {
         <Image src="/images/33-lily-pond.jpg" alt="Oceanfront residence on Lily Pond Lane with beach and Atlantic Ocean" fill className="object-cover" priority quality={90} sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/75 via-ocean-deep/25 to-ocean-deep/5" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 md:px-8 md:pb-24">
-          <h1 className="max-w-4xl font-serif text-5xl leading-[1.02] text-white md:text-7xl lg:text-8xl">
+          <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-white/55">
+            Discover what&apos;s behind Hedgerow
+          </p>
+          <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] text-white md:text-7xl">
             Barry McGovern
-            <br />
-            <span className="font-normal italic text-white/85">Oceanfront · East End</span>
           </h1>
-          <div className="mt-10">
-            <Link href="/contact" className="inline-block bg-paper px-8 py-3.5 text-sm text-ink transition-colors hover:bg-white">
-              Inquire
+          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/70">
+            Oceanfront and estate specialist
+          </p>
+          <div className="mt-12">
+            <Link
+              href="/contact"
+              className="inline-block border border-white/35 bg-transparent px-7 py-3 text-[12px] uppercase tracking-[0.22em] text-white/90 transition-colors hover:border-white hover:bg-white/10"
+            >
+              Explore private opportunities
             </Link>
           </div>
         </div>
