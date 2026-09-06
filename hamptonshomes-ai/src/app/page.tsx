@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notableSales } from "@/lib/sales";
+import { areas } from "@/lib/areas";
 
 export default function Home() {
   const featured = notableSales.filter((s) => s.image).slice(0, 4);
@@ -189,19 +190,15 @@ export default function Home() {
                 <span className="italic font-normal text-white/60">to Montauk</span>
               </h2>
               <div className="grid grid-cols-2 gap-3">
-                {[
-                  "Southampton", "Water Mill", "Bridgehampton", "Sagaponack",
-                  "Sag Harbor", "Wainscott", "East Hampton", "Amagansett",
-                  "Montauk", "Shelter Island",
-                ].map((area) => (
-                  <div
-                    key={area}
+                {areas.map((area) => (
+                  <Link href={"/" + area.slug}
+                    key={area.slug}
                     className="border border-white/5 py-4 px-5 hover:border-gold/20 transition-all duration-700 group"
                   >
                     <p className="text-white/30 text-[12px] tracking-[0.15em] group-hover:text-white/60 transition-colors duration-700">
-                      {area}
+                      {area.name}
                     </p>
-                  </div>
+                </Link>
                 ))}
               </div>
             </div>
@@ -248,8 +245,8 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
-            {["Southampton", "Amagansett", "Montauk", "Shelter Island", "Water Mill", "Wainscott"].map((t) => (
-              <span key={t} className="text-white/15 text-[12px] tracking-wider uppercase">{t}</span>
+            {areas.slice(4).map((area) => (
+              <Link key={area.slug} href={"/" + area.slug} className="text-white/15 text-[12px] tracking-wider uppercase hover:text-white/40">{area.name}</Link>
             ))}
           </div>
         </div>

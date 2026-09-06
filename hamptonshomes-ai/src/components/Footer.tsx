@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { areas } from "@/lib/areas";
 
 export default function Footer() {
   return (
@@ -18,8 +19,8 @@ export default function Footer() {
           <div className="md:col-span-3 md:col-start-7">
             <p className="text-[10px] tracking-[0.4em] uppercase text-white/15 mb-6">Areas</p>
             <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-[13px]">
-              {["Southampton", "Bridgehampton", "Sag Harbor", "East Hampton", "Amagansett", "Montauk", "Sagaponack", "Shelter Island"].map((area) => (
-                <p key={area}>{area}</p>
+              {areas.map((area) => (
+                <Link key={area.slug} href={`/${area.slug}`} className="hover:text-white/60 transition-colors">{area.name}</Link>
               ))}
             </div>
           </div>
