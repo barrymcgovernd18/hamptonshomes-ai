@@ -56,6 +56,16 @@ export default function AboutPage() {
             ))}
           </div>
 
+          <h2 className="font-serif text-2xl text-cream mt-12 mb-4">Leadership</h2>
+          <p>
+            Oceanfront and waterfront coverage is led by{' '}
+            <a href="/about/barry-mcgovern" className="text-gold hover:text-gold-light transition-colors">
+              Barry McGovern
+            </a>
+            , licensed real estate salesperson with Hedgerow Exclusive Properties (Sag Harbor /
+            Bridgehampton).
+          </p>
+
           <h2 className="font-serif text-2xl text-cream mt-12 mb-4">Contact</h2>
           <p>
             For editorial inquiries, corrections, or partnerships, contact us at{' '}
