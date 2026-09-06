@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function SalesPage() {
-  const withPhotos = notableSales.filter((sale) => sale.image);
-  const privateSales = notableSales.filter((sale) => !sale.image);
+  const withPhotos = [...notableSales].filter((sale) => sale.image).sort((a, b) => Number(b.price.replace(/[^0-9.]/g, "")) - Number(a.price.replace(/[^0-9.]/g, "")));
+  const privateSales = [...notableSales].filter((sale) => !sale.image).sort((a, b) => Number(b.price.replace(/[^0-9.]/g, "")) - Number(a.price.replace(/[^0-9.]/g, "")));
   return (
     <div className="bg-paper text-ink">
       <section className="border-b border-line bg-ocean-deep pt-32 pb-20 text-paper">
@@ -41,7 +41,7 @@ export default function SalesPage() {
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
-          {activeListings.map((listing) => (
+          {[...activeListings].sort((a, b) => b.priceNum - a.priceNum).map((listing) => (
             <article key={listing.slug} className="group border border-line bg-paper">
               <div className="relative aspect-[16/10] overflow-hidden bg-paper-deep">
                 <Image
