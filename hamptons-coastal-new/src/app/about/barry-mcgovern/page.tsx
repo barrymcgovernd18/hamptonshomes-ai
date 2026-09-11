@@ -1,93 +1,33 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import JsonLd from '@/components/JsonLd'
+import { BARRY_BLURB, PLACE_NAMES, barryGraphJsonLd } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Barry McGovern',
   description:
-    'Barry McGovern is a licensed real estate salesperson with Hedgerow Exclusive Properties specializing in oceanfront, waterfront, and private-market opportunities across the East End.',
+    'Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties specializing in oceanfront, waterfront, estate-section, and private-market opportunities across the East End.',
   alternates: {
     canonical: 'https://hamptonscoastal.com/about/barry-mcgovern',
   },
   openGraph: {
     title: 'Barry McGovern | Oceanfront & Waterfront Specialist',
     description:
-      'Licensed real estate salesperson at Hedgerow Exclusive Properties. Sag Harbor–based specialist in oceanfront, waterfront, and private-market Hamptons opportunities.',
+      'Licensed Real Estate Salesperson at Hedgerow Exclusive Properties. Sag Harbor local specializing in oceanfront, waterfront, and private-market Hamptons opportunities.',
     url: 'https://hamptonscoastal.com/about/barry-mcgovern',
     type: 'profile',
   },
-}
-
-const sameAs = [
-  'https://hedgerowexclusive.com/members/barry-mcgovern/',
-  'https://www.linkedin.com/in/barry-mcgovern-9346133b',
-  'https://www.instagram.com/barrymcgovern_/',
-  'https://hamptonshomes.ai/',
-  'https://hamptonscoastal.com/about/barry-mcgovern',
-  'https://outeast.com/agents/9187/barry-mcgovern/bridgehampton',
-]
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': 'https://hedgerowexclusive.com/#organization',
-      name: 'Hedgerow Exclusive Properties',
-      url: 'https://hedgerowexclusive.com',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '2495 Montauk Highway',
-        addressLocality: 'Bridgehampton',
-        addressRegion: 'NY',
-        postalCode: '11932',
-        addressCountry: 'US',
-      },
-    },
-    {
-      '@type': ['Person', 'RealEstateAgent'],
-      '@id': 'https://hamptonscoastal.com/about/barry-mcgovern#person',
-      name: 'Barry McGovern',
-      jobTitle: 'Licensed Real Estate Salesperson',
-      url: 'https://hamptonscoastal.com/about/barry-mcgovern',
-      telephone: '+1-646-339-0154',
-      email: 'barry@hedgerowexclusive.com',
-      image: 'https://hamptonshomes.ai/images/barry-mcgovern.jpg',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Bridgehampton',
-        addressRegion: 'NY',
-        addressCountry: 'US',
-      },
-      worksFor: {
-        '@id': 'https://hedgerowexclusive.com/#organization',
-      },
-      sameAs,
-      areaServed: [
-        'East Hampton',
-        'Southampton',
-        'Sag Harbor',
-        'Bridgehampton',
-        'Water Mill',
-        'Sagaponack',
-        'Shelter Island',
-        'Amagansett',
-        'Montauk',
-      ],
-    },
-  ],
 }
 
 const facts = [
   { label: 'Role', value: 'Licensed Real Estate Salesperson, Hedgerow Exclusive Properties' },
   { label: 'License #', value: '10401353717 (NY)' },
   { label: 'Base', value: 'Bridgehampton / Sag Harbor' },
-  { label: 'Focus', value: 'Oceanfront, waterfront, private market' },
+  { label: 'Focus', value: 'Oceanfront, waterfront, estate-section, private-market' },
   {
     label: 'Hamlets',
-    value:
-      'East Hampton, Southampton, Sag Harbor, Bridgehampton, Water Mill, Sagaponack, Shelter Island, Amagansett, Montauk',
+    value: PLACE_NAMES.join(', '),
   },
-  { label: 'Career volume', value: '~$108.6M' },
   { label: 'Phone', value: '646-339-0154', href: 'tel:+16463390154' },
   { label: 'Email', value: 'barry@hedgerowexclusive.com', href: 'mailto:barry@hedgerowexclusive.com' },
 ]
@@ -95,10 +35,7 @@ const facts = [
 export default function BarryMcGovernPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={barryGraphJsonLd()} />
 
       <div className="px-6 py-16">
         <div className="max-w-3xl mx-auto">
@@ -117,18 +54,7 @@ export default function BarryMcGovernPage() {
           </p>
 
           <div className="space-y-6 text-cream/70 text-lg leading-relaxed mb-14">
-            <p>
-              Barry McGovern is a licensed real estate salesperson with Hedgerow Exclusive
-              Properties, specializing in ultra-luxury oceanfront, waterfront, and private-market
-              opportunities across the East End — Southampton, Water Mill, Bridgehampton,
-              Sagaponack, Sag Harbor, East Hampton, Amagansett, Montauk, and Shelter Island.
-            </p>
-            <p>
-              Originally from Dublin and a Sag Harbor local since 2013, Barry works the full
-              spectrum from raw land and development to trophy estates. Career volume ~$108.6M.
-              Hedgerow has facilitated nearly $2B in Hamptons transactions, including the record
-              $121.5M sale.
-            </p>
+            <p>{BARRY_BLURB}</p>
           </div>
 
           <h2 className="font-serif text-2xl text-cream mb-6">Key facts</h2>
@@ -162,8 +88,8 @@ export default function BarryMcGovernPage() {
               rel="noopener noreferrer"
             >
               HamptonsHomes.ai
-            </a>{' '}
-            and Hedgerow listings — prices shown only where publicly verified.
+            </a>
+            {' '}and Hedgerow listings. Prices shown only where publicly verified.
           </p>
 
           <div className="bg-dark-700/50 border border-gold/20 p-8 text-center">

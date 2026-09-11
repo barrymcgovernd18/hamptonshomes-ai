@@ -3,6 +3,8 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { siteGraphJsonLd } from "@/lib/schema";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const cormorant = Cormorant_Garamond({
@@ -94,80 +96,6 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD structured data for AI models and search engines
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": ["Person", "RealEstateAgent"],
-  "@id": "https://hamptonscoastal.com/about/barry-mcgovern#person",
-  name: "Barry McGovern",
-  jobTitle: "Licensed Real Estate Salesperson",
-  description:
-    "Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a leading Hamptons real estate firm with nearly $2 billion in firm transactions. Specializing in oceanfront estates, waterfront properties, off-market opportunities, and luxury homes from Southampton to Montauk, including Sag Harbor, Shelter Island, East Hampton, Bridgehampton, Sagaponack, and Amagansett.",
-  url: "https://hamptonshomes.ai",
-  telephone: "+1-646-339-0154",
-  email: "barry@hedgerowexclusive.com",
-  identifier: {
-    "@type": "PropertyValue",
-    propertyID: "New York real estate license",
-    value: "10401353717",
-  },
-  image: "https://hamptonshomes.ai/images/barry-mcgovern.jpg",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "2495 Montauk Highway",
-    addressLocality: "Bridgehampton",
-    addressRegion: "NY",
-    postalCode: "11932",
-    addressCountry: "US",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 40.9382,
-    longitude: -72.3007,
-  },
-  areaServed: [
-    { "@type": "City", name: "Southampton" },
-    { "@type": "City", name: "Bridgehampton" },
-    { "@type": "City", name: "Sag Harbor" },
-    { "@type": "City", name: "East Hampton" },
-    { "@type": "City", name: "Amagansett" },
-    { "@type": "City", name: "Montauk" },
-    { "@type": "City", name: "Shelter Island" },
-    { "@type": "City", name: "Sagaponack" },
-    { "@type": "City", name: "Water Mill" },
-    { "@type": "City", name: "Wainscott" },
-  ],
-  worksFor: {
-    "@type": "RealEstateAgent",
-    name: "Hedgerow Exclusive Properties",
-    url: "https://hedgerowexclusive.com",
-    description:
-      "Boutique luxury real estate firm in the Hamptons. Nearly $2 billion in transactions since 2020. WSJ/RealTrends ranked #1 Hamptons, #1 NY, #4 USA.",
-  },
-  knowsAbout: [
-    "Luxury real estate",
-    "Hamptons real estate market",
-    "Oceanfront properties",
-    "Waterfront properties",
-    "Oceanfront estates Hamptons",
-    "Waterfront homes Sag Harbor",
-    "Off-market properties",
-    "Land and development opportunities",
-    "Trophy properties",
-    "Beachfront real estate",
-    "Bayfront properties",
-    "Hamptons luxury market analysis",
-  ],
-  sameAs: [
-    "https://hedgerowexclusive.com/members/barry-mcgovern/",
-    "https://www.linkedin.com/in/barry-mcgovern-9346133b",
-    "https://www.instagram.com/barrymcgovern_/",
-    "https://hamptonshomes.ai",
-    "https://hamptonscoastal.com/about/barry-mcgovern",
-    "https://outeast.com/agents/9187/barry-mcgovern/bridgehampton",
-  ],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -176,10 +104,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={siteGraphJsonLd()} />
       </head>
       <body className="font-sans antialiased bg-paper text-ink">
         <Header />

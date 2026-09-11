@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { areas } from "@/lib/areas";
 import { getTownComps } from "@/lib/comps";
 import { notableSales } from "@/lib/sales";
+import JsonLd from "@/components/JsonLd";
+import { placeJsonLd } from "@/lib/schema";
 
  type Props = { params: Promise<{ area: string }> };
 
@@ -68,6 +70,7 @@ export default async function AreaPage({ params }: Props) {
 
   return (
     <div className="bg-paper">
+      <JsonLd data={placeJsonLd(area)} />
       <section className="pt-32 pb-20">
         <div className={`max-w-7xl mx-auto px-8 ${area.heroImage ? "grid md:grid-cols-[1fr_0.9fr] gap-14 items-end" : ""}`}>
           <div>
