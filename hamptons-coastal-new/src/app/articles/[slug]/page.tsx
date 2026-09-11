@@ -1,4 +1,4 @@
-import { getArticleById, getArticles, slugify, locationToSlug } from '@/lib/supabase'
+import { getArticleById, getArticles, locationToSlug } from '@/lib/supabase'
 import { ArticleCard } from '@/components/ArticleCard'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,13 +17,11 @@ function formatDate(dateString: string) {
 }
 
 function formatContent(content: string) {
-  // Split by double newlines for paragraphs
   const paragraphs = content.split(/\n\n+/).filter(p => p.trim())
-  return paragraphs.map((p, i) => {
+  return paragraphs.map((p) => {
     const trimmed = p.trim()
-    // Skip photo credits at the end
     if (trimmed.startsWith('Photo:') || trimmed.startsWith('Photo by')) {
-      return `<p class="text-cream/30 text-sm mt-8 italic">${trimmed}</p>`
+      return `<p class="text-ink-faint text-sm mt-8 italic">${trimmed}</p>`
     }
     return `<p>${trimmed}</p>`
   }).join('')
@@ -70,7 +68,7 @@ export default async function ArticlePage({
   searchParams: { id?: string }
 }) {
   if (!searchParams.id) notFound()
-  
+
   const article = await getArticleById(searchParams.id)
   if (!article) notFound()
 
@@ -82,9 +80,8 @@ export default async function ArticlePage({
 
   return (
     <>
-      {/* Hero Image */}
       {article.image_url && (
-        <div className="relative w-full aspect-[21/9] max-h-[500px] overflow-hidden">
+        <div className="relative max-h-[500px] w-full overflow-hidden aspect-[21/9]">
           <Image
             src={article.image_url}
             alt={article.title}
@@ -93,62 +90,56 @@ export default async function ArticlePage({
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-paper via-transparent to-transparent" />
         </div>
       )}
 
-      <article className="px-6 py-12">
-        <div className="max-w-3xl mx-auto">
-          {/* Meta */}
-          <div className="flex items-center gap-3 mb-6">
+      <article className="px-6 py-12 md:px-8">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-6 flex items-center gap-3">
             <Link
               href={`/markets/${locationToSlug(article.location)}`}
-              className="text-gold text-xs tracking-[0.2em] uppercase hover:text-gold-light transition-colors"
+              className="text-[10px] uppercase tracking-[0.28em] text-ocean transition-colors hover:text-ocean-deep"
             >
               {article.location}
             </Link>
-            <span className="text-cream/20">|</span>
-            <span className="text-cream/40 text-xs tracking-wide uppercase">
+            <span className="text-line">·</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-ink-faint">
               {article.category_name}
             </span>
           </div>
 
-          {/* Title */}
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream leading-tight mb-6">
+          <h1 className="mb-6 font-serif text-3xl leading-tight text-ink md:text-5xl">
             {article.title}
           </h1>
 
-          {/* Excerpt */}
-          <p className="text-cream/60 text-lg leading-relaxed mb-8 border-l-2 border-gold/30 pl-6">
+          <p className="mb-8 border-l-2 border-ocean/40 pl-6 text-lg leading-relaxed text-ink-muted">
             {article.excerpt}
           </p>
 
-          {/* Author & Date */}
-          <div className="flex items-center gap-4 mb-12 pb-8 border-b border-white/5">
+          <div className="mb-12 flex items-center gap-4 border-b border-line pb-8">
             <div>
-              <p className="text-cream/70 text-sm">{article.author}</p>
-              <p className="text-cream/30 text-xs mt-1">
+              <p className="text-sm text-ink">{article.author}</p>
+              <p className="mt-1 text-xs text-ink-faint">
                 {formatDate(article.published_at)} · {article.reading_time} min read
               </p>
             </div>
           </div>
 
-          {/* Content */}
           <div
-            className="article-content text-cream/85 text-lg leading-relaxed"
+            className="article-content text-lg leading-relaxed text-ink-muted"
             dangerouslySetInnerHTML={{ __html: formatContent(article.content) }}
           />
         </div>
       </article>
 
-      {/* Related Articles */}
       {relatedFiltered.length > 0 && (
-        <section className="px-6 py-16 bg-dark-800 border-t border-white/5">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="font-serif text-2xl text-cream mb-10">
+        <section className="border-t border-line bg-paper-soft px-6 py-16 md:px-8">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="mb-10 font-serif text-3xl text-ink">
               More from {article.location}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3">
               {relatedFiltered.map((a) => (
                 <ArticleCard key={a.id} article={a} />
               ))}

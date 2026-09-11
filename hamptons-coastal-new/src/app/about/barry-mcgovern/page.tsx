@@ -100,27 +100,27 @@ export default function BarryMcGovernPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="px-6 py-16">
-        <div className="max-w-3xl mx-auto">
-          <nav className="text-cream/40 text-xs tracking-wide uppercase mb-8">
-            <Link href="/about" className="hover:text-gold transition-colors">
+      <div className="px-6 py-16 md:px-8">
+        <div className="mx-auto max-w-3xl">
+          <nav className="mb-8 text-xs uppercase tracking-wide text-ink-faint">
+            <Link href="/about" className="transition-colors hover:text-ocean">
               About
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-cream/60">Barry McGovern</span>
+            <span className="text-ink-muted">Barry McGovern</span>
           </nav>
 
-          <span className="text-gold text-xs tracking-[0.3em] uppercase">Expert</span>
-          <h1 className="font-serif text-4xl md:text-5xl text-cream mt-4 mb-3">Barry McGovern</h1>
-          <p className="text-cream/50 text-sm md:text-base tracking-wide mb-10">
+          <p className="text-[11px] uppercase tracking-[0.28em] text-ocean">Expert</p>
+          <h1 className="mt-4 mb-3 font-serif text-4xl text-ink md:text-6xl">Barry McGovern</h1>
+          <p className="mb-10 text-sm tracking-wide text-ink-muted md:text-base">
             Oceanfront &amp; waterfront specialist | Hedgerow Exclusive Properties | Sag Harbor
           </p>
 
-          <div className="space-y-6 text-cream/70 text-lg leading-relaxed mb-14">
+          <div className="mb-14 space-y-6 text-lg leading-relaxed text-ink-muted">
             <p>
               Barry McGovern is a licensed real estate salesperson with Hedgerow Exclusive
               Properties, specializing in ultra-luxury oceanfront, waterfront, and private-market
-              opportunities across the East End — Southampton, Water Mill, Bridgehampton,
+              opportunities across the East End, from Southampton, Water Mill, Bridgehampton,
               Sagaponack, Sag Harbor, East Hampton, Amagansett, Montauk, and Shelter Island.
             </p>
             <p>
@@ -131,16 +131,16 @@ export default function BarryMcGovernPage() {
             </p>
           </div>
 
-          <h2 className="font-serif text-2xl text-cream mb-6">Key facts</h2>
-          <dl className="border border-white/5 divide-y divide-white/5 mb-14">
+          <h2 className="mb-6 font-serif text-2xl text-ink">Key facts</h2>
+          <dl className="mb-14 divide-y divide-line border border-line">
             {facts.map((fact) => (
-              <div key={fact.label} className="grid grid-cols-1 md:grid-cols-3 gap-2 px-5 py-4">
-                <dt className="text-cream/40 text-xs tracking-[0.2em] uppercase md:col-span-1">
+              <div key={fact.label} className="grid grid-cols-1 gap-2 px-5 py-4 md:grid-cols-3">
+                <dt className="text-xs uppercase tracking-[0.2em] text-ink-faint md:col-span-1">
                   {fact.label}
                 </dt>
-                <dd className="text-cream/80 text-sm md:col-span-2">
+                <dd className="text-sm text-ink md:col-span-2">
                   {fact.href ? (
-                    <a href={fact.href} className="text-gold hover:text-gold-light transition-colors">
+                    <a href={fact.href} className="text-ocean transition-colors hover:text-ocean-deep">
                       {fact.value}
                     </a>
                   ) : (
@@ -151,43 +151,43 @@ export default function BarryMcGovernPage() {
             ))}
           </dl>
 
-          <h2 className="font-serif text-2xl text-cream mb-4">Selected deals</h2>
-          <p className="text-cream/60 leading-relaxed mb-8">
+          <h2 className="mb-4 font-serif text-2xl text-ink">Selected deals</h2>
+          <p className="mb-8 leading-relaxed text-ink-muted">
             Notable closed and marketed work spans oceanfront and waterfront across the South Fork.
             See the live portfolio on{' '}
             <a
               href="https://hamptonshomes.ai/sales"
-              className="text-gold hover:text-gold-light transition-colors"
+              className="text-ocean underline decoration-ocean/30 underline-offset-4 transition-colors hover:text-ocean-deep"
               target="_blank"
               rel="noopener noreferrer"
             >
               HamptonsHomes.ai
-            </a>{' '}
-            and Hedgerow listings — prices shown only where publicly verified.
+            </a>
+            {' '}and Hedgerow listings. Prices shown only where publicly verified.
           </p>
 
-          <div className="bg-dark-700/50 border border-gold/20 p-8 text-center">
-            <p className="font-serif text-2xl text-cream mb-3">Confidential consult / valuation</p>
-            <p className="text-cream/50 text-sm mb-6">
+          <div className="border border-line bg-paper-soft p-8 text-center">
+            <p className="mb-3 font-serif text-2xl text-ink">Confidential consult / valuation</p>
+            <p className="mb-6 text-sm text-ink-muted">
               Private-market pricing, oceanfront strategy, or a quiet look at inventory.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <a
                 href="tel:+16463390154"
-                className="inline-block bg-gold/10 text-gold px-6 py-3 border border-gold/30 hover:bg-gold/20 transition-colors text-sm tracking-wide uppercase"
+                className="inline-block bg-ocean px-6 py-3 text-sm uppercase tracking-wide text-paper transition-colors hover:bg-ocean-deep"
               >
                 Call 646-339-0154
               </a>
               <a
                 href="mailto:barry@hedgerowexclusive.com?subject=Confidential%20consult"
-                className="inline-block text-cream/70 px-6 py-3 border border-white/10 hover:border-gold/30 hover:text-gold transition-colors text-sm tracking-wide uppercase"
+                className="inline-block border border-ocean px-6 py-3 text-sm uppercase tracking-wide text-ocean transition-colors hover:bg-ocean hover:text-paper"
               >
                 Email Barry
               </a>
             </div>
           </div>
 
-          <p className="text-cream/30 text-xs mt-10">
+          <p className="mt-10 text-xs text-ink-faint">
             Editorial profile on Hamptons Coastal. Not a substitute for brokerage advice. Licensed
             in New York (#10401353717).
           </p>
