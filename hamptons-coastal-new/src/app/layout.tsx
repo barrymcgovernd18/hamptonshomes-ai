@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import JsonLd from '@/components/JsonLd'
+import { siteGraphJsonLd } from '@/lib/schema'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hamptonscoastal.com'),
@@ -42,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <JsonLd data={siteGraphJsonLd()} />
         <Header />
         <main className="min-h-screen pt-16">
           {children}
