@@ -13,7 +13,7 @@ export default function Header() {
         <div className="flex items-center justify-between py-5">
           <Link href="/" className="group flex items-baseline gap-3" aria-label="Hamptons Coastal home">
             <span className="font-serif text-2xl leading-none text-ink">Hamptons</span>
-            <span className="hidden text-[10px] uppercase tracking-[0.28em] text-ocean sm:inline">
+            <span className="text-[10px] uppercase tracking-[0.28em] text-ocean">
               Coastal
             </span>
           </Link>

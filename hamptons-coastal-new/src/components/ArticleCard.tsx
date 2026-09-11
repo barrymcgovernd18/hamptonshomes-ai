@@ -25,8 +25,8 @@ export function ArticleCardLarge({ article }: { article: Article }) {
             sizes="(max-width: 768px) 100vw, 70vw"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/80 via-ocean-deep/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+        <div className="absolute inset-0 hidden bg-gradient-to-t from-ocean-deep/80 via-ocean-deep/20 to-transparent md:block" />
+        <div className="absolute bottom-0 left-0 right-0 hidden p-8 md:block md:p-12">
           <div className="mb-3 flex items-center gap-3">
             <span className="text-[10px] uppercase tracking-[0.28em] text-ocean-soft">
               {article.category_name}
@@ -47,6 +47,28 @@ export function ArticleCardLarge({ article }: { article: Article }) {
             <span>·</span>
             <span>{article.reading_time} min read</span>
           </div>
+        </div>
+      </div>
+      <div className="p-6 md:hidden">
+        <div className="mb-2 flex items-center gap-3">
+          <span className="text-[10px] uppercase tracking-[0.28em] text-ocean">
+            {article.category_name}
+          </span>
+          <span className="text-line">·</span>
+          <span className="text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+            {article.location}
+          </span>
+        </div>
+        <h2 className="font-serif text-2xl leading-tight text-ink group-hover:text-ocean">
+          {article.title}
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-ink-muted line-clamp-3">
+          {article.excerpt}
+        </p>
+        <div className="mt-3 flex items-center gap-3 text-[11px] text-ink-faint">
+          <span>{formatDate(article.published_at)}</span>
+          <span>·</span>
+          <span>{article.reading_time} min read</span>
         </div>
       </div>
     </Link>
