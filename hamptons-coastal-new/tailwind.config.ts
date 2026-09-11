@@ -5,21 +5,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gold: '#c4a265',
-        'gold-light': '#d4b87a',
-        cream: '#f5f0e8',
-        'cream-dark': '#e8e0d0',
-        dark: {
-          900: '#0a0a0a',
-          800: '#111111',
-          700: '#1a1a1a',
-          600: '#222222',
-          500: '#2a2a2a',
-        }
+        paper: '#f4f0e8',
+        'paper-deep': '#ebe5da',
+        'paper-soft': '#faf8f3',
+        ink: '#111111',
+        'ink-muted': '#5e625f',
+        'ink-faint': '#858982',
+        ocean: '#1f3a44',
+        'ocean-deep': '#162d35',
+        'ocean-soft': '#dce6e5',
+        stone: '#d8d1c5',
+        line: '#d5cec2',
       },
       fontFamily: {
-        serif: ['Georgia', 'Times New Roman', 'serif'],
-        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['var(--font-cormorant)', 'Georgia', 'Times New Roman', 'serif'],
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

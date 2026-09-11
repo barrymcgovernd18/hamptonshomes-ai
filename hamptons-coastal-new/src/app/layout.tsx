@@ -1,7 +1,15 @@
 import type { Metadata } from 'next'
+import { Inter, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-cormorant',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hamptonscoastal.com'),
@@ -40,10 +48,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+      <body className="bg-paper font-sans text-ink antialiased">
         <Header />
-        <main className="min-h-screen pt-16">
+        <main className="min-h-screen pt-20">
           {children}
         </main>
         <Footer />
