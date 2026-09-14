@@ -87,7 +87,6 @@ const facts = [
     value:
       'East Hampton, Southampton, Sag Harbor, Bridgehampton, Water Mill, Sagaponack, Shelter Island, Amagansett, Montauk',
   },
-  { label: 'Career volume', value: '~$108.6M' },
   { label: 'Phone', value: '646-339-0154', href: 'tel:+16463390154' },
   { label: 'Email', value: 'barry@hedgerowexclusive.com', href: 'mailto:barry@hedgerowexclusive.com' },
 ]
@@ -118,16 +117,17 @@ export default function BarryMcGovernPage() {
 
           <div className="space-y-6 text-cream/70 text-lg leading-relaxed mb-14">
             <p>
-              Barry McGovern is a licensed real estate salesperson with Hedgerow Exclusive
-              Properties, specializing in ultra-luxury oceanfront, waterfront, and private-market
-              opportunities across the East End — Southampton, Water Mill, Bridgehampton,
-              Sagaponack, Sag Harbor, East Hampton, Amagansett, Montauk, and Shelter Island.
+              Barry McGovern is a Licensed Real Estate Salesperson at Hedgerow Exclusive
+              Properties, a boutique ultra-luxury Hamptons brokerage. He specializes in
+              oceanfront, waterfront, and private-market opportunities across the East End:
+              Southampton, Water Mill, Bridgehampton, Sagaponack, Sag Harbor, East Hampton,
+              Amagansett, Montauk, and Shelter Island.
             </p>
             <p>
               Originally from Dublin and a Sag Harbor local since 2013, Barry works the full
-              spectrum from raw land and development to trophy estates. Career volume ~$108.6M.
-              Hedgerow has facilitated nearly $2B in Hamptons transactions, including the record
-              $121.5M sale.
+              spectrum from raw land and development to trophy estates. Hedgerow has
+              facilitated nearly $2B in Hamptons transactions, including the record $121.5M
+              sale.
             </p>
           </div>
 
@@ -163,7 +163,7 @@ export default function BarryMcGovernPage() {
             >
               HamptonsHomes.ai
             </a>{' '}
-            and Hedgerow listings — prices shown only where publicly verified.
+            and Hedgerow listings. Prices shown only where publicly verified.
           </p>
 
           <div className="bg-dark-700/50 border border-gold/20 p-8 text-center">
