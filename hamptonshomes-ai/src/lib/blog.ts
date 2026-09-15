@@ -92,17 +92,12 @@ Sag Harbor Village waterfront is effectively a **separate market**. It is less u
 | --- | ---: | --- | ---: | --- | ---: | ---: | --- |
 | 53 Glover Street | $21,000,000 | 2/11/25 | 5 | 5.5 | 5,300 | .87 | Trophy Waterfront |
 | 8 John Street | $15,518,174 | 5/22/24 | 5 | 6.5 | 4,211 | .41 | New Construction · Waterfront |
-| 2 Bluff Point Lane | $13,500,000 | 3/30/23 | 3 | 2.5 | 1,220 | 1.27 | Waterfront* |
+| 2 Bluff Point Lane | $13,500,000 | 3/30/23 | 3 | 2.5 | 1,220 | 1.27 | Waterfront |
 | 63 Glover Street | $11,500,000 | 6/11/25 | 5 | 4.5 | 4,068 | .60 | Waterfront · Dock · Cottage |
-| 37 Glover Street | $10,900,000 | 4/18/24 | 5 | 5F/2H | 5,200† | .85 | Land / Pre-Construction |
+| 37 Glover Street | $10,900,000 | 4/18/24 | 5 | 5F/2H | 5,200 | .85 | Land / Pre-Construction |
 | 62 West Water Street | $9,300,000 | 10/14/25 | 5 | 6 | 5,000 | .54 | Finished Waterfront |
 | 55 Bluff Point Road | $6,625,000 | 7/22/26 | 4 | 4 | 2,768 | .34 | Waterfront · Dock · Pool |
 | 154 Redwood Road | $6,000,000 | 7/18/24 | - | - | - | .72 | Vacant Waterfront Land |
-
-\\* Hedgerow MLS sale data; public-record history warrants verification.  
-† Square footage is proposed/planned.
-
-Trophy waterfront on Glover Street at **$21,000,000**, new construction on John Street at **$15,518,174**, and vacant or pre-construction land deals in the high single digits to low teens all reinforce the same point: water changes the valuation frame. Use these comps for waterfront land and upper-end positioning, not to re-anchor a renovated Village house a few streets inland.
 
 ## Takeaways for Buyers and Sellers
 
