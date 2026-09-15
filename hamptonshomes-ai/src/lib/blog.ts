@@ -12,6 +12,146 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "sag-harbor-village-market-overview-2026-09",
+    title: "Sag Harbor Village Luxury Real Estate Market Overview 2026",
+    excerpt:
+      "Sag Harbor Village ultra-luxury shows real depth and a wide price spread. Finished non-waterfront product often clears roughly $5.5M-$8.5M, while waterfront and trophy sales trade on their own terms.",
+    date: "2026-09-15",
+    author: "Barry McGovern",
+    category: "Market Report",
+    image: "/images/press/capote-sagharbor.jpg",
+    metaDescription:
+      "Sag Harbor Village luxury comps: off-water ~$5.5M-$8.5M, $10M+ trophies, waterfront as a separate market. Barry McGovern, Hedgerow Exclusive Properties.",
+    content: `
+## Sag Harbor Village Luxury Real Estate: Depth, Spread, and What $10M+ Really Means
+
+Sag Harbor Village remains one of the Hamptons' most layered ultra-luxury markets. It is deep enough to support consistent high-end activity, yet wide enough that two homes a few blocks apart can trade in entirely different price bands. Location within the Village, condition, lot size, water influence, and finish quality still do most of the pricing work.
+
+Barry McGovern of Hedgerow Exclusive Properties, a boutique firm focused on ultra-luxury Hamptons real estate, tracks these Village comps for buyers and sellers who need clarity rather than brochure language. The picture from recent non-waterfront and waterfront sales is straightforward: strong demand for polished product, a clear core luxury range for finished off-water homes, and a thin but real tier of exceptional sales that clear $10 million without waterfront.
+
+## What Is the Sag Harbor Village Luxury Market Doing?
+
+The Village market is active and selective. Buyers continue to pay for new construction, meaningful acreage by Village standards, architectural pedigree, water views, and carefully executed historic renovations. Properties that miss on condition or lot utility tend to sit further from the top of the band, even when the address is desirable.
+
+That selectivity shows up as a wide price spread rather than a single "Village number." Core luxury non-waterfront product generally clusters in a recognizable band, while trophy historic homes, pre-construction, and especially waterfront trade on different logic.
+
+## What Is the Off-Water Price Band?
+
+For good finished product away from the water, the practical core luxury range in Sag Harbor Village is roughly **$5.5 million to $8.5 million**. That is the zone where renovated historic homes, newer luxury builds, and well-finished Village residences most often clear when the package is complete (pool, scale, and location included).
+
+Exceptions go higher. Several non-waterfront sales have now exceeded **$10 million**. Those results should be read as trophy or exceptional outcomes (pedigree Main Street addresses, designer-level historic stock, premium Village scale, newer construction with beach proximity, or pre-construction/new development), not as the baseline for ordinary finished Village inventory.
+
+### Non-Waterfront Sales Snapshot
+
+| Address | Sold | Date | Bd | Ba | SF | Acres | Type |
+| --- | ---: | --- | ---: | --- | ---: | ---: | --- |
+| 186 Main Street | $16,250,000 | 10/15/25 | 7 | 4F/2H | 6,500 | .60 | Trophy Historic / Designer |
+| 100 Glover Street | $13,000,000 | 9/24/25 | 5 | 6F/2H | 4,960 | .62 | Pre-Construction / New Development |
+| 20 Union Street | $11,800,000 | 9/5/25 | 6 | 4.5 | 5,900 | .34 | Premium Village |
+| 100 Bay Street | $11,250,000 | 12/15/25 | 6 | 6F/2H | 5,000 | .50 | Newer Construction · Beach Proximity |
+| 232 Main Street | $8,600,000 | 8/15/24 | 5 | 6F/2H | 4,800 | .35 | Newer Luxury · Pool/Pool House |
+| 46 Palmer Terrace | $8,250,000 | 5/1/25 | 5 | 4F/2H | - | .89 | Renovated Historic · Large Lot |
+| 5 Green Street | $7,500,000 | 2/11/26 | 3 | 3.5 | 2,810 | .14 | Renovated · Harbor Views/Access |
+| 6 Union Street | $7,400,000 | 1/24/24 | 5 | 5F/2H | 6,000 | .20 | Historic Village |
+| 8 Dartmouth Road | $7,305,000 | 9/3/25 | 6 | 5.5 | 5,985 | .59 | Water Views · Pool |
+| 27 Meadowlark Lane | $6,700,000 | 10/14/24 | 4 | 4F/2H | 3,852 | .20 | New Construction / Contemporary |
+| 32 Oakland Avenue | $6,320,000 | 8/13/25 | 4 | 3.5 | 2,900 | .79 | Large Village Lot · Pool |
+| 3 Taft Place | $6,295,000 | 5/17/24 | 5 | 5F/2H | - | .51 | Bay Views |
+| 180 Main Street | $6,250,000 | 7/1/26 | 5 | 4.5 | 3,862 | .35 | Renovated Historic · Pool |
+| 7 Somers Place | $6,100,000 | 4/2/26 | 6 | 5 | 5,879 | .57 | Finished Village Estate |
+| 26 Suffolk Street | $6,050,000 | 6/13/25 | 4 | 5.5 | 3,858 | .35 | Finished Luxury · Pool |
+| 12 Sage Street | $6,000,000 | 5/1/26 | 3 | 4.5 | 3,563 | - | Watchcase Townhouse |
+| 52 Glover Street | $5,900,000 | 1/26/23 | 3 | 3.5 | 3,000 | .19 | Village Residence |
+| 30 Hampton Street | $5,900,000 | 5/8/25 | 5 | 5 | 4,310 | .28 | Renovated Historic · Pool |
+| 22 Latham Street | $5,775,000 | 11/28/25 | 5 | 4.5 | 4,000 | .37 | Renovated Historic · Pool |
+| 47 Howard Street | $5,750,000 | 5/5/25 | 4 | 4.5 | 2,825 | .13 | Renovated · Prime Village Location |
+| 98 Bay Street | $5,650,000 | 8/29/26 | 4 | 4.5 | 4,500 | .63 | Historic · Pool · Large Lot |
+| 27 Grand Street | $5,500,000 | 5/2/23 | 6 | 6.5 | 5,012 | .51 | New Construction |
+| 156 Main Street | $5,500,000 | 7/14/23 | 5 | 6.5 | 4,500 | .18 | Fully Renovated Historic |
+
+Read left to right, the table underscores the thesis: depth from the mid-$5Ms through the high-$8Ms for finished Village product, then a distinct step-up for homes that combine address, scale, newness, or design pedigree.
+
+## What Separates $10M+ Non-Waterfront Sales?
+
+Four recent non-waterfront closes illustrate why $10 million-plus is still exceptional rather than expected:
+
+- **186 Main Street** at **$16,250,000**: trophy historic / designer product on a meaningful Village lot.
+- **100 Glover Street** at **$13,000,000**: pre-construction / new development, priced for what will be delivered.
+- **20 Union Street** at **$11,800,000**: premium Village scale and finish.
+- **100 Bay Street** at **$11,250,000**: newer construction with beach proximity.
+
+Shared themes: architectural or address pedigree, stronger lots by Village standards, new or near-new construction quality, and finish that clears the "good" bar into "exceptional." Water views or harbor access can pull a smaller footprint higher (as with renovated stock on Green Street), but waterfront proper remains its own conversation.
+
+## How Does Waterfront Compare?
+
+Sag Harbor Village waterfront is effectively a **separate market**. It is less useful as a comps set for typical off-water Village homes and more useful for land values, dock-capable parcels, and the upper end of Village pricing.
+
+### Waterfront Sales Snapshot
+
+| Address | Sold | Date | Bd | Ba | SF | Acres | Type |
+| --- | ---: | --- | ---: | --- | ---: | ---: | --- |
+| 53 Glover Street | $21,000,000 | 2/11/25 | 5 | 5.5 | 5,300 | .87 | Trophy Waterfront |
+| 8 John Street | $15,518,174 | 5/22/24 | 5 | 6.5 | 4,211 | .41 | New Construction · Waterfront |
+| 2 Bluff Point Lane | $13,500,000 | 3/30/23 | 3 | 2.5 | 1,220 | 1.27 | Waterfront* |
+| 63 Glover Street | $11,500,000 | 6/11/25 | 5 | 4.5 | 4,068 | .60 | Waterfront · Dock · Cottage |
+| 37 Glover Street | $10,900,000 | 4/18/24 | 5 | 5F/2H | 5,200† | .85 | Land / Pre-Construction |
+| 62 West Water Street | $9,300,000 | 10/14/25 | 5 | 6 | 5,000 | .54 | Finished Waterfront |
+| 55 Bluff Point Road | $6,625,000 | 7/22/26 | 4 | 4 | 2,768 | .34 | Waterfront · Dock · Pool |
+| 154 Redwood Road | $6,000,000 | 7/18/24 | - | - | - | .72 | Vacant Waterfront Land |
+
+\\* Hedgerow MLS sale data; public-record history warrants verification.  
+† Square footage is proposed/planned.
+
+Trophy waterfront on Glover Street at **$21,000,000**, new construction on John Street at **$15,518,174**, and vacant or pre-construction land deals in the high single digits to low teens all reinforce the same point: water changes the valuation frame. Use these comps for waterfront land and upper-end positioning, not to re-anchor a renovated Village house a few streets inland.
+
+## Takeaways for Buyers and Sellers
+
+- **Core off-water luxury** for finished Sag Harbor Village product still centers on roughly **$5.5M-$8.5M**, with quality, lot, and finish driving where a home sits inside that band.
+- **Premium drivers** (new construction, acreage, architectural pedigree, water views, and strong historic renovations) explain most of the upside above that core range.
+- **$10M+ non-waterfront** sales are real but exceptional; they are not the Village baseline.
+- **Waterfront** should be underwritten on its own comps for land value and the Village's upper end.
+
+For discreet counsel on Sag Harbor Village pricing, positioning, or a specific address, Hedgerow Exclusive Properties works the ultra-luxury Hamptons market with that level of granularity.
+
+## FAQ
+
+### What is the typical luxury price range for non-waterfront homes in Sag Harbor Village?
+
+For good finished product, the core non-waterfront luxury range is roughly $5.5 million to $8.5 million. Homes with new construction, larger lots, architectural pedigree, water views, or exceptional renovations can trade above that band.
+
+### Have non-waterfront Sag Harbor Village homes sold for more than $10 million?
+
+Yes. Recent examples include 186 Main Street ($16,250,000), 100 Glover Street ($13,000,000), 20 Union Street ($11,800,000), and 100 Bay Street ($11,250,000). These are trophy or exceptional outcomes, not the baseline for finished Village inventory.
+
+### How should buyers compare waterfront and off-water Sag Harbor Village sales?
+
+Treat waterfront as a separate market. Waterfront comps are most useful for land values, dock-capable parcels, and upper-end pricing; they should not be used as direct anchors for typical non-waterfront Village homes.
+
+### What factors push Sag Harbor Village prices to the top of the market?
+
+New construction, meaningful acreage by Village standards, architectural pedigree, water views or harbor influence, and high-quality historic renovations are the primary premium drivers.
+
+### Who authored this Sag Harbor Village market overview?
+
+Barry McGovern, a licensed salesperson with Hedgerow Exclusive Properties, a boutique firm specializing in ultra-luxury Hamptons real estate. This overview is published on hamptonshomes.ai for informational market commentary.
+
+## About the Author
+
+**Barry McGovern** is a Licensed Real Estate Salesperson at **Hedgerow Exclusive Properties**, a boutique firm focused on ultra-luxury Hamptons real estate. He advises buyers and sellers across Sag Harbor Village and the broader East End with comps-driven market commentary and discreet representation.
+
+- Email: [barry@hedgerowexclusive.com](mailto:barry@hedgerowexclusive.com)
+- Hedgerow: [HedgerowExclusive.com](https://HedgerowExclusive.com)
+- Market coverage: [hamptonshomes.ai](https://hamptonshomes.ai)
+- Phone: 646-339-0154
+
+Barry McGovern, Licensed Real Estate Salesperson at Hedgerow Exclusive Properties · 646-339-0154
+
+## Disclaimer
+
+Sale figures in this article are drawn from available MLS and Hedgerow records for market discussion only. Confirm all pricing, dates, square footage, acreage, and property characteristics against current primary sources before underwriting, offering, or relying on any figure for a transaction decision.
+    `,
+  },
+  {
     slug: "ai-ipo-wealth-san-francisco-hamptons-market-2026",
     title: "AI IPOs Are Minting a New Wealth Class. San Francisco's High End Is the Tell. The Hamptons Will Feel It.",
     excerpt:
