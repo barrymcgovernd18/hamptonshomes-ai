@@ -12,6 +12,116 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "sag-harbor-village-market-overview-2026-09",
+    title: "Sag Harbor Village Luxury Real Estate Market Overview 2026",
+    excerpt:
+      "Harbor-adjacent Sag Harbor Village product defined the top of the 2025 tape, with closes from $9.3 million to $13 million on Bay, Glover, Union, and West Water. Village and near-village homes cleared from $5.1 million to $7.5 million into January 2026. A mid-year read for buyers who want the micro-market, not a hamlet average.",
+    date: "2026-09-15",
+    author: "Barry McGovern",
+    category: "Market Report",
+    image: "/images/press/capote-sagharbor.jpg",
+    metaDescription:
+      "Sag Harbor Village luxury market overview 2026. Harbor-corridor comps from $9.3M to $13M, village trades into January, and how to read the micro-market. By Barry McGovern.",
+    content: `
+## Village scarcity, harbor adjacency, and a buyer who already knows the walk
+
+Sag Harbor Village is not a quieter version of oceanfront Southampton. It is a different luxury product: a walkable historic port, a working harbor, and a thin stock of houses that sit on the right street relative to the water, the theater, and Main Street.
+
+That combination is why a hamlet-wide average is almost useless here. A harbor-adjacent address on Bay, Glover, Union, or West Water is not interchangeable with a handsome inland village house at a similar dollar amount. Buyers who treat them as one market overpay for the label and miss the asset.
+
+This mid-2026 read is for the ultra-luxury lane: the tape that actually cleared from the high $5 millions through $13 million, plus what that tape implies for a search or a sale this season.
+
+## Harbor corridor comps that set the top of the tape
+
+These closes are documented Sag Harbor market records in the $9.3 million to $13 million band. They are not Barry McGovern portfolio sales. They are the public evidence for harbor and near-harbor product in 2025.
+
+| Sold | Address | Price | Setting |
+|------|---------|-------|---------|
+| 2025-09-24 | 100 Glover Street | $13,000,000 | Glover Street |
+| 2025-09-05 | 20 Union Street | $11,800,000 | Union Street |
+| 2025-06-11 | 63 Glover Street | $11,500,000 | Glover Street |
+| 2025-12-15 | 100 Bay Street | $11,250,000 | Bay Street / harbor corridor |
+| 2025-10-14 | 62 West Water Street | $9,300,000 | West Water |
+
+*Market records. Not an appraisal and not current availability.*
+
+Frontage type does the work. Dock rights, water depth, flood, and village ARB constraints have to be underwritten separately from square footage. Two houses can print similar prices and deliver completely different days.
+
+Hedgerow currently offers 36 Oakland Avenue in Sag Harbor Village, a western-facing Otter Cove waterfront at $12,650,000. That is asking price, not a close. It sits in the same conversation as the harbor-corridor tape above.
+
+## Village and near-village comps
+
+Below the harbor corridor, the $5 million to $7.5 million band is more often village, near-village, or larger inland lots that still carry a Sag Harbor tax bill. Dollar amount alone is a weak comparator.
+
+| Sold | Address | Price | Setting |
+|------|---------|-------|---------|
+| 2026-01-14 | 40 Redwood Road | $7,500,000 | 1.7 acres |
+| Nov 2025 | 22 Latham Street | $5,775,000 | Village / near-village |
+| 2026-01-16 | 6 Harding Terrace | $5,500,000 | Village |
+| Jan 2026 | 32 Windermere Drive | $5,100,000 | Lower band of the $5M to $15M sample |
+
+*Market records. Not Barry McGovern sales.*
+
+A documented Hedgerow off-market record at 117 Main Street, $5,950,000, is a different story again: historic mixed-use in the business district, residence plus retail, a pool, and a walk that is the entire point of the village. It should not be used as a waterfront comp.
+
+In a 40-sale Sag Harbor sample between $5 million and $15 million, the median close was about $6.43 million and the average about $7.46 million. Roughly 199 Sag Harbor-tagged sales closed from January 2025 onward across all prices. Liquidity is real. True harbor-adjacent inventory in the middle and upper luxury bands is not.
+
+## How to read the village without a hamlet average
+
+First, name the water relationship. Harbor frontage, bay adjacency, a cove, a dock, or a walk to the water with no frontage at all. Those are different products.
+
+Second, test the walk. Sag Harbor's premium is daily life: coffee, the cinema, Bay Street Theater, the marina, a table where the host already knows the name. If the household will not use that walk, North Haven and Noyac may be the better brief.
+
+Third, separate what can be renovated from what cannot. Kitchens change. Street, orientation, lot geometry, and dock rights do not.
+
+Fourth, bring diligence in before the emotion lands: survey, flood, insurance, bulkhead, septic, easements, and village approvals. A confident buyer is the one who asks those questions early.
+
+## Buyers and sellers
+
+Buyers should arrive with a micro-market map, not a saved search for "Sag Harbor waterfront." Decide whether the brief is harbor adjacency, village walkability, or a quieter cove, then keep counsel ready. The best houses still move quietly.
+
+Sellers should not lean on scarcity as a substitute for positioning. A rare village address still needs an accurate story: the walk, the water, the history, the constraints. Hedgerow Exclusive Properties is built for that kind of private, specific work.
+
+For a confidential Sag Harbor search or valuation, visit /contact. The village page is at /sag-harbor.
+
+## FAQ
+
+### What does luxury still buy in Sag Harbor Village in 2026?
+
+In the documented $5 million to $15 million sample, renovated village homes and larger inland parcels sit in the lower half of the band. True harbor-adjacent addresses on Bay Street, West Water, Glover, and Union defined the top, from $9.3 million to $13 million in 2025.
+
+### Does harbor or bay frontage matter at this price?
+
+Yes. Harbor and bay-adjacent product trades on a different set of facts than inland village houses at similar dollars. Underwrite frontage, dock rights, flood, and village constraints separately from interior finish.
+
+### How active was Sag Harbor in 2025 and early 2026?
+
+The comps set shows roughly 199 Sag Harbor-tagged closed sales from January 2025 onward, all prices. Activity is not the same thing as supply at the top. Harbor-adjacent houses that are priced to the micro-market still move. Mispriced waterfront can sit.
+
+### How should days on market be read here?
+
+Use same-street and same-frontage comps. Hamlet-wide averages hide the walk and the water.
+
+### Is 36 Oakland Avenue a comparable sale?
+
+No. 36 Oakland Avenue is a current Hedgerow Exclusive Properties offering at $12,650,000, western-facing Village waterfront on Otter Cove. Asking is not a close.
+
+### Is this an appraisal or a solicitation?
+
+No. This is editorial market commentary using documented public comps and Hedgerow portfolio context. It is not an appraisal, CMA, or guarantee of value. Consult a licensed professional for property-specific advice.
+
+## About the Author
+
+Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. Public firm materials describe nearly $2 billion in Hamptons transactions. Dublin-born and a Sag Harbor local since 2013, Barry focuses on oceanfront, waterfront, estate-section, and private-market opportunities from Southampton to Montauk, and has been involved with the firm's landmark and record-breaking work.
+
+New York license 10401353717. Call 646-339-0154 or visit /about.
+
+## Disclaimer
+
+Figures above are documented market records and, where noted, Hedgerow portfolio records. They are not current listings unless identified as such, and they are not an appraisal. Verify with primary records before underwriting. Editorial commentary from HamptonsHomes.ai. Not a solicitation.
+    `,
+  },
+  {
     slug: "ai-ipo-wealth-san-francisco-hamptons-market-2026",
     title: "AI IPOs Are Minting a New Wealth Class. San Francisco's High End Is the Tell. The Hamptons Will Feel It.",
     excerpt:

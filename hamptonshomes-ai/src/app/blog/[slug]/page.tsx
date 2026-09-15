@@ -29,6 +29,70 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function formatInline(text: string) {
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>');
+}
+
+function isPipeRow(line: string) {
+  const trimmed = line.trim();
+  return trimmed.startsWith("|") && trimmed.includes("|", 1);
+}
+
+function splitPipeRow(line: string) {
+  let value = line.trim();
+  if (value.startsWith("|")) value = value.slice(1);
+  if (value.endsWith("|")) value = value.slice(0, -1);
+  return value.split("|").map((cell) => cell.trim());
+}
+
+function isSeparatorRow(line: string) {
+  const cells = splitPipeRow(line);
+  return cells.length > 0 && cells.every((cell) => /^:?-{3,}:?$/.test(cell.replace(/\s/g, "")));
+}
+
+function renderTable(rows: string[], key: number) {
+  let header: string[] | null = null;
+  let body = rows;
+  if (rows.length >= 2 && isSeparatorRow(rows[1])) {
+    header = splitPipeRow(rows[0]);
+    body = rows.slice(2);
+  }
+  const bodyRows = body.filter((row) => !isSeparatorRow(row)).map(splitPipeRow);
+
+  return (
+    <div key={key} className="overflow-x-auto my-10 border border-line">
+      <table className="w-full text-left">
+        {header && (
+          <thead>
+            <tr className="border-b border-line bg-paper-soft">
+              {header.map((cell, ci) => (
+                <th
+                  key={ci}
+                  className="font-serif text-ink text-[12px] tracking-[0.12em] uppercase font-normal px-4 py-3 whitespace-nowrap"
+                  dangerouslySetInnerHTML={{ __html: formatInline(cell) }}
+                />
+              ))}
+            </tr>
+          </thead>
+        )}
+        <tbody>
+          {bodyRows.map((cells, ri) => (
+            <tr key={ri} className="border-b border-line last:border-0">
+              {cells.map((cell, ci) => (
+                <td
+                  key={ci}
+                  className="text-ink-muted text-[14px] leading-[1.6] px-4 py-3 whitespace-nowrap"
+                  dangerouslySetInnerHTML={{ __html: formatInline(cell) }}
+                />
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 // Simple markdown-like renderer for our blog content
 function renderContent(content: string) {
   const lines = content.trim().split("\n");
@@ -50,16 +114,26 @@ function renderContent(content: string) {
           {line.replace("### ", "")}
         </h3>
       );
+    } else if (isPipeRow(line)) {
+      const tableLines = [line];
+      let j = i + 1;
+      while (j < lines.length && isPipeRow(lines[j].trimEnd())) {
+        tableLines.push(lines[j].trimEnd());
+        j++;
+      }
+      elements.push(renderTable(tableLines, i));
+      i = j;
+      continue;
     } else if (line.startsWith("- **")) {
       elements.push(
         <li key={i} className="text-ink-muted text-[15px] leading-[1.8] ml-4 mb-2" dangerouslySetInnerHTML={{
-          __html: line.replace("- ", "").replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>')
+          __html: formatInline(line.replace("- ", ""))
         }} />
       );
     } else if (line.startsWith("1. ") || line.startsWith("2. ") || line.startsWith("3. ") || line.startsWith("4. ")) {
       elements.push(
         <li key={i} className="text-ink-muted text-[15px] leading-[1.8] ml-4 mb-2 list-decimal" dangerouslySetInnerHTML={{
-          __html: line.replace(/^\d+\.\s/, "").replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>')
+          __html: formatInline(line.replace(/^\d+\.\s/, ""))
         }} />
       );
     } else if (line.startsWith("---")) {
@@ -75,7 +149,7 @@ function renderContent(content: string) {
     } else {
       elements.push(
         <p key={i} className="text-ink-muted text-[15px] leading-[1.9] mb-4" dangerouslySetInnerHTML={{
-          __html: line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>')
+          __html: formatInline(line)
         }} />
       );
     }
