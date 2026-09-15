@@ -15,110 +15,140 @@ export const blogPosts: BlogPost[] = [
     slug: "sag-harbor-village-market-overview-2026-09",
     title: "Sag Harbor Village Luxury Real Estate Market Overview 2026",
     excerpt:
-      "Harbor-adjacent Sag Harbor Village product defined the top of the 2025 tape, with closes from $9.3 million to $13 million on Bay, Glover, Union, and West Water. Village and near-village homes cleared from $5.1 million to $7.5 million into January 2026. A mid-year read for buyers who want the micro-market, not a hamlet average.",
+      "Sag Harbor Village ultra-luxury shows real depth and a wide price spread. Finished non-waterfront product often clears roughly $5.5M-$8.5M, while waterfront and trophy sales trade on their own terms.",
     date: "2026-09-15",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/press/capote-sagharbor.jpg",
     metaDescription:
-      "Sag Harbor Village luxury market overview 2026. Harbor-corridor comps from $9.3M to $13M, village trades into January, and how to read the micro-market. By Barry McGovern.",
+      "Sag Harbor Village luxury comps: off-water ~$5.5M-$8.5M, $10M+ trophies, waterfront as a separate market. Barry McGovern, Hedgerow Exclusive Properties.",
     content: `
-## Village scarcity, harbor adjacency, and a buyer who already knows the walk
+## Sag Harbor Village Luxury Real Estate: Depth, Spread, and What $10M+ Really Means
 
-Sag Harbor Village is not a quieter version of oceanfront Southampton. It is a different luxury product: a walkable historic port, a working harbor, and a thin stock of houses that sit on the right street relative to the water, the theater, and Main Street.
+Sag Harbor Village remains one of the Hamptons' most layered ultra-luxury markets. It is deep enough to support consistent high-end activity, yet wide enough that two homes a few blocks apart can trade in entirely different price bands. Location within the Village, condition, lot size, water influence, and finish quality still do most of the pricing work.
 
-That combination is why a hamlet-wide average is almost useless here. A harbor-adjacent address on Bay, Glover, Union, or West Water is not interchangeable with a handsome inland village house at a similar dollar amount. Buyers who treat them as one market overpay for the label and miss the asset.
+Barry McGovern of Hedgerow Exclusive Properties, a boutique firm focused on ultra-luxury Hamptons real estate, tracks these Village comps for buyers and sellers who need clarity rather than brochure language. The picture from recent non-waterfront and waterfront sales is straightforward: strong demand for polished product, a clear core luxury range for finished off-water homes, and a thin but real tier of exceptional sales that clear $10 million without waterfront.
 
-This mid-2026 read is for the ultra-luxury lane: the tape that actually cleared from the high $5 millions through $13 million, plus what that tape implies for a search or a sale this season.
+## What Is the Sag Harbor Village Luxury Market Doing?
 
-## Harbor corridor comps that set the top of the tape
+The Village market is active and selective. Buyers continue to pay for new construction, meaningful acreage by Village standards, architectural pedigree, water views, and carefully executed historic renovations. Properties that miss on condition or lot utility tend to sit further from the top of the band, even when the address is desirable.
 
-These closes are documented Sag Harbor market records in the $9.3 million to $13 million band. They are not Barry McGovern portfolio sales. They are the public evidence for harbor and near-harbor product in 2025.
+That selectivity shows up as a wide price spread rather than a single "Village number." Core luxury non-waterfront product generally clusters in a recognizable band, while trophy historic homes, pre-construction, and especially waterfront trade on different logic.
 
-| Sold | Address | Price | Setting |
-|------|---------|-------|---------|
-| 2025-09-24 | 100 Glover Street | $13,000,000 | Glover Street |
-| 2025-09-05 | 20 Union Street | $11,800,000 | Union Street |
-| 2025-06-11 | 63 Glover Street | $11,500,000 | Glover Street |
-| 2025-12-15 | 100 Bay Street | $11,250,000 | Bay Street / harbor corridor |
-| 2025-10-14 | 62 West Water Street | $9,300,000 | West Water |
+## What Is the Off-Water Price Band?
 
-*Market records. Not an appraisal and not current availability.*
+For good finished product away from the water, the practical core luxury range in Sag Harbor Village is roughly **$5.5 million to $8.5 million**. That is the zone where renovated historic homes, newer luxury builds, and well-finished Village residences most often clear when the package is complete (pool, scale, and location included).
 
-Frontage type does the work. Dock rights, water depth, flood, and village ARB constraints have to be underwritten separately from square footage. Two houses can print similar prices and deliver completely different days.
+Exceptions go higher. Several non-waterfront sales have now exceeded **$10 million**. Those results should be read as trophy or exceptional outcomes (pedigree Main Street addresses, designer-level historic stock, premium Village scale, newer construction with beach proximity, or pre-construction/new development), not as the baseline for ordinary finished Village inventory.
 
-Hedgerow currently offers 36 Oakland Avenue in Sag Harbor Village, a western-facing Otter Cove waterfront at $12,650,000. That is asking price, not a close. It sits in the same conversation as the harbor-corridor tape above.
+### Non-Waterfront Sales Snapshot
 
-## Village and near-village comps
+| Address | Sold | Date | Bd | Ba | SF | Acres | Type |
+| --- | ---: | --- | ---: | --- | ---: | ---: | --- |
+| 186 Main Street | $16,250,000 | 10/15/25 | 7 | 4F/2H | 6,500 | .60 | Trophy Historic / Designer |
+| 100 Glover Street | $13,000,000 | 9/24/25 | 5 | 6F/2H | 4,960 | .62 | Pre-Construction / New Development |
+| 20 Union Street | $11,800,000 | 9/5/25 | 6 | 4.5 | 5,900 | .34 | Premium Village |
+| 100 Bay Street | $11,250,000 | 12/15/25 | 6 | 6F/2H | 5,000 | .50 | Newer Construction · Beach Proximity |
+| 232 Main Street | $8,600,000 | 8/15/24 | 5 | 6F/2H | 4,800 | .35 | Newer Luxury · Pool/Pool House |
+| 46 Palmer Terrace | $8,250,000 | 5/1/25 | 5 | 4F/2H | - | .89 | Renovated Historic · Large Lot |
+| 5 Green Street | $7,500,000 | 2/11/26 | 3 | 3.5 | 2,810 | .14 | Renovated · Harbor Views/Access |
+| 6 Union Street | $7,400,000 | 1/24/24 | 5 | 5F/2H | 6,000 | .20 | Historic Village |
+| 8 Dartmouth Road | $7,305,000 | 9/3/25 | 6 | 5.5 | 5,985 | .59 | Water Views · Pool |
+| 27 Meadowlark Lane | $6,700,000 | 10/14/24 | 4 | 4F/2H | 3,852 | .20 | New Construction / Contemporary |
+| 32 Oakland Avenue | $6,320,000 | 8/13/25 | 4 | 3.5 | 2,900 | .79 | Large Village Lot · Pool |
+| 3 Taft Place | $6,295,000 | 5/17/24 | 5 | 5F/2H | - | .51 | Bay Views |
+| 180 Main Street | $6,250,000 | 7/1/26 | 5 | 4.5 | 3,862 | .35 | Renovated Historic · Pool |
+| 7 Somers Place | $6,100,000 | 4/2/26 | 6 | 5 | 5,879 | .57 | Finished Village Estate |
+| 26 Suffolk Street | $6,050,000 | 6/13/25 | 4 | 5.5 | 3,858 | .35 | Finished Luxury · Pool |
+| 12 Sage Street | $6,000,000 | 5/1/26 | 3 | 4.5 | 3,563 | - | Watchcase Townhouse |
+| 52 Glover Street | $5,900,000 | 1/26/23 | 3 | 3.5 | 3,000 | .19 | Village Residence |
+| 30 Hampton Street | $5,900,000 | 5/8/25 | 5 | 5 | 4,310 | .28 | Renovated Historic · Pool |
+| 22 Latham Street | $5,775,000 | 11/28/25 | 5 | 4.5 | 4,000 | .37 | Renovated Historic · Pool |
+| 47 Howard Street | $5,750,000 | 5/5/25 | 4 | 4.5 | 2,825 | .13 | Renovated · Prime Village Location |
+| 98 Bay Street | $5,650,000 | 8/29/26 | 4 | 4.5 | 4,500 | .63 | Historic · Pool · Large Lot |
+| 27 Grand Street | $5,500,000 | 5/2/23 | 6 | 6.5 | 5,012 | .51 | New Construction |
+| 156 Main Street | $5,500,000 | 7/14/23 | 5 | 6.5 | 4,500 | .18 | Fully Renovated Historic |
 
-Below the harbor corridor, the $5 million to $7.5 million band is more often village, near-village, or larger inland lots that still carry a Sag Harbor tax bill. Dollar amount alone is a weak comparator.
+Read left to right, the table underscores the thesis: depth from the mid-$5Ms through the high-$8Ms for finished Village product, then a distinct step-up for homes that combine address, scale, newness, or design pedigree.
 
-| Sold | Address | Price | Setting |
-|------|---------|-------|---------|
-| 2026-01-14 | 40 Redwood Road | $7,500,000 | 1.7 acres |
-| Nov 2025 | 22 Latham Street | $5,775,000 | Village / near-village |
-| 2026-01-16 | 6 Harding Terrace | $5,500,000 | Village |
-| Jan 2026 | 32 Windermere Drive | $5,100,000 | Lower band of the $5M to $15M sample |
+## What Separates $10M+ Non-Waterfront Sales?
 
-*Market records. Not Barry McGovern sales.*
+Four recent non-waterfront closes illustrate why $10 million-plus is still exceptional rather than expected:
 
-A documented Hedgerow off-market record at 117 Main Street, $5,950,000, is a different story again: historic mixed-use in the business district, residence plus retail, a pool, and a walk that is the entire point of the village. It should not be used as a waterfront comp.
+- **186 Main Street** at **$16,250,000**: trophy historic / designer product on a meaningful Village lot.
+- **100 Glover Street** at **$13,000,000**: pre-construction / new development, priced for what will be delivered.
+- **20 Union Street** at **$11,800,000**: premium Village scale and finish.
+- **100 Bay Street** at **$11,250,000**: newer construction with beach proximity.
 
-In a 40-sale Sag Harbor sample between $5 million and $15 million, the median close was about $6.43 million and the average about $7.46 million. Roughly 199 Sag Harbor-tagged sales closed from January 2025 onward across all prices. Liquidity is real. True harbor-adjacent inventory in the middle and upper luxury bands is not.
+Shared themes: architectural or address pedigree, stronger lots by Village standards, new or near-new construction quality, and finish that clears the "good" bar into "exceptional." Water views or harbor access can pull a smaller footprint higher (as with renovated stock on Green Street), but waterfront proper remains its own conversation.
 
-## How to read the village without a hamlet average
+## How Does Waterfront Compare?
 
-First, name the water relationship. Harbor frontage, bay adjacency, a cove, a dock, or a walk to the water with no frontage at all. Those are different products.
+Sag Harbor Village waterfront is effectively a **separate market**. It is less useful as a comps set for typical off-water Village homes and more useful for land values, dock-capable parcels, and the upper end of Village pricing.
 
-Second, test the walk. Sag Harbor's premium is daily life: coffee, the cinema, Bay Street Theater, the marina, a table where the host already knows the name. If the household will not use that walk, North Haven and Noyac may be the better brief.
+### Waterfront Sales Snapshot
 
-Third, separate what can be renovated from what cannot. Kitchens change. Street, orientation, lot geometry, and dock rights do not.
+| Address | Sold | Date | Bd | Ba | SF | Acres | Type |
+| --- | ---: | --- | ---: | --- | ---: | ---: | --- |
+| 53 Glover Street | $21,000,000 | 2/11/25 | 5 | 5.5 | 5,300 | .87 | Trophy Waterfront |
+| 8 John Street | $15,518,174 | 5/22/24 | 5 | 6.5 | 4,211 | .41 | New Construction · Waterfront |
+| 2 Bluff Point Lane | $13,500,000 | 3/30/23 | 3 | 2.5 | 1,220 | 1.27 | Waterfront* |
+| 63 Glover Street | $11,500,000 | 6/11/25 | 5 | 4.5 | 4,068 | .60 | Waterfront · Dock · Cottage |
+| 37 Glover Street | $10,900,000 | 4/18/24 | 5 | 5F/2H | 5,200† | .85 | Land / Pre-Construction |
+| 62 West Water Street | $9,300,000 | 10/14/25 | 5 | 6 | 5,000 | .54 | Finished Waterfront |
+| 55 Bluff Point Road | $6,625,000 | 7/22/26 | 4 | 4 | 2,768 | .34 | Waterfront · Dock · Pool |
+| 154 Redwood Road | $6,000,000 | 7/18/24 | - | - | - | .72 | Vacant Waterfront Land |
 
-Fourth, bring diligence in before the emotion lands: survey, flood, insurance, bulkhead, septic, easements, and village approvals. A confident buyer is the one who asks those questions early.
+\\* Hedgerow MLS sale data; public-record history warrants verification.  
+† Square footage is proposed/planned.
 
-## Buyers and sellers
+Trophy waterfront on Glover Street at **$21,000,000**, new construction on John Street at **$15,518,174**, and vacant or pre-construction land deals in the high single digits to low teens all reinforce the same point: water changes the valuation frame. Use these comps for waterfront land and upper-end positioning, not to re-anchor a renovated Village house a few streets inland.
 
-Buyers should arrive with a micro-market map, not a saved search for "Sag Harbor waterfront." Decide whether the brief is harbor adjacency, village walkability, or a quieter cove, then keep counsel ready. The best houses still move quietly.
+## Takeaways for Buyers and Sellers
 
-Sellers should not lean on scarcity as a substitute for positioning. A rare village address still needs an accurate story: the walk, the water, the history, the constraints. Hedgerow Exclusive Properties is built for that kind of private, specific work.
+- **Core off-water luxury** for finished Sag Harbor Village product still centers on roughly **$5.5M-$8.5M**, with quality, lot, and finish driving where a home sits inside that band.
+- **Premium drivers** (new construction, acreage, architectural pedigree, water views, and strong historic renovations) explain most of the upside above that core range.
+- **$10M+ non-waterfront** sales are real but exceptional; they are not the Village baseline.
+- **Waterfront** should be underwritten on its own comps for land value and the Village's upper end.
 
-For a confidential Sag Harbor search or valuation, visit /contact. The village page is at /sag-harbor.
+For discreet counsel on Sag Harbor Village pricing, positioning, or a specific address, Hedgerow Exclusive Properties works the ultra-luxury Hamptons market with that level of granularity.
 
 ## FAQ
 
-### What does luxury still buy in Sag Harbor Village in 2026?
+### What is the typical luxury price range for non-waterfront homes in Sag Harbor Village?
 
-In the documented $5 million to $15 million sample, renovated village homes and larger inland parcels sit in the lower half of the band. True harbor-adjacent addresses on Bay Street, West Water, Glover, and Union defined the top, from $9.3 million to $13 million in 2025.
+For good finished product, the core non-waterfront luxury range is roughly $5.5 million to $8.5 million. Homes with new construction, larger lots, architectural pedigree, water views, or exceptional renovations can trade above that band.
 
-### Does harbor or bay frontage matter at this price?
+### Have non-waterfront Sag Harbor Village homes sold for more than $10 million?
 
-Yes. Harbor and bay-adjacent product trades on a different set of facts than inland village houses at similar dollars. Underwrite frontage, dock rights, flood, and village constraints separately from interior finish.
+Yes. Recent examples include 186 Main Street ($16,250,000), 100 Glover Street ($13,000,000), 20 Union Street ($11,800,000), and 100 Bay Street ($11,250,000). These are trophy or exceptional outcomes, not the baseline for finished Village inventory.
 
-### How active was Sag Harbor in 2025 and early 2026?
+### How should buyers compare waterfront and off-water Sag Harbor Village sales?
 
-The comps set shows roughly 199 Sag Harbor-tagged closed sales from January 2025 onward, all prices. Activity is not the same thing as supply at the top. Harbor-adjacent houses that are priced to the micro-market still move. Mispriced waterfront can sit.
+Treat waterfront as a separate market. Waterfront comps are most useful for land values, dock-capable parcels, and upper-end pricing; they should not be used as direct anchors for typical non-waterfront Village homes.
 
-### How should days on market be read here?
+### What factors push Sag Harbor Village prices to the top of the market?
 
-Use same-street and same-frontage comps. Hamlet-wide averages hide the walk and the water.
+New construction, meaningful acreage by Village standards, architectural pedigree, water views or harbor influence, and high-quality historic renovations are the primary premium drivers.
 
-### Is 36 Oakland Avenue a comparable sale?
+### Who authored this Sag Harbor Village market overview?
 
-No. 36 Oakland Avenue is a current Hedgerow Exclusive Properties offering at $12,650,000, western-facing Village waterfront on Otter Cove. Asking is not a close.
-
-### Is this an appraisal or a solicitation?
-
-No. This is editorial market commentary using documented public comps and Hedgerow portfolio context. It is not an appraisal, CMA, or guarantee of value. Consult a licensed professional for property-specific advice.
+Barry McGovern, a licensed salesperson with Hedgerow Exclusive Properties, a boutique firm specializing in ultra-luxury Hamptons real estate. This overview is published on hamptonshomes.ai for informational market commentary.
 
 ## About the Author
 
-Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. Public firm materials describe nearly $2 billion in Hamptons transactions. Dublin-born and a Sag Harbor local since 2013, Barry focuses on oceanfront, waterfront, estate-section, and private-market opportunities from Southampton to Montauk, and has been involved with the firm's landmark and record-breaking work.
+**Barry McGovern** is a Licensed Real Estate Salesperson at **Hedgerow Exclusive Properties**, a boutique firm focused on ultra-luxury Hamptons real estate. He advises buyers and sellers across Sag Harbor Village and the broader East End with comps-driven market commentary and discreet representation.
 
-New York license 10401353717. Call 646-339-0154 or visit /about.
+- Email: [barry@hedgerowexclusive.com](mailto:barry@hedgerowexclusive.com)
+- Hedgerow: [HedgerowExclusive.com](https://HedgerowExclusive.com)
+- Market coverage: [hamptonshomes.ai](https://hamptonshomes.ai)
+- Phone: 646-339-0154
+
+Barry McGovern, Licensed Real Estate Salesperson at Hedgerow Exclusive Properties · 646-339-0154
 
 ## Disclaimer
 
-Figures above are documented market records and, where noted, Hedgerow portfolio records. They are not current listings unless identified as such, and they are not an appraisal. Verify with primary records before underwriting. Editorial commentary from HamptonsHomes.ai. Not a solicitation.
+Sale figures in this article are drawn from available MLS and Hedgerow records for market discussion only. Confirm all pricing, dates, square footage, acreage, and property characteristics against current primary sources before underwriting, offering, or relying on any figure for a transaction decision.
     `,
   },
   {
