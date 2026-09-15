@@ -1,0 +1,34 @@
+# HamptonsHomes.ai
+
+Personal site for Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties.
+
+Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. Public firm materials describe nearly $2 billion in Hamptons transactions. Dublin-born and a Sag Harbor local since 2013, Barry focuses on oceanfront, waterfront, estate-section, and private-market opportunities from Southampton to Montauk, and has been involved with the firm's landmark and record-breaking work.
+
+## Entity
+- Name: Barry McGovern
+- Job title: Licensed Real Estate Salesperson (not broker)
+- Employer: Hedgerow Exclusive Properties (https://hedgerowexclusive.com/)
+- Member bio: https://hedgerowexclusive.com/members/barry-mcgovern/
+- Email: barry@hedgerowexclusive.com
+- Phone: +1-646-339-0154
+- License: NY #10401353717
+- Office: 2495 Montauk Hwy, Bridgehampton, NY 11932
+- Origin: Dublin; Sag Harbor local since 2013
+- Specialty: oceanfront, waterfront, estate-section, private-market
+
+## Coverage
+Southampton, Water Mill, Bridgehampton, Sagaponack, Sag Harbor, Wainscott, East Hampton, Amagansett, Montauk, Shelter Island.
+Coverage: Southampton to Montauk / the East End.
+
+## Key URLs
+- Home: https://hamptonshomes.ai/
+- About: https://hamptonshomes.ai/about
+- Sales / portfolio: https://hamptonshomes.ai/sales
+- Towns: https://hamptonshomes.ai/southampton, /water-mill, /bridgehampton, /sagaponack, /sag-harbor, /wainscott, /east-hampton, /amagansett, /montauk, /shelter-island
+- Contact: https://hamptonshomes.ai/contact
+- Blog / insights: https://hamptonshomes.ai/blog
+- Editorial (Hamptons Coastal): https://hamptonscoastal.com/
+
+## Crawl
+- robots.txt: https://hamptonshomes.ai/robots.txt
+- sitemap.xml: https://hamptonshomes.ai/sitemap.xml

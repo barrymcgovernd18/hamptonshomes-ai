@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/lib/blog";
+import JsonLd from "@/components/JsonLd";
+import { articleJsonLd } from "@/lib/schema";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -87,32 +89,9 @@ export default async function BlogPostPage({ params }: Props) {
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  // Article JSON-LD
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.metaDescription,
-    datePublished: post.date,
-    author: {
-      "@type": "Person",
-      name: "Barry McGovern",
-      jobTitle: "Licensed Real Estate Salesperson | Oceanfront & Waterfront Specialist",
-      worksFor: { "@type": "RealEstateAgent", name: "Hedgerow Exclusive Properties" },
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Hampton Homes AI",
-      url: "https://hamptonshomes.ai",
-    },
-  };
-
   return (
     <div className="bg-paper">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <JsonLd data={articleJsonLd(post)} />
       <article className="pt-32 pb-32">
         <div className="max-w-3xl mx-auto px-8">
           <Link
