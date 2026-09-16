@@ -191,11 +191,11 @@ export function siteGraphJsonLd() {
   };
 }
 
-export function faqPageJsonLd() {
+export function faqPageJsonLd(faqs: { question: string; answer: string }[] = BARRY_FAQS) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: BARRY_FAQS.map((faq) => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -204,6 +204,30 @@ export function faqPageJsonLd() {
       },
     })),
   };
+}
+
+export function breadcrumbListJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.path.startsWith("http") ? item.path : `${SITE_URL}${item.path}`,
+    })),
+  };
+}
+
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/barry-mcgovern.jpg`;
+
+export function absoluteUrl(path: string) {
+  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export function postOgImageUrl(image?: string) {
+  return image ? absoluteUrl(image) : DEFAULT_OG_IMAGE;
 }
 
 export function placeJsonLd(area: {
@@ -244,6 +268,7 @@ export function articleJsonLd(post: {
   metaDescription: string;
   date: string;
   slug: string;
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -252,6 +277,7 @@ export function articleJsonLd(post: {
     description: post.metaDescription,
     datePublished: post.date,
     url: `${SITE_URL}/blog/${post.slug}`,
+    image: postOgImageUrl(post.image),
     author: { "@id": PERSON_ID },
     publisher: { "@id": SITE_ORG_ID },
   };

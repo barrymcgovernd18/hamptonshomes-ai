@@ -1,3 +1,5 @@
+import { PLACE_NAMES, PLACE_SLUGS } from "./schema";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -8,6 +10,97 @@ export interface BlogPost {
   content: string;
   metaDescription: string;
   image?: string;
+}
+
+const RELATED_STOPWORDS = new Set([
+  "about",
+  "after",
+  "barry",
+  "from",
+  "hamptons",
+  "have",
+  "into",
+  "mcgovern",
+  "that",
+  "this",
+  "what",
+  "when",
+  "with",
+  "will",
+]);
+
+function tokenize(text: string) {
+  return new Set(
+    text
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .split(/[\s-]+/)
+      .filter((word) => word.length > 3 && !RELATED_STOPWORDS.has(word))
+  );
+}
+
+function stripMarkdown(text: string) {
+  return text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/\*\*(.*?)\*\*/g, "$1")
+    .replace(/\*(.*?)\*/g, "$1")
+    .replace(/^[-*]\s+/gm, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** Parse visible FAQ Q&A from a trailing `## FAQ` section. Does not invent answers. */
+export function extractFaqsFromContent(content: string): { question: string; answer: string }[] {
+  const normalized = content.replace(/\r\n/g, "\n");
+  const heading = /^## (FAQ|Frequently Asked Questions)\s*$/im.exec(normalized);
+  if (!heading || heading.index === undefined) return [];
+
+  const after = normalized.slice(heading.index + heading[0].length);
+  const nextH2 = after.search(/\n## [^#]/);
+  const section = (nextH2 === -1 ? after : after.slice(0, nextH2)).trim();
+  if (!section) return [];
+
+  const chunks = section.split(/^### /m).map((chunk) => chunk.trim()).filter(Boolean);
+  const faqs: { question: string; answer: string }[] = [];
+
+  for (const chunk of chunks) {
+    const newline = chunk.indexOf("\n");
+    const question = (newline === -1 ? chunk : chunk.slice(0, newline)).trim();
+    const answer = stripMarkdown(newline === -1 ? "" : chunk.slice(newline + 1));
+    if (question && answer) faqs.push({ question, answer });
+  }
+
+  return faqs;
+}
+
+export function inferTownFromPost(post: BlogPost): { name: (typeof PLACE_NAMES)[number]; slug: string } | null {
+  const haystack = `${post.slug.replace(/-/g, " ")} ${post.title}`.toLowerCase();
+  const hits = PLACE_NAMES.filter((name) => haystack.includes(name.toLowerCase()));
+  if (hits.length !== 1) return null;
+  return { name: hits[0], slug: PLACE_SLUGS[hits[0]] };
+}
+
+export function relatedBlogPosts(post: BlogPost, limit = 2): BlogPost[] {
+  const postTokens = tokenize(`${post.title} ${post.slug} ${post.category}`);
+  const town = inferTownFromPost(post);
+
+  return blogPosts
+    .filter((candidate) => candidate.slug !== post.slug)
+    .map((candidate) => {
+      const candidateTokens = tokenize(`${candidate.title} ${candidate.slug} ${candidate.category}`);
+      let overlap = 0;
+      for (const token of postTokens) {
+        if (candidateTokens.has(token)) overlap += 1;
+      }
+      const categoryBoost = candidate.category === post.category ? 2 : 0;
+      const relatedTown = inferTownFromPost(candidate);
+      const townBoost = town && relatedTown && town.slug === relatedTown.slug ? 8 : 0;
+      return { candidate, score: categoryBoost + townBoost + overlap * 3 };
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => b.score - a.score || b.candidate.date.localeCompare(a.candidate.date))
+    .slice(0, limit)
+    .map((entry) => entry.candidate);
 }
 
 export const blogPosts: BlogPost[] = [
