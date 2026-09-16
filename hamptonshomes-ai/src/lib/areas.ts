@@ -87,6 +87,8 @@ export const areas: Area[] = [
       "Proximity to reserve farmland preserves the rural character and open views",
     ],
     beaches: ["Mecox Beach", "W. Scott Cameron Beach", "Sagg Main Beach"],
+    editorial:
+      "Bridgehampton sits between village, reserve, and ocean. Surfside Drive is the ocean-bluff address; inland, farm and equestrian land still shape how lots feel. The useful split is oceanfront versus reserve-adjacent privacy, not a single village average.",
     priceRange: "$2M - $60M+",
     vibe: "Sporty luxury. Equestrian estates, ocean bluffs, and farm-to-table everything.",
     zipCode: "11932",
@@ -106,6 +108,8 @@ export const areas: Area[] = [
       "Minutes to Bridgehampton village amenities while maintaining total seclusion",
     ],
     beaches: ["Sagg Main Beach", "Gibson Beach", "Peter's Pond Beach"],
+    editorial:
+      "Sagaponack is a small hamlet with outsize privacy: oceanfront parcels, protected farmland, and very little through-traffic. Daniels Lane and Sagaponack Main Street are local names, not a retail strip. Space and seclusion do more work here than village amenities.",
     priceRange: "$3M - $100M+",
     vibe: "Ultra-private. Vast estates, open farmland, and the sound of the ocean. Nothing else.",
     zipCode: "11962",
@@ -152,6 +156,8 @@ export const areas: Area[] = [
       "Minutes from Southampton and Bridgehampton dining and culture",
     ],
     beaches: ["Flying Point Beach", "Scott Cameron Beach", "Mecox Beach", "Cedar Point Beach"],
+    editorial:
+      "Water Mill is a low-density stretch between Southampton and Bridgehampton, with farmland, Mecox, and ocean beaches in close conversation. The hamlet rewards buyers who want acreage and quiet without leaving the South Fork's core.",
     priceRange: "$2.5M - $125M+",
     vibe: "Pastoral and polished. Open land, quiet lanes, and serious privacy.",
     zipCode: "11976",
@@ -170,6 +176,8 @@ export const areas: Area[] = [
       "A creative, understated alternative to the more formal villages",
     ],
     beaches: ["Indian Wells Beach", "Atlantic Avenue Beach", "Amagansett Beach", "Napeague Beach"],
+    editorial:
+      "Amagansett pairs a walkable village with dune, farmland, and Napeague open space. Further Lane and the ocean dunes are the high-privacy edge; the village is the daily life. Buyers often choose it for a less formal East End rhythm with serious coastline.",
     priceRange: "$2M - $50M+",
     vibe: "Natural, creative, and unshowy. Beach life with room to breathe.",
     zipCode: "11930",
@@ -188,6 +196,8 @@ export const areas: Area[] = [
       "A strong year-round community with an independent coastal identity",
     ],
     beaches: ["Ditch Plains Beach", "Kirk Park Beach", "Gin Beach", "Hither Hills State Park"],
+    editorial:
+      "Montauk is the End: harbor, bluff, and open Atlantic, with a year-round community that does not pretend to be a South Fork village. The market splits among oceanfront compounds, harbor living, and quieter inland acreage. Setting and exposure matter more than a famous lane name.",
     priceRange: "$1.5M - $40M+",
     vibe: "Free-spirited and elemental. Surf, boats, open sky, and serious coastline.",
     zipCode: "11954",
@@ -206,6 +216,8 @@ export const areas: Area[] = [
       "Low-density island living with a deeply private character",
     ],
     beaches: ["Wades Beach", "Shell Beach", "Crescent Beach", "Hay Beach"],
+    editorial:
+      "Shelter Island is reached only by ferry or private boat, which is the point. Mashomack, quiet coves, and a small year-round community give it a different tempo from the South Fork villages. Waterfront here is about docks, coves, and privacy, not oceanfront parade.",
     priceRange: "$1M - $25M+",
     vibe: "Private, pastoral, and authentic. An island refuge with deep roots.",
     zipCode: "11964",
@@ -224,6 +236,8 @@ export const areas: Area[] = [
       "A discreet market with a strong mix of legacy and newly built estates",
     ],
     beaches: ["Wainscott Beach", "Gibson Beach", "Town Line Beach", "Atlantic Beach"],
+    editorial:
+      "Wainscott sits between East Hampton and Bridgehampton, with farmland, a small main street, and a short run to the ocean. Large parcels and a central location are the draw: privacy without giving up the villages on either side.",
     priceRange: "$2M - $60M+",
     vibe: "Central yet secluded. Country lanes, ocean air, and understated luxury.",
     zipCode: "11975",

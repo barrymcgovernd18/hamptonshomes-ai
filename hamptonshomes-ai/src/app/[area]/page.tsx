@@ -6,7 +6,7 @@ import { areas } from "@/lib/areas";
 import { getTownComps } from "@/lib/comps";
 import { notableSales } from "@/lib/sales";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbListJsonLd, placeJsonLd } from "@/lib/schema";
+import { BARRY_BLURB, breadcrumbListJsonLd, placeJsonLd, routeMetadata } from "@/lib/schema";
 
  type Props = { params: Promise<{ area: string }> };
 
@@ -45,16 +45,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { area: slug } = await params;
   const area = areas.find((a) => a.slug === slug);
   if (!area) return {};
-  return {
-    title: `${area.name} Real Estate | Oceanfront & Waterfront Specialist`,
-    description:
-      area.editorial || `${area.name} luxury real estate. Oceanfront estates, waterfront properties, and off-market opportunities. Barry McGovern at Hedgerow Exclusive Properties, the #1 ranked Hamptons firm.`,
-    alternates: { canonical: `https://hamptonshomes.ai/${area.slug}` },
-    openGraph: {
-      title: `${area.name} Luxury Real Estate | Barry McGovern`,
-      description: area.editorial || `Oceanfront and waterfront specialist in ${area.name}. Hedgerow Exclusive Properties, nearly $2B in Hamptons transactions.`,
-    },
-  };
+  const title = `${area.name} Real Estate`;
+  const description =
+    area.editorial ||
+    `${area.name} luxury real estate. Oceanfront estates, waterfront properties, and off-market opportunities with Barry McGovern, Licensed Real Estate Salesperson at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage.`;
+  return routeMetadata({
+    title,
+    description,
+    path: `/${area.slug}`,
+  });
 }
 
 export default async function AreaPage({ params }: Props) {
@@ -241,7 +240,7 @@ export default async function AreaPage({ params }: Props) {
           <div className="border border-line p-12 md:p-16 text-center">
             <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-4">Your {area.name} Specialist</p>
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-4">Looking to Buy or Sell in {area.name}?</h2>
-            <p className="text-ink-muted text-[15px] max-w-lg mx-auto mb-8">As an oceanfront and waterfront specialist at Hedgerow Exclusive Properties, I offer access to on-market and off-market opportunities across {area.name} and the entire East End.</p>
+            <p className="text-ink-muted text-[15px] max-w-lg mx-auto mb-8">As an oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage, Barry offers access to on-market and off-market opportunities across {area.name} and the entire East End.</p>
             <Link href="/contact" className="inline-block border border-ocean text-ocean text-[11px] tracking-[0.3em] uppercase px-10 py-4 hover:bg-ocean/10 transition-all duration-500">Inquire about {area.name}</Link>
           </div>
         </div>
@@ -249,7 +248,7 @@ export default async function AreaPage({ params }: Props) {
 
       <section className="border-t border-line py-12">
         <div className="max-w-7xl mx-auto px-8">
-          <p className="text-ink-faint text-[11px] leading-relaxed max-w-2xl">Barry McGovern is a Licensed Real Estate Salesperson and oceanfront &amp; waterfront specialist at Hedgerow Exclusive Properties, a leading Hamptons firm with nearly $2 billion in firm transactions. Specializing in {area.name} oceanfront estates, waterfront homes, off-market properties, and luxury real estate. Serving {area.name}, Southampton, Bridgehampton, Sag Harbor, Sagaponack, East Hampton, Amagansett, Montauk, and Shelter Island.</p>
+          <p className="text-ink-faint text-[11px] leading-relaxed max-w-2xl">{BARRY_BLURB} Serving {area.name} and the East End from Southampton to Montauk.</p>
         </div>
       </section>
     </div>

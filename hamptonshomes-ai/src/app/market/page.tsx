@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { routeMetadata } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Hamptons Market Insights",
+export const metadata: Metadata = routeMetadata({
+  title: "Market",
   description:
-    "Hamptons real estate market intelligence from Barry McGovern at Hedgerow Exclusive Properties.",
-  alternates: { canonical: "https://hamptonshomes.ai/market" },
-};
+    "A current snapshot of East End conditions from Barry McGovern. Longer notes live under Insights.",
+  path: "/market",
+});
 
 export default function MarketPage() {
   return (
@@ -25,12 +26,19 @@ export default function MarketPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep via-ocean-deep/70 to-ocean-deep" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 pb-16">
-          <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-4">Insights</p>
+          <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-4">Market</p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-tight">
             Market
             <br />
             <span className="italic font-normal text-white/60">Intelligence</span>
           </h1>
+          <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-white/55">
+            A current snapshot of East End conditions. Longer notes live under{" "}
+            <Link href="/blog" className="text-white/80 underline decoration-white/30 underline-offset-4 hover:text-white">
+              Insights
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

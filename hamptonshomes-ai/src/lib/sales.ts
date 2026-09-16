@@ -1,3 +1,5 @@
+import { DUCK_POND_BLURB, SAGAPONACK_MAIN_BLURB } from "./seo-copy";
+
 export interface Sale {
   address: string;
   area: string;
@@ -63,6 +65,8 @@ export const notableSales: Sale[] = [
     description: "Southampton waterfront estate on Wickapogue Pond. Sweeping views of the pond and Atlantic Ocean. Double-height entry, walls of glass, expansive terraces and waterside pool.",
     image: "/images/109-duck-pond.jpg",
     listingUrl: "https://hedgerow.eastendli.com/property/923559/",
+    roleNote: DUCK_POND_BLURB.roleNote,
+    blurb: DUCK_POND_BLURB.blurb,
   },
 {
     address: "234 Wickapogue Road",
@@ -93,6 +97,8 @@ export const notableSales: Sale[] = [
     description: "Sagaponack South exquisite 2.2-acre estate. Double-gated entry, exceptional perennial gardens, chef's kitchen, pool house, and guest wing. Classic worldly feel with ocean proximity.",
     image: "/images/193-sagaponack.jpg",
     listingUrl: "https://hedgerow.eastendli.com/property/897949/",
+    roleNote: SAGAPONACK_MAIN_BLURB.roleNote,
+    blurb: SAGAPONACK_MAIN_BLURB.blurb,
   },
 {
     address: "55 Marine Boulevard",
@@ -179,4 +185,5 @@ export const notableSales: Sale[] = [
 ];
 
 export const personalVolume = "$250M+";
-export const teamVolume = "$2B+";
+export const firmVolume = "nearly $2B";
+export const firmVolumeLabel = "Firm transactions";

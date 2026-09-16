@@ -10,10 +10,12 @@ import {
 import JsonLd from "@/components/JsonLd";
 import {
   COASTAL_ABOUT_URL,
+  DEFAULT_OG_IMAGE,
   articleJsonLd,
   breadcrumbListJsonLd,
   faqPageJsonLd,
   postOgImageUrl,
+  shareImages,
 } from "@/lib/schema";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -28,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
   const canonical = `https://hamptonshomes.ai/blog/${post.slug}`;
   const ogImage = postOgImageUrl(post.image);
+  const usesShareImage = ogImage === DEFAULT_OG_IMAGE;
   return {
     title: post.title,
     description: post.metaDescription,
@@ -39,7 +42,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
-      images: [{ url: ogImage, alt: post.title }],
+      images: usesShareImage
+        ? shareImages(post.title)
+        : [{ url: ogImage, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",

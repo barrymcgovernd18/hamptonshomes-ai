@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const fieldClass =
   "w-full border border-line bg-paper px-4 py-3 text-[15px] text-ink placeholder:text-ink-faint focus:border-ocean focus:outline-none";
@@ -111,6 +112,17 @@ export default function ContactForm() {
       {status === "error" && (
         <p className="text-center text-[12px] text-red-700/70">Something went wrong. Try calling instead.</p>
       )}
+      <p className="text-center text-[11px] leading-relaxed text-ink-faint">
+        By sending, you agree to the{" "}
+        <Link href="/privacy" className="text-ocean hover:text-ocean-deep">
+          Privacy Policy
+        </Link>{" "}
+        and{" "}
+        <Link href="/terms" className="text-ocean hover:text-ocean-deep">
+          Terms of Use
+        </Link>
+        .
+      </p>
     </form>
   );
 }

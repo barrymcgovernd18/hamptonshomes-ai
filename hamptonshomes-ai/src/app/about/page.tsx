@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
-import { BARRY_FAQS, faqPageJsonLd } from "@/lib/schema";
+import AlsoOnStrip from "@/components/AlsoOnStrip";
+import { BARRY_BLURB, BARRY_FAQS, faqPageJsonLd, routeMetadata } from "@/lib/schema";
+import { FIRM_ACCOLADES } from "@/lib/seo-copy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = routeMetadata({
   title: "About Barry McGovern",
-  description: "Barry McGovern is a Licensed Real Estate Salesperson and oceanfront & waterfront specialist at Hedgerow Exclusive Properties.",
-  alternates: { canonical: "https://hamptonshomes.ai/about" },
-};
+  description:
+    "Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage.",
+  path: "/about",
+});
 
 const specialties = [
   "Oceanfront estates & homes",
@@ -39,18 +42,14 @@ export default function AboutPage() {
             <div className="md:col-span-7">
               <div className="space-y-6 text-[15px] leading-[1.95] text-ink-muted">
                 <p className="font-serif text-2xl leading-[1.55] text-ink">
-                  Oceanfront and waterfront specialist. Licensed Real Estate Salesperson at{" "}
-                  <a href="https://hedgerowexclusive.com" target="_blank" rel="noopener" className="text-ocean underline decoration-ocean/30 underline-offset-4 hover:text-ocean-deep">
-                    Hedgerow Exclusive Properties
-                  </a>
-                  , the firm behind nearly $2 billion in Hamptons transactions.
+                  {BARRY_BLURB}
                 </p>
-                <p>New York license #10401353717.</p>
+                <p>New York license #10401353717. Salesperson, not broker.</p>
                 <p>
                   As part of the Hedgerow team, Barry has been involved in some of the most significant real estate transactions on the East End, from record-setting oceanfront trades to nine-figure compound sales. He brings six years of Hamptons luxury experience and a reputation built on discretion, deep market knowledge, and results.
                 </p>
                 <p>
-                  Originally from Dublin, Ireland, Barry has called the Hamptons home since 2013 and proudly considers himself a Sag Harbor local. His deep roots in the community, combined with Hedgerow&apos;s nearly $2 billion in transactions since 2020, give his clients an unmatched advantage in one of the world&apos;s most competitive luxury markets.
+                  Originally from Dublin, Ireland, Barry has called the Hamptons home since 2013 and proudly considers himself a Sag Harbor local. His practice sits inside a boutique firm whose public materials describe nearly $2 billion in Hamptons transactions.
                 </p>
                 <p>
                   Barry&apos;s expertise centers on oceanfront and waterfront properties, from Further Lane and Meadow Lane oceanfront estates to Sag Harbor and Shelter Island waterfront homes. He also covers raw land, development opportunities, and off-market inventory.
@@ -90,9 +89,10 @@ export default function AboutPage() {
                 <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-ocean">Firm</p>
                 <p className="mb-4 font-serif text-xl text-ink">Hedgerow Exclusive Properties</p>
                 <p className="text-[13px] leading-[1.8] text-ink-muted">
-                  Boutique luxury firm based in Bridgehampton. Founded 2020. Nearly $2 billion in transactions, including the most expensive trade in Hamptons history ($121.5M). Ranked #1 Hamptons, #1 New York, #4 USA by WSJ/RealTrends.
+                  {FIRM_ACCOLADES}
                 </p>
               </div>
+              <AlsoOnStrip />
               <Link href="/contact" className="block bg-ocean px-8 py-4 text-center text-[11px] uppercase tracking-[0.3em] text-paper transition-colors hover:bg-ocean-deep">
                 Get in Touch
               </Link>

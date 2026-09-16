@@ -3,38 +3,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "@/lib/blog";
 import JsonLd from "@/components/JsonLd";
-import { DEFAULT_OG_IMAGE, breadcrumbListJsonLd } from "@/lib/schema";
+import { breadcrumbListJsonLd, routeMetadata } from "@/lib/schema";
 
-const BLOG_TITLE = "Market Intelligence | Insights";
+const BLOG_TITLE = "Insights";
 const BLOG_DESCRIPTION =
-  "Hamptons real estate market reports, oceanfront insights, and luxury market analysis by Barry McGovern at Hedgerow Exclusive Properties.";
-const BLOG_URL = "https://hamptonshomes.ai/blog";
+  "Hamptons real estate reports and town notes by Barry McGovern. For a current snapshot, see Market.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = routeMetadata({
   title: BLOG_TITLE,
   description: BLOG_DESCRIPTION,
-  alternates: { canonical: BLOG_URL },
-  openGraph: {
-    title: BLOG_TITLE,
-    description: BLOG_DESCRIPTION,
-    url: BLOG_URL,
-    type: "website",
-    images: [
-      {
-        url: DEFAULT_OG_IMAGE,
-        width: 1200,
-        height: 630,
-        alt: "Barry McGovern - Hamptons luxury real estate insights",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: BLOG_TITLE,
-    description: BLOG_DESCRIPTION,
-    images: [DEFAULT_OG_IMAGE],
-  },
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   const [latest, ...rest] = blogPosts;
@@ -55,6 +34,13 @@ export default function BlogPage() {
             <br />
             <span className="italic font-normal text-ink-muted">Intelligence</span>
           </h1>
+          <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-ink-muted">
+            Reports and town notes. For a current snapshot, see{" "}
+            <Link href="/market" className="text-ocean underline decoration-ocean/30 underline-offset-4 hover:text-ocean-deep">
+              Market
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
