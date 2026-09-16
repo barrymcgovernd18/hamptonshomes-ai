@@ -53,7 +53,8 @@ export const BARRY_SAME_AS = [
   BARRY_ABOUT_URL,
 ] as const;
 
-export const PERSON_ID = `${BARRY_ABOUT_URL}#person`;
+/** Shared with Homes so both sites resolve to one Person entity. */
+export const PERSON_ID = "https://hamptonshomes.ai/about#person";
 export const SITE_ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 

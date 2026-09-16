@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blogPosts } from "@/lib/blog";
+import {
+  blogPosts,
+  extractFaqsFromContent,
+  inferTownFromPost,
+  relatedBlogPosts,
+} from "@/lib/blog";
 import JsonLd from "@/components/JsonLd";
-import { articleJsonLd } from "@/lib/schema";
+import {
+  COASTAL_ABOUT_URL,
+  articleJsonLd,
+  breadcrumbListJsonLd,
+  faqPageJsonLd,
+  postOgImageUrl,
+} from "@/lib/schema";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -15,16 +26,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
+  const canonical = `https://hamptonshomes.ai/blog/${post.slug}`;
+  const ogImage = postOgImageUrl(post.image);
   return {
     title: post.title,
     description: post.metaDescription,
-    alternates: { canonical: `https://hamptonshomes.ai/blog/${post.slug}` },
+    alternates: { canonical },
     openGraph: {
       title: post.title,
       description: post.metaDescription,
+      url: canonical,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      images: [{ url: ogImage, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.metaDescription,
+      images: [ogImage],
     },
   };
 }
@@ -163,9 +184,21 @@ export default async function BlogPostPage({ params }: Props) {
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) notFound();
 
+  const faqs = extractFaqsFromContent(post.content);
+  const town = inferTownFromPost(post);
+  const related = relatedBlogPosts(post, 2);
+
   return (
     <div className="bg-paper">
       <JsonLd data={articleJsonLd(post)} />
+      <JsonLd
+        data={breadcrumbListJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Insights", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
+      />
+      {faqs.length > 0 && <JsonLd data={faqPageJsonLd(faqs)} />}
       <article className="pt-32 pb-32">
         <div className="max-w-3xl mx-auto px-8">
           <Link
@@ -188,6 +221,48 @@ export default async function BlogPostPage({ params }: Props) {
           </p>
 
           <div>{renderContent(post.content)}</div>
+
+          <nav className="mt-16 border-t border-line pt-10" aria-label="Continue reading">
+            <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-6">Continue reading</p>
+            <ul className="space-y-3">
+              {town && (
+                <li>
+                  <Link
+                    href={`/${town.slug}`}
+                    className="text-[15px] text-ink-muted hover:text-ocean transition-colors duration-500"
+                  >
+                    Explore {town.name} luxury real estate
+                  </Link>
+                </li>
+              )}
+              <li>
+                <a
+                  href={COASTAL_ABOUT_URL}
+                  className="text-[15px] text-ink-muted hover:text-ocean transition-colors duration-500"
+                >
+                  About Barry McGovern on Hamptons Coastal
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-[15px] text-ink-muted hover:text-ocean transition-colors duration-500"
+                >
+                  Confidential consultation
+                </Link>
+              </li>
+              {related.map((relatedPost) => (
+                <li key={relatedPost.slug}>
+                  <Link
+                    href={`/blog/${relatedPost.slug}`}
+                    className="text-[15px] text-ink-muted hover:text-ocean transition-colors duration-500"
+                  >
+                    {relatedPost.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           {/* CTA */}
           <div className="border border-line bg-paper-soft p-10 mt-16 text-center">

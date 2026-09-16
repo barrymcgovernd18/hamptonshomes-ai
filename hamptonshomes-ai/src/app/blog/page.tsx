@@ -2,12 +2,38 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "@/lib/blog";
+import JsonLd from "@/components/JsonLd";
+import { DEFAULT_OG_IMAGE, breadcrumbListJsonLd } from "@/lib/schema";
+
+const BLOG_TITLE = "Market Intelligence | Insights";
+const BLOG_DESCRIPTION =
+  "Hamptons real estate market reports, oceanfront insights, and luxury market analysis by Barry McGovern at Hedgerow Exclusive Properties.";
+const BLOG_URL = "https://hamptonshomes.ai/blog";
 
 export const metadata: Metadata = {
-  title: "Market Insights & Reports",
-  description:
-    "Hamptons real estate market reports, oceanfront insights, and luxury market analysis by Barry McGovern at Hedgerow Exclusive Properties.",
-  alternates: { canonical: "https://hamptonshomes.ai/blog" },
+  title: BLOG_TITLE,
+  description: BLOG_DESCRIPTION,
+  alternates: { canonical: BLOG_URL },
+  openGraph: {
+    title: BLOG_TITLE,
+    description: BLOG_DESCRIPTION,
+    url: BLOG_URL,
+    type: "website",
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Barry McGovern - Hamptons luxury real estate insights",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: BLOG_TITLE,
+    description: BLOG_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
+  },
 };
 
 export default function BlogPage() {
@@ -15,6 +41,12 @@ export default function BlogPage() {
 
   return (
     <div className="bg-paper">
+      <JsonLd
+        data={breadcrumbListJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Insights", path: "/blog" },
+        ])}
+      />
       <section className="bg-paper-deep pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-8">
           <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-4">Insights</p>
