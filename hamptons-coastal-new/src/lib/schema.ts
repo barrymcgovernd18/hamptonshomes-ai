@@ -102,7 +102,7 @@ export function barryPersonNode() {
     name: "Barry McGovern",
     jobTitle: "Licensed Real Estate Salesperson",
     description: BARRY_SCHEMA_DESCRIPTION,
-    url: BARRY_ABOUT_URL,
+    url: "https://hamptonshomes.ai/about",
     telephone: "+1-646-339-0154",
     email: "barry@hedgerowexclusive.com",
     image: "https://hamptonshomes.ai/images/barry-mcgovern.jpg",

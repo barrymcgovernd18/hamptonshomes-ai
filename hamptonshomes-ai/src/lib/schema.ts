@@ -3,9 +3,13 @@
  * Do not put firm volume, rankings, or personal production figures in schema.
  */
 
+import type { Metadata } from "next";
+import { OG_ALT } from "@/lib/seo-copy";
+
 export const SITE_URL = "https://hamptonshomes.ai";
 export const SITE_NAME = "HamptonsHomes.ai";
 export const COASTAL_ABOUT_URL = "https://hamptonscoastal.com/about/barry-mcgovern";
+export const PERSON_CANONICAL_URL = `${SITE_URL}/about`;
 
 export const HEDGEROW = {
   name: "Hedgerow Exclusive Properties",
@@ -61,7 +65,8 @@ export const BARRY_SAME_AS = [
   "https://hedgerowexclusive.com/members/barry-mcgovern/",
   "https://www.linkedin.com/in/barry-mcgovern-9346133b",
   "https://www.instagram.com/barrymcgovern_/",
-  "https://hamptonshomes.ai/",
+  `${SITE_URL}/`,
+  PERSON_CANONICAL_URL,
   "https://outeast.com/agents/9187/barry-mcgovern/bridgehampton",
   COASTAL_ABOUT_URL,
 ] as const;
@@ -146,7 +151,7 @@ export function barryPersonNode() {
     name: "Barry McGovern",
     jobTitle: "Licensed Real Estate Salesperson",
     description: BARRY_SCHEMA_DESCRIPTION,
-    url: `${SITE_URL}/`,
+    url: PERSON_CANONICAL_URL,
     telephone: "+1-646-339-0154",
     email: "barry@hedgerowexclusive.com",
     image: `${SITE_URL}/images/barry-mcgovern.jpg`,
@@ -219,7 +224,19 @@ export function breadcrumbListJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/barry-mcgovern.jpg`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/og-share.jpg`;
+export const OG_SHARE_PATH = "/images/og-share.jpg";
+
+export function shareImages(alt: string = OG_ALT) {
+  return [
+    {
+      url: DEFAULT_OG_IMAGE,
+      width: 1200,
+      height: 630,
+      alt,
+    },
+  ];
+}
 
 export function absoluteUrl(path: string) {
   if (path.startsWith("http://") || path.startsWith("https://")) return path;
@@ -228,6 +245,76 @@ export function absoluteUrl(path: string) {
 
 export function postOgImageUrl(image?: string) {
   return image ? absoluteUrl(image) : DEFAULT_OG_IMAGE;
+}
+
+export function canonicalUrl(path: string) {
+  if (path === "/" || path === "") return `${SITE_URL}/`;
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export function routeMetadata({
+  title,
+  description,
+  path,
+  type = "website",
+}: {
+  title: string;
+  description: string;
+  path: string;
+  type?: "website" | "article";
+}): Metadata {
+  const url = canonicalUrl(path);
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type,
+      locale: "en_US",
+      url,
+      siteName: "Barry McGovern | Hamptons Real Estate",
+      title,
+      description,
+      images: shareImages(),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [DEFAULT_OG_IMAGE],
+    },
+  };
+}
+
+export function salesItemListJsonLd(
+  sales: {
+    address: string;
+    area: string;
+    price: string;
+    status: string;
+    blurb?: string;
+    image?: string;
+    listingUrl?: string;
+    roleNote?: string;
+  }[]
+) {
+  const items = sales.filter((sale) => sale.roleNote === "Seller representation");
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Selected seller-representation closes",
+    description:
+      "Public seller-representation closes from Barry McGovern's Hamptons portfolio.",
+    url: `${SITE_URL}/sales`,
+    numberOfItems: items.length,
+    itemListElement: items.map((sale, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: `${sale.address}, ${sale.area}`,
+      url: sale.listingUrl || `${SITE_URL}/sales`,
+      description: sale.blurb || `${sale.address}, ${sale.area}. ${sale.status}. ${sale.price}. Seller representation.`,
+    })),
+  };
 }
 
 export function placeJsonLd(area: {

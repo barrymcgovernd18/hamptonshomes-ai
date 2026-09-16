@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { notableSales, personalVolume, teamVolume } from "@/lib/sales";
+import JsonLd from "@/components/JsonLd";
+import { notableSales, personalVolume, firmVolume, firmVolumeLabel } from "@/lib/sales";
 import { activeListings } from "@/lib/listings";
+import { routeMetadata, salesItemListJsonLd } from "@/lib/schema";
+import { SALES_PAGE } from "@/lib/seo-copy";
 
-export const metadata: Metadata = {
-  title: "Portfolio | Barry McGovern Notable Sales",
-  description: "Explore Barry McGovern's documented notable sales across the Hamptons, including oceanfront, waterfront, village, and private transactions.",
-  alternates: { canonical: "https://hamptonshomes.ai/sales" },
-};
+export const metadata: Metadata = routeMetadata({
+  title: SALES_PAGE.title,
+  description: SALES_PAGE.description,
+  path: "/sales",
+});
 
 function salePriceValue(price: string) {
   return Number(price.replace(/[^0-9.]/g, ""));
@@ -23,6 +26,7 @@ export default function SalesPage() {
     .sort((a, b) => salePriceValue(b.price) - salePriceValue(a.price));
   return (
     <div className="bg-paper text-ink">
+      <JsonLd data={salesItemListJsonLd(notableSales)} />
       <section className="border-b border-line bg-ocean-deep pt-32 pb-20 text-paper">
         <div className="mx-auto max-w-7xl px-6 md:px-8">
           <p className="mb-4 text-[10px] uppercase tracking-[0.5em] text-ocean-soft">Barry McGovern · Portfolio</p>
@@ -33,7 +37,7 @@ export default function SalesPage() {
             </div>
             <div className="grid grid-cols-2 gap-8 text-left md:text-right">
               <div><p className="font-serif text-2xl text-paper">{personalVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/45">Personal volume</p></div>
-              <div><p className="font-serif text-2xl text-paper">{teamVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/45">Team volume</p></div>
+              <div><p className="font-serif text-2xl text-paper">{firmVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/45">{firmVolumeLabel}</p></div>
             </div>
           </div>
           <p className="mt-10 max-w-xl text-[12px] leading-relaxed text-paper/45">Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage. Public firm materials describe nearly $2 billion in Hamptons transactions.</p>

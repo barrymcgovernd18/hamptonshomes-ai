@@ -13,72 +13,39 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
+const HOME_TITLE = "Barry McGovern | Oceanfront & Waterfront Specialist | Hamptons Luxury Real Estate";
+const HOME_DESCRIPTION =
+  "Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. Public firm materials describe nearly $2 billion in Hamptons transactions.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://hamptonshomes.ai"),
   title: {
-    default: "Barry McGovern | Oceanfront & Waterfront Specialist | Hamptons Luxury Real Estate",
-    template: "%s | Barry McGovern - Hamptons Real Estate",
+    default: HOME_TITLE,
+    template: "%s | Barry McGovern",
   },
-  description:
-    "Barry McGovern is a Licensed Real Estate Salesperson and oceanfront & waterfront specialist at Hedgerow Exclusive Properties in the Hamptons. From Southampton to Montauk, Sag Harbor to Shelter Island, specializing in oceanfront estates, waterfront properties, and off-market opportunities.",
-  keywords: [
-    "Hamptons real estate",
-    "Hamptons real estate agent",
-    "luxury homes Hamptons",
-    "Hamptons oceanfront homes",
-    "Hamptons waterfront properties",
-    "oceanfront real estate Hamptons",
-    "waterfront homes Sag Harbor",
-    "Sag Harbor real estate",
-    "Southampton real estate agent",
-    "Southampton oceanfront",
-    "Bridgehampton real estate",
-    "East Hampton luxury homes",
-    "East Hampton oceanfront",
-    "Shelter Island real estate",
-    "Shelter Island waterfront",
-    "Montauk real estate",
-    "Montauk oceanfront homes",
-    "Amagansett real estate",
-    "Sagaponack real estate",
-    "Hamptons Licensed Real Estate Salesperson",
-    "Barry McGovern",
-    "Barry McGovern Hamptons",
-    "Hedgerow Exclusive Properties",
-    "off-market Hamptons",
-    "luxury real estate agent Hamptons",
-    "Hamptons luxury salesperson",
-    "best Hamptons real estate agent",
-    "Hamptons private market",
-    "Hamptons estate sales",
-    "Lily Pond Lane real estate",
-    "Further Lane real estate",
-    "Meadow Lane real estate",
-  ],
+  description: HOME_DESCRIPTION,
   authors: [{ name: "Barry McGovern" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://hamptonshomes.ai",
+    url: "https://hamptonshomes.ai/",
     siteName: "Barry McGovern | Hamptons Real Estate",
-    title: "Barry McGovern | Oceanfront & Waterfront Specialist | Hamptons Luxury Real Estate",
-    description:
-      "Oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a leading Hamptons firm with nearly $2B in firm transactions. Luxury homes from Southampton to Montauk.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: [
       {
-        url: "/images/barry-mcgovern.jpg",
+        url: "/images/og-share.jpg",
         width: 1200,
         height: 630,
-        alt: "Barry McGovern - Hamptons Luxury Real Estate Agent",
+        alt: "Barry McGovern and Hamptons oceanfront, Hedgerow Exclusive Properties",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Barry McGovern | Oceanfront & Waterfront Specialist | Hamptons",
-    description:
-      "Oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Luxury homes from Southampton to Montauk.",
-    images: ["/images/barry-mcgovern.jpg"],
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: ["/images/og-share.jpg"],
   },
   robots: {
     index: true,
@@ -92,7 +59,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://hamptonshomes.ai",
+    canonical: "https://hamptonshomes.ai/",
   },
 };
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { areas } from "@/lib/areas";
+import AlsoOnStrip from "@/components/AlsoOnStrip";
 
 export default function Footer() {
   return (
@@ -11,6 +12,7 @@ export default function Footer() {
             <p className="mt-3 text-[10px] uppercase tracking-[0.32em] text-ocean">Hedgerow Exclusive Properties</p>
             <p className="mt-3 text-[11px] text-ink-faint">Licensed Real Estate Salesperson · NY License #10401353717</p>
             <p className="mt-8 max-w-sm text-[13px] leading-relaxed">Oceanfront and waterfront representation across the East End, from Southampton to Montauk.</p>
+            <AlsoOnStrip className="mt-8" />
           </div>
           <div className="md:col-span-3 md:col-start-7">
             <p className="mb-6 text-[10px] uppercase tracking-[0.3em] text-ink-faint">Areas</p>
@@ -28,7 +30,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-line"><div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-[10px] tracking-[0.08em] text-ink-faint md:flex-row md:items-center md:justify-between md:px-8"><p>&copy; {new Date().getFullYear()} Barry McGovern · 2495 Montauk Highway, Bridgehampton, NY</p><div className="flex flex-wrap gap-6 uppercase tracking-[0.16em]">{[{href:"/about",label:"About"},{href:"/sales",label:"Portfolio"},{href:"/market",label:"Market"},{href:"/contact",label:"Contact"}].map((item) => <Link key={item.href} href={item.href} className="hover:text-ocean">{item.label}</Link>)}</div></div></div>
+      <div className="border-t border-line"><div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-[10px] tracking-[0.08em] text-ink-faint md:flex-row md:items-center md:justify-between md:px-8"><p>&copy; {new Date().getFullYear()} Barry McGovern · 2495 Montauk Highway, Bridgehampton, NY</p><div className="flex flex-wrap gap-6 uppercase tracking-[0.16em]">{[{href:"/about",label:"About"},{href:"/sales",label:"Portfolio"},{href:"/market",label:"Market"},{href:"/contact",label:"Contact"},{href:"/privacy",label:"Privacy"},{href:"/terms",label:"Terms"}].map((item) => <Link key={item.href} href={item.href} className="hover:text-ocean">{item.label}</Link>)}</div></div></div>
     </footer>
   );
 }

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { routeMetadata } from "@/lib/schema";
+import { PRESS_QUARTER_CARD } from "@/lib/seo-copy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = routeMetadata({
   title: "Press",
   description:
     "Barry McGovern and Hedgerow Exclusive Properties in the press. Forbes, Wall Street Journal, Architectural Digest, Vogue, The Real Deal, Robb Report, and more.",
-  alternates: { canonical: "https://hamptonshomes.ai/press" },
-};
+  path: "/press",
+});
 
 interface PressItem {
   outlet: string;
@@ -15,14 +17,16 @@ interface PressItem {
   image?: string;
   featured?: boolean;
   barry?: boolean;
+  dek?: string;
 }
 
 const pressItems: PressItem[] = [
   // Barry-specific
   {
-    outlet: "27East",
-    title: "Hamptons Real Estate Roundtable, Barry McGovern: \"Close to $200M in trades just this quarter\"",
-    url: "https://www.27east.com/residence/real-estate-news/article_5886f122-abda-5769-ab77-b503e0045269.html",
+    outlet: PRESS_QUARTER_CARD.outlet,
+    title: PRESS_QUARTER_CARD.title,
+    dek: PRESS_QUARTER_CARD.dek,
+    url: PRESS_QUARTER_CARD.url,
     featured: true,
     barry: true,
   },
@@ -225,6 +229,9 @@ export default function PressPage() {
                   <h2 className="font-serif text-xl md:text-2xl text-white group-hover:text-ocean transition-colors duration-500 leading-snug">
                     {item.title}
                   </h2>
+                  {item.dek ? (
+                    <p className="mt-4 text-[14px] leading-relaxed text-white/45">{item.dek}</p>
+                  ) : null}
                   <p className="text-white/20 text-[11px] tracking-[0.2em] uppercase mt-6 group-hover:text-ocean/50 transition-colors duration-500">
                     Read Article →
                   </p>
