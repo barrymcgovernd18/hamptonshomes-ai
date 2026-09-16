@@ -82,6 +82,7 @@ export function inferTownFromPost(post: BlogPost): { name: (typeof PLACE_NAMES)[
 
 export function relatedBlogPosts(post: BlogPost, limit = 2): BlogPost[] {
   const postTokens = tokenize(`${post.title} ${post.slug} ${post.category}`);
+  const town = inferTownFromPost(post);
 
   return blogPosts
     .filter((candidate) => candidate.slug !== post.slug)
@@ -91,8 +92,10 @@ export function relatedBlogPosts(post: BlogPost, limit = 2): BlogPost[] {
       for (const token of postTokens) {
         if (candidateTokens.has(token)) overlap += 1;
       }
-      const categoryBoost = candidate.category === post.category ? 3 : 0;
-      return { candidate, score: categoryBoost + overlap };
+      const categoryBoost = candidate.category === post.category ? 2 : 0;
+      const relatedTown = inferTownFromPost(candidate);
+      const townBoost = town && relatedTown && town.slug === relatedTown.slug ? 8 : 0;
+      return { candidate, score: categoryBoost + townBoost + overlap * 3 };
     })
     .filter((entry) => entry.score > 0)
     .sort((a, b) => b.score - a.score || b.candidate.date.localeCompare(a.candidate.date))
