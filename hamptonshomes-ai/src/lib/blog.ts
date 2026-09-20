@@ -105,6 +105,135 @@ export function relatedBlogPosts(post: BlogPost, limit = 2): BlogPost[] {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "bridgehampton-non-water-market-overview-2026-09",
+    title: "Bridgehampton Non-Water Luxury Real Estate Market Overview 2026",
+    excerpt:
+      "Bridgehampton non-water solds over roughly three years run about $9.25M-$30M. South of Montauk Highway still owns the top, while finished new construction north of the highway has cleared the mid-teens and higher.",
+    date: "2026-09-20",
+    author: "Barry McGovern",
+    category: "Market Report",
+    image: "/images/press/bridgehampton-50m.jpg",
+    metaDescription:
+      "Bridgehampton non-water comps: South of highway tops the market; north of highway new construction prints high ($10M-$20.5M). Barry McGovern, Hedgerow Exclusive Properties.",
+    content: `
+## Bridgehampton Non-Water Luxury: South Still Leads, North New Construction Prints High
+
+Bridgehampton remains one of the East End's deepest ultra-luxury non-water markets. Over roughly the past three years, closed sales in this set run from about **$9.25 million to $30 million**. Pricing still moves hard with location relative to Montauk Highway, acreage, condition, and how finished the house actually is.
+
+Barry McGovern, a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties (a boutique ultra-luxury Hamptons brokerage; public firm materials describe nearly $2 billion in Hamptons transactions), tracks these Bridgehampton comps for buyers and sellers who need a clear North-of-highway versus South-of-highway read, not brochure language.
+
+Buyers often focus on the **$10 million to $15 million** band. That slice is real and active. The fuller set below shows why context still matters: South of the highway continues to own the absolute top of the market, while finished new construction **north of Montauk Highway** has cleared very strong numbers more than once when size, land, and quality line up.
+
+## What Is the Bridgehampton Non-Water Market Doing?
+
+The market is active and selective. South of Montauk Highway still sets the ceiling: estate-section scale, ocean-road adjacency, and trophy finished product continue to print the highest closes in this non-water set. North of the highway is no longer a soft alternative by default. Recent new construction with real square footage and acreage has cleared the mid-teens and higher, which is the clearest signal in the current tape for buyers shopping that geography.
+
+Condition and completeness still separate outcomes inside the same street network. Larger lots, newer builds, and houses that feel fully done trade differently from thinner renovations or land-weighted packages at similar asking levels.
+
+## North of Montauk Highway: New Construction Is Getting Paid
+
+The useful story for many $10M-$15M buyers is north of the highway. Quality and scale are getting paid for. Named examples from this sold set:
+
+- **1953 Scuttle Hole Road** at **$20,500,000** (November 2024): large new construction on meaningful acreage.
+- **14 Two Trees Lane** at **$15,000,000** (May 2026).
+- **261 Millstone Road** at **$14,650,000** (January 2026) and **263 Millstone Road** at **$14,250,000** (May 2025): paired Millstone new-construction outcomes in the mid-teens.
+- **361 Mitchell Lane** at **$11,100,000** (April 2026) and **279 Mitchell Lane** at **$11,000,000** (May 2024).
+- **825 Old Sag Harbor Road** at **$10,400,000** (February 2026).
+- **1164 Scuttle Hole Road** at **$10,250,000** (February 2024).
+- Also in the north set: **85 Pheasant Drive** ($9,999,500) and **418 Butter Lane** ($9,450,000).
+
+Read together, these closes show that north of Montauk Highway is not capped at a soft mid-market band when the house is new, large, and finished. That is the point buyers underwriting Scuttle Hole, Millstone, Mitchell, Old Sag Harbor Road, and nearby streets should not miss.
+
+## South of Montauk Highway: Still Owns the Top
+
+South of the highway still owns the top of this non-water set. Recent examples include **1240 Ocean Road** at **$30,000,000**, **72 Highland Terrace** at **$24,300,000**, **104 Quimby Lane** at **$22,150,000**, plus a run of Jobs Lane, Surfside, Matthews, Sagaponack Road, and Mecox-area closes from the mid-teens through the high teens. Absolute top-of-market pricing remains a South-of-highway conversation first.
+
+## Non-Water Sales Snapshot (~3 Years)
+
+Figures below are Bridgehampton non-water solds from available MLS / Hedgerow records for discussion. Confirm any sale against primary sources before relying on it for pricing. Each row is tagged **North of highway** or **South of highway** (Montauk Highway).
+
+| Address | Sold | Date | Bd | Ba | SF | Acres | North / South of Highway |
+| --- | ---: | --- | ---: | ---: | ---: | ---: | --- |
+| 1240 Ocean Road | $30,000,000 | 1/1/23 | 8 | 9.5 | 9,990 | 1.40 | South of highway |
+| 72 Highland Terrace | $24,300,000 | 7/31/23 | 10 | 10F/4H | 14,000 | 2.02 | South of highway |
+| 104 Quimby Lane | $22,150,000 | 4/28/26 | 8 | 10F/2H | 12,500 | 3.07 | South of highway |
+| 1953 Scuttle Hole Road | $20,500,000 | 11/1/24 | 9 | 11F/2H | 15,206 | 4.14 | North of highway |
+| 201 Jobs Lane | $18,100,000 | 10/23/23 | 7 | 9F/2H | 7,687 | 1.50 | South of highway |
+| 70 Matthews Lane | $17,250,000 | 9/24/25 | 7 | 9.5 | 11,590 | 1.08 | South of highway |
+| 201 Sagaponack Road | $17,000,000 | 12/14/23 | 8 | 10F/3H | 11,100 | 1.40 | South of highway |
+| 228 Surfside Drive | $16,650,000 | 1/27/25 | 9 | 11.5 | 11,176 | 1.20 | South of highway |
+| 134 Kellis Pond Lane | $15,700,000 | 9/29/25 | 9 | 9.5 | 10,850 | 1.00 | South of highway |
+| 99 Pointe Mecox Lane | $15,600,000 | 6/5/26 | 6 | 7.5 | 7,800 | 0.92 | South of highway |
+| 284 Ocean Road | $15,100,000 | 11/18/25 | 4 | 4.5 | 3,802 | 3.70 | South of highway |
+| 14 Two Trees Lane | $15,000,000 | 5/28/26 | 8 | 8.5 | 7,065 | 1.84 | North of highway |
+| 385 Jobs Lane | $14,750,000 | 6/3/24 | 7 | 7.5 | 6,500 | 1.02 | South of highway |
+| 261 Millstone Road | $14,650,000 | 1/30/26 | 9 | 10F/2H | 12,125 | 2.50 | North of highway |
+| 41 Harvest Lane | $14,467,500 | 3/3/26 | 8 | 8F/2H | 9,300 | 1.80 | South of highway |
+| 263 Millstone Road | $14,250,000 | 5/9/25 | 9 | 11F/2H | 12,400 | 2.50 | North of highway |
+| 53 Matthew's Lane | $13,490,000 | 10/3/24 | 5 | 6.5 | 4,928 | 1.50 | South of highway |
+| 93 Jobs Lane | $13,200,000 | 10/16/24 | 6 | 6.5 | 6,119 | 2.30 | South of highway |
+| 637 Halsey Lane | $12,850,000 | 5/23/25 | 8 | 8F/2H | 9,500 | 0.93 | South of highway |
+| 33 Jobs Lane | $11,500,000 | 10/30/24 | 7 | 10F/2H | 8,543 | 0.92 | South of highway |
+| 9 Cody Way | $11,450,000 | 5/19/25 | 9 | 10.5 | 10,000 | 1.30 | South of highway |
+| 361 Mitchell Lane | $11,100,000 | 4/17/26 | 7 | 9F/3H | 11,100 | 1.00 | North of highway |
+| 279 Mitchell Lane | $11,000,000 | 5/17/24 | 7 | 9F/3H | 9,600 | 1.00 | North of highway |
+| 914 Ocean Road | $10,800,000 | 10/30/24 | 7 | 5.5 | 7,000 | 2.15 | South of highway |
+| 38 West Pond Drive | $10,600,000 | 10/19/23 | 8 | 8.5 | 8,500 | 1.11 | South of highway |
+| 6 Dannielles Way | $10,400,000 | 5/9/24 | 8 | 9F/4H | 7,600 | 1.65 | South of highway |
+| 825 Old Sag Harbor Road | $10,400,000 | 2/9/26 | 9 | 10F/2H | 12,391 | 2.10 | North of highway |
+| 253 Sagaponack Road | $10,400,000 | 5/28/26 | 3 | 2 | 3,876 | 3.09 | South of highway |
+| 946 Ocean Road | $10,300,000 | 4/24/26 | 5 | 3.5 | 2,300 | 3.00 | South of highway |
+| 1076 Ocean Road | $10,300,000 | 9/15/26 | 6 | 6.5 | 5,000 | 1.02 | South of highway |
+| 1164 Scuttle Hole Road | $10,250,000 | 2/29/24 | 8 | 10.5 | 13,571 | 2.51 | North of highway |
+| 558 Ocean Road | $10,100,000 | 9/27/24 | 7 | 7.5 | - | 1.11 | South of highway |
+| 6 Cody Way | $10,018,000 | 2/12/26 | 8 | 8F/2H | 9,700 | 1.05 | South of highway |
+| 85 Pheasant Drive | $9,999,500 | 8/5/25 | 7 | 8F/2H | 7,693 | 0.92 | North of highway |
+| 53 Pauls Lane | $9,850,000 | 1/14/26 | 7 | 7.5 | 10,000 | 1.00 | South of highway |
+| 418 Butter Lane | $9,450,000 | 8/26/25 | 7 | 8.5 | 9,772 | 1.00 | North of highway |
+| 367 Jobs Lane | $9,250,000 | 5/22/24 | 6 | 6.5 | 5,000 | 1.10 | South of highway |
+
+Read left to right, the table supports the thesis: a deep $9.25M-$30M non-water tape, South of highway dominance at the absolute top, and a real north-of-highway new-construction story from roughly $10M through $20.5M when size and finish are right.
+
+## Takeaways for Buyers and Sellers
+
+- **Fuller set, not only the shopping band.** The practical buyer interest band here is often **$10M-$15M**, but the sold tape runs about **$9.25M-$30M**. Underwrite with the wider set.
+- **South of Montauk Highway** still sets the absolute top for Bridgehampton non-water.
+- **North of Montauk Highway**, finished new construction with real scale and land has cleared the mid-teens and higher more than once (Scuttle Hole, Millstone, Mitchell, Old Sag Harbor Road).
+- **Pricing drivers** remain location relative to the highway, acreage, condition, and how complete the finished house is.
+
+For discreet counsel on Bridgehampton non-water pricing, positioning, or a specific address, Hedgerow Exclusive Properties works the ultra-luxury Hamptons market with that level of granularity.
+
+## FAQ
+
+### What is the price range for recent Bridgehampton non-water luxury sales?
+
+In this roughly three-year sold set, closes run from about $9.25 million to $30 million. Many buyers focus on $10 million to $15 million, but the fuller tape is wider.
+
+### Is South of Montauk Highway still more expensive than North?
+
+At the absolute top, yes. The highest non-water closes in this set are South of the highway. North of the highway can still print very strong numbers, especially for finished new construction with size and land.
+
+### Have north-of-highway Bridgehampton homes sold above $14 million recently?
+
+Yes. Examples include 1953 Scuttle Hole Road at $20.5 million, 14 Two Trees Lane at $15 million, 261 Millstone Road at $14.65 million, and 263 Millstone Road at $14.25 million.
+
+### How should buyers use the $10M-$15M band?
+
+Treat it as a shopping band, not the whole market. Compare north-versus-south highway location, acreage, year/condition, and finished quality against both the band and the wider $9.25M-$30M set.
+
+### Who is Barry McGovern?
+
+Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. Public firm materials describe nearly $2 billion in Hamptons transactions. More at [hamptonshomes.ai/about](https://hamptonshomes.ai/about) and the editorial profile on [Hamptons Coastal](https://hamptonscoastal.com/about/barry-mcgovern).
+
+## Related
+
+- [Bridgehampton town page](/bridgehampton)
+- [Notable sales](/sales)
+- [Sag Harbor Village market overview](/blog/sag-harbor-village-market-overview-2026-09)
+- [Contact](/contact)
+    `,
+  },
+  {
     slug: "sag-harbor-village-market-overview-2026-09",
     title: "Sag Harbor Village Luxury Real Estate Market Overview 2026",
     excerpt:
