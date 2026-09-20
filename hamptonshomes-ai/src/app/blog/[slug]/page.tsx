@@ -56,7 +56,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function formatInline(text: string) {
-  return text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>');
+  return text
+    .replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" class="text-ocean underline decoration-ocean/30 underline-offset-4 hover:text-ocean-deep">$1</a>'
+    )
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>');
 }
 
 function isPipeRow(line: string) {
@@ -150,7 +155,7 @@ function renderContent(content: string) {
       elements.push(renderTable(tableLines, i));
       i = j;
       continue;
-    } else if (line.startsWith("- **")) {
+    } else if (line.startsWith("- ")) {
       elements.push(
         <li key={i} className="text-ink-muted text-[15px] leading-[1.8] ml-4 mb-2" dangerouslySetInnerHTML={{
           __html: formatInline(line.replace("- ", ""))
