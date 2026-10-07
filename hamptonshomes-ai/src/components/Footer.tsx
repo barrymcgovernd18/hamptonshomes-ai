@@ -11,7 +11,7 @@ export default function Footer() {
             <p className="font-serif text-4xl text-ink">Barry McGovern</p>
             <p className="mt-3 text-[10px] uppercase tracking-[0.32em] text-ocean">Hedgerow Exclusive Properties</p>
             <p className="mt-3 text-[11px] text-ink-faint">Licensed Real Estate Salesperson · NY License #10401353717</p>
-            <p className="mt-8 max-w-sm text-[13px] leading-relaxed">Oceanfront and waterfront representation across the East End, from Southampton to Montauk.</p>
+            <p className="mt-8 max-w-sm text-[13px] leading-relaxed">Oceanfront and waterfront real estate across the East End, from Southampton to Montauk.</p>
             <AlsoOnStrip className="mt-8" />
           </div>
           <div className="md:col-span-3 md:col-start-7">

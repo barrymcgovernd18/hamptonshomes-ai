@@ -88,66 +88,6 @@ export const hedgerowActiveListings: HedgerowActiveListing[] = [
     "listingUrl": "https://hedgerowexclusive.com/listings/71-cobb-lane-water-mill-ny-11976/"
   },
   {
-    "address": "9 Mitchell Dunes Lane",
-    "area": "Amagansett",
-    "price": "$39,000,000",
-    "priceNum": 39000000,
-    "status": "For sale",
-    "beds": "7",
-    "baths": "7F & 1H",
-    "sqft": "8,000",
-    "acres": "1.79",
-    "description": "This exquisite 8,000 +/- sq. ft. modern oceanfront mansion is set on two private acres with 200 feet of exclusive beachfront in Amagansett.",
-    "image": "/images/hedgerow/active-9-mitchell-dunes-lane-amagansett.webp",
-    "alt": "9 Mitchell Dunes Lane, Amagansett. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/9-mitchell-dunes-lane-amagansett-ny-11930/"
-  },
-  {
-    "address": "582 & 598 Halsey Lane",
-    "area": "Bridgehampton",
-    "price": "$38,900,000",
-    "priceNum": 38900000,
-    "status": "For sale",
-    "beds": "9",
-    "baths": "9F & 2H",
-    "sqft": "11,000",
-    "acres": "3",
-    "description": "Discover 582 & 598 Halsey Lane, Bridgehampton, NY 11932 Situated in the highly coveted heart of Bridgehampton South lies a rare opportunity to build a true legacy. 582 and 598 Halsey Lane comprise two adjacent, single and separate lots totaling nearly three acres, creating a unique opportunity for a compound with the possibility of two […]",
-    "image": "/images/hedgerow/active-582-598-halsey-lane-bridgehampton.webp",
-    "alt": "582 & 598 Halsey Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/582-598-halsey-lane-bridgehampton-ny-11932/"
-  },
-  {
-    "address": "40 & 42 Deforest Road",
-    "area": "Montauk",
-    "price": "$37,500,000",
-    "priceNum": 37500000,
-    "status": "For sale",
-    "beds": "14",
-    "baths": "12F & 2H",
-    "sqft": "9,942",
-    "acres": "2.01",
-    "description": "Encompassing three separate oceanfront lots, the enclave presents an unmatched opportunity to own in the highly sought after Ditch Plains area.",
-    "image": "/images/hedgerow/active-40-42-deforest-road-montauk.webp",
-    "alt": "40 & 42 Deforest Road, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/40-42-deforest-road-montauk-ny-11954/"
-  },
-  {
-    "address": "448 Further Lane",
-    "area": "East Hampton",
-    "price": "$32,500,000",
-    "priceNum": 32500000,
-    "status": "For sale",
-    "beds": "6",
-    "baths": "8.5",
-    "sqft": "6,200",
-    "acres": "1.06",
-    "description": "This immaculate, super private, Further Lane estate was designed and built by AD-100 firm, Fox-Nahem Associates.",
-    "image": "/images/hedgerow/active-448-further-lane-east-hampton.webp",
-    "alt": "448 Further Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/448-further-lane-east-hampton-ny-11937/"
-  },
-  {
     "address": "1880 Meadow Lane",
     "area": "Southampton",
     "price": "$28,000,000",
@@ -161,21 +101,6 @@ export const hedgerowActiveListings: HedgerowActiveListing[] = [
     "image": "/images/hedgerow/active-1880-meadow-lane-southampton.webp",
     "alt": "1880 Meadow Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
     "listingUrl": "https://hedgerowexclusive.com/listings/1880-meadow-lane-southampton-ny-11968/"
-  },
-  {
-    "address": "582 Halsey Lane",
-    "area": "Bridgehampton",
-    "price": "$25,900,000",
-    "priceNum": 25900000,
-    "status": "For sale",
-    "beds": "9",
-    "baths": "9F & 2H",
-    "sqft": "11,000",
-    "acres": "1.4",
-    "description": "Discover 582 Halsey Lane, Bridgehampton, NY 11932 Set on 1.4 +/- western facing acres along prestigious Halsey Lane in Bridgehampton South, 582 Halsey Lane presents a rare opportunity to secure a fully envisioned new construction estate prior to completion. Thoughtfully designed with a comprehensive amenity package and exceptional attention to detail, the residence encompasses approximately […]",
-    "image": "/images/hedgerow/active-582-halsey-lane-bridgehampton.webp",
-    "alt": "582 Halsey Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/582-hasley-lane-bridgehampton-ny-11932/"
   },
   {
     "address": "14 St Mary's Lane",
@@ -206,36 +131,6 @@ export const hedgerowActiveListings: HedgerowActiveListing[] = [
     "image": "/images/hedgerow/active-casa-las-olas-montauk.webp",
     "alt": "Casa Las Olas, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
     "listingUrl": "https://hedgerowexclusive.com/listings/40-deforest-road-montauk-ny-11954/"
-  },
-  {
-    "address": "1 Pandion Road",
-    "area": "Shelter Island",
-    "price": "$14,950,000",
-    "priceNum": 14950000,
-    "status": "In contract",
-    "beds": "6",
-    "baths": "6F 2H",
-    "sqft": "6,000",
-    "acres": "3.4",
-    "description": "One Pandion is a truly exceptional and rare offering, with a new modern compound set on 3.4 waterfront acres.",
-    "image": "/images/hedgerow/active-1-pandion-road-shelter-island.webp",
-    "alt": "1 Pandion Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/1-pandion-road-shelter-island-ny-11964-2/"
-  },
-  {
-    "address": "63 Jericho Road",
-    "area": "East Hampton",
-    "price": "$11,995,000",
-    "priceNum": 11995000,
-    "status": "For sale",
-    "beds": "6",
-    "baths": "6F 1H",
-    "sqft": "4,000",
-    "acres": "0.43",
-    "description": "Set on roughly half an acre in East Hampton Village, this 4,000 +/- sq. ft. masterpiece expertly utilizes steel and glass across 3 levels.",
-    "image": "/images/hedgerow/active-63-jericho-road-east-hampton.webp",
-    "alt": "63 Jericho Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/63-jericho-road-east-hampton/"
   },
   {
     "address": "351 Jobs Lane",
@@ -298,21 +193,6 @@ export const hedgerowActiveListings: HedgerowActiveListing[] = [
     "listingUrl": "https://hedgerowexclusive.com/listings/8-margarets-drive-shelter-island-ny-11964/"
   },
   {
-    "address": "22 Bridge Hill Lane",
-    "area": "Bridgehampton",
-    "price": "$5,995,000",
-    "priceNum": 5995000,
-    "status": "For sale",
-    "beds": "6",
-    "baths": "7F 1H",
-    "sqft": "6,000",
-    "acres": "1.12",
-    "description": "Nestled in the heart of Bridgehampton North on 1.12+/- acres, this residence has been recently renovated to the highest standards.",
-    "image": "/images/hedgerow/active-22-bridge-hill-lane-bridgehampton.webp",
-    "alt": "22 Bridge Hill Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/22-bridge-hill-lane-bridgehampton-2/"
-  },
-  {
     "address": "20 Prospect Avenue",
     "area": "Shelter Island",
     "price": "$4,995,000",
@@ -358,21 +238,6 @@ export const hedgerowActiveListings: HedgerowActiveListing[] = [
     "listingUrl": "https://hedgerowexclusive.com/listings/15-edgemere-street-montauk-ny-11954/"
   },
   {
-    "address": "2 Hilltop Lane",
-    "area": "East Hampton",
-    "price": "$3,995,000",
-    "priceNum": 3995000,
-    "status": "For sale",
-    "beds": "6",
-    "baths": "5",
-    "sqft": "5,247",
-    "acres": "1.46",
-    "description": "This beautifully renovated 6 bedroom, 5 bathroom residence sits on 1.46 private acres in East Hampton and offers an exceptional blend of timeless elegance and modern luxury.",
-    "image": "/images/hedgerow/active-2-hilltop-lane-east-hampton.webp",
-    "alt": "2 Hilltop Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/2-hilltop-lane-east-hampton-ny-11937/"
-  },
-  {
     "address": "113 Sebonac Road",
     "area": "Southampton",
     "price": "$3,895,000",
@@ -416,36 +281,6 @@ export const hedgerowActiveListings: HedgerowActiveListing[] = [
     "image": "/images/hedgerow/active-51-little-noyack-path-water-mill.webp",
     "alt": "51 Little Noyack Path, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
     "listingUrl": "https://hedgerowexclusive.com/listings/51-little-noyack-path-water-mill-ny-11976/"
-  },
-  {
-    "address": "47 Herne Place",
-    "area": "Southampton",
-    "price": "$2,599,000",
-    "priceNum": 2599000,
-    "status": "For sale",
-    "beds": "4",
-    "baths": "4F & 1H",
-    "sqft": "2,400",
-    "acres": "0.26",
-    "description": "Experience the perfect blend of modern luxury and timeless craftsmanship in this meticulously gut-renovated 4-bedroom, 4.5-bathroom masterpiece.",
-    "image": "/images/hedgerow/active-47-herne-place-southampton.webp",
-    "alt": "47 Herne Place, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/47-herne-place-southampton-ny-11968/"
-  },
-  {
-    "address": "298 & 300 East Montauk Highway",
-    "area": "Hampton Bays",
-    "price": "$2,590,000",
-    "priceNum": 2590000,
-    "status": "For sale",
-    "beds": "7",
-    "baths": "6",
-    "sqft": "3,975",
-    "acres": "0.66",
-    "description": "A distinctive waterfront offering in Hampton Bays, 298 and 300 East Montauk Highway are being presented together, creating a two-residence compound with a combined .66 acres and approximately 3,975 square feet of living space.",
-    "image": "/images/hedgerow/active-298-300-east-montauk-highway-hampton-bays.webp",
-    "alt": "298 & 300 East Montauk Highway, Hampton Bays. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/298-300-east-montauk-highway-hampton-bays-ny-11946/"
   },
   {
     "address": "10 Winterberry Lane",
@@ -503,7 +338,7 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "priceNum": 6995000,
     "date": "2026-09-25",
     "dateText": "Sep 2026",
-    "hedgerowRole": "Buyer side",
+    "hedgerowRole": "Listing",
     "group": "Estate and village",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-33-dinah-rock-road-shelter-island-2026.webp",
@@ -716,6 +551,17 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-165-surfside-drive-bridgehampton-2025.webp",
     "alt": "165 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+  },
+  {
+    "address": "42 Deforest Road",
+    "area": "Montauk",
+    "price": "$17,000,000",
+    "priceNum": 17000000,
+    "date": "2025-11-12",
+    "dateText": "Nov 2025",
+    "hedgerowRole": "Co-listing",
+    "group": "Oceanfront",
+    "barryInvolved": false
   },
   {
     "address": "79 Surfside Drive",
