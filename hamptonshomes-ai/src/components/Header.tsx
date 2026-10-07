@@ -9,7 +9,6 @@ const links = [
   { href: "/sales", label: "Portfolio" },
   { href: "/market", label: "Market" },
   { href: "/press", label: "Press" },
-  { href: "/blog", label: "Insights" },
 ];
 
 export default function Header() {

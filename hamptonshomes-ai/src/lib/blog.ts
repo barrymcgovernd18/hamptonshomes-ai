@@ -1003,7 +1003,7 @@ For sellers: this is an exceptional window. Pricing is at historic highs, and de
       "Oceanfront in the Hamptons isn't just waterfront with a view. It's a finite, irreplaceable asset class that has outperformed virtually every other segment of US luxury real estate over the past decade.",
     date: "2026-02-17",
     author: "Barry McGovern",
-    category: "Insights",
+    category: "Perspective",
     image: "/images/40-hedges-banks.jpg",
     metaDescription:
       "Why Hamptons oceanfront real estate is a unique asset class: finite inventory, record-breaking prices, and unmatched proximity to New York City. By Barry McGovern, oceanfront specialist.",
@@ -1064,7 +1064,7 @@ Not all Hamptons oceanfront is created equal. The premium streets where the reco
       "A meaningful share of Hedgerow's transactions happen off-market. Here's how the Hamptons private market works and why it matters for buyers and sellers.",
     date: "2026-02-17",
     author: "Barry McGovern",
-    category: "Insights",
+    category: "Perspective",
     image: "/images/press/bridgehampton-50m.jpg",
     metaDescription:
       "How off-market real estate works in the Hamptons: $700M+ in private transactions, why sellers choose discretion, and how buyers access hidden inventory. By Barry McGovern at Hedgerow.",
@@ -1171,7 +1171,7 @@ The Hamptons coastline rewards specificity. Southampton through Montauk is not o
     excerpt: "Sag Harbor’s value is the combination of walkability, working waterfront, and quiet coves. Barry McGovern breaks down how buyers can read the village and its surrounding micro-markets.",
     date: "2025-09-16",
     author: "Barry McGovern",
-    category: "Insights",
+    category: "Perspective",
     image: "/images/117-main-st.jpg",
     metaDescription: "Barry McGovern shares a practical guide to Sag Harbor waterfront demand, village walkability, docks, coves, and buyer diligence.",
     content: `
@@ -1216,7 +1216,7 @@ Barry McGovern works with buyers and sellers as a Licensed Real Estate Salespers
     excerpt: "For high-net-worth buyers and sellers, the choice between a public launch and a private introduction is a strategy decision. Here is how to evaluate the tradeoffs.",
     date: "2025-11-20",
     author: "Barry McGovern",
-    category: "Insights",
+    category: "Perspective",
     image: "/images/press/bridgehampton-50m.jpg",
     metaDescription: "Barry McGovern explains when a Hamptons luxury property may suit a public launch or an off-market strategy, with practical guidance for HNW clients.",
     content: `
@@ -1307,3 +1307,6 @@ East Hampton’s prestige corridor will continue to attract buyers who value sca
     `,
   },
 ];
+
+/** Posts newest first (by publish date). Use for every index and listing. */
+export const postsByDate: BlogPost[] = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));

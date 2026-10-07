@@ -70,10 +70,5 @@ export const PRESS_QUARTER_CARD = {
 export const FIRM_ACCOLADES =
   "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage based in Bridgehampton (founded 2020). Public firm materials describe nearly $2 billion in Hamptons transactions, including the firm's $121.5M Hamptons record. WSJ/RealTrends ranks the firm #1 Hamptons, #1 New York, and #4 USA.";
 
-export const MARKET_IA =
-  "A current snapshot of East End conditions. Longer notes live under Insights.";
-
-export const BLOG_IA =
-  "Reports and town notes. For a current snapshot, see Market.";
 
 export const OG_ALT = "Barry McGovern and Hamptons oceanfront, Hedgerow Exclusive Properties";
