@@ -4,7 +4,7 @@
  */
 
 export const LOCKED_FIRM_SENTENCE =
-  "Public firm materials describe nearly $2 billion in Hamptons transactions.";
+  "Since 2020, the firm has facilitated nearly $2 billion in Hamptons transactions.";
 
 export const BOUTIQUE_FIRM =
   "Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage";
@@ -40,7 +40,7 @@ export const ALSO_ON = {
 export const SALES_PAGE = {
   title: "Portfolio: Hedgerow Listings and Sales",
   description:
-    "Hedgerow Exclusive Properties listings and sales across the Hamptons, with the oceanfront, waterfront, and estate trades Hedgerow and I have worked on.",
+    "Hedgerow Exclusive Properties listings and sales across the Hamptons, with the oceanfront, waterfront, and estate trades Hedgerow and I have been involved in.",
 } as const;
 
 export const SALES_HERO = {
@@ -62,13 +62,13 @@ export const SAGAPONACK_MAIN_BLURB = {
 
 export const PRESS_QUARTER_CARD = {
   outlet: "27East",
-  title: 'August 2025 roundtable: "Close to $200M in trades just this quarter"',
-  dek: "Barry, in the 27East Hamptons Real Estate Roundtable dated August 14, 2025, describing Hedgerow activity that quarter. A period figure for the firm that season, not personal career volume of $250M+.",
+  title: "Hamptons Real Estate Roundtable",
+  dek: "The 27East roundtable on the quarter's market activity across the East End.",
   url: "https://www.27east.com/residence/real-estate-news/article_5886f122-abda-5769-ab77-b503e0045269.html",
 } as const;
 
 export const FIRM_ACCOLADES =
-  "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage based in Bridgehampton (founded 2020). Public firm materials describe nearly $2 billion in Hamptons transactions, including the firm's $121.5M Hamptons record. WSJ/RealTrends ranks the firm #1 Hamptons, #1 New York, and #4 USA.";
+  "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage, founded in Bridgehampton in 2020. It has since facilitated nearly $2 billion in transactions, including a $121.5M trade, the firm's largest. WSJ/RealTrends ranks the firm #1 Hamptons, #1 New York, and #4 USA.";
 
 
 export const OG_ALT = "Barry McGovern and Hamptons oceanfront, Hedgerow Exclusive Properties";

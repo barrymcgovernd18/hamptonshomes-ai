@@ -33,7 +33,7 @@ export default function PressPage() {
             <span className="italic font-normal text-white/60">Headlines</span>
           </h1>
           <p className="mt-8 max-w-xl text-[14px] leading-relaxed text-white/45">
-            My own press first, then Hedgerow Exclusive Properties in the press. Each item links to the original article at the publisher.
+            Barry McGovern and Hedgerow Exclusive Properties, in print and online.
           </p>
         </div>
       </section>
@@ -63,8 +63,12 @@ export default function PressPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/80 via-ocean-deep/20 to-transparent" />
                   </div>
                 ) : (
-                  <div className="flex h-56 items-end bg-gradient-to-br from-ocean/40 to-ocean-deep p-8">
-                    <p className="font-serif text-4xl italic text-white/25">{item.outlet}</p>
+                  <div className="relative flex h-56 flex-col justify-between overflow-hidden border-b border-white/10 bg-ocean p-8">
+                    <p className="text-[10px] uppercase tracking-[0.4em] text-ocean-soft/80">In conversation</p>
+                    <div>
+                      <p className="font-serif text-5xl leading-none text-paper">{item.outlet}</p>
+                      <div className="mt-5 h-px w-12 bg-ocean-soft/60" />
+                    </div>
                   </div>
                 )}
                 <div className="flex flex-1 flex-col p-8">
@@ -74,7 +78,7 @@ export default function PressPage() {
                   </h2>
                   <p className="mt-4 text-[14px] leading-relaxed text-white/45">{item.summary}</p>
                   <p className="mt-auto pt-6 text-white/20 text-[11px] tracking-[0.2em] uppercase group-hover:text-ocean-soft/70 transition-colors duration-500">
-                    Read the original →
+                    Read at {item.outlet} →
                   </p>
                 </div>
               </a>
@@ -88,7 +92,6 @@ export default function PressPage() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <p className="text-ocean-soft/60 text-[10px] tracking-[0.5em] uppercase">Hedgerow Exclusive in the press</p>
-            <p className="text-white/30 text-[11px]">{hedgerowPress.length} articles, newest first</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {hedgerowPress.map((item) => (
@@ -125,7 +128,7 @@ export default function PressPage() {
             ))}
           </div>
           <p className="mt-10 text-[11px] leading-relaxed text-white/25">
-            Headlines and dates as listed on the Hedgerow Exclusive Properties press page. Images courtesy of Hedgerow Exclusive Properties. Articles belong to their publishers.
+            Images courtesy of Hedgerow Exclusive Properties.
           </p>
         </div>
       </section>
