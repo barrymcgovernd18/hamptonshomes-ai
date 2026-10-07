@@ -356,16 +356,41 @@ export function articleJsonLd(post: {
   date: string;
   slug: string;
   image?: string;
+  dateModified?: string;
+  about?: (typeof PLACE_NAMES)[number][];
+  keywords?: string;
 }) {
+  const url = `${SITE_URL}/blog/${post.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${url}#article`,
     headline: post.title,
     description: post.metaDescription,
     datePublished: post.date,
-    url: `${SITE_URL}/blog/${post.slug}`,
+    dateModified: post.dateModified ?? post.date,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     image: postOgImageUrl(post.image),
-    author: { "@id": PERSON_ID },
+    author: {
+      "@type": "Person",
+      "@id": PERSON_ID,
+      name: "Barry McGovern",
+      jobTitle: "Licensed Real Estate Salesperson",
+      image: `${SITE_URL}/images/barry-mcgovern.jpg`,
+      url: PERSON_CANONICAL_URL,
+      email: "barry@hedgerowexclusive.com",
+      telephone: "+1-646-339-0154",
+      worksFor: {
+        "@type": "RealEstateAgent",
+        "@id": HEDGEROW.id,
+        name: HEDGEROW.name,
+        url: HEDGEROW.url,
+      },
+      sameAs: [...BARRY_SAME_AS],
+    },
     publisher: { "@id": SITE_ORG_ID },
+    ...(post.about?.length ? { about: post.about.map(placeRef) } : {}),
+    ...(post.keywords ? { keywords: post.keywords } : {}),
   };
 }
