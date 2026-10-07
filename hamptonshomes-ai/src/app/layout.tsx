@@ -13,9 +13,9 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
-const HOME_TITLE = "Barry McGovern | Oceanfront & Waterfront Specialist | Hamptons Luxury Real Estate";
+const HOME_TITLE = "Barry McGovern | Hamptons Oceanfront and Waterfront Real Estate";
 const HOME_DESCRIPTION =
-  "Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated nearly $2 billion in transactions since 2020.";
+  "Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties: oceanfront, waterfront, and estate real estate from Southampton to Montauk.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hamptonshomes.ai"),
