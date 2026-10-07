@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   },
   description: HOME_DESCRIPTION,
   authors: [{ name: "Barry McGovern" }],
+  formatDetection: {
+    address: false,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
