@@ -38,9 +38,9 @@ export const ALSO_ON = {
 } as const;
 
 export const SALES_PAGE = {
-  title: "Notable Sales",
+  title: "Portfolio: Hedgerow Listings and Sales",
   description:
-    "Selected seller-representation closes across the Hamptons: oceanfront, waterfront, village, and private transactions.",
+    "Hedgerow Exclusive Properties listings and sales across the Hamptons, with the oceanfront, waterfront, and estate trades Hedgerow and I have worked on.",
 } as const;
 
 export const SALES_HERO = {
@@ -51,12 +51,12 @@ export const SALES_HERO = {
 } as const;
 
 export const DUCK_POND_BLURB = {
-  roleNote: "Seller representation",
+  roleNote: "Hedgerow's role: Listing",
   blurb: "Southampton-area waterfront on Wickapogue Pond. Closed January 2026 at $20 million.",
 } as const;
 
 export const SAGAPONACK_MAIN_BLURB = {
-  roleNote: "Seller representation",
+  roleNote: "Hedgerow's role: Buyer side",
   blurb: "Sagaponack South estate on 2.17 acres. Closed May 2023 at $10.5 million.",
 } as const;
 
