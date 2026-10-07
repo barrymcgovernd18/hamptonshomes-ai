@@ -205,7 +205,7 @@ export default async function BlogPostPage({ params }: Props) {
       <JsonLd
         data={breadcrumbListJsonLd([
           { name: "Home", path: "/" },
-          { name: "Insights", path: "/blog" },
+          { name: "Market", path: "/market" },
           { name: post.title, path: `/blog/${post.slug}` },
         ])}
       />
@@ -213,10 +213,10 @@ export default async function BlogPostPage({ params }: Props) {
       <article className="pt-32 pb-32">
         <div className="max-w-3xl mx-auto px-8">
           <Link
-            href="/blog"
+            href="/market"
             className="text-ink-faint text-[11px] tracking-[0.2em] uppercase hover:text-ocean transition-colors duration-500 mb-10 block"
           >
-            ← All Insights
+            ← Market research
           </Link>
 
           <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-4">
