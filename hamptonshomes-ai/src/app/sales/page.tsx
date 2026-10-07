@@ -65,7 +65,6 @@ export default function SalesPage() {
     .filter((sale) => sale.image)
     .sort((a, b) => salePriceValue(b.price) - salePriceValue(a.price));
   const actives = [...hedgerowActiveListings].sort((a, b) => b.priceNum - a.priceNum);
-  const involvedCount = hedgerowSold2021.filter((deal) => deal.barryInvolved).length;
   return (
     <div className="bg-paper text-ink">
       <JsonLd data={activeListingsItemListJsonLd(actives)} />
@@ -78,11 +77,6 @@ export default function SalesPage() {
         image="/images/43-east-dune-lane.jpg"
         imageAlt="43 East Dune Lane, East Hampton, an oceanfront Hedgerow sale, with the Atlantic beyond, in black and white"
         imagePosition="72% 40%"
-        intro={
-          <p>
-            Current listings and sales from Hedgerow Exclusive Properties, the boutique firm I work with, including {involvedCount} trades Hedgerow and I have been involved in since 2021, 18 of them oceanfront.
-          </p>
-        }
         aside={
           <dl className="grid grid-cols-2 gap-8 md:text-right">
             <div className="flex flex-col-reverse">

@@ -168,5 +168,5 @@ export const notableSales: Sale[] = [
 ];
 
 export const personalVolume = "$250M+";
-export const firmVolume = "nearly $2B";
+export const firmVolume = "over $2B";
 export const firmVolumeLabel = "Firm transactions";

@@ -55,7 +55,7 @@ export const PLACE_SLUGS: Record<(typeof PLACE_NAMES)[number], string> = {
 
 /** Locked entity blurb. $2B is firm-level prose only. */
 export const BARRY_BLURB =
-  "Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated nearly $2 billion in transactions since 2020. Dublin-born and a Sag Harbor local since 2013, Barry focuses on oceanfront, waterfront, estate-section, and private-market opportunities from Southampton to Montauk, and has been involved with the firm's landmark and record-breaking work.";
+  "Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated over $2 billion in transactions since 2020. Dublin-born and a Sag Harbor local since 2013, Barry focuses on oceanfront, waterfront, estate-section, and private-market opportunities from Southampton to Montauk, and has been involved with the firm's landmark and record-breaking work.";
 
 /** Schema description: same blurb without the firm-volume sentence. */
 export const BARRY_SCHEMA_DESCRIPTION =
@@ -86,7 +86,7 @@ export const BARRY_FAQS: { question: string; answer: string }[] = [
   {
     question: "What is Hedgerow Exclusive Properties?",
     answer:
-      "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage based in Bridgehampton. Since 2020, it has facilitated nearly $2 billion in transactions.",
+      "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage based in Bridgehampton. Since 2020, it has facilitated over $2 billion in transactions.",
   },
   {
     question: "How do I contact Barry McGovern?",

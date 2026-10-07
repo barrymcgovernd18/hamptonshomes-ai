@@ -365,7 +365,7 @@ Barry McGovern · Hedgerow Exclusive Properties · barry@hedgerowexclusive.com �
 
 Bridgehampton remains one of the East End's deepest ultra-luxury non-water markets. Over roughly the past three years, closed sales in this set run from about **$9.25 million to $30 million**. Pricing still moves hard with location relative to Montauk Highway, acreage, condition, and how finished the house actually is.
 
-Barry McGovern, a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated nearly $2 billion in transactions since 2020, tracks these Bridgehampton comps for buyers and sellers who need a clear North-of-highway versus South-of-highway read, not brochure language.
+Barry McGovern, a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated over $2 billion in transactions since 2020, tracks these Bridgehampton comps for buyers and sellers who need a clear North-of-highway versus South-of-highway read, not brochure language.
 
 Buyers often focus on the **$10 million to $15 million** band. That slice is real and active. The fuller set below shows why context still matters: South of the highway continues to own the absolute top of the market, while finished new construction **north of Montauk Highway** has cleared very strong numbers more than once when size, land, and quality line up.
 
@@ -468,7 +468,7 @@ Treat it as a shopping band, not the whole market. Compare north-versus-south hi
 
 ### Who is Barry McGovern?
 
-Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated nearly $2 billion in transactions since 2020. More at [hamptonshomes.ai/about](https://hamptonshomes.ai/about) and the editorial profile on [Hamptons Coastal](https://hamptonscoastal.com/about/barry-mcgovern).
+Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated over $2 billion in transactions since 2020. More at [hamptonshomes.ai/about](https://hamptonshomes.ai/about) and the editorial profile on [Hamptons Coastal](https://hamptonscoastal.com/about/barry-mcgovern).
 
 ## Related
 
@@ -1106,7 +1106,7 @@ If you're searching for Hamptons luxury real estate exclusively through public l
 
 At Hedgerow, nearly a third of transaction volume has been off-market, through private networks accessible only to firms with the relationships, reputation, and deal flow to participate.
 
-This is where firm selection matters. A firm like Hedgerow, with nearly $2 billion in total transactions and deep relationships across the East End, has visibility into opportunities that simply don't exist for the general market.
+This is where firm selection matters. A firm like Hedgerow, with over $2 billion in total transactions and deep relationships across the East End, has visibility into opportunities that simply don't exist for the general market.
 
 ## How It Works in Practice
 

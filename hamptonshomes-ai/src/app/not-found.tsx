@@ -19,16 +19,16 @@ export default function NotFound() {
       <div className="frame pb-28 pt-40 md:pb-40 md:pt-52">
         <div className="grid gap-12 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
-            <p className="eyebrow hero-rise text-ocean">404</p>
-            <h1 className="display-1 hero-rise mt-6 text-ink" style={{ animationDelay: "120ms" }}>
+            <p className="eyebrow text-ocean">404</p>
+            <h1 className="display-1 mt-6 text-ink">
               This page has <em className="block italic text-ink-muted">moved on.</em>
             </h1>
           </div>
-          <p className="body-copy hero-rise text-ink-muted md:col-span-4" style={{ animationDelay: "300ms" }}>
+          <p className="body-copy text-ink-muted md:col-span-4">
             The address may have changed. The rest of the East End is right where you left it.
           </p>
         </div>
-        <ul className="hero-rise mt-16 grid border-t border-ink/80 sm:grid-cols-2 md:mt-24 lg:grid-cols-4" style={{ animationDelay: "450ms" }}>
+        <ul className="mt-16 grid border-t border-ink/80 sm:grid-cols-2 md:mt-24 lg:grid-cols-4">
           {destinations.map((item, i) => (
             <li key={item.href} className={`border-b border-line ${["", "sm:border-l", "lg:border-l", "sm:border-l"][i] ?? ""}`}>
               <Link href={item.href} className="group block h-full py-8 transition-colors duration-500 hover:bg-paper-soft sm:px-7">

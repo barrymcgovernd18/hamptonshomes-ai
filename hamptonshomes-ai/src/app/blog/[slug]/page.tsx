@@ -230,14 +230,14 @@ export default async function BlogPostPage({ params }: Props) {
           <Link href="/market" className="eyebrow link-line text-ink-faint transition-colors duration-500 hover:text-ocean">
             ← Market research
           </Link>
-          <p className="eyebrow hero-rise mt-12 text-ocean md:mt-16" style={{ animationDelay: "120ms" }}>
+          <p className="eyebrow mt-12 text-ocean md:mt-16">
             {post.category} · {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}
           </p>
-          <h1 className="display-2 hero-rise mt-6 max-w-[17em] text-ink" style={{ animationDelay: "220ms" }}>
+          <h1 className="display-2 mt-6 max-w-[17em] text-ink">
             {post.title}
           </h1>
 
-          <div className="hero-rise mt-10 border-t border-line pt-6 md:mt-14" style={{ animationDelay: "380ms" }}>
+          <div className="mt-10 border-t border-line pt-6 md:mt-14">
             {post.authorBox ? (
               <div className="flex items-center gap-5">
                 <Image
@@ -261,7 +261,7 @@ export default async function BlogPostPage({ params }: Props) {
         {post.image ? (
           <div className="frame mt-12 md:mt-16">
             <div className="relative aspect-[4/3] overflow-hidden bg-paper-deep md:aspect-[21/9]">
-              <Image src={post.image} alt={post.title} fill priority fetchPriority="high" quality={80} sizes="(max-width: 1440px) 100vw, 1440px" className="hero-img photo-mono object-cover" />
+              <Image src={post.image} alt={post.title} fill priority fetchPriority="high" quality={80} sizes="(max-width: 1440px) 100vw, 1440px" className="photo-mono object-cover" />
             </div>
           </div>
         ) : null}

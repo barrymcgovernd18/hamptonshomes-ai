@@ -24,7 +24,7 @@ const FEATURED_SLUGS = [
 
 const KEY_NUMBERS = [
   { figure: "$250M+", label: "Personal sales volume" },
-  { figure: "Nearly $2B", label: "Hedgerow transactions since 2020" },
+  { figure: "Over $2B", label: "Hedgerow transactions since 2020" },
   { figure: "18", label: "Oceanfront trades with Hedgerow since 2021" },
   { figure: "2013", label: "A Sag Harbor local since" },
 ];
@@ -89,7 +89,7 @@ export default function Home() {
           fetchPriority="high"
           quality={82}
           sizes="100vw"
-          className="hero-img -z-10 object-cover object-[50%_58%]"
+          className="hero-zoom -z-10 object-cover object-[50%_58%]"
         />
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-44 bg-gradient-to-b from-black/40 to-transparent" />
         <div
@@ -99,24 +99,22 @@ export default function Home() {
 
         <div className="frame flex h-full flex-col justify-end pb-10 md:pb-14">
           <div className="max-w-[44rem]">
-            <p className="eyebrow hero-rise text-paper/85" style={{ animationDelay: "250ms" }}>
+            <p className="eyebrow text-paper/85">
               Hamptons Real Estate
             </p>
-            <h1 className="display-1 hero-rise mt-6 text-paper" style={{ animationDelay: "400ms" }}>
+            <h1 className="display-1 mt-6 text-paper">
               Barry <br />
               McGovern
             </h1>
             <p
-              className="hero-rise mt-7 max-w-[30rem] font-serif text-[1.3rem] font-light leading-snug text-paper/95 md:text-[1.6rem]"
-              style={{ animationDelay: "650ms" }}
+              className="mt-7 max-w-[30rem] font-serif text-[1.3rem] font-light leading-snug text-paper/95 md:text-[1.6rem]"
             >
               Oceanfront, waterfront, and estate properties, <em className="italic">from Southampton to Montauk.</em>
             </p>
           </div>
 
           <div
-            className="hero-rise mt-10 grid grid-cols-[1fr_auto] items-center gap-6 border-t border-paper/25 pt-6 md:mt-14 md:grid-cols-[1fr_auto_1fr]"
-            style={{ animationDelay: "900ms" }}
+            className="mt-10 grid grid-cols-[1fr_auto] items-center gap-6 border-t border-paper/25 pt-6 md:mt-14 md:grid-cols-[1fr_auto_1fr]"
           >
             <div className="flex items-center gap-8">
               <Link href="/contact" className="eyebrow link-line text-paper">Inquire</Link>
@@ -170,7 +168,7 @@ export default function Home() {
           <div className="mb-16 flex flex-col gap-6 md:mb-20 md:flex-row md:items-end md:justify-between">
             <p data-reveal className="eyebrow text-paper/70">II. &nbsp;In figures</p>
             <h2 id="numbers-heading" data-reveal className="display-3 max-w-xl font-light text-paper/90 md:text-right">
-              A boutique firm, <em className="italic">nearly $2 billion</em> in Hamptons transactions.
+              A boutique firm, <em className="italic">over $2 billion</em> in Hamptons transactions.
             </h2>
           </div>
           <dl className="grid border-t border-paper/15 sm:grid-cols-2 lg:grid-cols-4">
