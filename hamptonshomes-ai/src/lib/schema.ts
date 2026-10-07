@@ -98,7 +98,7 @@ export const BARRY_FAQS: { question: string; answer: string }[] = [
   {
     question: "What is Barry McGovern's real estate license?",
     answer:
-      "Barry McGovern is a Licensed Real Estate Salesperson in New York, license number 10401353717. He is not a broker.",
+      "Barry McGovern is a Licensed Real Estate Salesperson in New York, license number 10401353717, with Hedgerow Exclusive Properties.",
   },
 ];
 

@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <p className="font-serif text-2xl leading-[1.55] text-ink">
                   {BARRY_BLURB}
                 </p>
-                <p>New York license #10401353717. Salesperson, not broker.</p>
+                <p>Licensed Real Estate Salesperson, New York license #10401353717.</p>
                 <p>
                   As part of the Hedgerow team, Barry has been involved in some of the most significant real estate transactions on the East End, from record-setting oceanfront trades to nine-figure compound sales. He brings six years of Hamptons luxury experience and a reputation built on discretion, deep market knowledge, and results.
                 </p>

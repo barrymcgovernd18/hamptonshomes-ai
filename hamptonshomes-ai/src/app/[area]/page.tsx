@@ -18,10 +18,10 @@ function formatPrice(price: number) {
 }
 
 function formatDate(date: string | null) {
-  if (!date) return "Date not reported";
+  if (!date) return "Undisclosed";
   const parsed = new Date(`${date}T12:00:00Z`);
   return Number.isNaN(parsed.getTime())
-    ? "Date not reported"
+    ? "Undisclosed"
     : new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric", timeZone: "UTC" }).format(parsed);
 }
 
