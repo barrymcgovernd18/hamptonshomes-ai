@@ -46,7 +46,7 @@ function SoldCard({ deal }: { deal: HedgerowSoldDeal }) {
       <div className="flex flex-1 flex-col p-6">
         <p className="mb-2 text-[10px] uppercase tracking-[0.25em] text-ocean">{deal.area} · Sold {deal.dateText}</p>
         <h3 className="font-serif text-xl text-ink">{deal.address}</h3>
-        <p className="mt-3 font-serif text-xl text-ocean">{deal.price}</p>
+        {deal.price ? <p className="mt-3 font-serif text-xl text-ocean">{deal.price}</p> : null}
         <p className="mt-4 text-[11px] uppercase tracking-[0.2em] text-ink-muted">Hedgerow&apos;s role: {deal.hedgerowRole}</p>
         {deal.barryInvolved ? (
           <p className="mt-2 text-[12px] italic text-ink-muted">Barry McGovern was involved</p>
