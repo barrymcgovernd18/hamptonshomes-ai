@@ -83,7 +83,7 @@ export default async function AreaPage({ params }: Props) {
       <section className="pt-32 pb-20">
         <div className={`max-w-7xl mx-auto px-6 md:px-8 ${area.heroImage ? "grid md:grid-cols-[1fr_0.9fr] gap-14 items-end" : ""}`}>
           <div>
-            <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-4">
+            <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-4">
               {area.name} Real Estate
             </p>
             <h1 className="font-serif text-5xl md:text-7xl text-ink leading-tight">
@@ -138,18 +138,18 @@ export default async function AreaPage({ params }: Props) {
         <section className="border-y border-line py-20">
           <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-[0.7fr_1.3fr] gap-12 lg:gap-24">
             <div>
-              <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-5">A closer read</p>
+              <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-5">A closer read</p>
               <h2 className="font-serif text-3xl md:text-4xl text-ink leading-tight">How {area.name} is moving</h2>
             </div>
             <div>
               <p className="text-ink-muted text-[16px] leading-[1.9]">{area.marketBrief}</p>
               <div className="grid md:grid-cols-2 gap-8 mt-10 pt-8 border-t border-line">
                 <div>
-                  <p className="text-ocean/70 text-[10px] tracking-[0.35em] uppercase mb-3">Buyer lens</p>
+                  <p className="text-ocean text-[10px] tracking-[0.35em] uppercase mb-3">Buyer lens</p>
                   <p className="text-ink-muted text-sm leading-relaxed">{area.buyerLens}</p>
                 </div>
                 <div>
-                  <p className="text-ocean/70 text-[10px] tracking-[0.35em] uppercase mb-3">Seller lens</p>
+                  <p className="text-ocean text-[10px] tracking-[0.35em] uppercase mb-3">Seller lens</p>
                   <p className="text-ink-muted text-sm leading-relaxed">{area.sellerLens}</p>
                 </div>
               </div>
@@ -160,11 +160,11 @@ export default async function AreaPage({ params }: Props) {
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-10">What Makes {area.name} Special</p>
+          <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-10">What Makes {area.name} Special</p>
           <div className="space-y-4">
             {area.highlights.map((h, i) => (
               <div key={i} className="flex items-start gap-4 py-3 border-b border-line">
-                <span className="text-ocean/50 font-serif text-lg mt-px">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-ocean font-serif text-lg mt-px">{String(i + 1).padStart(2, "0")}</span>
                 <p className="text-ink-muted text-[15px]">{h}</p>
               </div>
             ))}
@@ -174,7 +174,7 @@ export default async function AreaPage({ params }: Props) {
 
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-8">Beaches</p>
+          <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-8">Beaches</p>
           <div className="flex flex-wrap gap-3">
             {area.beaches.map((b) => (
               <span key={b} className="border border-line text-ink-muted text-[13px] px-4 py-2">{b}</span>
@@ -188,7 +188,7 @@ export default async function AreaPage({ params }: Props) {
           <div className="max-w-7xl mx-auto px-6 md:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
               <div>
-                <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-3">Recent comparable sales</p>
+                <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-3">Recent comparable sales</p>
                 <h2 className="font-serif text-3xl text-ink">The local evidence</h2>
               </div>
               <p className="text-ink-faint text-[11px] max-w-xs md:text-right leading-relaxed">
@@ -223,7 +223,7 @@ export default async function AreaPage({ params }: Props) {
       {!isBrief && areaSales.length > 0 && (
         <section className="pb-20">
           <div className="max-w-7xl mx-auto px-6 md:px-8">
-            <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-10">Hedgerow sales in {area.name}</p>
+            <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-10">Hedgerow sales in {area.name}</p>
             <div className="grid md:grid-cols-2 gap-5">
               {areaSales.map((sale) => (
                 <div key={sale.slug} className="border border-line p-8 hover:border-ocean/30 transition-all duration-500">
@@ -260,7 +260,7 @@ export default async function AreaPage({ params }: Props) {
       <section className="pb-32">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="border border-line p-8 md:p-16 text-center">
-            <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-4">Your {area.name} Specialist</p>
+            <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-4">Your {area.name} Specialist</p>
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-4">Looking to Buy or Sell in {area.name}?</h2>
             <p className="text-ink-muted text-[15px] max-w-lg mx-auto mb-8">As an oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage, Barry offers access to on-market and off-market opportunities across {area.name} and the entire East End.</p>
             <Link href="/contact" className="inline-block border border-ocean text-ocean text-[11px] tracking-[0.3em] uppercase px-10 py-4 hover:bg-ocean/10 transition-all duration-500">Inquire about {area.name}</Link>

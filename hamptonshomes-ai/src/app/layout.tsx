@@ -74,8 +74,9 @@ export default function RootLayout({
         <JsonLd data={siteGraphJsonLd()} />
       </head>
       <body className="font-sans antialiased bg-paper text-ink">
+        <a href="#main" className="skip-link">Skip to content</a>
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>
