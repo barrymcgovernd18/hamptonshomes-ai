@@ -291,28 +291,43 @@ export function salesItemListJsonLd(
     address: string;
     area: string;
     price: string;
-    status: string;
-    blurb?: string;
-    image?: string;
-    listingUrl?: string;
-    roleNote?: string;
+    dateText: string;
+    hedgerowRole: string;
   }[]
 ) {
-  const items = sales.filter((sale) => sale.roleNote === "Seller representation");
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Selected seller-representation closes",
+    name: "Hedgerow Exclusive Properties sales, 2021 to 2026",
     description:
-      "Public seller-representation closes from Barry McGovern's Hamptons portfolio.",
+      "Sold transactions published by Hedgerow Exclusive Properties, the boutique Hamptons firm Barry McGovern works with. Roles shown are the firm's.",
     url: `${SITE_URL}/sales`,
-    numberOfItems: items.length,
-    itemListElement: items.map((sale, index) => ({
+    numberOfItems: sales.length,
+    itemListElement: sales.map((sale, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: `${sale.address}, ${sale.area}`,
-      url: sale.listingUrl || `${SITE_URL}/sales`,
-      description: sale.blurb || `${sale.address}, ${sale.area}. ${sale.status}. ${sale.price}. Seller representation.`,
+      description: `${sale.address}, ${sale.area}. Sold ${sale.dateText}. ${sale.price}. Hedgerow's role: ${sale.hedgerowRole}.`,
+    })),
+  };
+}
+
+export function activeListingsItemListJsonLd(
+  listings: { address: string; area: string; price: string; status: string; listingUrl: string; image: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Exclusively listed with Hedgerow Exclusive Properties",
+    url: `${SITE_URL}/sales`,
+    numberOfItems: listings.length,
+    itemListElement: listings.map((listing, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: `${listing.address}, ${listing.area}`,
+      url: listing.listingUrl,
+      image: `${SITE_URL}${listing.image}`,
+      description: `${listing.status}. ${listing.price}. Exclusively listed with Hedgerow Exclusive Properties.`,
     })),
   };
 }
