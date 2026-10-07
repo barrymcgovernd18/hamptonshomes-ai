@@ -314,7 +314,7 @@ export function salesItemListJsonLd(
       "@type": "ListItem",
       position: index + 1,
       name: `${sale.address}, ${sale.area}`,
-      description: `${sale.address}, ${sale.area}. Sold ${sale.dateText}. ${sale.price}. Hedgerow's role: ${sale.hedgerowRole}.`,
+      description: `${sale.address}, ${sale.area}. Sold ${sale.dateText}.${sale.price ? ` ${sale.price}.` : ""} Hedgerow's role: ${sale.hedgerowRole}.`,
     })),
   };
 }

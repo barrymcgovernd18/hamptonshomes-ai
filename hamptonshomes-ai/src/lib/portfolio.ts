@@ -118,21 +118,6 @@ export const hedgerowActiveListings: HedgerowActiveListing[] = [
     "listingUrl": "https://hedgerowexclusive.com/listings/14-st-marys-lane-amagansett-ny-11930/"
   },
   {
-    "address": "Casa Las Olas",
-    "area": "Montauk",
-    "price": "$16,745,000",
-    "priceNum": 16745000,
-    "status": "In contract",
-    "beds": "6",
-    "baths": "5F 1H",
-    "sqft": "4,800",
-    "acres": "1",
-    "description": "Set on a sprawling 1 +/- acre parcel with 95 feet of ocean frontage, Casa Las Olas stands as the quintessence of opulent coastal living.",
-    "image": "/images/hedgerow/active-casa-las-olas-montauk.webp",
-    "alt": "Casa Las Olas, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/40-deforest-road-montauk-ny-11954/"
-  },
-  {
     "address": "351 Jobs Lane",
     "area": "Bridgehampton",
     "price": "$9,650,000",
@@ -343,6 +328,19 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-33-dinah-rock-road-shelter-island-2026.webp",
     "alt": "33 Dinah Rock Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties"
+  },
+  {
+    "address": "40 Deforest Road",
+    "area": "Montauk",
+    "price": "",
+    "priceNum": 0,
+    "date": "2026-09",
+    "dateText": "2026",
+    "hedgerowRole": "Co-listing",
+    "group": "Oceanfront",
+    "barryInvolved": false,
+    "image": "/images/hedgerow/sold-40-deforest-road-montauk-2026.webp",
+    "alt": "40 Deforest Road (Casa Las Olas), Montauk. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "1694 Millstone Road",
@@ -666,6 +664,19 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-36-agnew-avenue-montauk-2025.webp",
     "alt": "36 Agnew Avenue, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
+  },
+  {
+    "address": "1 Pandion Road",
+    "area": "Shelter Island",
+    "price": "$12,850,000",
+    "priceNum": 12850000,
+    "date": "2025-09-11",
+    "dateText": "Sep 2025",
+    "hedgerowRole": "Listing",
+    "group": "Waterfront",
+    "barryInvolved": false,
+    "image": "/images/hedgerow/sold-1-pandion-road-shelter-island-2025.webp",
+    "alt": "1 Pandion Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "33 Lily Pond Lane",
