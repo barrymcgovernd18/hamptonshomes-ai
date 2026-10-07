@@ -6,10 +6,12 @@ import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { siteGraphJsonLd } from "@/lib/schema";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  display: "swap",
   variable: "--font-cormorant",
 });
 
@@ -75,6 +77,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <head>
         <JsonLd data={siteGraphJsonLd()} />
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}[data-reveal] img{transform:none!important}[data-reveal]::after{display:none!important}`}</style>
+        </noscript>
       </head>
       <body className="font-sans antialiased bg-paper text-ink">
         <a href="#main" className="skip-link">Skip to content</a>
