@@ -75,9 +75,9 @@ export default function SalesPage() {
         eyebrow="Barry McGovern · Portfolio"
         title="Hedgerow"
         italic="Portfolio"
-        image="/images/36-chase-court.jpg"
-        imageAlt="Estate grounds in Bridgehampton, from above, in black and white"
-        imagePosition="50% 45%"
+        image="/images/67-surfside.jpg"
+        imageAlt="67 Surfside Drive, Bridgehampton, an oceanfront Hedgerow sale, in black and white"
+        imagePosition="62% 55%"
         intro={
           <p>
             Current listings and sales from Hedgerow Exclusive Properties, the boutique firm I work with, including {involvedCount} trades Hedgerow and I have been involved in since 2021, 18 of them oceanfront.
@@ -96,13 +96,16 @@ export default function SalesPage() {
           </dl>
         }
         footer={
-          <p className="text-[13px] leading-relaxed text-paper/80">
-            For the oceanfront market behind many of these trades, read{" "}
-            <Link href={OCEANFRONT_ARTICLE} className="link-line text-paper">
-              Hamptons Oceanfront, 2021 to 2026
-            </Link>
-            .
-          </p>
+          <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between md:gap-10">
+            <p className="text-[13px] leading-relaxed text-paper/80">
+              For the oceanfront market behind many of these trades, read{" "}
+              <Link href={OCEANFRONT_ARTICLE} className="link-line text-paper">
+                Hamptons Oceanfront, 2021 to 2026
+              </Link>
+              .
+            </p>
+            <p className="eyebrow shrink-0 text-paper/70">Pictured: 67 Surfside Drive, Bridgehampton, a Hedgerow transaction</p>
+          </div>
         }
       />
 

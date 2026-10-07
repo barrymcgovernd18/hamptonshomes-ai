@@ -3,7 +3,7 @@ import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import AlsoOnStrip from "@/components/AlsoOnStrip";
 import { ClosingInvitation, SectionLabel, revealDelay } from "@/components/Editorial";
-import { BARRY_BLURB, BARRY_FAQS, faqPageJsonLd, routeMetadata } from "@/lib/schema";
+import { BARRY_FAQS, faqPageJsonLd, routeMetadata } from "@/lib/schema";
 import { FIRM_ACCOLADES } from "@/lib/seo-copy";
 
 export const metadata: Metadata = routeMetadata({
@@ -63,31 +63,34 @@ export default function AboutPage() {
 
       {/* I. Profile */}
       <section className="py-24 md:py-40">
-        <div className="frame grid gap-12 md:grid-cols-12">
+        <div className="frame grid gap-y-12 md:grid-cols-12 md:grid-rows-[auto_1fr] md:gap-x-10">
           <div className="md:col-span-3">
             <SectionLabel n="I">Profile</SectionLabel>
           </div>
-          <div className="md:col-span-9 lg:col-span-8">
-            <p data-reveal className="lede text-ink">{BARRY_BLURB}</p>
-            <div className="mt-14 grid gap-x-12 gap-y-6 border-t border-line pt-10 text-[15px] leading-[1.85] text-ink-muted md:mt-20 md:grid-cols-2">
-              <div className="space-y-6">
-                <p data-reveal className="eyebrow !leading-[1.9] text-ink">Licensed Real Estate Salesperson, New York license #10401353717.</p>
-                <p data-reveal style={revealDelay(60)}>
-                  As part of the Hedgerow team, Barry has been involved in some of the most significant real estate transactions on the East End, from record-setting oceanfront trades to nine-figure compound sales. He brings six years of Hamptons luxury experience and a reputation built on discretion, deep market knowledge, and results.
-                </p>
-                <p data-reveal style={revealDelay(120)}>
-                  Originally from Dublin, Ireland, Barry has called the Hamptons home since 2013 and proudly considers himself a Sag Harbor local.
-                </p>
-              </div>
-              <div className="space-y-6">
-                <p data-reveal style={revealDelay(80)}>
-                  Barry&apos;s expertise centers on oceanfront and waterfront properties, from Further Lane and Meadow Lane oceanfront estates to Sag Harbor and Shelter Island waterfront homes. He also covers raw land, development opportunities, and off-market inventory.
-                </p>
-                <p data-reveal style={revealDelay(140)}>
-                  Covering the full East End from Southampton to Montauk, including Sag Harbor, Shelter Island, Bridgehampton, East Hampton, Sagaponack, Water Mill, Wainscott, and Amagansett.
-                </p>
-              </div>
+
+          <div className="md:col-span-8 md:col-start-5 md:row-span-2 lg:col-span-7 lg:col-start-5">
+            <p data-reveal className="max-w-[30ch] font-serif text-[clamp(1.95rem,2.9vw,2.75rem)] font-light leading-[1.28] tracking-[-0.005em] text-ink">
+              Oceanfront, waterfront, and estate real estate, <em className="italic text-ink-muted">from Southampton to Montauk.</em>
+            </p>
+            <div className="mt-12 max-w-[62ch] space-y-7 border-t border-line pt-10 text-[16px] leading-[1.85] text-ink-muted md:mt-16 md:text-[17px]">
+              <p data-reveal>
+                Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated nearly $2 billion in transactions since 2020. As part of the Hedgerow team, Barry has been involved in some of the most significant real estate transactions on the East End, from record-setting oceanfront trades to nine-figure compound sales. He brings six years of Hamptons luxury experience and a reputation built on discretion, deep market knowledge, and results.
+              </p>
+              <p data-reveal style={revealDelay(60)}>
+                Originally from Dublin, Ireland, Barry has called the Hamptons home since 2013 and proudly considers himself a Sag Harbor local. His expertise centers on oceanfront and waterfront properties, from Further Lane and Meadow Lane oceanfront estates to Sag Harbor and Shelter Island waterfront homes. He also covers raw land, development opportunities, and off-market inventory.
+              </p>
+              <p data-reveal style={revealDelay(120)}>
+                Covering the full East End from Southampton to Montauk, including Sag Harbor, Shelter Island, Bridgehampton, East Hampton, Sagaponack, Water Mill, Wainscott, and Amagansett.
+              </p>
             </div>
+          </div>
+
+          <div data-reveal style={revealDelay(160)} className="border-t border-line pt-6 md:col-span-3 md:row-start-2 md:self-start md:border-t-0 md:pt-0 md:-mt-4">
+            <p className="eyebrow !leading-[2.1] text-ink-faint">
+              <span className="block text-ink">Licensed Real Estate Salesperson</span>
+              <span className="block">New York License #10401353717</span>
+              <span className="block">Hedgerow Exclusive Properties</span>
+            </p>
           </div>
         </div>
       </section>
