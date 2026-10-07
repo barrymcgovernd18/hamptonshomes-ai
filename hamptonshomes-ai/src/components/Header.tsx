@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const links = [
+const primary = [
   { href: "/about", label: "About" },
   { href: "/sales", label: "Portfolio" },
   { href: "/market", label: "Market" },
@@ -13,52 +13,136 @@ const links = [
 
 export default function Header() {
   const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const photoHeader = pathname === "/" && !scrolled && !mobileOpen;
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
+  const overHero = pathname === "/" && !scrolled && !menuOpen;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 48);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      // Tuck the bar away while reading down the page; bring it back on any upward scroll.
+      setHidden(y > 520 && y > lastY.current + 4);
+      if (y < lastY.current - 4 || y <= 520) setHidden(false);
+      lastY.current = y;
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    document.addEventListener("keydown", onKey);
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.documentElement.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  const tone = overHero ? "text-paper" : "text-ink";
+  const muted = overHero ? "text-paper/85 hover:text-paper" : "text-ink-muted hover:text-ink";
+
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${photoHeader ? "border-white/15 bg-ocean/20 text-white" : "border-line/80 bg-paper/95 text-ink backdrop-blur-md"}`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-8">
-        <Link href="/" className="group flex items-baseline gap-3" aria-label="BM Hamptons, Barry McGovern home">
-          <span className={`font-serif text-2xl leading-none transition-colors ${photoHeader ? "text-white" : "text-ink"}`}>BM</span>
-          <span className={`hidden text-[10px] uppercase tracking-[0.28em] sm:inline ${photoHeader ? "text-white/65" : "text-ink-muted"}`}>Hamptons</span>
+    <header
+      onFocusCapture={() => setHidden(false)}
+      className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color,color] duration-700 ease-[cubic-bezier(0.22,0.61,0.21,1)] motion-reduce:transition-none ${
+        hidden && !menuOpen ? "-translate-y-full" : ""
+      } ${
+        menuOpen
+          ? "border-b border-transparent bg-transparent"
+          : overHero
+            ? "border-b border-paper/15 bg-transparent"
+            : "border-b border-line/70 bg-paper/92 backdrop-blur-md"
+      }`}
+    >
+      <div className="frame relative grid h-[76px] grid-cols-[1fr_auto_1fr] items-center">
+        <nav aria-label="Primary" className="hidden items-center gap-9 lg:flex">
+          {primary.map((item) => {
+            const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`eyebrow transition-colors duration-500 ${muted} ${active && !overHero ? "!text-ink" : ""}`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+        <div className="lg:hidden" />
+
+        <Link
+          href="/"
+          onClick={() => setMenuOpen(false)}
+          className={`group flex flex-col items-center transition-colors duration-500 ${menuOpen ? "text-paper" : tone}`}
+        >
+          <span className="font-serif text-[30px] font-light leading-none tracking-[0.06em]">BM</span>{" "}
+          <span className="eyebrow mt-1.5 text-[8.5px] tracking-[0.46em] opacity-80 max-sm:sr-only">Barry McGovern</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {links.map((item) => (
-            <Link key={item.href} href={item.href} className={`text-[11px] uppercase tracking-[0.2em] transition-colors ${photoHeader ? "text-white/75 hover:text-white" : "text-ink-muted hover:text-ocean"}`}>
-              {item.label}
-            </Link>
-          ))}
-          <Link href="/contact" className={`border px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition-colors ${photoHeader ? "border-white/50 text-white hover:bg-white hover:text-ink" : "border-ocean text-ocean hover:bg-ocean hover:text-paper"}`}>
+        <div className="flex items-center justify-end gap-7">
+          <a href="tel:+16463390154" className={`eyebrow hidden transition-colors duration-500 xl:inline ${muted}`}>
+            646.339.0154
+          </a>
+          <Link
+            href="/contact"
+            className={`eyebrow hidden border px-5 py-2.5 transition-colors duration-500 lg:inline-block ${
+              overHero
+                ? "border-paper/55 text-paper hover:bg-paper hover:text-ink"
+                : "border-ink/70 text-ink hover:bg-ink hover:text-paper"
+            }`}
+          >
             Inquire
           </Link>
-        </nav>
-
-        <button className={`md:hidden ${photoHeader ? "text-white" : "text-ink"}`} onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu" aria-expanded={mobileOpen}>
-          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            {mobileOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18 18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />}
-          </svg>
-        </button>
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-controls="site-menu"
+            className={`eyebrow flex items-center gap-3 lg:hidden ${menuOpen ? "text-paper" : tone}`}
+          >
+            <span>{menuOpen ? "Close" : "Menu"}</span>
+            <span aria-hidden="true" className="relative block h-[9px] w-6">
+              <span className={`absolute left-0 top-0 h-px w-6 bg-current transition-transform duration-500 ${menuOpen ? "translate-y-[4px] rotate-45" : ""}`} />
+              <span className={`absolute bottom-0 left-0 h-px w-6 bg-current transition-transform duration-500 ${menuOpen ? "-translate-y-[4px] -rotate-45" : ""}`} />
+            </span>
+          </button>
+        </div>
       </div>
 
-      {mobileOpen && (
-        <nav className="border-t border-line bg-paper px-6 py-7 text-ink md:hidden">
-          <div className="flex flex-col gap-5">
-            {[...links, { href: "/contact", label: "Inquire" }].map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="text-xs uppercase tracking-[0.22em] text-ink-muted hover:text-ocean">{item.label}</Link>
+      <div
+        id="site-menu"
+        hidden={!menuOpen}
+        className="fixed inset-0 -z-10 flex min-h-[100svh] flex-col bg-ocean-deep text-paper lg:hidden"
+      >
+        <nav aria-label="Mobile" className="frame flex flex-1 flex-col justify-center pt-24">
+          <ol className="space-y-1">
+            {[...primary, { href: "/contact", label: "Contact" }].map((item, i) => (
+              <li key={item.href} className="border-b border-paper/12">
+                <Link href={item.href} onClick={() => setMenuOpen(false)} className="flex items-baseline gap-5 py-4">
+                  <span className="eyebrow w-6 text-paper/60">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-serif text-[2.6rem] font-light leading-none">{item.label}</span>
+                </Link>
+              </li>
             ))}
-            <a href="tel:+16463390154" className="mt-2 border-t border-line pt-5 text-xs uppercase tracking-[0.22em] text-ocean">646-339-0154</a>
-          </div>
+          </ol>
         </nav>
-      )}
+        <div className="frame pb-10 pt-8 text-paper/75">
+          <p className="eyebrow text-paper/60">Barry McGovern</p>
+          <p className="mt-2 text-[13px]">Licensed Real Estate Salesperson, Hedgerow Exclusive Properties</p>
+          <div className="mt-5 flex flex-col gap-2 text-[15px]">
+            <a href="tel:+16463390154" className="text-paper">646.339.0154</a>
+            <a href="mailto:barry@hedgerowexclusive.com" className="text-paper">barry@hedgerowexclusive.com</a>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
