@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
 import { routeMetadata } from "@/lib/schema";
 import { featuredPress, hedgerowPress, type PressItem } from "@/lib/press";
 
@@ -21,63 +22,58 @@ function Meta({ item, className }: { item: PressItem; className: string }) {
 }
 
 export default function PressPage() {
+  const outlets = Array.from(new Set([...featuredPress, ...hedgerowPress].map((item) => item.outlet)));
   return (
-    <div className="bg-ocean-deep">
-      {/* Hero */}
-      <section className="pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <p className="text-ocean-soft/60 text-[10px] tracking-[0.5em] uppercase mb-4">Press</p>
-          <h1 className="font-serif text-5xl md:text-7xl text-white leading-tight">
-            In the <br />
-            <span className="italic font-normal text-white/60">Headlines</span>
-          </h1>
-          <p className="mt-8 max-w-xl text-[14px] leading-relaxed text-white/45">
-            Barry McGovern and Hedgerow Exclusive Properties, in print and online.
-          </p>
-        </div>
-      </section>
+    <div className="bg-paper text-ink">
+      <PageHero
+        compact
+        eyebrow="Press"
+        title="In the"
+        italic="Headlines"
+        intro={<p>Barry McGovern and Hedgerow Exclusive Properties, in print and online.</p>}
+        aside={
+          <ul aria-label="Outlets" className="hidden columns-2 gap-8 border-l border-paper/20 pl-8 font-serif text-[1.15rem] italic leading-[1.9] text-paper/75 md:block">
+            {outlets.map((outlet) => (
+              <li key={outlet} className="break-inside-avoid">{outlet}</li>
+            ))}
+          </ul>
+        }
+      />
 
-      {/* Featured: Barry's own mentions */}
-      <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <p className="text-ocean-soft/60 text-[10px] tracking-[0.5em] uppercase mb-10">Featured</p>
-          <div className="grid md:grid-cols-3 gap-5">
-            {featuredPress.map((item) => (
+      {/* I. Featured: Barry's own mentions */}
+      <section className="py-24 md:py-36">
+        <div className="frame">
+          <SectionLabel n="I">Featured</SectionLabel>
+          <div className="mt-12 grid gap-x-10 gap-y-16 md:mt-16 md:grid-cols-3">
+            {featuredPress.map((item, i) => (
               <a
                 key={item.url}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-white/5 hover:border-ocean-soft/30 transition-all duration-700 group flex flex-col overflow-hidden"
+                data-reveal
+                style={revealDelay(i * 100)}
+                className="group flex flex-col"
               >
                 {item.image ? (
-                  <div className="relative h-56 overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.alt ?? item.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/80 via-ocean-deep/20 to-transparent" />
+                  <div className="relative aspect-[4/5] overflow-hidden bg-paper-deep">
+                    <Image src={item.image} alt={item.alt ?? item.title} fill className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                   </div>
                 ) : (
-                  <div className="relative flex h-56 flex-col justify-between overflow-hidden border-b border-white/10 bg-ocean p-8">
-                    <p className="text-[10px] uppercase tracking-[0.4em] text-ocean-soft/80">In conversation</p>
+                  <div className="relative flex aspect-[4/5] flex-col justify-between overflow-hidden bg-ocean-deep p-8 md:p-10">
+                    <p className="eyebrow text-paper/70">In conversation</p>
                     <div>
-                      <p className="font-serif text-5xl leading-none text-paper">{item.outlet}</p>
-                      <div className="mt-5 h-px w-12 bg-ocean-soft/60" />
+                      <p className="display-2 text-paper transition-transform duration-700 [transition-timing-function:var(--ease-editorial)] group-hover:-translate-y-1">{item.outlet}</p>
+                      <div className="mt-6 h-px w-12 bg-paper/50 transition-all duration-700 group-hover:w-24" />
                     </div>
                   </div>
                 )}
-                <div className="flex flex-1 flex-col p-8">
-                  <Meta item={item} className="text-ocean-soft/70 text-[10px] tracking-[0.3em] uppercase mb-4" />
-                  <h2 className="font-serif text-xl md:text-2xl text-white group-hover:text-ocean-soft transition-colors duration-500 leading-snug">
-                    {item.title}
-                  </h2>
-                  <p className="mt-4 text-[14px] leading-relaxed text-white/45">{item.summary}</p>
-                  <p className="mt-auto pt-6 text-white/20 text-[11px] tracking-[0.2em] uppercase group-hover:text-ocean-soft/70 transition-colors duration-500">
-                    Read at {item.outlet} →
+                <div className="flex flex-1 flex-col pt-7">
+                  <Meta item={item} className="eyebrow text-ocean" />
+                  <h2 className="display-3 mt-4 font-light text-ink">{item.title}</h2>
+                  <p className="mt-4 text-[14px] leading-[1.8] text-ink-muted">{item.summary}</p>
+                  <p className="mt-auto pt-7">
+                    <span className="link-line eyebrow text-ink">Read at {item.outlet} →</span>
                   </p>
                 </div>
               </a>
@@ -86,47 +82,46 @@ export default function PressPage() {
         </div>
       </section>
 
-      {/* Hedgerow Exclusive in the press */}
-      <section className="pb-32">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <p className="text-ocean-soft/60 text-[10px] tracking-[0.5em] uppercase">Hedgerow Exclusive in the press</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {hedgerowPress.map((item) => (
+      {/* II. Hedgerow Exclusive in the press */}
+      <section className="defer-render border-t border-line bg-paper-soft py-24 md:py-36">
+        <div className="frame">
+          <SectionLabel n="II" as="h2">Hedgerow Exclusive in the press</SectionLabel>
+          <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
+            {hedgerowPress.map((item, i) => (
               <a
                 key={item.url}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col overflow-hidden border border-white/5 hover:border-ocean-soft/20 transition-all duration-500"
+                data-reveal
+                style={revealDelay((i % 3) * 80)}
+                className="group flex flex-col"
               >
                 {item.image ? (
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative aspect-[3/2] overflow-hidden bg-paper-deep">
                     <Image
                       src={item.image}
                       alt={item.alt ?? item.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="photo-bw object-cover"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/70 to-transparent" />
                   </div>
                 ) : null}
-                <div className="flex flex-1 flex-col p-6">
-                  <Meta item={item} className="text-ocean-soft/55 text-[9px] tracking-[0.3em] uppercase mb-3" />
-                  <h3 className="text-white/80 group-hover:text-white text-[15px] leading-relaxed transition-colors duration-500">
+                <div className="flex flex-1 flex-col pt-6">
+                  <Meta item={item} className="eyebrow text-ink-faint" />
+                  <h3 className="mt-3 font-serif text-[1.45rem] font-light leading-[1.25] text-ink transition-colors duration-500 group-hover:text-ocean">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[13px] leading-relaxed text-white/40">{item.summary}</p>
-                  <p className="mt-auto pt-5 text-white/20 text-[10px] tracking-[0.2em] uppercase group-hover:text-ocean-soft/70 transition-colors duration-500">
-                    Read at {item.outlet} →
+                  <p className="mt-3 text-[13px] leading-[1.75] text-ink-muted">{item.summary}</p>
+                  <p className="mt-auto pt-5">
+                    <span className="link-line eyebrow text-ink-muted">Read at {item.outlet} →</span>
                   </p>
                 </div>
               </a>
             ))}
           </div>
-          <p className="mt-10 text-[11px] leading-relaxed text-white/25">
+          <p className="mt-16 border-t border-line pt-6 text-[11px] leading-relaxed text-ink-faint">
             Images courtesy of Hedgerow Exclusive Properties.
           </p>
         </div>

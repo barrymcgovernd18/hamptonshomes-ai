@@ -11,13 +11,17 @@ const primary = [
   { href: "/press", label: "Press" },
 ];
 
+/** Pages that open on a dark, full-bleed hero: the bar stays transparent over it until scrolled. */
+const AREA_SLUGS = ["east-hampton", "sag-harbor", "bridgehampton", "sagaponack", "southampton", "water-mill", "amagansett", "montauk", "shelter-island", "wainscott"];
+const DARK_HERO_PATHS = new Set(["/", "/about", "/sales", "/press", ...AREA_SLUGS.map((slug) => `/${slug}`)]);
+
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastY = useRef(0);
-  const overHero = pathname === "/" && !scrolled && !menuOpen;
+  const overHero = DARK_HERO_PATHS.has(pathname) && !scrolled && !menuOpen;
 
   useEffect(() => {
     const onScroll = () => {

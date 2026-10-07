@@ -16,26 +16,30 @@ const destinations = [
 export default function NotFound() {
   return (
     <section className="bg-paper">
-      <div className="mx-auto max-w-5xl px-6 pb-28 pt-40 md:px-8 md:pb-36 md:pt-48">
-        <p className="mb-6 text-[11px] uppercase tracking-[0.32em] text-ocean">404</p>
-        <h1 className="font-serif text-5xl leading-tight text-ink md:text-7xl">
-          This page has <br />
-          <span className="font-normal italic text-ink-muted">moved on.</span>
-        </h1>
-        <p className="mt-8 max-w-xl text-[15px] leading-[1.9] text-ink-muted">
-          The address may have changed. The rest of the East End is right where you left it.
-        </p>
-        <ul className="mt-14 grid gap-px border border-line bg-line sm:grid-cols-2">
-          {destinations.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className="group block h-full bg-paper p-7 transition-colors hover:bg-paper-soft">
-                <span className="font-serif text-2xl text-ink group-hover:text-ocean">{item.label}</span>
-                <span className="mt-2 block text-sm text-ink-faint">{item.note}</span>
+      <div className="frame pb-28 pt-40 md:pb-40 md:pt-52">
+        <div className="grid gap-12 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-8">
+            <p className="eyebrow hero-rise text-ocean">404</p>
+            <h1 className="display-1 hero-rise mt-6 text-ink" style={{ animationDelay: "120ms" }}>
+              This page has <em className="block italic text-ink-muted">moved on.</em>
+            </h1>
+          </div>
+          <p className="body-copy hero-rise text-ink-muted md:col-span-4" style={{ animationDelay: "300ms" }}>
+            The address may have changed. The rest of the East End is right where you left it.
+          </p>
+        </div>
+        <ul className="hero-rise mt-16 grid border-t border-ink/80 sm:grid-cols-2 md:mt-24 lg:grid-cols-4" style={{ animationDelay: "450ms" }}>
+          {destinations.map((item, i) => (
+            <li key={item.href} className={`border-b border-line ${["", "sm:border-l", "lg:border-l", "sm:border-l"][i] ?? ""}`}>
+              <Link href={item.href} className="group block h-full py-8 transition-colors duration-500 hover:bg-paper-soft sm:px-7">
+                <span className="eyebrow text-ink-faint">{String(i + 1).padStart(2, "0")}</span>
+                <span className="mt-6 block font-serif text-[2rem] font-light leading-none text-ink transition-colors duration-500 group-hover:text-ocean">{item.label}</span>
+                <span className="mt-3 block text-[13px] text-ink-faint">{item.note}</span>
               </Link>
             </li>
           ))}
         </ul>
-        <Link href="/" className="mt-12 inline-block border-b border-ocean pb-1 text-sm text-ocean hover:border-ink hover:text-ink">
+        <Link href="/" className="link-line eyebrow mt-14 inline-block text-ocean">
           Return home <span aria-hidden="true">↗</span>
         </Link>
       </div>
