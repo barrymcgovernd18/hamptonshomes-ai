@@ -117,6 +117,9 @@ body {
   color: var(--color-ink);
 }
 
+/* Long below-the-fold sections: skip rendering work until they approach the viewport. */
+.defer-render { content-visibility: auto; contain-intrinsic-size: auto 1600px; }
+
 /* Static black-and-white treatment for hero photographs. */
 .photo-mono { filter: grayscale(1) contrast(1.06) brightness(0.96); }
 

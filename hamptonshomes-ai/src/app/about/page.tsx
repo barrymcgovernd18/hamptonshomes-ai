@@ -38,6 +38,7 @@ export default function AboutPage() {
             alt="Barry McGovern"
             fill
             priority
+            fetchPriority="high"
             sizes="(max-width: 768px) 100vw, 46vw"
             className="hero-img photo-mono object-cover object-[center_18%] md:object-[center_22%]"
           />

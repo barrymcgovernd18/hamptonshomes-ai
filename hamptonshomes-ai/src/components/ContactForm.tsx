@@ -119,11 +119,11 @@ export default function ContactForm() {
       )}
       <p className="text-center text-[11px] leading-relaxed text-ink-faint">
         By sending, you agree to the{" "}
-        <Link href="/privacy" className="text-ocean hover:text-ocean-deep">
+        <Link href="/privacy" className="text-ocean underline decoration-ocean/40 underline-offset-[3px] hover:text-ocean-deep">
           Privacy Policy
         </Link>{" "}
         and{" "}
-        <Link href="/terms" className="text-ocean hover:text-ocean-deep">
+        <Link href="/terms" className="text-ocean underline decoration-ocean/40 underline-offset-[3px] hover:text-ocean-deep">
           Terms of Use
         </Link>
         .

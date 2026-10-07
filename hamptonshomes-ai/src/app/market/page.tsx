@@ -87,7 +87,7 @@ export default function MarketPage() {
             <Link href={`/blog/${latest.slug}`} className="group mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:items-end md:gap-14">
               {latest.image && (
                 <div className="relative aspect-[4/3] overflow-hidden bg-paper-deep md:col-span-8 md:aspect-[16/10]">
-                  <Image src={latest.image} alt={latest.title} fill priority className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, 66vw" />
+                  <Image src={latest.image} alt={latest.title} fill priority fetchPriority="high" className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, 66vw" />
                 </div>
               )}
               <div className="md:col-span-4">

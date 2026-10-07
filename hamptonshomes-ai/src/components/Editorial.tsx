@@ -89,7 +89,8 @@ export function PageHero({ eyebrow, title, italic, intro, aside, footer, image, 
           alt={imageAlt}
           fill
           priority
-          quality={80}
+          fetchPriority="high"
+          quality={50}
           sizes="100vw"
           className="hero-img photo-mono -z-10 object-cover"
           style={{ objectPosition: imagePosition }}

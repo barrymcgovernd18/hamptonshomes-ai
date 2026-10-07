@@ -86,6 +86,7 @@ export default function Home() {
           alt="Bayfront estate on the East End, in black and white"
           fill
           priority
+          fetchPriority="high"
           quality={82}
           sizes="100vw"
           className="hero-img -z-10 object-cover object-[50%_58%]"

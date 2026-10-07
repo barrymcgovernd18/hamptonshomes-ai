@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
+import InView from "@/components/InView";
 import { ClosingInvitation, PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
 import { notableSales, personalVolume, firmVolume, firmVolumeLabel } from "@/lib/sales";
 import {
@@ -37,7 +38,7 @@ function SoldCard({ deal, index }: { deal: HedgerowSoldDeal; index: number }) {
     <article data-reveal style={revealDelay((index % 3) * 80)} className="group flex flex-col">
       {deal.image ? (
         <div className="relative aspect-[4/3] overflow-hidden bg-paper-deep">
-          <Image src={deal.image} alt={deal.alt || `${deal.address}, ${deal.area}`} fill className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" />
+          <Image src={deal.image} alt={deal.alt || `${deal.address}, ${deal.area}`} fill quality={50} className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" />
         </div>
       ) : (
         <div className="flex aspect-[4/3] items-end bg-ocean-deep p-7">
@@ -106,7 +107,7 @@ export default function SalesPage() {
       />
 
       {/* I. Available now */}
-      <section id="listings" className="py-24 md:py-36">
+      <section id="listings" className="defer-render py-24 md:py-36">
         <div className="frame">
           <div className="mb-14 grid gap-8 md:mb-20 md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
@@ -120,8 +121,10 @@ export default function SalesPage() {
           <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
             {actives.map((listing, i) => (
               <article key={listing.listingUrl} data-reveal style={revealDelay((i % 2) * 100)} className="group flex flex-col">
-                <a href={listing.listingUrl} target="_blank" rel="noopener noreferrer" className="relative block aspect-[16/11] overflow-hidden bg-paper-deep">
-                  <Image src={listing.image} alt={listing.alt} fill className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                <a href={listing.listingUrl} target="_blank" rel="noopener noreferrer" aria-label={listing.alt} className="relative block aspect-[16/11] overflow-hidden bg-paper-deep">
+                  <InView>
+                    <Image src={listing.image} alt={listing.alt} fill quality={50} className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                  </InView>
                 </a>
                 <div className="flex flex-1 flex-col pt-7">
                   <div className="flex items-start justify-between gap-6">
@@ -151,7 +154,7 @@ export default function SalesPage() {
       </section>
 
       {/* II. Selected transactions: full-bleed plates */}
-      <section id="selected" className="pb-24 md:pb-36">
+      <section id="selected" className="defer-render pb-24 md:pb-36">
         <div className="frame mb-14 grid gap-8 border-t border-line pt-24 md:mb-20 md:grid-cols-12 md:items-end md:pt-36">
           <div className="md:col-span-8">
             <SectionLabel n="II">Sold</SectionLabel>
@@ -165,7 +168,7 @@ export default function SalesPage() {
           {featured.map((sale) => (
             <article key={sale.slug} className="group">
               <div data-reveal="image" className="relative aspect-[4/5] overflow-hidden bg-ocean-deep sm:aspect-[16/10] md:aspect-[21/9]">
-                <Image src={sale.image!} alt={`${sale.address}, ${sale.area}`} fill className="photo-bw object-cover" sizes="100vw" />
+                <Image src={sale.image!} alt={`${sale.address}, ${sale.area}`} fill quality={50} className="photo-bw object-cover" sizes="100vw" />
                 <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(12,24,29,0.85)_0%,rgba(12,24,29,0.35)_40%,rgba(12,24,29,0)_70%)]" />
                 <div className="frame absolute inset-x-0 bottom-0 pb-8 text-paper md:pb-12">
                   <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
@@ -194,7 +197,7 @@ export default function SalesPage() {
       </section>
 
       {/* III. Hedgerow sales since 2021 */}
-      <section id="sold" className="border-t border-line bg-paper-soft py-24 md:py-36">
+      <section id="sold" className="defer-render border-t border-line bg-paper-soft py-24 md:py-36">
         <div className="frame">
           <div className="mb-16 grid gap-8 md:mb-24 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
@@ -238,7 +241,7 @@ export default function SalesPage() {
       </section>
 
       {/* IV. The Hedgerow record */}
-      <section id="firm-history" className="py-24 md:py-36">
+      <section id="firm-history" className="defer-render py-24 md:py-36">
         <div className="frame">
           <div className="mb-14 grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">

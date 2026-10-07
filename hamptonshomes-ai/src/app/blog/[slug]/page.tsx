@@ -261,7 +261,7 @@ export default async function BlogPostPage({ params }: Props) {
         {post.image ? (
           <div className="frame mt-12 md:mt-16">
             <div className="relative aspect-[4/3] overflow-hidden bg-paper-deep md:aspect-[21/9]">
-              <Image src={post.image} alt={post.title} fill priority quality={80} sizes="(max-width: 1440px) 100vw, 1440px" className="hero-img photo-mono object-cover" />
+              <Image src={post.image} alt={post.title} fill priority fetchPriority="high" quality={80} sizes="(max-width: 1440px) 100vw, 1440px" className="hero-img photo-mono object-cover" />
             </div>
           </div>
         ) : null}

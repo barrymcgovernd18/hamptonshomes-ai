@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    // 50 is used for B&W hero and portfolio photographs (AVIF, visually indistinguishable at display size); 75 is the default elsewhere.
+    qualities: [50, 75],
   },
   async redirects() {
     return [

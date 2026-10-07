@@ -83,7 +83,7 @@ export default function PressPage() {
       </section>
 
       {/* II. Hedgerow Exclusive in the press */}
-      <section className="border-t border-line bg-paper-soft py-24 md:py-36">
+      <section className="defer-render border-t border-line bg-paper-soft py-24 md:py-36">
         <div className="frame">
           <SectionLabel n="II" as="h2">Hedgerow Exclusive in the press</SectionLabel>
           <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
