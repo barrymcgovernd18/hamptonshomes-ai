@@ -6,7 +6,7 @@ import { featuredPress, hedgerowPress, type PressItem } from "@/lib/press";
 export const metadata: Metadata = routeMetadata({
   title: "Press",
   description:
-    "Barry McGovern and Hedgerow Exclusive Properties in the press: Forbes, The Wall Street Journal, Architectural Digest, Vogue, The Real Deal, Robb Report, Mansion Global, and more, with links to the original articles.",
+    "Barry McGovern and Hedgerow Exclusive Properties in the press, from The Wall Street Journal and Forbes to The Real Deal, Robb Report, and 27East.",
   path: "/press",
 });
 
@@ -28,8 +28,7 @@ export default function PressPage() {
         <div className="max-w-7xl mx-auto px-8">
           <p className="text-ocean-soft/60 text-[10px] tracking-[0.5em] uppercase mb-4">Press</p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-tight">
-            In the
-            <br />
+            In the <br />
             <span className="italic font-normal text-white/60">Headlines</span>
           </h1>
           <p className="mt-8 max-w-xl text-[14px] leading-relaxed text-white/45">
