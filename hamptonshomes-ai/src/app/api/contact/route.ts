@@ -25,14 +25,57 @@ async function sendSmsAlert(body: string) {
   return { skipped: false as const };
 }
 
+const LIMITS = { name: 120, email: 200, phone: 40, interest: 80, message: 5000 } as const;
+const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
+
+function clean(value: unknown, max: number) {
+  return typeof value === "string" ? value.trim().slice(0, max) : "";
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, email, phone, interest, message } = body;
+    let body: Record<string, unknown>;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+    }
+    if (!body || typeof body !== "object") {
+      return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+    }
 
-    if (!name || !email) {
+    // Honeypot: real visitors never see or fill this field.
+    if (clean(body.website, 200)) {
+      return NextResponse.json({ success: true });
+    }
+
+    const rawName = clean(body.name, LIMITS.name);
+    const rawEmail = clean(body.email, LIMITS.email);
+    const rawPhone = clean(body.phone, LIMITS.phone).replace(/[^\d+().\s-]/g, "");
+    const rawInterest = clean(body.interest, LIMITS.interest);
+    const rawMessage = clean(body.message, LIMITS.message);
+
+    if (!rawName || !rawEmail) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
     }
+    if (!EMAIL_RE.test(rawEmail)) {
+      return NextResponse.json({ error: "Please enter a valid email address" }, { status: 400 });
+    }
+
+    const name = escapeHtml(rawName);
+    const email = escapeHtml(rawEmail);
+    const phone = escapeHtml(rawPhone);
+    const interest = escapeHtml(rawInterest);
+    const message = escapeHtml(rawMessage).replace(/\n/g, "<br />");
 
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
@@ -48,8 +91,8 @@ export async function POST(request: Request) {
     const { data, error } = await resend.emails.send({
       from,
       to: [to],
-      replyTo: email,
-      subject: `New Inquiry from ${name} - ${interest || "General"}`,
+      replyTo: rawEmail,
+      subject: `New Inquiry from ${rawName.replace(/[\r\n]+/g, " ")}: ${rawInterest.replace(/[\r\n]+/g, " ") || "General"}`,
       html: `
         <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; padding: 40px 20px;">
           <h2 style="color: #1a1a1a; font-size: 24px; border-bottom: 2px solid #1f3a44; padding-bottom: 12px;">
@@ -64,7 +107,7 @@ export async function POST(request: Request) {
               <td style="padding: 8px 0; color: #999;">Email</td>
               <td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #1f3a44;">${email}</a></td>
             </tr>
-            ${phone ? `<tr><td style="padding: 8px 0; color: #999;">Phone</td><td style="padding: 8px 0;"><a href="tel:${phone}" style="color: #1f3a44;">${phone}</a></td></tr>` : ""}
+            ${phone ? `<tr><td style="padding: 8px 0; color: #999;">Phone</td><td style="padding: 8px 0;"><a href="tel:${phone.replace(/[^\d+]/g, "")}" style="color: #1f3a44;">${phone}</a></td></tr>` : ""}
             <tr>
               <td style="padding: 8px 0; color: #999;">Interest</td>
               <td style="padding: 8px 0;">${interest || "Not specified"}</td>
@@ -78,10 +121,10 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Resend error:", error);
-      return NextResponse.json({ error: "Failed to send message", detail: error }, { status: 502 });
+      return NextResponse.json({ error: "Failed to send message" }, { status: 502 });
     }
 
-    const smsBody = `Homes inquiry: ${name}${interest ? ` (${interest})` : ""}${phone ? ` · ${phone}` : ""} · ${email}`;
+    const smsBody = `Homes inquiry: ${rawName}${rawInterest ? ` (${rawInterest})` : ""}${rawPhone ? ` · ${rawPhone}` : ""} · ${rawEmail}`;
     try {
       await sendSmsAlert(smsBody.slice(0, 320));
     } catch (smsErr) {

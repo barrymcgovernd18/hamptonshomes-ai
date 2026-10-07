@@ -65,8 +65,6 @@ export const BARRY_SAME_AS = [
   "https://hedgerowexclusive.com/members/barry-mcgovern/",
   "https://www.linkedin.com/in/barry-mcgovern-9346133b",
   "https://www.instagram.com/barrymcgovern_/",
-  `${SITE_URL}/`,
-  PERSON_CANONICAL_URL,
   "https://outeast.com/agents/9187/barry-mcgovern/bridgehampton",
   COASTAL_ABOUT_URL,
 ] as const;
@@ -130,6 +128,12 @@ export function siteOrganization() {
     url: `${SITE_URL}/`,
     description:
       "Personal site for Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties.",
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/icons/icon-512.png`,
+      width: 512,
+      height: 512,
+    },
   };
 }
 
@@ -400,7 +404,7 @@ export function articleJsonLd(post: {
       email: "barry@hedgerowexclusive.com",
       telephone: "+1-646-339-0154",
       worksFor: {
-        "@type": "RealEstateAgent",
+        "@type": "Organization",
         "@id": HEDGEROW.id,
         name: HEDGEROW.name,
         url: HEDGEROW.url,

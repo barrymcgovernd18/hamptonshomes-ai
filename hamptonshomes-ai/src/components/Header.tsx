@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${photoHeader ? "border-white/15 bg-ocean/20 text-white" : "border-line/80 bg-paper/95 text-ink backdrop-blur-md"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-8">
-        <Link href="/" className="group flex items-baseline gap-3" aria-label="Barry McGovern home">
+        <Link href="/" className="group flex items-baseline gap-3" aria-label="BM Hamptons, Barry McGovern home">
           <span className={`font-serif text-2xl leading-none transition-colors ${photoHeader ? "text-white" : "text-ink"}`}>BM</span>
           <span className={`hidden text-[10px] uppercase tracking-[0.28em] sm:inline ${photoHeader ? "text-white/65" : "text-ink-muted"}`}>Hamptons</span>
         </Link>
@@ -55,6 +55,7 @@ export default function Header() {
             {[...links, { href: "/contact", label: "Inquire" }].map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="text-xs uppercase tracking-[0.22em] text-ink-muted hover:text-ocean">{item.label}</Link>
             ))}
+            <a href="tel:+16463390154" className="mt-2 border-t border-line pt-5 text-xs uppercase tracking-[0.22em] text-ocean">646-339-0154</a>
           </div>
         </nav>
       )}

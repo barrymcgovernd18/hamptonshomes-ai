@@ -8,7 +8,7 @@
   --color-paper-soft: #faf8f3;
   --color-ink: #111111;
   --color-ink-muted: #5e625f;
-  --color-ink-faint: #858982;
+  --color-ink-faint: #62665f;
   --color-ocean: #1f3a44;
   --color-ocean-deep: #162d35;
   --color-ocean-soft: #dce6e5;
@@ -17,5 +17,9 @@
 }
 
 html { scroll-behavior: smooth; }
+:focus-visible { outline: 2px solid #1f3a44; outline-offset: 3px; }
+.bg-ocean :focus-visible, .bg-ocean-deep :focus-visible { outline-color: #dce6e5; }
+.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: #1f3a44; color: #f4f0e8; padding: 0.75rem 1.25rem; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; transition: top 0.2s; }
+.skip-link:focus { top: 1rem; }
 body { background: #f4f0e8; color: #111111; }
 ::selection { background-color: #1f3a4430; color: #111111; }

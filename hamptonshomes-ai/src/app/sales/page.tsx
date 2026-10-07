@@ -71,7 +71,7 @@ export default function SalesPage() {
           <p className="mb-4 text-[10px] uppercase tracking-[0.5em] text-ocean-soft">Barry McGovern · Portfolio</p>
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
-              <h1 className="font-serif text-5xl leading-tight md:text-7xl">Hedgerow<br /><span className="font-normal italic text-paper/65">Portfolio</span></h1>
+              <h1 className="font-serif text-5xl leading-tight md:text-7xl">Hedgerow <br /><span className="font-normal italic text-paper/65">Portfolio</span></h1>
               <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-paper/65">Current listings and sales from Hedgerow Exclusive Properties, the boutique firm I work with, including {involvedCount} trades Hedgerow and I have been involved in since 2021, 18 of them oceanfront.</p>
             </div>
             <div className="grid grid-cols-2 gap-8 text-left md:text-right">

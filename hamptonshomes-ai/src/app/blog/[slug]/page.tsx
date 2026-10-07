@@ -145,7 +145,7 @@ function renderContent(content: string) {
       );
     } else if (line.startsWith("### ")) {
       elements.push(
-        <h3 key={i} className="font-serif text-xl text-ocean/80 mt-10 mb-4">
+        <h3 key={i} className="font-serif text-xl text-ocean mt-10 mb-4">
           {line.replace("### ", "")}
         </h3>
       );
@@ -159,18 +159,26 @@ function renderContent(content: string) {
       elements.push(renderTable(tableLines, i));
       i = j;
       continue;
-    } else if (line.startsWith("- ")) {
+    } else if (line.startsWith("- ") || /^\d+\.\s/.test(line)) {
+      const ordered = !line.startsWith("- ");
+      const items: string[] = [];
+      let j = i;
+      while (j < lines.length) {
+        const next = lines[j].trimEnd();
+        if (ordered ? !/^\d+\.\s/.test(next) : !next.startsWith("- ")) break;
+        items.push(ordered ? next.replace(/^\d+\.\s/, "") : next.slice(2));
+        j++;
+      }
+      const ListTag = ordered ? "ol" : "ul";
       elements.push(
-        <li key={i} className="text-ink-muted text-[15px] leading-[1.8] ml-4 mb-2" dangerouslySetInnerHTML={{
-          __html: formatInline(line.replace("- ", ""))
-        }} />
+        <ListTag key={i} className={`mb-6 ml-5 space-y-2 ${ordered ? "list-decimal" : "list-disc marker:text-ocean"}`}>
+          {items.map((item, k) => (
+            <li key={k} className="text-ink-muted text-[15px] leading-[1.8] pl-1" dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
+          ))}
+        </ListTag>
       );
-    } else if (line.startsWith("1. ") || line.startsWith("2. ") || line.startsWith("3. ") || line.startsWith("4. ")) {
-      elements.push(
-        <li key={i} className="text-ink-muted text-[15px] leading-[1.8] ml-4 mb-2 list-decimal" dangerouslySetInnerHTML={{
-          __html: formatInline(line.replace(/^\d+\.\s/, ""))
-        }} />
-      );
+      i = j;
+      continue;
     } else if (line.startsWith("---")) {
       elements.push(<hr key={i} className="border-line my-12" />);
     } else if (line.startsWith("*") && line.endsWith("*") && !line.startsWith("**")) {
@@ -222,7 +230,7 @@ export default async function BlogPostPage({ params }: Props) {
             ← Market research
           </Link>
 
-          <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-4">
+          <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-4">
             {post.category} · {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
           </p>
 
@@ -253,7 +261,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div>{renderContent(post.content)}</div>
 
           <nav className="mt-16 border-t border-line pt-10" aria-label="Continue reading">
-            <p className="text-ocean/60 text-[10px] tracking-[0.5em] uppercase mb-6">Continue reading</p>
+            <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-6">Continue reading</p>
             <ul className="space-y-3">
               {town && (
                 <li>
