@@ -75,11 +75,11 @@ export default function SalesPage() {
               <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-paper/65">Current listings and sales from Hedgerow Exclusive Properties, the boutique firm I work with, including {involvedCount} trades Hedgerow and I have been involved in since 2021, 18 of them oceanfront.</p>
             </div>
             <div className="grid grid-cols-2 gap-8 text-left md:text-right">
-              <div><p className="font-serif text-2xl text-paper">{personalVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/45">Personal volume</p></div>
-              <div><p className="font-serif text-2xl text-paper">{firmVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/45">{firmVolumeLabel}</p></div>
+              <div><p className="font-serif text-2xl text-paper">{personalVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/70">Personal volume</p></div>
+              <div><p className="font-serif text-2xl text-paper">{firmVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/70">{firmVolumeLabel}</p></div>
             </div>
           </div>
-          <p className="mt-10 max-w-xl text-[12px] leading-relaxed text-paper/45">For the oceanfront market behind many of these trades, read <Link href={OCEANFRONT_ARTICLE} className="underline decoration-paper/30 underline-offset-4 hover:text-paper">Hamptons Oceanfront, 2021 to 2026</Link>.</p>
+          <p className="mt-10 max-w-xl text-[12px] leading-relaxed text-paper/70">For the oceanfront market behind many of these trades, read <Link href={OCEANFRONT_ARTICLE} className="underline decoration-paper/30 underline-offset-4 hover:text-paper">Hamptons Oceanfront, 2021 to 2026</Link>.</p>
         </div>
       </section>
 
