@@ -40,7 +40,7 @@ export default function AboutPage() {
             priority
             fetchPriority="high"
             sizes="(max-width: 768px) 100vw, 46vw"
-            className="hero-img photo-mono object-cover object-[center_18%] md:object-[center_22%]"
+            className="photo-mono object-cover object-[center_18%] md:object-[center_22%]"
           />
           <div aria-hidden="true" className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black/45 to-transparent" />
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ocean-deep via-ocean-deep/20 to-transparent md:hidden" />
@@ -48,12 +48,12 @@ export default function AboutPage() {
         </div>
         <div className="frame relative -mt-40 pb-12 md:mt-0 md:flex md:h-full md:items-end md:pb-16">
           <div className="md:max-w-[52%]">
-            <p className="eyebrow hero-rise text-paper/85" style={{ animationDelay: "200ms" }}>About</p>
-            <h1 className="display-1 hero-rise mt-6 text-paper" style={{ animationDelay: "320ms" }}>
+            <p className="eyebrow text-paper/85">About</p>
+            <h1 className="display-1 mt-6 text-paper">
               Barry <br />
               McGovern
             </h1>
-            <p className="eyebrow hero-rise mt-8 text-paper/75" style={{ animationDelay: "520ms" }}>
+            <p className="eyebrow mt-8 text-paper/75">
               Licensed Real Estate Salesperson
               <span className="block">Hedgerow Exclusive Properties</span>
             </p>
@@ -74,7 +74,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-12 max-w-[62ch] space-y-7 border-t border-line pt-10 text-[16px] leading-[1.85] text-ink-muted md:mt-16 md:text-[17px]">
               <p data-reveal>
-                Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated nearly $2 billion in transactions since 2020. As part of the Hedgerow team, Barry has been involved in some of the most significant real estate transactions on the East End, from record-setting oceanfront trades to nine-figure compound sales. He brings six years of Hamptons luxury experience and a reputation built on discretion, deep market knowledge, and results.
+                Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated over $2 billion in transactions since 2020. As part of the Hedgerow team, Barry has been involved in some of the most significant real estate transactions on the East End, from record-setting oceanfront trades to nine-figure compound sales. He brings six years of Hamptons luxury experience and a reputation built on discretion, deep market knowledge, and results.
               </p>
               <p data-reveal style={revealDelay(60)}>
                 Originally from Dublin, Ireland, Barry has called the Hamptons home since 2013 and proudly considers himself a Sag Harbor local. His expertise centers on oceanfront and waterfront properties, from Further Lane and Meadow Lane oceanfront estates to Sag Harbor and Shelter Island waterfront homes. He also covers raw land, development opportunities, and off-market inventory.

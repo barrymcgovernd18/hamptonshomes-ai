@@ -13,8 +13,8 @@ export default function TermsPage() {
   return (
     <div className="bg-paper text-ink">
       <section className="frame pb-28 pt-40 md:pb-40 md:pt-52">
-        <p className="eyebrow hero-rise text-ocean">Legal</p>
-        <h1 className="display-1 hero-rise mt-6" style={{ animationDelay: "120ms" }}>Terms of Use</h1>
+        <p className="eyebrow text-ocean">Legal</p>
+        <h1 className="display-1 mt-6">Terms of Use</h1>
         <p className="eyebrow mt-10 border-t border-line pt-6 text-ink-faint">Last updated: September 16, 2026</p>
 
         <div className="mt-16 max-w-3xl space-y-14 text-[16px] leading-[1.9] text-ink-muted md:ml-[25%] md:mt-24">

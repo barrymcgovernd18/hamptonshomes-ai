@@ -123,12 +123,11 @@ body {
 /* Static black-and-white treatment for hero photographs. */
 .photo-mono { filter: grayscale(1) contrast(1.06) brightness(0.96); }
 
-/* Hero: slow settle on load. */
+/* Heroes render static, exactly in their final state. The homepage photograph alone keeps a slow
+   zoom-out, clipped by its full-bleed frame (no wipe, split, or unveil). */
 @keyframes hero-settle { from { transform: scale(1.08); } to { transform: scale(1); } }
-@keyframes rise-in { from { opacity: 0; transform: translate3d(0, 22px, 0); } to { opacity: 1; transform: none; } }
 @keyframes line-drop { 0% { transform: scaleY(0); transform-origin: top; } 45% { transform: scaleY(1); transform-origin: top; } 55% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
-.hero-img { animation: hero-settle 2.8s var(--ease-editorial) both; }
-.hero-rise { animation: rise-in 1.3s var(--ease-editorial) both; }
+.hero-zoom { animation: hero-settle 2.8s var(--ease-editorial) both; }
 .scroll-cue { animation: line-drop 2.6s var(--ease-editorial) infinite; }
 
 /* Scroll reveals, driven by RevealObserver (adds .is-visible). */
@@ -164,7 +163,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-img, .hero-rise, .scroll-cue { animation: none !important; }
+  .hero-zoom, .scroll-cue { animation: none !important; }
   [data-reveal], [data-reveal="image"], [data-reveal="image"] img {
     opacity: 1 !important; transform: none !important; transition: none !important;
   }

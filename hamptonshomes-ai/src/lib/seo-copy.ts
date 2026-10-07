@@ -4,14 +4,14 @@
  */
 
 export const LOCKED_FIRM_SENTENCE =
-  "Since 2020, the firm has facilitated nearly $2 billion in Hamptons transactions.";
+  "Since 2020, the firm has facilitated over $2 billion in Hamptons transactions.";
 
 export const BOUTIQUE_FIRM =
   "Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage";
 
 export const HOMEPAGE_PROOF = {
   eyebrow: "Hedgerow Exclusive Properties",
-  headline: "A boutique firm. Nearly $2 billion in Hamptons work.",
+  headline: "A boutique firm. Over $2 billion in Hamptons work.",
   body: `Barry is a Licensed Real Estate Salesperson with ${BOUTIQUE_FIRM}. ${LOCKED_FIRM_SENTENCE}`,
   primaryCta: "View selected sales",
   primaryHref: "/sales",
@@ -46,7 +46,7 @@ export const SALES_PAGE = {
 export const SALES_HERO = {
   personalVolume: "$250M+",
   personalLabel: "Personal volume",
-  firmVolume: "nearly $2B",
+  firmVolume: "over $2B",
   firmLabel: "Firm transactions",
 } as const;
 
@@ -68,7 +68,7 @@ export const PRESS_QUARTER_CARD = {
 } as const;
 
 export const FIRM_ACCOLADES =
-  "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage, founded in Bridgehampton in 2020. It has since facilitated nearly $2 billion in transactions, including a $121.5M trade, the firm's largest. WSJ/RealTrends ranks the firm #1 Hamptons, #1 New York, and #4 USA.";
+  "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage, founded in Bridgehampton in 2020. It has since facilitated over $2 billion in transactions, including a $121.5M trade, the firm's largest. WSJ/RealTrends ranks the firm #1 Hamptons, #1 New York, and #4 USA.";
 
 
 export const OG_ALT = "Barry McGovern and Hamptons oceanfront, Hedgerow Exclusive Properties";

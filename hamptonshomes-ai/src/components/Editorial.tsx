@@ -54,8 +54,8 @@ export function PageHero({ eyebrow, title, italic, intro, aside, footer, image, 
         <div className="frame">
           <div className="grid gap-12 md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
-              <p className="eyebrow hero-rise text-ocean" style={{ animationDelay: "120ms" }}>{eyebrow}</p>
-              <h1 className="display-1 hero-rise mt-6 text-ink" style={{ animationDelay: "220ms" }}>
+              <p className="eyebrow text-ocean">{eyebrow}</p>
+              <h1 className="display-1 mt-6 text-ink">
                 {title}
                 {italic ? (
                   <>
@@ -65,10 +65,10 @@ export function PageHero({ eyebrow, title, italic, intro, aside, footer, image, 
                 ) : null}
               </h1>
             </div>
-            {aside ? <div className="hero-rise md:col-span-4" style={{ animationDelay: "420ms" }}>{aside}</div> : null}
+            {aside ? <div className="md:col-span-4">{aside}</div> : null}
           </div>
           {intro ? (
-            <div className="hero-rise mt-12 border-t border-line pt-8 md:mt-16" style={{ animationDelay: "520ms" }}>
+            <div className="mt-12 border-t border-line pt-8 md:mt-16">
               <div className="body-copy text-ink-muted md:ml-[33.333%]">{intro}</div>
             </div>
           ) : null}
@@ -92,7 +92,7 @@ export function PageHero({ eyebrow, title, italic, intro, aside, footer, image, 
           fetchPriority="high"
           quality={50}
           sizes="100vw"
-          className="hero-img photo-mono -z-10 object-cover"
+          className="photo-mono -z-10 object-cover"
           style={{ objectPosition: imagePosition }}
         />
       ) : null}
@@ -105,8 +105,8 @@ export function PageHero({ eyebrow, title, italic, intro, aside, footer, image, 
       <div className="frame flex h-full min-h-[inherit] flex-col justify-end pb-10 pt-32 md:pb-14">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
-            <p className="eyebrow hero-rise text-paper/85" style={{ animationDelay: "200ms" }}>{eyebrow}</p>
-            <h1 className="display-1 hero-rise mt-6 text-paper" style={{ animationDelay: "320ms" }}>
+            <p className="eyebrow text-paper/85">{eyebrow}</p>
+            <h1 className="display-1 mt-6 text-paper">
               {title}
               {italic ? (
                 <>
@@ -116,17 +116,17 @@ export function PageHero({ eyebrow, title, italic, intro, aside, footer, image, 
               ) : null}
             </h1>
             {intro ? (
-              <div className="hero-rise mt-7 max-w-[36rem] text-[15px] leading-[1.8] text-paper/85" style={{ animationDelay: "520ms" }}>
+              <div className="mt-7 max-w-[36rem] text-[15px] leading-[1.8] text-paper/85">
                 {intro}
               </div>
             ) : null}
           </div>
           {aside ? (
-            <div className="hero-rise md:col-span-4" style={{ animationDelay: "650ms" }}>{aside}</div>
+            <div className="md:col-span-4">{aside}</div>
           ) : null}
         </div>
         {footer ? (
-          <div className="hero-rise mt-10 border-t border-paper/25 pt-6 md:mt-14" style={{ animationDelay: "800ms" }}>{footer}</div>
+          <div className="mt-10 border-t border-paper/25 pt-6 md:mt-14">{footer}</div>
         ) : null}
       </div>
     </section>

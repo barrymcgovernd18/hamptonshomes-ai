@@ -39,7 +39,7 @@ export const PLACE_NAMES = [
 ] as const;
 
 export const BARRY_BLURB =
-  "Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. Public firm materials describe nearly $2 billion in Hamptons transactions. Dublin-born and a Sag Harbor local since 2013, Barry focuses on oceanfront, waterfront, estate-section, and private-market opportunities from Southampton to Montauk, and has been involved with the firm's landmark and record-breaking work.";
+  "Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. Public firm materials describe over $2 billion in Hamptons transactions. Dublin-born and a Sag Harbor local since 2013, Barry focuses on oceanfront, waterfront, estate-section, and private-market opportunities from Southampton to Montauk, and has been involved with the firm's landmark and record-breaking work.";
 
 export const BARRY_SCHEMA_DESCRIPTION =
   "Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. Dublin-born and a Sag Harbor local since 2013, Barry focuses on oceanfront, waterfront, estate-section, and private-market opportunities from Southampton to Montauk, and has been involved with the firm's landmark and record-breaking work.";
