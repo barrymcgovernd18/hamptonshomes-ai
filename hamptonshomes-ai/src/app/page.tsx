@@ -96,7 +96,7 @@ export default function Home() {
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-44 bg-gradient-to-b from-black/40 to-transparent" />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(12,24,29,0.88)_0%,rgba(12,24,29,0.55)_26%,rgba(12,24,29,0.12)_52%,rgba(12,24,29,0)_68%)]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(12,24,29,0.88)_0%,rgba(12,24,29,0.55)_26%,rgba(12,24,29,0.12)_52%,rgba(12,24,29,0)_68%),linear-gradient(to_right,rgba(12,24,29,0.4)_0%,rgba(12,24,29,0)_50%)]"
         />
 
         <div className="frame flex h-full flex-col justify-end pb-10 md:pb-14">
@@ -117,18 +117,18 @@ export default function Home() {
           </div>
 
           <div
-            className="hero-rise mt-10 grid grid-cols-[1fr_auto] items-center gap-6 border-t border-paper/25 pt-6 md:mt-14 md:grid-cols-3"
+            className="hero-rise mt-10 grid grid-cols-[1fr_auto] items-center gap-6 border-t border-paper/25 pt-6 md:mt-14 md:grid-cols-[1fr_auto_1fr]"
             style={{ animationDelay: "900ms" }}
           >
             <div className="flex items-center gap-8">
               <Link href="/contact" className="eyebrow link-line text-paper">Inquire</Link>
               <Link href="/sales" className="eyebrow link-line text-paper/85 hover:text-paper">The Portfolio</Link>
             </div>
-            <p className="eyebrow hidden text-center text-paper/75 md:block">
+            <p className="eyebrow hidden whitespace-nowrap text-center text-paper/75 md:block">
               Licensed Real Estate Salesperson · Hedgerow Exclusive Properties
             </p>
-            <div className="flex items-center justify-end gap-4" aria-hidden="true">
-              <span className="eyebrow hidden text-paper/70 sm:inline">Scroll</span>
+            <div className="hidden items-center justify-end gap-4 sm:flex" aria-hidden="true">
+              <span className="eyebrow text-paper/70">Scroll</span>
               <span className="relative block h-10 w-px overflow-hidden bg-paper/20">
                 <span className="scroll-cue absolute inset-0 bg-paper" />
               </span>
@@ -181,7 +181,9 @@ export default function Home() {
                 key={item.label}
                 data-reveal
                 style={delay(i * 120)}
-                className="flex flex-col-reverse justify-end gap-5 border-b border-paper/15 py-9 sm:px-8 sm:py-10 sm:odd:pl-0 sm:even:border-l lg:border-b-0 lg:border-l lg:py-14 lg:pl-8 lg:first:border-l-0 lg:first:pl-0"
+                className={`flex flex-col-reverse justify-end gap-5 border-b border-paper/15 py-9 sm:py-10 lg:border-b-0 lg:py-14 ${
+                  i === 0 ? "sm:pr-8" : i === 2 ? "sm:pr-8 lg:border-l lg:pl-8" : "sm:border-l sm:px-8"
+                }`}
               >
                 <dt className="eyebrow max-w-[19em] text-paper/70">{item.label}</dt>
                 <dd className="whitespace-nowrap font-serif text-[3.1rem] font-light leading-none tracking-[-0.01em] sm:text-[3.4rem] lg:text-[clamp(3rem,4.3vw,4.6rem)]">

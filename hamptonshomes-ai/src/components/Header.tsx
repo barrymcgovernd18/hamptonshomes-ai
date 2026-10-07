@@ -80,12 +80,11 @@ export default function Header() {
 
         <Link
           href="/"
-          aria-label="BM, Barry McGovern home"
           onClick={() => setMenuOpen(false)}
           className={`group flex flex-col items-center transition-colors duration-500 ${menuOpen ? "text-paper" : tone}`}
         >
-          <span className="font-serif text-[30px] font-light leading-none tracking-[0.06em]">BM</span>
-          <span className="eyebrow mt-1.5 hidden text-[8.5px] tracking-[0.46em] opacity-80 sm:block">Barry McGovern</span>
+          <span className="font-serif text-[30px] font-light leading-none tracking-[0.06em]">BM</span>{" "}
+          <span className="eyebrow mt-1.5 text-[8.5px] tracking-[0.46em] opacity-80 max-sm:sr-only">Barry McGovern</span>
         </Link>
 
         <div className="flex items-center justify-end gap-7">

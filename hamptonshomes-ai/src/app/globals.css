@@ -56,7 +56,7 @@ body {
 @utility display-1 {
   font-family: var(--font-serif);
   font-weight: 300;
-  font-size: clamp(3.4rem, 8.4vw, 8.75rem);
+  font-size: clamp(3.4rem, 7.3vw, 7.75rem);
   line-height: 0.92;
   letter-spacing: -0.015em;
 }
