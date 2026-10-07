@@ -4,7 +4,6 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { notableSales, personalVolume, firmVolume, firmVolumeLabel } from "@/lib/sales";
 import {
-  HEDGEROW_SOURCE_NOTE,
   hedgerowActiveListings,
   hedgerowFirmHistory,
   hedgerowSold2021,
@@ -50,7 +49,7 @@ function SoldCard({ deal }: { deal: HedgerowSoldDeal }) {
         <p className="mt-3 font-serif text-xl text-ocean">{deal.price}</p>
         <p className="mt-4 text-[11px] uppercase tracking-[0.2em] text-ink-muted">Hedgerow&apos;s role: {deal.hedgerowRole}</p>
         {deal.barryInvolved ? (
-          <p className="mt-2 text-[12px] italic text-ink-faint">A Hedgerow trade I have worked on</p>
+          <p className="mt-2 text-[12px] italic text-ink-muted">Barry McGovern was involved</p>
         ) : null}
       </div>
     </article>
@@ -73,14 +72,14 @@ export default function SalesPage() {
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
               <h1 className="font-serif text-5xl leading-tight md:text-7xl">Hedgerow<br /><span className="font-normal italic text-paper/65">Portfolio</span></h1>
-              <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-paper/65">Current Hedgerow Exclusive Properties listings, the firm&apos;s sales since 2021, and earlier firm history. {involvedCount} of the 2021 to 2026 sales are trades Hedgerow and I have worked on, including 18 of the firm&apos;s oceanfront trades.</p>
+              <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-paper/65">Current listings and sales from Hedgerow Exclusive Properties, the boutique firm I work with, including {involvedCount} trades Hedgerow and I have been involved in since 2021, 18 of them oceanfront.</p>
             </div>
             <div className="grid grid-cols-2 gap-8 text-left md:text-right">
               <div><p className="font-serif text-2xl text-paper">{personalVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/45">Personal volume</p></div>
               <div><p className="font-serif text-2xl text-paper">{firmVolume}</p><p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-paper/45">{firmVolumeLabel}</p></div>
             </div>
           </div>
-          <p className="mt-10 max-w-xl text-[12px] leading-relaxed text-paper/45">Hedgerow Exclusive Properties is a boutique Hamptons firm with nearly $2 billion in transactions. For the oceanfront market behind many of these trades, read <Link href={OCEANFRONT_ARTICLE} className="underline decoration-paper/30 underline-offset-4 hover:text-paper">Hamptons Oceanfront, 2021 to 2026</Link>.</p>
+          <p className="mt-10 max-w-xl text-[12px] leading-relaxed text-paper/45">For the oceanfront market behind many of these trades, read <Link href={OCEANFRONT_ARTICLE} className="underline decoration-paper/30 underline-offset-4 hover:text-paper">Hamptons Oceanfront, 2021 to 2026</Link>.</p>
         </div>
       </section>
 
@@ -91,7 +90,7 @@ export default function SalesPage() {
             <h2 className="font-serif text-4xl md:text-5xl">Exclusively listed with Hedgerow</h2>
           </div>
           <p className="max-w-xs text-[12px] leading-relaxed text-ink-muted md:text-right">
-            {actives.length} for-sale and in-contract listings. Each is exclusively listed with Hedgerow Exclusive Properties.
+            {actives.length} residences for sale or in contract, offered exclusively through Hedgerow Exclusive Properties.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
@@ -129,7 +128,7 @@ export default function SalesPage() {
             </article>
           ))}
         </div>
-        <p className="mt-8 text-[11px] leading-relaxed text-ink-faint">{HEDGEROW_SOURCE_NOTE} Availability and pricing are subject to change; confirm with Hedgerow Exclusive Properties.</p>
+        <p className="mt-8 text-[11px] leading-relaxed text-ink-faint">Listings courtesy of Hedgerow Exclusive Properties. Availability and pricing subject to change.</p>
       </section>
 
       <section id="selected" className="mx-auto max-w-7xl px-6 pb-20 md:px-8 md:pb-28">
@@ -139,7 +138,7 @@ export default function SalesPage() {
             <h2 className="font-serif text-4xl md:text-5xl">Selected transactions</h2>
           </div>
           <p className="max-w-xs text-[12px] leading-relaxed text-ink-muted md:text-right">
-            Hedgerow trades I have worked on. The role shown is Hedgerow&apos;s, as the firm.
+            Hedgerow transactions I have been involved in.
           </p>
         </div>
         <div className="space-y-6">
@@ -190,7 +189,7 @@ export default function SalesPage() {
             <p className="mb-3 text-[10px] uppercase tracking-[0.4em] text-ocean">Sold, 2021 to 2026</p>
             <h2 className="font-serif text-4xl md:text-5xl">Hedgerow sales</h2>
             <p className="mt-6 text-[14px] leading-relaxed text-ink-muted">
-              {hedgerowSold2021.length} sales published by Hedgerow Exclusive Properties or documented in recorded deeds and press, newest first. The role shown is the firm&apos;s. Trades marked &ldquo;A Hedgerow trade I have worked on&rdquo; are the ones Hedgerow and I were involved in together.
+              {hedgerowSold2021.length} Hedgerow sales since 2021, newest first. Those marked with my name are trades Hedgerow and I were involved in together.
             </p>
           </div>
           {GROUPS.map((group) => {
@@ -204,7 +203,7 @@ export default function SalesPage() {
                 </div>
                 {group.key === "Oceanfront" ? (
                   <p className="-mt-4 mb-8 text-[13px] text-ink-muted">
-                    {group.note} Market context: <Link href={OCEANFRONT_ARTICLE} className="text-ocean underline decoration-ocean/30 underline-offset-4">Hamptons Oceanfront, 2021 to 2026</Link>.
+                    {group.note} See also <Link href={OCEANFRONT_ARTICLE} className="text-ocean underline decoration-ocean/30 underline-offset-4">Hamptons Oceanfront, 2021 to 2026</Link>.
                   </p>
                 ) : (
                   <p className="-mt-4 mb-8 text-[13px] text-ink-muted">{group.note}</p>
@@ -222,10 +221,10 @@ export default function SalesPage() {
 
       <section id="firm-history" className="mx-auto max-w-7xl px-6 py-20 md:px-8 md:py-28">
         <div className="mb-10 max-w-3xl">
-          <p className="mb-3 text-[10px] uppercase tracking-[0.4em] text-ocean">Hedgerow firm history</p>
-          <h2 className="font-serif text-4xl md:text-5xl">Earlier and undated firm deals</h2>
+          <p className="mb-3 text-[10px] uppercase tracking-[0.4em] text-ocean">The Hedgerow record</p>
+          <h2 className="font-serif text-4xl md:text-5xl">Earlier Hedgerow transactions</h2>
           <p className="mt-6 text-[14px] leading-relaxed text-ink-muted">
-            Prominent deals published by Hedgerow Exclusive Properties that closed before 2021 or carry no published date. These are firm history, not my personal transactions.
+            Prominent transactions from the Hedgerow record, including deals that closed before 2021.
           </p>
         </div>
         <div className="overflow-x-auto border border-line">
@@ -244,13 +243,12 @@ export default function SalesPage() {
                   <td className="whitespace-nowrap px-4 py-3 text-[13px] text-ink-muted">{deal.area}</td>
                   <td className="whitespace-nowrap px-4 py-3 text-[13px] text-ink-muted">{deal.price}</td>
                   <td className="whitespace-nowrap px-4 py-3 text-[13px] text-ink-muted">{deal.hedgerowRole}</td>
-                  <td className="whitespace-nowrap px-4 py-3 text-[13px] text-ink-muted">{deal.dateText || "Not published"}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-[13px] text-ink-muted">{deal.dateText || "Undisclosed"}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-6 text-[11px] leading-relaxed text-ink-faint">{HEDGEROW_SOURCE_NOTE}</p>
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-24 text-center md:px-8"><h2 className="font-serif text-3xl md:text-4xl">Looking for the right setting?</h2><p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-ink-muted">Barry offers confidential guidance for buyers and sellers across the East End, from Southampton to Montauk.</p><Link href="/contact" className="mt-8 inline-block bg-ocean px-8 py-3.5 text-[11px] uppercase tracking-[0.3em] text-paper transition-colors hover:bg-ocean-deep">Start a conversation</Link></section>

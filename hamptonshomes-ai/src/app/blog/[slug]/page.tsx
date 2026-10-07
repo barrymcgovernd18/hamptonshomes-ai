@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
+  SEO_TITLES,
   blogPosts,
   extractFaqsFromContent,
   inferTownFromPost,
@@ -32,8 +33,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical = `https://hamptonshomes.ai/blog/${post.slug}`;
   const ogImage = postOgImageUrl(post.image);
   const usesShareImage = ogImage === DEFAULT_OG_IMAGE;
+  const seoTitle = SEO_TITLES[post.slug];
   return {
-    title: post.title,
+    title: seoTitle ? { absolute: seoTitle } : post.title,
     description: post.metaDescription,
     alternates: { canonical },
     openGraph: {
@@ -42,6 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonical,
       type: "article",
       publishedTime: post.date,
+      modifiedTime: post.dateModified ?? post.date,
       authors: [post.author],
       images: usesShareImage
         ? shareImages(post.title)

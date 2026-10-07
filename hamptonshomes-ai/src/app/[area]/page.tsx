@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { areas } from "@/lib/areas";
 import { getTownComps } from "@/lib/comps";
 import { notableSales } from "@/lib/sales";
+import { postsByDate } from "@/lib/blog";
 import JsonLd from "@/components/JsonLd";
 import { BARRY_BLURB, breadcrumbListJsonLd, placeJsonLd, routeMetadata } from "@/lib/schema";
 
@@ -17,10 +18,10 @@ function formatPrice(price: number) {
 }
 
 function formatDate(date: string | null) {
-  if (!date) return "Date not reported";
+  if (!date) return "Undisclosed";
   const parsed = new Date(`${date}T12:00:00Z`);
   return Number.isNaN(parsed.getTime())
-    ? "Date not reported"
+    ? "Undisclosed"
     : new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric", timeZone: "UTC" }).format(parsed);
 }
 
@@ -47,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!area) return {};
   const title = `${area.name} Real Estate`;
   const description =
-    area.editorial ||
+    area.metaDescription ||
     `${area.name} luxury real estate. Oceanfront estates, waterfront properties, and off-market opportunities with Barry McGovern, Licensed Real Estate Salesperson at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage.`;
   return routeMetadata({
     title,
@@ -63,6 +64,9 @@ export default async function AreaPage({ params }: Props) {
 
   const isBrief = briefSlugs.has(slug);
   const townComps = isBrief ? await getTownComps(area.name) : null;
+  const areaPosts = postsByDate
+    .filter((post) => post.about?.includes(area.name as never) || `${post.title} ${post.slug.replace(/-/g, " ")}`.toLowerCase().includes(area.name.toLowerCase()))
+    .slice(0, 4);
   const areaSales = notableSales.filter(
     (s) => s.area.toLowerCase().replace(/\s+/g, "-") === slug
   );
@@ -77,7 +81,7 @@ export default async function AreaPage({ params }: Props) {
         ])}
       />
       <section className="pt-32 pb-20">
-        <div className={`max-w-7xl mx-auto px-8 ${area.heroImage ? "grid md:grid-cols-[1fr_0.9fr] gap-14 items-end" : ""}`}>
+        <div className={`max-w-7xl mx-auto px-6 md:px-8 ${area.heroImage ? "grid md:grid-cols-[1fr_0.9fr] gap-14 items-end" : ""}`}>
           <div>
             <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-4">
               {area.name} Real Estate
@@ -97,7 +101,7 @@ export default async function AreaPage({ params }: Props) {
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 45vw"
-                className="object-cover opacity-80"
+                className="object-cover"
               />
             </div>
           )}
@@ -105,7 +109,7 @@ export default async function AreaPage({ params }: Props) {
       </section>
 
       <section className="border-y border-line py-8">
-        <div className="max-w-7xl mx-auto px-8 flex flex-wrap gap-12 md:gap-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-wrap gap-12 md:gap-20">
           <div>
             <p className="text-ocean text-[10px] tracking-[0.3em] uppercase mb-1">Price Range</p>
             <p className="font-serif text-xl text-ink">{area.priceRange}</p>
@@ -122,7 +126,7 @@ export default async function AreaPage({ params }: Props) {
       </section>
 
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="max-w-3xl">
             <p className="text-ink-muted text-lg leading-[1.9]">{area.editorial || area.description}</p>
             {area.editorial && <p className="text-ink-faint text-[15px] leading-[1.9] mt-6">{area.description}</p>}
@@ -132,7 +136,7 @@ export default async function AreaPage({ params }: Props) {
 
       {isBrief && area.marketBrief && (
         <section className="border-y border-line py-20">
-          <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-[0.7fr_1.3fr] gap-12 lg:gap-24">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-[0.7fr_1.3fr] gap-12 lg:gap-24">
             <div>
               <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-5">A closer read</p>
               <h2 className="font-serif text-3xl md:text-4xl text-ink leading-tight">How {area.name} is moving</h2>
@@ -155,7 +159,7 @@ export default async function AreaPage({ params }: Props) {
       )}
 
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
           <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-10">What Makes {area.name} Special</p>
           <div className="space-y-4">
             {area.highlights.map((h, i) => (
@@ -169,7 +173,7 @@ export default async function AreaPage({ params }: Props) {
       </section>
 
       <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
           <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-8">Beaches</p>
           <div className="flex flex-wrap gap-3">
             {area.beaches.map((b) => (
@@ -181,15 +185,14 @@ export default async function AreaPage({ params }: Props) {
 
       {townComps && townComps.comps.length > 0 && (
         <section className="pb-20">
-          <div className="max-w-7xl mx-auto px-8">
+          <div className="max-w-7xl mx-auto px-6 md:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
               <div>
                 <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-3">Recent comparable sales</p>
                 <h2 className="font-serif text-3xl text-ink">The local evidence</h2>
               </div>
               <p className="text-ink-faint text-[11px] max-w-xs md:text-right leading-relaxed">
-                {townComps.source === "live" ? "Live records from Supabase’s comparable_sales table." : "Curated records from Barry’s portfolio data."}
-                {" "}Sales shown are market context, not an appraisal.
+                Recorded sales, compiled by Barry McGovern.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-5">
@@ -219,8 +222,8 @@ export default async function AreaPage({ params }: Props) {
 
       {!isBrief && areaSales.length > 0 && (
         <section className="pb-20">
-          <div className="max-w-7xl mx-auto px-8">
-            <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-10">Notable Sales in {area.name}</p>
+          <div className="max-w-7xl mx-auto px-6 md:px-8">
+            <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-10">Hedgerow sales in {area.name}</p>
             <div className="grid md:grid-cols-2 gap-5">
               {areaSales.map((sale) => (
                 <div key={sale.slug} className="border border-line p-8 hover:border-ocean/30 transition-all duration-500">
@@ -235,9 +238,28 @@ export default async function AreaPage({ params }: Props) {
         </section>
       )}
 
+      {areaPosts.length > 0 && (
+        <section className="pb-20">
+          <div className="max-w-7xl mx-auto px-6 md:px-8">
+            <p className="text-ocean text-[11px] tracking-[0.3em] uppercase mb-8">Research on {area.name}</p>
+            <ul className="divide-y divide-line border-y border-line">
+              {areaPosts.map((post) => (
+                <li key={post.slug}>
+                  <Link href={`/blog/${post.slug}`} className="group flex flex-col gap-1 py-5 md:flex-row md:items-baseline md:justify-between md:gap-8">
+                    <span className="font-serif text-xl text-ink group-hover:text-ocean">{post.title}</span>
+                    <span className="shrink-0 text-[12px] uppercase tracking-[0.18em] text-ink-faint">{post.category}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link href="/market" className="mt-6 inline-block border-b border-ocean pb-1 text-sm text-ocean">All market research <span aria-hidden="true">↗</span></Link>
+          </div>
+        </section>
+      )}
+
       <section className="pb-32">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="border border-line p-12 md:p-16 text-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <div className="border border-line p-8 md:p-16 text-center">
             <p className="text-ocean/70 text-[10px] tracking-[0.5em] uppercase mb-4">Your {area.name} Specialist</p>
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-4">Looking to Buy or Sell in {area.name}?</h2>
             <p className="text-ink-muted text-[15px] max-w-lg mx-auto mb-8">As an oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage, Barry offers access to on-market and off-market opportunities across {area.name} and the entire East End.</p>
@@ -247,7 +269,7 @@ export default async function AreaPage({ params }: Props) {
       </section>
 
       <section className="border-t border-line py-12">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
           <p className="text-ink-faint text-[11px] leading-relaxed max-w-2xl">{BARRY_BLURB} Serving {area.name} and the East End from Southampton to Montauk.</p>
         </div>
       </section>

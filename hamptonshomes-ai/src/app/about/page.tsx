@@ -7,7 +7,8 @@ import { BARRY_BLURB, BARRY_FAQS, faqPageJsonLd, routeMetadata } from "@/lib/sch
 import { FIRM_ACCOLADES } from "@/lib/seo-copy";
 
 export const metadata: Metadata = routeMetadata({
-  title: "About Barry McGovern",
+  title: "About Barry McGovern | Hamptons Real Estate Salesperson",
+  absoluteTitle: true,
   description:
     "Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage.",
   path: "/about",
@@ -52,12 +53,12 @@ export default function AboutPage() {
                 <p className="font-serif text-2xl leading-[1.55] text-ink">
                   {BARRY_BLURB}
                 </p>
-                <p>New York license #10401353717. Salesperson, not broker.</p>
+                <p>Licensed Real Estate Salesperson, New York license #10401353717.</p>
                 <p>
                   As part of the Hedgerow team, Barry has been involved in some of the most significant real estate transactions on the East End, from record-setting oceanfront trades to nine-figure compound sales. He brings six years of Hamptons luxury experience and a reputation built on discretion, deep market knowledge, and results.
                 </p>
                 <p>
-                  Originally from Dublin, Ireland, Barry has called the Hamptons home since 2013 and proudly considers himself a Sag Harbor local. His practice sits inside a boutique firm whose public materials describe nearly $2 billion in Hamptons transactions.
+                  Originally from Dublin, Ireland, Barry has called the Hamptons home since 2013 and proudly considers himself a Sag Harbor local.
                 </p>
                 <p>
                   Barry&apos;s expertise centers on oceanfront and waterfront properties, from Further Lane and Meadow Lane oceanfront estates to Sag Harbor and Shelter Island waterfront homes. He also covers raw land, development opportunities, and off-market inventory.
@@ -67,7 +68,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="mt-16 border-t border-line pt-12">
-                <p className="mb-8 text-[11px] uppercase tracking-[0.3em] text-ocean">Specialties</p>
+                <h2 className="mb-8 text-[11px] font-normal uppercase tracking-[0.3em] text-ocean">Specialties</h2>
                 <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-[13px] text-ink-muted">
                   {specialties.map((s) => (
                     <p key={s} className="flex items-start gap-3">
@@ -78,15 +79,15 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="mt-16 border-t border-line pt-12">
-                <p className="mb-8 text-[11px] uppercase tracking-[0.3em] text-ocean">FAQ</p>
-                <dl className="space-y-8">
+                <h2 className="mb-8 text-[11px] font-normal uppercase tracking-[0.3em] text-ocean">Frequently asked questions</h2>
+                <div className="space-y-8">
                   {BARRY_FAQS.map((faq) => (
                     <div key={faq.question}>
-                      <dt className="font-serif text-xl text-ink">{faq.question}</dt>
-                      <dd className="mt-3 text-[15px] leading-[1.9] text-ink-muted">{faq.answer}</dd>
+                      <h3 className="font-serif text-xl font-normal text-ink">{faq.question}</h3>
+                      <p className="mt-3 text-[15px] leading-[1.9] text-ink-muted">{faq.answer}</p>
                     </div>
                   ))}
-                </dl>
+                </div>
               </div>
             </div>
             <div className="space-y-10 md:col-span-4 md:col-start-9">
@@ -95,7 +96,7 @@ export default function AboutPage() {
               </div>
               <div className="border border-line bg-paper-soft p-8">
                 <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-ocean">Firm</p>
-                <p className="mb-4 font-serif text-xl text-ink">Hedgerow Exclusive Properties</p>
+                <h2 className="mb-4 font-serif text-xl font-normal text-ink">Hedgerow Exclusive Properties</h2>
                 <p className="text-[13px] leading-[1.8] text-ink-muted">
                   {FIRM_ACCOLADES}
                 </p>
