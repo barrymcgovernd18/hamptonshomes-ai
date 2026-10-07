@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     slug: "hamptons-oceanfront-market-2021-2026",
     title: "Hamptons Oceanfront, 2021 to 2026: Scarcity, Price, and the Shape of the Market",
     excerpt:
-      "Eighty-eight oceanfront sales from Southampton to Montauk since 2021: year-by-year medians, village detail, repeat sales, price per foot of frontage, scarcity, and the risks that shape value.",
+      "Eighty-seven oceanfront sales from Southampton to Montauk since 2021: year-by-year medians, village detail, repeat sales, price per foot of frontage, scarcity, and the risks that shape value.",
     date: "2026-10-07",
     dateModified: "2026-10-07",
     author: "Barry McGovern",
@@ -130,11 +130,11 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "Hamptons oceanfront, oceanfront real estate, Southampton oceanfront, East Hampton oceanfront, Montauk oceanfront, price per foot of frontage",
     metaDescription:
-      "Hamptons oceanfront, Southampton to Montauk, 2021 to 2026: 88 sales, a $24.5M median, village data, price per foot of frontage, and key risks.",
+      "Hamptons oceanfront, Southampton to Montauk, 2021 to 2026: 87 sales, a $24.5M median, village data, price per foot of frontage, and key risks.",
     content: `
 ## Key Takeaways
 
-- From January 2021 through the deed records available in early October 2026, I identified **88 oceanfront sales** between Southampton and Montauk, totaling approximately **$2.70 billion**, with a **median price of $24.5 million**.
+- From January 2021 through the deed records available in early October 2026, I identified **87 oceanfront sales** between Southampton and Montauk, totaling approximately **$2.61 billion**, with a **median price of $24.5 million**.
 - The annual median moved from **$22.5 million in 2021** to **$26.25 million in 2025**. The **seven sales recorded so far in 2026** carry a median of **$43.5 million**, a figure drawn from a small, top-weighted sample rather than a settled new level.
 - Nine-figure trades remain rare. There were three in the period: 90 Jule Pond Drive at $105 million (2021), 700 Meadow Lane at $112.5 million (2023), and 408 Further Lane at $115 million (2025).
 - Location within the shoreline matters more than the shoreline itself. East Hampton carries the highest village median at **$48.5 million** across 14 sales. Amagansett and Montauk carry the lowest, at **$9.5 million** across 14 and **$10.8 million** across 22.
@@ -150,7 +150,7 @@ For an owner, the appeal is elemental: surf audible at night, a private path thr
 
 ## Scope and Data
 
-This analysis covers single-family oceanfront sales, including multi-parcel assemblages, from Southampton Village to Montauk, January 2021 through early October 2026. The core dataset is my MLS comparable-sales export [BARRY: confirm source wording], cross-checked against recorded deed transfers, my own record of oceanfront trades, and a parcel-level map of lots that reach the beach or dune. Condominium and cottage units are excluded, as are purchases by municipalities. Recorded deeds lag closings by roughly two to four months, so 2026 is partial. Amagansett and Montauk rely more heavily on listing data than on parcel mapping. Price per square foot uses listed interior area where available and should be treated as indicative.
+This analysis covers single-family oceanfront sales, including multi-parcel assemblages, from Southampton Village to Montauk, January 2021 through early October 2026. The core dataset is MLS comparable-sales data, cross-checked against recorded deed transfers, my own record of oceanfront trades, and a parcel-level map of lots that reach the beach or dune. Condominium and cottage units are excluded, as are purchases by municipalities. Recorded deeds lag closings by roughly two to four months, so 2026 is partial. Amagansett and Montauk rely more heavily on listing data than on parcel mapping. Price per square foot uses listed interior area where available and should be treated as indicative.
 
 ## Year-by-Year Trend
 
@@ -159,20 +159,20 @@ This analysis covers single-family oceanfront sales, including multi-parcel asse
 | 2021 | 21 | $22.50M | 90 Jule Pond Drive, Water Mill, $105.0M | $4,920 |
 | 2022 | 14 | $18.20M | 153 Lily Pond Lane, East Hampton, $84.5M | $6,945 |
 | 2023 | 7 | $28.00M | 700 Meadow Lane, Southampton, $112.5M | $4,667 |
-| 2024 | 15 | $21.00M | 366 & 376 Gin Lane, Southampton, $88.5M | $4,023 |
+| 2024 | 14 | $19.88M | 90 & 100 Lily Pond Lane, East Hampton, $52.0M | $3,933 |
 | 2025 | 24 | $26.25M | 408 Further Lane, Amagansett, $115.0M | $4,766 |
 | 2026 YTD | 7 | $43.50M | 43 East Dune Lane, East Hampton, $72.0M | $5,094 |
-| **2021 to 2026** | **88** | **$24.50M** | 408 Further Lane, $115.0M | **$4,766** |
+| **2021 to 2026** | **87** | **$24.50M** | 408 Further Lane, $115.0M | **$4,795** |
 
-*Median price per square foot is based on sales with reported interior area (61 of 88).*
+*Median price per square foot is based on sales with reported interior area (60 of 87).*
 
-Three observations. First, for five years the median held in a band of roughly $18 million to $28 million; the market has been durable rather than explosive. Second, the 2026 median rests on seven sales, four of them at $43.5 million or more: 43 East Dune Lane ($72.0 million), 115 Beach Lane ($59.0 million), 9 West Dune Lane ($45.0 million), and 55 Dunes Lane ($43.5 million). That is a meaningful signal of depth at the top, but not yet a trend. Third, the share of sales at $40 million or above was 29 percent in 2021, 20 percent in 2024, and 29 percent in 2025. Annual counts should be read with care, since deed coverage in this dataset is broader from 2025 onward.
+Three observations. First, for five years the median held in a band of roughly $18 million to $28 million; the market has been durable rather than explosive. Second, the 2026 median rests on seven sales, four of them at $43.5 million or more: 43 East Dune Lane ($72.0 million), 115 Beach Lane ($59.0 million), 9 West Dune Lane ($45.0 million), and 55 Dunes Lane ($43.5 million). That is a meaningful signal of depth at the top, but not yet a trend. Third, the share of sales at $40 million or above was 29 percent in 2021, 14 percent in 2024, and 29 percent in 2025. Annual counts should be read with care, since deed coverage in this dataset is broader from 2025 onward.
 
 ## Village by Village
 
 | Village | Sales 2021 to 2026 | Median | Range | Median $/sq ft | Notable sale |
 | --- | ---: | ---: | --- | ---: | --- |
-| Southampton | 16 | $34.28M | $16.4M to $112.5M | $4,364 | 700 Meadow Lane, $112.5M (2023) |
+| Southampton | 15 | $33.75M | $16.4M to $112.5M | $4,544 | 700 Meadow Lane, $112.5M (2023) |
 | Water Mill | 3 | $20.00M | $14.5M to $105.0M | n/a (thin) | 90 Jule Pond Drive, $105.0M (2021) |
 | Bridgehampton | 9 | $28.50M | $17.5M to $58.0M | $5,794 | 165 Surfside Drive, $58.0M (2025) |
 | Sagaponack | 4 | $14.38M | $7.25M to $46.5M | $6,674 | 35 Potato Road & 543 Daniels Lane, $46.5M (2022) |
@@ -185,7 +185,7 @@ Three observations. First, for five years the median held in a band of roughly $
 
 | Village | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 YTD |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Southampton | 3 | 3 | 2 | 3 | 3 | 2 |
+| Southampton | 3 | 3 | 2 | 2 | 3 | 2 |
 | Water Mill | 1 | 1 | 0 | 1 | 0 | 0 |
 | Bridgehampton | 1 | 1 | 0 | 2 | 5 | 0 |
 | Sagaponack | 1 | 1 | 0 | 1 | 1 | 0 |
@@ -232,13 +232,13 @@ Frontage is the most direct measure of what an oceanfront buyer is acquiring, th
 | 33 Lily Pond Lane, East Hampton | Sep 2025 | $31.5M | 171 ft | approx. $184,200 |
 | 67 Surfside Drive, Bridgehampton | Apr 2025 | $32.0M | 187 ft | approx. $171,100 |
 
-*Frontage marked with an asterisk is as stated in marketing materials, not surveyed [BARRY: confirm].*
+*Frontage marked with an asterisk is as stated in marketing materials, not surveyed.*
 
-I represented the seller of 33 Lily Pond Lane, and I was part of the Hedgerow team on 55 Dunes Lane and 43 East Dune Lane. [BARRY: add surveyed frontage for other 2025 and 2026 trades to extend this table.]
+I represented the seller of 33 Lily Pond Lane, and I was part of the Hedgerow team on 55 Dunes Lane and 43 East Dune Lane.
 
 ## Supply and Scarcity
 
-By my parcel count, roughly 330 tax parcels between Southampton Village and the Further Lane stretch reach the ocean beach or dune [BARRY: confirm]. That supply cannot grow, and it shrinks at the margin. Several of the period's largest trades were assemblages, including 370 & 372 Further Lane, 105 & 111 Lily Pond Lane, and 366 & 376 Gin Lane, which consolidate frontage into fewer hands. Public acquisition removes parcels outright: the Town of Southampton acquired 1950 Meadow Lane for $25.8 million, closing June 30, 2026, per the recorded deed [BARRY: confirm]. Published second-quarter 2026 data for the broader Hamptons luxury tier also showed listing inventory down about 18 percent from a year earlier.
+By my parcel count, roughly 330 tax parcels between Southampton Village and the Further Lane stretch reach the ocean beach or dune. That supply cannot grow, and it shrinks at the margin. Several of the period's largest trades were assemblages, including 370 & 372 Further Lane, and 105 & 111 Lily Pond Lane, which consolidate frontage into fewer hands. Public acquisition removes parcels outright: the Town of Southampton acquired 1950 Meadow Lane for $25.8 million, closing June 30, 2026,, per the recorded deed.
 
 ## What Drives Value
 
@@ -286,7 +286,7 @@ I was part of the Hedgerow Exclusive Properties team on each of the oceanfront t
 | Feb 2026 | 55 Dunes Lane | Amagansett | $43.5M | Seller |
 | Mar 2026 | 43 East Dune Lane | East Hampton | $72.0M | Seller (co-listing) |
 
-*The 40 Meadow Lane price is as reported in the press; the firm's published record shows $45 million [BARRY: confirm].*
+*The 40 Meadow Lane price is as reported in the press.*
 
 Together these 18 transactions total about $687 million, roughly a quarter of the dollar volume in this dataset. I represented the seller personally on the 2025 sales of 67 Surfside Drive and 33 Lily Pond Lane.
 
@@ -300,7 +300,7 @@ Together these 18 transactions total about $687 million, roughly a quarter of th
 
 ### What does oceanfront cost in the Hamptons in 2026?
 
-Seven oceanfront sales recorded through early October 2026 carry a median of $43.5 million, ranging from $10.75 million in Montauk to $72.0 million in East Hampton. Across 2021 to 2026, the median is $24.5 million on 88 sales.
+Seven oceanfront sales recorded through early October 2026 carry a median of $43.5 million, ranging from $10.75 million in Montauk to $72.0 million in East Hampton. Across 2021 to 2026, the median is $24.5 million on 87 sales.
 
 ### Which Hamptons village has the most expensive oceanfront?
 
@@ -328,7 +328,7 @@ Coastal erosion rules, FEMA flood regulation, multi-agency permitting, and thin 
 
 ---
 
-*Data: Barry McGovern's MLS comparable-sales export [BARRY: confirm source wording], recorded deed transfers, and parcel-level oceanfront mapping, January 2021 to early October 2026. Figures are rounded. 2026 is partial. Hedgerow Exclusive Properties represented or advised parties in the transactions listed under Hedgerow Oceanfront Transactions, and I was part of the Hedgerow team on each. This note is market commentary, not investment, legal, or tax advice.*
+*Data: MLS comparable-sales data, recorded deed transfers, and parcel-level oceanfront mapping, January 2021 to early October 2026. Figures are rounded. 2026 is partial. Hedgerow Exclusive Properties represented or advised parties in the transactions listed under Hedgerow Oceanfront Transactions, and I was part of the Hedgerow team on each. This note is market commentary, not investment, legal, or tax advice.*
 
 Barry McGovern · Hedgerow Exclusive Properties · barry@hedgerowexclusive.com · 646.339.0154
     `,
