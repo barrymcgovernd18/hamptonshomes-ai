@@ -12,14 +12,14 @@ export const metadata: Metadata = routeMetadata({
 export default function TermsPage() {
   return (
     <div className="bg-paper text-ink">
-      <section className="mx-auto max-w-3xl px-6 pb-28 pt-36 md:px-8 md:pt-44">
-        <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-ocean">Legal</p>
-        <h1 className="font-serif text-5xl leading-tight md:text-6xl">Terms of Use</h1>
-        <p className="mt-4 text-[13px] text-ink-faint">Last updated: September 16, 2026</p>
+      <section className="frame pb-28 pt-40 md:pb-40 md:pt-52">
+        <p className="eyebrow hero-rise text-ocean">Legal</p>
+        <h1 className="display-1 hero-rise mt-6" style={{ animationDelay: "120ms" }}>Terms of Use</h1>
+        <p className="eyebrow mt-10 border-t border-line pt-6 text-ink-faint">Last updated: September 16, 2026</p>
 
-        <div className="mt-14 space-y-10 text-[15px] leading-[1.9] text-ink-muted">
+        <div className="mt-16 max-w-3xl space-y-14 text-[16px] leading-[1.9] text-ink-muted md:ml-[25%] md:mt-24">
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Agreement</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Agreement</h2>
             <p>
               By using hamptonshomes.ai you agree to these terms. If you do not agree, do not use
               the site. This is a personal professional website for Barry McGovern, a New York
@@ -29,7 +29,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">What this site is</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">What this site is</h2>
             <p>
               The site describes Barry&apos;s practice, selected portfolio records, town notes, and a
               way to inquire. It is not an offer to sell a specific property unless a current listing
@@ -39,7 +39,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Inquiries</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Inquiries</h2>
             <p>
               Submitting the contact form asks Barry to respond. It does not create a listing
               agreement, buyer agreement, or confidential-brokerage relationship until those are
@@ -49,7 +49,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Accuracy</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Accuracy</h2>
             <p>
               Property details, prices, and status can change. Independent verification is required
               before any decision. Nothing here is an appraisal, tax, or legal opinion. Market
@@ -58,7 +58,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Intellectual property</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Intellectual property</h2>
             <p>
               Site text, photographs, and layout are owned by Barry McGovern or used with
               permission. You may share links. You may not copy the site for a competing commercial
@@ -67,7 +67,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Limitation</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Limitation</h2>
             <p>
               The site is provided as is. To the fullest extent New York law allows, Barry McGovern
               and Hedgerow Exclusive Properties are not liable for indirect or consequential damages
@@ -77,7 +77,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Governing law</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Governing law</h2>
             <p>
               These terms are governed by the laws of the State of New York, without regard to
               conflict-of-law rules. Venue for disputes relating to this website is in New York.
@@ -85,7 +85,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Changes</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Changes</h2>
             <p>
               We may update these terms. The date at the top will change when we do. Continued use
               after an update means the current terms apply.
@@ -93,18 +93,18 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Contact</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Contact</h2>
             <p>
               Questions:{" "}
-              <a href="mailto:barry@hedgerowexclusive.com" className="text-ocean hover:text-ocean-deep">
+              <a href="mailto:barry@hedgerowexclusive.com" className="text-ocean underline decoration-ocean/35 underline-offset-[5px] hover:text-ocean-deep">
                 barry@hedgerowexclusive.com
               </a>
               . Related:{" "}
-              <Link href="/privacy" className="text-ocean hover:text-ocean-deep">
+              <Link href="/privacy" className="text-ocean underline decoration-ocean/35 underline-offset-[5px] hover:text-ocean-deep">
                 Privacy Policy
               </Link>{" "}
               and{" "}
-              <Link href="/contact" className="text-ocean hover:text-ocean-deep">
+              <Link href="/contact" className="text-ocean underline decoration-ocean/35 underline-offset-[5px] hover:text-ocean-deep">
                 Contact
               </Link>
               .

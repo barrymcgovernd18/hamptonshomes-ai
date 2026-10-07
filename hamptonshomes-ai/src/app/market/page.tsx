@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
+import { ClosingInvitation, PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
 import { postsByDate } from "@/lib/blog";
 import { areas } from "@/lib/areas";
 import { SITE_URL, breadcrumbListJsonLd, routeMetadata } from "@/lib/schema";
@@ -66,46 +67,39 @@ export default function MarketPage() {
         ])}
       />
 
-      <section className="bg-paper-deep pb-16 pt-36 md:pb-20 md:pt-44">
-        <div className="mx-auto max-w-7xl px-6 md:px-8">
-          <p className="mb-5 text-[11px] uppercase tracking-[0.3em] text-ocean">Research</p>
-          <h1 className="font-serif text-5xl leading-tight text-ink md:text-7xl">
-            Market <span className="block font-normal italic text-ink-muted">Intelligence</span>
-          </h1>
-          <p className="mt-7 max-w-2xl text-[15px] leading-[1.9] text-ink-muted">
+      <PageHero
+        light
+        eyebrow="Research"
+        title="Market"
+        italic="Intelligence"
+        intro={
+          <p>
             Research notes, village reports, and commentary on Hamptons luxury real estate from Southampton to Montauk.
             Written by Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties.
           </p>
-        </div>
-      </section>
+        }
+      />
 
       {latest && (
-        <section className="py-20 md:py-24">
-          <div className="mx-auto max-w-7xl px-6 md:px-8">
-            <p className="mb-8 text-[11px] uppercase tracking-[0.3em] text-ocean">Latest research</p>
-            <Link href={`/blog/${latest.slug}`} className="group grid gap-10 md:grid-cols-12 md:items-center md:gap-14">
+        <section className="pb-24 md:pb-36">
+          <div className="frame">
+            <SectionLabel n="I">Latest research</SectionLabel>
+            <Link href={`/blog/${latest.slug}`} className="group mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:items-end md:gap-14">
               {latest.image && (
-                <div className="relative aspect-[3/2] overflow-hidden bg-paper-deep md:col-span-7">
-                  <Image
-                    src={latest.image}
-                    alt={latest.title}
-                    fill
-                    priority
-                    className="object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, 60vw"
-                  />
+                <div className="relative aspect-[4/3] overflow-hidden bg-paper-deep md:col-span-8 md:aspect-[16/10]">
+                  <Image src={latest.image} alt={latest.title} fill priority className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, 66vw" />
                 </div>
               )}
-              <div className="md:col-span-5">
-                <p className="mb-4 text-[11px] uppercase tracking-[0.24em] text-ink-faint">
+              <div className="md:col-span-4">
+                <p className="eyebrow text-ink-faint">
                   {latest.category} · {formatDate(latest.date, true)}
                 </p>
-                <h2 className="font-serif text-3xl leading-snug text-ink transition-colors group-hover:text-ocean md:text-4xl">
-                  {latest.title}
-                </h2>
-                <p className="mt-6 text-[15px] leading-[1.9] text-ink-muted">{latest.excerpt}</p>
-                <p className="mt-8 inline-block border-b border-ocean pb-1 text-sm text-ocean">
-                  Read the note <span aria-hidden="true">↗</span>
+                <h2 className="display-3 mt-5 font-light text-ink transition-colors duration-500 group-hover:text-ocean">{latest.title}</h2>
+                <p className="mt-6 text-[15px] leading-[1.85] text-ink-muted">{latest.excerpt}</p>
+                <p className="mt-9">
+                  <span className="link-line eyebrow text-ocean">
+                    Read the note <span aria-hidden="true">↗</span>
+                  </span>
                 </p>
               </div>
             </Link>
@@ -113,21 +107,28 @@ export default function MarketPage() {
         </section>
       )}
 
-      <section className="border-y border-line bg-paper-soft py-14">
-        <div className="mx-auto max-w-7xl px-6 md:px-8">
-          <p className="mb-8 text-[11px] uppercase tracking-[0.3em] text-ocean">Hamptons oceanfront at a glance</p>
-          <dl className="grid grid-cols-2 gap-px bg-line md:grid-cols-4">
-            {OCEANFRONT_FIGURES.map((figure) => (
-              <div key={figure.label} className="bg-paper-soft p-6 md:p-8">
-                <dt className="text-[11px] uppercase tracking-[0.2em] text-ink-muted">{figure.label}</dt>
-                <dd className="mt-3 font-serif text-3xl text-ink md:text-4xl">{figure.value}</dd>
-                <dd className="mt-2 text-[13px] text-ink-faint">{figure.sub}</dd>
+      <section className="bg-ocean-deep py-24 text-paper md:py-32">
+        <div className="frame">
+          <SectionLabel n="II" className="text-paper/75">Hamptons oceanfront at a glance</SectionLabel>
+          <dl className="mt-12 grid grid-cols-2 border-t border-paper/20 md:mt-16 md:grid-cols-4">
+            {OCEANFRONT_FIGURES.map((figure, i) => (
+              <div
+                key={figure.label}
+                data-reveal
+                style={revealDelay(i * 90)}
+                className={`flex flex-col-reverse justify-end border-b border-paper/20 py-8 md:border-b-0 md:py-12 ${
+                  i % 2 ? "border-l pl-5 md:pl-8" : "pr-5 md:pr-8"
+                } ${i === 2 ? "md:border-l md:pl-8" : ""}`}
+              >
+                <dd className="mt-3 text-[13px] leading-relaxed text-paper/70">{figure.sub}</dd>
+                <dt className="eyebrow mt-5 text-paper/85">{figure.label}</dt>
+                <dd className="font-serif text-[clamp(2.6rem,5vw,4.6rem)] font-light leading-none">{figure.value}</dd>
               </div>
             ))}
           </dl>
-          <p className="mt-6 text-[13px] text-ink-faint">
+          <p className="mt-10 max-w-3xl border-t border-paper/20 pt-6 text-[13px] leading-relaxed text-paper/70">
             Source: recorded deed transfers and MLS comparable-sales data, January 2021 to early October 2026. Method and village detail in the{" "}
-            <Link href="/blog/hamptons-oceanfront-market-2021-2026" className="text-ocean underline decoration-ocean/30 underline-offset-4 hover:text-ocean-deep">
+            <Link href="/blog/hamptons-oceanfront-market-2021-2026" className="link-line text-paper">
               full note
             </Link>
             .
@@ -135,49 +136,53 @@ export default function MarketPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 md:px-8">
-          <div className="grid gap-12 md:grid-cols-12 md:gap-16">
-            <div className="md:col-span-4">
-              <p className="mb-5 text-[11px] uppercase tracking-[0.3em] text-ocean">Village reports</p>
-              <h2 className="font-serif text-4xl leading-tight text-ink">
-                Southampton <span className="block font-normal italic text-ink-muted">to Montauk</span>
-              </h2>
-              <p className="mt-6 text-[15px] leading-[1.9] text-ink-muted">
-                Each village trades on its own terms. These pages set out the micro-markets, price ranges, and recent records.
-              </p>
-            </div>
-            <div className="md:col-span-7 md:col-start-6">
-              <ul className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
-                {areas.map((area) => (
-                  <li key={area.slug}>
-                    <Link href={`/${area.slug}`} className="group flex items-baseline justify-between gap-4 border-b border-line py-4">
-                      <span className="font-serif text-xl text-ink group-hover:text-ocean">{area.name}</span>
-                      <span className="text-[13px] text-ink-faint">{area.priceRange}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <section className="py-24 md:py-36">
+        <div className="frame grid gap-12 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-4">
+            <SectionLabel n="III">Village reports</SectionLabel>
+            <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6 text-ink">
+              Southampton <em className="block italic text-ink-muted">to Montauk</em>
+            </h2>
+            <p data-reveal style={revealDelay(160)} className="body-copy mt-8 text-ink-muted">
+              Each village trades on its own terms. These pages set out the micro-markets, price ranges, and recent records.
+            </p>
+          </div>
+          <div className="md:col-span-7 md:col-start-6">
+            <ul className="border-t border-ink/80">
+              {areas.map((area, i) => (
+                <li key={area.slug} data-reveal style={revealDelay((i % 5) * 50)}>
+                  <Link href={`/${area.slug}`} className="group grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-4 border-b border-line py-5">
+                    <span className="eyebrow text-ink-faint">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-serif text-[1.65rem] font-light leading-tight text-ink transition-transform duration-500 [transition-timing-function:var(--ease-editorial)] group-hover:translate-x-2 group-hover:text-ocean">
+                      {area.name}
+                    </span>
+                    <span className="text-right text-[13px] text-ink-faint">{area.priceRange}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-line pb-24 pt-20 md:pb-32">
-        <div className="mx-auto max-w-7xl px-6 md:px-8">
-          <p className="mb-10 text-[11px] uppercase tracking-[0.3em] text-ocean">All research and notes</p>
-          <ul className="divide-y divide-line border-y border-line">
-            {rest.map((post) => (
-              <li key={post.slug}>
-                <Link href={`/blog/${post.slug}`} className="group grid gap-3 py-8 md:grid-cols-12 md:gap-10">
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-ink-faint md:col-span-3 md:pt-2">
+      <section className="border-t border-line bg-paper-soft py-24 md:py-36">
+        <div className="frame">
+          <SectionLabel n="IV">All research and notes</SectionLabel>
+          <ul className="mt-12 border-t border-ink/80 md:mt-16">
+            {rest.map((post, i) => (
+              <li key={post.slug} data-reveal style={revealDelay((i % 3) * 60)} className="border-b border-line">
+                <Link href={`/blog/${post.slug}`} className="group grid gap-4 py-9 md:grid-cols-12 md:gap-10">
+                  <p className="eyebrow text-ink-faint md:col-span-3 md:pt-2">
                     {formatDate(post.date)}
-                    <span className="block pt-1 normal-case tracking-normal text-ink-faint">{post.category}</span>
+                    <span className="block pt-2 font-serif text-[15px] normal-case italic tracking-normal text-ink-muted">{post.category}</span>
                   </p>
-                  <div className="md:col-span-8">
-                    <h3 className="font-serif text-2xl leading-snug text-ink transition-colors group-hover:text-ocean">{post.title}</h3>
+                  <div className="md:col-span-7">
+                    <h3 className="font-serif text-[1.75rem] font-light leading-[1.2] text-ink transition-colors duration-500 group-hover:text-ocean">{post.title}</h3>
                     <p className="mt-3 max-w-3xl text-[15px] leading-[1.8] text-ink-muted">{post.excerpt}</p>
                   </div>
+                  <span aria-hidden="true" className="hidden self-center justify-self-end font-serif text-2xl text-ink-faint transition-transform duration-500 group-hover:translate-x-2 group-hover:text-ocean md:col-span-2 md:block">
+                    →
+                  </span>
                 </Link>
               </li>
             ))}
@@ -185,20 +190,13 @@ export default function MarketPage() {
         </div>
       </section>
 
-      <section className="bg-ocean py-20 text-paper md:py-24">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 md:flex-row md:items-end md:justify-between md:px-8">
-          <div>
-            <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-paper/75">Private briefings</p>
-            <h2 className="font-serif text-3xl leading-tight md:text-4xl">A read on your property or search.</h2>
-            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-paper/80">
-              Confidential, comps-based analysis for owners and buyers across the East End.
-            </p>
-          </div>
-          <Link href="/contact" className="inline-block border border-paper/60 px-8 py-3.5 text-center text-[11px] uppercase tracking-[0.24em] text-paper hover:bg-paper hover:text-ocean">
-            Request a briefing
-          </Link>
-        </div>
-      </section>
+      <ClosingInvitation
+        n="V"
+        label="Private briefings"
+        title="A read on your property or search."
+        body="Confidential, comps-based analysis for owners and buyers across the East End."
+        cta="Request a briefing"
+      />
     </div>
   );
 }

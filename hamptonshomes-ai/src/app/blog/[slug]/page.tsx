@@ -10,6 +10,7 @@ import {
   relatedBlogPosts,
 } from "@/lib/blog";
 import JsonLd from "@/components/JsonLd";
+import { ClosingInvitation } from "@/components/Editorial";
 import {
   COASTAL_ABOUT_URL,
   DEFAULT_OG_IMAGE,
@@ -63,7 +64,7 @@ function formatInline(text: string) {
   return text
     .replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" class="text-ocean underline decoration-ocean/30 underline-offset-4 hover:text-ocean-deep">$1</a>'
+      '<a href="$2" class="text-ocean underline decoration-ocean/35 decoration-1 underline-offset-[5px] transition-colors hover:text-ocean-deep hover:decoration-ocean">$1</a>'
     )
     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>');
 }
@@ -95,15 +96,15 @@ function renderTable(rows: string[], key: number) {
   const bodyRows = body.filter((row) => !isSeparatorRow(row)).map(splitPipeRow);
 
   return (
-    <div key={key} className="overflow-x-auto my-10 border border-line">
-      <table className="w-full text-left">
+    <div key={key} className="my-12 overflow-x-auto lg:-mx-16">
+      <table className="w-full border-t border-ink/80 text-left">
         {header && (
           <thead>
-            <tr className="border-b border-line bg-paper-soft">
+            <tr className="border-b border-line">
               {header.map((cell, ci) => (
                 <th
                   key={ci}
-                  className="font-serif text-ink text-[12px] tracking-[0.12em] uppercase font-normal px-4 py-3 whitespace-nowrap"
+                  className="eyebrow whitespace-nowrap px-4 py-4 font-medium text-ink first:pl-0"
                   dangerouslySetInnerHTML={{ __html: formatInline(cell) }}
                 />
               ))}
@@ -112,11 +113,11 @@ function renderTable(rows: string[], key: number) {
         )}
         <tbody>
           {bodyRows.map((cells, ri) => (
-            <tr key={ri} className="border-b border-line last:border-0">
+            <tr key={ri} className="border-b border-line transition-colors duration-300 hover:bg-paper-soft">
               {cells.map((cell, ci) => (
                 <td
                   key={ci}
-                  className="text-ink-muted text-[14px] leading-[1.6] px-4 py-3 whitespace-nowrap"
+                  className="whitespace-nowrap px-4 py-3.5 text-[14px] leading-[1.6] text-ink-muted first:pl-0 first:text-ink"
                   dangerouslySetInnerHTML={{ __html: formatInline(cell) }}
                 />
               ))}
@@ -133,19 +134,20 @@ function renderContent(content: string) {
   const lines = content.trim().split("\n");
   const elements: React.ReactNode[] = [];
   let i = 0;
+  let dropCapUsed = false;
 
   while (i < lines.length) {
     const line = lines[i].trimEnd();
 
     if (line.startsWith("## ")) {
       elements.push(
-        <h2 key={i} className="font-serif text-2xl text-ink mt-16 mb-6">
+        <h2 key={i} className="display-3 mb-7 mt-20 border-t border-line pt-10 font-light text-ink">
           {line.replace("## ", "")}
         </h2>
       );
     } else if (line.startsWith("### ")) {
       elements.push(
-        <h3 key={i} className="font-serif text-xl text-ocean mt-10 mb-4">
+        <h3 key={i} className="mb-4 mt-12 font-serif text-[1.55rem] italic leading-snug text-ocean">
           {line.replace("### ", "")}
         </h3>
       );
@@ -171,27 +173,29 @@ function renderContent(content: string) {
       }
       const ListTag = ordered ? "ol" : "ul";
       elements.push(
-        <ListTag key={i} className={`mb-6 ml-5 space-y-2 ${ordered ? "list-decimal" : "list-disc marker:text-ocean"}`}>
+        <ListTag key={i} className={`mb-8 ml-5 space-y-3 ${ordered ? "list-decimal marker:font-serif marker:text-ocean" : "list-disc marker:text-ocean"}`}>
           {items.map((item, k) => (
-            <li key={k} className="text-ink-muted text-[15px] leading-[1.8] pl-1" dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
+            <li key={k} className="pl-2 text-[16px] leading-[1.8] text-ink-muted md:text-[17px]" dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
           ))}
         </ListTag>
       );
       i = j;
       continue;
     } else if (line.startsWith("---")) {
-      elements.push(<hr key={i} className="border-line my-12" />);
+      elements.push(<hr key={i} className="mx-auto my-16 w-16 border-ink/40" />);
     } else if (line.startsWith("*") && line.endsWith("*") && !line.startsWith("**")) {
       elements.push(
-        <p key={i} className="text-ink-faint text-[13px] leading-[1.8] italic mt-8">
+        <p key={i} className="mt-10 font-serif text-[16px] italic leading-[1.7] text-ink-faint">
           {line.replace(/^\*|\*$/g, "")}
         </p>
       );
     } else if (line.trim() === "") {
       // skip
     } else {
+      const dropCap = !dropCapUsed && /^[A-Za-z]/.test(line);
+      if (dropCap) dropCapUsed = true;
       elements.push(
-        <p key={i} className="text-ink-muted text-[15px] leading-[1.9] mb-4" dangerouslySetInnerHTML={{
+        <p key={i} className={`mb-6 text-[16px] leading-[1.9] text-ink-muted md:text-[17px]${dropCap ? " drop-cap" : ""}`} dangerouslySetInnerHTML={{
           __html: formatInline(line)
         }} />
       );
@@ -221,102 +225,94 @@ export default async function BlogPostPage({ params }: Props) {
         ])}
       />
       {faqs.length > 0 && <JsonLd data={faqPageJsonLd(faqs)} />}
-      <article className="pt-32 pb-32">
-        <div className="max-w-3xl mx-auto px-8">
-          <Link
-            href="/market"
-            className="text-ink-faint text-[11px] tracking-[0.2em] uppercase hover:text-ocean transition-colors duration-500 mb-10 block"
-          >
+      <article className="pb-24 pt-36 md:pb-32 md:pt-48">
+        <header className="frame">
+          <Link href="/market" className="eyebrow link-line text-ink-faint transition-colors duration-500 hover:text-ocean">
             ← Market research
           </Link>
-
-          <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-4">
-            {post.category} · {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+          <p className="eyebrow hero-rise mt-12 text-ocean md:mt-16" style={{ animationDelay: "120ms" }}>
+            {post.category} · {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}
           </p>
-
-          <h1 className="font-serif text-3xl md:text-5xl text-ink leading-tight mb-4">
+          <h1 className="display-2 hero-rise mt-6 max-w-[17em] text-ink" style={{ animationDelay: "220ms" }}>
             {post.title}
           </h1>
 
-          {post.authorBox ? (
-            <div className="flex items-center gap-5 border-y border-line py-6 mb-16">
-              <Image
-                src="/images/barry-mcgovern.jpg"
-                alt="Barry McGovern, Licensed Real Estate Salesperson, Hedgerow Exclusive Properties"
-                width={72}
-                height={96}
-                className="w-[72px] h-[96px] object-cover"
-              />
-              <p className="text-[13px] leading-[1.7] text-ink-faint">
-                <span className="font-serif text-[16px] text-ink block">{post.author}</span>
-                Licensed Real Estate Salesperson, Hedgerow Exclusive Properties
-              </p>
+          <div className="hero-rise mt-10 border-t border-line pt-6 md:mt-14" style={{ animationDelay: "380ms" }}>
+            {post.authorBox ? (
+              <div className="flex items-center gap-5">
+                <Image
+                  src="/images/barry-mcgovern.jpg"
+                  alt="Barry McGovern, Licensed Real Estate Salesperson, Hedgerow Exclusive Properties"
+                  width={54}
+                  height={72}
+                  className="photo-mono h-[72px] w-[54px] object-cover"
+                />
+                <p className="text-[13px] leading-[1.7] text-ink-faint">
+                  <span className="block font-serif text-[18px] text-ink">{post.author}</span>
+                  Licensed Real Estate Salesperson, Hedgerow Exclusive Properties
+                </p>
+              </div>
+            ) : (
+              <p className="text-[13px] text-ink-faint">By {post.author} · Hedgerow Exclusive Properties</p>
+            )}
+          </div>
+        </header>
+
+        {post.image ? (
+          <div className="frame mt-12 md:mt-16">
+            <div className="relative aspect-[4/3] overflow-hidden bg-paper-deep md:aspect-[21/9]">
+              <Image src={post.image} alt={post.title} fill priority quality={80} sizes="(max-width: 1440px) 100vw, 1440px" className="hero-img photo-mono object-cover" />
             </div>
-          ) : (
-            <p className="text-ink-faint text-[13px] mb-16">
-              By {post.author} · Hedgerow Exclusive Properties
-            </p>
-          )}
+          </div>
+        ) : null}
 
-          <div>{renderContent(post.content)}</div>
+        <div className="frame">
+          <div className="mx-auto mt-16 max-w-[42rem] md:mt-24 [&>h2:first-child]:mt-0 [&>h2:first-child]:border-t-0 [&>h2:first-child]:pt-0">{renderContent(post.content)}</div>
 
-          <nav className="mt-16 border-t border-line pt-10" aria-label="Continue reading">
-            <p className="text-ocean text-[10px] tracking-[0.5em] uppercase mb-6">Continue reading</p>
-            <ul className="space-y-3">
+          <nav className="mx-auto mt-24 max-w-[42rem] border-t border-ink/80 pt-8" aria-label="Continue reading">
+            <p className="eyebrow mb-4 text-ocean">Continue reading</p>
+            <ul className="divide-y divide-line">
               {town && (
                 <li>
-                  <Link
-                    href={`/${town.slug}`}
-                    className="text-[15px] text-ink-muted hover:text-ocean transition-colors duration-500"
-                  >
+                  <Link href={`/${town.slug}`} className="group flex items-baseline justify-between gap-6 py-4 font-serif text-[1.3rem] text-ink transition-colors duration-500 hover:text-ocean">
                     Explore {town.name} luxury real estate
+                    <span aria-hidden="true" className="text-ink-faint transition-transform duration-500 group-hover:translate-x-1.5">→</span>
                   </Link>
                 </li>
               )}
               <li>
-                <a
-                  href={COASTAL_ABOUT_URL}
-                  className="text-[15px] text-ink-muted hover:text-ocean transition-colors duration-500"
-                >
+                <a href={COASTAL_ABOUT_URL} className="group flex items-baseline justify-between gap-6 py-4 font-serif text-[1.3rem] text-ink transition-colors duration-500 hover:text-ocean">
                   About Barry McGovern on Hamptons Coastal
+                  <span aria-hidden="true" className="text-ink-faint transition-transform duration-500 group-hover:translate-x-1.5">→</span>
                 </a>
               </li>
               <li>
-                <Link
-                  href="/contact"
-                  className="text-[15px] text-ink-muted hover:text-ocean transition-colors duration-500"
-                >
+                <Link href="/contact" className="group flex items-baseline justify-between gap-6 py-4 font-serif text-[1.3rem] text-ink transition-colors duration-500 hover:text-ocean">
                   Confidential consultation
+                  <span aria-hidden="true" className="text-ink-faint transition-transform duration-500 group-hover:translate-x-1.5">→</span>
                 </Link>
               </li>
               {related.map((relatedPost) => (
                 <li key={relatedPost.slug}>
-                  <Link
-                    href={`/blog/${relatedPost.slug}`}
-                    className="text-[15px] text-ink-muted hover:text-ocean transition-colors duration-500"
-                  >
+                  <Link href={`/blog/${relatedPost.slug}`} className="group flex items-baseline justify-between gap-6 py-4 font-serif text-[1.3rem] text-ink transition-colors duration-500 hover:text-ocean">
                     {relatedPost.title}
+                    <span aria-hidden="true" className="text-ink-faint transition-transform duration-500 group-hover:translate-x-1.5">→</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
-
-          {/* CTA */}
-          {!post.hideCta && (
-          <div className="border border-line bg-paper-soft p-10 mt-16 text-center">
-            <p className="font-serif text-xl text-ink mb-3">Ready to discuss the market?</p>
-            <p className="text-ink-faint text-[14px] mb-6">Confidential consultations and complimentary valuations.</p>
-            <Link
-              href="/contact"
-              className="inline-block border border-ocean/40 text-ocean text-[11px] tracking-[0.3em] uppercase px-8 py-3 hover:bg-ocean/10 transition-all duration-500"
-            >
-              Get in Touch
-            </Link>
-          </div>
-          )}
         </div>
       </article>
+
+      {!post.hideCta && (
+        <ClosingInvitation
+          label="Private inquiries"
+          title="Ready to discuss the market?"
+          body="Confidential consultations and complimentary valuations."
+          cta="Get in Touch"
+        />
+      )}
     </div>
   );
 }

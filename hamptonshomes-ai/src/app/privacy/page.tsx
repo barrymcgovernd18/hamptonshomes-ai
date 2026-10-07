@@ -12,14 +12,14 @@ export const metadata: Metadata = routeMetadata({
 export default function PrivacyPage() {
   return (
     <div className="bg-paper text-ink">
-      <section className="mx-auto max-w-3xl px-6 pb-28 pt-36 md:px-8 md:pt-44">
-        <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-ocean">Legal</p>
-        <h1 className="font-serif text-5xl leading-tight md:text-6xl">Privacy Policy</h1>
-        <p className="mt-4 text-[13px] text-ink-faint">Last updated: September 16, 2026</p>
+      <section className="frame pb-28 pt-40 md:pb-40 md:pt-52">
+        <p className="eyebrow hero-rise text-ocean">Legal</p>
+        <h1 className="display-1 hero-rise mt-6" style={{ animationDelay: "120ms" }}>Privacy Policy</h1>
+        <p className="eyebrow mt-10 border-t border-line pt-6 text-ink-faint">Last updated: September 16, 2026</p>
 
-        <div className="mt-14 space-y-10 text-[15px] leading-[1.9] text-ink-muted">
+        <div className="mt-16 max-w-3xl space-y-14 text-[16px] leading-[1.9] text-ink-muted md:ml-[25%] md:mt-24">
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Who we are</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Who we are</h2>
             <p>
               This website, hamptonshomes.ai, is the personal professional site of Barry McGovern, a
               New York Licensed Real Estate Salesperson (license #10401353717) affiliated with
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Information we collect</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Information we collect</h2>
             <p>
               If you use the contact form, we collect the name, email, phone number (if provided),
               stated interest, and message you submit. If you call or email instead, we collect
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">How we use it</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">How we use it</h2>
             <p>
               We use contact details only to respond to your inquiry, follow up if you ask us to,
               and keep a record of the conversation as needed for professional real estate practice.
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Sharing</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Sharing</h2>
             <p>
               Messages may be received and stored through ordinary professional tools (email and
               hosting providers) under their own terms. We may share what you send with Hedgerow
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">New York and security</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">New York and security</h2>
             <p>
               We take reasonable steps to protect inquiry data in line with New York law, including
               the SHIELD Act. No website transmission is perfectly secure. Please do not send Social
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Cookies and analytics</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Cookies and analytics</h2>
             <p>
               This site is hosted on ordinary web infrastructure that may set technical cookies
               needed to deliver the page. We do not run a separate advertising pixel program from
@@ -80,11 +80,11 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Your choices</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Your choices</h2>
             <p>
               You may request access to, correction of, or deletion of personal information we hold
               from the contact form by emailing{" "}
-              <a href="mailto:barry@hedgerowexclusive.com" className="text-ocean hover:text-ocean-deep">
+              <a href="mailto:barry@hedgerowexclusive.com" className="text-ocean underline decoration-ocean/35 underline-offset-[5px] hover:text-ocean-deep">
                 barry@hedgerowexclusive.com
               </a>{" "}
               or calling +1-646-339-0154. We may retain what the law or brokerage practice requires.
@@ -92,12 +92,12 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Children</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Children</h2>
             <p>This site is not directed to children under 13, and we do not knowingly collect their data.</p>
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Changes</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Changes</h2>
             <p>
               We may update this policy. The date at the top will change when we do. Continued use
               of the site after an update means the current policy applies.
@@ -105,18 +105,18 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl text-ink">Contact</h2>
+            <h2 className="display-3 mb-5 font-light text-ink">Contact</h2>
             <p>
               Privacy questions:{" "}
-              <a href="mailto:barry@hedgerowexclusive.com" className="text-ocean hover:text-ocean-deep">
+              <a href="mailto:barry@hedgerowexclusive.com" className="text-ocean underline decoration-ocean/35 underline-offset-[5px] hover:text-ocean-deep">
                 barry@hedgerowexclusive.com
               </a>
               . Related:{" "}
-              <Link href="/terms" className="text-ocean hover:text-ocean-deep">
+              <Link href="/terms" className="text-ocean underline decoration-ocean/35 underline-offset-[5px] hover:text-ocean-deep">
                 Terms of Use
               </Link>{" "}
               and{" "}
-              <Link href="/contact" className="text-ocean hover:text-ocean-deep">
+              <Link href="/contact" className="text-ocean underline decoration-ocean/35 underline-offset-[5px] hover:text-ocean-deep">
                 Contact
               </Link>
               .

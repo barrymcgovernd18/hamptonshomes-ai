@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import { PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
 import { routeMetadata } from "@/lib/schema";
 
 export const metadata: Metadata = routeMetadata({
@@ -10,6 +11,84 @@ export const metadata: Metadata = routeMetadata({
   path: "/contact",
 });
 
+const SOCIAL = [
+  { href: "https://www.instagram.com/barrymcgovern_/", label: "Instagram" },
+  { href: "https://www.linkedin.com/in/barry-mcgovern-9346133b/", label: "LinkedIn" },
+];
+
 export default function ContactPage() {
-  return <div className="min-h-screen bg-paper text-ink"><section className="mx-auto max-w-5xl px-6 pb-28 pt-36 md:px-8 md:pt-44"><p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-ocean">Contact</p><h1 className="font-serif text-6xl leading-tight md:text-8xl">Let&apos;s <br /><span className="font-normal italic text-ink-muted">Talk</span></h1><div className="mt-20 grid gap-16 md:grid-cols-2 md:gap-24"><div><p className="mb-16 max-w-md text-[15px] leading-[1.9] text-ink-muted">Every conversation is confidential. Whether buying, selling, renting, or seeking a valuation, reach out directly.</p><div className="space-y-10"><div><p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-ink-faint">Phone</p><a href="tel:+16463390154" className="font-serif text-3xl text-ink hover:text-ocean">646-339-0154</a></div><div><p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-ink-faint">Email</p><a href="mailto:barry@hedgerowexclusive.com" className="text-[15px] text-ink-muted hover:text-ocean">barry@hedgerowexclusive.com</a></div><div><p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-ink-faint">Office</p><p className="text-[14px] leading-[1.8] text-ink-muted">Hedgerow Exclusive Properties <br />2495 Montauk Highway <br />Bridgehampton, NY 11932</p></div><p className="text-[13px] text-ink-faint">Licensed Real Estate Salesperson · NY License #10401353717</p><p className="text-[13px] text-ink-faint"><Link href="/privacy" className="hover:text-ocean">Privacy</Link> · <Link href="/terms" className="hover:text-ocean">Terms</Link></p><div><p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-ink-faint">Social</p><div className="flex gap-6 text-[11px] uppercase tracking-[0.2em] text-ink-muted">{[{href:"https://www.instagram.com/barrymcgovern_/",label:"Instagram"},{href:"https://www.linkedin.com/in/barry-mcgovern-9346133b/",label:"LinkedIn"}].map((s) => <a key={s.label} href={s.href} target="_blank" rel="noopener" className="hover:text-ocean">{s.label}</a>)}</div></div></div></div><div className="border border-line bg-paper-soft p-6 md:p-8"><ContactForm /></div></div></section></div>;
+  return (
+    <div className="min-h-screen bg-paper text-ink">
+      <PageHero
+        light
+        eyebrow="Contact"
+        title={
+          <>
+            Let&apos;s
+          </>
+        }
+        italic="Talk"
+        aside={
+          <p className="body-copy text-ink-muted">
+            Every conversation is confidential. Whether buying, selling, renting, or seeking a valuation, reach out directly.
+          </p>
+        }
+      />
+
+      <section className="border-t border-line pb-28 pt-16 md:pb-40 md:pt-24">
+        <div className="frame grid gap-20 md:grid-cols-12 md:gap-10">
+          <div className="md:col-span-5">
+            <SectionLabel n="I">Direct</SectionLabel>
+            <dl className="mt-10 divide-y divide-line border-y border-line">
+              <div data-reveal className="py-7">
+                <dt className="eyebrow text-ink-faint">Phone</dt>
+                <dd className="mt-3">
+                  <a href="tel:+16463390154" className="font-serif text-[2.4rem] font-light leading-none text-ink transition-colors duration-500 hover:text-ocean">
+                    646-339-0154
+                  </a>
+                </dd>
+              </div>
+              <div data-reveal style={revealDelay(60)} className="py-7">
+                <dt className="eyebrow text-ink-faint">Email</dt>
+                <dd className="mt-3">
+                  <a href="mailto:barry@hedgerowexclusive.com" className="link-line font-serif text-[1.45rem] text-ink">
+                    barry@hedgerowexclusive.com
+                  </a>
+                </dd>
+              </div>
+              <div data-reveal style={revealDelay(120)} className="py-7">
+                <dt className="eyebrow text-ink-faint">Office</dt>
+                <dd className="mt-3 text-[15px] leading-[1.8] text-ink-muted">
+                  Hedgerow Exclusive Properties <br />
+                  2495 Montauk Highway <br />
+                  Bridgehampton, NY 11932
+                </dd>
+              </div>
+              <div data-reveal style={revealDelay(180)} className="py-7">
+                <dt className="eyebrow text-ink-faint">Social</dt>
+                <dd className="mt-4 flex gap-8">
+                  {SOCIAL.map((link) => (
+                    <a key={link.label} href={link.href} target="_blank" rel="noopener" className="link-line eyebrow text-ink-muted">
+                      {link.label}
+                    </a>
+                  ))}
+                </dd>
+              </div>
+            </dl>
+            <p className="mt-8 text-[13px] text-ink-faint">Licensed Real Estate Salesperson · NY License #10401353717</p>
+            <p className="mt-2 text-[13px] text-ink-faint">
+              <Link href="/privacy" className="hover:text-ocean">Privacy</Link> · <Link href="/terms" className="hover:text-ocean">Terms</Link>
+            </p>
+          </div>
+
+          <div className="md:col-span-6 md:col-start-7">
+            <SectionLabel n="II">Send a message</SectionLabel>
+            <div data-reveal style={revealDelay(80)} className="mt-10 border-t border-ink/80 pt-8">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }

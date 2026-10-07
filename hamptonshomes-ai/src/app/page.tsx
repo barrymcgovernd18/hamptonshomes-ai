@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notableSales, type Sale } from "@/lib/sales";
 import { areas } from "@/lib/areas";
 import { blogPosts } from "@/lib/blog";
-import RevealObserver from "@/components/RevealObserver";
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -80,8 +79,6 @@ export default function Home() {
 
   return (
     <>
-      <RevealObserver />
-
       {/* Hero */}
       <section className="relative isolate h-[100svh] min-h-[640px] max-h-[1080px] overflow-hidden bg-ocean-deep text-paper">
         <Image
