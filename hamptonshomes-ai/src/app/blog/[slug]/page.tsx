@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -226,9 +227,25 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
 
-          <p className="text-ink-faint text-[13px] mb-16">
-            By {post.author} · Hedgerow Exclusive Properties
-          </p>
+          {post.authorBox ? (
+            <div className="flex items-center gap-5 border-y border-line py-6 mb-16">
+              <Image
+                src="/images/barry-mcgovern.jpg"
+                alt="Barry McGovern, Licensed Real Estate Salesperson, Hedgerow Exclusive Properties"
+                width={72}
+                height={96}
+                className="w-[72px] h-[96px] object-cover"
+              />
+              <p className="text-[13px] leading-[1.7] text-ink-faint">
+                <span className="font-serif text-[16px] text-ink block">{post.author}</span>
+                Licensed Real Estate Salesperson, Hedgerow Exclusive Properties
+              </p>
+            </div>
+          ) : (
+            <p className="text-ink-faint text-[13px] mb-16">
+              By {post.author} · Hedgerow Exclusive Properties
+            </p>
+          )}
 
           <div>{renderContent(post.content)}</div>
 
@@ -275,6 +292,7 @@ export default async function BlogPostPage({ params }: Props) {
           </nav>
 
           {/* CTA */}
+          {!post.hideCta && (
           <div className="border border-line bg-paper-soft p-10 mt-16 text-center">
             <p className="font-serif text-xl text-ink mb-3">Ready to discuss the market?</p>
             <p className="text-ink-faint text-[14px] mb-6">Confidential consultations and complimentary valuations.</p>
@@ -285,6 +303,7 @@ export default async function BlogPostPage({ params }: Props) {
               Get in Touch
             </Link>
           </div>
+          )}
         </div>
       </article>
     </div>
