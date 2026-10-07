@@ -28,12 +28,20 @@ export default function AboutPage() {
   return (
     <div className="bg-paper text-ink">
       <JsonLd data={faqPageJsonLd()} />
-      <section className="relative flex h-[52vh] min-h-[460px] items-end overflow-hidden bg-ocean-deep">
-        <Image src="/images/barry-mcgovern.jpg" alt="Barry McGovern" fill className="object-cover object-top" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/70 via-ocean-deep/20 to-transparent" />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 md:px-8">
-          <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-white/75">About</p>
-          <h1 className="font-serif text-5xl text-white md:text-7xl">Barry McGovern</h1>
+      <section className="relative overflow-hidden bg-ocean-deep pt-16 md:pt-[72px] md:h-[78vh] md:min-h-[640px] md:max-h-[860px]">
+        {/* Portrait: full-width on mobile, right-hand panel on desktop so the face is never cropped by a wide strip. */}
+        <div className="relative h-[500px] w-full md:absolute md:bottom-0 md:right-0 md:top-[72px] md:h-auto md:w-[46%]">
+          <Image src="/images/barry-mcgovern.jpg" alt="Barry McGovern" fill className="object-cover object-[center_18%] md:object-[center_22%]" priority sizes="(max-width: 768px) 100vw, 46vw" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/85 via-ocean-deep/10 to-transparent md:hidden" />
+          <div className="absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-ocean-deep to-transparent md:block" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 z-10 md:relative md:flex md:h-full md:items-end">
+          <div className="mx-auto w-full max-w-7xl px-6 pb-10 md:px-8 md:pb-20">
+            <div className="md:max-w-[50%]">
+              <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-white/75">About</p>
+              <h1 className="font-serif text-5xl text-white md:text-7xl">Barry McGovern</h1>
+            </div>
+          </div>
         </div>
       </section>
       <section className="py-24 md:py-32">
@@ -83,7 +91,7 @@ export default function AboutPage() {
             </div>
             <div className="space-y-10 md:col-span-4 md:col-start-9">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <Image src="/images/barry-mcgovern-2.jpg" alt="Barry McGovern at Hedgerow Exclusive Properties" fill className="object-cover object-[center_15%]" sizes="(max-width: 768px) 100vw, 33vw" />
+                <Image src="/images/barry-mcgovern-2.jpg" alt="Bayfront estate, East End" fill className="object-cover object-[center_15%]" sizes="(max-width: 768px) 100vw, 33vw" />
               </div>
               <div className="border border-line bg-paper-soft p-8">
                 <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-ocean">Firm</p>
