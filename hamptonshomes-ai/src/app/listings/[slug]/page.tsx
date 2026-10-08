@@ -23,7 +23,11 @@ export function generateStaticParams() {
 function metaDescription(l: ListingPage) {
   const facts = [l.beds && `${l.beds} bedrooms`, l.sqft && `${l.sqft} sq ft`, l.acres && `${l.acres} acres`].filter(Boolean).join(", ");
   const base = `${l.address}, ${l.area}, ${l.status === "In contract" ? "in contract" : "offered"} at ${formatPrice(l.price)}${facts ? `: ${facts}` : ""}. ${l.headline}. Inquire with Barry McGovern, Hedgerow Exclusive Properties.`;
-  return base.length > 160 ? `${l.address}, ${l.area}, ${formatPrice(l.price)}${facts ? `: ${facts}` : ""}. Inquire with Barry McGovern, Hedgerow Exclusive Properties.` : base;
+  if (base.length <= 155) return base;
+  const short = `${l.address}, ${l.area}, ${formatPrice(l.price)}${facts ? `: ${facts}` : ""}.`;
+  const tail = " Inquire with Barry McGovern, Hedgerow Exclusive Properties.";
+  const withHeadline = `${short} ${l.headline}.${tail}`;
+  return withHeadline.length <= 155 ? withHeadline : `${short}${tail}`;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -31,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const l = listingBySlug(slug);
   if (!l) return {};
   return routeMetadata({
-    title: `${l.address}, ${l.area} | ${formatPrice(l.price)}`,
+    title: `${l.address}, ${l.area}`,
     description: metaDescription(l),
     path: `/listings/${l.slug}`,
     image: `/og/listings/${l.slug}.jpg`,
