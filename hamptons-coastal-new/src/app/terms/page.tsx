@@ -9,15 +9,15 @@ export default function TermsPage() {
   return (
     <div className="px-6 py-16">
       <div className="max-w-3xl mx-auto">
-        <span className="text-gold text-xs tracking-[0.3em] uppercase">Legal</span>
-        <h1 className="font-serif text-3xl md:text-4xl text-cream mt-4 mb-4">
+        <p className="text-[11px] uppercase tracking-[0.28em] text-ocean">Legal</p>
+        <h1 className="font-serif text-3xl md:text-4xl text-ink mt-4 mb-4">
           Terms of Use
         </h1>
-        <p className="text-cream/30 text-sm mb-12">Last updated: February 20, 2026</p>
+        <p className="text-ink-faint text-sm mb-12">Last updated: February 20, 2026</p>
 
-        <div className="space-y-8 text-cream/70 leading-relaxed">
+        <div className="space-y-8 text-ink-muted leading-relaxed">
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Agreement to Terms</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Agreement to Terms</h2>
             <p>
               By accessing or using the Hamptons Coastal mobile application and website 
               (hamptonscoastal.com), operated by Hamptons Coastal LLC, you agree to be bound 
@@ -26,7 +26,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Description of Service</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Description of Service</h2>
             <p>
               Hamptons Coastal provides luxury real estate news, market intelligence, and analytical 
               tools covering the Hamptons, Palm Beach, Miami, and Aspen markets. Our services include 
@@ -36,7 +36,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Accounts</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Accounts</h2>
             <p>
               Some features require an account. You are responsible for maintaining the confidentiality 
               of your credentials and for all activity under your account. You must provide accurate 
@@ -45,7 +45,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Subscriptions and Payments</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Subscriptions and Payments</h2>
             <p className="mb-4">
               Premium features are available through paid subscriptions and one-time in-app purchases, 
               processed through the Apple App Store. By subscribing, you agree to the pricing and 
@@ -62,7 +62,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Content and Intellectual Property</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Content and Intellectual Property</h2>
             <p className="mb-4">
               All content on Hamptons Coastal, including articles, data, graphics, logos, and software, 
               is owned by Hamptons Coastal LLC or its licensors and is protected by copyright and other 
@@ -76,7 +76,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Featured Listings</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Featured Listings</h2>
             <p>
               Real estate listings displayed on Hamptons Coastal are submitted by verified agents 
               and brokerages. Hamptons Coastal does not act as a real estate broker and makes no 
@@ -86,7 +86,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">AI-Powered Features</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">AI-Powered Features</h2>
             <p>
               Property valuations, comparable sales analysis, and other AI-powered features are 
               provided for informational purposes only. They are derived from public data and 
@@ -96,7 +96,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Disclaimer of Warranties</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Disclaimer of Warranties</h2>
             <p>
               Our services are provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without 
               warranties of any kind, either express or implied. We do not warrant that our services 
@@ -105,7 +105,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Limitation of Liability</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Limitation of Liability</h2>
             <p>
               To the fullest extent permitted by law, Hamptons Coastal LLC shall not be liable for 
               any indirect, incidental, special, consequential, or punitive damages arising from 
@@ -114,7 +114,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Modifications</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Modifications</h2>
             <p>
               We reserve the right to modify these Terms at any time. Continued use of our services 
               after changes constitutes acceptance of the updated Terms.
@@ -122,7 +122,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Governing Law</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Governing Law</h2>
             <p>
               These Terms are governed by the laws of the State of New York, without regard to 
               conflict of law principles.
@@ -130,10 +130,10 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-xl text-cream mb-3">Contact</h2>
+            <h2 className="font-serif text-xl text-ink mb-3">Contact</h2>
             <p>
               Questions about these Terms? Contact us at{' '}
-              <a href="mailto:info@hamptonscoastal.com" className="text-gold hover:text-gold-light transition-colors">
+              <a href="mailto:info@hamptonscoastal.com" className="text-ocean hover:text-ocean-deep transition-colors">
                 info@hamptonscoastal.com
               </a>
             </p>

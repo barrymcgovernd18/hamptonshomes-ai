@@ -8,9 +8,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   body {
-    @apply bg-dark-900 text-cream font-sans;
+    @apply bg-paper text-ink font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -20,36 +20,36 @@
 
 @layer components {
   .article-content p {
-    @apply mb-6 leading-relaxed text-cream/90;
+    @apply mb-6 leading-relaxed text-ink-muted;
   }
-  
+
   .article-content h2 {
-    @apply text-2xl font-serif text-cream mt-10 mb-4;
+    @apply text-2xl font-serif text-ink mt-10 mb-4;
   }
 
-  .gold-gradient {
-    background: linear-gradient(135deg, #c4a265 0%, #d4b87a 50%, #c4a265 100%);
-  }
-
-  .hover-gold {
-    @apply transition-colors duration-200 hover:text-gold;
+  .hover-ocean {
+    @apply transition-colors duration-200 hover:text-ocean;
   }
 }
 
-/* Scrollbar */
+::selection {
+  background-color: #1f3a4430;
+  color: #111111;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #f4f0e8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #d8d1c5;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c4a265;
+  background: #1f3a44;
 }

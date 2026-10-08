@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Sag Harbor Waterfront in 2026: What $5M–$15M Actually Buys',
   description:
-    'Hamlet market brief: Sag Harbor waterfront and near-water trades from $5M to $15M — recent comps, price bands, bay vs harbor, and what moved in 2025–2026.',
+    'Hamlet market brief: Sag Harbor waterfront and near-water trades from $5M to $15M. Recent comps, price bands, bay vs harbor, and what moved in 2025–2026.',
   alternates: {
     canonical: 'https://hamptonscoastal.com/markets/sag-harbor-waterfront-2026',
   },
@@ -60,7 +60,7 @@ const faqLd = {
     },
     {
       '@type': 'Question',
-      name: 'Bay vs harbor — does frontage type matter at this price?',
+      name: 'Bay vs harbor: does frontage type matter at this price?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Yes. Harbor and bay-adjacent addresses (Bay Street, West Water, Glover, Union, Noyac Bay) trade differently from inland Sag Harbor village homes at similar dollar amounts. Buyers should underwrite frontage, dock rights, flood, and ARB/village constraints separately from square footage.',
@@ -133,125 +133,125 @@ export default function SagHarborWaterfront2026Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
-      <article className="px-6 py-16">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
+      <article className="px-6 py-16 md:px-8">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-6 flex items-center gap-3">
             <Link
               href="/markets/hamptons"
-              className="text-gold text-xs tracking-[0.2em] uppercase hover:text-gold-light transition-colors"
+              className="text-[10px] uppercase tracking-[0.28em] text-ocean transition-colors hover:text-ocean-deep"
             >
               The Hamptons
             </Link>
-            <span className="text-cream/20">|</span>
-            <span className="text-cream/40 text-xs tracking-wide uppercase">Market Analysis</span>
+            <span className="text-line">·</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-ink-faint">Market Analysis</span>
           </div>
 
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream leading-tight mb-6">
+          <h1 className="mb-6 font-serif text-3xl leading-tight text-ink md:text-5xl">
             Sag Harbor Waterfront in 2026: What $5M–$15M Actually Buys
           </h1>
 
-          <p className="text-cream/60 text-lg leading-relaxed mb-8 border-l-2 border-gold/30 pl-6">
+          <p className="mb-8 border-l-2 border-ocean/40 pl-6 text-lg leading-relaxed text-ink-muted">
             A comps-backed hamlet brief for buyers and agents: recent Sag Harbor closes in the
             $5M–$15M band, how bay/harbor product differs from inland village, and what actually
             traded into early 2026.
           </p>
 
-          <div className="flex items-center gap-4 mb-12 pb-8 border-b border-white/5">
+          <div className="mb-12 flex items-center gap-4 border-b border-line pb-8">
             <div>
-              <p className="text-cream/70 text-sm">
+              <p className="text-sm text-ink">
                 Expert:{' '}
                 <Link
                   href="/about/barry-mcgovern"
-                  className="text-gold hover:text-gold-light transition-colors"
+                  className="text-ocean transition-colors hover:text-ocean-deep"
                 >
                   Barry McGovern
                 </Link>
                 , Hedgerow Exclusive Properties
               </p>
-              <p className="text-cream/30 text-xs mt-1">Updated Sep 6, 2026 · ~6 min read</p>
+              <p className="mt-1 text-xs text-ink-faint">Updated Sep 6, 2026 · ~6 min read</p>
             </div>
           </div>
 
-          <div className="article-content text-cream/85 text-lg leading-relaxed space-y-6">
+          <div className="article-content space-y-6 text-lg leading-relaxed text-ink-muted">
             <p>
               Sag Harbor sits in a different pricing conversation than oceanfront Southampton or
-              Further Lane. In the middle luxury band — roughly $5M to $15M — buyers are choosing
+              Further Lane. In the middle luxury band, roughly $5M to $15M, buyers are choosing
               among true harbor/bay adjacency, historic village addresses, and larger inland lots
               that still carry a Sag Harbor tax bill. The Coastal comps database (Supabase{' '}
-              <code className="text-gold/80 text-sm">comparable_sales</code>) is the source of
+              <code className="text-sm text-ocean">comparable_sales</code>) is the source of
               truth for the numbers below.
             </p>
 
-            <h2 className="font-serif text-2xl text-cream mt-10 mb-4">Key facts</h2>
-            <div className="overflow-x-auto border border-white/5">
+            <h2 className="mb-4 mt-10 font-serif text-2xl text-ink">Key facts</h2>
+            <div className="overflow-x-auto border border-line">
               <table className="w-full text-sm">
                 <tbody>
                   {keyFacts.map((row) => (
-                    <tr key={row.label} className="border-b border-white/5">
-                      <th className="text-left text-cream/40 font-normal tracking-wide uppercase text-xs px-4 py-3 w-2/5">
+                    <tr key={row.label} className="border-b border-line">
+                      <th className="w-2/5 px-4 py-3 text-left text-xs font-normal uppercase tracking-wide text-ink-faint">
                         {row.label}
                       </th>
-                      <td className="text-cream/80 px-4 py-3">{row.value}</td>
+                      <td className="px-4 py-3 text-ink">{row.value}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            <h2 className="font-serif text-2xl text-cream mt-10 mb-4">Recent trades that set the band</h2>
+            <h2 className="mb-4 mt-10 font-serif text-2xl text-ink">Recent trades that set the band</h2>
             <p>
               These closes are drawn from Sag Harbor–tagged comps between $5M and $15M. Waterfront
               and harbor-corridor names dominate the top of the band; the lower half is more often
               village or near-village product.
             </p>
-            <div className="overflow-x-auto border border-white/5">
+            <div className="overflow-x-auto border border-line">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-white/10 text-cream/40 text-xs uppercase tracking-wide">
-                    <th className="text-left px-4 py-3">Sold</th>
-                    <th className="text-left px-4 py-3">Address</th>
-                    <th className="text-left px-4 py-3">Price</th>
-                    <th className="text-left px-4 py-3">Note</th>
+                  <tr className="border-b border-line text-xs uppercase tracking-wide text-ink-faint">
+                    <th className="px-4 py-3 text-left">Sold</th>
+                    <th className="px-4 py-3 text-left">Address</th>
+                    <th className="px-4 py-3 text-left">Price</th>
+                    <th className="px-4 py-3 text-left">Note</th>
                   </tr>
                 </thead>
                 <tbody>
                   {recentTrades.map((t) => (
-                    <tr key={`${t.date}-${t.address}`} className="border-b border-white/5">
-                      <td className="px-4 py-3 text-cream/50 whitespace-nowrap">{t.date}</td>
-                      <td className="px-4 py-3 text-cream/85">{t.address}</td>
-                      <td className="px-4 py-3 text-gold whitespace-nowrap">{t.price}</td>
-                      <td className="px-4 py-3 text-cream/45">{t.note}</td>
+                    <tr key={`${t.date}-${t.address}`} className="border-b border-line">
+                      <td className="whitespace-nowrap px-4 py-3 text-ink-faint">{t.date}</td>
+                      <td className="px-4 py-3 text-ink">{t.address}</td>
+                      <td className="whitespace-nowrap px-4 py-3 text-ocean">{t.price}</td>
+                      <td className="px-4 py-3 text-ink-muted">{t.note}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            <h2 className="font-serif text-2xl text-cream mt-10 mb-4">Q&amp;A</h2>
+            <h2 className="mb-4 mt-10 font-serif text-2xl text-ink">Q&amp;A</h2>
             <div className="space-y-6">
               {faqLd.mainEntity.map((item) => (
-                <div key={item.name} className="border border-white/5 p-5">
-                  <h3 className="font-serif text-xl text-cream mb-2">{item.name}</h3>
-                  <p className="text-cream/65 text-base leading-relaxed">
+                <div key={item.name} className="border border-line bg-paper-soft p-5">
+                  <h3 className="mb-2 font-serif text-xl text-ink">{item.name}</h3>
+                  <p className="text-base leading-relaxed text-ink-muted">
                     {item.acceptedAnswer.text}
                   </p>
                 </div>
               ))}
             </div>
 
-            <h2 className="font-serif text-2xl text-cream mt-10 mb-4">Bottom line</h2>
+            <h2 className="mb-4 mt-10 font-serif text-2xl text-ink">Bottom line</h2>
             <p>
               In Sag Harbor’s $5M–$15M lane, dollar amount alone is a weak comparator. Pair price
-              with frontage type, street, lot, and condition — then sanity-check against the latest
+              with frontage type, street, lot, and condition, then sanity-check against the latest
               same-micro-market closes. For a property-specific read, talk to{' '}
-              <Link href="/about/barry-mcgovern" className="text-gold hover:text-gold-light">
+              <Link href="/about/barry-mcgovern" className="text-ocean hover:text-ocean-deep">
                 Barry McGovern
               </Link>
               .
             </p>
           </div>
 
-          <p className="text-cream/30 text-xs mt-12 border-t border-white/5 pt-6">
+          <p className="mt-12 border-t border-line pt-6 text-xs text-ink-faint">
             Disclaimer: Editorial market commentary from Hamptons Coastal. Not brokerage advice, not
             an appraisal, and not a solicitation. Comps from the Hamptons Coastal comparable_sales
             dataset (Sep 2026). Verify with primary records before underwriting.
