@@ -175,7 +175,7 @@ export default async function HedgerowSalesPage({ searchParams }: { searchParams
 
           {dated.length ? (
             <div className="mt-14">
-              <h2 className="sr-only">Dated sales</h2>
+              <h2 className="sr-only">{filters.sort === "newest" ? "Dated sales" : "Sales, highest price first"}</h2>
               <Grid sales={dated} eager={0} />
             </div>
           ) : null}

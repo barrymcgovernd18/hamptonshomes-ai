@@ -176,10 +176,12 @@ export function applyFilters(f: SalesFilters) {
       (!f.type || s.settings.includes(f.type as SaleSetting)),
   );
   const byPrice = (a: FirmSale, b: FirmSale) => b.priceNum - a.priceNum;
-  const dated = matches
-    .filter((s) => s.date)
-    .sort(f.sort === "newest" ? (a, b) => b.date.localeCompare(a.date) || byPrice(a, b) : byPrice);
-  const undated = matches.filter((s) => !s.date).sort(byPrice);
+  // By price: one continuous list, highest first. Newest first: dated sales by date, then undated ones by price.
+  const byDate = f.sort === "newest";
+  const dated = byDate
+    ? matches.filter((s) => s.date).sort((a, b) => b.date.localeCompare(a.date) || byPrice(a, b))
+    : [...matches].sort(byPrice);
+  const undated = byDate ? matches.filter((s) => !s.date).sort(byPrice) : [];
   const total = matches.reduce((sum, s) => sum + s.priceNum, 0);
   return { dated, undated, count: matches.length, total };
 }
