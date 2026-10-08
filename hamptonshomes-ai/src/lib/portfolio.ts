@@ -326,8 +326,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "hedgerowRole": "Co-listing",
     "group": "Estate and village",
     "barryInvolved": true,
-    "image": "",
-    "alt": "",
+    "image": "/images/hedgerow/sold-1694-millstone-road-sag-harbor-2026.webp",
+    "alt": "1694 Millstone Road, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
     "roleLabel": "A Hedgerow transaction"
   },
   {
@@ -396,8 +396,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "hedgerowRole": "Co-listing",
     "group": "Oceanfront",
     "barryInvolved": true,
-    "image": "",
-    "alt": "",
+    "image": "/images/hedgerow/sold-43-east-dune-lane-east-hampton-2026.webp",
+    "alt": "43 East Dune Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
     "roleLabel": "A Hedgerow transaction"
   },
   {
@@ -550,6 +550,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "hedgerowRole": "Co-listing",
     "group": "Oceanfront",
     "barryInvolved": false,
+    "image": "/images/hedgerow/sold-42-deforest-road-montauk-2025.webp",
+    "alt": "42 Deforest Road, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
     "roleLabel": "A Hedgerow transaction"
   },
   {
