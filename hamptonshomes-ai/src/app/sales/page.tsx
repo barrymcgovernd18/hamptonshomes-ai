@@ -4,7 +4,7 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import InView from "@/components/InView";
 import { ClosingInvitation, PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
-import { notableSales, personalVolume, firmVolume, firmVolumeLabel } from "@/lib/sales";
+import { formatSaleStatus, notableSales, personalVolume, firmVolume, firmVolumeLabel } from "@/lib/sales";
 import {
   hedgerowActiveListings,
   hedgerowFirmHistory,
@@ -19,6 +19,7 @@ export const metadata: Metadata = routeMetadata({
   title: SALES_PAGE.title,
   description: SALES_PAGE.description,
   path: "/sales",
+  image: "/og/sales.jpg",
 });
 
 const OCEANFRONT_ARTICLE = "/blog/hamptons-oceanfront-market-2021-2026";
@@ -173,7 +174,7 @@ export default function SalesPage() {
                       <p className="eyebrow text-paper/80">{sale.area}</p>
                       <h3 className="display-2 mt-4 !text-[clamp(2.1rem,4vw,3.9rem)]">{sale.address}</h3>
                       <p className="mt-4 text-[12px] tracking-[0.04em] text-paper/80">
-                        {sale.status}
+                        {formatSaleStatus(sale.status)}
                         {sale.sqft ? ` · ${sale.sqft} SF` : ""}
                         {sale.acres ? ` · ${sale.acres} acres` : ""}
                       </p>
@@ -202,7 +203,7 @@ export default function SalesPage() {
               <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6">Hedgerow sales</h2>
             </div>
             <p data-reveal style={revealDelay(160)} className="body-copy text-ink-muted md:col-span-4 md:col-start-9">
-              {hedgerowSold2021.length} Hedgerow sales since 2021, newest first. Those marked with my name are trades Hedgerow and I were involved in together.
+              {hedgerowSold2021.length} Hedgerow sales since 2021, newest first. Those marked with my name are trades Hedgerow and I were involved in.
             </p>
           </div>
           {GROUPS.map((group) => {
@@ -278,7 +279,7 @@ export default function SalesPage() {
         n="V"
         label="Private inquiries"
         title="Looking for the right setting?"
-        body="Barry offers confidential guidance for buyers and sellers across the East End, from Southampton to Montauk."
+        body="Confidential guidance for buyers and sellers across the East End, from Southampton to Montauk."
         cta="Start a conversation"
       />
     </div>

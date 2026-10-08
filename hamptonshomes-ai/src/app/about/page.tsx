@@ -3,7 +3,8 @@ import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import AlsoOnStrip from "@/components/AlsoOnStrip";
 import { ClosingInvitation, SectionLabel, revealDelay } from "@/components/Editorial";
-import { BARRY_FAQS, faqPageJsonLd, routeMetadata } from "@/lib/schema";
+import { ABOUT_FAQS, faqPageJsonLd, profilePageJsonLd, routeMetadata } from "@/lib/schema";
+import { featuredPress } from "@/lib/press";
 import { FIRM_ACCOLADES } from "@/lib/seo-copy";
 
 export const metadata: Metadata = routeMetadata({
@@ -12,7 +13,25 @@ export const metadata: Metadata = routeMetadata({
   description:
     "Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique Hamptons brokerage, focused on oceanfront and waterfront.",
   path: "/about",
+  image: "/og/about.jpg",
 });
+
+/** Facts as published elsewhere on the site, set out so readers (and search and AI tools) can lift them cleanly. */
+const AT_A_GLANCE = [
+  { label: "Personal sales volume", value: "$250M+" },
+  { label: "Hamptons luxury experience", value: "Six years" },
+  { label: "Originally from", value: "Dublin, Ireland" },
+  { label: "On the East End since", value: "2013" },
+  { label: "Home village", value: "Sag Harbor" },
+  { label: "Coverage", value: "Southampton to Montauk" },
+];
+
+const FIRM_FIGURES = [
+  { figure: "Over $2B", label: "Transactions since 2020" },
+  { figure: "$121.5M", label: "The firm's largest trade" },
+  { figure: "#1", label: "Hamptons, WSJ/RealTrends" },
+  { figure: "#1", label: "New York, WSJ/RealTrends" },
+];
 
 const specialties = [
   "Oceanfront estates & homes",
@@ -29,6 +48,7 @@ export default function AboutPage() {
   return (
     <div className="bg-paper text-ink">
       <JsonLd data={faqPageJsonLd()} />
+      <JsonLd data={profilePageJsonLd(featuredPress)} />
 
       {/* Hero: portrait panel on the right, name set large on deep ocean. */}
       <section data-hero className="relative isolate overflow-hidden bg-ocean-deep text-paper md:h-[88svh] md:min-h-[640px] md:max-h-[960px]">
@@ -74,15 +94,20 @@ export default function AboutPage() {
             </p>
             <div className="mt-12 max-w-[62ch] space-y-7 border-t border-line pt-10 text-[16px] leading-[1.85] text-ink-muted md:mt-16 md:text-[17px]">
               <p data-reveal>
-                Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated over $2 billion in transactions since 2020. As part of the Hedgerow team, Barry has been involved in some of the most significant real estate transactions on the East End, from record-setting oceanfront trades to nine-figure compound sales. He brings six years of Hamptons luxury experience and a reputation built on discretion, deep market knowledge, and results.
+                Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated over $2 billion in transactions since 2020. As part of the Hedgerow team, Barry has been involved in some of the most significant real estate transactions on the East End, from record-setting oceanfront trades to nine-figure compound sales. He brings six years of Hamptons luxury experience and a reputation built on discretion and deep market knowledge.
               </p>
               <p data-reveal style={revealDelay(60)}>
                 Originally from Dublin, Ireland, Barry has called the Hamptons home since 2013 and proudly considers himself a Sag Harbor local. His expertise centers on oceanfront and waterfront properties, from Further Lane and Meadow Lane oceanfront estates to Sag Harbor and Shelter Island waterfront homes. He also covers raw land, development opportunities, and off-market inventory.
               </p>
-              <p data-reveal style={revealDelay(120)}>
-                Covering the full East End from Southampton to Montauk, including Sag Harbor, Shelter Island, Bridgehampton, East Hampton, Sagaponack, Water Mill, Wainscott, and Amagansett.
-              </p>
             </div>
+            <dl data-reveal className="mt-14 grid grid-cols-2 border-t border-ink/80 md:mt-16 lg:grid-cols-3">
+              {AT_A_GLANCE.map((fact, i) => (
+                <div key={fact.label} className={`flex flex-col-reverse justify-end gap-2 border-b border-line py-6 ${i % 2 ? "pl-5 max-lg:border-l" : "pr-5"} ${i % 3 ? "lg:border-l lg:pl-6" : "lg:pl-0"}`}>
+                  <dt className="eyebrow text-ink-faint">{fact.label}</dt>
+                  <dd className="font-serif text-[1.45rem] font-light leading-[1.2] text-ink md:text-[1.6rem]">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
           <div data-reveal style={revealDelay(160)} className="border-t border-line pt-6 md:col-span-3 md:row-start-2 md:self-start md:border-t-0 md:pt-0 md:-mt-4">
@@ -97,7 +122,7 @@ export default function AboutPage() {
 
       {/* Full-bleed interlude */}
       <div data-reveal="image" className="relative h-[56svh] min-h-[360px] overflow-hidden bg-ocean-deep md:h-[78svh] md:max-h-[860px]">
-        <Image src="/images/barry-mcgovern-2.jpg" alt="Bayfront estate, East End" fill sizes="100vw" className="photo-mono object-cover object-[50%_60%]" />
+        <Image src="/images/trades/442-further-lane-east-hampton.jpg" alt="442 Further Lane, East Hampton, a Hedgerow transaction, with the Atlantic beyond, in black and white" fill quality={50} sizes="100vw" className="photo-mono object-cover object-[50%_55%]" />
       </div>
 
       {/* II. Specialties */}
@@ -134,6 +159,14 @@ export default function AboutPage() {
             <AlsoOnStrip className="mt-10 [&_a]:text-paper/85 [&_a:hover]:text-paper [&_p]:!text-paper/70" />
           </div>
         </div>
+        <dl className="frame mt-16 grid grid-cols-2 border-t border-paper/15 md:mt-20 lg:grid-cols-4">
+          {FIRM_FIGURES.map((item, i) => (
+            <div key={item.label} data-reveal style={revealDelay(i * 90)} className={`flex flex-col-reverse justify-end gap-4 border-b border-paper/15 py-8 lg:border-b-0 lg:py-12 ${i % 2 ? "border-l pl-5 lg:pl-8" : "pr-5 lg:pr-8"} ${i === 2 ? "lg:border-l lg:pl-8" : ""}`}>
+              <dt className="eyebrow text-paper/70">{item.label}</dt>
+              <dd className="whitespace-nowrap font-serif text-[2.3rem] font-light leading-none md:text-[3rem]">{item.figure}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       {/* IV. Questions */}
@@ -143,7 +176,7 @@ export default function AboutPage() {
             <SectionLabel n="IV" as="h2">Frequently asked questions</SectionLabel>
           </div>
           <div className="divide-y divide-line border-y border-line md:col-span-9">
-            {BARRY_FAQS.map((faq, i) => (
+            {ABOUT_FAQS.map((faq, i) => (
               <div key={faq.question} data-reveal style={revealDelay(i * 40)} className="grid gap-4 py-8 md:grid-cols-9 md:gap-10">
                 <h3 className="display-3 !text-[1.6rem] font-light text-ink md:col-span-4">{faq.question}</h3>
                 <p className="text-[15px] leading-[1.85] text-ink-muted md:col-span-5">{faq.answer}</p>

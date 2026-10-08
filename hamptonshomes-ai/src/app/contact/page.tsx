@@ -9,6 +9,7 @@ export const metadata: Metadata = routeMetadata({
   description:
     "Contact Barry McGovern for Hamptons oceanfront, waterfront, and private-market real estate. Licensed Real Estate Salesperson at Hedgerow Exclusive Properties.",
   path: "/contact",
+  image: "/og/contact.jpg",
 });
 
 const SOCIAL = [
@@ -44,7 +45,7 @@ export default function ContactPage() {
                 <dt className="eyebrow text-ink-faint">Phone</dt>
                 <dd className="mt-3">
                   <a href="tel:+16463390154" className="font-serif text-[2.4rem] font-light leading-none text-ink transition-colors duration-500 hover:text-ocean">
-                    646-339-0154
+                    646.339.0154
                   </a>
                 </dd>
               </div>

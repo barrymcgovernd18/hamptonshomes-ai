@@ -15,7 +15,7 @@ export default function TermsPage() {
       <section className="frame pb-28 pt-40 md:pb-40 md:pt-52">
         <p className="eyebrow text-ocean">Legal</p>
         <h1 className="display-1 mt-6">Terms of Use</h1>
-        <p className="eyebrow mt-10 border-t border-line pt-6 text-ink-faint">Last updated: September 16, 2026</p>
+        <p className="eyebrow mt-10 border-t border-line pt-6 text-ink-faint">Last updated: October 7, 2026</p>
 
         <div className="mt-16 max-w-3xl space-y-14 text-[16px] leading-[1.9] text-ink-muted md:ml-[25%] md:mt-24">
           <section>
@@ -24,14 +24,14 @@ export default function TermsPage() {
               By using hamptonshomes.ai you agree to these terms. If you do not agree, do not use
               the site. This is a personal professional website for Barry McGovern, a New York
               Licensed Real Estate Salesperson (license #10401353717) with Hedgerow Exclusive
-              Properties. Barry is a salesperson, not a broker.
+              Properties, his supervising brokerage.
             </p>
           </section>
 
           <section>
             <h2 className="display-3 mb-5 font-light text-ink">What this site is</h2>
             <p>
-              The site describes Barry&apos;s practice, selected portfolio records, town notes, and a
+              The site describes Barry&apos;s practice, selected portfolio records, village reports, and a
               way to inquire. It is not an offer to sell a specific property unless a current listing
               says so. Portfolio pages are historical records of selected transactions, not a live
               MLS feed. Private sales are described only in outline.

@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     description: HOME_DESCRIPTION,
     images: [
       {
-        url: "/images/og-share.jpg",
+        url: "/og/home.jpg",
         width: 1200,
         height: 630,
-        alt: "Barry McGovern and Hamptons oceanfront, Hedgerow Exclusive Properties",
+        alt: "Barry McGovern, Hamptons real estate, Hedgerow Exclusive Properties",
       },
     ],
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
-    images: ["/images/og-share.jpg"],
+    images: ["/og/home.jpg"],
   },
   robots: {
     index: true,
@@ -79,7 +79,7 @@ export default function RootLayout({
       <head>
         <JsonLd data={siteGraphJsonLd()} />
         <noscript>
-          <style>{`[data-reveal]{opacity:1!important;transform:none!important}[data-reveal] img{transform:none!important}[data-reveal]::after{display:none!important}`}</style>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
         </noscript>
       </head>
       <body className="font-sans antialiased bg-paper text-ink">

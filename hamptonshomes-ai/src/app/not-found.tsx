@@ -10,7 +10,7 @@ const destinations = [
   { href: "/sales", label: "Portfolio", note: "Hedgerow listings and sales" },
   { href: "/market", label: "Market", note: "Research and village reports" },
   { href: "/about", label: "About", note: "Barry McGovern" },
-  { href: "/contact", label: "Contact", note: "646-339-0154" },
+  { href: "/contact", label: "Contact", note: "646.339.0154" },
 ];
 
 export default function NotFound() {
@@ -40,7 +40,7 @@ export default function NotFound() {
           ))}
         </ul>
         <Link href="/" className="link-line eyebrow mt-14 inline-block text-ocean">
-          Return home <span aria-hidden="true">↗</span>
+          Return home <span aria-hidden="true">→</span>
         </Link>
       </div>
     </section>

@@ -82,7 +82,7 @@ export const notableSales: Sale[] = [
     image: "/images/234-wickapogue.jpg",
     listingUrl: "https://hedgerow.eastendli.com/property/899418/",
     roleNote: "Hedgerow's role: Both sides",
-    blurb: "Southampton-area Village estate section. Ocean views from the second floor, adjacent to a village preserve. Closed October 2023.",
+    blurb: "Southampton Village estate section. Ocean views from the second floor, adjacent to a village preserve. Closed October 2023.",
   },
 {
     address: "193 Sagaponack Main Street",
@@ -166,6 +166,14 @@ export const notableSales: Sale[] = [
     roleNote: "Hedgerow's role: Listing",
   },
 ];
+
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+/** "Sold 4/04/2025" reads as "Sold April 2025"; anything else is returned unchanged. */
+export function formatSaleStatus(status: string) {
+  const m = /^(\w[\w ]*?)\s+(\d{1,2})\/\d{1,2}\/(\d{4})$/.exec(status.trim());
+  return m ? `${m[1]} ${MONTHS[Number(m[2]) - 1]} ${m[3]}` : status;
+}
 
 export const personalVolume = "$250M+";
 export const firmVolume = "over $2B";
