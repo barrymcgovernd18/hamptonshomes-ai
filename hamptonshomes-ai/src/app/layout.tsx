@@ -16,9 +16,9 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
-const HOME_TITLE = "Barry McGovern | Hamptons Oceanfront and Waterfront Real Estate";
+const HOME_TITLE = "Barry McGovern | Hamptons Oceanfront and Waterfront Homes";
 const HOME_DESCRIPTION =
-  "Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties: oceanfront, waterfront, and estate real estate from Southampton to Montauk.";
+  "Barry McGovern, Licensed Real Estate Salesperson, Hedgerow Exclusive Properties. Hamptons oceanfront, waterfront and estate homes, Southampton to Montauk.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hamptonshomes.ai"),

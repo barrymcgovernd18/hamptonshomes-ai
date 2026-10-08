@@ -42,12 +42,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ogImage = hasCard ? absoluteUrl(`/og/blog/${post.slug}.jpg`) : postOgImageUrl(post.image);
   const usesShareImage = ogImage === DEFAULT_OG_IMAGE;
   const seoTitle = SEO_TITLES[post.slug];
+  const shareTitle = seoTitle ?? `${post.title} | Barry McGovern`;
   return {
     title: seoTitle ? { absolute: seoTitle } : post.title,
     description: post.metaDescription,
     alternates: { canonical },
     openGraph: {
-      title: post.title,
+      title: shareTitle,
       description: post.metaDescription,
       url: canonical,
       type: "article",
@@ -60,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: shareTitle,
       description: post.metaDescription,
       images: [ogImage],
     },

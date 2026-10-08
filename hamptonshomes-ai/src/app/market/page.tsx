@@ -11,7 +11,7 @@ import { OCEANFRONT_BY_VILLAGE, OCEANFRONT_BY_YEAR, OCEANFRONT_STUDY_PATH, forma
 
 const MARKET_TITLE = "Hamptons Market Research and Reports";
 const MARKET_DESCRIPTION =
-  "Hamptons luxury market research by Barry McGovern: oceanfront data from 2021 to 2026, village reports from Southampton to Montauk, and private-market commentary.";
+  "Hamptons market research by Barry McGovern: oceanfront data 2021 to 2026, village reports from Southampton to Montauk, and private-market commentary.";
 
 export const metadata: Metadata = routeMetadata({
   title: MARKET_TITLE,

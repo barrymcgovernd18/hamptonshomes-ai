@@ -37,8 +37,8 @@ export const SEO_TITLES: Record<string, string> = {
   "off-market-hamptons-explained": "Off-Market Hamptons Real Estate, Explained | Barry McGovern",
   "oceanfront-scarcity-southampton-montauk-2025": "Oceanfront Scarcity, Southampton to Montauk | Barry McGovern",
   "sag-harbor-waterfront-village-demand-2025": "Sag Harbor Waterfront and Village Demand | Barry McGovern",
-  "off-market-vs-public-listing-hamptons-2025": "Off-Market or Public Listing in the Hamptons | Barry McGovern",
-  "east-hampton-lily-pond-further-lane-2026": "Lily Pond Lane and Further Lane, East Hampton | Barry McGovern",
+  "off-market-vs-public-listing-hamptons-2025": "Off-Market or Public Listing, Hamptons | Barry McGovern",
+  "east-hampton-lily-pond-further-lane-2026": "Lily Pond and Further Lane, East Hampton | Barry McGovern",
 };
 
 const RELATED_STOPWORDS = new Set([
@@ -149,7 +149,7 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "Hamptons real estate fall 2026, Hamptons contracts, Hamptons inventory, Southampton real estate, East Hampton real estate, Bridgehampton, Water Mill, Sagaponack, luxury market by price",
     metaDescription:
-      "Hamptons fall 2026: 26 contracts since September 1 against 210 active listings, Southampton to East Hampton, by price band and village, plus the $50M+ shelf.",
+      "Hamptons fall 2026: 26 contracts since September 1 versus 210 active listings, Southampton to East Hampton, by price band and village, and the $50M+ shelf.",
     content: `
 ## Key Takeaways
 
