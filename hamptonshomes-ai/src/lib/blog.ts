@@ -142,7 +142,7 @@ export const blogPosts: BlogPost[] = [
     dateModified: "2026-10-08",
     author: "Barry McGovern",
     category: "Market Research",
-    image: "/images/hero-waterfront.jpg",
+    image: "/images/heroes/104-quimby-lane-bridgehampton.jpg",
     authorBox: true,
     hideCta: true,
     about: ["Southampton", "Water Mill", "Bridgehampton", "Sagaponack", "Wainscott", "East Hampton"],
@@ -538,7 +538,7 @@ Coastal erosion rules, FEMA flood regulation, multi-agency permitting, and thin 
     date: "2026-09-20",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/press/bridgehampton-50m.jpg",
+    image: "/images/heroes/490-hayground-road-bridgehampton.jpg",
     metaDescription:
       "Bridgehampton non-water comps: south of the highway still leads, while north-of-highway new construction prints $10M to $20.5M. By Barry McGovern.",
     content: `
@@ -789,7 +789,7 @@ Barry McGovern, a Licensed Real Estate Salesperson with Hedgerow Exclusive Prope
     date: "2026-09-06",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/hero-waterfront.jpg",
+    image: "/images/heroes/296-311-surfside-drive-bridgehampton.jpg",
     metaDescription:
       "How AI IPO wealth shows up first in San Francisco ultra-luxury pricing, and why Hamptons oceanfront scarcity is next. Analysis by Barry McGovern.",
     content: `
@@ -872,7 +872,7 @@ That is not a tip to panic-buy anything with a shingle. It is a clear-eyed read 
     date: "2026-02-26",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/67-surfside.jpg",
+    image: "/images/heroes/29-spaeth-lane-east-hampton.jpg",
     metaDescription:
       "A 7.3-acre East Hampton Village compound closed at $30 million. What it signals for Hamptons luxury demand in spring 2026, by Barry McGovern.",
     content: `
@@ -1030,7 +1030,7 @@ The $6.2 billion surge wasn't just a number. It was a signal. The Hamptons luxur
     date: "2026-02-19",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/109-duck-pond.jpg",
+    image: "/images/heroes/55-coopers-neck-lane-southampton.jpg",
     metaDescription:
       "How Wall Street's 2025 bonus season is shaping Hamptons real estate in 2026: record prices, early rental bookings, and oceanfront demand.",
     content: `
@@ -1286,7 +1286,7 @@ If you're considering buying or selling in the Hamptons and want access to the f
     date: "2025-06-18",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/67-surfside.jpg",
+    image: "/images/heroes/390-fowler-street-southampton.jpg",
     metaDescription: "Barry McGovern explains how oceanfront scarcity, frontage, access, and micro-location shape Hamptons decisions from Southampton through Montauk.",
     content: `
 ## The coastline is the constraint
@@ -1374,7 +1374,7 @@ Barry McGovern works with buyers and sellers as a Licensed Real Estate Salespers
     date: "2025-11-20",
     author: "Barry McGovern",
     category: "Perspective",
-    image: "/images/press/bridgehampton-50m.jpg",
+    image: "/images/heroes/950-meadow-lane-southampton.jpg",
     metaDescription: "Barry McGovern explains when a Hamptons luxury property may suit a public launch or an off-market strategy, with practical guidance for HNW clients.",
     content: `
 ## Privacy is not the only question
@@ -1423,7 +1423,7 @@ Barry McGovern is a Licensed Real Estate Salesperson at Hedgerow Exclusive Prope
     date: "2026-01-15",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/33-lily-pond.jpg",
+    image: "/images/heroes/121-further-lane-40-middle-lane-east-hampton.jpg",
     metaDescription: "Barry McGovern analyzes East Hampton’s Lily Pond Lane and Further Lane prestige corridor, including privacy, frontage, village access, and buyer strategy.",
     content: `
 ## Prestige is built from several coordinates
