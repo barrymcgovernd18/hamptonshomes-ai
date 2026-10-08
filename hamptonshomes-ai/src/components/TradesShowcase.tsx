@@ -56,6 +56,7 @@ function Panel({ trade, index, sizes, className, large = false, compact = false 
         />
       </InView>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(10,20,24,0.82)_0%,rgba(10,20,24,0.42)_30%,rgba(10,20,24,0)_60%)]" />
+      {trade.label && <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[rgba(10,20,24,0.55)] to-transparent md:h-48" />}
       <span aria-hidden="true" className="eyebrow absolute left-5 top-5 text-paper/85 [text-shadow:0_1px_10px_rgba(0,0,0,0.35)] md:left-8 md:top-8">
         {String(index + 1).padStart(2, "0")}
         {trade.label && <span className="ml-4 border-l border-paper/40 pl-4">{trade.label}</span>}
