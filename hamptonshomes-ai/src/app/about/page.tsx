@@ -122,7 +122,7 @@ export default function AboutPage() {
 
       {/* Full-bleed interlude */}
       <div data-reveal="image" className="relative h-[56svh] min-h-[360px] overflow-hidden bg-ocean-deep md:h-[78svh] md:max-h-[860px]">
-        <Image src="/images/trades/442-further-lane-east-hampton.jpg" alt="442 Further Lane, East Hampton, a Hedgerow transaction, with the Atlantic beyond, in black and white" fill quality={50} sizes="100vw" className="photo-mono object-cover object-[50%_55%]" />
+        <Image src="/images/trades/442-further-lane-east-hampton.jpg" alt="442 Further Lane, East Hampton, a Hedgerow transaction, with the Atlantic beyond" fill quality={50} sizes="100vw" className="photo-mono object-cover object-[50%_55%]" />
       </div>
 
       {/* II. Specialties */}

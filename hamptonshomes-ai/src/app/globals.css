@@ -97,13 +97,12 @@ body {
   opacity: 0.18;
 }
 
-/* Black-and-white photography; colour returns on hover where hover exists. */
+/* Full-colour photography with a slow scale on hover where hover exists. */
 .photo-bw {
-  filter: grayscale(1) contrast(1.06) brightness(0.98);
-  transition: filter 1.4s var(--ease-editorial), transform 1.8s var(--ease-editorial);
+  transition: transform 1.8s var(--ease-editorial);
 }
 @media (hover: hover) {
-  .group:hover .photo-bw { filter: grayscale(0.15) contrast(1.02); transform: scale(1.03); }
+  .group:hover .photo-bw { transform: scale(1.03); }
 }
 
 /* Article body: a serif drop cap opens the first paragraph of prose. */
@@ -120,8 +119,8 @@ body {
 /* Long below-the-fold sections: skip rendering work until they approach the viewport. */
 .defer-render { content-visibility: auto; contain-intrinsic-size: auto 1600px; }
 
-/* Static black-and-white treatment for hero photographs. */
-.photo-mono { filter: grayscale(1) contrast(1.06) brightness(0.96); }
+/* Hero photographs render in full colour. */
+.photo-mono { filter: none; }
 
 /* Heroes render static, exactly in their final state. The homepage photograph alone keeps a slow
    zoom-out, clipped by its full-bleed frame (no wipe, split, or unveil). */

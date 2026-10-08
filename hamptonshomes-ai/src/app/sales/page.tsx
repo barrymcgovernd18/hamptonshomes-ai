@@ -76,7 +76,7 @@ export default function SalesPage() {
         title="Hedgerow"
         italic="Portfolio"
         image="/images/43-east-dune-lane.jpg"
-        imageAlt="43 East Dune Lane, East Hampton, an oceanfront Hedgerow sale, with the Atlantic beyond, in black and white"
+        imageAlt="43 East Dune Lane, East Hampton, an oceanfront Hedgerow sale, with the Atlantic beyond"
         imagePosition="72% 40%"
         aside={
           <dl className="grid grid-cols-2 gap-8 md:text-right">
