@@ -14,18 +14,22 @@ export interface Area {
   buyerLens?: string;
   sellerLens?: string;
   heroImage?: string;
+  /** Search meta description, about 150 characters. */
+  metaDescription?: string;
 }
 
 export const areas: Area[] = [
   {
     name: "East Hampton",
     slug: "east-hampton",
-    tagline: "The Crown Jewel of the East End",
+    tagline: "Village, Lanes, and Ocean",
+    metaDescription:
+      "East Hampton real estate: Lily Pond Lane and Further Lane oceanfront, the village estate section, and recent records. Barry McGovern, Hedgerow.",
     description:
-      "East Hampton is the epicenter of Hamptons luxury, home to some of the most expensive oceanfront estates in the country. From the legendary Lily Pond Lane and Further Lane corridors to the charming village center, East Hampton offers an unmatched combination of world-class beaches, historic architecture, and elite privacy. This is where nine-figure trades happen and where the most discerning buyers seek their forever homes.",
+      "East Hampton holds some of the most valuable oceanfront in the country. Lily Pond Lane and Further Lane anchor the estate belt, the village center is walkable and historic, and Main Beach sits at the end of the lanes. It is one of the few places on the East End where nine-figure trades happen.",
     highlights: [
       "Home to the Hamptons' most expensive streets: Lily Pond Lane, Further Lane, and West End Road",
-      "Record-breaking sales including $121.5M (Cobb Lane), $110M (Lily Pond), and $105M (Jule Pond)",
+      "Record sales including $147M for three Further Lane parcels (2014), still the Hamptons record, and $110M on Lily Pond Lane (2016)",
       "Village center with high-end boutiques, restaurants, and galleries",
       "East Hampton Main Beach, consistently ranked among America's best",
       "Historic estates dating to the 1600s alongside modern architectural masterpieces",
@@ -48,7 +52,9 @@ export const areas: Area[] = [
   {
     name: "Sag Harbor",
     slug: "sag-harbor",
-    tagline: "The Hamptons' Most Charming Village",
+    tagline: "A Working Harbor Village",
+    metaDescription:
+      "Sag Harbor real estate: village homes, harbor and cove waterfront, Noyac and North Haven, with recent sales. Barry McGovern, Hedgerow.",
     description:
       "Once a thriving whaling port, Sag Harbor has evolved into the creative and cultural heart of the Hamptons. Its walkable village, historic harbor, and waterfront dining scene attract a sophisticated mix of artists, writers, and professionals seeking a different kind of Hamptons experience. Waterfront properties here, whether harborfront, bayfront, or cove-side, command premium prices and rarely hit the open market.",
     highlights: [
@@ -56,7 +62,7 @@ export const areas: Area[] = [
       "Premium bayfront and harborfront properties with private docks",
       "Walkable downtown with restaurants, galleries, shops, cinema, and the iconic American Hotel",
       "Bay Street Theater, Sag Harbor Whaling Museum, and thriving arts scene",
-      "Protected harbor with world-class marina and boating access",
+      "Protected harbor with a full-service marina and boating access",
     ],
     beaches: ["Long Beach (Noyac)", "Havens Beach", "Foster Memorial Beach"],
     editorial:
@@ -77,16 +83,20 @@ export const areas: Area[] = [
     name: "Bridgehampton",
     slug: "bridgehampton",
     tagline: "Where Oceanfront Meets Horse Country",
+    metaDescription:
+      "Bridgehampton real estate: Surfside Drive oceanfront, reserve-adjacent estates, and farmland settings. Barry McGovern, Hedgerow Exclusive Properties.",
     description:
-      "Bridgehampton sits at the geographic heart of the South Fork, offering some of the Hamptons' most spectacular oceanfront estates alongside rolling farmland and world-class equestrian facilities. The Bridgehampton-Sagaponack corridor consistently ranks among the most expensive zip codes in America. From Surfside Drive's dramatic ocean bluffs to the pastoral beauty of the reserve, Bridgehampton delivers the full spectrum of Hamptons luxury.",
+      "Bridgehampton sits at the geographic heart of the South Fork, offering some of the Hamptons' most spectacular oceanfront estates alongside rolling farmland and equestrian facilities. The Bridgehampton-Sagaponack corridor consistently ranks among the most expensive zip codes in America. From Surfside Drive's dramatic ocean bluffs to the pastoral beauty of the reserve, Bridgehampton delivers the full spectrum of Hamptons luxury.",
     highlights: [
       "Surfside Drive: dramatic oceanfront estates on 2+ acre bluffs",
-      "Home to the Hampton Classic Horse Show, the premier equestrian event in the Northeast",
+      "Home to the Hampton Classic Horse Show, one of the major equestrian events in the Northeast",
       "Bridgehampton-Sagaponack corridor: one of America's most expensive zip codes",
       "Bobby Van's, Almond, Candy Kitchen, iconic Hamptons dining and village life",
       "Proximity to reserve farmland preserves the rural character and open views",
     ],
     beaches: ["Mecox Beach", "W. Scott Cameron Beach", "Sagg Main Beach"],
+    editorial:
+      "Bridgehampton sits between village, reserve, and ocean. Surfside Drive is the ocean-bluff address; inland, farm and equestrian land still shape how lots feel. The useful split is oceanfront versus reserve-adjacent privacy, not a single village average.",
     priceRange: "$2M - $60M+",
     vibe: "Sporty luxury. Equestrian estates, ocean bluffs, and farm-to-table everything.",
     zipCode: "11932",
@@ -95,17 +105,21 @@ export const areas: Area[] = [
   {
     name: "Sagaponack",
     slug: "sagaponack",
-    tagline: "America's Most Expensive Zip Code",
+    tagline: "Farmland, Ocean, and Space",
+    metaDescription:
+      "Sagaponack real estate: oceanfront parcels, protected farmland, and estate privacy in 11962. Barry McGovern, Hedgerow Exclusive Properties.",
     description:
-      "Sagaponack has earned its reputation as one of the most exclusive addresses in the country. This tiny hamlet of fewer than 600 year-round residents, is defined by vast oceanfront parcels, protected farmland, and an almost otherworldly sense of space and privacy. Daniels Lane, Sagaponack Main Street, and the oceanfront corridor have produced some of the highest-priced residential sales in US history.",
+      "Sagaponack has earned its reputation as one of the most exclusive addresses in the country. This small hamlet, with fewer than 600 year-round residents, is defined by vast oceanfront parcels, protected farmland, and an unusual sense of space and privacy. Daniels Lane, Sagaponack Main Street, and the oceanfront corridor have produced some of the highest-priced residential sales in US history.",
     highlights: [
-      "Regularly ranked the #1 most expensive zip code in America (11962)",
+      "Regularly ranked among the most expensive zip codes in America (11962)",
       "Vast oceanfront parcels, many 2-5+ acres with private beach access",
       "Protected agricultural reserve ensures open views and low density",
       "Sagaponack Main Street: quiet, prestigious, and deeply private",
       "Minutes to Bridgehampton village amenities while maintaining total seclusion",
     ],
     beaches: ["Sagg Main Beach", "Gibson Beach", "Peter's Pond Beach"],
+    editorial:
+      "Sagaponack is a small hamlet with outsize privacy: oceanfront parcels, protected farmland, and very little through-traffic. Daniels Lane and Sagaponack Main Street are local names, not a retail strip. Space and seclusion do more work here than village amenities.",
     priceRange: "$3M - $100M+",
     vibe: "Ultra-private. Vast estates, open farmland, and the sound of the ocean. Nothing else.",
     zipCode: "11962",
@@ -115,12 +129,14 @@ export const areas: Area[] = [
     name: "Southampton",
     slug: "southampton",
     tagline: "The Original Hamptons Address",
+    metaDescription:
+      "Southampton real estate: Meadow Lane and Gin Lane estates, the village, and inland markets, with recent sales. Barry McGovern, Hedgerow.",
     description:
       "Southampton combines the grandeur of the Hamptons’ oldest village with exceptional oceanfront, bayfront, and estate properties. From Meadow Lane and Gin Lane to the village’s historic streets, buyers find a rare balance of private acreage, walkable amenities, and direct access to some of the South Fork’s most beautiful beaches.",
     highlights: [
       "Meadow Lane estate corridor with ocean and bay frontage",
       "Historic village center with restaurants, galleries, and boutiques",
-      "World-class ocean beaches including Cooper’s Beach",
+      "Ocean beaches including Cooper’s Beach",
       "Waterfront homes along Shinnecock Bay and the Atlantic shore",
       "Convenient access to Manhattan and the full East End",
     ],
@@ -142,6 +158,8 @@ export const areas: Area[] = [
     name: "Water Mill",
     slug: "water-mill",
     tagline: "Quiet Luxury Between Village and Sea",
+    metaDescription:
+      "Water Mill real estate: oceanfront, Mecox Bay and pond frontage, and estate acreage between Southampton and Bridgehampton. Barry McGovern, Hedgerow.",
     description:
       "Water Mill is prized for its open farmland, ocean beaches, and unusually private estate settings between Southampton and Bridgehampton. Protected vistas, historic windmills, and a low-density landscape give this small hamlet a sense of permanence while its oceanfront and waterfront homes remain among the East End’s most sought-after properties.",
     highlights: [
@@ -152,6 +170,8 @@ export const areas: Area[] = [
       "Minutes from Southampton and Bridgehampton dining and culture",
     ],
     beaches: ["Flying Point Beach", "Scott Cameron Beach", "Mecox Beach", "Cedar Point Beach"],
+    editorial:
+      "Water Mill is a low-density stretch between Southampton and Bridgehampton, with farmland, Mecox, and ocean beaches in close conversation. The hamlet rewards buyers who want acreage and quiet without leaving the South Fork's core.",
     priceRange: "$2.5M - $125M+",
     vibe: "Pastoral and polished. Open land, quiet lanes, and serious privacy.",
     zipCode: "11976",
@@ -159,7 +179,9 @@ export const areas: Area[] = [
   {
     name: "Amagansett",
     slug: "amagansett",
-    tagline: "Wide Open, Wildly Refined",
+    tagline: "Dunes, Farmland, and Village",
+    metaDescription:
+      "Amagansett real estate: Further Lane and dune oceanfront, the village, and Napeague. Barry McGovern, Licensed Real Estate Salesperson, Hedgerow.",
     description:
       "Amagansett pairs a relaxed village atmosphere with some of the East End’s most dramatic natural landscapes. Oceanfront estates, dune-backed modern homes, and expansive agricultural parcels stretch from the village to Napeague, attracting buyers who value privacy, design, and a direct connection to the coastline.",
     highlights: [
@@ -170,6 +192,8 @@ export const areas: Area[] = [
       "A creative, understated alternative to the more formal villages",
     ],
     beaches: ["Indian Wells Beach", "Atlantic Avenue Beach", "Amagansett Beach", "Napeague Beach"],
+    editorial:
+      "Amagansett pairs a walkable village with dune, farmland, and Napeague open space. Further Lane and the ocean dunes are the high-privacy edge; the village is the daily life. Buyers often choose it for a less formal East End rhythm with serious coastline.",
     priceRange: "$2M - $50M+",
     vibe: "Natural, creative, and unshowy. Beach life with room to breathe.",
     zipCode: "11930",
@@ -177,7 +201,9 @@ export const areas: Area[] = [
   {
     name: "Montauk",
     slug: "montauk",
-    tagline: "The End of the World, in the Best Way",
+    tagline: "Harbor, Bluff, and Open Atlantic",
+    metaDescription:
+      "Montauk real estate: bluff-top oceanfront, harbor homes, and inland acreage at the East End. Barry McGovern, Licensed Real Estate Salesperson, Hedgerow.",
     description:
       "Montauk is the East End’s most distinctive coastal market, shaped by open ocean, working harbor, and a rugged landscape that feels far removed from the city. From oceanfront compounds and bluff-top retreats to harbor homes and quiet acreage, Montauk offers a rare combination of adventure, privacy, and year-round community.",
     highlights: [
@@ -188,6 +214,8 @@ export const areas: Area[] = [
       "A strong year-round community with an independent coastal identity",
     ],
     beaches: ["Ditch Plains Beach", "Kirk Park Beach", "Gin Beach", "Hither Hills State Park"],
+    editorial:
+      "Montauk is the End: harbor, bluff, and open Atlantic, with a year-round community that does not pretend to be a South Fork village. The market splits among oceanfront compounds, harbor living, and quieter inland acreage. Setting and exposure matter more than a famous lane name.",
     priceRange: "$1.5M - $40M+",
     vibe: "Free-spirited and elemental. Surf, boats, open sky, and serious coastline.",
     zipCode: "11954",
@@ -196,6 +224,8 @@ export const areas: Area[] = [
     name: "Shelter Island",
     slug: "shelter-island",
     tagline: "Island Privacy Between Two Forks",
+    metaDescription:
+      "Shelter Island real estate: waterfront homes, coves and docks, and Mashomack-adjacent privacy. Barry McGovern, Licensed Real Estate Salesperson, Hedgerow.",
     description:
       "Shelter Island offers a pace and sense of seclusion unlike anywhere else in the Hamptons. Accessible only by ferry or private boat, the island is defined by preserved land, quiet coves, and a close-knit community. Waterfront homes, historic cottages, and private compounds appeal to buyers seeking a genuine escape without leaving the East End.",
     highlights: [
@@ -206,6 +236,8 @@ export const areas: Area[] = [
       "Low-density island living with a deeply private character",
     ],
     beaches: ["Wades Beach", "Shell Beach", "Crescent Beach", "Hay Beach"],
+    editorial:
+      "Shelter Island is reached only by ferry or private boat, which is the point. Mashomack, quiet coves, and a small year-round community give it a different tempo from the South Fork villages. Waterfront here is about docks, coves, and privacy, not oceanfront parade.",
     priceRange: "$1M - $25M+",
     vibe: "Private, pastoral, and authentic. An island refuge with deep roots.",
     zipCode: "11964",
@@ -214,6 +246,8 @@ export const areas: Area[] = [
     name: "Wainscott",
     slug: "wainscott",
     tagline: "Between the Villages, Away from the Crowd",
+    metaDescription:
+      "Wainscott real estate: oceanfront and near-ocean homes on farmland lanes between East Hampton and Bridgehampton. Barry McGovern, Hedgerow.",
     description:
       "Wainscott occupies a coveted stretch between East Hampton and Bridgehampton, with a small village center, protected farmland, and direct access to the ocean. Its large parcels and central location make it a natural choice for buyers who want privacy and open views while remaining close to the East End’s best dining, beaches, and cultural life.",
     highlights: [
@@ -224,6 +258,8 @@ export const areas: Area[] = [
       "A discreet market with a strong mix of legacy and newly built estates",
     ],
     beaches: ["Wainscott Beach", "Gibson Beach", "Town Line Beach", "Atlantic Beach"],
+    editorial:
+      "Wainscott sits between East Hampton and Bridgehampton, with farmland, a small main street, and a short run to the ocean. Large parcels and a central location are the draw: privacy without giving up the villages on either side.",
     priceRange: "$2M - $60M+",
     vibe: "Central yet secluded. Country lanes, ocean air, and understated luxury.",
     zipCode: "11975",

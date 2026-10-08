@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const fieldClass =
-  "w-full border border-line bg-paper px-4 py-3 text-[15px] text-ink placeholder:text-ink-faint focus:border-ocean focus:outline-none";
+  "w-full rounded-none border-0 border-b border-line bg-transparent px-0 py-3 text-[16px] text-ink placeholder:text-ink-faint transition-[border-color,box-shadow] duration-300 focus:border-ocean-deep focus:shadow-[0_1px_0_0_var(--color-ocean-deep)] focus:outline-none";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -19,6 +20,7 @@ export default function ContactForm() {
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       interest: (form.elements.namedItem("interest") as HTMLSelectElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      website: (form.elements.namedItem("website") as HTMLInputElement | null)?.value ?? "",
     };
 
     try {
@@ -42,7 +44,7 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="flex flex-col items-center justify-center py-12">
-        <p className="mb-3 font-serif text-2xl text-ocean">Message Sent</p>
+        <p className="display-3 mb-3 font-light text-ink">Message Sent</p>
         <p className="text-[14px] text-ink-muted">Barry will be in touch shortly.</p>
         <button
           onClick={() => setStatus("idle")}
@@ -55,14 +57,18 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-7">
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       {[
         { id: "name", label: "Name", type: "text", required: true },
         { id: "email", label: "Email", type: "email", required: true },
         { id: "phone", label: "Phone", type: "tel", required: false },
       ].map((field) => (
         <div key={field.id}>
-          <label htmlFor={field.id} className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-ink-faint">
+          <label htmlFor={field.id} className="eyebrow block text-ink-faint">
             {field.label}
           </label>
           <input
@@ -76,7 +82,7 @@ export default function ContactForm() {
       ))}
 
       <div>
-        <label htmlFor="interest" className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-ink-faint">
+        <label htmlFor="interest" className="eyebrow block text-ink-faint">
           Interest
         </label>
         <select id="interest" name="interest" className={`${fieldClass} h-12`}>
@@ -89,7 +95,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-ink-faint">
+        <label htmlFor="message" className="eyebrow block text-ink-faint">
           Message
         </label>
         <textarea
@@ -103,7 +109,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="mt-2 w-full bg-ocean py-3.5 text-[11px] font-medium uppercase tracking-[0.3em] text-paper transition-all hover:bg-ocean-deep disabled:opacity-50"
+        className="eyebrow mt-4 w-full bg-ocean-deep py-4 text-paper transition-colors duration-500 hover:bg-ink disabled:opacity-50"
       >
         {status === "sending" ? "Sending..." : status === "error" ? "Try Again" : "Send Message"}
       </button>
@@ -111,6 +117,17 @@ export default function ContactForm() {
       {status === "error" && (
         <p className="text-center text-[12px] text-red-700/70">Something went wrong. Try calling instead.</p>
       )}
+      <p className="text-center text-[11px] leading-relaxed text-ink-faint">
+        By sending, you agree to the{" "}
+        <Link href="/privacy" className="text-ocean underline decoration-ocean/40 underline-offset-[3px] hover:text-ocean-deep">
+          Privacy Policy
+        </Link>{" "}
+        and{" "}
+        <Link href="/terms" className="text-ocean underline decoration-ocean/40 underline-offset-[3px] hover:text-ocean-deep">
+          Terms of Use
+        </Link>
+        .
+      </p>
     </form>
   );
 }

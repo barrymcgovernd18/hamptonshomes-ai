@@ -8,7 +8,7 @@
   --color-paper-soft: #faf8f3;
   --color-ink: #111111;
   --color-ink-muted: #5e625f;
-  --color-ink-faint: #858982;
+  --color-ink-faint: #62665f;
   --color-ocean: #1f3a44;
   --color-ocean-deep: #162d35;
   --color-ocean-soft: #dce6e5;
@@ -17,5 +17,146 @@
 }
 
 html { scroll-behavior: smooth; }
+:focus-visible { outline: 2px solid #1f3a44; outline-offset: 3px; }
+.bg-ocean :focus-visible, .bg-ocean-deep :focus-visible { outline-color: #dce6e5; }
+.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: #1f3a44; color: #f4f0e8; padding: 0.75rem 1.25rem; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; transition: top 0.2s; }
+.skip-link:focus { top: 1rem; }
 body { background: #f4f0e8; color: #111111; }
 ::selection { background-color: #1f3a4430; color: #111111; }
+
+/* ------------------------------------------------------------------
+   Editorial design system (homepage, header, footer)
+   ------------------------------------------------------------------ */
+:root {
+  --ease-editorial: cubic-bezier(0.22, 0.61, 0.21, 1);
+  --gutter: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+body {
+  font-feature-settings: "kern", "liga", "calt";
+  text-rendering: optimizeLegibility;
+}
+
+@utility frame {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+@utility display-1 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(3.4rem, 7.3vw, 7.75rem);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+}
+
+@utility display-2 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(2.6rem, 5vw, 4.9rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+@utility display-3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.85rem, 2.7vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+}
+
+@utility lede {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1.6rem, 2.55vw, 2.45rem);
+  line-height: 1.32;
+  letter-spacing: -0.005em;
+}
+
+@utility body-copy {
+  font-size: 15px;
+  line-height: 1.85;
+  max-width: 34em;
+}
+
+@utility hairline {
+  height: 1px;
+  background: currentColor;
+  opacity: 0.18;
+}
+
+/* Full-colour photography with a slow scale on hover where hover exists. */
+.photo-bw {
+  transition: transform 1.8s var(--ease-editorial);
+}
+@media (hover: hover) {
+  .group:hover .photo-bw { transform: scale(1.03); }
+}
+
+/* Article body: a serif drop cap opens the first paragraph of prose. */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-cormorant), serif;
+  font-weight: 300;
+  font-size: 4.6em;
+  line-height: 0.82;
+  padding: 0.06em 0.12em 0 0;
+  color: var(--color-ink);
+}
+
+/* Long below-the-fold sections: skip rendering work until they approach the viewport. */
+.defer-render { content-visibility: auto; contain-intrinsic-size: auto 1600px; }
+
+/* Hero photographs render in full colour. */
+.photo-mono { filter: none; }
+
+/* Heroes render static, exactly in their final state. The homepage photograph alone keeps a slow
+   zoom-out, clipped by its full-bleed frame (no wipe, split, or unveil). */
+@keyframes hero-settle { from { transform: scale(1.08); } to { transform: scale(1); } }
+@keyframes line-drop { 0% { transform: scaleY(0); transform-origin: top; } 45% { transform: scaleY(1); transform-origin: top; } 55% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+.hero-zoom { animation: hero-settle 2.8s var(--ease-editorial) both; }
+.scroll-cue { animation: line-drop 2.6s var(--ease-editorial) infinite; }
+
+/* Scroll reveals, driven by RevealObserver (adds .is-visible). */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity 1.2s var(--ease-editorial), transform 1.2s var(--ease-editorial);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }
+/* Photographs fade in softly as they arrive. No wipe, curtain, or unveil anywhere on the site. */
+[data-reveal="image"] { opacity: 0; transform: none; transition: opacity 1.4s var(--ease-editorial); transition-delay: var(--reveal-delay, 0ms); }
+[data-reveal="image"].is-visible { opacity: 1; }
+
+/* Animated underline for editorial links. */
+.link-line {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 4px;
+  transition: background-size 0.6s var(--ease-editorial);
+}
+.link-line:hover, .group:hover .link-line { background-size: 0% 1px; background-position: 100% 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-zoom, .scroll-cue { animation: none !important; }
+  [data-reveal], [data-reveal="image"] {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .photo-bw { transition: none; }
+}
