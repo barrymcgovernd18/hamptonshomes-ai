@@ -7,6 +7,7 @@ const FAIR_HOUSING_NOTICE =
 
 const explore = [
   { href: "/sales", label: "Portfolio" },
+  { href: "/hedgerow-sales", label: "Sales" },
   { href: "/market", label: "Market" },
   { href: "/press", label: "Press" },
   { href: "/about", label: "About" },

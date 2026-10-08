@@ -53,6 +53,7 @@ Quotable research findings (Hamptons Oceanfront, 2021 to 2026):
 
 - [Portfolio](https://hamptonshomes.ai/sales): Hedgerow listings and sales, with Hedgerow's role on each
 - [Search listings](https://hamptonshomes.ai/listings): every current Hedgerow listing, searchable by village, price, bedrooms, baths, acreage and setting (oceanfront, waterfront, land)
+- [Recent Hedgerow Exclusive Sales](https://hamptonshomes.ai/hedgerow-sales): the firm's published closings with village, price, date and Hedgerow's role, filterable by village, price, year and setting
 - Largest Hedgerow transactions Barry was involved in since 2021: 90 Jule Pond Drive, Water Mill, $105 million (2021); 43 East Dune Lane, East Hampton, $72 million (2026); 1080 & 1100 Meadow Lane, Southampton, $66.25 million (2022); 165 Surfside Drive, Bridgehampton, $58 million (2025).
 
 ## Villages
