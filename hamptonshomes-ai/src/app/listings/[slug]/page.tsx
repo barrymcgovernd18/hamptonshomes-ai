@@ -235,34 +235,45 @@ export default async function ListingPageRoute({ params }: Props) {
       </section>
 
       {/* IV. Inquire */}
-      <section id="inquire" aria-labelledby="inquire-heading" className="scroll-mt-24 border-t border-line bg-paper-deep py-20 md:py-28">
-        <div className="frame grid gap-14 md:grid-cols-12">
+      <section id="inquire" aria-labelledby="inquire-heading" className="scroll-mt-24 bg-ocean-deep py-20 text-paper md:py-28">
+        <div className="frame grid gap-14 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-5">
-            <SectionLabel n="IV">Private inquiries</SectionLabel>
-            <h2 id="inquire-heading" data-reveal style={revealDelay(80)} className="display-2 mt-6 text-ink">
-              Inquire about <em className="block italic text-ink-muted">{l.address}</em>
-            </h2>
-            <p className="body-copy mt-6 text-ink-muted">
-              Request the full brochure, floor plans or a private showing. Barry McGovern replies personally, in confidence.
+            <SectionLabel n="IV" className="text-gold">Private inquiries</SectionLabel>
+            <div className="mt-6 flex items-start gap-5">
+              <div className="relative hidden aspect-[4/5] w-24 shrink-0 overflow-hidden bg-ocean sm:block lg:w-28">
+                <Image src={hero} alt="" fill sizes="112px" quality={60} className="object-cover" />
+              </div>
+              <h2 id="inquire-heading" data-reveal style={revealDelay(80)} className="display-2 text-paper">
+                Inquire about <em className="block italic text-paper/80">{l.address}</em>
+              </h2>
+            </div>
+            <p className="body-copy mt-6 text-paper/85">
+              Request the full brochure, floor plans or a private showing, in confidence.
             </p>
-            <dl className="mt-10 divide-y divide-line border-y border-line text-[15px]">
+            <p className="mt-4 flex items-center gap-3 text-[14px] text-gold">
+              <span aria-hidden="true" className="inline-block h-px w-8 bg-gold" />
+              Barry replies personally, usually within a few hours.
+            </p>
+            <dl className="mt-10 divide-y divide-paper/20 border-y border-paper/20 text-[15px]">
               <div className="flex items-baseline justify-between gap-6 py-4">
-                <dt className="eyebrow text-ink-faint">Telephone</dt>
-                <dd><a href="tel:+16463390154" className="font-serif text-[1.3rem] text-ink hover:text-ocean">646.339.0154</a></dd>
+                <dt className="eyebrow text-paper/75">Telephone</dt>
+                <dd><a href="tel:+16463390154" className="font-serif text-[1.35rem] text-paper underline decoration-paper/30 underline-offset-[5px] transition-colors hover:text-gold hover:decoration-gold">646.339.0154</a></dd>
               </div>
               <div className="flex items-baseline justify-between gap-6 py-4">
-                <dt className="eyebrow text-ink-faint">Email</dt>
-                <dd><a href="mailto:barry@hedgerowexclusive.com" className="font-serif text-[1.1rem] text-ink hover:text-ocean sm:text-[1.3rem]">barry@hedgerowexclusive.com</a></dd>
+                <dt className="eyebrow text-paper/75">Email</dt>
+                <dd><a href="mailto:barry@hedgerowexclusive.com" className="break-all font-serif text-[1.1rem] text-paper underline decoration-paper/30 underline-offset-[5px] transition-colors hover:text-gold hover:decoration-gold sm:text-[1.3rem]">barry@hedgerowexclusive.com</a></dd>
               </div>
             </dl>
           </div>
-          <div className="md:col-span-6 md:col-start-7">
-            <LeadForm kind="listing" listing={l.slug} defaultMessage={`I would like more information on ${l.address}, ${l.area}.`} />
+          <div className="md:col-span-6 md:col-start-7 md:border-l md:border-paper/15 md:pl-12">
+            <LeadForm kind="listing" tone="dark" listing={l.slug} defaultMessage={`I would like more information on ${l.address}, ${l.area}.`} />
           </div>
         </div>
+      </section>
 
+      <section aria-label="Listing compliance" className="bg-paper-deep pb-20 md:pb-24">
         {/* Compliance */}
-        <div className="frame mt-20 border-t border-ink/80 pt-8 md:mt-24">
+        <div className="frame pt-12 md:pt-14">
           <div className="grid gap-8 text-[12.5px] leading-relaxed text-ink-muted md:grid-cols-12">
             <div className="md:col-span-8">
               <p className="eyebrow text-ink">Listing courtesy of Hedgerow Exclusive Properties</p>

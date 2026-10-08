@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { LEAD_DONE_KEY } from "@/lib/lead-keys";
+import { FORM_STYLES } from "@/components/LeadForm";
 
-const fieldClass =
-  "w-full rounded-none border-0 border-b border-line bg-transparent px-0 py-3 text-[16px] text-ink placeholder:text-ink-faint transition-[border-color,box-shadow] duration-300 focus:border-ocean-deep focus:shadow-[0_1px_0_0_var(--color-ocean-deep)] focus:outline-none";
+const st = FORM_STYLES.dark;
+const fieldClass = st.field;
 
+/** The /contact form, set on a navy panel to match the listing inquiry. */
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const messageRef = useRef<HTMLTextAreaElement>(null);
@@ -57,11 +59,11 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="flex flex-col items-center justify-center py-12">
-        <p className="display-3 mb-3 font-light text-ink">Message Sent</p>
-        <p className="text-[14px] text-ink-muted">Barry will be in touch shortly.</p>
+        <p className="display-3 mb-3 font-light text-paper">Message sent</p>
+        <p className="text-[14px] text-paper/80">Barry will be in touch shortly.</p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-8 text-[11px] uppercase tracking-[0.2em] text-ink-faint transition-colors hover:text-ocean"
+          className="mt-8 text-[11px] uppercase tracking-[0.2em] text-paper/80 transition-colors hover:text-gold"
         >
           Send Another
         </button>
@@ -76,12 +78,12 @@ export default function ContactForm() {
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
       {[
-        { id: "name", label: "Name", type: "text", required: true },
-        { id: "email", label: "Email", type: "email", required: true },
-        { id: "phone", label: "Phone", type: "tel", required: false },
+        { id: "name", label: "Name", type: "text", required: true, autoComplete: "name", placeholder: "Your full name" },
+        { id: "email", label: "Email", type: "email", required: true, autoComplete: "email", placeholder: "you@example.com" },
+        { id: "phone", label: "Phone", type: "tel", required: false, autoComplete: "tel", placeholder: "Optional" },
       ].map((field) => (
         <div key={field.id}>
-          <label htmlFor={field.id} className="eyebrow block text-ink-faint">
+          <label htmlFor={field.id} className={st.label}>
             {field.label}
           </label>
           <input
@@ -90,15 +92,17 @@ export default function ContactForm() {
             name={field.id}
             className={fieldClass}
             required={field.required}
+            autoComplete={field.autoComplete}
+            placeholder={field.placeholder}
           />
         </div>
       ))}
 
       <div>
-        <label htmlFor="interest" className="eyebrow block text-ink-faint">
+        <label htmlFor="interest" className={st.label}>
           Interest
         </label>
-        <select id="interest" name="interest" className={`${fieldClass} h-12`}>
+        <select id="interest" name="interest" className={`${fieldClass} h-[52px] [&>option]:text-ink`}>
           <option value="buying">Buying</option>
           <option value="selling">Selling</option>
           <option value="renting">Renting</option>
@@ -108,7 +112,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="eyebrow block text-ink-faint">
+        <label htmlFor="message" className={st.label}>
           Message
         </label>
         <textarea
@@ -116,28 +120,30 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          className={`${fieldClass} min-h-[96px] max-h-[160px] resize-y`}
+          placeholder="What you are looking for, or the property you have in mind"
+          className={`${fieldClass} min-h-[120px] max-h-[220px] resize-y`}
         />
       </div>
 
       <button
         type="submit"
         disabled={status === "sending"}
-        className="eyebrow mt-4 w-full bg-ocean-deep py-4 text-paper transition-colors duration-500 hover:bg-ink disabled:opacity-50"
+        className={`${st.button} mt-2 sm:w-full`}
       >
-        {status === "sending" ? "Sending..." : status === "error" ? "Try Again" : "Send Message"}
+        {status === "sending" ? "Sending" : status === "error" ? "Try again" : "Send message"}
+        <span aria-hidden="true">→</span>
       </button>
 
       {status === "error" && (
-        <p className="text-center text-[12px] text-red-700/70">Something went wrong. Try calling instead.</p>
+        <p className={`text-center text-[13px] ${st.error}`}>Something went wrong. Please call 646.339.0154 instead.</p>
       )}
-      <p className="text-center text-[11px] leading-relaxed text-ink-faint">
+      <p className={`text-center text-[12px] leading-relaxed ${st.note}`}>
         By sending, you agree to the{" "}
-        <Link href="/privacy" className="text-ocean underline decoration-ocean/40 underline-offset-[3px] hover:text-ocean-deep">
+        <Link href="/privacy" className={st.link}>
           Privacy Policy
         </Link>{" "}
         and{" "}
-        <Link href="/terms" className="text-ocean underline decoration-ocean/40 underline-offset-[3px] hover:text-ocean-deep">
+        <Link href="/terms" className={st.link}>
           Terms of Use
         </Link>
         .

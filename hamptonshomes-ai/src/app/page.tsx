@@ -259,43 +259,49 @@ export default function Home() {
       <LeadBand n="VII" />
 
       {/* VIII. Contact */}
-      <section className="bg-paper-soft">
-        <div className="frame grid gap-14 py-28 md:grid-cols-12 md:items-center md:py-40">
-          <div data-reveal="image" className="relative aspect-[4/5] overflow-hidden bg-paper-deep md:col-span-5">
+      <section className="bg-paper-soft py-16 md:py-24">
+        <div className="frame">
+        <div className="grid gap-14 bg-ocean-deep px-6 py-14 text-paper sm:px-10 md:grid-cols-12 md:items-center md:px-14 md:py-20 lg:px-20">
+          <div data-reveal="image" className="relative aspect-[4/5] overflow-hidden bg-ocean md:col-span-5">
             <Image src="/images/barry-mcgovern.jpg" alt="Barry McGovern" fill sizes="(max-width: 768px) 100vw, 40vw" className="photo-bw object-cover object-top" />
           </div>
           <div className="md:col-span-6 md:col-start-7">
-            <p data-reveal className="eyebrow text-ocean">VIII. &nbsp;Private inquiries</p>
-            <h2 data-reveal style={delay(80)} className="display-2 mt-6 text-ink">
+            <p data-reveal className="eyebrow text-gold">VIII. &nbsp;Private inquiries</p>
+            <h2 data-reveal style={delay(80)} className="display-2 mt-6 text-paper">
               A conversation, <br />
-              <em className="italic text-ink-muted">in confidence.</em>
+              <em className="italic text-paper/80">in confidence.</em>
             </h2>
-            <p data-reveal style={delay(160)} className="body-copy mt-8 text-ink-muted">
+            <p data-reveal style={delay(160)} className="body-copy mt-8 text-paper/85">
               Complimentary valuations and confidential guidance, whether you are buying, selling, or simply watching the market.
             </p>
-            <dl data-reveal style={delay(240)} className="mt-12 divide-y divide-line border-y border-line text-[15px]">
+            <p data-reveal style={delay(200)} className="mt-4 flex items-center gap-3 text-[14px] text-gold">
+              <span aria-hidden="true" className="inline-block h-px w-8 bg-gold" />
+              Barry replies personally, usually within a few hours.
+            </p>
+            <dl data-reveal style={delay(240)} className="mt-12 divide-y divide-paper/20 border-y border-paper/20 text-[15px]">
               <div className="flex items-baseline justify-between gap-6 py-5">
-                <dt className="eyebrow text-ink-faint">Telephone</dt>
-                <dd><a href="tel:+16463390154" className="font-serif text-[1.35rem] text-ink hover:text-ocean">646.339.0154</a></dd>
+                <dt className="eyebrow text-paper/75">Telephone</dt>
+                <dd><a href="tel:+16463390154" className="font-serif text-[1.35rem] text-paper underline decoration-paper/30 underline-offset-[5px] transition-colors hover:text-gold hover:decoration-gold">646.339.0154</a></dd>
               </div>
               <div className="flex items-baseline justify-between gap-6 py-5">
-                <dt className="eyebrow text-ink-faint">Email</dt>
-                <dd><a href="mailto:barry@hedgerowexclusive.com" className="font-serif text-[1.2rem] text-ink hover:text-ocean sm:text-[1.35rem]">barry@hedgerowexclusive.com</a></dd>
+                <dt className="eyebrow text-paper/75">Email</dt>
+                <dd><a href="mailto:barry@hedgerowexclusive.com" className="break-all font-serif text-[1.2rem] text-paper underline decoration-paper/30 underline-offset-[5px] transition-colors hover:text-gold hover:decoration-gold sm:text-[1.35rem]">barry@hedgerowexclusive.com</a></dd>
               </div>
               <div className="flex items-baseline justify-between gap-6 py-5">
-                <dt className="eyebrow text-ink-faint">Office</dt>
-                <dd className="text-right text-[13.5px] leading-relaxed text-ink-muted">Hedgerow Exclusive Properties<br />2495 Montauk Highway, Bridgehampton</dd>
+                <dt className="eyebrow text-paper/75">Office</dt>
+                <dd className="text-right text-[13.5px] leading-relaxed text-paper/80">Hedgerow Exclusive Properties<br />2495 Montauk Highway, Bridgehampton</dd>
               </div>
             </dl>
             <Link
               href="/contact"
               data-reveal
               style={delay(320)}
-              className="eyebrow mt-12 inline-block bg-ocean-deep px-9 py-4 text-paper transition-colors duration-500 hover:bg-ink"
+              className="eyebrow mt-12 inline-flex items-center gap-3 bg-paper px-10 py-5 text-[12px] text-ocean-deep transition-colors duration-300 hover:bg-gold"
             >
-              Send a message
+              Send a message <span aria-hidden="true">→</span>
             </Link>
           </div>
+        </div>
         </div>
       </section>
     </>
