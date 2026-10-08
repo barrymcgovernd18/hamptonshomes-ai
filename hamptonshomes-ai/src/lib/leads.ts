@@ -5,7 +5,7 @@ import { Resend } from "resend";
  * the email popup and the contact page. Notifications go to Barry only; visitors never receive an automatic email.
  */
 
-export type LeadForm = "Listing inquiry" | "Home valuation" | "Oceanfront study signup" | "Email popup" | "Contact";
+export type LeadForm = "Listing inquiry" | "Home valuation" | "Oceanfront study signup" | "Email popup" | "Listing search" | "Contact";
 
 export interface Lead {
   form: LeadForm;

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 const primary = [
   { href: "/sales", label: "Portfolio" },
+  { href: "/listings", label: "Listings" },
   { href: "/market", label: "Market" },
   { href: "/press", label: "Press" },
   { href: "/about", label: "About" },
