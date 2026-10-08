@@ -731,7 +731,7 @@ The rental market confirms it. Summer 2026 properties are booking months ahead o
 
 ## The Off-Market Reality
 
-Here's something the $30M compound sale highlights: the best properties often trade before the public knows they're available. At Hedgerow, over 30% of our volume happens off-market, including some of the most significant trades on the East End.
+Here's something the $30M compound sale highlights: the best properties often trade before the public knows they're available. At Hedgerow, over 30% of the firm's volume happens off-market, including some of the most significant trades on the East End.
 
 This isn't about secrecy for secrecy's sake. It's about efficiency. A seller gets complete privacy, control over the timeline, and access to pre-qualified buyers. A buyer gets first access to inventory that would generate bidding wars if it hit the public market.
 
@@ -826,7 +826,7 @@ For buyers who understand this dynamic, waiting for the market to "cool off" isn
 
 ## The Off-Market Reality
 
-Here's something the public data doesn't capture: an increasing share of significant transactions are happening privately. At Hedgerow, over 30% of our volume is facilitated off-market, including some of the most notable trades on the East End.
+Here's something the public data doesn't capture: an increasing share of significant transactions are happening privately. At Hedgerow, over 30% of the firm's volume is facilitated off-market, including some of the most notable trades on the East End.
 
 A recent example: a Bridgehampton oceanfront property sold for $50 million in an entirely private transaction that was never publicly listed. The seller got complete discretion, and the buyer got access to a property they would never have found through conventional search.
 
@@ -904,7 +904,7 @@ And it's not just the trophy segment. The $2 million to $5 million range, which 
 
 ## What This Means If You're Looking to Buy
 
-Don't wait for spring to start looking. The best properties are trading now, and many of the most significant opportunities never reach the public market. At Hedgerow, roughly a third of our volume happens off-market, through private networks and relationships built over years.
+Don't wait for spring to start looking. The best properties are trading now, and many of the most significant opportunities never reach the public market. At Hedgerow, roughly a third of the firm's volume happens off-market, through private networks and relationships built over years.
 
 If you're a bonus-season buyer thinking about the Hamptons, here's my advice: get pre-qualified, identify your target area, and have a salesperson who can show you inventory that isn't on Zillow. The competition is real, but the opportunity is equally real. Hamptons real estate, particularly oceanfront and waterfront, has proven to be one of the most resilient luxury asset classes in the country.
 
@@ -938,13 +938,13 @@ The Hamptons luxury real estate market closed 2025 with a statement. After a per
 
 The headline story of 2025 was oceanfront. Multiple trades north of $30 million closed during 2025, with Bridgehampton's Surfside Drive and East Hampton's Lily Pond Lane corridor seeing the most significant activity.
 
-At Hedgerow Exclusive Properties, our 2025 work spanned on-market, off-market, and in-contract opportunities across the full East End.
+At Hedgerow Exclusive Properties, the firm's 2025 work spanned on-market, off-market, and in-contract opportunities across the full East End.
 
 Notable 2025 Hedgerow closings included:
 - **67 Surfside Drive, Bridgehampton**. $32,000,000, closed April 2025 (oceanfront, 6,714 SF on 2.2 acres)
 - **33 Lily Pond Lane, East Hampton**. $31,500,000, closed September 2025 (oceanfront, 7,000 SF on 1.81 acres)
 
-Both properties represented the kind of once-in-a-generation oceanfront opportunities that define the Hamptons at its highest level.
+Both properties were the kind of once-in-a-generation oceanfront opportunities that define the Hamptons at its highest level.
 
 ## What's Driving Demand?
 
@@ -954,7 +954,7 @@ Several factors converged to push the market to new highs:
 
 2. **Wealth migration continues.** The post-pandemic shift to the Hamptons as a primary or co-primary residence (not just a summer escape) has become permanent for many buyers.
 
-3. **Off-market activity.** An increasing share of ultra-luxury transactions are happening privately. At Hedgerow, over 30% of our volume is facilitated off-market, giving our clients access to inventory that never appears on public portals.
+3. **Off-market activity.** An increasing share of ultra-luxury transactions are happening privately. At Hedgerow, over 30% of the firm's volume is facilitated off-market, giving clients access to inventory that never appears on public portals.
 
 4. **Rate environment.** While mortgage rates remain elevated, the majority of transactions above $5M are cash, insulating the luxury segment from rate sensitivity.
 

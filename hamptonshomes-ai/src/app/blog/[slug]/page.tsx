@@ -137,7 +137,7 @@ function renderTable(rows: string[], key: number) {
                 <td
                   key={ci}
                   className={`px-3 py-3.5 align-top text-[14px] leading-[1.55] text-ink-muted first:pl-0 first:text-ink last:pr-0 ${cellAlign(ci)} ${shortCell(cell)}`}
-                  dangerouslySetInnerHTML={{ __html: formatInline(cell) }}
+                  dangerouslySetInnerHTML={{ __html: cell.trim() === "-" ? '<span class="text-ink-faint">n/a</span>' : formatInline(cell) }}
                 />
               ))}
             </tr>
