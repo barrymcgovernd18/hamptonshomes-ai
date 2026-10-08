@@ -24,6 +24,7 @@ export interface BlogPost {
 
 /** Search titles (under ~62 characters, brand included). The on-page H1 keeps the full title. */
 export const SEO_TITLES: Record<string, string> = {
+  "hamptons-fall-2026-contracts-inventory": "Hamptons Fall 2026 Contracts and Inventory | Barry McGovern",
   "hamptons-oceanfront-market-2021-2026": "Hamptons Oceanfront Market, 2021 to 2026 | Barry McGovern",
   "bridgehampton-non-water-market-overview-2026-09": "Bridgehampton Non-Water Market, 2026 | Barry McGovern",
   "sag-harbor-village-market-overview-2026-09": "Sag Harbor Village Market, 2026 | Barry McGovern",
@@ -132,6 +133,184 @@ export function relatedBlogPosts(post: BlogPost, limit = 2): BlogPost[] {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "hamptons-fall-2026-contracts-inventory",
+    title: "The Hamptons Fall 2026 Pipeline: Where Contracts Are Clearing, and Where Inventory Waits",
+    excerpt:
+      "Twenty-six contracts since September 1 against 210 active listings, Southampton to East Hampton: where the fall market is clearing by price band and village, and why the $50 million shelf is waiting.",
+    date: "2026-10-08",
+    dateModified: "2026-10-08",
+    author: "Barry McGovern",
+    category: "Market Research",
+    image: "/images/hero-waterfront.jpg",
+    authorBox: true,
+    hideCta: true,
+    about: ["Southampton", "Water Mill", "Bridgehampton", "Sagaponack", "Wainscott", "East Hampton"],
+    keywords:
+      "Hamptons real estate fall 2026, Hamptons contracts, Hamptons inventory, Southampton real estate, East Hampton real estate, Bridgehampton, Water Mill, Sagaponack, luxury market by price",
+    metaDescription:
+      "Hamptons fall 2026: 26 contracts since September 1 against 210 active listings, Southampton to East Hampton, by price band and village, plus the $50M+ shelf.",
+    content: `
+## Key Takeaways
+
+- On October 6, 2026, I reviewed **210 active listings** and **61 listings in contract** in MLS listing data across Southampton, Water Mill, Bridgehampton, Sagaponack, Wainscott, and East Hampton. The active set carries **$3.31 billion** in asking prices, with a **median ask of $7.93 million**.
+- **Twenty-six listings went into contract between September 1 and October 5**, 21 of them in September, with an aggregate last asking price of **$267.7 million** and a **median of $9.33 million**.
+- **No contract signed since September 1 carried an ask of $25 million or more.** The three largest, 672 Halsey Lane, 134 Wyandanch Lane, and 8 Squabble Lane, were each asking just under $25 million.
+- The **$10 million to $20 million band is the tightest in the market**: nine new contracts against 45 active listings, or about **six months of supply** at the fall pace, against roughly nine months for the market as a whole.
+- The top of the shelf is waiting. **Nine listings at $50 million and above** account for **$876 million, or 26 percent of all asking dollars**, while representing 4 percent of listings. None of the contracts in this set signed since June 1 was asking $50 million or more.
+- In every price band with recent contracts, the homes that went to contract carried a **higher median asking price per square foot** than the homes still for sale. Buyers are paying for setting and finish, not for size.
+
+## The Season After the Season
+
+September on the South Fork has its own light. The traffic on Montauk Highway thins, the farm stands stack pumpkins where the corn stood, and the privet along Halsey Lane and Further Lane holds its color well into October. It is also when serious buyers do their work. The summer renter has gone home, the houses are quiet enough to see properly, and the sellers who listed in spring have had a full season to reconsider their numbers.
+
+This report looks at what the fall market is actually doing: which homes are going to contract, at what asking prices, and how that compares with the inventory still on offer. The answer is a market moving with real conviction in the middle and upper middle, and a top shelf that remains largely a matter of patience.
+
+## The Data
+
+The report draws on MLS listing data captured on October 6, 2026: 210 active residential listings with a published asking price and 61 listings in contract, across the six markets from Southampton east to East Hampton. Listings that appeared more than once, whether through co-listings or a parcel offered both alone and as part of a larger package, are counted once. Contract prices are not public until a sale closes, so every contract figure here is the last asking price. Contract activity runs from September 1 through October 5, the latest contract date in the data.
+
+## The Fall Pipeline by Price
+
+| Price band | Active listings | Share of asking dollars | Contracts, Sep 1 to Oct 5 | Listings per new contract | Months of supply at fall pace |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Under $5M | 68 | 6.5% | 9 | 7.6 | 8.7 |
+| $5M to $10M | 48 | 10.3% | 4 | 12.0 | 13.8 |
+| $10M to $20M | 45 | 19.4% | 9 | 5.0 | 5.8 |
+| $20M to $50M | 40 | 37.4% | 4 | 10.0 | 11.5 |
+| $50M and above | 9 | 26.4% | 0 | n/a | n/a |
+| **All bands** | **210** | **100%** | **26** | **8.1** | **9.3** |
+
+Three observations. First, the $10 million to $20 million band is where the fall market is clearing. Nine contracts in five weeks against 45 listings is the tightest ratio of any band, and if the pace holds the current list would be absorbed in roughly six months. Second, the $5 million to $10 million band is the softest by this measure, with twelve listings for every new contract, a sign that buyers in that range are finding choice and taking their time. Third, demand fades sharply above $25 million. Thirteen of the 26 fall contracts were asking between $10 million and $25 million, half of all activity, from a range that holds 56 listings, about a quarter of the inventory.
+
+## Contracts Signed Since September 1
+
+| Contract date | Property | Village | Last ask | Acres |
+| --- | --- | --- | ---: | ---: |
+| Sep 30 | 672 Halsey Lane | Bridgehampton | $24,995,000 | 6.00 |
+| Sep 17 | 134 Wyandanch Lane | Southampton | $24,995,000 | 3.32 |
+| Sep 17 | 8 Squabble Lane | Southampton | $24,950,000 | 2.50 |
+| Sep 14 | 501 Parsonage Lane | Sagaponack | $22,000,000 | 1.50 |
+| Sep 25 | 5 Spaeth Lane | East Hampton | $19,900,000 | 2.60 |
+| Oct 5 | 179 Davids Lane | Water Mill | $15,995,000 | 1.50 |
+| Oct 1 | 522 Wickapogue Road | Southampton | $14,695,000 | 1.05 |
+| Sep 24 | 63 Newlight Lane | Bridgehampton | $11,995,000 | 1.50 |
+| Sep 30 | 37 Cross Highway | East Hampton | $11,995,000 | 1.86 |
+| Sep 25 | 381 Further Lane | East Hampton | $11,250,000 | 1.94 |
+| Sep 22 | 399 Further Lane | East Hampton | $10,900,000 | 2.04 |
+| Sep 21 | 357 Town Line Road | Sagaponack | $10,400,000 | 2.20 |
+
+*Also in contract: an undisclosed Bridgehampton address on 8.23 acres, asking $11.5 million.*
+
+The list reads like a map of the estate sections. Two contracts in Southampton's estate area, on Wyandanch Lane and Squabble Lane, were signed on the same day. Two more are on Further Lane in East Hampton, signed three days apart. Halsey Lane, Parsonage Lane, Wickapogue Road, and Town Line Road fill out the list. Most are established addresses on one to six acres, priced within reach of the buyers who are active, rather than trophy offerings priced for the exceptional buyer.
+
+## The Top of the Shelf
+
+| Property | Village | Asking price | Acres |
+| --- | --- | ---: | ---: |
+| 75 & 69 West End Road | East Hampton | $165.0M | 8.22 |
+| 39 Fairfield Pond Lane | Sagaponack | $152.5M | 4.00 |
+| 95 Down East Lane | Southampton | $124.0M | 4.77 |
+| 100 & 90 Briar Patch Road | East Hampton | $85.0M | 11.20 |
+| 635 Daniels Lane | Sagaponack | $79.5M | 5.18 |
+| 21 Fairfield Pond Lane | Sagaponack | $75.0M | 2.11 |
+| 125 Dune Road | Bridgehampton | $69.0M | 1.20 |
+| 140 Hayground Cove Road | Water Mill | $68.0M | 2.80 |
+| 795 Ocean Road | Bridgehampton | $58.0M | 4.50 |
+
+Nine listings at $50 million and above total $876 million in asking prices. Across all 38 listings at $25 million and above, the total is $1.85 billion, or 56 percent of every asking dollar in the market. Against that, the pipeline holds four contracts at $25 million or more, and all four were signed before September: 137 Murray Lane at $44.5 million (July 24), 167 Dune Road at $42.5 million (January 28), 160 Wyandanch Lane at $38.0 million (June 12), and 107 Georgica Road at $29.995 million (August 10).
+
+This is not a sign of weakness at the top so much as a reminder of how that segment trades. Nine-figure and high eight-figure houses rarely sell in a single season, and they rarely sell at their first ask. They tend to trade privately, often after a price adjustment, and often to a buyer who has watched the house for a year or more.
+
+## Village by Village
+
+| Village | Active listings | Median ask, active | Contracts, Sep 1 to Oct 5 | Median ask, new contracts | Listings per new contract | Total in contract |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Southampton | 95 | $5.00M | 12 | $3.20M | 7.9 | 26 |
+| East Hampton | 37 | $7.90M | 6 | $11.08M | 6.2 | 10 |
+| Water Mill | 29 | $13.00M | 2 | $12.12M | 14.5 | 4 |
+| Bridgehampton | 23 | $15.00M | 3 | $12.00M | 7.7 | 10 |
+| Wainscott | 16 | $7.45M | 1 | $3.90M | 16.0 | 5 |
+| Sagaponack | 10 | $23.50M | 2 | $16.20M | 5.0 | 6 |
+
+**Southampton.** The deepest market by count, with 95 active listings and twelve fall contracts. Activity runs on two tracks: homes asking between $999,000 and $4.3 million, which made up eight of the twelve, and the estate area, where houses on Wyandanch Lane, Squabble Lane, and Wickapogue Road all went to contract.
+
+**East Hampton.** The strongest fall showing relative to supply among the larger markets: six contracts against 37 listings, with a median contract ask of $11.08 million, above the village's median active ask of $7.90 million. Buyers here are reaching up for the right house, including the two Further Lane contracts.
+
+**Water Mill.** Twenty-nine listings at a $13.00 million median ask, and two fall contracts, at 179 Davids Lane and 25 Swans Neck Lane. Among the four larger markets it has the most listings per new contract, at 14.5, reflecting a deep offering of estates on Cobb Isle Road, Jule Pond Drive, and Hayground Cove Road. Its largest offerings also include 70 and 71 Cobb Lane, exclusively listed with Hedgerow, at $42.5 million and $39.95 million.
+
+**Bridgehampton.** A $15.00 million median ask and ten listings in contract in total, tied with East Hampton for the second-largest pipeline after Southampton. 672 Halsey Lane, on six acres, shares the top fall contract ask in the data at $24,995,000. 351 Jobs Lane, a Hedgerow listing, went to contract on July 31 at a last ask of $9.65 million.
+
+**Wainscott and Sagaponack.** Small samples at opposite ends. Wainscott has sixteen listings and one fall contract. Sagaponack, with ten listings at a $23.50 million median ask, recorded two contracts, at 501 Parsonage Lane and 357 Town Line Road, and holds three of the nine listings at $50 million and above.
+
+## What Buyers Are Paying For
+
+| Price band | Active: median ask per sq ft | In contract since June 1: median ask per sq ft |
+| --- | ---: | ---: |
+| Under $5M | $1,114 | $1,272 |
+| $5M to $10M | $1,374 | $1,794 |
+| $10M to $20M | $1,768 | $1,874 |
+| $20M to $50M | $3,367 | $3,638 |
+
+*Reflects listings reporting at least 1,000 square feet of interior area: 165 active listings and 40 contracts.*
+
+In every band, the homes that went to contract were asking more per square foot than the homes that remain. The gap is widest between $5 million and $10 million, at $1,794 against $1,374. The houses that are selling are not the largest for the money. They are the better located, better finished, and more efficiently planned, and buyers are willing to pay a premium per foot to get them.
+
+## What Drives the Fall Market
+
+- **Price discipline below $25 million.** Every fall contract was asking under $25 million, and three were asking within $50,000 of it. Sellers who priced to the active buyer pool found it.
+- **Established addresses.** Further Lane, Wyandanch Lane, Halsey Lane, and Parsonage Lane account for five of the thirteen fall contracts asking $10 million or more.
+- **Quality over size.** Contract homes carried higher asking prices per square foot than active listings in every band.
+- **A quieter season to buy.** With summer traffic gone, buyers can see a house, its land, and its neighbors clearly, and fall contract activity reflects that.
+
+## Risk Factors
+
+- **Asking is not price.** Contract figures here are last asking prices. Final sale prices are recorded only at closing and may differ.
+- **Short window.** Five weeks of contracts is a small sample; within a single band, two or three deals can change the picture.
+- **Thin top.** With no contracts at $50 million and above in the current pipeline, pricing at the very top rests on asking prices rather than trades.
+- **Seasonal withdrawals.** Unsold listings are often taken off the market after the season and relisted in spring, which can make winter inventory appear leaner than underlying supply.
+
+## Outlook
+
+I expect the $10 million to $25 million range to keep leading through year-end, supported by well-priced houses on established streets and a buyer pool that has shown it will act in the fall. The $5 million to $10 million band has room to absorb, and sellers there will compete on condition and price. At the top, the $876 million shelf at $50 million and above will clear the way it usually does: slowly, privately, and at the margin through price.
+
+## Considerations
+
+**For buyers:** the strongest negotiating position is in the $5 million to $10 million band and above $25 million, where listings outnumber recent contracts by ten to one or more. Between $10 million and $20 million, well-priced houses are moving, and hesitation has a cost.
+
+**For sellers:** the fall data reward pricing to the buyer who is active today. Homes that went to contract were priced within reach of that buyer and asked more per foot for better houses, not more in total for larger ones.
+
+## Frequently Asked Questions
+
+### How many Hamptons homes went into contract in fall 2026?
+
+Across Southampton, Water Mill, Bridgehampton, Sagaponack, Wainscott, and East Hampton, 26 listings went into contract between September 1 and October 5, 2026, 21 of them in September. Their aggregate last asking price was $267.7 million, with a median of $9.33 million.
+
+### Which Hamptons price range is selling fastest in fall 2026?
+
+The $10 million to $20 million range. It recorded nine contracts against 45 active listings, about five listings per new contract, or roughly six months of supply at the fall pace, compared with about nine months for the market overall.
+
+### Are $50 million Hamptons homes selling?
+
+Nine listings at $50 million and above were active on October 6, 2026, totaling $876 million, or 26 percent of all asking dollars. None of the contracts in this data signed since June 1 was asking $50 million or more, and the largest fall contract was asking $24,995,000.
+
+### How much Hamptons inventory is on the market in fall 2026?
+
+On October 6, 2026, 210 active listings from Southampton to East Hampton carried $3.31 billion in asking prices, with a median ask of $7.93 million. At the fall contract pace, that represents about nine months of supply.
+
+### Which Hamptons village has the most inventory relative to demand?
+
+Wainscott, with 16 listings and one fall contract, and Water Mill, with 29 listings and two. Sagaponack and East Hampton were the tightest, at five and about six listings per new contract.
+
+### Why are contract prices shown as asking prices?
+
+In New York, the agreed price on a contract is not public until the sale closes and the deed is recorded. Each contract in this report is shown at its last asking price.
+
+---
+
+*Source: MLS listing data, active and in-contract listings, Southampton to East Hampton, captured October 6, 2026.*
+    `,
+  },
   {
     slug: "hamptons-oceanfront-market-2021-2026",
     title: "Hamptons Oceanfront, 2021 to 2026: Scarcity, Price, and the Shape of the Market",
