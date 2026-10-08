@@ -270,36 +270,6 @@ export const hedgerowActiveListings: HedgerowActiveListing[] = [
     "listingUrl": "https://hedgerowexclusive.com/listings/51-little-noyack-path-water-mill-ny-11976/"
   },
   {
-    "address": "10 Winterberry Lane",
-    "area": "East Hampton",
-    "price": "$2,490,000",
-    "priceNum": 2490000,
-    "status": "For sale",
-    "beds": "4",
-    "baths": "4.5",
-    "sqft": "2,700",
-    "acres": "0.77",
-    "description": "With four spacious bedrooms and 4.5 beautiful bathrooms, this meticulously renovated retreat is an entertainer’s dream designed to impress even the most discerning guests.",
-    "image": "/images/hedgerow/active-10-winterberry-lane-east-hampton.webp",
-    "alt": "10 Winterberry Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/10-winterberry-lane-east-hampton-ny-11937/"
-  },
-  {
-    "address": "17 Maidstone Park Road",
-    "area": "East Hampton",
-    "price": "$1,965,000",
-    "priceNum": 1965000,
-    "status": "For sale",
-    "beds": "4",
-    "baths": "3F",
-    "sqft": "2,500",
-    "acres": "0.33",
-    "description": "Perfect Springs Home. Experience the charm of East Hampton in this luxurious home, ideally located 0.2 miles from Maidstone Park Beach.",
-    "image": "/images/hedgerow/active-17-maidstone-park-road-east-hampton.webp",
-    "alt": "17 Maidstone Park Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "listingUrl": "https://hedgerowexclusive.com/listings/17-maidstone-park-road-east-hampton-ny-11937/"
-  },
-  {
     "address": "106 Laurel Drive",
     "area": "Montauk",
     "price": "$1,495,000",
