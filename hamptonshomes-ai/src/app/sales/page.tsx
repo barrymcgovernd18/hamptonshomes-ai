@@ -120,6 +120,14 @@ export default function SalesPage() {
               <dt className="eyebrow mt-3 text-paper/75">{firmVolumeLabel}</dt>
               <dd className="font-serif text-[2.4rem] font-light leading-none text-paper">{firmVolume}</dd>
             </div>
+            <div className="col-span-2 md:flex md:justify-end">
+              <Link
+                href="/hedgerow-sales"
+                className="eyebrow inline-flex items-center gap-3 border border-paper/50 px-6 py-3.5 text-paper transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ocean-deep"
+              >
+                All Hedgerow Exclusive sales <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </dl>
         }
       />
@@ -225,7 +233,7 @@ export default function SalesPage() {
         </div>
       </section>
 
-      {/* III. Hedgerow sales since 2021 */}
+      {/* III. Every Hedgerow sale, highest price first */}
       <section id="sold" className="defer-render border-t border-line bg-paper-soft py-24 md:py-36">
         <span id="firm-history" aria-hidden="true" />
         <div className="frame">
@@ -238,9 +246,14 @@ export default function SalesPage() {
               <p className="body-copy text-ink-muted">
                 {soldByPrice.length} Hedgerow sales, highest price first, from Hedgerow&apos;s published sales and Prominent Deals. Those marked with my name are trades Hedgerow and I were involved in.
               </p>
-              <Link href={OCEANFRONT_ARTICLE} className="link-line eyebrow mt-5 inline-block text-ocean">
-                Hamptons Oceanfront, 2021 to 2026 <span aria-hidden="true">→</span>
-              </Link>
+              <div className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
+                <Link href="/hedgerow-sales" className="link-line eyebrow text-ocean">
+                  All Hedgerow Exclusive sales <span aria-hidden="true">→</span>
+                </Link>
+                <Link href={OCEANFRONT_ARTICLE} className="link-line eyebrow text-ink-muted hover:text-ocean">
+                  Hamptons Oceanfront, 2021 to 2026
+                </Link>
+              </div>
             </div>
           </div>
           <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">

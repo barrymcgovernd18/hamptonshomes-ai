@@ -126,7 +126,7 @@ export default async function HedgerowSalesPage({ searchParams }: { searchParams
   return (
     <div>
       <JsonLd data={itemList} />
-      <JsonLd data={breadcrumbListJsonLd([{ name: "Home", path: "/" }, { name: "Recent Hedgerow Exclusive Sales", path: PATH }])} />
+      <JsonLd data={breadcrumbListJsonLd([{ name: "Home", path: "/" }, { name: "Portfolio", path: "/sales" }, { name: "Recent Hedgerow Exclusive Sales", path: PATH }])} />
 
       <PageHero
         light
@@ -147,7 +147,7 @@ export default async function HedgerowSalesPage({ searchParams }: { searchParams
             action={PATH}
             label="Filter Hedgerow sales"
             submitLabel="Show sales"
-            defaults={{ sort: "newest" }}
+            defaults={{ sort: "price" }}
             gridClassName="grid grid-cols-2 gap-x-4 gap-y-5 md:grid-cols-5 lg:gap-x-3"
             fields={searchFields(filters)}
           />

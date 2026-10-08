@@ -130,8 +130,8 @@ export const SETTINGS: { key: SaleSetting; label: string }[] = [
 ];
 
 export const SORTS = [
-  { key: "newest", label: "Newest first" },
   { key: "price", label: "Price, highest first" },
+  { key: "newest", label: "Newest first" },
 ] as const;
 
 export const VILLAGES = [...new Map(firmSales.map((s) => [s.villageSlug, s.village])).entries()]
@@ -145,7 +145,7 @@ export interface SalesFilters {
   price?: string;
   year?: string;
   type?: string;
-  sort: "newest" | "price";
+  sort: "price" | "newest";
 }
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v)?.trim() || undefined;
@@ -162,7 +162,7 @@ export function parseFilters(params: Record<string, string | string[] | undefine
     price: PRICE_BANDS.some((b) => b.key === price) ? price : undefined,
     year: YEARS.some((y) => String(y) === year) ? year : undefined,
     type: SETTINGS.some((s) => s.key === type) ? type : undefined,
-    sort: sort === "price" ? "price" : "newest",
+    sort: sort === "newest" ? "newest" : "price",
   };
 }
 
@@ -178,7 +178,7 @@ export function applyFilters(f: SalesFilters) {
   const byPrice = (a: FirmSale, b: FirmSale) => b.priceNum - a.priceNum;
   const dated = matches
     .filter((s) => s.date)
-    .sort(f.sort === "price" ? byPrice : (a, b) => b.date.localeCompare(a.date) || byPrice(a, b));
+    .sort(f.sort === "newest" ? (a, b) => b.date.localeCompare(a.date) || byPrice(a, b) : byPrice);
   const undated = matches.filter((s) => !s.date).sort(byPrice);
   const total = matches.reduce((sum, s) => sum + s.priceNum, 0);
   return { dated, undated, count: matches.length, total };
@@ -196,7 +196,7 @@ export function filterQuery(f: Partial<SalesFilters>) {
   if (f.price) q.set("price", f.price);
   if (f.year) q.set("year", f.year);
   if (f.type) q.set("type", f.type);
-  if (f.sort && f.sort !== "newest") q.set("sort", f.sort);
+  if (f.sort && f.sort !== "price") q.set("sort", f.sort);
   const s = q.toString();
   return s ? `?${s}` : "";
 }
