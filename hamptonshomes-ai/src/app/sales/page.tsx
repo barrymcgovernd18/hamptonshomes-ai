@@ -42,9 +42,9 @@ function ListingLink({ listing, className, label, children }: { listing: { listi
       {children}
     </Link>
   ) : (
-    <a href={listing.listingUrl} target="_blank" rel="noopener noreferrer" aria-label={label ? listing.alt : undefined} className={className}>
+    <Link href={`/contact?about=${encodeURIComponent(listing.alt.replace(/\. Photo courtesy.*$/, ""))}`} aria-label={label ? listing.alt.replace(/\. Photo courtesy.*$/, "") : undefined} className={className}>
       {children}
-    </a>
+    </Link>
   );
 }
 
@@ -70,6 +70,14 @@ function SoldCard({ deal, index }: { deal: HedgerowSoldDeal; index: number }) {
         {deal.barryInvolved ? (
           <p className="mt-2 font-serif text-[15px] italic text-ink-muted">Barry McGovern was involved</p>
         ) : null}
+        <p className="mt-auto pt-4">
+          <Link
+            href={`/contact?about=${encodeURIComponent(`${deal.address}, ${deal.area}`)}`}
+            className="link-line eyebrow text-[10px] text-ink-muted hover:text-ocean"
+          >
+            Ask about this sale
+          </Link>
+        </p>
       </div>
     </article>
   );
@@ -121,7 +129,7 @@ export default function SalesPage() {
           </div>
           <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
             {actives.map((listing, i) => (
-              <article key={listing.listingUrl} data-reveal style={revealDelay((i % 2) * 100)} className="group flex flex-col">
+              <article key={listing.address} data-reveal style={revealDelay((i % 2) * 100)} className="group flex flex-col">
                 <ListingLink listing={listing} label className="relative block aspect-[16/11] overflow-hidden bg-paper-deep">
                   <InView>
                     <Image src={listing.image} alt={listing.alt} fill quality={50} className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
@@ -143,7 +151,7 @@ export default function SalesPage() {
                   <div className="mt-7 flex flex-col gap-3 border-t border-line pt-5 text-[11px] text-ink-faint sm:flex-row sm:items-center sm:justify-between">
                     <p>Exclusively listed with Hedgerow Exclusive Properties</p>
                     <ListingLink listing={listing} className="link-line eyebrow text-ocean">
-                      {listingPathByHedgerowUrl[listing.listingUrl] ? "View the property" : "View on Hedgerow"}
+                      {listingPathByHedgerowUrl[listing.listingUrl] ? "View the property" : "Ask about this property"}
                     </ListingLink>
                   </div>
                 </div>
