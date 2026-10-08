@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { logLead } from "@/lib/leads";
 
 async function sendSmsAlert(body: string) {
   const sid = process.env.TWILIO_ACCOUNT_SID;
@@ -123,6 +124,15 @@ export async function POST(request: Request) {
       console.error("Resend error:", error);
       return NextResponse.json({ error: "Failed to send message" }, { status: 502 });
     }
+
+    await logLead({
+      form: "Contact",
+      name: rawName,
+      email: rawEmail,
+      phone: rawPhone,
+      message: [rawInterest && `Interest: ${rawInterest}`, rawMessage].filter(Boolean).join(" | "),
+      pageUrl: "https://hamptonshomes.ai/contact",
+    });
 
     const smsBody = `Homes inquiry: ${rawName}${rawInterest ? ` (${rawInterest})` : ""}${rawPhone ? ` · ${rawPhone}` : ""} · ${rawEmail}`;
     try {

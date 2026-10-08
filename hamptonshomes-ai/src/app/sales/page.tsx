@@ -14,6 +14,7 @@ import {
 } from "@/lib/portfolio";
 import { activeListingsItemListJsonLd, routeMetadata, salesItemListJsonLd } from "@/lib/schema";
 import { SALES_PAGE } from "@/lib/seo-copy";
+import { listingPathByHedgerowUrl } from "@/lib/listing-pages";
 
 export const metadata: Metadata = routeMetadata({
   title: SALES_PAGE.title,
@@ -32,6 +33,19 @@ const GROUPS: { key: HedgerowGroup; label: string; note: string }[] = [
 
 function salePriceValue(price: string) {
   return Number(price.replace(/[^0-9.]/g, ""));
+}
+
+function ListingLink({ listing, className, label, children }: { listing: { listingUrl: string; alt: string }; className: string; label?: boolean; children: React.ReactNode }) {
+  const internal = listingPathByHedgerowUrl[listing.listingUrl];
+  return internal ? (
+    <Link href={internal} aria-label={label ? listing.alt.replace(/\. Photo courtesy.*$/, "") : undefined} className={className}>
+      {children}
+    </Link>
+  ) : (
+    <a href={listing.listingUrl} target="_blank" rel="noopener noreferrer" aria-label={label ? listing.alt : undefined} className={className}>
+      {children}
+    </a>
+  );
 }
 
 function SoldCard({ deal, index }: { deal: HedgerowSoldDeal; index: number }) {
@@ -68,7 +82,7 @@ export default function SalesPage() {
   const actives = [...hedgerowActiveListings].sort((a, b) => b.priceNum - a.priceNum);
   return (
     <div className="bg-paper text-ink">
-      <JsonLd data={activeListingsItemListJsonLd(actives)} />
+      <JsonLd data={activeListingsItemListJsonLd(actives.map((a) => (listingPathByHedgerowUrl[a.listingUrl] ? { ...a, listingUrl: `https://hamptonshomes.ai${listingPathByHedgerowUrl[a.listingUrl]}` } : a)))} />
       <JsonLd data={salesItemListJsonLd(hedgerowSold2021)} />
       <JsonLd data={salesItemListJsonLd(hedgerowFirmHistory, "Prominent Hedgerow Exclusive Properties transactions")} />
 
@@ -108,11 +122,11 @@ export default function SalesPage() {
           <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
             {actives.map((listing, i) => (
               <article key={listing.listingUrl} data-reveal style={revealDelay((i % 2) * 100)} className="group flex flex-col">
-                <a href={listing.listingUrl} target="_blank" rel="noopener noreferrer" aria-label={listing.alt} className="relative block aspect-[16/11] overflow-hidden bg-paper-deep">
+                <ListingLink listing={listing} label className="relative block aspect-[16/11] overflow-hidden bg-paper-deep">
                   <InView>
                     <Image src={listing.image} alt={listing.alt} fill quality={50} className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                   </InView>
-                </a>
+                </ListingLink>
                 <div className="flex flex-1 flex-col pt-7">
                   <div className="flex items-start justify-between gap-6">
                     <div>
@@ -128,9 +142,9 @@ export default function SalesPage() {
                   </div>
                   <div className="mt-7 flex flex-col gap-3 border-t border-line pt-5 text-[11px] text-ink-faint sm:flex-row sm:items-center sm:justify-between">
                     <p>Exclusively listed with Hedgerow Exclusive Properties</p>
-                    <a href={listing.listingUrl} target="_blank" rel="noopener noreferrer" className="link-line eyebrow text-ocean">
-                      View on Hedgerow
-                    </a>
+                    <ListingLink listing={listing} className="link-line eyebrow text-ocean">
+                      {listingPathByHedgerowUrl[listing.listingUrl] ? "View the property" : "View on Hedgerow"}
+                    </ListingLink>
                   </div>
                 </div>
               </article>
