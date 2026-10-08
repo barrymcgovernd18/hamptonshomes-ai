@@ -82,11 +82,11 @@ function Panel({ trade, index, sizes, className, large = false, compact = false 
             {trade.address}
           </h3>
         </div>
-        <div className={`flex shrink-0 flex-wrap items-baseline gap-x-4 gap-y-1 sm:gap-y-1.5 ${compact ? "" : "sm:block sm:text-right"}`}>
+        <div className={`flex shrink-0 flex-wrap items-baseline gap-x-4 gap-y-1 sm:gap-y-1.5 ${compact ? "" : "sm:block sm:max-w-[15rem] sm:text-right lg:max-w-[17rem]"}`}>
           <p className={`font-serif font-light leading-none text-paper ${large ? "text-[1.2rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.4rem]" : "text-[1.15rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[2.05rem]"}`}>
             {trade.price}
           </p>
-          <p className={`eyebrow text-paper/80 ${compact ? "" : "sm:mt-2.5 sm:whitespace-nowrap"}`}>{trade.roleLabel || "A Hedgerow transaction"}</p>
+          <p className={`eyebrow text-paper/80 ${compact ? "" : "sm:mt-2.5"}`}>{trade.roleLabel || "A Hedgerow transaction"}</p>
         </div>
       </div>
     </Link>
