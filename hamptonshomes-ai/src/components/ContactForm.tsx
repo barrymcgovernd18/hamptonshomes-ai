@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { LEAD_DONE_KEY } from "@/lib/lead-keys";
 
@@ -9,6 +9,15 @@ const fieldClass =
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  // "Ask about this sale" links arrive as /contact?about=<address>; start the message with it.
+  useEffect(() => {
+    const about = new URLSearchParams(window.location.search).get("about")?.trim().slice(0, 120);
+    if (about && messageRef.current && !messageRef.current.value) {
+      messageRef.current.value = `I would like to know more about ${about}.`;
+    }
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -103,6 +112,7 @@ export default function ContactForm() {
           Message
         </label>
         <textarea
+          ref={messageRef}
           id="message"
           name="message"
           rows={4}
