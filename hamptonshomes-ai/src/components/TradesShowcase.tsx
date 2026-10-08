@@ -55,24 +55,24 @@ function Panel({ trade, index, sizes, className, large = false, compact = false 
           className="object-cover transition-transform duration-[2400ms] ease-[cubic-bezier(0.22,0.61,0.21,1)] group-hover:scale-[1.035] motion-reduce:transition-none"
         />
       </InView>
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(10,20,24,0.82)_0%,rgba(10,20,24,0.42)_30%,rgba(10,20,24,0)_60%)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(10,20,24,0.82)_0%,rgba(10,20,24,0.5)_32%,rgba(10,20,24,0)_62%)]" />
       {trade.label && <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[rgba(10,20,24,0.55)] to-transparent md:h-48" />}
       <span aria-hidden="true" className="eyebrow absolute left-5 top-5 text-paper/85 [text-shadow:0_1px_10px_rgba(0,0,0,0.35)] md:left-8 md:top-8">
         {String(index + 1).padStart(2, "0")}
         {trade.label && <span className="ml-4 border-l border-paper/40 pl-4">{trade.label}</span>}
       </span>
-      <div className={`absolute inset-x-0 bottom-0 flex flex-col gap-4 p-5 md:p-8 ${compact ? "" : "sm:flex-row sm:items-end sm:justify-between sm:gap-8 lg:p-10"}`}>
+      <div className={`absolute inset-x-0 bottom-0 flex flex-col gap-2.5 p-4 sm:gap-4 sm:p-5 md:p-8 ${compact ? "" : "sm:flex-row sm:items-end sm:justify-between sm:gap-8 lg:p-10"}`}>
         <div>
           <p className="eyebrow text-paper/85">
             {trade.area}
             {trade.dateText ? ` · ${trade.dateText}` : ""}
           </p>
-          <h3 className={`mt-2.5 font-serif font-light leading-[1.04] text-paper ${large ? "text-[1.85rem] md:text-[2.4rem] lg:text-[2.8rem]" : "text-[1.75rem] md:text-[2rem] lg:text-[2.35rem]"}`}>
+          <h3 className={`mt-1.5 sm:mt-2.5 font-serif font-light leading-[1.04] text-paper ${large ? "text-[1.5rem] sm:text-[1.85rem] md:text-[2.4rem] lg:text-[2.8rem]" : "text-[1.4rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[2.35rem]"}`}>
             {trade.address}
           </h3>
         </div>
-        <div className={`flex shrink-0 flex-wrap items-baseline gap-x-4 gap-y-1.5 ${compact ? "" : "sm:block sm:text-right"}`}>
-          <p className={`font-serif font-light leading-none text-paper ${large ? "text-[1.5rem] md:text-[2rem] lg:text-[2.4rem]" : "text-[1.5rem] md:text-[1.8rem] lg:text-[2.05rem]"}`}>
+        <div className={`flex shrink-0 flex-wrap items-baseline gap-x-4 gap-y-1 sm:gap-y-1.5 ${compact ? "" : "sm:block sm:text-right"}`}>
+          <p className={`font-serif font-light leading-none text-paper ${large ? "text-[1.2rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.4rem]" : "text-[1.15rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[2.05rem]"}`}>
             {trade.price}
           </p>
           <p className={`eyebrow whitespace-nowrap text-paper/80 ${compact ? "" : "sm:mt-2.5"}`}>A Hedgerow transaction</p>
