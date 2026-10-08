@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       <section className="frame pb-28 pt-40 md:pb-40 md:pt-52">
         <p className="eyebrow text-ocean">Legal</p>
         <h1 className="display-1 mt-6">Privacy Policy</h1>
-        <p className="eyebrow mt-10 border-t border-line pt-6 text-ink-faint">Last updated: September 16, 2026</p>
+        <p className="eyebrow mt-10 border-t border-line pt-6 text-ink-faint">Last updated: October 7, 2026</p>
 
         <div className="mt-16 max-w-3xl space-y-14 text-[16px] leading-[1.9] text-ink-muted md:ml-[25%] md:mt-24">
           <section>
@@ -23,9 +23,8 @@ export default function PrivacyPage() {
             <p>
               This website, hamptonshomes.ai, is the personal professional site of Barry McGovern, a
               New York Licensed Real Estate Salesperson (license #10401353717) affiliated with
-              Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage with an
-              office at 2495 Montauk Highway, Bridgehampton, NY 11932. Barry is a salesperson, not a
-              broker. Inquiries submitted here are received so Barry can respond about East End real
+              Hedgerow Exclusive Properties, his supervising brokerage, a boutique ultra-luxury Hamptons
+              firm with an office at 2495 Montauk Highway, Bridgehampton, NY 11932. Inquiries submitted here are received so Barry can respond about East End real
               estate.
             </p>
           </section>
@@ -87,7 +86,7 @@ export default function PrivacyPage() {
               <a href="mailto:barry@hedgerowexclusive.com" className="text-ocean underline decoration-ocean/35 underline-offset-[5px] hover:text-ocean-deep">
                 barry@hedgerowexclusive.com
               </a>{" "}
-              or calling +1-646-339-0154. We may retain what the law or brokerage practice requires.
+              or calling 646.339.0154. We may retain what the law or brokerage practice requires.
             </p>
           </section>
 

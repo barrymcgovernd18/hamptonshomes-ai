@@ -6,15 +6,18 @@ import { ClosingInvitation, PageHero, SectionLabel, revealDelay } from "@/compon
 import { postsByDate } from "@/lib/blog";
 import { areas } from "@/lib/areas";
 import { SITE_URL, breadcrumbListJsonLd, routeMetadata } from "@/lib/schema";
+import BarChart from "@/components/BarChart";
+import { OCEANFRONT_BY_VILLAGE, OCEANFRONT_BY_YEAR, OCEANFRONT_STUDY_PATH, formatMillions } from "@/lib/oceanfront";
 
 const MARKET_TITLE = "Hamptons Market Research and Reports";
 const MARKET_DESCRIPTION =
-  "Hamptons luxury market research by Barry McGovern: oceanfront data from 2021 to 2026, village reports from Southampton to Montauk, and private-market notes.";
+  "Hamptons luxury market research by Barry McGovern: oceanfront data from 2021 to 2026, village reports from Southampton to Montauk, and private-market commentary.";
 
 export const metadata: Metadata = routeMetadata({
   title: MARKET_TITLE,
   description: MARKET_DESCRIPTION,
   path: "/market",
+  image: "/og/market.jpg",
 });
 
 function formatDate(date: string, withDay = false) {
@@ -26,12 +29,12 @@ function formatDate(date: string, withDay = false) {
   });
 }
 
-/** Headline figures from the oceanfront research note (see /blog/hamptons-oceanfront-market-2021-2026). */
+/** Headline figures from the oceanfront study (see /blog/hamptons-oceanfront-market-2021-2026). */
 const OCEANFRONT_FIGURES = [
   { value: "87", label: "Oceanfront sales", sub: "Southampton to Montauk, 2021 to 2026" },
   { value: "$2.61B", label: "Total volume", sub: "Recorded sales in the period" },
   { value: "$24.5M", label: "Median price", sub: "All 87 sales" },
-  { value: "$43.5M", label: "2026 median", sub: "Seven sales to date, top-weighted" },
+  { value: "$43.5M", label: "2026 median", sub: "Seven sales through early October" },
 ];
 
 export default function MarketPage() {
@@ -74,8 +77,8 @@ export default function MarketPage() {
         italic="Intelligence"
         intro={
           <p>
-            Research notes, village reports, and commentary on Hamptons luxury real estate from Southampton to Montauk.
-            Written by Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties.
+            Original research, village reports, and commentary on Hamptons luxury real estate from Southampton to Montauk,
+            by Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties.
           </p>
         }
       />
@@ -98,7 +101,7 @@ export default function MarketPage() {
                 <p className="mt-6 text-[15px] leading-[1.85] text-ink-muted">{latest.excerpt}</p>
                 <p className="mt-9">
                   <span className="link-line eyebrow text-ocean">
-                    Read the note <span aria-hidden="true">↗</span>
+                    Read the research <span aria-hidden="true">→</span>
                   </span>
                 </p>
               </div>
@@ -126,10 +129,34 @@ export default function MarketPage() {
               </div>
             ))}
           </dl>
-          <p className="mt-10 max-w-3xl border-t border-paper/20 pt-6 text-[13px] leading-relaxed text-paper/70">
-            Source: recorded deed transfers and MLS comparable-sales data, January 2021 to early October 2026. Method and village detail in the{" "}
-            <Link href="/blog/hamptons-oceanfront-market-2021-2026" className="link-line text-paper">
-              full note
+          <div className="mt-16 grid gap-14 md:mt-20 md:grid-cols-2 md:gap-12">
+            <BarChart
+              tone="dark"
+              title="Median oceanfront sale, by year"
+              rows={OCEANFRONT_BY_YEAR.map((r) => ({
+                label: r.label,
+                value: r.median,
+                display: formatMillions(r.median),
+                detail: `${r.sales} sales`,
+                highlight: r.label.startsWith("2026"),
+              }))}
+            />
+            <BarChart
+              tone="dark"
+              title="Median oceanfront sale, by village"
+              rows={OCEANFRONT_BY_VILLAGE.map((r) => ({
+                label: r.label,
+                value: r.median,
+                display: formatMillions(r.median),
+                detail: `${r.sales} sales`,
+                href: `/${r.slug}`,
+              }))}
+            />
+          </div>
+          <p className="mt-12 max-w-3xl border-t border-paper/20 pt-6 text-[13px] leading-relaxed text-paper/70">
+            Recorded deed transfers and MLS comparable sales, January 2021 to early October 2026. Village detail, repeat sales, and price per foot of frontage in the{" "}
+            <Link href={OCEANFRONT_STUDY_PATH} className="link-line text-paper">
+              full study
             </Link>
             .
           </p>
@@ -156,7 +183,7 @@ export default function MarketPage() {
                     <span className="font-serif text-[1.65rem] font-light leading-tight text-ink transition-transform duration-500 [transition-timing-function:var(--ease-editorial)] group-hover:translate-x-2 group-hover:text-ocean">
                       {area.name}
                     </span>
-                    <span className="text-right text-[13px] text-ink-faint">{area.priceRange}</span>
+                    <span className="text-right text-[13px] text-ink-faint">{area.priceRange.replace(/\s*-\s*/, " to ")}</span>
                   </Link>
                 </li>
               ))}
@@ -167,7 +194,7 @@ export default function MarketPage() {
 
       <section className="border-t border-line bg-paper-soft py-24 md:py-36">
         <div className="frame">
-          <SectionLabel n="IV">All research and notes</SectionLabel>
+          <SectionLabel n="IV">All research and commentary</SectionLabel>
           <ul className="mt-12 border-t border-ink/80 md:mt-16">
             {rest.map((post, i) => (
               <li key={post.slug} data-reveal style={revealDelay((i % 3) * 60)} className="border-b border-line">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import TradesShowcase from "@/components/TradesShowcase";
 import { areas } from "@/lib/areas";
 import { blogPosts } from "@/lib/blog";
+import { featuredPress } from "@/lib/press";
 
 const delay = (ms: number) => ({ "--reveal-delay": `${ms}ms` }) as CSSProperties;
 
@@ -11,7 +12,7 @@ const KEY_NUMBERS = [
   { figure: "$250M+", label: "Personal sales volume" },
   { figure: "Over $2B", label: "Hedgerow transactions since 2020" },
   { figure: "18", label: "Oceanfront trades with Hedgerow since 2021" },
-  { figure: "2013", label: "A Sag Harbor local since" },
+  { figure: "2013", label: "Sag Harbor local since" },
 ];
 
 const PRESS = [
@@ -97,18 +98,18 @@ export default function Home() {
               A boutique firm, <em className="italic">over $2 billion</em> in Hamptons transactions.
             </h2>
           </div>
-          <dl className="grid border-t border-paper/15 sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="grid grid-cols-2 border-t border-paper/15 lg:grid-cols-4">
             {KEY_NUMBERS.map((item, i) => (
               <div
                 key={item.label}
                 data-reveal
                 style={delay(i * 120)}
-                className={`flex flex-col-reverse justify-end gap-5 border-b border-paper/15 py-9 sm:py-10 lg:border-b-0 lg:py-14 ${
-                  i === 0 ? "sm:pr-8" : i === 2 ? "sm:pr-8 lg:border-l lg:pl-8" : "sm:border-l sm:px-8"
-                }`}
+                className={`flex flex-col-reverse justify-end gap-4 border-b border-paper/15 py-8 sm:gap-5 sm:py-10 lg:border-b-0 lg:py-14 ${
+                  i % 2 === 0 ? "pr-4 sm:pr-8" : "border-l pl-4 sm:px-8"
+                } ${i === 2 ? "lg:border-l lg:pl-8" : ""}`}
               >
                 <dt className="eyebrow max-w-[19em] text-paper/70">{item.label}</dt>
-                <dd className="whitespace-nowrap font-serif text-[3.1rem] font-light leading-none tracking-[-0.01em] sm:text-[3.4rem] lg:text-[clamp(3rem,4.3vw,4.6rem)]">
+                <dd className="whitespace-nowrap font-serif text-[2.35rem] font-light leading-none tracking-[-0.01em] sm:text-[3.4rem] lg:text-[clamp(3rem,4.3vw,4.6rem)]">
                   {item.figure}
                 </dd>
               </div>
@@ -123,7 +124,7 @@ export default function Home() {
           <div className="frame grid gap-14 md:grid-cols-12 md:items-center md:gap-10">
             <Link href={`/blog/${note.slug}`} className="group block md:col-span-6" tabIndex={-1} aria-hidden="true">
               <div data-reveal="image" className="relative aspect-[4/5] overflow-hidden bg-ocean-deep md:aspect-[5/6]">
-                <Image src="/images/hero-waterfront.jpg" alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="photo-bw object-cover" />
+                <Image src="/images/33-lily-pond-lane-dusk.jpg" alt="" fill quality={50} sizes="(max-width: 768px) 100vw, 50vw" className="photo-bw object-cover object-[60%_50%]" />
               </div>
             </Link>
             <div className="md:col-span-5 md:col-start-8">
@@ -188,18 +189,39 @@ export default function Home() {
             <h2 id="press-heading" data-reveal className="eyebrow text-ocean">V. &nbsp;In the press</h2>
             <Link href="/press" data-reveal className="eyebrow link-line text-ink">All press</Link>
           </div>
-          <ul className="mt-12 grid grid-cols-2 border-l border-t border-line md:grid-cols-4">
-            {PRESS.map((outlet, i) => (
-              <li key={outlet} data-reveal style={delay((i % 4) * 80)} className="border-b border-r border-line">
-                <Link
-                  href="/press"
-                  className="flex h-28 items-center justify-center px-4 text-center font-serif text-[1.15rem] leading-tight text-ink-muted transition-colors duration-500 hover:bg-paper-soft hover:text-ink md:h-36 md:text-[1.45rem]"
-                >
-                  <span className={i % 3 === 1 ? "italic" : ""}>{outlet}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-12 grid gap-14 md:grid-cols-12 md:gap-10">
+            <div className="md:col-span-7">
+              <p data-reveal className="eyebrow text-ink-faint">Featuring Barry</p>
+              <ul className="mt-6 border-t border-ink/80">
+                {featuredPress.slice(0, 4).map((item, i) => (
+                  <li key={item.url} data-reveal style={delay(i * 70)} className="border-b border-line">
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="group grid gap-2 py-6 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                      <span>
+                        <span className="block font-serif text-[1rem] italic text-ink-muted">{item.outlet}</span>
+                        <span className="mt-1 block font-serif text-[1.45rem] font-light leading-[1.25] text-ink transition-colors duration-500 group-hover:text-ocean md:text-[1.6rem]">{item.title}</span>
+                      </span>
+                      <span className="eyebrow whitespace-nowrap text-ink-faint">{item.role ? `${item.role} · ` : ""}{item.dateText.replace(/^(\w+) \d+, /, "$1 ")}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="md:col-span-4 md:col-start-9">
+              <p data-reveal className="eyebrow text-ink-faint">Hedgerow Exclusive Properties, covered by</p>
+              <ul className="mt-6 grid grid-cols-2 border-l border-t border-line">
+                {PRESS.map((outlet, i) => (
+                  <li key={outlet} data-reveal style={delay((i % 2) * 60)} className="border-b border-r border-line">
+                    <Link
+                      href="/press"
+                      className="flex h-20 items-center justify-center px-3 text-center font-serif text-[1.05rem] leading-tight text-ink-muted transition-colors duration-500 hover:bg-paper-soft hover:text-ink md:h-24 md:text-[1.15rem]"
+                    >
+                      <span className={i % 3 === 1 ? "italic" : ""}>{outlet}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

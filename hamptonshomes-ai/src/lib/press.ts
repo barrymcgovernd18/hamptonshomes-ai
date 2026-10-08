@@ -1,6 +1,7 @@
 // Generated from hedgerowexclusive.com/press (Hedgerow Exclusive Properties press page), October 2026.
 // Headlines, outlets, and dates follow Hedgerow's press page; links go to the original publisher.
-// Summaries are our own one-line descriptions. Do not paste article text.
+// Summaries are original one-line descriptions. Do not paste article text.
+// Featured items are independent articles that name Barry; each URL was fetched and the mention confirmed (Oct 2026).
 import { PRESS_QUARTER_CARD } from "@/lib/seo-copy";
 
 export interface PressItem {
@@ -14,27 +15,67 @@ export interface PressItem {
   url: string;
   image?: string;
   alt?: string;
+  /** How Barry appears in the piece (featured items only). */
+  role?: string;
 }
 
 /** Barry's own mentions, shown first as Featured. */
 export const featuredPress: PressItem[] = [
   {
+    outlet: "Behind The Hedges",
+    title: "Spring Awakens East End Real Estate, But Who Has the Upper Hand?",
+    date: "2026-04-07",
+    dateText: "April 7, 2026",
+    role: "Quoted",
+    summary: "East End agents on the early spring market. Barry is quoted, with a Hedgerow listing in Shelter Island Heights pictured.",
+    url: "https://behindthehedges.com/spring-awakens-east-end-real-estate-upper-hand/",
+  },
+  {
     outlet: PRESS_QUARTER_CARD.outlet,
     title: PRESS_QUARTER_CARD.title,
     date: "2025-08-14",
     dateText: "August 14, 2025",
+    role: "Roundtable",
     summary: PRESS_QUARTER_CARD.dek,
     url: PRESS_QUARTER_CARD.url,
+  },
+  {
+    outlet: "Behind The Hedges",
+    title: "Checking in on the Hamptons Real Estate Market",
+    date: "2025-05-24",
+    dateText: "May 24, 2025",
+    role: "Quoted",
+    summary: "A pre-summer read on inventory and velocity across the East End, with Barry among the agents quoted.",
+    url: "https://behindthehedges.com/checking-in-on-the-hamptons-real-estate-market/",
   },
   {
     outlet: "27East",
     title: "Taking the Pulse of the Hamptons Real Estate Market",
     date: "2025-02-19",
     dateText: "February 19, 2025",
+    role: "Panelist",
     summary: "A 27East panel on the state of the Hamptons market, with Barry among the speakers.",
     url: "https://www.27east.com/real-estate-news/taking-the-pulse-of-the-market-2341562/",
   },
-  {"outlet": "James Lane Post", "title": "Inside The Vision: A Deep Dive With Hedgerow Exclusive Founders Gary Cooper & Preston Kaye, And Their Team", "date": "2024-07-29", "dateText": "July 29, 2024", "summary": "An interview with Hedgerow founders Gary Cooper and Preston Kaye and members of the team, with Barry among those interviewed.", "url": "https://jameslanepost.com/inside-the-vision-a-deep-dive-with-hedgerow-exclusive-founders-gary-cooper-preston-kaye-and-their-elite-team/07/29/2024/Hamptons-News-Happenings", "image": "/images/press/hedgerow/inside-the-vision-a-deep-dive-with-hedgerow-exclusive-founde.webp", "alt": "Inside The Vision: A Deep Dive With Hedgerow Exclusive Founders Gary Cooper & Preston Kaye, And Their Team, James Lane Post. Image courtesy of Hedgerow Exclusive Properties"},
+  {
+    outlet: "Hamptons Real Estate Showcase",
+    title: "Realty Check",
+    date: "2024-07-30",
+    dateText: "July 30, 2024",
+    role: "Quoted",
+    summary: "A historic Shelter Island Heights waterfront home offered through Hedgerow, with Barry on how rarely Heights waterfront comes to market.",
+    url: "https://hamptonsrealestateshowcase.com/latest-news/realty-check-51/",
+  },
+    {"outlet": "James Lane Post", "title": "Inside The Vision: A Deep Dive With Hedgerow Exclusive Founders Gary Cooper & Preston Kaye, And Their Team", "date": "2024-07-29", "dateText": "July 29, 2024", "summary": "An interview with Hedgerow founders Gary Cooper and Preston Kaye and members of the team, with Barry among those interviewed.", "role": "Interviewed", "url": "https://jameslanepost.com/inside-the-vision-a-deep-dive-with-hedgerow-exclusive-founders-gary-cooper-preston-kaye-and-their-elite-team/07/29/2024/Hamptons-News-Happenings", "image": "/images/press/hedgerow/inside-the-vision-a-deep-dive-with-hedgerow-exclusive-founde.webp", "alt": "Inside The Vision: A Deep Dive With Hedgerow Exclusive Founders Gary Cooper & Preston Kaye, And Their Team, James Lane Post. Image courtesy of Hedgerow Exclusive Properties"},
+  {
+    outlet: "Behind The Hedges",
+    title: "Backyard Bliss Becomes Big Return on the East End",
+    date: "2024-05-21",
+    dateText: "May 21, 2024",
+    role: "Quoted",
+    summary: "East End agents on how gardens and outdoor living add value, with Barry among those quoted.",
+    url: "https://behindthehedges.com/backyard-bliss-becomes-big-return-east-end/",
+  },
 ];
 
 /** Every item on Hedgerow's press page (excluding the one already in Featured), newest first. */

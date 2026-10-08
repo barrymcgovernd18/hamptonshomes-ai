@@ -73,32 +73,63 @@ export const PERSON_ID = `${SITE_URL}/about#person`;
 export const SITE_ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
-export const BARRY_FAQS: { question: string; answer: string }[] = [
-  {
-    question: "Who is Barry McGovern?",
-    answer: BARRY_BLURB,
-  },
-  {
-    question: "Which areas does Barry McGovern cover?",
-    answer:
-      "Barry covers the East End from Southampton to Montauk: Southampton, Water Mill, Bridgehampton, Sagaponack, Sag Harbor, Wainscott, East Hampton, Amagansett, Montauk, and Shelter Island.",
-  },
-  {
-    question: "What is Hedgerow Exclusive Properties?",
-    answer:
-      "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage based in Bridgehampton. Since 2020, it has facilitated over $2 billion in transactions.",
-  },
-  {
-    question: "How do I contact Barry McGovern?",
-    answer:
-      "Email barry@hedgerowexclusive.com or call +1-646-339-0154. The office is at 2495 Montauk Hwy, Bridgehampton, NY 11932.",
-  },
-  {
-    question: "What is Barry McGovern's real estate license?",
-    answer:
-      "Barry McGovern is a Licensed Real Estate Salesperson in New York, license number 10401353717, with Hedgerow Exclusive Properties.",
-  },
+const FAQ_WHO = { question: "Who is Barry McGovern?", answer: BARRY_BLURB };
+const FAQ_TITLE = {
+  question: "What is Barry McGovern's title and license?",
+  answer:
+    "Barry McGovern is a Licensed Real Estate Salesperson in New York, license number 10401353717, with Hedgerow Exclusive Properties in Bridgehampton.",
+};
+const FAQ_EXPERIENCE = {
+  question: "How long has Barry McGovern worked in Hamptons real estate?",
+  answer:
+    "Barry brings six years of Hamptons luxury real estate experience. Originally from Dublin, Ireland, he has called the Hamptons home since 2013 and is a Sag Harbor local.",
+};
+const FAQ_SPECIALTY = {
+  question: "What does Barry McGovern specialize in?",
+  answer:
+    "Oceanfront and waterfront property, estate-section homes, land and development opportunities, and off-market transactions across the East End.",
+};
+const FAQ_AREAS = {
+  question: "Which areas does Barry McGovern cover?",
+  answer:
+    "Barry covers the East End from Southampton to Montauk: Southampton, Water Mill, Bridgehampton, Sagaponack, Sag Harbor, Wainscott, East Hampton, Amagansett, Montauk, and Shelter Island.",
+};
+const FAQ_FIRM = {
+  question: "What is Hedgerow Exclusive Properties?",
+  answer:
+    "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage based in Bridgehampton. Since 2020, it has facilitated over $2 billion in transactions.",
+};
+const FAQ_VOLUME = {
+  question: "What is Barry McGovern's sales volume?",
+  answer:
+    "Barry McGovern's personal sales volume is $250M+. Hedgerow Exclusive Properties, the firm he works with, has facilitated over $2 billion in transactions since 2020.",
+};
+const FAQ_RESEARCH = {
+  question: "Does Barry McGovern publish Hamptons market research?",
+  answer:
+    "Yes. His study Hamptons Oceanfront, 2021 to 2026 covers 87 oceanfront sales from Southampton to Montauk, about $2.61 billion in total, with a median price of $24.5 million. Village reports and market commentary are collected on the Market page.",
+};
+const FAQ_CONTACT = {
+  question: "How do I contact Barry McGovern?",
+  answer:
+    "Email barry@hedgerowexclusive.com or call 646.339.0154. The office is at 2495 Montauk Highway, Bridgehampton, NY 11932.",
+};
+
+/** FAQ shown on /about. */
+export const ABOUT_FAQS: { question: string; answer: string }[] = [
+  FAQ_WHO,
+  FAQ_TITLE,
+  FAQ_EXPERIENCE,
+  FAQ_SPECIALTY,
+  FAQ_AREAS,
+  FAQ_FIRM,
+  FAQ_VOLUME,
+  FAQ_RESEARCH,
+  FAQ_CONTACT,
 ];
+
+/** FAQPage JSON-LD for /about: the visible FAQ minus personal production figures (kept out of schema). */
+export const BARRY_FAQS: { question: string; answer: string }[] = ABOUT_FAQS.filter((faq) => faq !== FAQ_VOLUME);
 
 function placeRef(name: (typeof PLACE_NAMES)[number]) {
   const slug = PLACE_SLUGS[name];
@@ -177,12 +208,20 @@ export function barryPersonNode() {
       "@type": "Place",
       name: "Sag Harbor",
     },
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "license",
+      name: "New York Real Estate Salesperson License",
+      identifier: "10401353717",
+      recognizedBy: { "@type": "GovernmentOrganization", name: "New York Department of State" },
+    },
     knowsAbout: [
-      "oceanfront",
-      "waterfront",
-      "estate-section",
-      "private-market",
-      "Hamptons luxury real estate",
+      "Hamptons oceanfront real estate",
+      "Waterfront real estate",
+      "Estate-section properties",
+      "Off-market real estate",
+      "Land and development",
+      "Hamptons luxury real estate market",
     ],
     areaServed: PLACE_NAMES.map(placeRef),
   };
@@ -197,6 +236,30 @@ export function siteGraphJsonLd() {
       websiteNode(),
       barryPersonNode(),
     ],
+  };
+}
+
+/** /about as a ProfilePage, with independent press that names Barry attached to the Person entity. */
+export function profilePageJsonLd(press: { outlet: string; title: string; date: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${PERSON_CANONICAL_URL}#profile`,
+    url: PERSON_CANONICAL_URL,
+    name: "About Barry McGovern",
+    isPartOf: { "@id": WEBSITE_ID },
+    mainEntity: {
+      "@type": ["Person", "RealEstateAgent"],
+      "@id": PERSON_ID,
+      name: "Barry McGovern",
+      subjectOf: press.map((item) => ({
+        "@type": "NewsArticle",
+        headline: item.title,
+        url: item.url,
+        datePublished: item.date,
+        publisher: { "@type": "Organization", name: item.outlet },
+      })),
+    },
   };
 }
 
@@ -262,6 +325,7 @@ export function routeMetadata({
   path,
   type = "website",
   absoluteTitle = false,
+  image,
 }: {
   title: string;
   description: string;
@@ -269,8 +333,11 @@ export function routeMetadata({
   type?: "website" | "article";
   /** Use the title as-is, without the "| Barry McGovern" template suffix. */
   absoluteTitle?: boolean;
+  /** Path to a 1200x630 share card under /public, e.g. "/og/about.jpg". */
+  image?: string;
 }): Metadata {
   const url = canonicalUrl(path);
+  const cardUrl = image ? absoluteUrl(image) : DEFAULT_OG_IMAGE;
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
@@ -282,13 +349,13 @@ export function routeMetadata({
       siteName: "Barry McGovern | Hamptons Real Estate",
       title,
       description,
-      images: shareImages(),
+      images: [{ url: cardUrl, width: 1200, height: 630, alt: image ? title : OG_ALT }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [DEFAULT_OG_IMAGE],
+      images: [cardUrl],
     },
   };
 }

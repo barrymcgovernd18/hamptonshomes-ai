@@ -52,7 +52,7 @@ export const SALES_HERO = {
 
 export const DUCK_POND_BLURB = {
   roleNote: "Hedgerow's role: Listing",
-  blurb: "Southampton-area waterfront on Wickapogue Pond. Closed January 2026 at $20 million.",
+  blurb: "Southampton waterfront on Wickapogue Pond, with views to the Atlantic. Closed January 2026 at $20 million.",
 } as const;
 
 export const SAGAPONACK_MAIN_BLURB = {

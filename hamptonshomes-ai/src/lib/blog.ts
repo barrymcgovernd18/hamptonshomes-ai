@@ -152,8 +152,8 @@ export const blogPosts: BlogPost[] = [
     content: `
 ## Key Takeaways
 
-- From January 2021 through the deed records available in early October 2026, I identified **87 oceanfront sales** between Southampton and Montauk, totaling approximately **$2.61 billion**, with a **median price of $24.5 million**.
-- The annual median moved from **$22.5 million in 2021** to **$26.25 million in 2025**. The **seven sales recorded so far in 2026** carry a median of **$43.5 million**, a figure drawn from a small, top-weighted sample rather than a settled new level.
+- From January 2021 through early October 2026, I identified **87 oceanfront sales** between Southampton and Montauk, totaling approximately **$2.61 billion**, with a **median price of $24.5 million**.
+- The annual median moved from **$22.5 million in 2021** to **$26.25 million in 2025**. The **seven sales recorded so far in 2026** carry a median of **$43.5 million**, led by four trades at $43.5 million or more.
 - Nine-figure trades remain rare. There were three in the period: 90 Jule Pond Drive at $105 million (2021), 700 Meadow Lane at $112.5 million (2023), and 408 Further Lane at $115 million (2025).
 - Location within the shoreline matters more than the shoreline itself. East Hampton carries the highest village median at **$48.5 million** across 14 sales. Amagansett and Montauk carry the lowest, at **$9.5 million** across 14 and **$10.8 million** across 22.
 - Turnover is thin. Of roughly **330 mapped oceanfront parcels** between Southampton Village and the Further Lane stretch, **15 changed hands in 2025**, about 4.5 percent.
@@ -164,11 +164,11 @@ export const blogPosts: BlogPost[] = [
 
 The Atlantic edge of the South Fork is one continuous line of sand, from the inlet at Shinnecock to the bluffs below Montauk Point, yet it does not behave as one market. On Meadow Lane the barrier beach narrows to a ribbon between ocean and bay, and the houses sit low behind the primary dune. In Water Mill and Bridgehampton the land opens onto Mecox and Sagaponack ponds, and the late light settles across water on two sides. East of Georgica, the shingled houses of the estate section stand behind privet and old dune grass, set back as if by convention. Beyond Napeague the coast rises, the architecture grows quieter, and the views turn severe.
 
-For an owner, the appeal is elemental: surf audible at night, a private path through the dune, a horizon no neighbor can interrupt. For an investor, the same qualities become something more measurable. True oceanfront is a fixed-supply asset, regulated at every turn, with a buyer pool that is narrow, global, and patient. This note attempts to describe it with the discipline one would bring to any scarce asset.
+For an owner, the appeal is elemental: surf audible at night, a private path through the dune, a horizon no neighbor can interrupt. For an investor, the same qualities become something more measurable. True oceanfront is a fixed-supply asset, regulated at every turn, with a buyer pool that is narrow, global, and patient. This study approaches it with the discipline one would bring to any scarce asset.
 
-## Scope and Data
+## The Data
 
-This note covers single-family oceanfront sales, including multi-parcel assemblages, from Southampton Village to Montauk, January 2021 through early October 2026. It draws on MLS comparable sales, recorded deed transfers, my own record of oceanfront trades, and a parcel-level map of lots that reach the beach or dune. Condominiums, cottage units, and municipal purchases are excluded. Recorded deeds lag closings by two to four months, so 2026 is partial.
+The study covers single-family oceanfront sales, including multi-parcel assemblages, from Southampton Village to Montauk, January 2021 through early October 2026. It draws on MLS comparable sales, recorded deed transfers, Hedgerow's records of oceanfront trades, and a parcel-level map of lots that reach the beach or dune. Condominiums, cottage units, and municipal purchases are excluded, and 2026 runs through early October.
 
 ## Year-by-Year Trend
 
@@ -184,7 +184,9 @@ This note covers single-family oceanfront sales, including multi-parcel assembla
 
 *Price per square foot reflects the 60 sales with reported interior area.*
 
-Three observations. First, for five years the median held in a band of roughly $18 million to $28 million; the market has been durable rather than explosive. Second, the 2026 median rests on seven sales, four of them at $43.5 million or more: 43 East Dune Lane ($72.0 million), 115 Beach Lane ($59.0 million), 9 West Dune Lane ($45.0 million), and 55 Dunes Lane ($43.5 million). That is a meaningful signal of depth at the top, but not yet a trend. Third, the share of sales at $40 million or above was 29 percent in 2021, 14 percent in 2024, and 29 percent in 2025. Annual counts should be read with care, since deed coverage in this dataset is broader from 2025 onward.
+{{chart:oceanfront-by-year}}
+
+Three observations. First, for five years the median held in a band of roughly $18 million to $28 million; the market has been durable rather than explosive. Second, the 2026 median rests on seven sales, four of them at $43.5 million or more: 43 East Dune Lane ($72.0 million), 115 Beach Lane ($59.0 million), 9 West Dune Lane ($45.0 million), and 55 Dunes Lane ($43.5 million). That is a meaningful signal of depth at the top, but not yet a trend. Third, the share of sales at $40 million or above was 29 percent in 2021, 14 percent in 2024, and 29 percent in 2025.
 
 ## Village by Village
 
@@ -199,6 +201,8 @@ Three observations. First, for five years the median held in a band of roughly $
 | Amagansett | 14 | $9.50M | $5.85M to $115.0M | $4,042 | 408 Further Lane, $115.0M (2025) |
 | Montauk | 22 | $10.83M | $5.8M to $25.0M | $3,062 | 42 Old Montauk Highway, $25.0M (2022) |
 
+{{chart:oceanfront-by-village}}
+
 **Sales by year**
 
 | Village | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 YTD |
@@ -212,19 +216,19 @@ Three observations. First, for five years the median held in a band of roughly $
 | Amagansett | 2 | 3 | 0 | 2 | 6 | 1 |
 | Montauk | 8 | 4 | 3 | 3 | 3 | 1 |
 
-**Southampton.** The deepest run of comparable trades on the coast, concentrated on Meadow Lane and Gin Lane. Hedgerow and I were involved in the off-market sale of 40 Meadow Lane in 2021 and the paired sale of 1080 and 1100 Meadow Lane in 2022. In 2025 and 2026 to date, five sales carried a median of $32.0 million.
+**[Southampton](/southampton).** The deepest run of comparable trades on the coast, concentrated on Meadow Lane and Gin Lane. Hedgerow and I were involved in the off-market sale of 40 Meadow Lane in 2021 and the paired sale of 1080 and 1100 Meadow Lane in 2022. In 2025 and 2026 to date, five sales carried a median of $32.0 million.
 
-**Water Mill and Sagaponack.** Too few trades for a stable median. Each village is defined by a handful of large, pond-and-ocean parcels; individual sales should be valued on their own facts.
+**[Water Mill](/water-mill) and [Sagaponack](/sagaponack).** Too few trades for a stable median. Each village is defined by a handful of large, pond-and-ocean parcels; individual sales should be valued on their own facts.
 
-**Bridgehampton.** Five sales in 2025, the most active year in the village, led by two modern estates on Surfside Drive and Mid Ocean Drive at $58.0 million and $57.0 million. Three of the five, at 67, 79, and 165 Surfside Drive, were Hedgerow transactions.
+**[Bridgehampton](/bridgehampton).** Five sales in 2025, the most active year in the village, led by two modern estates on Surfside Drive and Mid Ocean Drive at $58.0 million and $57.0 million. Three of the five, at 67, 79, and 165 Surfside Drive, were Hedgerow transactions.
 
-**Wainscott.** Beach Lane sets the market, and it has moved: 115 Beach Lane traded at $45.0 million in 2021 and $59.0 million in 2026.
+**[Wainscott](/wainscott).** Beach Lane sets the market, and it has moved: 115 Beach Lane traded at $45.0 million in 2021 and $59.0 million in 2026.
 
-**East Hampton.** The estate section commands the highest median on the coast. Lily Pond Lane, Further Lane, and the Dune Lanes account for most of the top of the range.
+**[East Hampton](/east-hampton).** The estate section commands the highest median on the coast. Lily Pond Lane, Further Lane, and the Dune Lanes account for most of the top of the range.
 
-**Amagansett.** A divided market. Further Lane and Napeague estates trade at the very top, while most other trades, on Napeague and Marine Boulevard, fell between roughly $6 million and $16 million, with 55 Marine Boulevard at $24.5 million in 2025 the exception. 55 Dunes Lane, which sold in 2026, is among the Hedgerow oceanfront trades I have worked alongside.
+**[Amagansett](/amagansett).** A divided market. Further Lane and Napeague estates trade at the very top, while most other trades, on Napeague and Marine Boulevard, fell between roughly $6 million and $16 million, with 55 Marine Boulevard at $24.5 million in 2025 the exception. 55 Dunes Lane, which sold in 2026 for $43.5 million, was a Hedgerow transaction.
 
-**Montauk.** The most active and most accessible oceanfront market, with 22 sales and a $10.8 million median. Bluff elevation, beach access, and lot size drive wide dispersion.
+**[Montauk](/montauk).** The most active and most accessible oceanfront market, with 22 sales and a $10.8 million median. Bluff elevation, beach access, and lot size drive wide dispersion.
 
 ## Repeat Sales
 
@@ -281,7 +285,7 @@ The structural case is unchanged: fixed supply, tightening regulation, and a buy
 
 ## Hedgerow Oceanfront Transactions
 
-Oceanfront trades Hedgerow and I have been involved in since 2021.
+Oceanfront trades Hedgerow and I have been involved in since 2021. Listings and the full sales record are in the [Hedgerow portfolio](/sales).
 
 | Closed | Property | Village | Price | Hedgerow's role |
 | --- | --- | --- | ---: | --- |
@@ -344,9 +348,7 @@ Coastal erosion rules, FEMA flood regulation, multi-agency permitting, and thin 
 
 ---
 
-*Sources: MLS comparable sales, recorded deed transfers, and parcel-level oceanfront mapping, January 2021 to early October 2026. Figures are rounded; 2026 is partial.*
-
-Barry McGovern · Hedgerow Exclusive Properties · barry@hedgerowexclusive.com · 646.339.0154
+*Sources: MLS comparable sales, recorded deed transfers, and parcel-level oceanfront mapping, January 2021 to early October 2026. Village reports are on the [Market](/market) page.*
     `,
   },
   {
@@ -393,9 +395,9 @@ Read together, these closes show that north of Montauk Highway is not capped at 
 
 South of the highway still owns the top of this non-water set. Recent examples include **1240 Ocean Road** at **$30,000,000**, **72 Highland Terrace** at **$24,300,000**, **104 Quimby Lane** at **$22,150,000**, plus a run of Jobs Lane, Surfside, Matthews, Sagaponack Road, and Mecox-area closes from the mid-teens through the high teens. Absolute top-of-market pricing remains a South-of-highway conversation first.
 
-## Non-Water Sales Snapshot (~3 Years)
+## Non-Water Sales Snapshot, Three Years
 
-Figures below are Bridgehampton non-water solds from available MLS / Hedgerow records for discussion. Confirm any sale against primary sources before relying on it for pricing. Each row is tagged **North of highway** or **South of highway** (Montauk Highway).
+Recent Bridgehampton non-water sales, each tagged **North of highway** or **South of highway** (Montauk Highway).
 
 | Address | Sold | Date | Bd | Ba | SF | Acres | North / South of Highway |
 | --- | ---: | --- | ---: | ---: | ---: | ---: | --- |
@@ -473,7 +475,7 @@ Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Pro
 ## Related
 
 - [Bridgehampton town page](/bridgehampton)
-- [Notable sales](/sales)
+- [The Hedgerow portfolio](/sales)
 - [Sag Harbor Village market overview](/blog/sag-harbor-village-market-overview-2026-09)
 - [Contact](/contact)
     `,
@@ -506,7 +508,7 @@ That selectivity shows up as a wide price spread rather than a single "Village n
 
 For good finished product away from the water, the practical core luxury range in Sag Harbor Village is roughly **$5.5 million to $8.5 million**. That is the zone where renovated historic homes, newer luxury builds, and well-finished Village residences most often clear when the package is complete (pool, scale, and location included).
 
-Exceptions go higher. Several non-waterfront sales have now exceeded **$10 million**. Those results should be read as trophy or exceptional outcomes (pedigree Main Street addresses, designer-level historic stock, premium Village scale, newer construction with beach proximity, or pre-construction/new development), not as the baseline for ordinary finished Village inventory.
+Exceptions go higher. Several non-waterfront sales have now exceeded **$10 million**. Those are trophy or exceptional outcomes (pedigree Main Street addresses, designer-level historic stock, premium Village scale, newer construction with beach proximity, or pre-construction/new development), not as the baseline for ordinary finished Village inventory.
 
 ### Non-Waterfront Sales Snapshot
 
@@ -595,20 +597,9 @@ New construction, meaningful acreage by Village standards, architectural pedigre
 
 ### Who authored this Sag Harbor Village market overview?
 
-Barry McGovern, a licensed salesperson with Hedgerow Exclusive Properties, a boutique firm specializing in ultra-luxury Hamptons real estate. This overview is published on hamptonshomes.ai for informational market commentary.
+Barry McGovern, a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique firm specializing in ultra-luxury Hamptons real estate.
 
-## About the Author
-
-**Barry McGovern** is a Licensed Real Estate Salesperson at **Hedgerow Exclusive Properties**, a boutique firm focused on ultra-luxury Hamptons real estate. He advises buyers and sellers across Sag Harbor Village and the broader East End with comps-driven market commentary and discreet representation.
-
-- Email: [barry@hedgerowexclusive.com](mailto:barry@hedgerowexclusive.com)
-- Hedgerow: [HedgerowExclusive.com](https://HedgerowExclusive.com)
-- Market coverage: [hamptonshomes.ai](https://hamptonshomes.ai)
-- Phone: 646-339-0154
-
-Barry McGovern, Licensed Real Estate Salesperson at Hedgerow Exclusive Properties · 646-339-0154
-
-*Sale figures drawn from MLS and Hedgerow records.*
+*Sources: MLS and Hedgerow records.*
     `,
   },
   {
@@ -692,10 +683,6 @@ Put those together and you get the same physics San Francisco's ultra-luxury mar
 AI IPOs are going to create a class of liquid wealth that makes ordinary IPO seasons look small. San Francisco's ultra-luxury market is already pricing that future in, with high-end talk moving from roughly $3,000 a square foot toward $5,000. The Hamptons cannot print more ocean. Demand from newly rich households keeps expanding. True inventory does not.
 
 That is not a tip to panic-buy anything with a shingle. It is a clear-eyed read on the setup: when historically large liquidity events meet a market defined by scarcity at the top, price is the release valve. We have seen the finance version of this. We are watching the AI version start in San Francisco's high end. The East End will feel it wherever true limited supply still sits on the water.
-
----
-
-*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
     `,
   },
   {
@@ -775,10 +762,6 @@ Properties that are well-positioned, well-priced, and well-presented are moving 
 **For sellers:** This is an exceptional moment. The $30M compound sale establishes a new benchmark for East Hampton Village. Pricing is at historic highs, demand significantly outpaces supply, and the buyer pool has never been more capitalized. If you've been considering a sale, the conversation should happen now.
 
 The $30 million compound sale wasn't just a transaction. It was a statement about where this market is heading. With Wall Street bonuses still clearing, spring season approaching, and inventory at historic lows, the next few months could define the Hamptons luxury market for years to come.
-
----
-
-*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
     `,
   },
   {
@@ -858,10 +841,6 @@ For buyers: the window is now. The best properties, especially oceanfront and wa
 For sellers: this is an exceptional moment. Pricing is at historic highs, demand significantly outpaces supply, and the buyer pool has never been more capitalized. If you've been considering a sale, the conversation should happen now.
 
 The $6.2 billion surge wasn't just a number. It was a signal. The Hamptons luxury market is operating at a level that reflects both the scarcity of premier properties and the depth of the buyer pool pursuing them.
-
----
-
-*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
     `,
   },
   {
@@ -930,10 +909,6 @@ Don't wait for spring to start looking. The best properties are trading now, and
 If you're a bonus-season buyer thinking about the Hamptons, here's my advice: get pre-qualified, identify your target area, and have a salesperson who can show you inventory that isn't on Zillow. The competition is real, but the opportunity is equally real. Hamptons real estate, particularly oceanfront and waterfront, has proven to be one of the most resilient luxury asset classes in the country.
 
 For sellers, this is as strong a market as we've seen. Pricing is at historic highs, demand is deep, and the window is wide open. If you've been considering a sale, a confidential conversation about positioning and timing could make a meaningful difference in your outcome.
-
----
-
-*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. Call 646-339-0154.*
     `,
   },
   {
@@ -1004,10 +979,6 @@ The spring market is shaping up to be competitive. Inventory remains tight, buye
 For buyers: move early and be prepared to transact quickly. The best properties, especially oceanfront, are trading before they hit the open market.
 
 For sellers: this is an exceptional window. Pricing is at historic highs, and demand for well-positioned luxury homes significantly outpaces supply.
-
----
-
-*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. For a confidential consultation or complimentary property valuation, call 646-339-0154.*
     `,
   },
   {
@@ -1037,7 +1008,7 @@ Consider the top of the Hamptons market over the past decade:
 - **2021:** $105 million for 90 Jule Pond Drive in Water Mill, then the highest price paid for a single Hamptons property, and $118.5 million for the four-parcel Cobb Road compound in Water Mill, a Hedgerow transaction
 - **2025:** $115 million for 408 Further Lane in Amagansett
 
-Nine-figure trades remain rare. The [oceanfront research note](/blog/hamptons-oceanfront-market-2021-2026) counts three oceanfront sales above $100 million from 2021 through 2026.
+Nine-figure trades remain rare. The [oceanfront study](/blog/hamptons-oceanfront-market-2021-2026) counts three oceanfront sales above $100 million from 2021 through 2026.
 
 ## Proximity to Capital
 
@@ -1066,10 +1037,6 @@ Not all Hamptons oceanfront is created equal. The premium streets where the reco
 **For buyers:** Hamptons oceanfront is not a market that rewards patience. Every year you wait, the entry point moves higher and the inventory gets thinner. If you're considering an oceanfront purchase, the time to begin the conversation is now, especially for off-market opportunities that require established relationships.
 
 **For sellers:** You own one of the most valuable asset classes in American real estate. The question isn't whether to sell, it's ensuring you have representation that understands the true value of your property and can access the global buyer pool that trades at this level.
-
----
-
-*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage. For a confidential consultation, call 646-339-0154.*
     `,
   },
   {
@@ -1130,10 +1097,6 @@ For the seller, this meant complete privacy. For the buyer, it meant access to a
 Working with a firm that operates at the top of the Hamptons market isn't a luxury, it's a necessity for serious buyers and sellers. The private market rewards relationships, reputation, and trust.
 
 If you're considering buying or selling in the Hamptons and want access to the full market, not just what's publicly listed, a confidential conversation is the first step.
-
----
-
-*Barry McGovern is a Licensed Real Estate Salesperson and oceanfront and waterfront specialist at Hedgerow Exclusive Properties. For a confidential consultation or to discuss off-market opportunities, call 646-339-0154.*
     `,
   },
 
@@ -1253,7 +1216,7 @@ An off-market process can be appropriate when discretion is essential, when the 
 
 117 Main Street is an example of an off-market transaction. The property’s historic character, business-district location, residence, retail component, and pool created a story that called for context. The record is shown at $5,950,000, but the broader lesson is strategic: private marketing can pair a specific property with a specific audience without presenting it as a generic listing.
 
-Other private sales include 18 South Harbor Drive in Sag Harbor, recorded at $3,600,000, and 55 Marine Boulevard in Amagansett, a Hedgerow transaction recorded at $9,000,000. Those records should not be treated as current availability or as a price guide for another home. They illustrate the range of situations in which a private transaction may be used.
+Other private sales include 18 South Harbor Drive in Sag Harbor, recorded at $3,600,000, and 55 Marine Boulevard in Amagansett, a Hedgerow transaction recorded at $9,000,000. They illustrate the range of situations in which a private transaction may be used.
 
 ## The buyer’s decision framework
 

@@ -3,13 +3,21 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { areas } from "@/lib/areas";
 import { getTownComps } from "@/lib/comps";
-import { notableSales } from "@/lib/sales";
+import { formatSaleStatus, notableSales } from "@/lib/sales";
+import { OCEANFRONT_BY_VILLAGE, OCEANFRONT_STUDY_PATH, OCEANFRONT_STUDY_TITLE, formatMillions } from "@/lib/oceanfront";
 import { postsByDate } from "@/lib/blog";
 import JsonLd from "@/components/JsonLd";
 import { ClosingInvitation, PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
+import { OG_VILLAGES } from "@/lib/og-images";
 import { BARRY_BLURB, breadcrumbListJsonLd, placeJsonLd, routeMetadata } from "@/lib/schema";
 
- type Props = { params: Promise<{ area: string }> };
+type Props = { params: Promise<{ area: string }> };
+
+/** First sentence as the lede, the rest as body copy, so the overview never becomes a wall of display type. */
+function splitLede(text: string) {
+  const m = /^([^]+?[.!?])\s+([^]+)$/.exec(text.trim());
+  return m ? { lede: m[1], rest: m[2] } : { lede: text, rest: "" };
+}
 
 const briefSlugs = new Set(["sag-harbor", "southampton", "east-hampton"]);
 
@@ -54,6 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     path: `/${area.slug}`,
+    image: OG_VILLAGES.includes(area.slug) ? `/og/village/${area.slug}.jpg` : undefined,
   });
 }
 
@@ -70,6 +79,9 @@ export default async function AreaPage({ params }: Props) {
   const areaSales = notableSales.filter(
     (s) => s.area.toLowerCase().replace(/\s+/g, "-") === slug
   );
+
+  const overview = splitLede(area.editorial || area.description);
+  const oceanfront = OCEANFRONT_BY_VILLAGE.find((v) => v.slug === slug);
 
   const numerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
   let section = 0;
@@ -95,7 +107,7 @@ export default async function AreaPage({ params }: Props) {
         footer={
           <dl className="grid gap-8 sm:grid-cols-[auto_auto_1fr] sm:gap-16">
             <div className="flex flex-col-reverse">
-              <dd className="mt-2 font-serif text-[1.6rem] font-light text-paper">{area.priceRange}</dd>
+              <dd className="mt-2 font-serif text-[1.6rem] font-light text-paper">{area.priceRange.replace(/\s*-\s*/, " to ")}</dd>
               <dt className="eyebrow text-paper/75">Price Range</dt>
             </div>
             <div className="flex flex-col-reverse">
@@ -116,12 +128,11 @@ export default async function AreaPage({ params }: Props) {
             <SectionLabel n={nextNumeral()}>Overview</SectionLabel>
           </div>
           <div className="md:col-span-9 lg:col-span-8">
-            <p data-reveal className="lede text-ink">{area.editorial || area.description}</p>
-            {area.editorial && (
-              <p data-reveal style={revealDelay(100)} className="body-copy mt-10 border-t border-line pt-8 text-ink-muted md:ml-[25%]">
-                {area.description}
-              </p>
-            )}
+            <p data-reveal className="lede text-ink">{overview.lede}</p>
+            <div data-reveal style={revealDelay(100)} className="mt-10 grid gap-8 border-t border-line pt-8 md:ml-[25%]">
+              {overview.rest ? <p className="body-copy text-ink-muted">{overview.rest}</p> : null}
+              {area.editorial ? <p className="body-copy text-ink-muted">{area.description}</p> : null}
+            </div>
           </div>
         </div>
       </section>
@@ -153,7 +164,7 @@ export default async function AreaPage({ params }: Props) {
       <section className="py-24 md:py-36">
         <div className="frame grid gap-12 md:grid-cols-12">
           <div className="md:col-span-3">
-            <SectionLabel n={nextNumeral()}>What Makes {area.name} Special</SectionLabel>
+            <SectionLabel n={nextNumeral()}>What makes {area.name} special</SectionLabel>
           </div>
           <ol className="border-t border-ink/80 md:col-span-9">
             {area.highlights.map((h, i) => (
@@ -176,6 +187,40 @@ export default async function AreaPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {oceanfront && (
+        <section aria-labelledby="oceanfront-heading" className="bg-ocean-deep py-24 text-paper md:py-32">
+          <div className="frame">
+            <div className="grid gap-8 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-7">
+                <SectionLabel n={nextNumeral()} className="text-paper/75">Oceanfront, 2021 to 2026</SectionLabel>
+                <h2 id="oceanfront-heading" data-reveal style={revealDelay(80)} className="display-2 mt-6">
+                  {area.name} <em className="italic text-paper/80">on the ocean</em>
+                </h2>
+              </div>
+              <p data-reveal style={revealDelay(160)} className="text-[14px] leading-relaxed text-paper/80 md:col-span-4 md:col-start-9">
+                {area.name} recorded {oceanfront.sales} oceanfront sales from January 2021 to early October 2026, at a median of {formatMillions(oceanfront.median)}.
+              </p>
+            </div>
+            <dl className="mt-14 grid grid-cols-2 border-t border-paper/20 lg:grid-cols-4">
+              {[
+                { k: "Oceanfront sales", v: String(oceanfront.sales) },
+                { k: "Median price", v: formatMillions(oceanfront.median) },
+                { k: "Range", v: oceanfront.range },
+                { k: "Notable sale", v: oceanfront.notable },
+              ].map((item, i) => (
+                <div key={item.k} data-reveal style={revealDelay(i * 80)} className={`flex flex-col-reverse justify-end gap-3 border-b border-paper/15 py-8 lg:border-b-0 ${i % 2 ? "border-l pl-5 lg:pl-8" : "pr-5 lg:pr-8"} ${i === 2 ? "lg:border-l lg:pl-8" : ""}`}>
+                  <dt className="eyebrow text-paper/70">{item.k}</dt>
+                  <dd className={`font-serif font-light leading-[1.15] ${i < 2 ? "text-[2.4rem] md:text-[3rem]" : "text-[1.3rem] md:text-[1.5rem]"}`}>{item.v}</dd>
+                </div>
+              ))}
+            </dl>
+            <Link href={OCEANFRONT_STUDY_PATH} className="link-line eyebrow mt-12 inline-block text-paper">
+              Read {OCEANFRONT_STUDY_TITLE} <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {townComps && townComps.comps.length > 0 && (
         <section className="border-t border-line py-24 md:py-36">
@@ -222,17 +267,22 @@ export default async function AreaPage({ params }: Props) {
       {!isBrief && areaSales.length > 0 && (
         <section className="border-t border-line py-24 md:py-36">
           <div className="frame">
-            <SectionLabel n={nextNumeral()}>Hedgerow sales in {area.name}</SectionLabel>
+            <SectionLabel n={nextNumeral()}>Hedgerow sales {area.slug === "shelter-island" ? "on" : "in"} {area.name}</SectionLabel>
             <div className="mt-12 grid border-t border-ink/80 md:grid-cols-2">
               {areaSales.map((sale, i) => (
                 <div key={sale.slug} data-reveal style={revealDelay((i % 2) * 80)} className={`border-b border-line py-8 ${i % 2 ? "md:border-l md:pl-10" : "md:pr-10"}`}>
                   <p className="font-serif text-[2rem] font-light leading-none text-ocean">{sale.price}</p>
                   <p className="mt-4 font-serif text-[1.3rem] text-ink">{sale.address}, {sale.area}</p>
-                  <p className="mt-1 text-[13px] text-ink-faint">{sale.status}</p>
-                  <p className="mt-1 text-[12px] tracking-[0.04em] text-ink-faint">{sale.beds} BD · {sale.baths} BA · {sale.sqft} SF · {sale.acres} AC</p>
+                  <p className="mt-1 text-[13px] text-ink-faint">{formatSaleStatus(sale.status)}{sale.roleNote ? ` · ${sale.roleNote}` : ""}</p>
+                  {[sale.beds && `${sale.beds} BD`, sale.baths && `${sale.baths} BA`, sale.sqft && `${sale.sqft} SF`, sale.acres && `${sale.acres} AC`].filter(Boolean).length ? (
+                    <p className="mt-1 text-[12px] tracking-[0.04em] text-ink-faint">
+                      {[sale.beds && `${sale.beds} BD`, sale.baths && `${sale.baths} BA`, sale.sqft && `${sale.sqft} SF`, sale.acres && `${sale.acres} AC`].filter(Boolean).join(" · ")}
+                    </p>
+                  ) : null}
                 </div>
               ))}
             </div>
+            <Link href="/sales" className="link-line eyebrow mt-10 inline-block text-ocean">The full Hedgerow portfolio <span aria-hidden="true">→</span></Link>
           </div>
         </section>
       )}
@@ -254,7 +304,7 @@ export default async function AreaPage({ params }: Props) {
                   </li>
                 ))}
               </ul>
-              <Link href="/market" className="link-line eyebrow mt-8 inline-block text-ocean">All market research <span aria-hidden="true">↗</span></Link>
+              <Link href="/market" className="link-line eyebrow mt-8 inline-block text-ocean">All market research <span aria-hidden="true">→</span></Link>
             </div>
           </div>
         </section>
@@ -262,15 +312,18 @@ export default async function AreaPage({ params }: Props) {
 
       <ClosingInvitation
         n={nextNumeral()}
-        label={`Your ${area.name} Specialist`}
-        title={`Looking to Buy or Sell in ${area.name}?`}
-        body={`As an oceanfront and waterfront specialist at Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage, Barry offers access to on-market and off-market opportunities across ${area.name} and the entire East End.`}
+        label="Private inquiries"
+        title={`Buying or selling ${area.slug === "shelter-island" ? "on" : "in"} ${area.name}?`}
+        body={`Confidential guidance on ${area.name} and the wider East End, including on-market and off-market opportunities, from an oceanfront and waterfront specialist at Hedgerow Exclusive Properties.`}
         cta={`Inquire about ${area.name}`}
       />
 
-      <section className="bg-paper-deep pb-12">
+      <section className="bg-paper-deep pb-14">
         <div className="frame border-t border-line pt-8">
-          <p className="max-w-2xl text-[11px] leading-relaxed text-ink-faint">{BARRY_BLURB} Serving {area.name} and the East End from Southampton to Montauk.</p>
+          <p className="max-w-3xl text-[12.5px] leading-relaxed text-ink-muted">
+            {BARRY_BLURB}{" "}
+            <Link href="/about" className="link-line text-ink">About Barry</Link>
+          </p>
         </div>
       </section>
     </div>

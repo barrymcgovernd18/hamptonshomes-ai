@@ -7,8 +7,9 @@ import { featuredPress, hedgerowPress, type PressItem } from "@/lib/press";
 export const metadata: Metadata = routeMetadata({
   title: "Press",
   description:
-    "Barry McGovern and Hedgerow Exclusive Properties in the press, from The Wall Street Journal and Forbes to The Real Deal, Robb Report, and 27East.",
+    "Barry McGovern in Behind The Hedges, 27East and James Lane Post, and Hedgerow Exclusive Properties in The Wall Street Journal, Forbes and The Real Deal.",
   path: "/press",
+  image: "/og/press.jpg",
 });
 
 function Meta({ item, className }: { item: PressItem; className: string }) {
@@ -30,7 +31,7 @@ export default function PressPage() {
         eyebrow="Press"
         title="In the"
         italic="Headlines"
-        intro={<p>Barry McGovern and Hedgerow Exclusive Properties, in print and online.</p>}
+        intro={<p>Barry McGovern on the East End market, and Hedgerow Exclusive Properties in print and online.</p>}
         aside={
           <ul aria-label="Outlets" className="hidden columns-2 gap-8 border-l border-paper/20 pl-8 font-serif text-[1.15rem] italic leading-[1.9] text-paper/75 md:block">
             {outlets.map((outlet) => (
@@ -40,52 +41,49 @@ export default function PressPage() {
         }
       />
 
-      {/* I. Featured: Barry's own mentions */}
+      {/* I. Featured: independent articles that name Barry */}
       <section className="py-24 md:py-36">
-        <div className="frame">
-          <SectionLabel n="I">Featured</SectionLabel>
-          <div className="mt-12 grid gap-x-10 gap-y-16 md:mt-16 md:grid-cols-3">
-            {featuredPress.map((item, i) => (
-              <a
-                key={item.url}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-reveal
-                style={revealDelay(i * 100)}
-                className="group flex flex-col"
-              >
-                {item.image ? (
-                  <div className="relative aspect-[4/5] overflow-hidden bg-paper-deep">
-                    <Image src={item.image} alt={item.alt ?? item.title} fill className="photo-bw object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-                  </div>
-                ) : (
-                  <div className="relative flex aspect-[4/5] flex-col justify-between overflow-hidden bg-ocean-deep p-8 md:p-10">
-                    <p className="eyebrow text-paper/70">In conversation</p>
-                    <div>
-                      <p className="display-2 text-paper transition-transform duration-700 [transition-timing-function:var(--ease-editorial)] group-hover:-translate-y-1">{item.outlet}</p>
-                      <div className="mt-6 h-px w-12 bg-paper/50 transition-all duration-700 group-hover:w-24" />
-                    </div>
-                  </div>
-                )}
-                <div className="flex flex-1 flex-col pt-7">
-                  <Meta item={item} className="eyebrow text-ocean" />
-                  <h2 className="display-3 mt-4 font-light text-ink">{item.title}</h2>
-                  <p className="mt-4 text-[14px] leading-[1.8] text-ink-muted">{item.summary}</p>
-                  <p className="mt-auto pt-7">
-                    <span className="link-line eyebrow text-ink">Read at {item.outlet} →</span>
-                  </p>
-                </div>
-              </a>
-            ))}
+        <div className="frame grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <SectionLabel n="I" as="h2">Featuring Barry</SectionLabel>
+            <p data-reveal style={revealDelay(80)} className="display-3 mt-6 max-w-[16ch] font-light text-ink">
+              Quoted, interviewed, <em className="italic text-ink-muted">and on the panel.</em>
+            </p>
           </div>
+          <ol className="border-t border-ink/80 md:col-span-8">
+            {featuredPress.map((item, i) => (
+              <li key={item.url} data-reveal style={revealDelay((i % 4) * 60)} className="border-b border-line">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group grid gap-3 py-8 sm:grid-cols-[9.5rem_1fr] sm:gap-8 md:py-9"
+                >
+                  <div className="flex items-baseline gap-4 sm:block">
+                    <p className="eyebrow text-ink-faint"><time dateTime={item.date}>{item.dateText}</time></p>
+                    {item.role ? <p className="eyebrow text-ocean sm:mt-3">{item.role}</p> : null}
+                  </div>
+                  <div>
+                    <p className="font-serif text-[1.05rem] italic text-ink-muted">{item.outlet}</p>
+                    <h3 className="mt-1.5 font-serif text-[1.65rem] font-light leading-[1.2] text-ink transition-colors duration-500 group-hover:text-ocean md:text-[1.9rem]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 max-w-[60ch] text-[14px] leading-[1.8] text-ink-muted">{item.summary}</p>
+                    <p className="mt-4">
+                      <span className="link-line eyebrow text-ink">Read at {item.outlet} <span aria-hidden="true">→</span></span>
+                    </p>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
       {/* II. Hedgerow Exclusive in the press */}
       <section className="defer-render border-t border-line bg-paper-soft py-24 md:py-36">
         <div className="frame">
-          <SectionLabel n="II" as="h2">Hedgerow Exclusive in the press</SectionLabel>
+          <SectionLabel n="II" as="h2">Hedgerow Exclusive Properties in the press</SectionLabel>
           <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
             {hedgerowPress.map((item, i) => (
               <a
@@ -115,7 +113,7 @@ export default function PressPage() {
                   </h3>
                   <p className="mt-3 text-[13px] leading-[1.75] text-ink-muted">{item.summary}</p>
                   <p className="mt-auto pt-5">
-                    <span className="link-line eyebrow text-ink-muted">Read at {item.outlet} →</span>
+                    <span className="link-line eyebrow text-ink-muted">Read at {item.outlet} <span aria-hidden="true">→</span></span>
                   </p>
                 </div>
               </a>
