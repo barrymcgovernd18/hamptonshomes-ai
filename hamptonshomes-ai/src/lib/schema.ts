@@ -367,21 +367,23 @@ export function salesItemListJsonLd(
     price: string;
     dateText: string;
     hedgerowRole: string;
-  }[]
+    roleLabel?: string;
+  }[],
+  name = "Hedgerow Exclusive Properties sales, 2021 to 2026",
 ) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Hedgerow Exclusive Properties sales, 2021 to 2026",
+    name,
     description:
-      "Sold transactions published by Hedgerow Exclusive Properties, the boutique Hamptons firm Barry McGovern works with. Roles shown are the firm's.",
+      "Sold transactions published by Hedgerow Exclusive Properties, the boutique Hamptons firm Barry McGovern works with. Roles shown are the firm's, in the firm's words.",
     url: `${SITE_URL}/sales`,
     numberOfItems: sales.length,
     itemListElement: sales.map((sale, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: `${sale.address}, ${sale.area}`,
-      description: `${sale.address}, ${sale.area}. Sold ${sale.dateText}.${sale.price ? ` ${sale.price}.` : ""} Hedgerow's role: ${sale.hedgerowRole}.`,
+      description: `${sale.address}, ${sale.area}.${sale.dateText ? ` Sold ${sale.dateText}.` : ""}${sale.price ? ` ${sale.price}.` : ""} ${sale.roleLabel || "A Hedgerow transaction"}.`,
     })),
   };
 }

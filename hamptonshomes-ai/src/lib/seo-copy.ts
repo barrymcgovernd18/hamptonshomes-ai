@@ -51,12 +51,12 @@ export const SALES_HERO = {
 } as const;
 
 export const DUCK_POND_BLURB = {
-  roleNote: "Hedgerow's role: Listing",
+  roleNote: "Hedgerow represented the seller",
   blurb: "Southampton waterfront on Wickapogue Pond, with views to the Atlantic. Closed January 2026 at $20 million.",
 } as const;
 
 export const SAGAPONACK_MAIN_BLURB = {
-  roleNote: "Hedgerow's role: Buyer side",
+  roleNote: "Hedgerow represented the buyer",
   blurb: "Sagaponack South estate on 2.17 acres. Closed May 2023 at $10.5 million.",
 } as const;
 
