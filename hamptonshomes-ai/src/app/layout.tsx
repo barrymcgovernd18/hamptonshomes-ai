@@ -22,6 +22,7 @@ const HOME_DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hamptonshomes.ai"),
+  verification: { google: "pf35TItfwnpq-tXzRIQ6rgxRi8G1GCzIIEDJAIZnorc" },
   title: {
     default: HOME_TITLE,
     template: "%s | Barry McGovern",
