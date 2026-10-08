@@ -84,7 +84,11 @@ export default function ContactPage() {
 
           <div className="md:col-span-6 md:col-start-7">
             <SectionLabel n="II">Send a message</SectionLabel>
-            <div data-reveal style={revealDelay(80)} className="mt-10 border-t border-ink/80 pt-8">
+            <div data-reveal style={revealDelay(80)} className="mt-10 bg-ocean-deep px-6 py-10 text-paper sm:px-10 md:px-12 md:py-12">
+              <p className="mb-8 flex items-center gap-3 text-[14px] text-gold">
+                <span aria-hidden="true" className="inline-block h-px w-8 bg-gold" />
+                Barry replies personally, usually within a few hours.
+              </p>
               <ContactForm />
             </div>
           </div>

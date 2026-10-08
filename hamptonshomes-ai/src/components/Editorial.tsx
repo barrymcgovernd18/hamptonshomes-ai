@@ -153,29 +153,35 @@ export function ClosingInvitation({
   cta: string;
 }) {
   return (
-    <section className="border-t border-line bg-paper-deep py-24 md:py-36">
-      <div className="frame grid gap-10 md:grid-cols-12 md:items-end">
+    <section className="border-t border-line bg-paper-deep py-16 md:py-24">
+      <div className="frame">
+      <div className="grid gap-10 bg-ocean-deep px-6 py-14 text-paper sm:px-10 md:grid-cols-12 md:items-end md:px-14 md:py-20 lg:px-20">
         <div className="md:col-span-7">
-          <SectionLabel n={n}>{label}</SectionLabel>
-          <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6 text-ink">
+          <SectionLabel n={n} className="text-gold">{label}</SectionLabel>
+          <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6 text-paper">
             {title}
             {italic ? (
               <>
                 {" "}
-                <em className="block italic text-ink-muted">{italic}</em>
+                <em className="block italic text-paper/80">{italic}</em>
               </>
             ) : null}
           </h2>
         </div>
         <div data-reveal style={revealDelay(160)} className="md:col-span-4 md:col-start-9">
-          {body ? <p className="body-copy text-ink-muted">{body}</p> : null}
+          {body ? <p className="body-copy text-paper/85">{body}</p> : null}
+          <p className="mt-4 text-[14px] text-gold">Barry replies personally, usually within a few hours.</p>
           <Link
             href={href}
-            className="eyebrow mt-8 inline-block bg-ocean-deep px-9 py-4 text-paper transition-colors duration-500 hover:bg-ink"
+            className="eyebrow mt-8 inline-flex items-center gap-3 bg-paper px-10 py-5 text-[12px] text-ocean-deep transition-colors duration-300 hover:bg-gold"
           >
-            {cta}
+            {cta} <span aria-hidden="true">→</span>
           </Link>
+          <p className="mt-6 text-[14px] text-paper/80">
+            Or call <a href="tel:+16463390154" className="text-paper underline decoration-paper/30 underline-offset-[4px] hover:text-gold">646.339.0154</a>
+          </p>
         </div>
+      </div>
       </div>
     </section>
   );
