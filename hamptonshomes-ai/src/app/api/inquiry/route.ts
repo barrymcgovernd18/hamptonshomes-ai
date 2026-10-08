@@ -22,6 +22,7 @@ const KINDS = {
   valuation: "Home valuation",
   signup: "Oceanfront study signup",
   popup: "Email popup",
+  search: "Listing search",
 } as const;
 type Kind = keyof typeof KINDS;
 
@@ -56,7 +57,7 @@ export async function POST(request: Request) {
   const pageUrl = sitePageUrl(body.pageUrl);
 
   if (!EMAIL_RE.test(email)) return bad("Please enter a valid email address.");
-  if ((kind === "listing" || kind === "valuation") && !name) return bad("Please enter your name.");
+  if ((kind === "listing" || kind === "valuation" || kind === "search") && !name) return bad("Please enter your name.");
 
   const details: [string, string][] = [];
   if (kind === "listing") {

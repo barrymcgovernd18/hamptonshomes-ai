@@ -319,8 +319,8 @@ export default async function ListingPageRoute({ params }: Props) {
               </Link>
             ))}
           </div>
-          <Link href="/sales#listings" className="link-line eyebrow mt-12 inline-block text-ocean">
-            All Hedgerow listings <span aria-hidden="true">→</span>
+          <Link href="/listings" className="link-line eyebrow mt-12 inline-block text-ocean">
+            Search all listings <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>

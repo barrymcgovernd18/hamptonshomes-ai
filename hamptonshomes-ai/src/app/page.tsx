@@ -69,9 +69,10 @@ export default function Home() {
           <div
             className="mt-10 grid grid-cols-[1fr_auto] items-center gap-6 border-t border-paper/25 pt-6 md:mt-14 md:grid-cols-[1fr_auto_1fr]"
           >
-            <div className="flex items-center gap-8">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 sm:gap-x-8">
               <Link href="/contact" className="eyebrow link-line text-paper">Inquire</Link>
               <Link href="/sales" className="eyebrow link-line text-paper/85 hover:text-paper">The Portfolio</Link>
+              <Link href="/listings" className="eyebrow link-line text-paper/85 hover:text-paper">Search listings</Link>
             </div>
             <p className="eyebrow hidden whitespace-nowrap text-center text-paper/75 md:block">
               Licensed Real Estate Salesperson · Hedgerow Exclusive Properties

@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import Link from "next/link";
 
-export type LeadKind = "listing" | "valuation" | "signup" | "popup";
+export type LeadKind = "listing" | "valuation" | "signup" | "popup" | "search";
 
 import { LEAD_DONE_KEY, OCEANFRONT_STUDY } from "@/lib/lead-keys";
 
@@ -53,6 +53,12 @@ const FIELDS: Record<LeadKind, Field[]> = {
     { name: "property", label: "Property address", type: "text", required: true, autoComplete: "street-address", placeholder: "Street and village" },
     { name: "message", label: "Anything to add (optional)", type: "text", textarea: true },
   ],
+  search: [
+    { name: "name", label: "Name", type: "text", required: true, autoComplete: "name", placeholder: "Your full name" },
+    { name: "email", label: "Email", type: "email", required: true, autoComplete: "email", placeholder: "you@example.com" },
+    { name: "phone", label: "Phone", type: "tel", autoComplete: "tel", placeholder: "Optional" },
+    { name: "message", label: "What you're looking for", type: "text", textarea: true, placeholder: "Village, budget, bedrooms, waterfront, timing" },
+  ],
   signup: [
     { name: "email", label: "Email", type: "email", required: true, autoComplete: "email", placeholder: "you@example.com" },
     { name: "name", label: "Name (optional)", type: "text", autoComplete: "name", placeholder: "Your name" },
@@ -65,6 +71,7 @@ const FIELDS: Record<LeadKind, Field[]> = {
 
 const CTA: Record<LeadKind, string> = {
   listing: "Send inquiry",
+  search: "Send to Barry",
   valuation: "Request a valuation",
   signup: "Send me the study",
   popup: "Sign up",

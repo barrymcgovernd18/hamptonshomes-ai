@@ -137,9 +137,14 @@ export default function SalesPage() {
               <SectionLabel n="I">Available now</SectionLabel>
               <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6">Exclusively listed with Hedgerow</h2>
             </div>
-            <p data-reveal style={revealDelay(160)} className="text-[13px] leading-relaxed text-ink-muted md:col-span-4 md:text-right">
-              {actives.length} residences for sale or in contract, offered exclusively through Hedgerow Exclusive Properties.
-            </p>
+            <div data-reveal style={revealDelay(160)} className="md:col-span-4 md:text-right">
+              <p className="text-[13px] leading-relaxed text-ink-muted">
+                {actives.length} residences for sale or in contract, offered exclusively through Hedgerow Exclusive Properties.
+              </p>
+              <Link href="/listings" className="link-line eyebrow mt-5 inline-block text-ocean">
+                Search listings <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
           <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
             {actives.map((listing, i) => (
