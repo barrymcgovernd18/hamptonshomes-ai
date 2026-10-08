@@ -67,12 +67,12 @@ function Panel({ trade, index, sizes, className, large = false, compact = false 
             {trade.area}
             {trade.dateText ? ` · ${trade.dateText}` : ""}
           </p>
-          <h3 className={`mt-2.5 font-serif font-light leading-[1.04] text-paper ${large ? "text-[2rem] md:text-[2.8rem] lg:text-[3.4rem]" : "text-[1.75rem] md:text-[2rem] lg:text-[2.35rem]"}`}>
+          <h3 className={`mt-2.5 font-serif font-light leading-[1.04] text-paper ${large ? "text-[1.85rem] md:text-[2.4rem] lg:text-[2.8rem]" : "text-[1.75rem] md:text-[2rem] lg:text-[2.35rem]"}`}>
             {trade.address}
           </h3>
         </div>
         <div className={`flex shrink-0 flex-wrap items-baseline gap-x-4 gap-y-1.5 ${compact ? "" : "sm:block sm:text-right"}`}>
-          <p className={`font-serif font-light leading-none text-paper ${large ? "text-[1.7rem] md:text-[2.4rem] lg:text-[2.9rem]" : "text-[1.5rem] md:text-[1.8rem] lg:text-[2.05rem]"}`}>
+          <p className={`font-serif font-light leading-none text-paper ${large ? "text-[1.5rem] md:text-[2rem] lg:text-[2.4rem]" : "text-[1.5rem] md:text-[1.8rem] lg:text-[2.05rem]"}`}>
             {trade.price}
           </p>
           <p className={`eyebrow whitespace-nowrap text-paper/80 ${compact ? "" : "sm:mt-2.5"}`}>A Hedgerow transaction</p>
@@ -82,17 +82,17 @@ function Panel({ trade, index, sizes, className, large = false, compact = false 
   );
 }
 
-const PAIR_ROW = "grid gap-1.5 md:h-[46vw] md:max-h-[860px] md:grid-cols-12";
-const PAIR_CELL = "aspect-[4/5] sm:aspect-[4/3] md:aspect-auto md:h-full";
+const PAIR_ROW = "grid gap-1.5 md:h-[32vw] md:max-h-[440px] md:grid-cols-12";
+const PAIR_CELL = "aspect-[4/3] md:aspect-auto md:h-full";
 const SPAN = {
   5: { col: "md:col-span-5", sizes: "(max-width: 768px) 100vw, 42vw" },
   6: { col: "md:col-span-6", sizes: "(max-width: 768px) 100vw, 50vw" },
   7: { col: "md:col-span-7", sizes: "(max-width: 768px) 100vw, 58vw" },
 } as const;
-const TRIO_ROW = "grid gap-1.5 md:h-[38vw] md:max-h-[720px] md:grid-cols-3";
-const TRIO_CELL = "aspect-[4/5] sm:aspect-[4/3] md:aspect-auto md:h-full";
+const TRIO_ROW = "grid gap-1.5 md:h-[26vw] md:max-h-[360px] md:grid-cols-3";
+const TRIO_CELL = "aspect-[4/3] md:aspect-auto md:h-full";
 type Span = keyof typeof SPAN;
-const FULL = "aspect-[4/5] sm:aspect-[4/3] md:aspect-[16/9]";
+const FULL = "aspect-[4/3] md:aspect-auto md:h-[58vh] md:min-h-[400px] md:max-h-[560px]";
 
 export default function TradesShowcase() {
   const [t1, t2, t3, t4, t5, t6, t7, t8, t9] = largestTrades();
@@ -118,10 +118,10 @@ export default function TradesShowcase() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-1.5">
-        {t1 && <Panel trade={t1} index={0} large sizes="100vw" className={FULL} />}
+      <div className="frame flex flex-col gap-1.5">
+        {t1 && <Panel trade={t1} index={0} large sizes="(max-width: 1440px) 100vw, 1360px" className={FULL} />}
         {pair(t2, t3, 1, 7, 5)}
-        {t4 && <Panel trade={t4} index={3} large sizes="100vw" className={FULL} />}
+        {t4 && <Panel trade={t4} index={3} large sizes="(max-width: 1440px) 100vw, 1360px" className={FULL} />}
         {pair(t5, t6, 4, 5, 7)}
         {t7 && (
           <div className={TRIO_ROW}>
