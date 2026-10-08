@@ -1184,7 +1184,7 @@ Consider the top of the Hamptons market over the past decade:
 
 - **2014:** $147 million for three contiguous Further Lane parcels in East Hampton, still the Hamptons record
 - **2016:** $110 million for three Lily Pond Lane parcels in East Hampton
-- **2021:** $105 million for 90 Jule Pond Drive in Water Mill, then the highest price paid for a single Hamptons property, and $118.5 million for the four-parcel Cobb Road compound in Water Mill, a Hedgerow transaction
+- **2021:** $105 million for 90 Jule Pond Drive in Water Mill, then the highest price paid for a single Hamptons property, and $121.5 million for the four-parcel compound at 70 & 71 Cobb Lane in Water Mill, a Hedgerow transaction
 - **2025:** $115 million for 408 Further Lane in Amagansett
 
 Nine-figure trades remain rare. The [oceanfront study](/blog/hamptons-oceanfront-market-2021-2026) counts three oceanfront sales above $100 million from 2021 through 2026.
