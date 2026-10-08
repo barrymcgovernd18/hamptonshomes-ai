@@ -90,18 +90,6 @@ export default function SalesPage() {
             </div>
           </dl>
         }
-        footer={
-          <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between md:gap-10">
-            <p className="text-[13px] leading-relaxed text-paper/80">
-              For the oceanfront market behind many of these trades, read{" "}
-              <Link href={OCEANFRONT_ARTICLE} className="link-line text-paper">
-                Hamptons Oceanfront, 2021 to 2026
-              </Link>
-              .
-            </p>
-            <p className="eyebrow shrink-0 text-paper/70">Pictured: 43 East Dune Lane, East Hampton, a Hedgerow transaction</p>
-          </div>
-        }
       />
 
       {/* I. Available now */}
