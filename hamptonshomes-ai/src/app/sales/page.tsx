@@ -9,7 +9,6 @@ import {
   hedgerowActiveListings,
   hedgerowFirmHistory,
   hedgerowSold2021,
-  type HedgerowGroup,
   type HedgerowSoldDeal,
 } from "@/lib/portfolio";
 import { activeListingsItemListJsonLd, routeMetadata, salesItemListJsonLd } from "@/lib/schema";
@@ -25,12 +24,6 @@ export const metadata: Metadata = routeMetadata({
 
 const OCEANFRONT_ARTICLE = "/blog/hamptons-oceanfront-market-2021-2026";
 
-const GROUPS: { key: HedgerowGroup; label: string; note: string }[] = [
-  { key: "Oceanfront", label: "Oceanfront", note: "Oceanfront sales across the South Fork." },
-  { key: "Waterfront", label: "Waterfront and bayfront", note: "Bay, pond, and harbor frontage." },
-  { key: "Estate and village", label: "Estates, village, and other", note: "Estate section, farmland, village, and other Hedgerow sales." },
-];
-
 function ListingLink({ listing, className, label, children }: { listing: { listingUrl: string; alt: string }; className: string; label?: boolean; children: React.ReactNode }) {
   const internal = listingPathByHedgerowUrl[listing.listingUrl];
   return internal ? (
@@ -44,15 +37,15 @@ function ListingLink({ listing, className, label, children }: { listing: { listi
   );
 }
 
-/** Selected transactions: Barry-involved Hedgerow trades, newest first, mixed by village and setting. Facts as published by Hedgerow. */
+/** Selected transactions: Barry-involved Hedgerow trades, highest price first, mixed by village and setting. Facts as published by Hedgerow. */
 const SELECTED: { address: string; price: string; setting: string; image: string; position?: string; blurb: string }[] = [
-  { address: "33 Dinah Rock Road", price: "$6,995,000", setting: "Waterfront", image: "/images/selected/33-dinah-rock-road-shelter-island.jpg", position: "50% 60%", blurb: "West-facing Shelter Island waterfront on about 2.1 acres, with 186 feet of natural beachfront." },
-  { address: "55 Dunes Lane", price: "$43,500,000", setting: "Oceanfront", image: "/images/trades/55-dunes-lane-amagansett.jpg", position: "42% 50%", blurb: "A gated modern oceanfront estate on 2.8 acres, with unobstructed views to the east." },
-  { address: "109 Duck Pond Lane", price: "$20,000,000", setting: "Waterfront", image: "/images/109-duck-pond.jpg", blurb: "A contemporary residence of about 8,700 square feet on two acres, with views over Wickapogue Pond to the Atlantic." },
-  { address: "79 Surfside Drive", price: "$28,000,000", setting: "Oceanfront", image: "/images/selected/79-surfside-drive-bridgehampton.jpg", position: "50% 55%", blurb: "About 1.5 acres on Surfside Drive with 140 feet of direct ocean frontage." },
-  { address: "33 Lily Pond Lane", price: "$31,500,000", setting: "Oceanfront", image: "/images/33-lily-pond.jpg", blurb: "East Hampton oceanfront on Lily Pond Lane, with 171 feet of private frontage on nearly two acres." },
-  { address: "42 Old Montauk Highway", price: "$18,500,000", setting: "Oceanfront", image: "/images/selected/42-old-montauk-highway-montauk.jpg", position: "50% 55%", blurb: "More than 35 acres of Montauk oceanfront, with roughly 485 feet of private beach." },
   { address: "35 Potato Road & 543 Daniels Lane", price: "$46,500,000", setting: "Oceanfront and land", image: "/images/trades/35-potato-road-543-daniels-lane-sagaponack.jpg", position: "50% 58%", blurb: "Two lots of about four acres in Sagaponack: an oceanfront parcel and an inland parcel across the street." },
+  { address: "55 Dunes Lane", price: "$43,500,000", setting: "Oceanfront", image: "/images/trades/55-dunes-lane-amagansett.jpg", position: "42% 50%", blurb: "A gated modern oceanfront estate on 2.8 acres, with unobstructed views to the east." },
+  { address: "33 Lily Pond Lane", price: "$31,500,000", setting: "Oceanfront", image: "/images/33-lily-pond.jpg", blurb: "East Hampton oceanfront on Lily Pond Lane, with 171 feet of private frontage on nearly two acres." },
+  { address: "79 Surfside Drive", price: "$28,000,000", setting: "Oceanfront", image: "/images/selected/79-surfside-drive-bridgehampton.jpg", position: "50% 55%", blurb: "About 1.5 acres on Surfside Drive with 140 feet of direct ocean frontage." },
+  { address: "109 Duck Pond Lane", price: "$20,000,000", setting: "Waterfront", image: "/images/109-duck-pond.jpg", blurb: "A contemporary residence of about 8,700 square feet on two acres, with views over Wickapogue Pond to the Atlantic." },
+  { address: "42 Old Montauk Highway", price: "$18,500,000", setting: "Oceanfront", image: "/images/selected/42-old-montauk-highway-montauk.jpg", position: "50% 55%", blurb: "More than 35 acres of Montauk oceanfront, with roughly 485 feet of private beach." },
+  { address: "33 Dinah Rock Road", price: "$6,995,000", setting: "Waterfront", image: "/images/selected/33-dinah-rock-road-shelter-island.jpg", position: "50% 60%", blurb: "West-facing Shelter Island waterfront on about 2.1 acres, with 186 feet of natural beachfront." },
 ];
 
 const SELECTED_ROWS: { i: number; span: string }[][] = [
@@ -102,6 +95,8 @@ export default function SalesPage() {
     return deal ? [{ ...pick, deal }] : [];
   });
   const actives = [...hedgerowActiveListings].sort((a, b) => b.priceNum - a.priceNum);
+  // Every sale on one list, highest price first (as on the homepage trades); any deal without a published price goes last.
+  const soldByPrice = [...hedgerowSold2021, ...hedgerowFirmHistory].sort((a, b) => (b.priceNum || 0) - (a.priceNum || 0));
   return (
     <div className="bg-paper text-ink">
       <JsonLd data={activeListingsItemListJsonLd(actives.map((a) => (listingPathByHedgerowUrl[a.listingUrl] ? { ...a, listingUrl: `https://hamptonshomes.ai${listingPathByHedgerowUrl[a.listingUrl]}` } : a)))} />
@@ -232,70 +227,32 @@ export default function SalesPage() {
 
       {/* III. Hedgerow sales since 2021 */}
       <section id="sold" className="defer-render border-t border-line bg-paper-soft py-24 md:py-36">
+        <span id="firm-history" aria-hidden="true" />
         <div className="frame">
           <div className="mb-16 grid gap-8 md:mb-24 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
-              <SectionLabel n="III">Sold, 2021 to 2026</SectionLabel>
+              <SectionLabel n="III">The Hedgerow record</SectionLabel>
               <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6">Hedgerow sales</h2>
             </div>
-            <p data-reveal style={revealDelay(160)} className="body-copy text-ink-muted md:col-span-4 md:col-start-9">
-              {hedgerowSold2021.length} Hedgerow sales since 2021, newest first. Those marked with my name are trades Hedgerow and I were involved in.
-            </p>
-          </div>
-          {GROUPS.map((group) => {
-            const deals = hedgerowSold2021.filter((deal) => deal.group === group.key);
-            if (!deals.length) return null;
-            return (
-              <div key={group.key} className="mb-24 last:mb-0">
-                <div data-reveal className="mb-10 grid gap-4 border-b border-ink/80 pb-5 md:grid-cols-12 md:items-end">
-                  <h3 className="display-3 font-light text-ink md:col-span-5">{group.label}</h3>
-                  <p className="text-[13px] text-ink-muted md:col-span-5">
-                    {group.note}
-                    {group.key === "Oceanfront" ? (
-                      <>
-                        {" "}See also{" "}
-                        <Link href={OCEANFRONT_ARTICLE} className="link-line text-ocean">
-                          Hamptons Oceanfront, 2021 to 2026
-                        </Link>
-                        .
-                      </>
-                    ) : null}
-                  </p>
-                  <p className="eyebrow text-ink-faint md:col-span-2 md:text-right">{deals.length} sales</p>
-                </div>
-                <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-                  {deals.map((deal, i) => (
-                    <SoldCard key={`${deal.address}-${deal.date}`} deal={deal} index={i} />
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* IV. The Hedgerow record */}
-      <section id="firm-history" className="defer-render py-24 md:py-36">
-        <div className="frame">
-          <div className="mb-14 grid gap-8 md:grid-cols-12 md:items-end">
-            <div className="md:col-span-7">
-              <SectionLabel n="IV">The Hedgerow record</SectionLabel>
-              <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6">Prominent Hedgerow transactions</h2>
+            <div data-reveal style={revealDelay(160)} className="md:col-span-4 md:col-start-9">
+              <p className="body-copy text-ink-muted">
+                {soldByPrice.length} Hedgerow sales, highest price first, from Hedgerow&apos;s published sales and Prominent Deals. Those marked with my name are trades Hedgerow and I were involved in.
+              </p>
+              <Link href={OCEANFRONT_ARTICLE} className="link-line eyebrow mt-5 inline-block text-ocean">
+                Hamptons Oceanfront, 2021 to 2026 <span aria-hidden="true">→</span>
+              </Link>
             </div>
-            <p data-reveal style={revealDelay(160)} className="body-copy text-ink-muted md:col-span-4 md:col-start-9">
-              {hedgerowFirmHistory.length} more transactions from Hedgerow&apos;s Prominent Deals, largest first.
-            </p>
           </div>
           <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-            {hedgerowFirmHistory.map((deal, i) => (
-              <SoldCard key={`${deal.address}-${deal.price}`} deal={deal} index={i} />
+            {soldByPrice.map((deal, i) => (
+              <SoldCard key={`${deal.address}-${deal.date}-${deal.price}`} deal={deal} index={i} />
             ))}
           </div>
         </div>
       </section>
 
       <ClosingInvitation
-        n="V"
+        n="IV"
         label="Private inquiries"
         title="Looking for the right setting?"
         body="Confidential guidance for buyers and sellers across the East End, from Southampton to Montauk."
