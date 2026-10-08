@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import TradesShowcase from "@/components/TradesShowcase";
+import LeadBand from "@/components/LeadBand";
 import { areas } from "@/lib/areas";
 import { blogPosts } from "@/lib/blog";
 import { allPress } from "@/lib/press";
@@ -254,14 +255,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VII. Contact */}
+      {/* VII. Valuation and research */}
+      <LeadBand n="VII" />
+
+      {/* VIII. Contact */}
       <section className="bg-paper-soft">
         <div className="frame grid gap-14 py-28 md:grid-cols-12 md:items-center md:py-40">
           <div data-reveal="image" className="relative aspect-[4/5] overflow-hidden bg-paper-deep md:col-span-5">
             <Image src="/images/barry-mcgovern.jpg" alt="Barry McGovern" fill sizes="(max-width: 768px) 100vw, 40vw" className="photo-bw object-cover object-top" />
           </div>
           <div className="md:col-span-6 md:col-start-7">
-            <p data-reveal className="eyebrow text-ocean">VII. &nbsp;Private inquiries</p>
+            <p data-reveal className="eyebrow text-ocean">VIII. &nbsp;Private inquiries</p>
             <h2 data-reveal style={delay(80)} className="display-2 mt-6 text-ink">
               A conversation, <br />
               <em className="italic text-ink-muted">in confidence.</em>

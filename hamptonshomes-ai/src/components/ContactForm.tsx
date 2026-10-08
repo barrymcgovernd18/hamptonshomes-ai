@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { LEAD_DONE_KEY } from "@/lib/lead-keys";
 
 const fieldClass =
   "w-full rounded-none border-0 border-b border-line bg-transparent px-0 py-3 text-[16px] text-ink placeholder:text-ink-faint transition-[border-color,box-shadow] duration-300 focus:border-ocean-deep focus:shadow-[0_1px_0_0_var(--color-ocean-deep)] focus:outline-none";
@@ -31,6 +32,9 @@ export default function ContactForm() {
       });
 
       if (res.ok) {
+        try {
+          localStorage.setItem(LEAD_DONE_KEY, String(Date.now()));
+        } catch {}
         setStatus("sent");
         form.reset();
       } else {

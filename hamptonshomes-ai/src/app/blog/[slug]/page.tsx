@@ -11,6 +11,7 @@ import {
 } from "@/lib/blog";
 import JsonLd from "@/components/JsonLd";
 import { ClosingInvitation } from "@/components/Editorial";
+import LeadForm from "@/components/LeadForm";
 import BarChart from "@/components/BarChart";
 import { OCEANFRONT_BY_VILLAGE, OCEANFRONT_BY_YEAR, formatMillions } from "@/lib/oceanfront";
 import { OG_POSTS } from "@/lib/og-images";
@@ -347,6 +348,23 @@ export default async function BlogPostPage({ params }: Props) {
 
         <div className="frame">
           <div className="mx-auto mt-16 max-w-[42rem] md:mt-24 [&>h2:first-child]:mt-0 [&>h2:first-child]:border-t-0 [&>h2:first-child]:pt-0">{renderContent(post.content)}</div>
+
+          <aside aria-label="Valuation and research" className="mx-auto mt-20 grid max-w-[42rem] gap-14 border-t border-ink/80 pt-10 sm:grid-cols-2 sm:gap-10 lg:max-w-[56rem]">
+            <div>
+              <p className="eyebrow text-ocean">Get the oceanfront study</p>
+              <p className="mt-3 text-[14px] leading-[1.8] text-ink-muted">Eighty-seven oceanfront sales since 2021, plus new listings before they reach the market.</p>
+              <div className="mt-6">
+                <LeadForm kind="signup" compact />
+              </div>
+            </div>
+            <div>
+              <p className="eyebrow text-ocean">What&apos;s my home worth?</p>
+              <p className="mt-3 text-[14px] leading-[1.8] text-ink-muted">A confidential valuation based on recent sales and the private market.</p>
+              <div className="mt-6">
+                <LeadForm kind="valuation" compact />
+              </div>
+            </div>
+          </aside>
 
           <section aria-label="About the author" className="mx-auto mt-20 max-w-[42rem] border-t border-ink/80 pt-10">
             <div className="grid grid-cols-[72px_1fr] gap-6 sm:grid-cols-[96px_1fr] sm:gap-8">

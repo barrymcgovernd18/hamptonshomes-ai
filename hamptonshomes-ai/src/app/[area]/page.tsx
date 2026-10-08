@@ -6,7 +6,10 @@ import { getTownComps } from "@/lib/comps";
 import { formatSaleStatus, notableSales } from "@/lib/sales";
 import { OCEANFRONT_BY_VILLAGE, OCEANFRONT_STUDY_PATH, OCEANFRONT_STUDY_TITLE, formatMillions } from "@/lib/oceanfront";
 import { postsByDate } from "@/lib/blog";
+import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
+import LeadBand from "@/components/LeadBand";
+import { listingPages } from "@/lib/listing-pages";
 import { ClosingInvitation, PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
 import { OG_VILLAGES } from "@/lib/og-images";
 import { BARRY_BLURB, breadcrumbListJsonLd, placeJsonLd, routeMetadata } from "@/lib/schema";
@@ -79,6 +82,8 @@ export default async function AreaPage({ params }: Props) {
   const areaSales = notableSales.filter(
     (s) => s.area.toLowerCase().replace(/\s+/g, "-") === slug
   );
+
+  const areaListings = listingPages.filter((l) => l.area === area.name).sort((a, b) => b.price - a.price);
 
   const overview = splitLede(area.editorial || area.description);
   const oceanfront = OCEANFRONT_BY_VILLAGE.find((v) => v.slug === slug);
@@ -287,6 +292,32 @@ export default async function AreaPage({ params }: Props) {
         </section>
       )}
 
+      {areaListings.length > 0 && (
+        <section className="defer-render border-t border-line py-24 md:py-36">
+          <div className="frame">
+            <SectionLabel n={nextNumeral()}>Available {area.slug === "shelter-island" ? "on" : "in"} {area.name}</SectionLabel>
+            <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+              {areaListings.map((listing, i) => (
+                <Link key={listing.slug} href={`/listings/${listing.slug}`} data-reveal style={revealDelay((i % 3) * 80)} className="group block">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-paper-deep">
+                    <Image src={listing.images[0]} alt={`${listing.address}, ${listing.area}`} fill quality={50} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="photo-bw object-cover" />
+                  </div>
+                  <p className="eyebrow mt-5 text-ocean">{listing.status}</p>
+                  <div className="mt-2 flex items-baseline justify-between gap-4">
+                    <p className="font-serif text-[1.45rem] font-light leading-tight text-ink">{listing.address}</p>
+                    <p className="whitespace-nowrap font-serif text-[1.2rem] text-ocean">${listing.price.toLocaleString("en-US")}</p>
+                  </div>
+                  <p className="mt-2 text-[12px] tracking-[0.04em] text-ink-faint">
+                    {[listing.beds && `${listing.beds} BD`, listing.sqft && `${listing.sqft} SF`, listing.acres && `${listing.acres} AC`].filter(Boolean).join(" · ")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+            <p className="mt-10 text-[11px] text-ink-faint">Listings courtesy of Hedgerow Exclusive Properties.</p>
+          </div>
+        </section>
+      )}
+
       {areaPosts.length > 0 && (
         <section className="border-t border-line bg-paper-soft py-24 md:py-36">
           <div className="frame grid gap-12 md:grid-cols-12">
@@ -309,6 +340,8 @@ export default async function AreaPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      <LeadBand n={nextNumeral()} place={area.name} />
 
       <ClosingInvitation
         n={nextNumeral()}
