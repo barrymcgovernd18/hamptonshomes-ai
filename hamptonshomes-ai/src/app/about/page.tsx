@@ -11,7 +11,7 @@ export const metadata: Metadata = routeMetadata({
   title: "About Barry McGovern | Hamptons Real Estate Salesperson",
   absoluteTitle: true,
   description:
-    "Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique Hamptons brokerage, focused on oceanfront and waterfront.",
+    "Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique Hamptons firm focused on oceanfront and waterfront.",
   path: "/about",
   image: "/og/about.jpg",
 });

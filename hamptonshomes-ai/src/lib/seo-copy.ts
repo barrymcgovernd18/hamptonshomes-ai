@@ -40,7 +40,7 @@ export const ALSO_ON = {
 export const SALES_PAGE = {
   title: "Portfolio: Hedgerow Listings and Sales",
   description:
-    "Hedgerow Exclusive Properties listings and sales across the Hamptons, with the oceanfront, waterfront, and estate trades Hedgerow and I have been involved in.",
+    "Hedgerow Exclusive listings and sales across the Hamptons, with the oceanfront, waterfront and estate trades Hedgerow and I have been involved in.",
 } as const;
 
 export const SALES_HERO = {

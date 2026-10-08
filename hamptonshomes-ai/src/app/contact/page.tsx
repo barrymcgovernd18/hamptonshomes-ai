@@ -7,7 +7,7 @@ import { routeMetadata } from "@/lib/schema";
 export const metadata: Metadata = routeMetadata({
   title: "Contact",
   description:
-    "Contact Barry McGovern for Hamptons oceanfront, waterfront, and private-market real estate. Licensed Real Estate Salesperson at Hedgerow Exclusive Properties.",
+    "Contact Barry McGovern for Hamptons oceanfront, waterfront and private-market real estate. Licensed Real Estate Salesperson, Hedgerow Exclusive Properties.",
   path: "/contact",
   image: "/og/contact.jpg",
 });
