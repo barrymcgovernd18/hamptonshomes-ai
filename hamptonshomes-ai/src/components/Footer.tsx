@@ -6,10 +6,10 @@ const FAIR_HOUSING_NOTICE =
   "https://dos.ny.gov/system/files/documents/2025/03/nys-housing-and-anti-discrimination-notice_02.2025.pdf";
 
 const explore = [
-  { href: "/about", label: "About" },
   { href: "/sales", label: "Portfolio" },
   { href: "/market", label: "Market" },
   { href: "/press", label: "Press" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 

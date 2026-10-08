@@ -79,6 +79,7 @@ export function PageHero({ eyebrow, title, italic, intro, aside, footer, image, 
   }
   return (
     <section
+      data-hero
       className={`relative isolate overflow-hidden bg-ocean-deep text-paper ${
         compact ? "min-h-[560px] md:h-[72svh] md:max-h-[820px]" : "min-h-[620px] h-[88svh] max-h-[980px]"
       }`}

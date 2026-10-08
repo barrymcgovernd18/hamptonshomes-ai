@@ -2,17 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const primary = [
-  { href: "/about", label: "About" },
   { href: "/sales", label: "Portfolio" },
   { href: "/market", label: "Market" },
   { href: "/press", label: "Press" },
+  { href: "/about", label: "About" },
 ];
 
 /** Pages that open on a dark, full-bleed hero: the bar stays transparent over it until scrolled. */
 const AREA_SLUGS = ["east-hampton", "sag-harbor", "bridgehampton", "sagaponack", "southampton", "water-mill", "amagansett", "montauk", "shelter-island", "wainscott"];
+const BAR_HEIGHT = 76;
 const DARK_HERO_PATHS = new Set(["/", "/about", "/sales", "/press", ...AREA_SLUGS.map((slug) => `/${slug}`)]);
 
 export default function Header() {
@@ -20,21 +21,57 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const lastY = useRef(0);
-  const overHero = DARK_HERO_PATHS.has(pathname) && !scrolled && !menuOpen;
+  const darkHero = DARK_HERO_PATHS.has(pathname);
+  const overHero = darkHero && !scrolled && !menuOpen;
 
+  /*
+   * Transparent over a dark hero, solid once the hero has scrolled out from under the bar.
+   * An IntersectionObserver on the hero (marked data-hero) flips the state exactly once at that
+   * boundary, so iOS rubber-band overscroll, toolbar resizes and tiny scroll deltas cannot toggle it.
+   */
   useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 40);
-      // Tuck the bar away while reading down the page; bring it back on any upward scroll.
-      setHidden(y > 520 && y > lastY.current + 4);
-      if (y < lastY.current - 4 || y <= 520) setHidden(false);
-      lastY.current = y;
+    if (!darkHero) return;
+    const hero = document.querySelector("[data-hero]");
+    if (!hero) return;
+    const io = new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting), {
+      rootMargin: `-${BAR_HEIGHT}px 0px 0px 0px`,
+    });
+    io.observe(hero);
+    return () => io.disconnect();
+  }, [darkHero, pathname]);
+
+  /*
+   * Desktop only: tuck the bar away while reading down, bring it back on upward scroll.
+   * rAF-throttled, ignores overscroll, needs a real delta, and only ever moves via transform.
+   * On phones and tablets the bar simply stays put.
+   */
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    let lastY = Math.max(0, window.scrollY);
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (!desktop.matches) return setHidden(false);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const y = Math.min(Math.max(0, window.scrollY), Math.max(0, max));
+      const delta = y - lastY;
+      if (y <= 520) setHidden(false);
+      else if (delta > 12) setHidden(true);
+      else if (delta < -12) setHidden(false);
+      else return;
+      lastY = y;
     };
-    onScroll();
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    const onChange = () => !desktop.matches && setHidden(false);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    desktop.addEventListener("change", onChange);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      desktop.removeEventListener("change", onChange);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
@@ -54,14 +91,14 @@ export default function Header() {
   return (
     <header
       onFocusCapture={() => setHidden(false)}
-      className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color,color] duration-700 ease-[cubic-bezier(0.22,0.61,0.21,1)] motion-reduce:transition-none ${
-        hidden && !menuOpen ? "-translate-y-full" : ""
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,color] duration-300 ease-out motion-reduce:transition-none lg:transition-[transform,background-color,border-color,color] lg:duration-700 lg:ease-[cubic-bezier(0.22,0.61,0.21,1)] ${
+        hidden && !menuOpen ? "lg:-translate-y-full" : ""
       } ${
         menuOpen
           ? "border-b border-transparent bg-transparent"
           : overHero
             ? "border-b border-paper/15 bg-transparent"
-            : "border-b border-line/70 bg-paper/92 backdrop-blur-md"
+            : "border-b border-line/70 bg-paper lg:bg-paper/92 lg:backdrop-blur-md"
       }`}
     >
       <div className="frame relative grid h-[76px] grid-cols-[1fr_auto_1fr] items-center">

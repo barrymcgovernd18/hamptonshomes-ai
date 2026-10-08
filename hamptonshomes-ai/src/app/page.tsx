@@ -1,26 +1,11 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { notableSales, type Sale } from "@/lib/sales";
+import TradesShowcase from "@/components/TradesShowcase";
 import { areas } from "@/lib/areas";
 import { blogPosts } from "@/lib/blog";
 
-const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-/** "Sold 4/04/2025" reads as "Sold April 2025". */
-function formatStatus(status: string) {
-  const m = status.match(/^(\w[\w ]*?)\s+(\d{1,2})\/\d{1,2}\/(\d{4})$/);
-  return m ? `${m[1]} ${MONTHS[Number(m[2]) - 1]} ${m[3]}` : status;
-}
-
 const delay = (ms: number) => ({ "--reveal-delay": `${ms}ms` }) as CSSProperties;
-
-const FEATURED_SLUGS = [
-  "67-surfside-drive-bridgehampton",
-  "33-lily-pond-lane-east-hampton",
-  "40-hedges-banks-dr-east-hampton",
-  "55-halsey-lane-bridgehampton",
-];
 
 const KEY_NUMBERS = [
   { figure: "$250M+", label: "Personal sales volume" },
@@ -40,47 +25,13 @@ const PRESS = [
   "27East",
 ];
 
-function featuredSales(): Sale[] {
-  const bySlug = new Map(notableSales.map((s) => [s.slug, s]));
-  const picked = FEATURED_SLUGS.map((slug) => bySlug.get(slug)).filter((s): s is Sale => Boolean(s?.image));
-  const fallback = notableSales.filter((s) => s.image && !picked.includes(s));
-  return [...picked, ...fallback].slice(0, 4);
-}
-
-function SaleCaption({ sale, large = false }: { sale: Sale; large?: boolean }) {
-  return (
-    <div className="mt-5 flex items-start justify-between gap-6">
-      <div>
-        <p className="eyebrow text-ink-faint">{sale.area}</p>
-        <h3 className={`mt-2 font-serif font-light leading-tight text-ink ${large ? "text-[2rem] md:text-[2.4rem]" : "text-[1.6rem] md:text-[1.85rem]"}`}>
-          {sale.address}
-        </h3>
-      </div>
-      <div className="shrink-0 pt-0.5 text-right">
-        <p className="font-serif text-[1.15rem] text-ink md:text-[1.3rem]">{sale.price}</p>
-        <p className="mt-1 text-[12px] text-ink-faint">{formatStatus(sale.status)}</p>
-      </div>
-    </div>
-  );
-}
-
-function SalePhoto({ sale, aspect, sizes, wait = 0 }: { sale: Sale; aspect: string; sizes: string; wait?: number }) {
-  return (
-    <div data-reveal="image" style={delay(wait)} className={`relative overflow-hidden bg-paper-deep ${aspect}`}>
-      <Image src={sale.image!} alt={`${sale.address}, ${sale.area}`} fill sizes={sizes} className="photo-bw object-cover" />
-    </div>
-  );
-}
-
 export default function Home() {
-  const sales = featuredSales();
-  const [a, b, c, d] = sales;
   const note = blogPosts.find((p) => p.slug === "hamptons-oceanfront-market-2021-2026");
 
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate h-[100svh] min-h-[640px] max-h-[1080px] overflow-hidden bg-ocean-deep text-paper">
+      <section data-hero className="relative isolate h-[100svh] min-h-[640px] max-h-[1080px] overflow-hidden bg-ocean-deep text-paper">
         <Image
           src="/images/barry-mcgovern-2.jpg"
           alt="Bayfront estate on the East End, in black and white"
@@ -134,33 +85,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* I. Approach */}
-      <section className="bg-paper py-28 md:py-44">
-        <div className="frame grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-3">
-            <p data-reveal className="eyebrow text-ocean">I. &nbsp;Approach</p>
-          </div>
-          <div className="md:col-span-9 lg:col-span-8">
-            <p data-reveal className="lede text-ink">
-              East End property rewards patience and precision. I advise on oceanfront, waterfront, and estate
-              homes across the Hamptons, <em className="italic text-ink-muted">with discretion from the first conversation to a quiet closing.</em>
-            </p>
-            <div className="mt-14 grid gap-10 border-t border-line pt-10 sm:grid-cols-2 md:mt-20">
-              <p data-reveal style={delay(100)} className="body-copy text-ink-muted">
-                I am a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury
-                Hamptons brokerage. Dublin-born, I have called the Hamptons home since 2013 and consider myself a Sag Harbor local.
-              </p>
-              <div data-reveal style={delay(200)}>
-                <p className="body-copy text-ink-muted">
-                  Buyers and sellers come to me for a clear read of the market, careful underwriting of each property,
-                  and complete confidentiality.
-                </p>
-                <Link href="/about" className="eyebrow link-line mt-8 inline-block text-ink">About Barry</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* I. Trades */}
+      <TradesShowcase />
 
       {/* II. Key numbers */}
       <section aria-labelledby="numbers-heading" className="bg-ocean-deep py-24 text-paper md:py-32">
@@ -191,54 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* III. Selected transactions */}
-      {a && (
-        <section className="bg-paper py-28 md:py-44">
-          <div className="frame">
-            <div className="grid gap-10 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-7">
-                <p data-reveal className="eyebrow text-ocean">III. &nbsp;Selected transactions</p>
-                <h2 data-reveal style={delay(80)} className="display-2 mt-6 text-ink">
-                  Hedgerow sales, <em className="italic text-ink-muted">in place</em>
-                </h2>
-              </div>
-              <div data-reveal style={delay(160)} className="md:col-span-4 md:col-start-9">
-                <p className="body-copy text-ink-muted">
-                  Oceanfront and estate sales Hedgerow and I have been involved in, from Bridgehampton to East Hampton.
-                </p>
-                <Link href="/sales" className="eyebrow link-line mt-6 inline-block text-ink">View the portfolio</Link>
-              </div>
-            </div>
-
-            <div className="mt-20 grid gap-x-10 gap-y-20 md:mt-28 md:grid-cols-12">
-              <Link href="/sales" className="group block md:col-span-7">
-                <SalePhoto sale={a} aspect="aspect-[4/3] md:aspect-[5/4]" sizes="(max-width: 768px) 100vw, 58vw" />
-                <SaleCaption sale={a} large />
-              </Link>
-              {b && (
-                <Link href="/sales" className="group block md:col-span-4 md:col-start-9 md:mt-40">
-                  <SalePhoto sale={b} aspect="aspect-[4/5]" sizes="(max-width: 768px) 100vw, 33vw" wait={120} />
-                  <SaleCaption sale={b} />
-                </Link>
-              )}
-              {c && (
-                <Link href="/sales" className="group block md:col-span-5 md:col-start-2">
-                  <SalePhoto sale={c} aspect="aspect-[4/3]" sizes="(max-width: 768px) 100vw, 42vw" />
-                  <SaleCaption sale={c} />
-                </Link>
-              )}
-              {d && (
-                <Link href="/sales" className="group block md:col-span-5 md:col-start-8 md:mt-24">
-                  <SalePhoto sale={d} aspect="aspect-[3/2]" sizes="(max-width: 768px) 100vw, 42vw" wait={120} />
-                  <SaleCaption sale={d} />
-                </Link>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* IV. Research */}
+      {/* III. Research */}
       {note && (
         <section className="bg-paper-deep py-28 md:py-40">
           <div className="frame grid gap-14 md:grid-cols-12 md:items-center md:gap-10">
@@ -248,7 +127,7 @@ export default function Home() {
               </div>
             </Link>
             <div className="md:col-span-5 md:col-start-8">
-              <p data-reveal className="eyebrow text-ocean">IV. &nbsp;Research · October 2026</p>
+              <p data-reveal className="eyebrow text-ocean">III. &nbsp;Research · October 2026</p>
               <h2 data-reveal style={delay(80)} className="display-3 mt-6 text-ink">
                 <Link href={`/blog/${note.slug}`} className="transition-colors hover:text-ocean">{note.title}</Link>
               </h2>
@@ -274,8 +153,36 @@ export default function Home() {
         </section>
       )}
 
+      {/* IV. Approach */}
+      <section className="bg-paper py-28 md:py-44">
+        <div className="frame grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-3">
+            <p data-reveal className="eyebrow text-ocean">IV. &nbsp;Approach</p>
+          </div>
+          <div className="md:col-span-9 lg:col-span-8">
+            <p data-reveal className="lede text-ink">
+              East End property rewards patience and precision. I advise on oceanfront, waterfront, and estate
+              homes across the Hamptons, <em className="italic text-ink-muted">with discretion from the first conversation to a quiet closing.</em>
+            </p>
+            <div className="mt-14 grid gap-10 border-t border-line pt-10 sm:grid-cols-2 md:mt-20">
+              <p data-reveal style={delay(100)} className="body-copy text-ink-muted">
+                I am a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury
+                Hamptons brokerage. Dublin-born, I have called the Hamptons home since 2013 and consider myself a Sag Harbor local.
+              </p>
+              <div data-reveal style={delay(200)}>
+                <p className="body-copy text-ink-muted">
+                  Buyers and sellers come to me for a clear read of the market, careful underwriting of each property,
+                  and complete confidentiality.
+                </p>
+                <Link href="/about" className="eyebrow link-line mt-8 inline-block text-ink">About Barry</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* V. Press */}
-      <section aria-labelledby="press-heading" className="bg-paper py-24 md:py-32">
+      <section aria-labelledby="press-heading" className="border-t border-line bg-paper py-24 md:py-32">
         <div className="frame">
           <div className="flex items-end justify-between gap-8">
             <h2 id="press-heading" data-reveal className="eyebrow text-ocean">V. &nbsp;In the press</h2>
