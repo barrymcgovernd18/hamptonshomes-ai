@@ -31,7 +31,7 @@ export default function AboutPage() {
       <JsonLd data={faqPageJsonLd()} />
 
       {/* Hero: portrait panel on the right, name set large on deep ocean. */}
-      <section className="relative isolate overflow-hidden bg-ocean-deep text-paper md:h-[88svh] md:min-h-[640px] md:max-h-[960px]">
+      <section data-hero className="relative isolate overflow-hidden bg-ocean-deep text-paper md:h-[88svh] md:min-h-[640px] md:max-h-[960px]">
         <div className="relative h-[72svh] min-h-[460px] w-full md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[46%]">
           <Image
             src="/images/barry-mcgovern.jpg"
