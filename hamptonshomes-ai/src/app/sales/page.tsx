@@ -207,17 +207,15 @@ export default function SalesPage() {
                         sizes={trio ? "(max-width: 768px) 100vw, 33vw" : "(max-width: 768px) 100vw, 58vw"}
                       />
                       <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,20,24,0.8)_0%,rgba(10,20,24,0.4)_34%,rgba(10,20,24,0)_62%)]" />
-                      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-paper md:p-7">
-                        <div>
-                          <p className="eyebrow text-paper/85">
-                            {pick.deal.area} · {pick.setting} · {pick.deal.dateText}
-                          </p>
-                          <h3 className={`mt-2 font-serif font-light leading-[1.05] ${trio ? "text-[1.5rem] md:text-[1.7rem]" : "text-[1.6rem] md:text-[2.1rem]"}`}>{pick.address}</h3>
-                        </div>
+                      <div className={`absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 p-5 text-paper md:p-7 ${trio ? "" : "md:flex-row md:items-end md:justify-between md:gap-4"}`}>
+                        <h3 className={`font-serif font-light leading-[1.05] ${trio ? "text-[1.5rem] md:text-[1.7rem]" : "text-[1.6rem] md:text-[2.1rem]"}`}>{pick.address}</h3>
                         <p className={`shrink-0 font-serif font-light leading-none ${trio ? "text-[1.25rem] md:text-[1.4rem]" : "text-[1.35rem] md:text-[1.8rem]"}`}>{pick.price}</p>
                       </div>
                     </div>
-                    <p className="eyebrow mt-5 text-ocean">{pick.deal.roleLabel || "A Hedgerow transaction"}</p>
+                    <p className="eyebrow mt-5 text-ink-muted">
+                      {pick.deal.area} · {pick.setting} · {pick.deal.dateText}
+                    </p>
+                    <p className="mt-2 text-[12px] font-medium uppercase tracking-[0.14em] text-ocean">{pick.deal.roleLabel || "A Hedgerow transaction"}</p>
                     <p className="mt-2 max-w-[56ch] text-[13.5px] leading-[1.75] text-ink-muted">{pick.blurb}</p>
                   </article>
                 );
