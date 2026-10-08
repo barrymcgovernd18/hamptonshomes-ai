@@ -61,7 +61,7 @@ def wrap(draw, text, fnt, width):
 def photo(src, pos=(0.5, 0.5)):
     im = Image.open(os.path.join(PUB, src.lstrip("/"))).convert("RGB")
     im = ImageOps.fit(im, (W, H), Image.LANCZOS, centering=pos)
-    im = ImageOps.grayscale(im).convert("RGB")
+    im = im.convert("RGB")
     return ImageEnhance.Contrast(im).enhance(1.06)
 
 

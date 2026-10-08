@@ -97,11 +97,11 @@ export function PageHero({ eyebrow, title, italic, intro, aside, footer, image, 
           style={{ objectPosition: imagePosition }}
         />
       ) : null}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-52 bg-gradient-to-b from-black/60 to-transparent" />
-      {image ? <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[rgba(12,24,29,0.32)] md:bg-[rgba(12,24,29,0.12)]" /> : null}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-44 bg-gradient-to-b from-black/45 to-transparent" />
+      {image ? <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[rgba(12,24,29,0.16)] md:bg-transparent" /> : null}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(12,24,29,0.9)_0%,rgba(12,24,29,0.6)_30%,rgba(12,24,29,0.15)_60%,rgba(12,24,29,0)_75%),linear-gradient(to_right,rgba(12,24,29,0.45)_0%,rgba(12,24,29,0)_55%)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(12,24,29,0.78)_0%,rgba(12,24,29,0.42)_28%,rgba(12,24,29,0.08)_55%,rgba(12,24,29,0)_70%),linear-gradient(to_right,rgba(12,24,29,0.32)_0%,rgba(12,24,29,0)_50%)]"
       />
       <div className="frame flex h-full min-h-[inherit] flex-col justify-end pb-10 pt-32 md:pb-14">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
