@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
-import AutoSubmitForm from "@/components/AutoSubmitForm";
+import ListingSearchForm, { type SearchField } from "@/components/ListingSearchForm";
 import { ClosingInvitation, PageHero, SectionLabel } from "@/components/Editorial";
 import {
   PRICE_BANDS,
@@ -29,27 +29,6 @@ export const metadata: Metadata = routeMetadata({
   path: PATH,
   image: "/og/sales.jpg",
 });
-
-const selectClass =
-  "mt-2 block h-12 w-full rounded-none border border-line bg-paper-soft px-3 text-[15px] text-ink transition-[border-color,box-shadow] duration-300 hover:border-ink-faint/60 focus:border-ocean-deep focus:shadow-[0_0_0_1px_var(--color-ocean-deep)] focus:outline-none";
-
-function Select({ name, label, value, options, any }: { name: string; label: string; value?: string; options: { key: string; label: string }[]; any?: string }) {
-  return (
-    <div>
-      <label htmlFor={`f-${name}`} className="eyebrow block text-ink-muted">
-        {label}
-      </label>
-      <select id={`f-${name}`} name={name} defaultValue={value ?? (any ? "" : options[0]?.key)} className={selectClass}>
-        {any ? <option value="">{any}</option> : null}
-        {options.map((o) => (
-          <option key={o.key} value={o.key}>
-            {o.label}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-}
 
 function SaleCard({ sale, priority }: { sale: FirmSale; priority?: boolean }) {
   return (
@@ -96,6 +75,20 @@ function Grid({ sales, eager = 0 }: { sales: FirmSale[]; eager?: number }) {
       ))}
     </div>
   );
+}
+
+function searchFields(f: SalesFilters): SearchField[] {
+  const opts = (any: string | null, list: { key: string; label: string }[]) => [
+    ...(any ? [{ value: "", label: any }] : []),
+    ...list.map((o) => ({ value: o.key, label: o.label })),
+  ];
+  return [
+    { name: "village", label: "Village", value: f.village ?? "", options: opts("All villages", VILLAGES), wide: true },
+    { name: "type", label: "Setting", value: f.type ?? "", options: opts("All settings", SETTINGS) },
+    { name: "price", label: "Price", value: f.price ?? "", options: opts("Any price", PRICE_BANDS.map((b) => ({ key: b.key, label: b.label }))) },
+    { name: "year", label: "Year", value: f.year ?? "", options: opts("Any year", YEARS.map((y) => ({ key: String(y), label: String(y) }))) },
+    { name: "sort", label: "Sort", value: f.sort, options: opts(null, SORTS.map((o) => ({ key: o.key, label: o.label }))) },
+  ];
 }
 
 function activeSummary(f: SalesFilters) {
@@ -149,23 +142,15 @@ export default async function HedgerowSalesPage({ searchParams }: { searchParams
 
       <section id="results" aria-label="Hedgerow sales" className="scroll-mt-24 border-t border-line pb-24 pt-12 md:pb-32 md:pt-14">
         <div className="frame">
-          <AutoSubmitForm action={PATH} label="Filter Hedgerow sales" defaults={{ sort: "newest" }} className="grid grid-cols-2 gap-4 md:grid-cols-6 md:items-end">
-            <Select name="village" label="Village" value={filters.village} any="All villages" options={VILLAGES} />
-            <Select name="type" label="Setting" value={filters.type} any="All settings" options={SETTINGS} />
-            <Select name="price" label="Price" value={filters.price} any="Any price" options={PRICE_BANDS.map((b) => ({ key: b.key, label: b.label }))} />
-            <Select name="year" label="Year" value={filters.year} any="Any year" options={YEARS.map((y) => ({ key: String(y), label: String(y) }))} />
-            <Select name="sort" label="Sort" value={filters.sort} options={SORTS.map((s) => ({ key: s.key, label: s.label }))} />
-            <div className="col-span-2 flex items-center gap-5 md:col-span-1">
-              <button type="submit" className="eyebrow h-12 flex-1 bg-ocean-deep px-5 text-paper transition-colors duration-300 hover:bg-ink">
-                Apply
-              </button>
-              {filtered ? (
-                <Link href={`${PATH}${filterQuery({ sort: filters.sort })}#results`} className="eyebrow text-ocean underline decoration-ocean/40 underline-offset-[4px] hover:text-ink">
-                  Clear
-                </Link>
-              ) : null}
-            </div>
-          </AutoSubmitForm>
+          <ListingSearchForm
+            key={filterQuery(filters) || "all"}
+            action={PATH}
+            label="Filter Hedgerow sales"
+            submitLabel="Show sales"
+            defaults={{ sort: "newest" }}
+            gridClassName="grid grid-cols-2 gap-x-4 gap-y-5 md:grid-cols-5 lg:gap-x-3"
+            fields={searchFields(filters)}
+          />
 
           <div aria-live="polite" className="mt-10 flex flex-wrap items-baseline justify-between gap-x-10 gap-y-3 border-y border-ink/80 py-5">
             <p className="flex items-baseline gap-3">

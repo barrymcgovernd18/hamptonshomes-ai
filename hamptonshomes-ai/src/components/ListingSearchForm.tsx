@@ -14,7 +14,23 @@ const selectClass =
  * A plain GET form: without JavaScript it submits natively to /listings?... and the server renders the results.
  * With JavaScript it drops empty and default values from the URL and navigates without a full reload.
  */
-export default function ListingSearchForm({ fields }: { fields: SearchField[] }) {
+export default function ListingSearchForm({
+  fields,
+  action = "/listings",
+  label = "Search listings",
+  submitLabel = "Search listings",
+  defaults = { sort: "price-desc" },
+  gridClassName = "grid grid-cols-2 gap-x-4 gap-y-5 md:grid-cols-4 lg:grid-cols-8 lg:gap-x-3",
+}: {
+  fields: SearchField[];
+  /** Page the form filters; also used for the Clear all link. */
+  action?: string;
+  label?: string;
+  submitLabel?: string;
+  /** Param values that are the default and are left out of the URL. */
+  defaults?: Record<string, string>;
+  gridClassName?: string;
+}) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
 
@@ -22,15 +38,15 @@ export default function ListingSearchForm({ fields }: { fields: SearchField[] })
     e.preventDefault();
     const q = new URLSearchParams();
     for (const [k, v] of new FormData(e.currentTarget)) {
-      if (typeof v === "string" && v && !(k === "sort" && v === "price-desc")) q.set(k, v);
+      if (typeof v === "string" && v && defaults[k] !== v) q.set(k, v);
     }
     const qs = q.toString();
-    startTransition(() => router.push(`/listings${qs ? `?${qs}` : ""}`, { scroll: false }));
+    startTransition(() => router.push(`${action}${qs ? `?${qs}` : ""}`, { scroll: false }));
   }
 
   return (
-    <form method="get" action="/listings#results" onSubmit={onSubmit} role="search" aria-label="Search listings">
-      <div className="grid grid-cols-2 gap-x-4 gap-y-5 md:grid-cols-4 lg:grid-cols-8 lg:gap-x-3">
+    <form method="get" action={`${action}#results`} onSubmit={onSubmit} role="search" aria-label={label}>
+      <div className={gridClassName}>
         {fields.map((f) => (
           <div key={f.name} className={f.wide ? "col-span-2 md:col-span-1 lg:col-span-1" : ""}>
             <label htmlFor={`ls-${f.name}`} className="eyebrow block text-[10.5px] text-ink-muted">
@@ -57,10 +73,10 @@ export default function ListingSearchForm({ fields }: { fields: SearchField[] })
           disabled={pending}
           className="eyebrow inline-flex items-center justify-center gap-3 bg-ocean-deep px-9 py-4 text-[12px] text-paper transition-colors duration-300 hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ocean-deep disabled:opacity-70 max-sm:w-full"
         >
-          {pending ? "Searching" : "Search listings"}
+          {pending ? "Searching" : submitLabel}
           <span aria-hidden="true">→</span>
         </button>
-        <Link href="/listings" scroll={false} className="link-line eyebrow text-ink-muted hover:text-ink">
+        <Link href={action} scroll={false} className="link-line eyebrow text-ink-muted hover:text-ink">
           Clear all
         </Link>
       </div>
