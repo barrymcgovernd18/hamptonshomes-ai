@@ -82,7 +82,7 @@ export const notableSales: Sale[] = [
     image: "/images/234-wickapogue.jpg",
     listingUrl: "https://hedgerow.eastendli.com/property/899418/",
     roleNote: "Hedgerow's role: Both sides",
-    blurb: "Southampton Village estate section. Ocean views from the second floor, adjacent to a village preserve. Closed October 2023.",
+    blurb: "Southampton estate section. Ocean views from the second floor, adjacent to a village preserve. Closed October 2023.",
   },
 {
     address: "193 Sagaponack Main Street",
