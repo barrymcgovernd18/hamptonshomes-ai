@@ -32,6 +32,8 @@ export interface HedgerowSoldDeal {
   dateText: string;
   /** Hedgerow Exclusive Properties' role (firm), as published by Hedgerow or documented in the cited record. */
   hedgerowRole: string;
+  /** Hedgerow's role in Hedgerow's own words from its Prominent Deals page, e.g. "Hedgerow represented the seller"; otherwise "A Hedgerow transaction". */
+  roleLabel?: string;
   group: HedgerowGroup;
   barryInvolved?: boolean;
   image?: string;
@@ -327,7 +329,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-33-dinah-rock-road-shelter-island-2026.webp",
-    "alt": "33 Dinah Rock Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "33 Dinah Rock Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "40 Deforest Road",
@@ -340,7 +343,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-40-deforest-road-montauk-2026.webp",
-    "alt": "40 Deforest Road (Casa Las Olas), Montauk. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "40 Deforest Road (Casa Las Olas), Montauk. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "A Hedgerow transaction"
   },
   {
     "address": "1694 Millstone Road",
@@ -353,7 +357,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": true,
     "image": "",
-    "alt": ""
+    "alt": "",
+    "roleLabel": "A Hedgerow transaction"
   },
   {
     "address": "5 Grand Avenue",
@@ -366,7 +371,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-5-grand-avenue-shelter-island-2026.webp",
-    "alt": "5 Grand Avenue, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "5 Grand Avenue, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "104 Quimby Lane",
@@ -379,7 +385,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-104-quimby-lane-bridgehampton-2026.webp",
-    "alt": "104 Quimby Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "104 Quimby Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "946 Ocean Road",
@@ -392,7 +399,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-946-ocean-road-bridgehampton-2026.webp",
-    "alt": "946 Ocean Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "946 Ocean Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "47B South Ferry Road",
@@ -405,7 +413,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-47b-south-ferry-road-shelter-island-2026.webp",
-    "alt": "47B South Ferry Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "47B South Ferry Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "43 East Dune Lane",
@@ -418,7 +427,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "",
-    "alt": ""
+    "alt": "",
+    "roleLabel": "A Hedgerow transaction"
   },
   {
     "address": "11 South Harbor Drive",
@@ -431,7 +441,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-11-south-harbor-drive-sag-harbor-2026.webp",
-    "alt": "11 South Harbor Drive, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "11 South Harbor Drive, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "55 Dunes Lane",
@@ -444,7 +455,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-55-dunes-lane-amagansett-2026.webp",
-    "alt": "55 Dunes Lane, Amagansett. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "55 Dunes Lane, Amagansett. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "109 Duck Pond Lane",
@@ -457,7 +469,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Waterfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-109-duck-pond-lane-southampton-2026.webp",
-    "alt": "109 Duck Pond Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "109 Duck Pond Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "3 Pheasant Lane",
@@ -470,7 +483,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-3-pheasant-lane-east-hampton-2026.webp",
-    "alt": "3 Pheasant Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "3 Pheasant Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "14 Barns Lane",
@@ -483,7 +497,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-14-barns-lane-east-hampton-2025.webp",
-    "alt": "14 Barns Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "14 Barns Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "225 Old Montauk Highway",
@@ -496,7 +511,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-225-old-montauk-highway-montauk-2025.webp",
-    "alt": "225 Old Montauk Highway, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "225 Old Montauk Highway, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "2 Town Line Road",
@@ -509,7 +525,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-2-town-line-road-sagaponack-2025.webp",
-    "alt": "2 Town Line Road, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "2 Town Line Road, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "144 Corrigan Street",
@@ -522,7 +539,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-144-corrigan-street-southampton-2025.webp",
-    "alt": "144 Corrigan Street, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "144 Corrigan Street, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "24 & 36 Jeffreys Lane",
@@ -535,7 +553,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-24-36-jeffreys-lane-east-hampton-2025.webp",
-    "alt": "24 & 36 Jeffreys Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "24 & 36 Jeffreys Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "165 Surfside Drive",
@@ -548,7 +567,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-165-surfside-drive-bridgehampton-2025.webp",
-    "alt": "165 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "165 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow advised the buyer"
   },
   {
     "address": "42 Deforest Road",
@@ -559,7 +579,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "dateText": "Nov 2025",
     "hedgerowRole": "Co-listing",
     "group": "Oceanfront",
-    "barryInvolved": false
+    "barryInvolved": false,
+    "roleLabel": "A Hedgerow transaction"
   },
   {
     "address": "79 Surfside Drive",
@@ -572,7 +593,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-79-surfside-drive-bridgehampton-2025.webp",
-    "alt": "79 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "79 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "36 Chase Court",
@@ -585,7 +607,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": true,
     "image": "",
-    "alt": ""
+    "alt": "",
+    "roleLabel": "A Hedgerow transaction"
   },
   {
     "address": "125 Mid Ocean Drive",
@@ -598,7 +621,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-125-mid-ocean-drive-bridgehampton-2025.webp",
-    "alt": "125 Mid Ocean Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "125 Mid Ocean Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "10 Meadowbrook Way",
@@ -611,7 +635,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-10-meadowbrook-way-sag-harbor-2025.webp",
-    "alt": "10 Meadowbrook Way, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "10 Meadowbrook Way, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "802 Town Line Road",
@@ -624,7 +649,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-802-town-line-road-sagaponack-2025.webp",
-    "alt": "802 Town Line Road, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "802 Town Line Road, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "36 Sagg Road",
@@ -637,7 +663,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-36-sagg-road-sagaponack-2025.webp",
-    "alt": "36 Sagg Road, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "36 Sagg Road, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "533 David Whites Lane",
@@ -650,7 +677,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-533-david-whites-lane-southampton-2025.webp",
-    "alt": "533 David Whites Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "533 David Whites Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "36 Agnew Avenue",
@@ -663,7 +691,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-36-agnew-avenue-montauk-2025.webp",
-    "alt": "36 Agnew Avenue, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "36 Agnew Avenue, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "1 Pandion Road",
@@ -676,7 +705,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Waterfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-1-pandion-road-shelter-island-2025.webp",
-    "alt": "1 Pandion Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "1 Pandion Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "A Hedgerow transaction"
   },
   {
     "address": "33 Lily Pond Lane",
@@ -689,7 +719,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-33-lily-pond-lane-east-hampton-2025.webp",
-    "alt": "33 Lily Pond Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "33 Lily Pond Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "7 Casey Lane",
@@ -702,7 +733,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-7-casey-lane-bridgehampton-2025.webp",
-    "alt": "7 Casey Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "7 Casey Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "83 Mount Misery Drive",
@@ -715,7 +747,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-83-mount-misery-drive-sag-harbor-2025.webp",
-    "alt": "83 Mount Misery Drive, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "83 Mount Misery Drive, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "21 North Main Street",
@@ -728,7 +761,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-21-north-main-street-east-hampton-2025.webp",
-    "alt": "21 North Main Street, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "21 North Main Street, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "24 Fort Pond Boulevard",
@@ -741,7 +775,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-24-fort-pond-boulevard-east-hampton-2025.webp",
-    "alt": "24 Fort Pond Boulevard, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "24 Fort Pond Boulevard, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "120 Bay Lane",
@@ -754,7 +789,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-120-bay-lane-water-mill-2025.webp",
-    "alt": "120 Bay Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "120 Bay Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "12 Jackson Street",
@@ -767,7 +803,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-12-jackson-street-east-hampton-2025.webp",
-    "alt": "12 Jackson Street, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "12 Jackson Street, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "86 Skimhampton Road",
@@ -780,7 +817,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-86-skimhampton-road-east-hampton-2025.webp",
-    "alt": "86 Skimhampton Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "86 Skimhampton Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "26 Duke Drive",
@@ -793,7 +831,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-26-duke-drive-east-hampton-2025.webp",
-    "alt": "26 Duke Drive, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "26 Duke Drive, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "67 Surfside Drive",
@@ -806,7 +845,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-67-surfside-drive-bridgehampton-2025.webp",
-    "alt": "67 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "67 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "10 Helens Lane",
@@ -819,7 +859,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-10-helens-lane-southampton-2025.webp",
-    "alt": "10 Helens Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "10 Helens Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "27 Winding Way",
@@ -832,7 +873,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-27-winding-way-water-mill-2025.webp",
-    "alt": "27 Winding Way, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "27 Winding Way, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "98 Wilkes Lane",
@@ -845,7 +887,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-98-wilkes-lane-sagaponack-2025.webp",
-    "alt": "98 Wilkes Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "98 Wilkes Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "100 Buell Lane",
@@ -858,7 +901,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-100-buell-lane-east-hampton-2025.webp",
-    "alt": "100 Buell Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "100 Buell Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "44 Deforest Road",
@@ -871,7 +915,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-44-deforest-road-montauk-2024.webp",
-    "alt": "44 Deforest Road, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "44 Deforest Road, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "11 East Harbor Drive",
@@ -884,7 +929,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-11-east-harbor-drive-sag-harbor-2024.webp",
-    "alt": "11 East Harbor Drive, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "11 East Harbor Drive, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "18 Knoll Road",
@@ -897,7 +943,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-18-knoll-road-southampton-2024.webp",
-    "alt": "18 Knoll Road, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "18 Knoll Road, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "1751 Scuttle Hole Road",
@@ -910,7 +957,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-1751-scuttle-hole-road-bridgehampton-2024.webp",
-    "alt": "1751 Scuttle Hole Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "1751 Scuttle Hole Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "26 S Elroy Drive",
@@ -923,7 +971,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-26-s-elroy-drive-montauk-2024.webp",
-    "alt": "26 S Elroy Drive, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "26 S Elroy Drive, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "156 Summerfield Lane",
@@ -936,7 +985,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-156-summerfield-lane-water-mill-2024.webp",
-    "alt": "156 Summerfield Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "156 Summerfield Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "1774 Deerfield Road",
@@ -949,7 +999,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-1774-deerfield-road-water-mill-2024.webp",
-    "alt": "1774 Deerfield Road, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "1774 Deerfield Road, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "55 Halsey Lane",
@@ -962,7 +1013,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-55-halsey-lane-bridgehampton-2024.webp",
-    "alt": "55 Halsey Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "55 Halsey Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "454 Hedges Lane",
@@ -975,7 +1027,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "",
-    "alt": ""
+    "alt": "",
+    "roleLabel": "A Hedgerow transaction"
   },
   {
     "address": "453 Hedges Lane",
@@ -988,7 +1041,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-453-hedges-lane-sagaponack-2024.webp",
-    "alt": "453 Hedges Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "453 Hedges Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "849 Hayground Road",
@@ -1001,7 +1055,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-849-hayground-road-bridgehampton-2024.webp",
-    "alt": "849 Hayground Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "849 Hayground Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "25 Jobs Lane",
@@ -1014,7 +1069,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-25-jobs-lane-bridgehampton-2024.webp",
-    "alt": "25 Jobs Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "25 Jobs Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "81 Ocean Road",
@@ -1027,7 +1083,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-81-ocean-road-bridgehampton-2024.webp",
-    "alt": "81 Ocean Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "81 Ocean Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "385 Jobs Lane",
@@ -1040,7 +1097,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-385-jobs-lane-bridgehampton-2024.webp",
-    "alt": "385 Jobs Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "385 Jobs Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "479 Pauls Lane",
@@ -1053,7 +1111,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-479-pauls-lane-bridgehampton-2024.webp",
-    "alt": "479 Pauls Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "479 Pauls Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "8 John Street",
@@ -1066,7 +1125,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-8-john-street-sag-harbor-2024.webp",
-    "alt": "8 John Street, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "8 John Street, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "332 Parsonage Lane",
@@ -1079,7 +1139,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-332-parsonage-lane-sagaponack-2024.webp",
-    "alt": "332 Parsonage Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "332 Parsonage Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "20 Forest Road",
@@ -1092,7 +1153,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-20-forest-road-sag-harbor-2024.webp",
-    "alt": "20 Forest Road, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "20 Forest Road, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "11 Amy’s Lane",
@@ -1105,7 +1167,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-11-amys-lane-east-hampton-2024.webp",
-    "alt": "11 Amy’s Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "11 Amy’s Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "22 Shore Road",
@@ -1118,7 +1181,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-22-shore-road-amagansett-2024.webp",
-    "alt": "22 Shore Road, Amagansett. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "22 Shore Road, Amagansett. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "42 Old Montauk Highway",
@@ -1131,7 +1195,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-42-old-montauk-highway-montauk-2023.webp",
-    "alt": "42 Old Montauk Highway, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "42 Old Montauk Highway, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "156 Summerfield Lane",
@@ -1144,7 +1209,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-156-summerfield-lane-water-mill-2023.webp",
-    "alt": "156 Summerfield Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "156 Summerfield Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "72 Birchwood Lane",
@@ -1157,7 +1223,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-72-birchwood-lane-bridgehampton-2023.webp",
-    "alt": "72 Birchwood Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "72 Birchwood Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "124 Hedges Lane",
@@ -1170,7 +1237,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-124-hedges-lane-sagaponack-2023.webp",
-    "alt": "124 Hedges Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "124 Hedges Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "2 Baiting Hollow Road",
@@ -1183,7 +1251,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-2-baiting-hollow-road-east-hampton-2023.webp",
-    "alt": "2 Baiting Hollow Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "2 Baiting Hollow Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "48 Forest Road",
@@ -1196,7 +1265,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-48-forest-road-sag-harbor-2023.webp",
-    "alt": "48 Forest Road, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "48 Forest Road, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "191 Highland Terrace",
@@ -1209,7 +1279,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-191-highland-terrace-bridgehampton-2023.webp",
-    "alt": "191 Highland Terrace, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "191 Highland Terrace, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "234 Wickapogue Road",
@@ -1222,7 +1293,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-234-wickapogue-road-southampton-2023.webp",
-    "alt": "234 Wickapogue Road, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "234 Wickapogue Road, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "30 Lawrence Court",
@@ -1235,7 +1307,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-30-lawrence-court-water-mill-2023.webp",
-    "alt": "30 Lawrence Court, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "30 Lawrence Court, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "219 Sagg Main Street",
@@ -1248,7 +1321,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-219-sagg-main-street-sagaponack-2023.webp",
-    "alt": "219 Sagg Main Street, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "219 Sagg Main Street, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "2 Linda Road",
@@ -1261,7 +1335,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-2-linda-road-shelter-island-2023.webp",
-    "alt": "2 Linda Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "2 Linda Road, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "8 Studio Lane",
@@ -1274,7 +1349,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-8-studio-lane-southampton-2023.webp",
-    "alt": "8 Studio Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "8 Studio Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow advised the seller"
   },
   {
     "address": "9 Bayberry Lane",
@@ -1287,7 +1363,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-9-bayberry-lane-sag-harbor-2023.webp",
-    "alt": "9 Bayberry Lane, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "9 Bayberry Lane, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "193 Sagg Main Street",
@@ -1300,7 +1377,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-193-sagg-main-street-sagaponack-2023.webp",
-    "alt": "193 Sagg Main Street, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "193 Sagg Main Street, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "411 Town Lane",
@@ -1313,7 +1391,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-411-town-lane-amagansett-2023.webp",
-    "alt": "411 Town Lane, Amagansett. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "411 Town Lane, Amagansett. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "46 Spring Street",
@@ -1326,7 +1405,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-46-spring-street-sag-harbor-2023.webp",
-    "alt": "46 Spring Street, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "46 Spring Street, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "5 Knoll Lane",
@@ -1339,7 +1419,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-5-knoll-lane-wainscott-2023.webp",
-    "alt": "5 Knoll Lane, Wainscott. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "5 Knoll Lane, Wainscott. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "151 Cedar Street",
@@ -1352,7 +1433,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-151-cedar-street-east-hampton-2023.webp",
-    "alt": "151 Cedar Street, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "151 Cedar Street, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "51 Wainscott Hollow Road",
@@ -1365,7 +1447,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-51-wainscott-hollow-road-wainscott-2023.webp",
-    "alt": "51 Wainscott Hollow Road, Wainscott. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "51 Wainscott Hollow Road, Wainscott. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "180 Rose Hill Road",
@@ -1378,7 +1461,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-180-rose-hill-road-water-mill-2023.webp",
-    "alt": "180 Rose Hill Road, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "180 Rose Hill Road, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "31 Morrison Lane",
@@ -1391,7 +1475,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Waterfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-31-morrison-lane-water-mill-2023.webp",
-    "alt": "31 Morrison Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "31 Morrison Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "690 Ocean Road",
@@ -1404,7 +1489,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-690-ocean-road-bridgehampton-2023.webp",
-    "alt": "690 Ocean Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "690 Ocean Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "57 Wainscott Hollow Road",
@@ -1417,7 +1503,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-57-wainscott-hollow-road-wainscott-2022.webp",
-    "alt": "57 Wainscott Hollow Road, Wainscott. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "57 Wainscott Hollow Road, Wainscott. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "5 Gardiners Bay Drive",
@@ -1430,7 +1517,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-5-gardiners-bay-drive-shelter-island-2022.webp",
-    "alt": "5 Gardiners Bay Drive, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "5 Gardiners Bay Drive, Shelter Island. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "42 Old Montauk Highway",
@@ -1443,7 +1531,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-42-old-montauk-highway-montauk-2022.webp",
-    "alt": "42 Old Montauk Highway, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "42 Old Montauk Highway, Montauk. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "4 Bay Lane",
@@ -1456,7 +1545,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Waterfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-4-bay-lane-water-mill-2022.webp",
-    "alt": "4 Bay Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "4 Bay Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "63 Duck Pond Lane",
@@ -1469,7 +1559,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-63-duck-pond-lane-southampton-2022.webp",
-    "alt": "63 Duck Pond Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "63 Duck Pond Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "1080 & 1100 Meadow Lane",
@@ -1482,7 +1573,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-1080-1100-meadow-lane-southampton-2022.webp",
-    "alt": "1080 & 1100 Meadow Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "1080 & 1100 Meadow Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "68 Dune Road",
@@ -1495,7 +1587,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Waterfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-68-dune-road-bridgehampton-2022.webp",
-    "alt": "68 Dune Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "68 Dune Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "11 Grand Street",
@@ -1508,7 +1601,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-11-grand-street-sag-harbor-2022.webp",
-    "alt": "11 Grand Street, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "11 Grand Street, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "35 Potato Road & 543 Daniels Lane",
@@ -1521,7 +1615,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-35-potato-road-543-daniels-lane-sagaponack-2022.webp",
-    "alt": "35 Potato Road & 543 Daniels Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "35 Potato Road & 543 Daniels Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "55 Marine Boulevard",
@@ -1534,7 +1629,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-55-marine-boulevard-amagansett-2022.webp",
-    "alt": "55 Marine Boulevard, Amagansett. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "55 Marine Boulevard, Amagansett. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented both sides"
   },
   {
     "address": "34 Cobb Hill Lane",
@@ -1547,7 +1643,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-34-cobb-hill-lane-water-mill-2022.webp",
-    "alt": "34 Cobb Hill Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "34 Cobb Hill Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "190 Bridies Path",
@@ -1560,7 +1657,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-190-bridies-path-southampton-2022.webp",
-    "alt": "190 Bridies Path, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "190 Bridies Path, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "22 Bay View Court",
@@ -1573,7 +1671,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Waterfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-22-bay-view-court-sag-harbor-2022.webp",
-    "alt": "22 Bay View Court, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "22 Bay View Court, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "431 Old Sag Harbor Road",
@@ -1586,7 +1685,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-431-old-sag-harbor-road-bridgehampton-2022.webp",
-    "alt": "431 Old Sag Harbor Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "431 Old Sag Harbor Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "6 Woodhollow Drive",
@@ -1599,7 +1699,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-6-woodhollow-drive-east-hampton-2022.webp",
-    "alt": "6 Woodhollow Drive, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "6 Woodhollow Drive, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "59 Springwood Lane",
@@ -1612,7 +1713,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-59-springwood-lane-east-hampton-2022.webp",
-    "alt": "59 Springwood Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "59 Springwood Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "6 Polo Court",
@@ -1625,7 +1727,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-6-polo-court-bridgehampton-2022.webp",
-    "alt": "6 Polo Court, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "6 Polo Court, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "40 Hedges Banks Drive",
@@ -1638,7 +1741,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Waterfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-40-hedges-banks-drive-east-hampton-2022.webp",
-    "alt": "40 Hedges Banks Drive, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "40 Hedges Banks Drive, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "442 Further Lane",
@@ -1651,7 +1755,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-442-further-lane-east-hampton-2021.webp",
-    "alt": "442 Further Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "442 Further Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "24 Two Mile Hollow Road",
@@ -1664,7 +1769,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-24-two-mile-hollow-road-east-hampton-2021.webp",
-    "alt": "24 Two Mile Hollow Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "24 Two Mile Hollow Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "93 Middle Lane",
@@ -1677,7 +1783,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-93-middle-lane-east-hampton-2021.webp",
-    "alt": "93 Middle Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "93 Middle Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "90 Jule Pond Drive",
@@ -1690,7 +1797,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-90-jule-pond-drive-water-mill-2021.webp",
-    "alt": "90 Jule Pond Drive, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "90 Jule Pond Drive, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow advised the seller"
   },
   {
     "address": "26 On the Bluff",
@@ -1703,7 +1811,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Waterfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-26-on-the-bluff-sag-harbor-2021.webp",
-    "alt": "26 On the Bluff, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "26 On the Bluff, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "28 Hedges Lane",
@@ -1716,7 +1825,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-28-hedges-lane-amagansett-2021.webp",
-    "alt": "28 Hedges Lane, Amagansett. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "28 Hedges Lane, Amagansett. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "194 Middle Line Highway",
@@ -1729,7 +1839,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-194-middle-line-highway-southampton-2021.webp",
-    "alt": "194 Middle Line Highway, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "194 Middle Line Highway, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "67 Surfside Drive",
@@ -1742,7 +1853,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-67-surfside-drive-bridgehampton-2021.webp",
-    "alt": "67 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "67 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "49 Birchwood Lane",
@@ -1755,7 +1867,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-49-birchwood-lane-bridgehampton-2021.webp",
-    "alt": "49 Birchwood Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "49 Birchwood Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "40 Meadow Lane",
@@ -1768,7 +1881,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Oceanfront",
     "barryInvolved": true,
     "image": "/images/hedgerow/sold-40-meadow-lane-southampton-2021.webp",
-    "alt": "40 Meadow Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "40 Meadow Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "A Hedgerow transaction"
   },
   {
     "address": "675 Flying Point Road",
@@ -1781,7 +1895,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-675-flying-point-road-water-mill-2021.webp",
-    "alt": "675 Flying Point Road, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "675 Flying Point Road, Water Mill. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "5 Wagon Lane",
@@ -1794,7 +1909,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-5-wagon-lane-east-hampton-2021.webp",
-    "alt": "5 Wagon Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "5 Wagon Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "9 Morgan Hill Lane",
@@ -1807,7 +1923,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Waterfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-9-morgan-hill-lane-bridgehampton-2021.webp",
-    "alt": "9 Morgan Hill Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "9 Morgan Hill Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "222 Two Holes of Water Road",
@@ -1820,7 +1937,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-222-two-holes-of-water-road-east-hampton-2021.webp",
-    "alt": "222 Two Holes of Water Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "222 Two Holes of Water Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the buyer"
   },
   {
     "address": "14 Maidstone Avenue",
@@ -1833,7 +1951,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-14-maidstone-avenue-east-hampton-2021.webp",
-    "alt": "14 Maidstone Avenue, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "14 Maidstone Avenue, East Hampton. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow represented the seller"
   },
   {
     "address": "432 Park Avenue, PH 82",
@@ -1846,7 +1965,8 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "group": "Estate and village",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-432-park-avenue-ph-82-new-york-ny-2021.webp",
-    "alt": "432 Park Avenue, PH 82, New York, NY. Photo courtesy of Hedgerow Exclusive Properties"
+    "alt": "432 Park Avenue, PH 82, New York, NY. Photo courtesy of Hedgerow Exclusive Properties",
+    "roleLabel": "Hedgerow advised the seller"
   }
 ];
 
@@ -1860,7 +1980,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Waterfront"
+    "group": "Waterfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-70-71-cobb-lane-water-mill.webp",
+    "alt": "70 & 71 Cobb Lane, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "93, 97, 101 Lily Pond Lane",
@@ -1870,7 +1993,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-93-97-101-lily-pond-lane-east-hampton.webp",
+    "alt": "93, 97, 101 Lily Pond Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "278 Further Lane",
@@ -1880,7 +2006,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-278-further-lane-east-hampton.webp",
+    "alt": "278 Further Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "Lily Pond Compound",
@@ -1890,7 +2019,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-lily-pond-compound-east-hampton.webp",
+    "alt": "Lily Pond Compound, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "70 Further Lane",
@@ -1900,7 +2032,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-70-further-lane-east-hampton.webp",
+    "alt": "70 Further Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "616 & 640 Ox Pasture",
@@ -1910,7 +2045,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Waterfront"
+    "group": "Waterfront",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-616-640-ox-pasture-southampton.webp",
+    "alt": "616 & 640 Ox Pasture, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "296 & 311 Surfside Drive",
@@ -1920,7 +2058,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-296-311-surfside-drive-bridgehampton.webp",
+    "alt": "296 & 311 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "442 Further Lane",
@@ -1930,7 +2071,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Advised both sides",
-    "group": "Estate and village"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow advised both sides",
+    "image": "/images/hedgerow/firm-442-further-lane-east-hampton.webp",
+    "alt": "442 Further Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "187 Dune Road",
@@ -1940,7 +2084,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-187-dune-road-bridgehampton.webp",
+    "alt": "187 Dune Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "16 Cliff Drive & 8 Old Montauk Highway",
@@ -1950,7 +2097,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-16-cliff-drive-8-old-montauk-highway-montauk.webp",
+    "alt": "16 Cliff Drive & 8 Old Montauk Highway, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "194 & 218 Meadowlark Lane",
@@ -1960,7 +2110,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Waterfront"
+    "group": "Waterfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-194-218-meadowlark-lane-bridgehampton.webp",
+    "alt": "194 & 218 Meadowlark Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "1400 Meadow Lane",
@@ -1970,7 +2123,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "2020-12-10",
     "dateText": "Dec 2020",
     "hedgerowRole": "Buyer side",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-1400-meadow-lane-southampton.webp",
+    "alt": "1400 Meadow Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "263 Surfside Drive",
@@ -1980,7 +2136,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "2019-06-20",
     "dateText": "Jun 2019",
     "hedgerowRole": "Listing",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-263-surfside-drive-bridgehampton.webp",
+    "alt": "263 Surfside Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "260 & 264 Jobs Lane",
@@ -1990,7 +2149,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Waterfront"
+    "group": "Waterfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-260-264-jobs-lane-bridgehampton.webp",
+    "alt": "260 & 264 Jobs Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "784 Meadow Lane",
@@ -2000,7 +2162,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-784-meadow-lane-southampton.webp",
+    "alt": "784 Meadow Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "121 Further Lane & 40 Middle Lane",
@@ -2010,7 +2175,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-121-further-lane-40-middle-lane-east-hampton.webp",
+    "alt": "121 Further Lane & 40 Middle Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "55 Coopers Neck Lane",
@@ -2020,7 +2188,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-55-coopers-neck-lane-southampton.webp",
+    "alt": "55 Coopers Neck Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "35 Dune Road",
@@ -2030,7 +2201,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-35-dune-road-bridgehampton.webp",
+    "alt": "35 Dune Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "390 Fowler Street",
@@ -2040,7 +2214,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-390-fowler-street-southampton.webp",
+    "alt": "390 Fowler Street, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "29 Spaeth Lane",
@@ -2050,7 +2227,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-29-spaeth-lane-east-hampton.webp",
+    "alt": "29 Spaeth Lane, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "325 Bluff Road",
@@ -2060,7 +2240,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-325-bluff-road-amagansett.webp",
+    "alt": "325 Bluff Road, Amagansett. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "950 Meadow Lane",
@@ -2070,7 +2253,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-950-meadow-lane-southampton.webp",
+    "alt": "950 Meadow Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "900 Meadow Lane",
@@ -2080,7 +2266,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-900-meadow-lane-southampton.webp",
+    "alt": "900 Meadow Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "159 Trees Lane",
@@ -2090,7 +2279,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Oceanfront"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-159-trees-lane-sagaponack.webp",
+    "alt": "159 Trees Lane, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "49 Wainscott Hollow Road",
@@ -2100,7 +2292,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-49-wainscott-hollow-road-wainscott.webp",
+    "alt": "49 Wainscott Hollow Road, Wainscott. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "266 & 300 Sagaponack Road",
@@ -2110,7 +2305,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "2020-02-07",
     "dateText": "Feb 2020",
     "hedgerowRole": "Listing",
-    "group": "Waterfront"
+    "group": "Waterfront",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-266-300-sagaponack-road-sagaponack.webp",
+    "alt": "266 & 300 Sagaponack Road, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "70 Matthews Lane",
@@ -2120,7 +2318,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-70-matthews-lane-bridgehampton.webp",
+    "alt": "70 Matthews Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "Casa Amor",
@@ -2130,7 +2331,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Oceanfront",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-casa-amor-montauk.webp",
+    "alt": "Casa Amor, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "115 Hand Lane",
@@ -2140,7 +2344,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-115-hand-lane-amagansett.webp",
+    "alt": "115 Hand Lane, Amagansett. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "219 Sagg Main Street",
@@ -2150,7 +2357,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-219-sagg-main-street-sagaponack.webp",
+    "alt": "219 Sagg Main Street, Sagaponack. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "5 Agnew Avenue",
@@ -2160,7 +2370,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Advised buyer",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow advised the buyer",
+    "image": "/images/hedgerow/firm-5-agnew-avenue-montauk.webp",
+    "alt": "5 Agnew Avenue, Montauk. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "1076 Ocean Road",
@@ -2170,7 +2383,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Waterfront",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-1076-ocean-road-bridgehampton.webp",
+    "alt": "1076 Ocean Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "81 Jennifir Lane",
@@ -2180,7 +2396,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Waterfront"
+    "group": "Waterfront",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-81-jennifir-lane-bridgehampton.webp",
+    "alt": "81 Jennifir Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "161 Summerfield Lane (As is)",
@@ -2190,7 +2409,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-161-summerfield-lane-as-is-water-mill.webp",
+    "alt": "161 Summerfield Lane (As is), Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "24 Forest Road",
@@ -2200,7 +2422,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "2020-07-13",
     "dateText": "Jul 2020",
     "hedgerowRole": "Listing",
-    "group": "Waterfront"
+    "group": "Waterfront",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-24-forest-road-sag-harbor.webp",
+    "alt": "24 Forest Road, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "99 S Main Street",
@@ -2210,7 +2435,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Waterfront"
+    "group": "Waterfront",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-99-s-main-street-southampton.webp",
+    "alt": "99 S Main Street, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "490 Hayground Road",
@@ -2220,7 +2448,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-490-hayground-road-bridgehampton.webp",
+    "alt": "490 Hayground Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "17 Water Mill Heights",
@@ -2230,7 +2461,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-17-water-mill-heights-water-mill.webp",
+    "alt": "17 Water Mill Heights, Water Mill. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "724 Butter Lane",
@@ -2240,7 +2474,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-724-butter-lane-bridgehampton.webp",
+    "alt": "724 Butter Lane, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "9 Seasons Lane",
@@ -2250,7 +2487,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-9-seasons-lane-southampton.webp",
+    "alt": "9 Seasons Lane, Southampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "44 Robeson Boulevard",
@@ -2260,7 +2500,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-44-robeson-boulevard-sag-harbor.webp",
+    "alt": "44 Robeson Boulevard, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "82 Whooping Hollow Road",
@@ -2270,7 +2513,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-82-whooping-hollow-road-east-hampton.webp",
+    "alt": "82 Whooping Hollow Road, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "10 Dominy Court",
@@ -2280,7 +2526,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-10-dominy-court-east-hampton.webp",
+    "alt": "10 Dominy Court, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "6 Holly Place",
@@ -2290,7 +2539,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-6-holly-place-east-hampton.webp",
+    "alt": "6 Holly Place, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "10 Hedges Avenue",
@@ -2300,7 +2552,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Listing",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the seller",
+    "image": "/images/hedgerow/firm-10-hedges-avenue-east-hampton.webp",
+    "alt": "10 Hedges Avenue, East Hampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "14 Katie Lane",
@@ -2310,7 +2565,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "2020-08-11",
     "dateText": "Aug 2020",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-14-katie-lane-amagansett.webp",
+    "alt": "14 Katie Lane, Amagansett. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "32A Vail Avenue",
@@ -2320,7 +2578,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-32a-vail-avenue-east-quogue.webp",
+    "alt": "32A Vail Avenue, East Quogue. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "828 Old Sag Harbor Road",
@@ -2330,7 +2591,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Both sides",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented both sides",
+    "image": "/images/hedgerow/firm-828-old-sag-harbor-road-bridgehampton.webp",
+    "alt": "828 Old Sag Harbor Road, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "64 Hillside Avenue",
@@ -2340,7 +2604,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-64-hillside-avenue-sag-harbor.webp",
+    "alt": "64 Hillside Avenue, Sag Harbor. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "25 Ridge Drive",
@@ -2350,7 +2617,10 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-25-ridge-drive-wainscott.webp",
+    "alt": "25 Ridge Drive, Wainscott. Photo courtesy of Hedgerow Exclusive Properties"
   },
   {
     "address": "2004 Montauk Highway, #822",
@@ -2360,6 +2630,9 @@ export const hedgerowFirmHistory: HedgerowSoldDeal[] = [
     "date": "",
     "dateText": "",
     "hedgerowRole": "Buyer side",
-    "group": "Estate and village"
+    "group": "Estate and village",
+    "roleLabel": "Hedgerow represented the buyer",
+    "image": "/images/hedgerow/firm-2004-montauk-highway-822-amagansett.webp",
+    "alt": "2004 Montauk Highway, #822, Amagansett. Photo courtesy of Hedgerow Exclusive Properties"
   }
 ];

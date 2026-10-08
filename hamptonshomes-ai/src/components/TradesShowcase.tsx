@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import InView from "@/components/InView";
-import { hedgerowSold2021, type HedgerowSoldDeal } from "@/lib/portfolio";
+import { hedgerowFirmHistory, hedgerowSold2021, type HedgerowSoldDeal } from "@/lib/portfolio";
 
 /** High-resolution Hedgerow photography for the homepage showcase, keyed by address. */
 const PHOTOS: Record<string, { src: string; position?: string }> = {
@@ -14,11 +14,17 @@ const PHOTOS: Record<string, { src: string; position?: string }> = {
   "35 Potato Road & 543 Daniels Lane": { src: "/images/trades/35-potato-road-543-daniels-lane-sagaponack.jpg", position: "50% 58%" },
   "55 Dunes Lane": { src: "/images/trades/55-dunes-lane-amagansett.jpg", position: "42% 50%" },
   "40 Meadow Lane": { src: "/images/trades/40-meadow-lane-southampton.jpg", position: "40% 50%" },
+  "93, 97, 101 Lily Pond Lane": { src: "/images/trades/93-97-101-lily-pond-lane-east-hampton.jpg", position: "50% 55%" },
+  "278 Further Lane": { src: "/images/trades/278-further-lane-east-hampton.jpg", position: "50% 55%" },
+  "Lily Pond Compound": { src: "/images/trades/lily-pond-compound-east-hampton.jpg", position: "50% 50%" },
+  "70 Further Lane": { src: "/images/trades/70-further-lane-east-hampton.jpg", position: "50% 55%" },
+  "616 & 640 Ox Pasture": { src: "/images/trades/616-640-ox-pasture-southampton.jpg", position: "50% 55%" },
+  "125 Mid Ocean Drive": { src: "/images/trades/125-mid-ocean-drive-bridgehampton.jpg", position: "50% 55%" },
 };
 
 type Trade = HedgerowSoldDeal & { photo: { src: string; position?: string }; label?: string };
 
-/** Homepage lead: the firm's largest trade, 2021, at the price Hedgerow publishes. Shown here only. */
+/** Homepage lead: the firm's largest trade, 2021, at the price Hedgerow publishes. */
 const LEAD_TRADE: HedgerowSoldDeal & { label: string } = {
   address: "70 & 71 Cobb Lane",
   area: "Water Mill",
@@ -26,18 +32,23 @@ const LEAD_TRADE: HedgerowSoldDeal & { label: string } = {
   priceNum: 121500000,
   date: "2021",
   dateText: "2021",
-  hedgerowRole: "",
+  hedgerowRole: "Both sides",
+  roleLabel: "Hedgerow represented both sides",
   group: "Waterfront",
   label: "The firm's largest trade",
 };
 
-/** The lead trade, then the largest trades the data marks as Barry-involved, largest first. */
-function largestTrades(limit = 8): Trade[] {
-  const deals = hedgerowSold2021
-    .filter((deal) => deal.barryInvolved)
+/** East End trades only: the Manhattan penthouse stays on /sales. */
+const EAST_END = (deal: HedgerowSoldDeal) => deal.area !== "New York, NY";
+
+/** The lead trade, then the firm's largest East End trades from the full Hedgerow record, largest first. */
+function largestTrades(limit = 11): Trade[] {
+  const deals = [...hedgerowSold2021, ...hedgerowFirmHistory]
+    .filter((deal) => EAST_END(deal) && deal.priceNum > 0 && deal.address !== LEAD_TRADE.address)
     .sort((a, b) => b.priceNum - a.priceNum)
+    .filter((deal) => PHOTOS[deal.address])
     .slice(0, limit);
-  return [LEAD_TRADE, ...deals].flatMap((deal) => (PHOTOS[deal.address] ? [{ ...deal, photo: PHOTOS[deal.address] }] : []));
+  return [LEAD_TRADE, ...deals].map((deal) => ({ ...deal, photo: PHOTOS[deal.address] }));
 }
 
 function Panel({ trade, index, sizes, className, large = false, compact = false }: { trade: Trade; index: number; sizes: string; className: string; large?: boolean; compact?: boolean }) {
@@ -75,7 +86,7 @@ function Panel({ trade, index, sizes, className, large = false, compact = false 
           <p className={`font-serif font-light leading-none text-paper ${large ? "text-[1.2rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.4rem]" : "text-[1.15rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[2.05rem]"}`}>
             {trade.price}
           </p>
-          <p className={`eyebrow whitespace-nowrap text-paper/80 ${compact ? "" : "sm:mt-2.5"}`}>A Hedgerow transaction</p>
+          <p className={`eyebrow text-paper/80 ${compact ? "" : "sm:mt-2.5 sm:whitespace-nowrap"}`}>{trade.roleLabel || "A Hedgerow transaction"}</p>
         </div>
       </div>
     </Link>
@@ -95,7 +106,7 @@ type Span = keyof typeof SPAN;
 const FULL = "aspect-[4/3] md:aspect-auto md:h-[58vh] md:min-h-[400px] md:max-h-[560px]";
 
 export default function TradesShowcase() {
-  const [t1, t2, t3, t4, t5, t6, t7, t8, t9] = largestTrades();
+  const [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12] = largestTrades();
   const pair = (left: Trade | undefined, right: Trade | undefined, i: number, leftSpan: Span, rightSpan: Span) =>
     left && (
       <div className={PAIR_ROW}>
@@ -114,7 +125,7 @@ export default function TradesShowcase() {
           </h2>
         </div>
         <p data-reveal className="body-copy text-balance text-ink-muted md:col-span-4 md:text-right">
-          The largest sales Hedgerow and I have been involved in since 2021.
+          The largest sales by Hedgerow Exclusive Properties.
         </p>
       </div>
 
@@ -127,6 +138,13 @@ export default function TradesShowcase() {
           <div className={TRIO_ROW}>
             {[t7, t8, t9].map((trade, i) =>
               trade ? <Panel key={trade.address} trade={trade} index={6 + i} compact sizes="(max-width: 768px) 100vw, 33vw" className={TRIO_CELL} /> : null,
+            )}
+          </div>
+        )}
+        {t10 && (
+          <div className={TRIO_ROW}>
+            {[t10, t11, t12].map((trade, i) =>
+              trade ? <Panel key={trade.address} trade={trade} index={9 + i} compact sizes="(max-width: 768px) 100vw, 33vw" className={TRIO_CELL} /> : null,
             )}
           </div>
         )}

@@ -47,12 +47,12 @@ function SoldCard({ deal, index }: { deal: HedgerowSoldDeal; index: number }) {
         </div>
       )}
       <div className="flex flex-1 flex-col pt-6">
-        <p className="eyebrow text-ink-faint">{deal.area} · Sold {deal.dateText}</p>
+        <p className="eyebrow text-ink-faint">{deal.area}{deal.dateText ? ` · Sold ${deal.dateText}` : ""}</p>
         <div className="mt-3 flex items-baseline justify-between gap-4">
           <h4 className="font-serif text-[1.55rem] font-light leading-tight text-ink">{deal.address}</h4>
           {deal.price ? <p className="whitespace-nowrap font-serif text-[1.35rem] text-ocean">{deal.price}</p> : null}
         </div>
-        <p className="mt-4 border-t border-line pt-4 text-[11px] uppercase tracking-[0.2em] text-ink-muted">Hedgerow&apos;s role: {deal.hedgerowRole}</p>
+        <p className="mt-4 border-t border-line pt-4 text-[11px] uppercase tracking-[0.2em] text-ink-muted">{deal.roleLabel || "A Hedgerow transaction"}</p>
         {deal.barryInvolved ? (
           <p className="mt-2 font-serif text-[15px] italic text-ink-muted">Barry McGovern was involved</p>
         ) : null}
@@ -70,6 +70,7 @@ export default function SalesPage() {
     <div className="bg-paper text-ink">
       <JsonLd data={activeListingsItemListJsonLd(actives)} />
       <JsonLd data={salesItemListJsonLd(hedgerowSold2021)} />
+      <JsonLd data={salesItemListJsonLd(hedgerowFirmHistory, "Prominent Hedgerow Exclusive Properties transactions")} />
 
       <PageHero
         eyebrow="Barry McGovern · Portfolio"
@@ -232,33 +233,16 @@ export default function SalesPage() {
           <div className="mb-14 grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <SectionLabel n="IV">The Hedgerow record</SectionLabel>
-              <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6">Earlier Hedgerow transactions</h2>
+              <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6">Prominent Hedgerow transactions</h2>
             </div>
             <p data-reveal style={revealDelay(160)} className="body-copy text-ink-muted md:col-span-4 md:col-start-9">
-              Prominent transactions from the Hedgerow record, including deals that closed before 2021.
+              {hedgerowFirmHistory.length} more transactions from Hedgerow&apos;s Prominent Deals, largest first.
             </p>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[640px] border-t border-ink/80 text-left">
-              <thead>
-                <tr className="border-b border-line">
-                  {["Property", "Area", "Price", "Hedgerow's role", "Closed"].map((h) => (
-                    <th key={h} className="eyebrow whitespace-nowrap px-4 py-4 font-medium text-ink first:pl-0">{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {hedgerowFirmHistory.map((deal) => (
-                  <tr key={`${deal.address}-${deal.price}`} className="border-b border-line transition-colors duration-300 hover:bg-paper-soft">
-                    <td className="py-4 pl-0 pr-4 font-serif text-[1.2rem] text-ink">{deal.address}</td>
-                    <td className="whitespace-nowrap px-4 py-4 text-[13px] text-ink-muted">{deal.area}</td>
-                    <td className="whitespace-nowrap px-4 py-4 font-serif text-[1.1rem] text-ocean">{deal.price}</td>
-                    <td className="whitespace-nowrap px-4 py-4 text-[13px] text-ink-muted">{deal.hedgerowRole}</td>
-                    <td className="whitespace-nowrap px-4 py-4 text-[13px] text-ink-muted">{deal.dateText || "Undisclosed"}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+            {hedgerowFirmHistory.map((deal, i) => (
+              <SoldCard key={`${deal.address}-${deal.price}`} deal={deal} index={i} />
+            ))}
           </div>
         </div>
       </section>
