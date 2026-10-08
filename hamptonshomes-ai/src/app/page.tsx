@@ -4,7 +4,7 @@ import Link from "next/link";
 import TradesShowcase from "@/components/TradesShowcase";
 import { areas } from "@/lib/areas";
 import { blogPosts } from "@/lib/blog";
-import { featuredPress } from "@/lib/press";
+import { allPress } from "@/lib/press";
 
 const delay = (ms: number) => ({ "--reveal-delay": `${ms}ms` }) as CSSProperties;
 
@@ -191,9 +191,9 @@ export default function Home() {
           </div>
           <div className="mt-12 grid gap-14 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-7">
-              <p data-reveal className="eyebrow text-ink-faint">Featuring Barry</p>
+              <p data-reveal className="eyebrow text-ink-faint">Latest coverage</p>
               <ul className="mt-6 border-t border-ink/80">
-                {featuredPress.slice(0, 4).map((item, i) => (
+                {allPress.slice(0, 4).map((item, i) => (
                   <li key={item.url} data-reveal style={delay(i * 70)} className="border-b border-line">
                     <a href={item.url} target="_blank" rel="noopener noreferrer" className="group grid gap-2 py-6 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
                       <span>

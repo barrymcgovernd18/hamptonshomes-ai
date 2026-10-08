@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
 import { routeMetadata } from "@/lib/schema";
-import { featuredPress, hedgerowPress, type PressItem } from "@/lib/press";
+import { allPress, type PressItem } from "@/lib/press";
 
 export const metadata: Metadata = routeMetadata({
   title: "Press",
@@ -23,7 +23,7 @@ function Meta({ item, className }: { item: PressItem; className: string }) {
 }
 
 export default function PressPage() {
-  const outlets = Array.from(new Set([...featuredPress, ...hedgerowPress].map((item) => item.outlet)));
+  const outlets = Array.from(new Set(allPress.map((item) => item.outlet)));
   return (
     <div className="bg-paper text-ink">
       <PageHero
@@ -41,51 +41,12 @@ export default function PressPage() {
         }
       />
 
-      {/* I. Featured: independent articles that name Barry */}
-      <section className="py-24 md:py-36">
-        <div className="frame grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <SectionLabel n="I" as="h2">Featuring Barry</SectionLabel>
-            <p data-reveal style={revealDelay(80)} className="display-3 mt-6 max-w-[16ch] font-light text-ink">
-              Quoted, interviewed, <em className="italic text-ink-muted">and on the panel.</em>
-            </p>
-          </div>
-          <ol className="border-t border-ink/80 md:col-span-8">
-            {featuredPress.map((item, i) => (
-              <li key={item.url} data-reveal style={revealDelay((i % 4) * 60)} className="border-b border-line">
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group grid gap-3 py-8 sm:grid-cols-[9.5rem_1fr] sm:gap-8 md:py-9"
-                >
-                  <div className="flex items-baseline gap-4 sm:block">
-                    <p className="eyebrow text-ink-faint"><time dateTime={item.date}>{item.dateText}</time></p>
-                    {item.role ? <p className="eyebrow text-ocean sm:mt-3">{item.role}</p> : null}
-                  </div>
-                  <div>
-                    <p className="font-serif text-[1.05rem] italic text-ink-muted">{item.outlet}</p>
-                    <h3 className="mt-1.5 font-serif text-[1.65rem] font-light leading-[1.2] text-ink transition-colors duration-500 group-hover:text-ocean md:text-[1.9rem]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 max-w-[60ch] text-[14px] leading-[1.8] text-ink-muted">{item.summary}</p>
-                    <p className="mt-4">
-                      <span className="link-line eyebrow text-ink">Read at {item.outlet} <span aria-hidden="true">→</span></span>
-                    </p>
-                  </div>
-                </a>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* II. Hedgerow Exclusive in the press */}
-      <section className="defer-render border-t border-line bg-paper-soft py-24 md:py-36">
+      {/* Barry and Hedgerow Exclusive in the press, newest first */}
+      <section className="bg-paper-soft py-24 md:py-36">
         <div className="frame">
-          <SectionLabel n="II" as="h2">Hedgerow Exclusive Properties in the press</SectionLabel>
+          <SectionLabel as="h2">Barry McGovern and Hedgerow Exclusive Properties in the press</SectionLabel>
           <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
-            {hedgerowPress.map((item, i) => (
+            {allPress.map((item, i) => (
               <a
                 key={item.url}
                 href={item.url}
@@ -105,9 +66,14 @@ export default function PressPage() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
-                ) : null}
+                ) : (
+                  <div className="flex aspect-[3/2] items-center justify-center bg-paper-deep px-8 text-center">
+                    <span className="font-serif text-[1.7rem] font-light italic leading-tight text-ink-muted">{item.outlet}</span>
+                  </div>
+                )}
                 <div className="flex flex-1 flex-col pt-6">
                   <Meta item={item} className="eyebrow text-ink-faint" />
+                  {item.role ? <p className="eyebrow mt-2 text-ocean">{item.role}</p> : null}
                   <h3 className="mt-3 font-serif text-[1.45rem] font-light leading-[1.25] text-ink transition-colors duration-500 group-hover:text-ocean">
                     {item.title}
                   </h3>
@@ -120,7 +86,7 @@ export default function PressPage() {
             ))}
           </div>
           <p className="mt-16 border-t border-line pt-6 text-[11px] leading-relaxed text-ink-faint">
-            Images courtesy of Hedgerow Exclusive Properties.
+            Property images courtesy of Hedgerow Exclusive Properties.
           </p>
         </div>
       </section>

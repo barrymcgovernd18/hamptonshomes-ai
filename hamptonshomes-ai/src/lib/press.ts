@@ -19,7 +19,7 @@ export interface PressItem {
   role?: string;
 }
 
-/** Barry's own mentions, shown first as Featured. */
+/** Barry's own mentions (also used for the About page JSON-LD). */
 const featuredPressItems: PressItem[] = [
   {
     outlet: "Behind The Hedges",
@@ -157,3 +157,10 @@ const newestFirst = (items: PressItem[]) => [...items].sort((a, b) => b.date.loc
 
 export const featuredPress: PressItem[] = newestFirst(featuredPressItems);
 export const hedgerowPress: PressItem[] = newestFirst(hedgerowPressItems);
+
+/** One list for /press and the homepage: Barry's articles and firm coverage together, newest first, no duplicate URLs. */
+export const allPress: PressItem[] = newestFirst(
+  [...featuredPressItems, ...hedgerowPressItems].filter(
+    (item, i, items) => items.findIndex((other) => other.url === item.url) === i,
+  ),
+);
