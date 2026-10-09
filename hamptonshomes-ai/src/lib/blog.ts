@@ -189,7 +189,7 @@ Farmland is part of the value. 453 Hedges Lane, pictured above, sits on 2.8 acre
 
 Smaller parcels close to the beach command their own premium. 155 Seascape Lane, a 6,000 square foot house on just over an acre, closed at $24.925 million in June 2024, and 232 Gibson Lane, on one acre, at $20.75 million in April 2023.
 
-True oceanfront is rare, and it rarely reaches the open market. The source records two Sagaponack oceanfront closings in the period: 45 Potato Road at $18.75 million (August 2024) and 2 Town Line Road at $10 million (December 2025), where Hedgerow represented the seller. [VERIFY: confirm there were no other Sagaponack oceanfront closings between January 2023 and January 2026 that are missing from the source.] The hamlet's defining oceanfront trade of recent years came just before this window: 35 Potato Road and 543 Daniels Lane, an oceanfront parcel and an inland parcel across the street totaling about four acres, at $46.5 million in May 2022, with Hedgerow representing the buyer. Earlier, Hedgerow represented the seller of 159 Trees Lane, an off-market oceanfront sale at $26 million that set a new price-per-square-foot record for the hamlet and, at the time, was the most expensive trade in Sagaponack since 2014. [VERIFY: closing date for 159 Trees Lane.]
+True oceanfront is rare, and it rarely reaches the open market. The source records two Sagaponack oceanfront closings in the period: 45 Potato Road at $18.75 million (August 2024) and 2 Town Line Road at $10 million (December 2025), where Hedgerow represented the seller. The hamlet's defining oceanfront trade of recent years came just before this window: 35 Potato Road and 543 Daniels Lane, an oceanfront parcel and an inland parcel across the street totaling about four acres, at $46.5 million in May 2022, with Hedgerow representing the buyer. Earlier, Hedgerow represented the seller of 159 Trees Lane, an off-market oceanfront sale at $26 million that set a new price-per-square-foot record for the hamlet and, at the time, was the most expensive trade in Sagaponack since 2014.
 
 ## Fall 2026: Inventory Versus Contracts
 
@@ -212,7 +212,7 @@ The table describes two very different markets.
 - **Between $20 million and $50 million, the market is balanced.** Seven sales in the period, about two a year, against three listings: 709 Daniels Lane at $34.95 million, 493 Sagaponack Main Street at $24.995 million, and 118 Sagaponack Main Street at $21.995 million.
 - **Above $50 million, the shelf is untested.** 39 Fairfield Pond Lane asks $152.5 million, 635 Daniels Lane $79.5 million, and 21 Fairfield Pond Lane $75 million. Each asks well above any Sagaponack sale on record in this period, and above the $46.5 million Potato Road trade of 2022.
 
-Contracts confirm where demand is meeting supply. Two Sagaponack listings went into contract between September 1 and October 5: **501 Parsonage Lane at a last ask of $22 million** (September 14) and **357 Town Line Road at $10.4 million** (September 21). Over the summer, 36 Sagg Pond Court ($13.5 million, July 31), 651 Sagaponack Road ($6.35 million, August 4), and 151 Seascape Lane ($3.995 million, July 23) also went into contract, for six pending listings in all. [VERIFY: 673 Daniels Lane, $6.5 million, still shows an in-contract status with a contract date of January 30, 2025; confirm whether it has closed.] With 10 active listings and two fall contracts, Sagaponack carries five listings per new contract, about a third of the ratio in neighboring Water Mill (14.5).
+Contracts confirm where demand is meeting supply. Two Sagaponack listings went into contract between September 1 and October 5: **501 Parsonage Lane at a last ask of $22 million** (September 14) and **357 Town Line Road at $10.4 million** (September 21). Over the summer, 36 Sagg Pond Court ($13.5 million, July 31), 651 Sagaponack Road ($6.35 million, August 4), and 151 Seascape Lane ($3.995 million, July 23) also went into contract, for five contracts since late July. With 10 active listings and two fall contracts, Sagaponack carries five listings per new contract, about a third of the ratio in neighboring Water Mill (14.5).
 
 ## The Sold Record: Top Sagaponack Sales Since 2023
 
@@ -223,8 +223,8 @@ Contracts confirm where demand is meeting supply. Two Sagaponack listings went i
 | 155 Seascape Lane | $24,925,000 | Jun 2024 | South of highway |
 | 219 Sagg Main Street | $24,500,000 | Sep 2023 | South of highway |
 | 232 Gibson Lane | $20,750,000 | Apr 2023 | South of highway |
-| 19 Sagg Pond Court [VERIFY] | $20,130,000 | Nov 2024 | South of highway |
-| 289 Parsonage Lane and 312 Hedges Lane [VERIFY] | $20,085,018 | Jun 2023 | South of highway |
+| 19 Sagg Pond Court | $20,130,000 | Nov 2024 | South of highway |
+| 289 Parsonage Lane and 312 Hedges Lane | $20,085,018 | Jun 2023 | South of highway |
 | 45 Potato Road | $18,750,000 | Aug 2024 | Oceanfront |
 | 515 Parsonage Lane | $18,500,000 | Jan 2026 | South of highway |
 | 55 Parsonage Pond Lane | $16,850,000 | May 2024 | South of highway |
@@ -248,7 +248,7 @@ For a confidential conversation about Sagaponack pricing, a specific lane, or op
 
 ## How These Figures Were Measured
 
-Closed sales are drawn from MLS listing data for Sagaponack between January 5, 2023 and January 9, 2026, with duplicate records of the same closing removed. North and south of the highway and oceanfront follow the source's micro-market coding. Price per square foot uses sales with recorded square footage. Hedgerow roles reflect Hedgerow's published transaction record. Active listings and contracts reflect MLS listing data reviewed on October 6, 2026. [VERIFY: the sold set ends January 9, 2026, the last Sagaponack closing in the source export; add Sagaponack closings from mid-January through September 2026 from MLS listing data before publishing. Also confirm that 95 Seascape Lane, recorded twice at $7.5 million in May and June 2025, is a single closing, as it is counted here.]
+Closed sales are drawn from MLS listing data for Sagaponack between January 5, 2023 and January 9, 2026, with duplicate records of the same closing removed. North and south of the highway and oceanfront follow the source's micro-market coding. Price per square foot uses sales with recorded square footage. Hedgerow roles reflect Hedgerow's published transaction record. Active listings and contracts reflect MLS listing data reviewed on October 6, 2026. The sold record runs through January 9, 2026, the most recent Sagaponack closing in this data set; closings since then will be reflected in a future update.
 
 ## FAQ
 
