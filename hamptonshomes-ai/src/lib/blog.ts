@@ -24,6 +24,7 @@ export interface BlogPost {
 
 /** Search titles (under ~62 characters, brand included). The on-page H1 keeps the full title. */
 export const SEO_TITLES: Record<string, string> = {
+  "water-mill-luxury-market-overview-2026-10": "Water Mill Luxury Market, 2026 | Barry McGovern",
   "hamptons-fall-2026-contracts-inventory": "Hamptons Fall 2026 Contracts and Inventory | Barry McGovern",
   "hamptons-oceanfront-market-2021-2026": "Hamptons Oceanfront Market, 2021 to 2026 | Barry McGovern",
   "bridgehampton-non-water-market-overview-2026-09": "Bridgehampton Non-Water Market, 2026 | Barry McGovern",
@@ -133,6 +134,163 @@ export function relatedBlogPosts(post: BlogPost, limit = 2): BlogPost[] {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "water-mill-luxury-market-overview-2026-10",
+    title: "Water Mill Luxury Real Estate Market Overview 2026",
+    excerpt:
+      "Ninety-six sales at $5 million and up since January 2023, and 29 listings this fall: how Water Mill splits at Montauk Highway, where the water premium sits, and why the $20 million shelf is waiting.",
+    date: "2026-10-09",
+    dateModified: "2026-10-09",
+    author: "Barry McGovern",
+    category: "Market Report",
+    image: "/images/heroes/120-bay-lane-water-mill.jpg",
+    authorBox: true,
+    hideCta: true,
+    about: ["Water Mill"],
+    keywords:
+      "Water Mill real estate, Water Mill luxury homes, Water Mill market 2026, Mecox Bay waterfront, south of the highway, north of the highway, Hamptons luxury market",
+    metaDescription:
+      "Water Mill luxury real estate 2026: 96 sales of $5M+ since 2023, north vs south of Montauk Highway, the Mecox Bay premium, and fall inventory vs contracts.",
+    content: `
+## Key Takeaways
+
+- From January 3, 2023 through January 15, 2026, MLS listing data records **96 Water Mill sales at $5 million and above**, totaling **$983.3 million**, with a **median of $8.20 million**. The pace has been remarkably even: 30 sales in 2023, 32 in 2024, and 32 in 2025.
+- **Montauk Highway is the dividing line.** South of the highway, 58 sales carried a $9.45 million median and a top price of $64.995 million. North of the highway, 38 sales carried a $7.5 million median, and none cleared $13.3 million.
+- **The water sets the ceiling.** Seven sales on Mecox Bay and the surrounding ponds produced a $19 million median, more than double the village figure.
+- **This fall, the offering sits high.** On October 6, 2026, Water Mill had **29 active listings** asking a combined **$567.4 million**, at a **median ask of $13.0 million**. Thirteen of them ask $20 million or more, against seven sales at that level in the prior three years.
+- **The middle is clearing.** Two Water Mill listings went into contract between September 1 and October 5, at last asks of $15.995 million and $8.25 million. Neither was on the $20 million shelf.
+
+## Two Water Mills, Divided by the Highway
+
+Water Mill is two markets that share a zip code. South of Montauk Highway, the village runs down to Mecox Bay, Flying Point, and the ocean: Rose Hill Road, Cobb Road and Cobb Isle Road, Fordune Drive, Jule Pond Drive, Davids Lane, and the lanes off Flying Point Road. North of the highway, the land rises into the ridge and estate country of Head of Pond Road, Seven Ponds Towd Road, Deerfield Road, Blank Lane, and Noyack Path, where buyers trade proximity to the beach for acreage, privacy, and newer construction.
+
+The sold record makes the split plain.
+
+| Setting | Sales $5M+ | Median | Top sale | Total |
+|---|---|---|---|---|
+| South of the highway | 50 | $8.50M | $24.6M | $500.4M |
+| Waterfront (bay and pond) | 7 | $19.0M | $64.995M | $165.4M |
+| Oceanfront | 1 | $14.5M | $14.5M | $14.5M |
+| North of the highway | 38 | $7.50M | $13.3M | $303.1M |
+| **All Water Mill** | **96** | **$8.20M** | **$64.995M** | **$983.3M** |
+
+*Closed sales of $5 million and above, January 3, 2023 to January 15, 2026. Source: MLS listing data.*
+
+The gap widens on a per-foot basis. Among homes with recorded square footage, the median south of the highway was about **$1,460 per square foot**, against about **$930** north of it. A buyer north of the highway pays roughly two-thirds as much for each foot of finished house.
+
+The gap is sharpest at the top. Twenty-eight of the 34 Water Mill sales at $10 million and above were south of the highway. North of the highway, the strongest results came from large, finished houses on real land: 257 Millstone Road at $13.3 million (December 2024, about 12,000 square feet on 2.85 acres), 760 Montauk Highway at $13.1 million (April 2023) [VERIFY: confirm which side of the highway this parcel sits on], and 422 Seven Ponds Towd Road at $11.7 million (February 2025). [VERIFY: 173 Davids Lane, $13.1 million, January 2026, is coded north of the highway in the source data while neighboring Davids Lane sales are coded south; confirm the side before citing it either way.]
+
+For a buyer, the north side remains the most efficient way to own a new, fully finished Water Mill house with acreage. For a seller, it is a market with a well-defined ceiling: the north side has not printed above $13.3 million in this period, and pricing above that line needs a reason the record does not yet show.
+
+## The Water's Edge: Mecox Bay, the Ponds, and the Ocean
+
+Water Mill's waterfront is mostly bay and pond rather than ocean, and that is where its largest numbers live. The seven bay and pond sales in the period include the Rose Hill Road compound on Mecox Bay at $64.995 million (December 2023) [VERIFY: the source lists this sale as "Rose Hill Compound"; confirm the street address before publishing], 180 Pointe Mecox Lane at $24 million (August 2023), 217 Rose Hill Road at $20.5 million (November 2025), 360 and 366 Cobb Road at $19 million (November 2023), 31 Morrison Lane at $15.25 million (January 2023), 120 Bay Lane at $12.625 million (May 2025), and 20 Jule Pond Drive at $9 million (February 2025).
+
+Two of those were Hedgerow transactions. Hedgerow represented the buyer at 31 Morrison Lane and represented the seller at 120 Bay Lane, the Mecox Bay parcel pictured above.
+
+True oceanfront is scarce. Water Mill has recorded three oceanfront sales since 2021: **90 Jule Pond Drive at $105 million** in August 2021, where Hedgerow advised the seller, 1115 Flying Point Road at $20 million in November 2022, and 1195 Flying Point Road at $14.5 million in October 2024. Jule Pond's combination of ocean and pond frontage remains the benchmark for the village and one of the defining trades of the decade on the East End.
+
+Mecox Bay frontage carries Water Mill's other landmark. The four-parcel compound at 70 and 71 Cobb Lane traded for **$121.5 million**, a Hedgerow transaction in which Hedgerow represented both sides. Both houses are offered again today, separately, through Hedgerow: [70 Cobb Lane](/listings/70-cobb-lane-water-mill) at $42.5 million and [71 Cobb Lane](/listings/71-cobb-lane-water-mill) at $39.95 million.
+
+## Fall 2026: Inventory Versus Contracts
+
+On October 6, 2026, I reviewed Water Mill's active listings and contracts in MLS listing data, alongside the wider Southampton to East Hampton market covered in [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory).
+
+| Asking price | Active listings | Sales $5M+, Jan 2023 to Jan 2026 |
+|---|---|---|
+| $50M and above | 1 | 1 |
+| $20M to $50M | 12 | 6 |
+| $10M to $20M | 5 | 27 |
+| $5M to $10M | 8 | 62 |
+| Under $5M | 3 | n/a |
+| **Total** | **29** | **96** |
+
+*Active listings as of October 6, 2026. Closed sales January 3, 2023 to January 15, 2026. Source: MLS listing data.*
+
+Read across the rows and the shape of the market is clear.
+
+- **$5 million to $10 million is liquid.** Water Mill closed 62 sales in this band in about three years, roughly 20 a year, and only eight are on the market now. At the trailing pace, that is less than six months of supply.
+- **$10 million to $20 million is balanced.** Twenty-seven sales over the period, about nine a year, against five active listings. One of the two fall contracts, 179 Davids Lane at a last ask of $15.995 million (October 5), came from this band. The other, 25 Swans Neck Lane at $8.25 million (September 3), came from the band below.
+- **$20 million and above is waiting.** Thirteen listings ask $20 million or more, a combined $436.9 million and 77 percent of all the asking dollars in the village. Water Mill closed seven sales at that level in the prior three years. At that pace, the current shelf represents more than five years of supply.
+
+The top of the shelf is the Mecox Bay and ocean corridor: 140 Hayground Cove Road at $68 million, the Cobb Lane houses, 258 Horsemill Lane at $39.5 million, 116 Brennans Moor at $33.5 million, 111 Cobb Isle Road at $31.995 million, and four listings on Jule Pond Drive between $25 million and $29.995 million. Two more Water Mill listings were in contract before September, at 28 Brennans Moor ($4.995 million, July 27) and 68 Westminster Road ($4.75 million, August 27), for four pending in total.
+
+None of this means the top will not trade. Water Mill's $20 million sales have typically come one or two at a time, often on the water and often through private negotiation. It does mean that buyers above $20 million hold real leverage this fall, and that sellers at that level compete less with each other than with time.
+
+## The Sold Record: Top Water Mill Sales Since 2023
+
+| Address | Price | Closed | Setting |
+|---|---|---|---|
+| Rose Hill Road compound [VERIFY] | $64,995,000 | Dec 2023 | Waterfront |
+| 53 Fordune Drive | $24,600,000 | Sep 2025 | South of highway |
+| 180 Pointe Mecox Lane | $24,000,000 | Aug 2023 | Waterfront |
+| 951 Flying Point Road | $22,500,000 | May 2025 | South of highway |
+| 217 Rose Hill Road | $20,500,000 | Nov 2025 | Waterfront |
+| 199 Georgian Lane | $20,000,000 | Nov 2025 | South of highway |
+| 180 Rose Hill Road | $20,000,000 | Jan 2023 | South of highway |
+| 360 and 366 Cobb Road | $19,000,000 | Nov 2023 | Waterfront |
+| 315 Rose Hill Road | $18,650,000 | Sep 2024 | South of highway |
+| 475 Flying Point Road | $17,000,000 | Jul 2025 | South of highway |
+| 34 Cobb Isle Road | $16,400,000 | Dec 2024 | South of highway |
+| 31 Morrison Lane | $15,250,000 | Jan 2023 | Waterfront |
+| 1195 Flying Point Road | $14,500,000 | Oct 2024 | Oceanfront |
+| 156 Summerfield Lane | $13,650,000 | Nov 2024 | South of highway |
+| 257 Millstone Road | $13,300,000 | Dec 2024 | North of highway |
+
+*Source: MLS listing data. Hedgerow transactions on this list include 180 Rose Hill Road (Hedgerow represented the seller), 31 Morrison Lane (Hedgerow represented the buyer), and 156 Summerfield Lane, where Hedgerow represented the seller at $12.675 million in December 2023 and the buyer at $13.65 million eleven months later.*
+
+## Takeaways for Buyers and Sellers
+
+- **Start with the highway.** In Water Mill, the side of Montauk Highway explains more of the price than any other single factor: about $1,460 per square foot to the south against about $930 to the north.
+- **North of the highway, underwrite to the record.** Finished new construction with acreage has cleared $11 million to $13.3 million. Pricing above that line asks a buyer to set a new high.
+- **South of the highway, the $10 million to $20 million band is the working market.** It trades steadily, and this fall's largest contract came from it.
+- **Above $20 million, buyers have time.** Thirteen listings against a sold pace of about two a year gives buyers room to negotiate and sellers a reason to price with precision.
+- **Water is the premium.** Bay and pond frontage carried a $19 million median. Ocean frontage, when it trades, sets the village record.
+
+For a confidential conversation about Water Mill pricing, positioning, or a specific address north or south of the highway, Hedgerow Exclusive Properties works this market at that level of detail.
+
+## How These Figures Were Measured
+
+Closed sales are drawn from MLS listing data for Water Mill between January 3, 2023 and January 15, 2026, at $5 million and above, with duplicate records of the same closing removed. North and south of the highway follow the source's micro-market coding, with Hedgerow's own records used where they differ (120 Bay Lane and 31 Morrison Lane, both waterfront). Price per square foot uses homes with recorded square footage. Active listings and contracts reflect MLS listing data reviewed on October 6, 2026. [VERIFY: Water Mill closings from late January through September 2026 are not yet in this sold set; add them from MLS listing data before publishing, and confirm whether 531 Mecox Road closed twice in 2024, at $6 million in June and $7.1 million in October.]
+
+## FAQ
+
+### What is the median price of a luxury home in Water Mill?
+
+Across 96 Water Mill sales at $5 million and above from January 2023 to January 2026, the median was $8.20 million. South of Montauk Highway it was $9.45 million, and north of the highway it was $7.5 million.
+
+### How much more does Water Mill cost south of the highway?
+
+Among homes with recorded square footage, the median was about $1,460 per square foot south of the highway and about $930 north of it, a premium of roughly 57 percent.
+
+### What is the most expensive home sold in Water Mill?
+
+In this period, the Rose Hill Road compound on Mecox Bay at $64.995 million in December 2023. Earlier in the decade, 70 and 71 Cobb Lane traded for $121.5 million, a Hedgerow transaction, and 90 Jule Pond Drive sold for $105 million in 2021.
+
+### How many homes are for sale in Water Mill this fall?
+
+On October 6, 2026, Water Mill had 29 active listings with a combined asking price of $567.4 million and a median ask of $13.0 million. Thirteen asked $20 million or more.
+
+### Is the Water Mill market a buyer's or seller's market?
+
+It depends on the price. Between $5 million and $10 million, supply is thin and the market favors sellers. Above $20 million, there is more than five years of inventory at the recent sales pace, which favors buyers.
+
+### Who is Barry McGovern?
+
+Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Properties, a boutique ultra-luxury Hamptons brokerage that has facilitated over $2 billion in transactions since 2020. More at [hamptonshomes.ai/about](https://hamptonshomes.ai/about).
+
+## Related
+
+- [Water Mill town page](/water-mill)
+- [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory)
+- [Hamptons Oceanfront, 2021 to 2026](/blog/hamptons-oceanfront-market-2021-2026)
+- [Bridgehampton non-water market overview](/blog/bridgehampton-non-water-market-overview-2026-09)
+- [The Hedgerow portfolio](/sales)
+- [Contact](/contact)
+
+*Images courtesy of Hedgerow Exclusive Properties.*
+    `,
+  },
   {
     slug: "hamptons-fall-2026-contracts-inventory",
     title: "The Hamptons Fall 2026 Pipeline: Where Contracts Are Clearing, and Where Inventory Waits",
