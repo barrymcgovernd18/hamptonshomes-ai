@@ -138,7 +138,7 @@ export const blogPosts: BlogPost[] = [
     slug: "sagaponack-luxury-market-overview-2026-10",
     title: "Sagaponack Luxury Real Estate Market Overview 2026",
     excerpt:
-      "Forty-nine sales at $5 million and up since January 2023, and just 10 listings this fall: how Sagaponack South sets the price, where the top of the record sits, and why supply is thin below $50 million.",
+      "Forty-nine sales at $5 million and up since January 2023, and just 11 listings south of the highway this fall: how Sagaponack South sets the price, where the top of the record sits, and why supply is thin below $50 million.",
     date: "2026-10-09",
     dateModified: "2026-10-09",
     author: "Barry McGovern",
@@ -157,8 +157,8 @@ export const blogPosts: BlogPost[] = [
 - From January 5, 2023 through January 9, 2026, MLS listing data records **49 Sagaponack sales at $5 million and above**, totaling **$565.7 million**, with a **median of $9.5 million**.
 - **Sagaponack South is the market.** Forty-three of those 49 sales were south of Montauk Highway, at a $9.5 million median. North of the highway, only four sales reached $5 million, and none cleared $8.7 million.
 - **The top of the record runs through Hedgerow.** The three highest Sagaponack sales in the period, 332 Parsonage Lane at $29.5 million, 802 Town Line Road at $26.35 million, and 219 Sagg Main Street at $24.5 million, were all Hedgerow transactions. Across the full set, Hedgerow transactions account for 9 sales and $138.6 million, roughly a quarter of the dollar volume.
-- **Inventory is thin below $50 million.** On October 6, 2026, Sagaponack had just **10 active listings**, asking a combined **$449.9 million** at a **median ask of $23.5 million**. Only one asked less than $10 million.
-- **The asking dollars sit above the record.** Three listings ask $75 million or more, a combined $307 million and 68 percent of everything on offer. No Sagaponack sale in the period exceeded $29.5 million.
+- **Inventory is thin below $50 million.** As of October 9, 2026, Sagaponack South had just **11 active listings**, asking a combined **$478.8 million** at a **median ask of $25 million**. Only one asked less than $10 million. Across the whole hamlet, north of the highway included, about 20 homes are for sale.
+- **The asking dollars sit above the record.** Three listings ask $75 million or more, a combined $307 million and 64 percent of everything on offer south of the highway. No Sagaponack sale in the period exceeded $29.5 million.
 
 ## Sagaponack South and Sagaponack North
 
@@ -193,26 +193,26 @@ True oceanfront is rare, and it rarely reaches the open market. The source recor
 
 ## Fall 2026: Inventory Versus Contracts
 
-On October 6, 2026, I reviewed Sagaponack's active listings and contracts in MLS listing data, alongside the wider market covered in [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory).
+I reviewed Sagaponack's active listings and contracts in MLS listing data on October 6, 2026, alongside the wider market covered in [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory), and rechecked active inventory on October 9. In those three days one new listing arrived, 68 Hedges Lane at $28.95 million, bringing Sagaponack South to 11 listings. Sagaponack North adds about nine more, nearly all priced below $10 million.
 
-| Asking price | Active listings | Sales $5M+, Jan 2023 to Jan 2026 |
+| Asking price | Active listings, Sagaponack South | Sales $5M+, Jan 2023 to Jan 2026 |
 |---|---|---|
 | $50M and above | 3 | 0 |
-| $20M to $50M | 3 | 7 |
+| $20M to $50M | 4 | 7 |
 | $10M to $20M | 3 | 16 |
 | $5M to $10M | 1 | 26 |
 | Under $5M | 0 | n/a |
-| **Total** | **10** | **49** |
+| **Total** | **11** | **49** |
 
-*Active listings as of October 6, 2026. Closed sales January 5, 2023 to January 9, 2026. Source: MLS listing data.*
+*Active listings south of Montauk Highway as of October 9, 2026. Closed sales January 5, 2023 to January 9, 2026. Sources: MLS listing data and public listing sites.*
 
 The table describes two very different markets.
 
-- **Below $20 million, Sagaponack is short of supply.** The hamlet closed 42 sales between $5 million and $20 million in about three years, roughly 14 a year, and only four listings are available in that range today. A single listing, 137 Sandune Court at $8.95 million, is offered under $10 million.
-- **Between $20 million and $50 million, the market is balanced.** Seven sales in the period, about two a year, against three listings: 709 Daniels Lane at $34.95 million, 493 Sagaponack Main Street at $24.995 million, and 118 Sagaponack Main Street at $21.995 million.
+- **Below $20 million, Sagaponack is short of supply.** The hamlet closed 42 sales between $5 million and $20 million in about three years, roughly 14 a year, and only four listings south of the highway are available in that range today. A single listing, 137 Sandune Court at $8.95 million, is offered under $10 million.
+- **Between $20 million and $50 million, the market is balanced.** Seven sales in the period, about two a year, against four listings: 709 Daniels Lane at $34.95 million, 68 Hedges Lane at $28.95 million, 493 Sagaponack Main Street at $24.995 million, and 118 Sagaponack Main Street at $21.995 million.
 - **Above $50 million, the shelf is untested.** 39 Fairfield Pond Lane asks $152.5 million, 635 Daniels Lane $79.5 million, and 21 Fairfield Pond Lane $75 million. Each asks well above any Sagaponack sale on record in this period, and above the $46.5 million Potato Road trade of 2022.
 
-Contracts confirm where demand is meeting supply. Two Sagaponack listings went into contract between September 1 and October 5: **501 Parsonage Lane at a last ask of $22 million** (September 14) and **357 Town Line Road at $10.4 million** (September 21). Over the summer, 36 Sagg Pond Court ($13.5 million, July 31), 651 Sagaponack Road ($6.35 million, August 4), and 151 Seascape Lane ($3.995 million, July 23) also went into contract, for five contracts since late July. With 10 active listings and two fall contracts, Sagaponack carries five listings per new contract, about a third of the ratio in neighboring Water Mill (14.5).
+Contracts confirm where demand is meeting supply. Two Sagaponack listings went into contract between September 1 and October 5: **501 Parsonage Lane at a last ask of $22 million** (September 14) and **357 Town Line Road at $10.4 million** (September 21). Over the summer, 36 Sagg Pond Court ($13.5 million, July 31), 651 Sagaponack Road ($6.35 million, August 4), and 151 Seascape Lane ($3.995 million, July 23) also went into contract, for five contracts since late July. With 11 active listings south of the highway and two fall contracts, Sagaponack carries five to six listings per new contract, well under half the ratio in neighboring Water Mill (14.5 as of October 6).
 
 ## The Sold Record: Top Sagaponack Sales Since 2023
 
@@ -242,13 +242,13 @@ Contracts confirm where demand is meeting supply. Two Sagaponack listings went i
 - **Below $20 million, sellers hold the advantage.** Four listings against a sold pace of roughly 14 a year leaves buyers with little to choose from. Well-presented houses in this range are likely to draw competition.
 - **Between $20 million and $50 million, pricing to the record matters.** The top of the sold record is $29.5 million. The fall's largest contract, 501 Parsonage Lane at a last ask of $22 million, came from this band.
 - **Above $50 million, buyers set the terms.** Three listings, no comparable sales in the period, and a single 2022 oceanfront benchmark at $46.5 million.
-- **Off-market matters here.** In a hamlet with ten public listings, much of the real opportunity never appears on the open market, as the off-market sale of 159 Trees Lane showed.
+- **Off-market matters here.** In a hamlet with eleven public listings south of the highway, much of the real opportunity never appears on the open market, as the off-market sale of 159 Trees Lane showed.
 
 For a confidential conversation about Sagaponack pricing, a specific lane, or opportunities that are not publicly listed, Hedgerow Exclusive Properties works this market at that level of detail.
 
 ## How These Figures Were Measured
 
-Closed sales are drawn from MLS listing data for Sagaponack between January 5, 2023 and January 9, 2026, with duplicate records of the same closing removed. North and south of the highway and oceanfront follow the source's micro-market coding. Price per square foot uses sales with recorded square footage. Hedgerow roles reflect Hedgerow's published transaction record. Active listings and contracts reflect MLS listing data reviewed on October 6, 2026. The sold record runs through January 9, 2026, the most recent Sagaponack closing in this data set; closings since then will be reflected in a future update.
+Closed sales are drawn from MLS listing data for Sagaponack between January 5, 2023 and January 9, 2026, with duplicate records of the same closing removed. North and south of the highway and oceanfront follow the source's micro-market coding. Price per square foot uses sales with recorded square footage. Hedgerow roles reflect Hedgerow's published transaction record. Contracts reflect MLS listing data reviewed on October 6, 2026. Active listings were rechecked on October 9, 2026 against public listing sites and brokerage listing pages; 21 Fairfield Pond Lane, also offered as part of a larger package, is counted once. The sold record runs through January 9, 2026, the most recent Sagaponack closing in this data set; closings since then will be reflected in a future update.
 
 ## FAQ
 
@@ -262,7 +262,7 @@ In this period, 332 Parsonage Lane at $29.5 million in May 2024, a Hedgerow tran
 
 ### How many homes are for sale in Sagaponack this fall?
 
-On October 6, 2026, Sagaponack had 10 active listings asking a combined $449.9 million, at a median ask of $23.5 million. Only one was priced below $10 million.
+As of October 9, 2026, Sagaponack South had 11 active listings asking a combined $478.8 million, at a median ask of $25 million, and only one was priced below $10 million. Including Sagaponack North, about 20 homes were for sale across the hamlet.
 
 ### Is Sagaponack North different from Sagaponack South?
 
