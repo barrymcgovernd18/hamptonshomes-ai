@@ -24,7 +24,7 @@ export interface BlogPost {
 
 /** Search titles (under ~62 characters, brand included). The on-page H1 keeps the full title. */
 export const SEO_TITLES: Record<string, string> = {
-  "water-mill-luxury-market-overview-2026-10": "Water Mill Luxury Market, 2026 | Barry McGovern",
+  "sagaponack-luxury-market-overview-2026-10": "Sagaponack Luxury Market, 2026 | Barry McGovern",
   "hamptons-fall-2026-contracts-inventory": "Hamptons Fall 2026 Contracts and Inventory | Barry McGovern",
   "hamptons-oceanfront-market-2021-2026": "Hamptons Oceanfront Market, 2021 to 2026 | Barry McGovern",
   "bridgehampton-non-water-market-overview-2026-09": "Bridgehampton Non-Water Market, 2026 | Barry McGovern",
@@ -135,145 +135,142 @@ export function relatedBlogPosts(post: BlogPost, limit = 2): BlogPost[] {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "water-mill-luxury-market-overview-2026-10",
-    title: "Water Mill Luxury Real Estate Market Overview 2026",
+    slug: "sagaponack-luxury-market-overview-2026-10",
+    title: "Sagaponack Luxury Real Estate Market Overview 2026",
     excerpt:
-      "Ninety-six sales at $5 million and up since January 2023, and 29 listings this fall: how Water Mill splits at Montauk Highway, where the water premium sits, and why the $20 million shelf is waiting.",
+      "Forty-nine sales at $5 million and up since January 2023, and just 10 listings this fall: how Sagaponack South sets the price, where the top of the record sits, and why supply is thin below $50 million.",
     date: "2026-10-09",
     dateModified: "2026-10-09",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/heroes/120-bay-lane-water-mill.jpg",
+    image: "/images/heroes/453-hedges-lane-sagaponack.jpg",
     authorBox: true,
     hideCta: true,
-    about: ["Water Mill"],
+    about: ["Sagaponack"],
     keywords:
-      "Water Mill real estate, Water Mill luxury homes, Water Mill market 2026, Mecox Bay waterfront, south of the highway, north of the highway, Hamptons luxury market",
+      "Sagaponack real estate, Sagaponack luxury homes, Sagaponack market 2026, Sagaponack South, Sagaponack North, Sagaponack oceanfront, Hamptons luxury market",
     metaDescription:
-      "Water Mill luxury real estate 2026: 96 sales of $5M+ since 2023, north vs south of Montauk Highway, the Mecox Bay premium, and fall inventory vs contracts.",
+      "Sagaponack luxury real estate 2026: 49 sales of $5M+ since 2023, south vs north of Montauk Highway, the oceanfront, and thin fall inventory below $50M.",
     content: `
 ## Key Takeaways
 
-- From January 3, 2023 through January 15, 2026, MLS listing data records **96 Water Mill sales at $5 million and above**, totaling **$983.3 million**, with a **median of $8.20 million**. The pace has been remarkably even: 30 sales in 2023, 32 in 2024, and 32 in 2025.
-- **Montauk Highway is the dividing line.** South of the highway, 58 sales carried a $9.45 million median and a top price of $64.995 million. North of the highway, 38 sales carried a $7.5 million median, and none cleared $13.3 million.
-- **The water sets the ceiling.** Seven sales on Mecox Bay and the surrounding ponds produced a $19 million median, more than double the village figure.
-- **This fall, the offering sits high.** On October 6, 2026, Water Mill had **29 active listings** asking a combined **$567.4 million**, at a **median ask of $13.0 million**. Thirteen of them ask $20 million or more, against seven sales at that level in the prior three years.
-- **The middle is clearing.** Two Water Mill listings went into contract between September 1 and October 5, at last asks of $15.995 million and $8.25 million. Neither was on the $20 million shelf.
+- From January 5, 2023 through January 9, 2026, MLS listing data records **49 Sagaponack sales at $5 million and above**, totaling **$565.7 million**, with a **median of $9.5 million**.
+- **Sagaponack South is the market.** Forty-three of those 49 sales were south of Montauk Highway, at a $9.5 million median. North of the highway, only four sales reached $5 million, and none cleared $8.7 million.
+- **The top of the record runs through Hedgerow.** The three highest Sagaponack sales in the period, 332 Parsonage Lane at $29.5 million, 802 Town Line Road at $26.35 million, and 219 Sagg Main Street at $24.5 million, were all Hedgerow transactions. Across the full set, Hedgerow transactions account for 9 sales and $138.6 million, roughly a quarter of the dollar volume.
+- **Inventory is thin below $50 million.** On October 6, 2026, Sagaponack had just **10 active listings**, asking a combined **$449.9 million** at a **median ask of $23.5 million**. Only one asked less than $10 million.
+- **The asking dollars sit above the record.** Three listings ask $75 million or more, a combined $307 million and 68 percent of everything on offer. No Sagaponack sale in the period exceeded $29.5 million.
 
-## Two Water Mills, Divided by the Highway
+## Sagaponack South and Sagaponack North
 
-Water Mill is two markets that share a zip code. South of Montauk Highway, the village runs down to Mecox Bay, Flying Point, and the ocean: Rose Hill Road, Cobb Road and Cobb Isle Road, Fordune Drive, Jule Pond Drive, Davids Lane, and the lanes off Flying Point Road. North of the highway, the land rises into the ridge and estate country of Head of Pond Road, Seven Ponds Towd Road, Deerfield Road, Blank Lane, and Noyack Path, where buyers trade proximity to the beach for acreage, privacy, and newer construction.
+Sagaponack is the smallest of the South Fork's estate markets and, south of the highway, one of the most consistent. Below Montauk Highway, the hamlet is a grid of farm fields, hedgerows, and estate lanes running down to the ocean: Parsonage Lane, Hedges Lane, Sagg Main Street, Daniels Lane, Town Line Road, Seascape Lane, Gibson Lane, and Fairfield Pond Lane. Much of that land is protected farmland, which limits how many estate parcels can ever exist and keeps the views open across them.
 
-The sold record makes the split plain.
+North of the highway, Sagaponack North is a quieter, wooded market of Sagg Road, Merchants Path, Northwest Path, Old Farm Road, and Toppings Path. It shares the name and the zip code, but it trades at a different level entirely.
 
-| Setting | Sales $5M+ | Median | Top sale | Total |
-|---|---|---|---|---|
-| South of the highway | 50 | $8.50M | $24.6M | $500.4M |
-| Waterfront (bay and pond) | 7 | $19.0M | $64.995M | $165.4M |
-| Oceanfront | 1 | $14.5M | $14.5M | $14.5M |
-| North of the highway | 38 | $7.50M | $13.3M | $303.1M |
-| **All Water Mill** | **96** | **$8.20M** | **$64.995M** | **$983.3M** |
+| Setting | All sales | Sales $5M+ | Median ($5M+) | Top sale | Total ($5M+) |
+|---|---|---|---|---|---|
+| South of the highway | 50 | 43 | $9.50M | $29.5M | $510.7M |
+| Oceanfront | 2 | 2 | $14.375M | $18.75M | $28.75M |
+| North of the highway | 24 | 4 | $6.02M | $8.7M | $26.3M |
+| **All Sagaponack** | **76** | **49** | **$9.50M** | **$29.5M** | **$565.7M** |
 
-*Closed sales of $5 million and above, January 3, 2023 to January 15, 2026. Source: MLS listing data.*
+*Closed sales, January 5, 2023 to January 9, 2026. Source: MLS listing data.*
 
-The gap widens on a per-foot basis. Among homes with recorded square footage, the median south of the highway was about **$1,460 per square foot**, against about **$930** north of it. A buyer north of the highway pays roughly two-thirds as much for each foot of finished house.
+Across all sales with recorded square footage, the median south of the highway was about **$1,630 per square foot**, against about **$930** north of it. The median sale north of the highway, across all price points, was $3.45 million. South of the highway it was $8.4 million.
 
-The gap is sharpest at the top. Twenty-eight of the 34 Water Mill sales at $10 million and above were south of the highway. North of the highway, the strongest results came from large, finished houses on real land: 257 Millstone Road at $13.3 million (December 2024, about 12,000 square feet on 2.85 acres), 760 Montauk Highway at $13.1 million (April 2023) [VERIFY: confirm which side of the highway this parcel sits on], and 422 Seven Ponds Towd Road at $11.7 million (February 2025). [VERIFY: 173 Davids Lane, $13.1 million, January 2026, is coded north of the highway in the source data while neighboring Davids Lane sales are coded south; confirm the side before citing it either way.]
+The year-by-year record is steady rather than trending: 15 sales at $5 million and above in 2023 (median $8.35 million), 19 in 2024 (median $11.65 million), and 14 in 2025 (median $8.64 million). 2024 was the deepest year at the top, with 332 Parsonage Lane, 155 Seascape Lane at $24.925 million, 19 Sagg Pond Court at $20.13 million, and 45 Potato Road on the ocean at $18.75 million all closing within six months.
 
-For a buyer, the north side remains the most efficient way to own a new, fully finished Water Mill house with acreage. For a seller, it is a market with a well-defined ceiling: the north side has not printed above $13.3 million in this period, and pricing above that line needs a reason the record does not yet show.
+North of the highway, the strongest results were 363 Wainscott Harbor Road at $8.7 million (August 2024), 118 Northwest Path at $6.05 million (April 2025), and 188 Merchants Path at $5.995 million (January 2024). For buyers who want the Sagaponack address with more house and land for the money, the north side remains the efficient entry. For sellers, it has a clear ceiling in the high single-digit millions.
 
-## The Water's Edge: Mecox Bay, the Ponds, and the Ocean
+## The Estate Lanes and the Ocean
 
-Water Mill's waterfront is mostly bay and pond rather than ocean, and that is where its largest numbers live. The seven bay and pond sales in the period include the Rose Hill Road compound on Mecox Bay at $64.995 million (December 2023) [VERIFY: the source lists this sale as "Rose Hill Compound"; confirm the street address before publishing], 180 Pointe Mecox Lane at $24 million (August 2023), 217 Rose Hill Road at $20.5 million (November 2025), 360 and 366 Cobb Road at $19 million (November 2023), 31 Morrison Lane at $15.25 million (January 2023), 120 Bay Lane at $12.625 million (May 2025), and 20 Jule Pond Drive at $9 million (February 2025).
+The upper end of Sagaponack South has a recognizable profile: large, new or recently rebuilt houses on two to three acres, often backing onto protected farmland. 332 Parsonage Lane, a 3.3 acre parcel in the estate section, closed at $29.5 million in May 2024; Hedgerow represented the seller. 802 Town Line Road, a new construction compound of three separate structures on more than three acres of reserve, closed at $26.35 million in October 2025, also with Hedgerow representing the seller. 219 Sagg Main Street, a custom redevelopment completed in 2023 with close to 20,000 square feet of living space across four structures on three acres, closed at $24.5 million in September 2023; Hedgerow represented the buyer.
 
-Two of those were Hedgerow transactions. Hedgerow represented the buyer at 31 Morrison Lane and represented the seller at 120 Bay Lane, the Mecox Bay parcel pictured above.
+Farmland is part of the value. 453 Hedges Lane, pictured above, sits on 2.8 acres with protected farm views running to the ocean, and closed at $11 million in September 2024, with Hedgerow representing both sides.
 
-True oceanfront is scarce. Water Mill has recorded three oceanfront sales since 2021: **90 Jule Pond Drive at $105 million** in August 2021, where Hedgerow advised the seller, 1115 Flying Point Road at $20 million in November 2022, and 1195 Flying Point Road at $14.5 million in October 2024. Jule Pond's combination of ocean and pond frontage remains the benchmark for the village and one of the defining trades of the decade on the East End.
+Smaller parcels close to the beach command their own premium. 155 Seascape Lane, a 6,000 square foot house on just over an acre, closed at $24.925 million in June 2024, and 232 Gibson Lane, on one acre, at $20.75 million in April 2023.
 
-Mecox Bay frontage carries Water Mill's other landmark. The four-parcel compound at 70 and 71 Cobb Lane traded for **$121.5 million**, a Hedgerow transaction in which Hedgerow represented both sides. Both houses are offered again today, separately, through Hedgerow: [70 Cobb Lane](/listings/70-cobb-lane-water-mill) at $42.5 million and [71 Cobb Lane](/listings/71-cobb-lane-water-mill) at $39.95 million.
+True oceanfront is rare, and it rarely reaches the open market. The source records two Sagaponack oceanfront closings in the period: 45 Potato Road at $18.75 million (August 2024) and 2 Town Line Road at $10 million (December 2025), where Hedgerow represented the seller. [VERIFY: confirm there were no other Sagaponack oceanfront closings between January 2023 and January 2026 that are missing from the source.] The hamlet's defining oceanfront trade of recent years came just before this window: 35 Potato Road and 543 Daniels Lane, an oceanfront parcel and an inland parcel across the street totaling about four acres, at $46.5 million in May 2022, with Hedgerow representing the buyer. Earlier, Hedgerow represented the seller of 159 Trees Lane, an off-market oceanfront sale at $26 million that set a new price-per-square-foot record for the hamlet and, at the time, was the most expensive trade in Sagaponack since 2014. [VERIFY: closing date for 159 Trees Lane.]
 
 ## Fall 2026: Inventory Versus Contracts
 
-On October 6, 2026, I reviewed Water Mill's active listings and contracts in MLS listing data, alongside the wider Southampton to East Hampton market covered in [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory).
+On October 6, 2026, I reviewed Sagaponack's active listings and contracts in MLS listing data, alongside the wider market covered in [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory).
 
 | Asking price | Active listings | Sales $5M+, Jan 2023 to Jan 2026 |
 |---|---|---|
-| $50M and above | 1 | 1 |
-| $20M to $50M | 12 | 6 |
-| $10M to $20M | 5 | 27 |
-| $5M to $10M | 8 | 62 |
-| Under $5M | 3 | n/a |
-| **Total** | **29** | **96** |
+| $50M and above | 3 | 0 |
+| $20M to $50M | 3 | 7 |
+| $10M to $20M | 3 | 16 |
+| $5M to $10M | 1 | 26 |
+| Under $5M | 0 | n/a |
+| **Total** | **10** | **49** |
 
-*Active listings as of October 6, 2026. Closed sales January 3, 2023 to January 15, 2026. Source: MLS listing data.*
+*Active listings as of October 6, 2026. Closed sales January 5, 2023 to January 9, 2026. Source: MLS listing data.*
 
-Read across the rows and the shape of the market is clear.
+The table describes two very different markets.
 
-- **$5 million to $10 million is liquid.** Water Mill closed 62 sales in this band in about three years, roughly 20 a year, and only eight are on the market now. At the trailing pace, that is less than six months of supply.
-- **$10 million to $20 million is balanced.** Twenty-seven sales over the period, about nine a year, against five active listings. One of the two fall contracts, 179 Davids Lane at a last ask of $15.995 million (October 5), came from this band. The other, 25 Swans Neck Lane at $8.25 million (September 3), came from the band below.
-- **$20 million and above is waiting.** Thirteen listings ask $20 million or more, a combined $436.9 million and 77 percent of all the asking dollars in the village. Water Mill closed seven sales at that level in the prior three years. At that pace, the current shelf represents more than five years of supply.
+- **Below $20 million, Sagaponack is short of supply.** The hamlet closed 42 sales between $5 million and $20 million in about three years, roughly 14 a year, and only four listings are available in that range today. A single listing, 137 Sandune Court at $8.95 million, is offered under $10 million.
+- **Between $20 million and $50 million, the market is balanced.** Seven sales in the period, about two a year, against three listings: 709 Daniels Lane at $34.95 million, 493 Sagaponack Main Street at $24.995 million, and 118 Sagaponack Main Street at $21.995 million.
+- **Above $50 million, the shelf is untested.** 39 Fairfield Pond Lane asks $152.5 million, 635 Daniels Lane $79.5 million, and 21 Fairfield Pond Lane $75 million. Each asks well above any Sagaponack sale on record in this period, and above the $46.5 million Potato Road trade of 2022.
 
-The top of the shelf is the Mecox Bay and ocean corridor: 140 Hayground Cove Road at $68 million, the Cobb Lane houses, 258 Horsemill Lane at $39.5 million, 116 Brennans Moor at $33.5 million, 111 Cobb Isle Road at $31.995 million, and four listings on Jule Pond Drive between $25 million and $29.995 million. Two more Water Mill listings were in contract before September, at 28 Brennans Moor ($4.995 million, July 27) and 68 Westminster Road ($4.75 million, August 27), for four pending in total.
+Contracts confirm where demand is meeting supply. Two Sagaponack listings went into contract between September 1 and October 5: **501 Parsonage Lane at a last ask of $22 million** (September 14) and **357 Town Line Road at $10.4 million** (September 21). Over the summer, 36 Sagg Pond Court ($13.5 million, July 31), 651 Sagaponack Road ($6.35 million, August 4), and 151 Seascape Lane ($3.995 million, July 23) also went into contract, for six pending listings in all. [VERIFY: 673 Daniels Lane, $6.5 million, still shows an in-contract status with a contract date of January 30, 2025; confirm whether it has closed.] With 10 active listings and two fall contracts, Sagaponack carries five listings per new contract, about a third of the ratio in neighboring Water Mill (14.5).
 
-None of this means the top will not trade. Water Mill's $20 million sales have typically come one or two at a time, often on the water and often through private negotiation. It does mean that buyers above $20 million hold real leverage this fall, and that sellers at that level compete less with each other than with time.
-
-## The Sold Record: Top Water Mill Sales Since 2023
+## The Sold Record: Top Sagaponack Sales Since 2023
 
 | Address | Price | Closed | Setting |
 |---|---|---|---|
-| Rose Hill Road compound [VERIFY] | $64,995,000 | Dec 2023 | Waterfront |
-| 53 Fordune Drive | $24,600,000 | Sep 2025 | South of highway |
-| 180 Pointe Mecox Lane | $24,000,000 | Aug 2023 | Waterfront |
-| 951 Flying Point Road | $22,500,000 | May 2025 | South of highway |
-| 217 Rose Hill Road | $20,500,000 | Nov 2025 | Waterfront |
-| 199 Georgian Lane | $20,000,000 | Nov 2025 | South of highway |
-| 180 Rose Hill Road | $20,000,000 | Jan 2023 | South of highway |
-| 360 and 366 Cobb Road | $19,000,000 | Nov 2023 | Waterfront |
-| 315 Rose Hill Road | $18,650,000 | Sep 2024 | South of highway |
-| 475 Flying Point Road | $17,000,000 | Jul 2025 | South of highway |
-| 34 Cobb Isle Road | $16,400,000 | Dec 2024 | South of highway |
-| 31 Morrison Lane | $15,250,000 | Jan 2023 | Waterfront |
-| 1195 Flying Point Road | $14,500,000 | Oct 2024 | Oceanfront |
-| 156 Summerfield Lane | $13,650,000 | Nov 2024 | South of highway |
-| 257 Millstone Road | $13,300,000 | Dec 2024 | North of highway |
+| 332 Parsonage Lane | $29,500,000 | May 2024 | South of highway |
+| 802 Town Line Road | $26,350,000 | Oct 2025 | South of highway |
+| 155 Seascape Lane | $24,925,000 | Jun 2024 | South of highway |
+| 219 Sagg Main Street | $24,500,000 | Sep 2023 | South of highway |
+| 232 Gibson Lane | $20,750,000 | Apr 2023 | South of highway |
+| 19 Sagg Pond Court [VERIFY] | $20,130,000 | Nov 2024 | South of highway |
+| 289 Parsonage Lane and 312 Hedges Lane [VERIFY] | $20,085,018 | Jun 2023 | South of highway |
+| 45 Potato Road | $18,750,000 | Aug 2024 | Oceanfront |
+| 515 Parsonage Lane | $18,500,000 | Jan 2026 | South of highway |
+| 55 Parsonage Pond Lane | $16,850,000 | May 2024 | South of highway |
+| 139 Seascape Lane | $14,450,000 | Aug 2024 | South of highway |
+| 142 Crestview Lane | $14,000,000 | Oct 2024 | South of highway |
+| 397 Sagaponack Main Street | $13,650,000 | Jun 2025 | South of highway |
+| 29 Seascape Lane | $12,995,000 | May 2025 | South of highway |
+| 31 Hedges Lane | $12,200,000 | Oct 2024 | South of highway |
 
-*Source: MLS listing data. Hedgerow transactions on this list include 180 Rose Hill Road (Hedgerow represented the seller), 31 Morrison Lane (Hedgerow represented the buyer), and 156 Summerfield Lane, where Hedgerow represented the seller at $12.675 million in December 2023 and the buyer at $13.65 million eleven months later.*
+*Source: MLS listing data. Hedgerow transactions on this list: 332 Parsonage Lane and 802 Town Line Road (Hedgerow represented the seller) and 219 Sagg Main Street (Hedgerow represented the buyer). Other Hedgerow transactions in the period include 98 Wilkes Lane at $11.05 million, 124 Hedges Lane at $9.5 million, and 2 Town Line Road at $10 million (Hedgerow represented the seller), 453 Hedges Lane at $11 million (Hedgerow represented both sides), and 193 Sagg Main Street at $10.5 million and 454 Hedges Lane at $6.2 million (Hedgerow represented the buyer).*
 
 ## Takeaways for Buyers and Sellers
 
-- **Start with the highway.** In Water Mill, the side of Montauk Highway explains more of the price than any other single factor: about $1,460 per square foot to the south against about $930 to the north.
-- **North of the highway, underwrite to the record.** Finished new construction with acreage has cleared $11 million to $13.3 million. Pricing above that line asks a buyer to set a new high.
-- **South of the highway, the $10 million to $20 million band is the working market.** It trades steadily, and this fall's largest contract came from it.
-- **Above $20 million, buyers have time.** Thirteen listings against a sold pace of about two a year gives buyers room to negotiate and sellers a reason to price with precision.
-- **Water is the premium.** Bay and pond frontage carried a $19 million median. Ocean frontage, when it trades, sets the village record.
+- **South of the highway is the Sagaponack market.** It produced 43 of the 49 sales at $5 million and above, at about $1,630 per square foot against about $930 to the north.
+- **Below $20 million, sellers hold the advantage.** Four listings against a sold pace of roughly 14 a year leaves buyers with little to choose from. Well-presented houses in this range are likely to draw competition.
+- **Between $20 million and $50 million, pricing to the record matters.** The top of the sold record is $29.5 million. The fall's largest contract, 501 Parsonage Lane at a last ask of $22 million, came from this band.
+- **Above $50 million, buyers set the terms.** Three listings, no comparable sales in the period, and a single 2022 oceanfront benchmark at $46.5 million.
+- **Off-market matters here.** In a hamlet with ten public listings, much of the real opportunity never appears on the open market, as the off-market sale of 159 Trees Lane showed.
 
-For a confidential conversation about Water Mill pricing, positioning, or a specific address north or south of the highway, Hedgerow Exclusive Properties works this market at that level of detail.
+For a confidential conversation about Sagaponack pricing, a specific lane, or opportunities that are not publicly listed, Hedgerow Exclusive Properties works this market at that level of detail.
 
 ## How These Figures Were Measured
 
-Closed sales are drawn from MLS listing data for Water Mill between January 3, 2023 and January 15, 2026, at $5 million and above, with duplicate records of the same closing removed. North and south of the highway follow the source's micro-market coding, with Hedgerow's own records used where they differ (120 Bay Lane and 31 Morrison Lane, both waterfront). Price per square foot uses homes with recorded square footage. Active listings and contracts reflect MLS listing data reviewed on October 6, 2026. [VERIFY: Water Mill closings from late January through September 2026 are not yet in this sold set; add them from MLS listing data before publishing, and confirm whether 531 Mecox Road closed twice in 2024, at $6 million in June and $7.1 million in October.]
+Closed sales are drawn from MLS listing data for Sagaponack between January 5, 2023 and January 9, 2026, with duplicate records of the same closing removed. North and south of the highway and oceanfront follow the source's micro-market coding. Price per square foot uses sales with recorded square footage. Hedgerow roles reflect Hedgerow's published transaction record. Active listings and contracts reflect MLS listing data reviewed on October 6, 2026. [VERIFY: the sold set ends January 9, 2026, the last Sagaponack closing in the source export; add Sagaponack closings from mid-January through September 2026 from MLS listing data before publishing. Also confirm that 95 Seascape Lane, recorded twice at $7.5 million in May and June 2025, is a single closing, as it is counted here.]
 
 ## FAQ
 
-### What is the median price of a luxury home in Water Mill?
+### What is the median price of a luxury home in Sagaponack?
 
-Across 96 Water Mill sales at $5 million and above from January 2023 to January 2026, the median was $8.20 million. South of Montauk Highway it was $9.45 million, and north of the highway it was $7.5 million.
+Across 49 Sagaponack sales at $5 million and above from January 2023 to January 2026, the median was $9.5 million. South of Montauk Highway, it was also $9.5 million. North of the highway, only four sales reached $5 million.
 
-### How much more does Water Mill cost south of the highway?
+### What is the most expensive home sold in Sagaponack recently?
 
-Among homes with recorded square footage, the median was about $1,460 per square foot south of the highway and about $930 north of it, a premium of roughly 57 percent.
+In this period, 332 Parsonage Lane at $29.5 million in May 2024, a Hedgerow transaction. Just before it, in May 2022, the oceanfront compound at 35 Potato Road and 543 Daniels Lane traded for $46.5 million, with Hedgerow representing the buyer.
 
-### What is the most expensive home sold in Water Mill?
+### How many homes are for sale in Sagaponack this fall?
 
-In this period, the Rose Hill Road compound on Mecox Bay at $64.995 million in December 2023. Earlier in the decade, 70 and 71 Cobb Lane traded for $121.5 million, a Hedgerow transaction, and 90 Jule Pond Drive sold for $105 million in 2021.
+On October 6, 2026, Sagaponack had 10 active listings asking a combined $449.9 million, at a median ask of $23.5 million. Only one was priced below $10 million.
 
-### How many homes are for sale in Water Mill this fall?
+### Is Sagaponack North different from Sagaponack South?
 
-On October 6, 2026, Water Mill had 29 active listings with a combined asking price of $567.4 million and a median ask of $13.0 million. Thirteen asked $20 million or more.
+Yes. South of the highway, the median sale across all prices was $8.4 million and about $1,630 per square foot. North of the highway, it was $3.45 million and about $930 per square foot.
 
-### Is the Water Mill market a buyer's or seller's market?
+### Is Sagaponack a buyer's or seller's market?
 
-It depends on the price. Between $5 million and $10 million, supply is thin and the market favors sellers. Above $20 million, there is more than five years of inventory at the recent sales pace, which favors buyers.
+Below $20 million, with only four listings against roughly 14 sales a year, the market favors sellers. Above $50 million, three listings with no comparable sales in the period give buyers the advantage.
 
 ### Who is Barry McGovern?
 
@@ -281,7 +278,7 @@ Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Pro
 
 ## Related
 
-- [Water Mill town page](/water-mill)
+- [Sagaponack town page](/sagaponack)
 - [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory)
 - [Hamptons Oceanfront, 2021 to 2026](/blog/hamptons-oceanfront-market-2021-2026)
 - [Bridgehampton non-water market overview](/blog/bridgehampton-non-water-market-overview-2026-09)
