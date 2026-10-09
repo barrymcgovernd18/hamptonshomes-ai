@@ -138,7 +138,7 @@ export const blogPosts: BlogPost[] = [
     slug: "sagaponack-luxury-market-overview-2026-10",
     title: "Sagaponack Luxury Real Estate Market Overview 2026",
     excerpt:
-      "Fifty-seven sales at $5 million and up south of the highway since January 2023, twelve of them in 2026, and just 11 listings there this fall: how Sagaponack South sets the price, where the top of the record sits, and why supply is thin below $50 million.",
+      "Fifty-six sales at $5 million and up south of the highway since January 2023, twelve of them in 2026, and just 11 listings there this fall: how Sagaponack South sets the price, where the top of the record sits, and why supply is thin below $50 million.",
     date: "2026-10-09",
     dateModified: "2026-10-09",
     author: "Barry McGovern",
@@ -150,15 +150,16 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "Sagaponack real estate, Sagaponack luxury homes, Sagaponack market 2026, Sagaponack South, Sagaponack oceanfront, Hamptons luxury market",
     metaDescription:
-      "Sagaponack luxury real estate 2026: 57 sales of $5M+ south of Montauk Highway from 2023 through October 2026, the top of the record, and thin fall inventory.",
+      "Sagaponack luxury real estate 2026: 56 sales of $5M+ south of Montauk Highway from 2023 through October 2026, the oceanfront benchmark, and thin fall inventory.",
     content: `
 ## Key Takeaways
 
-- From January 5, 2023 through October 9, 2026, the record shows **57 sales at $5 million and above in Sagaponack South**, the estate lanes and oceanfront south of Montauk Highway, totaling **$737.6 million**, with a **median of $10.5 million**.
+- From January 5, 2023 through October 9, 2026, the record shows **56 sales at $5 million and above in Sagaponack South**, the estate lanes and oceanfront south of Montauk Highway, totaling **$718.8 million**, with a **median of $10.5 million**. Fifty-five of them were on the estate lanes; one was on the ocean.
 - **2026 is the strongest year in the record.** Twelve sales at $5 million and above have closed so far this year, totaling $193.6 million at a median of $15.9 million, led by 70 Fairfield Pond Lane at $25 million and 494 Hedges Lane at $24 million.
+- **The oceanfront trades on its own scale.** The hamlet's defining recent oceanfront trade is 35 Potato Road and 543 Daniels Lane at **$46.5 million** in May 2022, with Hedgerow representing the buyer, far above anything that has closed since. Only one oceanfront sale closed in the window, 2 Town Line Road at $10 million in December 2025, a small beach house on 0.7 acres where Hedgerow represented the seller.
 - **The top of the record runs through Hedgerow.** The two highest Sagaponack sales in the period, 332 Parsonage Lane at $29.5 million and 802 Town Line Road at $26.35 million, were both Hedgerow transactions. Across the full set, Hedgerow transactions account for 9 sales and $138.6 million, roughly a fifth of the dollar volume.
 - **Inventory is thin below $50 million.** As of October 9, 2026, Sagaponack South had just **11 active listings**, asking a combined **$478.8 million** at a **median ask of $25 million**. Only one asked less than $10 million.
-- **The asking dollars sit above the record.** Three listings ask $75 million or more, a combined $307 million and 64 percent of everything on offer south of the highway. No Sagaponack sale in the period exceeded $29.5 million.
+- **The asking dollars sit above the record.** Three listings ask $75 million or more, a combined $307 million and 64 percent of everything on offer south of the highway. No Sagaponack South sale since January 2023 has exceeded $29.5 million, and the $46.5 million Potato Road trade of 2022 remains the hamlet's recent high.
 
 ## Sagaponack South
 
@@ -167,14 +168,14 @@ Sagaponack is the smallest of the South Fork's estate markets and, south of the 
 | Setting | Sales $5M+ | Median | Top sale | Total |
 |---|---|---|---|---|
 | Estate lanes | 55 | $10.50M | $29.5M | $708.8M |
-| Oceanfront | 2 | $14.375M | $18.75M | $28.75M |
-| **Sagaponack South** | **57** | **$10.50M** | **$29.5M** | **$737.6M** |
+| Oceanfront | 1 | $10.00M | $10.0M | $10.0M |
+| **Sagaponack South** | **56** | **$10.50M** | **$29.5M** | **$718.8M** |
 
 *Closed sales, January 5, 2023 to October 9, 2026. Sources: MLS sold data, with additional closings from public deed records.*
 
-Across the $5 million and above sales with recorded square footage, the median was about **$1,800 per square foot**.
+Across the $5 million and above sales with recorded square footage, the median was about **$1,720 per square foot**.
 
-The year-by-year record has moved up. There were 14 sales at $5 million and above in 2023 (median $8.85 million), 17 in 2024 (median $12 million), and 14 in 2025 (median $9.75 million). Through October 9, 2026 there have already been 12, at a median of $15.9 million and a combined $193.6 million. Five of this year's closings were at $19 million or more: 70 Fairfield Pond Lane at $25 million in March, 494 Hedges Lane at $24 million in January, 454 Hedges Lane at $22.5 million in March, 480 Hedges Lane at $22 million in June, and 149 Seascape Lane at $19 million in August.
+The year-by-year record has moved up. There were 14 sales at $5 million and above in 2023 (median $8.85 million), 16 in 2024 (median $11.8 million), and 14 in 2025 (median $9.75 million). Through October 9, 2026 there have already been 12, at a median of $15.9 million and a combined $193.6 million. Five of this year's closings were at $19 million or more: 70 Fairfield Pond Lane at $25 million in March, 494 Hedges Lane at $24 million in January, 454 Hedges Lane at $22.5 million in March, 480 Hedges Lane at $22 million in June, and 149 Seascape Lane at $19 million in August.
 
 ## The Estate Lanes and the Ocean
 
@@ -184,7 +185,7 @@ Farmland is part of the value. 453 Hedges Lane, pictured above, sits on 2.8 acre
 
 Smaller parcels close to the beach command their own premium. 155 Seascape Lane, a 6,000 square foot house on just over an acre, closed at $24.925 million in June 2024, and 232 Gibson Lane, on one acre, at $20.75 million in April 2023.
 
-True oceanfront is rare, and it rarely reaches the open market. The source records two Sagaponack oceanfront closings in the period: 45 Potato Road at $18.75 million (August 2024) and 2 Town Line Road at $10 million (December 2025), where Hedgerow represented the seller. The hamlet's defining oceanfront trade of recent years came just before this window: 35 Potato Road and 543 Daniels Lane, an oceanfront parcel and an inland parcel across the street totaling about four acres, at $46.5 million in May 2022, with Hedgerow representing the buyer. Earlier, in January 2021, Hedgerow represented the seller of 159 Trees Lane, an off-market oceanfront sale at $26 million that set a new price-per-square-foot record for the hamlet and was the most expensive trade in Sagaponack since 2014.
+True oceanfront is rare, and it rarely reaches the open market. Potato Road, off Daniels Lane, holds a short row of oceanfront parcels, and it set the hamlet's benchmark: in May 2022, 35 Potato Road and 543 Daniels Lane, an oceanfront parcel with about 250 feet of ocean frontage and an inland parcel across the street, together about four acres, traded for $46.5 million, with Hedgerow representing the buyer. The oceanfront parcel alone recorded at $34.5 million, already above any Sagaponack South sale since. Inside the January 2023 to October 2026 window, only one Sagaponack oceanfront sale closed: 2 Town Line Road, a turnkey beach house on 0.7 acres overlooking Town Line Beach, at $10 million in December 2025, where Hedgerow represented the seller. A single small house is not a measure of oceanfront value, so the Potato Road trade remains the reference point for the ocean. Earlier, in January 2021, Hedgerow represented the seller of 159 Trees Lane, an off-market oceanfront sale at $26 million that set a new price-per-square-foot record for the hamlet and was the most expensive trade in Sagaponack since 2014.
 
 ## Fall 2026: Inventory Versus Contracts
 
@@ -194,16 +195,16 @@ I reviewed Sagaponack's active listings and contracts in MLS listing data on Oct
 |---|---|---|
 | $50M and above | 3 | 0 |
 | $20M to $50M | 4 | 12 |
-| $10M to $20M | 3 | 21 |
+| $10M to $20M | 3 | 20 |
 | $5M to $10M | 1 | 24 |
 | Under $5M | 0 | n/a |
-| **Total** | **11** | **57** |
+| **Total** | **11** | **56** |
 
 *Sagaponack South, active listings and closed sales as of October 9, 2026. Closed sales run from January 5, 2023. Sources: MLS listing data, MLS sold data, public deed records, and public listing sites.*
 
 The table describes two very different markets.
 
-- **Below $20 million, Sagaponack is short of supply.** Sagaponack South closed 45 sales between $5 million and $20 million in just under four years, roughly 12 a year, and only four listings are available in that range today. A single listing, 137 Sandune Court at $8.95 million, is offered under $10 million.
+- **Below $20 million, Sagaponack is short of supply.** Sagaponack South closed 44 sales between $5 million and $20 million in just under four years, roughly 12 a year, and only four listings are available in that range today. A single listing, 137 Sandune Court at $8.95 million, is offered under $10 million.
 - **Between $20 million and $50 million, demand has picked up.** Twelve sales in the period, about three a year and four in 2026 alone, against four listings: 709 Daniels Lane at $34.95 million, 68 Hedges Lane at $28.95 million, 493 Sagaponack Main Street at $24.995 million, and 118 Sagaponack Main Street at $21.995 million.
 - **Above $50 million, the shelf is untested.** 39 Fairfield Pond Lane asks $152.5 million, 635 Daniels Lane $79.5 million, and 21 Fairfield Pond Lane $75 million. Each asks well above any Sagaponack sale on record in this period, and above the $46.5 million Potato Road trade of 2022.
 
@@ -226,34 +227,34 @@ Contracts confirm where demand is meeting supply. Two Sagaponack listings went i
 | 19 Sagg Pond Court | $20,130,000 | Nov 2024 | South of highway |
 | 289 Parsonage Lane and 312 Hedges Lane | $20,085,018 | Jun 2023 | South of highway |
 | 149 Seascape Lane | $19,000,000 | Aug 2026 | South of highway |
-| 45 Potato Road | $18,750,000 | Aug 2024 | Oceanfront |
 | 515 Parsonage Lane | $18,500,000 | Jan 2026 | South of highway |
+| 55 Parsonage Pond Lane | $16,850,000 | May 2024 | South of highway |
 
 *Sources: MLS sold data; 494 Hedges Lane from the recorded deed. Hedgerow transactions on this list: 332 Parsonage Lane and 802 Town Line Road (Hedgerow represented the seller) and 219 Sagg Main Street (Hedgerow represented the buyer). Other Hedgerow transactions in the period include 98 Wilkes Lane at $11.05 million, 124 Hedges Lane at $9.5 million, and 2 Town Line Road at $10 million (Hedgerow represented the seller), 453 Hedges Lane at $11 million (Hedgerow represented both sides), and 193 Sagg Main Street at $10.5 million and 454 Hedges Lane at $6.2 million (Hedgerow represented the buyer).*
 
 ## Takeaways for Buyers and Sellers
 
-- **South of the highway is the Sagaponack market.** It produced 57 sales at $5 million and above from January 2023 through October 9, 2026, at a median of about $1,800 per square foot, and 2026 has been its strongest year.
+- **South of the highway is the Sagaponack market.** It produced 56 sales at $5 million and above from January 2023 through October 9, 2026, at a median of about $1,720 per square foot, and 2026 has been its strongest year.
 - **Below $20 million, sellers hold the advantage.** Four listings against a sold pace of roughly 12 a year leaves buyers with little to choose from. Well-presented houses in this range are likely to draw competition.
 - **Between $20 million and $50 million, pricing to the record matters.** The top of the sold record is $29.5 million. The fall's largest contract, 501 Parsonage Lane at a last ask of $22 million, came from this band.
-- **Above $50 million, buyers set the terms.** Three listings, no comparable sales in the period, and a single 2022 oceanfront benchmark at $46.5 million.
+- **Above $50 million, buyers set the terms.** Three listings, no comparable sales since 2023, and the 2022 Potato Road oceanfront trade at $46.5 million as the nearest benchmark.
 - **Off-market matters here.** In a hamlet with eleven public listings south of the highway, much of the real opportunity never appears on the open market, as the off-market sale of 159 Trees Lane showed.
 
 For a confidential conversation about Sagaponack pricing, a specific lane, or opportunities that are not publicly listed, Hedgerow Exclusive Properties works this market at that level of detail.
 
 ## How These Figures Were Measured
 
-Closed sales cover Sagaponack South, the estate lanes and oceanfront south of Montauk Highway, from January 5, 2023 through October 9, 2026, at $5 million and above. The primary source is MLS sold data current to October 9, 2026, with duplicate records of the same closing removed. Two closings recorded in an earlier MLS data set and two 2026 closings found in recorded deeds, 494 Hedges Lane and 118 Fairfield Pond Lane, are added. Where MLS and deed prices differ, the MLS sold price is used. Vacant land sales are included. Price per square foot uses the $5 million and above sales with recorded square footage. Hedgerow roles reflect Hedgerow's published transaction record. Contracts reflect MLS listing data reviewed on October 6, 2026. Active listings were rechecked on October 9, 2026 against public listing sites and brokerage listing pages; 21 Fairfield Pond Lane, also offered as part of a larger package, is counted once. Recent closings can take several weeks to appear in public records, so the 2026 count may rise as late summer and fall deeds are recorded.
+Closed sales cover Sagaponack South, the estate lanes and oceanfront south of Montauk Highway, from January 5, 2023 through October 9, 2026, at $5 million and above. The primary source is MLS sold data current to October 9, 2026, with duplicate records of the same closing removed. One closing recorded in an earlier MLS data set, 98 Daniels Lane, and two 2026 closings found in recorded deeds, 494 Hedges Lane and 118 Fairfield Pond Lane, are added. Oceanfront means a parcel that reaches the ocean beach, confirmed against Hedgerow's records, listing descriptions, and tax parcel maps; sales near the ocean but not on it are counted as estate lanes. A reported August 2024 Potato Road sale in the earlier data set could not be confirmed against the parcel map or any other record and is excluded. Where MLS and deed prices differ, the MLS sold price is used. Vacant land sales are included. Price per square foot uses the $5 million and above sales with recorded square footage. Hedgerow roles reflect Hedgerow's published transaction record. Contracts reflect MLS listing data reviewed on October 6, 2026. Active listings were rechecked on October 9, 2026 against public listing sites and brokerage listing pages; 21 Fairfield Pond Lane, also offered as part of a larger package, is counted once. Recent closings can take several weeks to appear in public records, so the 2026 count may rise as late summer and fall deeds are recorded.
 
 ## FAQ
 
 ### What is the median price of a luxury home in Sagaponack?
 
-Across 57 Sagaponack South sales at $5 million and above from January 2023 through October 9, 2026, the median was $10.5 million. In 2026 so far, the median is $15.9 million across 12 sales.
+Across 56 Sagaponack South sales at $5 million and above from January 2023 through October 9, 2026, the median was $10.5 million. In 2026 so far, the median is $15.9 million across 12 sales.
 
 ### What is the most expensive home sold in Sagaponack recently?
 
-In this period, 332 Parsonage Lane at $29.5 million in May 2024, a Hedgerow transaction. Just before it, in May 2022, the oceanfront compound at 35 Potato Road and 543 Daniels Lane traded for $46.5 million, with Hedgerow representing the buyer.
+The hamlet's recent high is on the ocean: in May 2022, 35 Potato Road and 543 Daniels Lane traded for $46.5 million, with Hedgerow representing the buyer. Since January 2023, the top Sagaponack South sale is 332 Parsonage Lane at $29.5 million in May 2024, also a Hedgerow transaction. The only oceanfront sale in that window was 2 Town Line Road at $10 million in December 2025.
 
 ### How many homes are for sale in Sagaponack this fall?
 
