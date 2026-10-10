@@ -150,8 +150,9 @@ export default function TradesShowcase() {
         )}
       </div>
 
-      <div className="frame flex justify-center py-14 md:py-20">
-        <Link href="/sales" className="eyebrow link-line text-ink">View the full portfolio</Link>
+      <div className="frame flex flex-col items-center justify-center gap-6 py-14 sm:flex-row sm:gap-12 md:py-20">
+        <Link href="/hedgerow-sales" className="eyebrow link-line text-ink">View all Hedgerow sales</Link>
+        <Link href="/sales" className="eyebrow link-line text-ink-muted">View the full portfolio</Link>
       </div>
     </section>
   );
