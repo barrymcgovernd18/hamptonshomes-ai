@@ -63,8 +63,8 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
         className={`fixed inset-x-0 bottom-0 z-[60] border-t border-line bg-paper px-5 pb-[calc(env(safe-area-inset-bottom)+14px)] pt-4 shadow-[0_-12px_30px_rgba(12,24,29,0.12)] transition-transform duration-500 ${shown ? "translate-y-0" : "translate-y-full"}`}
       >
         <CloseButton onClick={onClose} />
-        <p id={TITLE_ID} className="pr-10 font-serif text-[1.3rem] font-light leading-tight text-ink">Get the oceanfront study</p>
-        <p className="mt-1 pr-10 text-[12.5px] leading-snug text-ink-muted">And new listings before they reach the market.</p>
+        <p id={TITLE_ID} className="pr-10 font-serif text-[1.3rem] font-light leading-tight text-ink">The monthly East End brief</p>
+        <p className="mt-1 pr-10 text-[12.5px] leading-snug text-ink-muted">What sold, what is available, and what is worth watching.</p>
         <div className="mt-2">
           <LeadForm kind="popup" inline />
         </div>
@@ -85,10 +85,10 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
         <CloseButton onClick={onClose} />
         <p className="eyebrow text-ocean">Barry McGovern · Research</p>
         <h2 id={TITLE_ID} className="mt-4 font-serif text-[2.1rem] font-light leading-[1.08] text-ink">
-          Get the oceanfront study
+          The monthly East End brief
         </h2>
         <p className="mt-3 text-[14px] leading-[1.75] text-ink-muted">
-          Eighty-seven Hamptons oceanfront sales since 2021, and new listings before they reach the market.
+          A short note each month on luxury real estate from Southampton to Montauk. Closings, inventory, and the villages that are moving.
         </p>
         <div className="mt-7">
           <LeadForm kind="popup" compact />

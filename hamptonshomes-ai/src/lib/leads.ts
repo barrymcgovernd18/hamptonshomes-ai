@@ -1,11 +1,11 @@
 import { Resend } from "resend";
 
 /**
- * Server-only helpers for every lead form on the site: listing inquiries, valuations, the oceanfront study signup,
+ * Server-only helpers for every lead form on the site: listing inquiries, valuations, the monthly brief,
  * the email popup and the contact page. Notifications go to Barry only; visitors never receive an automatic email.
  */
 
-export type LeadForm = "Listing inquiry" | "Home valuation" | "Oceanfront study signup" | "Email popup" | "Listing search" | "Contact";
+export type LeadForm = "Listing inquiry" | "Home valuation" | "Market brief" | "Email popup" | "Listing search" | "Contact";
 
 export interface Lead {
   form: LeadForm;

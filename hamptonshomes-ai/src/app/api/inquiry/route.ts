@@ -12,7 +12,7 @@ import {
 } from "@/lib/leads";
 
 /**
- * One route handler for the listing inquiry, home valuation, oceanfront study signup and email popup forms.
+ * One route handler for the listing inquiry, home valuation, monthly brief and email popup forms.
  * Each submission emails Barry, is appended to the leads sheet, and (for signups) is stored as a Resend contact.
  * Visitors never receive an automatic email.
  */
@@ -20,7 +20,7 @@ import {
 const KINDS = {
   listing: "Listing inquiry",
   valuation: "Home valuation",
-  signup: "Oceanfront study signup",
+  signup: "Market brief",
   popup: "Email popup",
   search: "Listing search",
 } as const;
