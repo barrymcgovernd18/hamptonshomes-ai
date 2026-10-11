@@ -538,7 +538,7 @@ For an owner, the appeal is elemental: surf audible at night, a private path thr
 
 ## The Data
 
-The study covers single-family oceanfront sales, including multi-parcel assemblages, from Southampton Village to Montauk, January 2021 through early October 2026. It draws on MLS comparable sales, recorded deed transfers, Hedgerow's records of oceanfront trades, and a parcel-level map of lots that reach the beach or dune. Condominiums, cottage units, and municipal purchases are excluded, and 2026 runs through early October.
+The study covers single-family oceanfront sales, including multi-parcel assemblages, from Southampton Village to Montauk, January 2021 through early October 2026. It draws on MLS comparable sales, recorded deed transfers, Hedgerow's records of oceanfront trades, and a parcel-level map of lots that reach the beach or dune. Condominiums, cottage units, and municipal purchases are excluded.
 
 ## Year-by-Year Trend
 
@@ -586,7 +586,7 @@ The 2026 median rests on 43 East Dune Lane ($72 million), 115 Beach Lane ($59 mi
 | Amagansett | 2 | 3 | 0 | 2 | 6 | 1 |
 | Montauk | 8 | 4 | 3 | 3 | 3 | 1 |
 
-The table is the comparison. Two villages are not one price. Amagansett's $9.5 million median sits under Further Lane and Napeague estates, including 408 Further Lane at $115 million and 55 Dunes Lane at $43.5 million in 2026, a Hedgerow transaction. Bridgehampton's five sales in 2025 were Surfside Drive and Mid Ocean Drive. Three of them, at 67, 79, and 165 Surfside Drive, were Hedgerow transactions. Wainscott is Beach Lane: the same house, $45 million in 2021 and $59 million in 2026. Water Mill and Sagaponack are too thin for a stable median. Montauk is the active, lower band, and the spread there is bluff, beach access, and lot size.
+Amagansett's $9.5 million median sits under Further Lane and Napeague estates, including 408 Further Lane at $115 million and 55 Dunes Lane at $43.5 million in 2026, a Hedgerow transaction. Bridgehampton's five sales in 2025 were Surfside Drive and Mid Ocean Drive. Three of them, at 67, 79, and 165 Surfside Drive, were Hedgerow transactions. Wainscott is Beach Lane: the same house, $45 million in 2021 and $59 million in 2026. Water Mill and Sagaponack are too thin for a stable median. Montauk is the active, lower band, and the spread there is bluff, beach access, and lot size.
 
 ## Repeat Sales
 
@@ -631,7 +631,7 @@ By my parcel count, roughly 330 tax parcels between Southampton Village and the 
 
 ## Outlook
 
-Pricing leadership stays with new or recently rebuilt houses on wide estate-section lots. Older houses on narrow lots are underwritten as land. Volume stays uneven, and the median moves with the mix of what trades. Seven sales in 2026 is a thin tape: 90 Jule Pond Drive closed at $105 million after a last ask of $145 million, and 55 Dunes Lane closed at $43.5 million after listing at $49.5 million.
+Pricing leadership stays with new or recently rebuilt houses on wide estate-section lots. Older houses on narrow lots are underwritten as land. Volume stays uneven, and the median moves with the mix of what trades. Asks still give way when the house does not support them. 90 Jule Pond Drive closed at $105 million after a last ask of $145 million. 55 Dunes Lane closed at $43.5 million after listing at $49.5 million.
 
 ## Hedgerow Oceanfront Transactions
 
@@ -670,15 +670,15 @@ Together these 18 transactions total about $687 million, roughly a quarter of th
 
 ### What does oceanfront cost in the Hamptons in 2026?
 
-Seven oceanfront sales recorded through early October 2026 carry a median of $43.5 million, ranging from $10.75 million in Montauk to $72.0 million in East Hampton. Across 2021 to 2026, the median is $24.5 million on 87 sales.
+Seven sales through early October 2026 carry a median of $43.5 million, from $10.75 million in Montauk to $72 million in East Hampton. The median for 2021 through 2026 is $24.5 million.
 
 ### Which Hamptons village has the most expensive oceanfront?
 
-East Hampton, with a median of $48.5 million across 14 sales since 2021. The highest single sale of the period was 408 Further Lane in Amagansett at $115 million in 2025.
+East Hampton, at a median of $48.5 million. The highest single sale of the period was 408 Further Lane in Amagansett at $115 million in 2025.
 
 ### Where is oceanfront most accessible?
 
-Montauk and the Napeague stretch of Amagansett. Montauk recorded 22 sales since 2021 at a median of $10.8 million; Amagansett recorded 14 at a median of $9.5 million, although Further Lane sales there reach far higher.
+Montauk and the Napeague stretch of Amagansett, at medians of $10.8 million and $9.5 million. Further Lane sales in Amagansett reach far higher.
 
 ### What does oceanfront cost per foot of frontage?
 
@@ -690,7 +690,7 @@ The annual median rose from $22.5 million in 2021 to $26.25 million in 2025. Rep
 
 ### Which Hamptons oceanfront trades has Hedgerow Exclusive been involved in?
 
-Eighteen oceanfront trades since 2021, about $687 million, including 90 Jule Pond Drive ($105 million, 2021), 43 East Dune Lane ($72 million, 2026), 165 Surfside Drive ($58 million, 2025), and 55 Dunes Lane ($43.5 million, 2026).
+Eighteen oceanfront trades since 2021, about $687 million, led by 90 Jule Pond Drive, 43 East Dune Lane, 165 Surfside Drive, and 55 Dunes Lane.
 
 ---
 
