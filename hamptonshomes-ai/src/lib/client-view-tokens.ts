@@ -4,7 +4,9 @@
  * separate address map. A share may be used only when the report street
  * normalizes to `street` for that MLS id.
  *
- * Short URL: https://hedgerow.eastendli.com/?tchreq=${token}&mc
+ * Href: https://hedgerow.eastendli.com/property/${mlsId}/?p=NTI4OTQ4&listshare=${token}&mc=NTI4OTQ4
+ * The same token is the `tchreq` value on https://hedgerow.eastendli.com/?tchreq=${token}&mc
+ * Add a row only after harvesting it. Do not invent tokens.
  *
  * 874794 is Mylestone at Meadow Lane, Southampton, sold for $112,500,000 on
  * November 7, 2023. The reports call that sale 700 Meadow Lane (Mylestone).

@@ -5,12 +5,13 @@ import { SALE_ROWS } from "./sale-listings";
  * EastEndLI Client View links, the branded page a shared listing opens on.
  * `p` and `mc` are the base64 form of Barry McGovern's member id, 528948.
  * `mc` is Client View and lists Barry only. `mp` is the public view and lists the Hedgerow Exclusive Team first.
- * A share from EastEndLI also adds a one-time `listshare` token (`?tchreq=&mc`).
+ * A share from EastEndLI also adds a one-time `listshare` token (the same value as `tchreq`).
  * That token is what still opens a sold listing after the public page says it is no longer active.
  * EastEndLI issues it from Members, ViewOne, Share, Client View.
- * A stored token re-links a sold listing whose public page says it is no longer active.
- * The token is used only when the MLS id and the normalized street both match.
- * Addresses without a token are linked only when the Client View page still resolves.
+ * Harvested pairs live in `CLIENT_VIEW_SHARES`. Add one only after it is harvested. Do not invent tokens.
+ * When the MLS id and the normalized street both match, the href is
+ * `/property/{mls}/?p=NTI4OTQ4&listshare={token}&mc=NTI4OTQ4`.
+ * Addresses without a token are linked only when the public Client View page still resolves.
  * Future posts can call `linkListing` directly, or mention a full street address.
  * `linkifySaleMentions` links an address when this index has a resolving MLS id for it.
  * Deed-only sales with no MLS id stay plain text.
@@ -48,7 +49,7 @@ const ADDRESS = new RegExp(
   "g"
 );
 
-const PRICE = /\$(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s*(million)?/gi;
+const PRICE = /\$(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s*(million|m\b)?/gi;
 
 type SaleRecord = {
   mlsId: string;
@@ -88,8 +89,8 @@ export function normalizeStreet(value: string) {
 
 export function elyListingUrl(mlsId: string, street?: string) {
   const token = street ? clientViewToken(mlsId, normalizeStreet(street)) : undefined;
-  if (token) return `https://hedgerow.eastendli.com/?tchreq=${token}&mc`;
-  return `https://hedgerow.eastendli.com/property/${mlsId}/?p=${BARRY_CLIENT_VIEW}&mc=${BARRY_CLIENT_VIEW}`;
+  const share = token ? `&listshare=${encodeURIComponent(token)}` : "";
+  return `https://hedgerow.eastendli.com/property/${mlsId}/?p=${BARRY_CLIENT_VIEW}${share}&mc=${BARRY_CLIENT_VIEW}`;
 }
 
 /** Markdown link for a sale or listing. Pass the MLS id from EastEndLI. */
@@ -192,12 +193,14 @@ function streetHasOtherPrice(street: string, records: SaleRecord[]) {
   });
 }
 
-function mlsIdFor(street: string, nearby: number | null) {
+function mlsIdFor(street: string, nearbyPrices: number[]) {
   const records = salesByStreet.get(street);
   if (!records?.length) return null;
   const priced = records.filter((record) => record.price != null);
-  if (nearby != null) {
-    const hits = priced.filter((record) => priceClose(record.price as number, nearby));
+  if (nearbyPrices.length) {
+    const hits = priced.filter((record) =>
+      nearbyPrices.some((nearby) => priceClose(record.price as number, nearby))
+    );
     if (hits.length) return pick(hits);
     // A nearby price that matches none of the indexed sales is a different trade
     // at the same street. Do not attach a share token to that sentence.
@@ -239,8 +242,9 @@ function linkifyLine(line: string) {
     const beforeScope = before.slice(-60);
     const sentence = beforeScope.slice(sentenceStart(beforeScope));
     const beforePrices = pricesIn(sentence);
-    const nearby = afterPrices[0] ?? beforePrices.at(-1) ?? null;
-    const mlsId = mlsIdFor(normalizeStreet(match[0]), nearby);
+    const lastBefore = beforePrices.at(-1);
+    const nearbyPrices = afterPrices.length ? afterPrices : lastBefore != null ? [lastBefore] : [];
+    const mlsId = mlsIdFor(normalizeStreet(match[0]), nearbyPrices);
     next += masked.slice(cursor, start);
     next += mlsId ? linkListing(match[0], mlsId) : match[0];
     cursor = end;
