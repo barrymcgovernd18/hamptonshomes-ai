@@ -8,6 +8,7 @@ import {
   extractFaqsFromContent,
   inferTownFromPost,
   relatedBlogPosts,
+  type BlogChart,
 } from "@/lib/blog";
 import JsonLd from "@/components/JsonLd";
 import { ClosingInvitation } from "@/components/Editorial";
@@ -151,7 +152,11 @@ function renderTable(rows: string[], key: number) {
 }
 
 /** Charts that a post can place with a line such as {{chart:oceanfront-by-year}}. Data mirrors the post's own tables. */
-function renderChart(name: string, key: number) {
+function renderChart(name: string, key: number, charts?: Record<string, BlogChart>) {
+  const spec = charts?.[name];
+  if (spec) {
+    return <BarChart key={key} className="my-14 lg:-mx-28" title={spec.title} caption={spec.caption} rows={spec.rows} />;
+  }
   if (name === "oceanfront-by-year") {
     return (
       <BarChart
@@ -182,7 +187,18 @@ function longDate(date: string) {
 }
 
 // Markdown-style renderer for article content
-function renderContent(content: string, { dropCap: allowDropCap = true } = {}) {
+function renderFigure(src: string, caption: string, key: number) {
+  return (
+    <figure key={key} className="my-12 lg:-mx-16">
+      <div className="relative aspect-[3/2] overflow-hidden bg-paper-deep">
+        <Image src={src} alt={caption} fill sizes="(max-width: 768px) 100vw, 840px" className="photo-mono object-cover" />
+      </div>
+      {caption ? <figcaption className="mt-4 font-serif text-[15px] italic leading-[1.7] text-ink-faint">{caption}</figcaption> : null}
+    </figure>
+  );
+}
+
+function renderContent(content: string, { dropCap: allowDropCap = true, charts }: { dropCap?: boolean; charts?: Record<string, BlogChart> } = {}) {
   const lines = content.trim().split("\n");
   const elements: React.ReactNode[] = [];
   let i = 0;
@@ -197,7 +213,7 @@ function renderContent(content: string, { dropCap: allowDropCap = true } = {}) {
       elements.push(
         <aside key={i} aria-labelledby="key-takeaways" className="key-takeaways mb-4 border-y border-ink/80 bg-paper-soft px-6 py-9 sm:px-9 lg:-mx-12 lg:px-12">
           <h2 id="key-takeaways" className="eyebrow text-ocean">Key takeaways</h2>
-          <div className="mt-6">{renderContent(lines.slice(i + 1, j).join("\n"), { dropCap: false })}</div>
+          <div className="mt-6">{renderContent(lines.slice(i + 1, j).join("\n"), { dropCap: false, charts })}</div>
         </aside>
       );
       i = j;
@@ -206,7 +222,14 @@ function renderContent(content: string, { dropCap: allowDropCap = true } = {}) {
 
     const chart = /^\{\{chart:([a-z0-9-]+)\}\}$/.exec(line.trim());
     if (chart) {
-      elements.push(renderChart(chart[1], i));
+      elements.push(renderChart(chart[1], i, charts));
+      i++;
+      continue;
+    }
+
+    const figure = /^\{\{figure:(\/[^|}]+)\|([^}]*)\}\}$/.exec(line.trim());
+    if (figure) {
+      elements.push(renderFigure(figure[1], figure[2], i));
       i++;
       continue;
     }
@@ -347,7 +370,7 @@ export default async function BlogPostPage({ params }: Props) {
         ) : null}
 
         <div className="frame">
-          <div className="mx-auto mt-16 max-w-[42rem] md:mt-24 [&>h2:first-child]:mt-0 [&>h2:first-child]:border-t-0 [&>h2:first-child]:pt-0">{renderContent(post.content)}</div>
+          <div className="mx-auto mt-16 max-w-[42rem] md:mt-24 [&>h2:first-child]:mt-0 [&>h2:first-child]:border-t-0 [&>h2:first-child]:pt-0">{renderContent(post.content, { charts: post.charts })}</div>
 
           <aside aria-label="Valuation and research" className="mx-auto mt-20 grid max-w-[42rem] gap-14 border-t border-ink/80 pt-10 sm:grid-cols-2 sm:gap-10 lg:max-w-[56rem]">
             <div>

@@ -39,6 +39,8 @@ const OCEANFRONT_FIGURES = [
 
 export default function MarketPage() {
   const [latest, ...rest] = postsByDate;
+  const marketReports = postsByDate.filter((post) => post.category === "Market Report" && post.slug !== latest?.slug);
+  const commentary = rest.filter((post) => post.category !== "Market Report");
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
@@ -110,9 +112,45 @@ export default function MarketPage() {
         </section>
       )}
 
+      <section className="border-t border-line py-24 md:py-32">
+        <div className="frame">
+          <SectionLabel n="II">Market reports</SectionLabel>
+          <p data-reveal style={revealDelay(80)} className="body-copy mt-8 max-w-2xl text-ink-muted">
+            Village records at $5 million and above, south of the highway, with the sales, the shelf, and the contracts set out in one place.
+          </p>
+          <ul className="mt-14 grid gap-x-12 gap-y-16 md:mt-16 md:grid-cols-2">
+            {marketReports.map((post, i) => (
+              <li key={post.slug} data-reveal style={revealDelay((i % 4) * 70)} className={i === 0 ? "md:col-span-2" : undefined}>
+                <Link href={`/blog/${post.slug}`} className={`group block ${i === 0 ? "md:grid md:grid-cols-12 md:items-end md:gap-12" : ""}`}>
+                  {post.image ? (
+                    <div className={`relative aspect-[16/10] overflow-hidden bg-paper-deep ${i === 0 ? "md:col-span-7" : ""}`}>
+                      <Image src={post.image} alt="" fill sizes={i === 0 ? "(max-width: 768px) 100vw, 58vw" : "(max-width: 768px) 100vw, 40vw"} className="photo-bw object-cover transition-transform duration-700 [transition-timing-function:var(--ease-editorial)] group-hover:scale-[1.03]" />
+                    </div>
+                  ) : null}
+                  <div className={i === 0 ? "mt-6 md:col-span-5 md:mt-0" : "mt-6"}>
+                    <p className="eyebrow text-ink-faint">
+                      {formatDate(post.date, true)}
+                    </p>
+                    <h3 className={`mt-4 font-light leading-[1.15] text-ink transition-colors duration-500 group-hover:text-ocean ${i === 0 ? "display-3" : "font-serif text-[1.7rem]"}`}>
+                      {post.title}
+                    </h3>
+                    <p className="mt-4 text-[15px] leading-[1.75] text-ink-muted">{post.excerpt}</p>
+                    <p className="mt-6">
+                      <span className="link-line eyebrow text-ocean">
+                        Read the report <span aria-hidden="true">→</span>
+                      </span>
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="bg-ocean-deep py-24 text-paper md:py-32">
         <div className="frame">
-          <SectionLabel n="II" className="text-paper/75">Hamptons oceanfront at a glance</SectionLabel>
+          <SectionLabel n="III" className="text-paper/75">Hamptons oceanfront at a glance</SectionLabel>
           <dl className="mt-12 grid grid-cols-2 border-t border-paper/20 md:mt-16 md:grid-cols-4">
             {OCEANFRONT_FIGURES.map((figure, i) => (
               <div
@@ -166,7 +204,7 @@ export default function MarketPage() {
       <section className="py-24 md:py-36">
         <div className="frame grid gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-4">
-            <SectionLabel n="III">Village reports</SectionLabel>
+            <SectionLabel n="IV">The villages</SectionLabel>
             <h2 data-reveal style={revealDelay(80)} className="display-2 mt-6 text-ink">
               Southampton <em className="block italic text-ink-muted">to Montauk</em>
             </h2>
@@ -194,11 +232,11 @@ export default function MarketPage() {
 
       <section className="border-t border-line bg-paper-soft py-24 md:py-36">
         <div className="frame">
-          <SectionLabel n="IV">All research and commentary</SectionLabel>
-          <ul className="mt-12 border-t border-ink/80 md:mt-16">
-            {rest.map((post, i) => (
+          <SectionLabel n="V">Commentary and studies</SectionLabel>
+          <ul className="mt-14 border-t border-ink/80 md:mt-16">
+            {commentary.map((post, i) => (
               <li key={post.slug} data-reveal style={revealDelay((i % 3) * 60)} className="border-b border-line">
-                <Link href={`/blog/${post.slug}`} className="group grid gap-4 py-9 md:grid-cols-12 md:gap-10">
+                <Link href={`/blog/${post.slug}`} className="group grid gap-5 py-12 md:grid-cols-12 md:gap-12">
                   <p className="eyebrow text-ink-faint md:col-span-3 md:pt-2">
                     {formatDate(post.date)}
                     <span className="block pt-2 font-serif text-[15px] normal-case italic tracking-normal text-ink-muted">{post.category}</span>
@@ -218,7 +256,7 @@ export default function MarketPage() {
       </section>
 
       <ClosingInvitation
-        n="V"
+        n="VI"
         label="Private briefings"
         title="A read on your property or search."
         body="Confidential, comps-based analysis for owners and buyers across the East End."

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type Row = { label: string; value: number; display: string; detail?: string; href?: string; highlight?: boolean };
+type Row = { label: string; value: number; display: string; detail?: string; href?: string; highlight?: boolean; prefix?: string };
 
 /**
  * Accessible horizontal bar chart in plain HTML. Each row reads naturally to assistive tech
@@ -37,7 +37,7 @@ export default function BarChart({
               </span>
               <span className="text-right">
                 <span className={`block font-serif text-[1.25rem] leading-none ${dark ? "text-paper" : "text-ink"}`}>
-                  <span className="sr-only">median </span>
+                  {row.prefix !== "" ? <span className="sr-only">{row.prefix ?? "median"} </span> : null}
                   {row.display}
                 </span>
                 {row.detail ? <span className={`mt-1 block text-[11px] ${dark ? "text-paper/70" : "text-ink-faint"}`}>{row.detail}</span> : null}
