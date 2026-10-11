@@ -170,7 +170,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Fifty-six sales at $5 million and up south of the highway since January 2023, twelve of them in 2026, and just 11 listings there this fall: how Sagaponack South sets the price, where the top of the record sits, and why supply is thin below $50 million.",
     date: "2026-10-09",
-    dateModified: "2026-10-09",
+    dateModified: "2026-10-11",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/heroes/453-hedges-lane-sagaponack.jpg",
@@ -228,7 +228,7 @@ True oceanfront is rare in Sagaponack, and it trades in bursts. Public MLS and r
 
 *Sagaponack oceanfront closings, January 2020 to October 9, 2026. These figures are drawn from public MLS and recorded-deed data and do not include significant off-market trades that never appear in those sources. No 2026 oceanfront closing had been recorded as of October 9, 2026.*
 
-The top of that record is 7 Fairfield Pond Lane, a three-acre property between the Atlantic and Fairfield Pond with about 300 feet of ocean frontage, which sold off-market for $50 million in January 2022. Potato Road, off Daniels Lane, holds a short row of oceanfront parcels: in May 2022, 35 Potato Road and 543 Daniels Lane, an oceanfront parcel with about 250 feet of ocean frontage and an inland parcel across the street, together about four acres, traded for $46.5 million, with Hedgerow representing the buyer. The oceanfront parcel alone recorded at $34.5 million, already above any Sagaponack South sale since. In January 2021, Hedgerow represented the seller of 159 Trees Lane, an off-market oceanfront sale at $26 million that set a new price-per-square-foot record for the hamlet and was the most expensive trade in Sagaponack since 2014.
+The top of that record is 7 Fairfield Pond Lane, a three-acre property between the Atlantic and Fairfield Pond with about 300 feet of ocean frontage, which sold off-market for $50 million in January 2022. Potato Road, off Daniels Lane, holds a short row of oceanfront parcels: in May 2022, 35 Potato Road and 543 Daniels Lane, an oceanfront parcel with about 250 feet of ocean frontage and an inland parcel across the street, together about four acres, traded for $46.5 million, with Hedgerow representing the buyer. The oceanfront parcel alone recorded at $34.5 million, already above any Sagaponack South sale since. In January 2021, Hedgerow represented the seller of 159 Trees Lane, an off-market oceanfront sale at $26 million, the most expensive trade in Sagaponack since 2014.
 
 Since January 2023, the only Sagaponack oceanfront closing in the public record is 2 Town Line Road, a turnkey beach house on 0.7 acres overlooking Town Line Beach, at $10 million in December 2025, where Hedgerow represented the seller. A single small house is not a measure of oceanfront value, so the 2022 sales at $50 million and $46.5 million remain the reference points for the ocean.
 
@@ -331,7 +331,7 @@ Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Pro
     excerpt:
       "Twenty-six contracts since September 1 against 210 active listings, Southampton to East Hampton: where the fall market is clearing by price band and village, and why the $50 million shelf is waiting.",
     date: "2026-10-08",
-    dateModified: "2026-10-08",
+    dateModified: "2026-10-11",
     author: "Barry McGovern",
     category: "Market Research",
     image: "/images/heroes/104-quimby-lane-bridgehampton.jpg",
@@ -350,7 +350,7 @@ Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Pro
 - **No contract signed since September 1 carried an ask of $25 million or more.** The three largest, 672 Halsey Lane, 134 Wyandanch Lane, and 8 Squabble Lane, were each asking just under $25 million.
 - The **$10 million to $20 million band is the tightest in the market**: nine new contracts against 45 active listings, or about **six months of supply** at the fall pace, against roughly nine months for the market as a whole.
 - The top of the shelf is waiting. **Nine listings at $50 million and above** account for **$876 million, or 26 percent of all asking dollars**, while representing 4 percent of listings. None of the contracts in this set signed since June 1 was asking $50 million or more.
-- In every price band with recent contracts, the homes that went to contract carried a **higher median asking price per square foot** than the homes still for sale. Buyers are paying for setting and finish, not for size.
+- Buyers are paying for setting and finish, not for size. The houses going to contract are the better located and better finished, not the largest for the money.
 
 ## The Season After the Season
 
@@ -435,24 +435,11 @@ This is not a sign of weakness at the top so much as a reminder of how that segm
 
 **Wainscott and Sagaponack.** Small samples at opposite ends. Wainscott has sixteen listings and one fall contract. Sagaponack, with ten listings at a $23.50 million median ask, recorded two contracts, at 501 Parsonage Lane and 357 Town Line Road, and holds three of the nine listings at $50 million and above.
 
-## What Buyers Are Paying For
-
-| Price band | Active: median ask per sq ft | In contract since June 1: median ask per sq ft |
-| --- | ---: | ---: |
-| Under $5M | $1,114 | $1,272 |
-| $5M to $10M | $1,374 | $1,794 |
-| $10M to $20M | $1,768 | $1,874 |
-| $20M to $50M | $3,367 | $3,638 |
-
-*Reflects listings reporting at least 1,000 square feet of interior area: 165 active listings and 40 contracts.*
-
-In every band, the homes that went to contract were asking more per square foot than the homes that remain. The gap is widest between $5 million and $10 million, at $1,794 against $1,374. The houses that are selling are not the largest for the money. They are the better located, better finished, and more efficiently planned, and buyers are willing to pay a premium per foot to get them.
-
 ## What Drives the Fall Market
 
 - **Price discipline below $25 million.** Every fall contract was asking under $25 million, and three were asking within $50,000 of it. Sellers who priced to the active buyer pool found it.
 - **Established addresses.** Further Lane, Wyandanch Lane, Halsey Lane, and Parsonage Lane account for five of the thirteen fall contracts asking $10 million or more.
-- **Quality over size.** Contract homes carried higher asking prices per square foot than active listings in every band.
+- **Quality over size.** The houses going to contract are the better finished ones, not simply the largest.
 - **A quieter season to buy.** With summer traffic gone, buyers can see a house, its land, and its neighbors clearly, and fall contract activity reflects that.
 
 ## Risk Factors
@@ -470,7 +457,7 @@ I expect the $10 million to $25 million range to keep leading through year-end, 
 
 **For buyers:** the strongest negotiating position is in the $5 million to $10 million band and above $25 million, where listings outnumber recent contracts by ten to one or more. Between $10 million and $20 million, well-priced houses are moving, and hesitation has a cost.
 
-**For sellers:** the fall data reward pricing to the buyer who is active today. Homes that went to contract were priced within reach of that buyer and asked more per foot for better houses, not more in total for larger ones.
+**For sellers:** the fall data reward pricing to the buyer who is active today. Homes that went to contract were priced within reach of that buyer: better houses, not simply larger ones.
 
 ## Frequently Asked Questions
 
@@ -1033,7 +1020,7 @@ Several factors converged to push the market to new highs:
 ## Area Highlights
 
 ### East Hampton
-The perennial leader. Lily Pond Lane, Further Lane, and West End Road continue to command the highest per-square-foot premiums in the Hamptons. Further Lane also holds the Hamptons record: $147 million for three contiguous parcels in 2014.
+The perennial leader. Lily Pond Lane, Further Lane, and West End Road continue to command the highest premiums in the Hamptons. Further Lane also holds the Hamptons record: $147 million for three contiguous parcels in 2014.
 
 ### Bridgehampton
 Surfside Drive emerged as a hot corridor in 2025, with multiple $20M+ trades. The area's combination of dramatic ocean bluffs, equestrian culture, and proximity to village amenities makes it increasingly attractive to buyers priced out of East Hampton's top streets.
