@@ -1,7 +1,7 @@
 import LeadForm from "@/components/LeadForm";
 import { SectionLabel, revealDelay } from "@/components/Editorial";
 
-/** Home valuation and oceanfront study signup, side by side. Used on the homepage, village pages and articles. */
+/** Home valuation and the monthly East End brief, side by side. Used on the homepage, village pages and articles. */
 export default function LeadBand({ n, place, className = "" }: { n?: string; place?: string; className?: string }) {
   return (
     <section aria-label="Valuation and research" className={`defer-render border-t border-line bg-paper py-24 md:py-32 ${className}`}>
@@ -21,10 +21,10 @@ export default function LeadBand({ n, place, className = "" }: { n?: string; pla
         <div className="md:col-span-5 md:col-start-8 md:border-l md:border-line md:pl-12">
           <SectionLabel>Research</SectionLabel>
           <h2 data-reveal style={revealDelay(80)} className="display-3 mt-6 font-light text-ink">
-            Get the oceanfront study
+            The monthly East End brief
           </h2>
           <p className="body-copy mt-5 text-ink-muted">
-            Eighty-seven oceanfront sales from Southampton to Montauk since 2021, with medians by year and village and price per foot of frontage. Plus new listings before they reach the market.
+            A short note each month on luxury real estate from Southampton to Montauk. Closings, inventory, and the villages that are moving.
           </p>
           <div className="mt-10">
             <LeadForm kind="signup" compact />

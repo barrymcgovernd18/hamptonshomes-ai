@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       <section className="frame pb-28 pt-40 md:pb-40 md:pt-52">
         <p className="eyebrow text-ocean">Legal</p>
         <h1 className="display-1 mt-6">Privacy Policy</h1>
-        <p className="eyebrow mt-10 border-t border-line pt-6 text-ink-faint">Last updated: October 7, 2026</p>
+        <p className="eyebrow mt-10 border-t border-line pt-6 text-ink-faint">Last updated: October 11, 2026</p>
 
         <div className="mt-16 max-w-3xl space-y-14 text-[16px] leading-[1.9] text-ink-muted md:ml-[25%] md:mt-24">
           <section>
@@ -34,8 +34,15 @@ export default function PrivacyPage() {
             <p>
               If you use the contact form, we collect the name, email, phone number (if provided),
               stated interest, and message you submit. If you call or email instead, we collect
-              whatever you choose to share in that conversation. We do not create accounts, run a
-              mailing list from this form, or require payment details on this site.
+              whatever you choose to share in that conversation. We do not create accounts or require
+              payment details on this site. The contact form is not a mailing list. If you sign up for
+              the monthly East End brief, we keep the email and name you submit so Barry can send that
+              brief, and occasional notes on new listings. You can leave that list at any time by
+              emailing{" "}
+              <a href="mailto:barry@hedgerowexclusive.com" className="text-ocean underline decoration-ocean/35 underline-offset-[5px] hover:text-ocean-deep">
+                barry@hedgerowexclusive.com
+              </a>
+              .
             </p>
           </section>
 

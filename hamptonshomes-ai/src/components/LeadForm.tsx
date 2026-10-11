@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export type LeadKind = "listing" | "valuation" | "signup" | "popup" | "search";
 
-import { LEAD_DONE_KEY, OCEANFRONT_STUDY } from "@/lib/lead-keys";
+import { LEAD_DONE_KEY } from "@/lib/lead-keys";
 
 /** Underlined field, kept for the one-row mobile banner. */
 const inlineFieldClass =
@@ -73,8 +73,8 @@ const CTA: Record<LeadKind, string> = {
   listing: "Send inquiry",
   search: "Send to Barry",
   valuation: "Request a valuation",
-  signup: "Send me the study",
-  popup: "Sign up",
+  signup: "Send the brief",
+  popup: "Send the brief",
 };
 
 export default function LeadForm({
@@ -136,11 +136,11 @@ export default function LeadForm({
     return (
       <div role="status" className={inline ? "" : compact ? "py-2" : "py-6"}>
         <p className={`font-serif font-light leading-tight ${dark ? "text-paper" : "text-ink"} ${inline ? "text-[1.3rem]" : "text-[1.7rem]"}`}>
-          {isSignup ? "Thank you, you're on the list." : "Thank you. Barry will be in touch shortly."}
+          {isSignup ? "Thank you. You are on the list." : "Thank you. Barry will be in touch shortly."}
         </p>
         {isSignup ? (
-          <Link href={OCEANFRONT_STUDY} className={`link-line eyebrow inline-block text-ocean ${inline ? "mt-3" : "mt-5"}`}>
-            Read the oceanfront study <span aria-hidden="true">→</span>
+          <Link href="/market" className={`link-line eyebrow inline-block text-ocean ${inline ? "mt-3" : "mt-5"}`}>
+            Read the latest research <span aria-hidden="true">→</span>
           </Link>
         ) : (
           <p className={`mt-3 text-[13.5px] ${dark ? "text-paper/80" : "text-ink-muted"}`}>
@@ -163,7 +163,7 @@ export default function LeadForm({
             <input id={`${uid}-email`} name="email" type="email" required autoComplete="email" placeholder="Email address" maxLength={200} className={inlineFieldClass} />
           </div>
           <button type="submit" disabled={status === "sending"} className="eyebrow shrink-0 bg-ocean-deep px-5 py-3.5 text-paper disabled:opacity-60">
-            {status === "sending" ? "Sending" : "Sign up"}
+            {status === "sending" ? "Sending" : "Send the brief"}
           </button>
         </div>
         {status === "error" ? <p aria-live="polite" className="mt-2 text-[12px] text-[#8a2a1a]">{error}</p> : null}
@@ -221,7 +221,7 @@ export default function LeadForm({
           error
         ) : (
           <>
-            {isSignup ? "Occasional research and new listings from Barry. Unsubscribe anytime. " : ""}See the{" "}
+            {isSignup ? "The monthly East End brief, and occasional notes on new listings, from Barry. Unsubscribe anytime. " : ""}See the{" "}
             <Link href="/privacy" className={st.link}>
               Privacy Policy
             </Link>
