@@ -158,6 +158,7 @@ blog_src = open(os.path.join(ROOT, "src/lib/blog.ts")).read()
 seo_titles = dict(re.findall(r'^\s*"([a-z0-9-]+)": "([^"]+) \| Barry McGovern",$', blog_src, re.M))
 posts = parse("src/lib/blog.ts", ["slug", "title", "category", "image"], "export const blogPosts")
 posts += parse("src/lib/village-reports.ts", ["slug", "title", "category", "image"], "export const villageReportPosts")
+posts += parse("src/lib/harbor-reports.ts", ["slug", "title", "category", "image"], "export const harborReportPosts")
 post_slugs = []
 for p in posts:
     title = p["title"] if len(p["title"]) <= 70 else seo_titles.get(p["slug"], p["title"])

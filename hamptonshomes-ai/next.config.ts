@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
       // Market and Insights merged into one Market hub (Oct 2026). Article URLs under /blog/<slug> are unchanged.
       { source: "/blog", destination: "/market", statusCode: 301 },
       { source: "/insights", destination: "/market", statusCode: 301 },
+      {
+        source: "/blog/sag-harbor-village-market-overview-2026-09",
+        destination: "/blog/sag-harbor-village-luxury-market-overview-2026-10",
+        statusCode: 301,
+      },
     ];
   },
 };

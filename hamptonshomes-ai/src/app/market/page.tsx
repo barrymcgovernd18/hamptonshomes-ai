@@ -39,8 +39,11 @@ const OCEANFRONT_FIGURES = [
 
 export default function MarketPage() {
   const [latest, ...rest] = postsByDate;
-  const marketReports = postsByDate.filter((post) => post.category === "Market Report" && post.slug !== latest?.slug);
-  const commentary = rest.filter((post) => post.category !== "Market Report");
+  const oceanfrontSlug = "hamptons-oceanfront-market-2021-2026";
+  const marketReports = postsByDate.filter(
+    (post) => post.slug !== latest?.slug && (post.category === "Market Report" || post.slug === oceanfrontSlug)
+  );
+  const commentary = rest.filter((post) => post.category !== "Market Report" && post.slug !== oceanfrontSlug);
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
@@ -116,7 +119,7 @@ export default function MarketPage() {
         <div className="frame">
           <SectionLabel n="II">Market reports</SectionLabel>
           <p data-reveal style={revealDelay(80)} className="body-copy mt-8 max-w-2xl text-ink-muted">
-            Village records at $5 million and above, south of the highway, with the sales, the shelf, and the contracts set out in one place.
+            Sold records at $5 million and above, from the south-of-highway villages through Sag Harbor, North Haven, and Shelter Island. The oceanfront study sits with them.
           </p>
           <ul className="mt-14 grid gap-x-12 gap-y-16 md:mt-16 md:grid-cols-2">
             {marketReports.map((post, i) => (
