@@ -1,15 +1,17 @@
 import { SALE_ROWS } from "./sale-listings";
 
 /**
- * Public EastEndLI listing URLs that show Barry McGovern's name and contact.
- * `?agent=528948` is his agent view on hedgerow.eastendli.com. Without it, the page shows the Hedgerow team.
+ * EastEndLI Client View links, the branded page a shared listing opens on.
+ * `p` and `mc` are the base64 form of Barry McGovern's member id, 528948.
+ * `mc` is Client View and lists Barry only. `mp` is the public view and lists the Hedgerow Exclusive Team first.
+ * A share from EastEndLI also adds a one-time `listshare` token. That token is not required for the client view.
  * Future posts can call `linkListing` directly, or mention a full street address.
  * `linkifySaleMentions` links an address when this index has an MLS id for it.
  * Deed-only sales with no MLS id stay plain text.
  */
 
-/** Barry McGovern's EastEndLI profile id. */
-const BARRY_ELY_AGENT = "528948";
+/** Base64 of Barry McGovern's EastEndLI member id, 528948. */
+const BARRY_CLIENT_VIEW = "NTI4OTQ4";
 
 const SUFFIX_ABBREV: Record<string, string> = {
   ln: "lane",
@@ -77,7 +79,7 @@ export function normalizeStreet(value: string) {
 }
 
 export function elyListingUrl(mlsId: string) {
-  return `https://hedgerow.eastendli.com/property/${mlsId}/?agent=${BARRY_ELY_AGENT}`;
+  return `https://hedgerow.eastendli.com/property/${mlsId}/?p=${BARRY_CLIENT_VIEW}&mc=${BARRY_CLIENT_VIEW}`;
 }
 
 /** Markdown link for a sale or listing. Pass the MLS id from EastEndLI. */
