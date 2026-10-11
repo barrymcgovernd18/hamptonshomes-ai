@@ -29,7 +29,7 @@ export const activeListings: Listing[] = [
     acres: "21.00",
     description: "Water Mill compound offering, 70 & 71 Cobb Lane combined.",
     image: "/images/listings/70-71-cobb-lane.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/910536/",
+    listingUrl: "https://hedgerow.eastendli.com/property/910536/?agent=528948",
   },
 {
     address: "70 Cobb Lane",
@@ -44,7 +44,7 @@ export const activeListings: Listing[] = [
     acres: "12.20",
     description: "Water Mill estate on 12.2 acres at 70 Cobb Lane.",
     image: "/images/listings/70-cobb-lane.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/899290/",
+    listingUrl: "https://hedgerow.eastendli.com/property/899290/?agent=528948",
   },
 {
     address: "71 Cobb Lane",
@@ -59,7 +59,7 @@ export const activeListings: Listing[] = [
     acres: "9.11",
     description: "Water Mill estate on 9.11 acres at 71 Cobb Lane.",
     image: "/images/listings/71-cobb-lane.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/888739/",
+    listingUrl: "https://hedgerow.eastendli.com/property/888739/?agent=528948",
   },
 {
     address: "582 & 598 Halsey Lane",
@@ -75,7 +75,7 @@ export const activeListings: Listing[] = [
     description:
       "Bridgehampton South new-construction compound opportunity on nearly three acres across two adjacent lots.",
     image: "/images/listings/582-598-halsey-lane.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/935228/",
+    listingUrl: "https://hedgerow.eastendli.com/property/935228/?agent=528948",
   },
 {
     address: "14 St Mary's Lane",
@@ -90,7 +90,7 @@ export const activeListings: Listing[] = [
     acres: "1.90",
     description: "Amagansett residence on nearly two acres at 14 St Mary's Lane.",
     image: "/images/listings/14-st-marys-lane.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/925935/",
+    listingUrl: "https://hedgerow.eastendli.com/property/925935/?agent=528948",
   },
 {
     address: "36 Oakland Avenue",
@@ -106,7 +106,7 @@ export const activeListings: Listing[] = [
     description:
       "Western-facing Sag Harbor Village waterfront on Otter Cove, newly constructed with sunset water views.",
     image: "/images/listings/36-oakland-avenue.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/934260/",
+    listingUrl: "https://hedgerow.eastendli.com/property/934260/?agent=528948",
   },
 {
     address: "351 Jobs Lane",
@@ -119,7 +119,7 @@ export const activeListings: Listing[] = [
     description:
       "Rare development opportunity south of the highway, with 1.43 level acres moments from ocean beaches.",
     image: "/images/listings/351-jobs-lane-active.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/932217/",
+    listingUrl: "https://hedgerow.eastendli.com/property/932217/?agent=528948",
     isLand: true,
   },
 {
@@ -136,7 +136,7 @@ export const activeListings: Listing[] = [
     description:
       "Just-completed East Hampton Village Fringe estate with tennis on three curated acres.",
     image: "/images/listings/60-two-holes-active.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/927793/",
+    listingUrl: "https://hedgerow.eastendli.com/property/927793/?agent=528948",
   },
 {
     address: "58 Cove Hollow Road",
@@ -151,7 +151,7 @@ export const activeListings: Listing[] = [
     acres: "0.51",
     description: "East Hampton residence on Cove Hollow Road, with six bedrooms on just over half an acre.",
     image: "/images/listings/58-cove-hollow.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/935517/",
+    listingUrl: "https://hedgerow.eastendli.com/property/935517/?agent=528948",
   },
 {
     address: "33 Dinah Rock Road",
@@ -167,7 +167,7 @@ export const activeListings: Listing[] = [
     description:
       "Rare west-facing waterfront estate with private beachfront and dock with 186 feet of natural beach.",
     image: "/images/listings/33-dinah-rock.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/930613/",
+    listingUrl: "https://hedgerow.eastendli.com/property/930613/?agent=528948",
   },
 {
     address: "20 Prospect Avenue",
@@ -182,7 +182,7 @@ export const activeListings: Listing[] = [
     acres: "1.20",
     description: "Shelter Island Heights residence on 1.2 acres at 20 Prospect Avenue.",
     image: "/images/listings/20-prospect-ave.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/908849/",
+    listingUrl: "https://hedgerow.eastendli.com/property/908849/?agent=528948",
   },
 {
     address: "2 Hilltop Lane",
@@ -198,7 +198,7 @@ export const activeListings: Listing[] = [
     description:
       "Recently renovated East Hampton retreat with tennis on 1.46 private acres.",
     image: "/images/listings/2-hilltop-lane.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/934942/",
+    listingUrl: "https://hedgerow.eastendli.com/property/934942/?agent=528948",
   },
 {
     address: "568 Old Sag Harbor Road",
@@ -214,7 +214,7 @@ export const activeListings: Listing[] = [
     description:
       "Turnkey traditional on 3.3 private acres in Bridgehampton with room for pickleball or padel.",
     image: "/images/listings/568-old-sag-harbor.jpg",
-    listingUrl: "https://hedgerow.eastendli.com/property/932626/",
+    listingUrl: "https://hedgerow.eastendli.com/property/932626/?agent=528948",
   },
 ];
 
