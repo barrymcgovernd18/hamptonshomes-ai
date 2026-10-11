@@ -44,11 +44,11 @@ Quotable research findings (Hamptons Oceanfront, 2021 to 2026):
 ## Research
 
 - [Market research hub](https://hamptonshomes.ai/market): all research, village reports, and commentary
-- [East Hampton luxury market overview, 2026](https://hamptonshomes.ai/blog/east-hampton-luxury-market-overview-2026-10): 87 sales at $5 million and above south of the highway since 2023; the south record stops on July 28, 2026
-- [Southampton luxury market overview, 2026](https://hamptonshomes.ai/blog/southampton-luxury-market-overview-2026-10): 125 sales south of the highway, median $8.4 million
-- [Bridgehampton luxury market overview, 2026](https://hamptonshomes.ai/blog/bridgehampton-luxury-market-overview-2026-10): 59 sales south of the highway, median $10.3 million
+- [East Hampton luxury market overview, 2026](https://hamptonshomes.ai/blog/east-hampton-luxury-market-overview-2026-10): 93 sales at $5 million and above south of the highway since 2023, median $10.9 million; the south record stops on July 28, 2026
+- [Southampton luxury market overview, 2026](https://hamptonshomes.ai/blog/southampton-luxury-market-overview-2026-10): 130 sales south of the highway, median $8.84 million
+- [Bridgehampton luxury market overview, 2026](https://hamptonshomes.ai/blog/bridgehampton-luxury-market-overview-2026-10): 64 sales south of the highway, median $10.2 million
 - [Water Mill luxury market overview, 2026](https://hamptonshomes.ai/blog/water-mill-luxury-market-overview-2026-10): 78 sales south of the highway, median $9.45 million
-- [Wainscott luxury market snapshot, 2026](https://hamptonshomes.ai/blog/wainscott-luxury-market-snapshot-2026-10): 20 sales south of the highway, median $9.05 million
+- [Wainscott luxury market snapshot, 2026](https://hamptonshomes.ai/blog/wainscott-luxury-market-snapshot-2026-10): 22 sales south of the highway, median $9.05 million
 - [Sagaponack luxury market overview, 2026](https://hamptonshomes.ai/blog/sagaponack-luxury-market-overview-2026-10): 56 sales south of the highway, median $10.5 million
 - [Hamptons Oceanfront, 2021 to 2026](https://hamptonshomes.ai/blog/hamptons-oceanfront-market-2021-2026): 87 oceanfront sales, year and village medians, repeat sales, price per foot of frontage, supply, and risks
 - [Bridgehampton non-water market overview](https://hamptonshomes.ai/blog/bridgehampton-non-water-market-overview-2026-09): north and south of the highway sales
