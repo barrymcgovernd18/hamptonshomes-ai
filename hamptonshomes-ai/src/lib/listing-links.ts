@@ -1,11 +1,15 @@
 import { SALE_ROWS } from "./sale-listings";
 
 /**
- * Public EastEndLI listing URLs, the same pattern as sold comps in src/lib/sales.ts.
+ * Public EastEndLI listing URLs that show Barry McGovern's name and contact.
+ * `?agent=528948` is his agent view on hedgerow.eastendli.com. Without it, the page shows the Hedgerow team.
  * Future posts can call `linkListing` directly, or mention a full street address.
  * `linkifySaleMentions` links an address when this index has an MLS id for it.
  * Deed-only sales with no MLS id stay plain text.
  */
+
+/** Barry McGovern's EastEndLI profile id. */
+const BARRY_ELY_AGENT = "528948";
 
 const SUFFIX_ABBREV: Record<string, string> = {
   ln: "lane",
@@ -73,7 +77,7 @@ export function normalizeStreet(value: string) {
 }
 
 export function elyListingUrl(mlsId: string) {
-  return `https://hedgerow.eastendli.com/property/${mlsId}/`;
+  return `https://hedgerow.eastendli.com/property/${mlsId}/?agent=${BARRY_ELY_AGENT}`;
 }
 
 /** Markdown link for a sale or listing. Pass the MLS id from EastEndLI. */
