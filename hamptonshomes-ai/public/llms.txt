@@ -44,15 +44,15 @@ Quotable research findings (Hamptons Oceanfront, 2021 to 2026):
 ## Research
 
 - [Market research hub](https://hamptonshomes.ai/market): all research, village reports, and commentary
-- [East Hampton luxury market overview, 2026](https://hamptonshomes.ai/blog/east-hampton-luxury-market-overview-2026-10): 93 sales at $5 million and above south of the highway since 2023, median $10.9 million; the south record stops on July 28, 2026
-- [Southampton luxury market overview, 2026](https://hamptonshomes.ai/blog/southampton-luxury-market-overview-2026-10): 130 sales south of the highway, median $8.84 million
-- [Bridgehampton luxury market overview, 2026](https://hamptonshomes.ai/blog/bridgehampton-luxury-market-overview-2026-10): 64 sales south of the highway, median $10.2 million
+- [East Hampton luxury market overview, 2026](https://hamptonshomes.ai/blog/east-hampton-luxury-market-overview-2026-10): 100 sales at $5 million and above south of the highway since 2023, median $11.05 million, led off-market by 408 Further Lane at $115 million
+- [Southampton luxury market overview, 2026](https://hamptonshomes.ai/blog/southampton-luxury-market-overview-2026-10): 133 sales south of the highway, median $8.84 million
+- [Bridgehampton luxury market overview, 2026](https://hamptonshomes.ai/blog/bridgehampton-luxury-market-overview-2026-10): 65 sales south of the highway, median $10.2 million
 - [Water Mill luxury market overview, 2026](https://hamptonshomes.ai/blog/water-mill-luxury-market-overview-2026-10): 78 sales south of the highway, median $9.45 million
 - [Wainscott luxury market snapshot, 2026](https://hamptonshomes.ai/blog/wainscott-luxury-market-snapshot-2026-10): 22 sales south of the highway, median $9.05 million
 - [Sagaponack luxury market overview, 2026](https://hamptonshomes.ai/blog/sagaponack-luxury-market-overview-2026-10): 56 sales south of the highway, median $10.5 million
-- [Sag Harbor Village luxury market overview, 2026](https://hamptonshomes.ai/blog/sag-harbor-village-luxury-market-overview-2026-10): 48 sales in the incorporated village, median $6.3 million
+- [Sag Harbor Village luxury market overview, 2026](https://hamptonshomes.ai/blog/sag-harbor-village-luxury-market-overview-2026-10): 51 sales in the incorporated village, median $6.3 million
 - [Sag Harbor waterfront luxury market, 2026](https://hamptonshomes.ai/blog/sag-harbor-waterfront-luxury-market-2026-10): 21 waterfront sales, median $6.7 million, North Haven excluded
-- [North Haven luxury market, 2026](https://hamptonshomes.ai/blog/north-haven-luxury-market-2026-10): 25 sales, median $8.25 million
+- [North Haven luxury market, 2026](https://hamptonshomes.ai/blog/north-haven-luxury-market-2026-10): 27 sales, median about $8.25 million
 - [Shelter Island luxury market, 2026](https://hamptonshomes.ai/blog/shelter-island-luxury-market-2026-10): 14 sales, median $7.9 million
 - [Shelter Island waterfront luxury market, 2026](https://hamptonshomes.ai/blog/shelter-island-waterfront-luxury-market-2026-10): 9 waterfront sales, median $9.0 million
 - [Hamptons Oceanfront, 2021 to 2026](https://hamptonshomes.ai/blog/hamptons-oceanfront-market-2021-2026): 87 oceanfront sales, year and village medians, repeat sales, price per foot of frontage, supply, and risks
