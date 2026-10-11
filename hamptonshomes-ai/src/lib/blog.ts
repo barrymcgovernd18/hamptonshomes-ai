@@ -509,7 +509,7 @@ In New York, the agreed price on a contract is not public until the sale closes 
     slug: "hamptons-oceanfront-market-2021-2026",
     title: "Hamptons Oceanfront, 2021 to 2026: Scarcity, Price, and the Shape of the Market",
     excerpt:
-      "Eighty-seven oceanfront sales from Southampton to Montauk since 2021: the median, the village spread, and what repeat sales and frontage actually show.",
+      "Eighty-seven oceanfront sales from Southampton to Montauk since 2021: the median, the village spread, and what repeat sales actually show.",
     date: "2026-10-07",
     dateModified: "2026-10-11",
     author: "Barry McGovern",
@@ -519,7 +519,7 @@ In New York, the agreed price on a contract is not public until the sale closes 
     hideCta: true,
     about: ["Southampton", "Water Mill", "Bridgehampton", "Sagaponack", "Wainscott", "East Hampton", "Amagansett", "Montauk"],
     keywords:
-      "Hamptons oceanfront, oceanfront real estate, Southampton oceanfront, East Hampton oceanfront, Montauk oceanfront, price per foot of frontage",
+      "Hamptons oceanfront, oceanfront real estate, Southampton oceanfront, East Hampton oceanfront, Montauk oceanfront",
     metaDescription:
       "Hamptons oceanfront, Southampton to Montauk, 2021 to 2026: 87 sales, a $24.5 million median, and the village spread from East Hampton to Montauk.",
     content: `
@@ -601,21 +601,6 @@ Repeat sales of the same property offer the cleanest view of appreciation, becau
 
 For houses that were not rebuilt, annualized gains fell between 3.0 and 6.9 percent. 165 Surfside Drive shows what new construction can add on the same land. Both sales of 67 Surfside Drive, along with the 2025 sales of 165 Surfside Drive and 2 Town Line Road, are trades Hedgerow and I have been involved in.
 
-## Price per Foot of Frontage
-
-Frontage is the most direct measure of what an oceanfront buyer is acquiring, though it is rarely published. Four recent trades have documented frontage:
-
-| Property | Closed | Price | Frontage | Price per foot |
-| --- | --- | ---: | ---: | ---: |
-| 43 East Dune Lane, East Hampton | Mar 2026 | $72.0M | approx. 225 ft* | approx. $320,000 |
-| 55 Dunes Lane, Amagansett | Feb 2026 | $43.5M | approx. 200 ft | approx. $217,500 |
-| 33 Lily Pond Lane, East Hampton | Sep 2025 | $31.5M | 171 ft | approx. $184,200 |
-| 67 Surfside Drive, Bridgehampton | Apr 2025 | $32.0M | 187 ft | approx. $171,100 |
-
-*Frontage per listing materials.*
-
-33 Lily Pond Lane, 55 Dunes Lane, and 43 East Dune Lane were each Hedgerow transactions.
-
 ## Supply and Scarcity
 
 By my parcel count, roughly 330 tax parcels between Southampton Village and the Further Lane stretch reach the ocean beach or dune. That supply cannot grow, and it shrinks at the margin. Several of the period's largest trades were assemblages, including 370 & 372 Further Lane, and 105 & 111 Lily Pond Lane, which consolidate frontage into fewer hands. Public acquisition removes parcels outright: the Town of Southampton acquired 1950 Meadow Lane for $25.8 million in a sale that closed June 30, 2026.
@@ -679,10 +664,6 @@ East Hampton, at a median of $48.5 million. The highest single sale of the perio
 ### Where is oceanfront most accessible?
 
 Montauk and the Napeague stretch of Amagansett, at medians of $10.8 million and $9.5 million. Further Lane sales in Amagansett reach far higher.
-
-### What does oceanfront cost per foot of frontage?
-
-In four recent trades with documented frontage, roughly $171,000 to $320,000 per linear foot.
 
 ### Have Hamptons oceanfront prices risen since 2021?
 
