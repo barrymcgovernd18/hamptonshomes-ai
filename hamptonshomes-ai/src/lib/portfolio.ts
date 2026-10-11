@@ -589,12 +589,12 @@ export const hedgerowSold2021: HedgerowSoldDeal[] = [
     "priceNum": 57000000,
     "date": "2025-10-22",
     "dateText": "Oct 2025",
-    "hedgerowRole": "Buyer side",
+    "hedgerowRole": "A Hedgerow transaction",
     "group": "Oceanfront",
     "barryInvolved": false,
     "image": "/images/hedgerow/sold-125-mid-ocean-drive-bridgehampton-2025.webp",
     "alt": "125 Mid Ocean Drive, Bridgehampton. Photo courtesy of Hedgerow Exclusive Properties",
-    "roleLabel": "Hedgerow represented the buyer"
+    "roleLabel": "A Hedgerow transaction"
   },
   {
     "address": "10 Meadowbrook Way",
