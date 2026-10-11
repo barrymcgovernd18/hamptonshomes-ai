@@ -60,10 +60,12 @@ type SaleRecord = {
 
 /**
  * Report streets that do not match the MLS street line.
- * 125 Mid Ocean Drive is omitted: MLS 933998 is an undisclosed Bridgehampton address.
+ * 933998 is filed as an undisclosed Bridgehampton address. Reports call it 125 Mid Ocean Drive.
+ * 922347 is filed as 42 Hither Lane and 55 Middle Lane. Reports name each lane.
  */
 const ADDRESS_ALIASES: { street: string; mlsId: string; price: number }[] = [
   { street: "700 meadow lane", mlsId: "874794", price: 112_500_000 },
+  { street: "125 mid ocean drive", mlsId: "933998", price: 57_000_000 },
   { street: "400 first neck lane", mlsId: "923287", price: 29_500_000 },
   { street: "42 hither lane", mlsId: "922347", price: 30_000_000 },
   { street: "55 middle lane", mlsId: "922347", price: 30_000_000 },

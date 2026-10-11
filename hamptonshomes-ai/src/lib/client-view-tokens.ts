@@ -10,9 +10,10 @@
  *
  * 874794 is Mylestone at Meadow Lane, Southampton, sold for $112,500,000 on
  * November 7, 2023. The reports call that sale 700 Meadow Lane (Mylestone).
- * The share page does not print the house number. That one report street is
- * registered below. 933998 is an undisclosed Bridgehampton address and is not
- * 125 Mid Ocean Drive. 906771 is 355 Ox Pasture Road, not 35 Dune Road.
+ * 933998 is the undisclosed Bridgehampton record. The reports call it 125 Mid Ocean Drive.
+ * 922347 is 42 Hither Lane and 55 Middle Lane, East Hampton, sold for $30 million.
+ * Report names that differ from the ViewOne street are registered below.
+ * 906771 is 355 Ox Pasture Road, not 35 Dune Road.
  * 921481 is 105 and 111 Lily Pond Lane, not Beach Lane.
  */
 export type ClientViewShare = {
@@ -24,6 +25,7 @@ export type ClientViewShare = {
 export const CLIENT_VIEW_SHARES: readonly ClientViewShare[] = [
   { mlsId: "874794", street: "mylestone at meadow lane", token: "7YC7IJZ27QBK5MNKU5CFI32RDLCRT6IXJCIEJG5ATGNQ" },
   { mlsId: "933998", street: "000 bridgehampton", token: "7YC7IJZ27QBK5MFOUBFFIY2RDLCRT6IXJCIEJG5ATGNQ" },
+  { mlsId: "922347", street: "42 hither lane and 55 middle lane", token: "7YC7IJZ27QBK5MFPUFAFS3CRDLCRT6IXJCIEJG5ATGNQ" },
   { mlsId: "913145", street: "165 surfside drive", token: "7YC7IJZ27QBK5MFMUBBFS3SRDLCRT6IXJCIEJG5ATGNQ" },
   { mlsId: "901142", street: "115 beach lane", token: "7YC7IJZ27QBK5MFNUJBFS2KRDLCRT6IXJCIEJG5ATGNQ" },
   { mlsId: "921481", street: "105 and 111 lily pond lane", token: "7YC7IJZ27QBK5MFPUJDVK2SRDLCRT6IXJCIEJG5ATGNQ" },
@@ -85,6 +87,9 @@ export const CLIENT_VIEW_SHARES: readonly ClientViewShare[] = [
 /** Report streets verified to be the same house as the ViewOne street above. */
 const VERIFIED_REPORT_STREETS: readonly { mlsId: string; street: string }[] = [
   { mlsId: "874794", street: "700 meadow lane" },
+  { mlsId: "933998", street: "125 mid ocean drive" },
+  { mlsId: "922347", street: "42 hither lane" },
+  { mlsId: "922347", street: "55 middle lane" },
 ];
 
 const tokenByMlsAndStreet = new Map<string, string>();
