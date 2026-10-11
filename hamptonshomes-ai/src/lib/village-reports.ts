@@ -138,7 +138,7 @@ Off-market sales are in the 100. They rank by price. None of them has an EastEnd
 | 21 Spaeth Lane | $29,600,000 | Apr 5, 2024 | Off-market |
 | 31 Two Mile Hollow Road | $29,000,000 | Mar 17, 2023 | Off-market |
 
-408 Further Lane is the largest single residential parcel in East Hampton, on the East Hampton and Amagansett line. The Cobb compound, at $121.5 million, is larger. 26 and 32 Windmill Lane is $77,775,000 and $13,725,000 on the two deeds.
+26 and 32 Windmill Lane is $77,775,000 and $13,725,000 on the two deeds.
 
 {{figure:/images/hedgerow/sold-24-36-jeffreys-lane-east-hampton-2025.webp|24 and 36 Jeffreys Lane, on Georgica Pond, sold for $36.25 million in November 2025. Hedgerow represented the seller.}}
 

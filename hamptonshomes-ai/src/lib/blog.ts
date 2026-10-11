@@ -200,8 +200,6 @@ Sagaponack is the smallest of the South Fork's estate markets and, south of the 
 
 *Closed sales, January 5, 2023 to October 9, 2026. Sources: MLS sold data, with additional closings from public deed records.*
 
-Across the $5 million and above sales with recorded square footage, the median was about **$1,720 per square foot**.
-
 The year-by-year record has moved up. There were 14 sales at $5 million and above in 2023 (median $8.85 million), 16 in 2024 (median $11.8 million), and 14 in 2025 (median $9.75 million). Through October 9, 2026 there have already been 12, at a median of $15.9 million and a combined $193.6 million. Five of this year's closings were at $19 million or more: 70 Fairfield Pond Lane at $25 million in March, 494 Hedges Lane at $24 million in January, 454 Hedges Lane at $22.5 million in March, 480 Hedges Lane at $22 million in June, and 149 Seascape Lane at $19 million in August.
 
 ## The Estate Lanes and the Ocean
@@ -281,7 +279,7 @@ Contracts confirm where demand is meeting supply. Two Sagaponack listings went i
 
 ## Takeaways for Buyers and Sellers
 
-- **South of the highway is the Sagaponack market.** It produced 56 sales at $5 million and above from January 2023 through October 9, 2026, at a median of about $1,720 per square foot, and 2026 has been its strongest year.
+- **South of the highway is the Sagaponack market.** It produced 56 sales at $5 million and above from January 2023 through October 9, 2026, at a $10.5 million median, and 2026 has been its strongest year.
 - **Below $20 million, sellers hold the advantage.** Four listings against a sold pace of roughly 12 a year leaves buyers with little to choose from. Well-presented houses in this range are likely to draw competition.
 - **Between $20 million and $50 million, pricing to the record matters.** The top of the sold record is $29.5 million. The fall's largest contract, 501 Parsonage Lane at a last ask of $22 million, came from this band.
 - **Above $50 million, buyers set the terms.** Three listings, no comparable sales since 2023, and the 2022 oceanfront sales at $50 million and $46.5 million as the nearest benchmarks.
@@ -291,7 +289,7 @@ For a confidential conversation about Sagaponack pricing, a specific lane, or op
 
 ## How These Figures Were Measured
 
-Closed sales cover Sagaponack South, the estate lanes and oceanfront south of Montauk Highway, from January 5, 2023 through October 9, 2026, at $5 million and above. The primary source is MLS sold data current to October 9, 2026, with duplicate records of the same closing removed. One closing recorded in an earlier MLS data set, 98 Daniels Lane, and two 2026 closings found in recorded deeds, 494 Hedges Lane and 118 Fairfield Pond Lane, are added. Oceanfront means a parcel that reaches the ocean beach, confirmed against Hedgerow's records, listing descriptions, and tax parcel maps; sales near the ocean but not on it are counted as estate lanes. A reported August 2024 Potato Road sale in the earlier data set could not be confirmed against the parcel map or any other record and is excluded. Where MLS and deed prices differ, the MLS sold price is used. Vacant land sales are included. Price per square foot uses the $5 million and above sales with recorded square footage. Hedgerow roles reflect Hedgerow's published transaction record. Contracts reflect MLS listing data reviewed on October 6, 2026. Active listings were rechecked on October 9, 2026 against public listing sites and brokerage listing pages; 21 Fairfield Pond Lane, also offered as part of a larger package, is counted once. The oceanfront record since 2020 is drawn from recorded deeds, MLS sold data, and press reports of those closings; each sale was checked against the parcel location. These figures are drawn from public MLS and recorded-deed data and do not include significant off-market trades that never appear in those sources. Recent closings can take several weeks to appear in public records, so the 2026 count may rise as late summer and fall deeds are recorded.
+Closed sales cover Sagaponack South, the estate lanes and oceanfront south of Montauk Highway, from January 5, 2023 through October 9, 2026, at $5 million and above. The primary source is MLS sold data current to October 9, 2026, with duplicate records of the same closing removed. One closing recorded in an earlier MLS data set, 98 Daniels Lane, and two 2026 closings found in recorded deeds, 494 Hedges Lane and 118 Fairfield Pond Lane, are added. Oceanfront means a parcel that reaches the ocean beach, confirmed against Hedgerow's records, listing descriptions, and tax parcel maps; sales near the ocean but not on it are counted as estate lanes. A reported August 2024 Potato Road sale in the earlier data set could not be confirmed against the parcel map or any other record and is excluded. Where MLS and deed prices differ, the MLS sold price is used. Vacant land sales are included. Hedgerow roles reflect Hedgerow's published transaction record. Contracts reflect MLS listing data reviewed on October 6, 2026. Active listings were rechecked on October 9, 2026 against public listing sites and brokerage listing pages; 21 Fairfield Pond Lane, also offered as part of a larger package, is counted once. The oceanfront record since 2020 is drawn from recorded deeds, MLS sold data, and press reports of those closings; each sale was checked against the parcel location. These figures are drawn from public MLS and recorded-deed data and do not include significant off-market trades that never appear in those sources. Recent closings can take several weeks to appear in public records, so the 2026 count may rise as late summer and fall deeds are recorded.
 
 ## FAQ
 
@@ -542,17 +540,15 @@ The study covers single-family oceanfront sales, including multi-parcel assembla
 
 ## Year-by-Year Trend
 
-| Year | Sales | Median price | Highest sale | Median $/sq ft* |
-| --- | ---: | ---: | --- | ---: |
-| 2021 | 21 | $22.50M | 90 Jule Pond Drive, Water Mill, $105.0M | $4,920 |
-| 2022 | 14 | $18.20M | 153 Lily Pond Lane, East Hampton, $84.5M | $6,945 |
-| 2023 | 7 | $28.00M | 700 Meadow Lane, Southampton, $112.5M | $4,667 |
-| 2024 | 14 | $19.88M | 90 & 100 Lily Pond Lane, East Hampton, $52.0M | $3,933 |
-| 2025 | 24 | $26.25M | 408 Further Lane, Amagansett, $115.0M | $4,766 |
-| 2026 YTD | 7 | $43.50M | 43 East Dune Lane, East Hampton, $72.0M | $5,094 |
-| **2021 to 2026** | **87** | **$24.50M** | 408 Further Lane, $115.0M | **$4,795** |
-
-*Price per square foot reflects the 60 sales with reported interior area.*
+| Year | Sales | Median price | Highest sale |
+| --- | ---: | ---: | --- |
+| 2021 | 21 | $22.50M | 90 Jule Pond Drive, Water Mill, $105.0M |
+| 2022 | 14 | $18.20M | 153 Lily Pond Lane, East Hampton, $84.5M |
+| 2023 | 7 | $28.00M | 700 Meadow Lane, Southampton, $112.5M |
+| 2024 | 14 | $19.88M | 90 & 100 Lily Pond Lane, East Hampton, $52.0M |
+| 2025 | 24 | $26.25M | 408 Further Lane, Amagansett, $115.0M |
+| 2026 YTD | 7 | $43.50M | 43 East Dune Lane, East Hampton, $72.0M |
+| **2021 to 2026** | **87** | **$24.50M** | 408 Further Lane, $115.0M |
 
 {{chart:oceanfront-by-year}}
 
@@ -560,16 +556,16 @@ The 2026 median rests on 43 East Dune Lane ($72 million), 115 Beach Lane ($59 mi
 
 ## Village by Village
 
-| Village | Sales 2021 to 2026 | Median | Range | Median $/sq ft | Notable sale |
-| --- | ---: | ---: | --- | ---: | --- |
-| Southampton | 15 | $33.75M | $16.4M to $112.5M | $4,544 | 700 Meadow Lane, $112.5M (2023) |
-| Water Mill | 3 | $20.00M | $14.5M to $105.0M | n/a (thin) | 90 Jule Pond Drive, $105.0M (2021) |
-| Bridgehampton | 9 | $28.50M | $17.5M to $58.0M | $5,794 | 165 Surfside Drive, $58.0M (2025) |
-| Sagaponack | 4 | $14.38M | $7.25M to $46.5M | $6,674 | 35 Potato Road & 543 Daniels Lane, $46.5M (2022) |
-| Wainscott | 6 | $28.75M | $22.5M to $59.0M | $4,340 | 115 Beach Lane, $59.0M (2026) |
-| East Hampton | 14 | $48.50M | $15.0M to $84.5M | $5,921 | 43 East Dune Lane, $72.0M (2026) |
-| Amagansett | 14 | $9.50M | $5.85M to $115.0M | $4,042 | 408 Further Lane, $115.0M (2025) |
-| Montauk | 22 | $10.83M | $5.8M to $25.0M | $3,062 | 42 Old Montauk Highway, $25.0M (2022) |
+| Village | Sales 2021 to 2026 | Median | Range | Notable sale |
+| --- | ---: | ---: | --- | --- |
+| Southampton | 15 | $33.75M | $16.4M to $112.5M | 700 Meadow Lane, $112.5M (2023) |
+| Water Mill | 3 | $20.00M | $14.5M to $105.0M | 90 Jule Pond Drive, $105.0M (2021) |
+| Bridgehampton | 9 | $28.50M | $17.5M to $58.0M | 165 Surfside Drive, $58.0M (2025) |
+| Sagaponack | 4 | $14.38M | $7.25M to $46.5M | 35 Potato Road & 543 Daniels Lane, $46.5M (2022) |
+| Wainscott | 6 | $28.75M | $22.5M to $59.0M | 115 Beach Lane, $59.0M (2026) |
+| East Hampton | 14 | $48.50M | $15.0M to $84.5M | 43 East Dune Lane, $72.0M (2026) |
+| Amagansett | 14 | $9.50M | $5.85M to $115.0M | 408 Further Lane, $115.0M (2025) |
+| Montauk | 22 | $10.83M | $5.8M to $25.0M | 42 Old Montauk Highway, $25.0M (2022) |
 
 {{chart:oceanfront-by-village}}
 
