@@ -1,4 +1,21 @@
 import { PLACE_NAMES, PLACE_SLUGS } from "./schema";
+import { villageReportPosts } from "./village-reports";
+
+export type BlogChartRow = {
+  label: string;
+  value: number;
+  display: string;
+  detail?: string;
+  highlight?: boolean;
+  /** Screen-reader prefix before `display`. Defaults to "median" in the chart. */
+  prefix?: string;
+};
+
+export type BlogChart = {
+  title: string;
+  caption?: string;
+  rows: BlogChartRow[];
+};
 
 export interface BlogPost {
   slug: string;
@@ -20,10 +37,17 @@ export interface BlogPost {
   about?: (typeof PLACE_NAMES)[number][];
   /** Comma-separated keywords for Article JSON-LD. */
   keywords?: string;
+  /** Named charts placed with a `{{chart:name}}` line in `content`. */
+  charts?: Record<string, BlogChart>;
 }
 
 /** Search titles (under ~62 characters, brand included). The on-page H1 keeps the full title. */
 export const SEO_TITLES: Record<string, string> = {
+  "east-hampton-luxury-market-overview-2026-10": "East Hampton Luxury Market, 2026 | Barry McGovern",
+  "southampton-luxury-market-overview-2026-10": "Southampton Luxury Market, 2026 | Barry McGovern",
+  "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton Luxury Market, 2026 | Barry McGovern",
+  "water-mill-luxury-market-overview-2026-10": "Water Mill Luxury Market, 2026 | Barry McGovern",
+  "wainscott-luxury-market-snapshot-2026-10": "Wainscott Luxury Market, 2026 | Barry McGovern",
   "sagaponack-luxury-market-overview-2026-10": "Sagaponack Luxury Market, 2026 | Barry McGovern",
   "hamptons-fall-2026-contracts-inventory": "Hamptons Fall 2026 Contracts and Inventory | Barry McGovern",
   "hamptons-oceanfront-market-2021-2026": "Hamptons Oceanfront Market, 2021 to 2026 | Barry McGovern",
@@ -134,6 +158,7 @@ export function relatedBlogPosts(post: BlogPost, limit = 2): BlogPost[] {
 }
 
 export const blogPosts: BlogPost[] = [
+  ...villageReportPosts,
   {
     slug: "sagaponack-luxury-market-overview-2026-10",
     title: "Sagaponack Luxury Real Estate Market Overview 2026",
