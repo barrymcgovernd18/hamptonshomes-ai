@@ -199,7 +199,7 @@ export default function MarketPage() {
             />
           </div>
           <p className="mt-12 max-w-3xl border-t border-paper/20 pt-6 text-[13px] leading-relaxed text-paper/70">
-            Recorded deed transfers and MLS comparable sales, January 2021 to early October 2026. Village detail, repeat sales, and price per foot of frontage in the{" "}
+            Recorded deed transfers and MLS comparable sales, January 2021 to early October 2026. Village detail and repeat sales are in the{" "}
             <Link href={OCEANFRONT_STUDY_PATH} className="link-line text-paper">
               full study
             </Link>
