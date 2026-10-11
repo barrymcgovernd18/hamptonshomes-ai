@@ -1,3 +1,4 @@
+import { CLIENT_VIEW_TOKENS } from "./client-view-tokens";
 import { SALE_ROWS } from "./sale-listings";
 
 /**
@@ -6,8 +7,9 @@ import { SALE_ROWS } from "./sale-listings";
  * `mc` is Client View and lists Barry only. `mp` is the public view and lists the Hedgerow Exclusive Team first.
  * A share from EastEndLI also adds a one-time `listshare` token (`?tchreq=&mc`).
  * That token is what still opens a sold listing after the public page says it is no longer active.
- * EastEndLI issues it from Members, ViewOne, Share, Client View, and it cannot be created here.
- * Addresses are linked only when the Client View page still resolves. The rest stay plain text.
+ * EastEndLI issues it from Members, ViewOne, Share, Client View.
+ * A stored token re-links a sold listing whose public page says it is no longer active.
+ * Addresses without a token are linked only when the Client View page still resolves.
  * Future posts can call `linkListing` directly, or mention a full street address.
  * `linkifySaleMentions` links an address when this index has a resolving MLS id for it.
  * Deed-only sales with no MLS id stay plain text.
@@ -82,6 +84,8 @@ export function normalizeStreet(value: string) {
 }
 
 export function elyListingUrl(mlsId: string) {
+  const token = CLIENT_VIEW_TOKENS[mlsId];
+  if (token) return `https://hedgerow.eastendli.com/?tchreq=${token}&mc`;
   return `https://hedgerow.eastendli.com/property/${mlsId}/?p=${BARRY_CLIENT_VIEW}&mc=${BARRY_CLIENT_VIEW}`;
 }
 
@@ -126,7 +130,7 @@ function addRecord(street: string, record: SaleRecord) {
 }
 
 for (const [mlsId, price, flags, street] of SALE_ROWS) {
-  if (!RESOLVING_LISTINGS.has(mlsId)) continue;
+  if (!RESOLVING_LISTINGS.has(mlsId) && !CLIENT_VIEW_TOKENS[mlsId]) continue;
   addRecord(street, {
     mlsId,
     price: price > 0 ? price : null,
@@ -136,7 +140,7 @@ for (const [mlsId, price, flags, street] of SALE_ROWS) {
 }
 
 for (const alias of ADDRESS_ALIASES) {
-  if (!RESOLVING_LISTINGS.has(alias.mlsId)) continue;
+  if (!RESOLVING_LISTINGS.has(alias.mlsId) && !CLIENT_VIEW_TOKENS[alias.mlsId]) continue;
   addRecord(alias.street, { mlsId: alias.mlsId, price: alias.price, exclusive: true, hedgerow: false });
 }
 
