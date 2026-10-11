@@ -94,7 +94,7 @@ South of Montauk Highway, East Hampton runs from the village to the ocean: Lily 
 | 2025 | 30 | $14.00M | $711.7M |
 | 2026 (through Jul 28) | 18 | $9.50M | $304.7M |
 
-East Hampton South held a median at or above $10.5 million from 2023 through 2025. 2023 has the highest median, at $15.0 million, after off-market trades at 26 and 32 Windmill Lane, 442 Further Lane, 298 Further Lane, and 31 Two Mile Hollow Road. 2025 has the most dollars. Four sales that year closed at $50 million or more: 408 Further Lane at $115 million, 370 and 372 Further Lane at $70 million, 105 and 111 Lily Pond Lane at $66.75 million, and the Cove Hollow Farm land sale at $55 million. 294 Further Lane closed at $48.5 million, just under that line. 2026 includes the top MLS sale, 43 East Dune Lane at $72 million on March 6, pictured above. No south-of-highway closing at $5 million and above has been recorded since July 28. Summer contracts such as 107 Georgica Road and 24 The Crossways have yet to close.
+East Hampton South held a median at or above $10.5 million from 2023 through 2025. 2023 has the highest median, at $15.0 million, after off-market trades at 26 and 32 Windmill Lane, 442 Further Lane, 298 Further Lane, and 31 Two Mile Hollow Road. 2025 has the most dollars. Three houses closed at $50 million or more: 408 Further Lane at $115 million, 370 and 372 Further Lane at $70 million, and 105 and 111 Lily Pond Lane at $66.75 million. 294 Further Lane closed at $48.5 million, just under that line. 2026 includes the top MLS sale, 43 East Dune Lane at $72 million on March 6, pictured above. No south-of-highway closing at $5 million and above has been recorded since July 28. Summer contracts such as 107 Georgica Road and 24 The Crossways have yet to close.
 
 Closings after July 28 that carry an East Hampton address are north of the highway, in Springs, Northwest, and along Two Holes of Water Road and Old Stone Highway. They belong with that northern market.
 
@@ -102,14 +102,14 @@ Closings after July 28 that carry an East Hampton address are north of the highw
 
 | Setting | Sales $5M+ | Median | Top sale | Total |
 |---|---|---|---|---|
-| Inland, south of the highway | 82 | $10.00M | $55.0M | $1,041.2M |
+| Inland, south of the highway | 82 | $10.00M | $52.0M | $1,041.2M |
 | Off-market, ocean frontage not confirmed | 4 | n/a | $48.5M | $147.1M |
 | Waterfront (pond) | 1 | $36.25M | $36.25M | $36.25M |
 | Oceanfront | 13 | $51.00M | $115.0M | $730.7M |
 | **East Hampton South** | **100** | **$11.05M** | **$115.0M** | **$1,955.3M** |
 | *North of the highway, including Springs and Northwest* | *56* | *$5.95M* | *$18.4M* | *$378.9M* |
 
-Oceanfront is about five times the inland median. The gap is the off-market dune and Further Lane trades, not a change in the inland houses. 41 and 47 Cove Hollow Farm Road, a $55 million land sale to the Peconic Land Trust in December 2025, stays in the inland count and out of the house ranking. Hedgerow represented the seller at 11 Amy's Lane ($11.2 million, February 2024) and at 86 Skimhampton Road ($8.85 million, April 2025).
+Oceanfront is about five times the inland median. The gap is the off-market dune and Further Lane trades, not a change in the inland houses. The top inland house is 121 Further Lane at $52 million. Separately, 41 and 47 Cove Hollow Farm Road sold for $55 million in December 2025, land bought by the Peconic Land Trust. That sale is in the inland count. It is not in the top-sales ranking. Hedgerow represented the seller at 11 Amy's Lane ($11.2 million, February 2024) and at 86 Skimhampton Road ($8.85 million, April 2025).
 
 {{figure:/images/hedgerow/sold-33-lily-pond-lane-east-hampton-2025.webp|33 Lily Pond Lane, East Hampton, sold for $31.5 million in September 2025. Hedgerow represented the seller.}}
 
