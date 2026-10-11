@@ -4,9 +4,12 @@ import { SALE_ROWS } from "./sale-listings";
  * EastEndLI Client View links, the branded page a shared listing opens on.
  * `p` and `mc` are the base64 form of Barry McGovern's member id, 528948.
  * `mc` is Client View and lists Barry only. `mp` is the public view and lists the Hedgerow Exclusive Team first.
- * A share from EastEndLI also adds a one-time `listshare` token. That token is not required for the client view.
+ * A share from EastEndLI also adds a one-time `listshare` token (`?tchreq=&mc`).
+ * That token is what still opens a sold listing after the public page says it is no longer active.
+ * EastEndLI issues it from Members, ViewOne, Share, Client View, and it cannot be created here.
+ * Addresses are linked only when the Client View page still resolves. The rest stay plain text.
  * Future posts can call `linkListing` directly, or mention a full street address.
- * `linkifySaleMentions` links an address when this index has an MLS id for it.
+ * `linkifySaleMentions` links an address when this index has a resolving MLS id for it.
  * Deed-only sales with no MLS id stay plain text.
  */
 
@@ -87,6 +90,29 @@ export function linkListing(label: string, mlsId: string) {
   return `[${label}](${elyListingUrl(mlsId)})`;
 }
 
+/**
+ * MLS ids whose Client View page still opens, checked October 11, 2026.
+ * Every other indexed id returns "This listing is no longer active."
+ */
+const RESOLVING_LISTINGS = new Set<string>([
+  "923124", "903505", "881727", "923524", "924151", "923032", "903709", "910199",
+  "926554", "925843", "917092", "920546", "912754", "925549", "927193", "923287",
+  "923559", "897350", "914846", "915157", "918576", "898435", "924488", "899418",
+  "923909", "922886", "922973", "898434", "906613", "913603", "923591", "926009",
+  "922602", "915357", "917533", "928122", "920871", "894218", "923030", "911009",
+  "924823", "927214", "922102", "916166", "923773", "923774", "921941", "915860",
+  "916429", "925903", "920988", "926471", "879316", "927817", "892214", "925576",
+  "914424", "907711", "903608", "907712", "923127", "925026", "924595", "927258",
+  "923003", "916993", "922738", "920567", "915177", "927400", "926870", "916048",
+  "878974", "902366", "893694", "893888", "902857", "923036", "923037", "922290",
+  "922341", "926023", "925607", "925611", "918523", "904806", "912026", "912473",
+  "441154", "922316", "927089", "926946", "904000", "930613", "913250", "913260",
+  "923906", "912861", "921791", "922825", "934396", "906649", "911311", "927793",
+  "920205", "912488", "915179", "918423", "925817", "925613", "924429", "925016",
+  "920240", "901193", "920581", "910536", "899290", "888739", "935228", "925935",
+  "934260", "932217", "935517", "908849", "934942", "932626", "914822",
+]);
+
 const salesByStreet = new Map<string, SaleRecord[]>();
 
 function addRecord(street: string, record: SaleRecord) {
@@ -100,6 +126,7 @@ function addRecord(street: string, record: SaleRecord) {
 }
 
 for (const [mlsId, price, flags, street] of SALE_ROWS) {
+  if (!RESOLVING_LISTINGS.has(mlsId)) continue;
   addRecord(street, {
     mlsId,
     price: price > 0 ? price : null,
@@ -109,6 +136,7 @@ for (const [mlsId, price, flags, street] of SALE_ROWS) {
 }
 
 for (const alias of ADDRESS_ALIASES) {
+  if (!RESOLVING_LISTINGS.has(alias.mlsId)) continue;
   addRecord(alias.street, { mlsId: alias.mlsId, price: alias.price, exclusive: true, hedgerow: false });
 }
 
