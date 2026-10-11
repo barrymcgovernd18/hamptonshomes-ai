@@ -1,35 +1,24 @@
+import { clientViewToken } from "./client-view-tokens";
 import { SALE_ROWS } from "./sale-listings";
 
 /**
  * EastEndLI Client View links, the branded page a shared listing opens on.
  * `p` and `mc` are the base64 form of Barry McGovern's member id, 528948.
  * `mc` is Client View and lists Barry only. `mp` is the public view and lists the Hedgerow Exclusive Team first.
- * A share from EastEndLI also adds a one-time `listshare` token (the same value as `tchreq` on `/?tchreq=&mc`).
+ * A share from EastEndLI also adds a one-time `listshare` token (the same value as `tchreq`).
  * That token is what still opens a sold listing after the public page says it is no longer active.
- * EastEndLI issues it from Members, ViewOne, Share, Client View, and it cannot be created here.
- * Harvested tokens live in `LISTSHARE_TOKENS`. When one is on file the href is
+ * EastEndLI issues it from Members, ViewOne, Share, Client View.
+ * Harvested pairs live in `CLIENT_VIEW_SHARES`. Add one only after it is harvested. Do not invent tokens.
+ * When the MLS id and the normalized street both match, the href is
  * `/property/{mls}/?p=NTI4OTQ4&listshare={token}&mc=NTI4OTQ4`.
- * Addresses are linked when the public Client View page still resolves, or a harvested token is on file.
- * Everything else stays plain text, including dead sold pages and deed-only sales with no MLS id.
+ * Addresses without a token are linked only when the public Client View page still resolves.
  * Future posts can call `linkListing` directly, or mention a full street address.
- * `linkifySaleMentions` links an address when this index has an MLS id that can open.
+ * `linkifySaleMentions` links an address when this index has a resolving MLS id for it.
+ * Deed-only sales with no MLS id stay plain text.
  */
 
 /** Base64 of Barry McGovern's EastEndLI member id, 528948. */
 const BARRY_CLIENT_VIEW = "NTI4OTQ4";
-
-/**
- * MLS id → Client View `listshare` / `tchreq` token.
- * Add a pair only after harvesting it from EastEndLI (Members, ViewOne, Share, Client View).
- * Do not invent tokens. With no token, the public Client View URL is used, and the address
- * is linked only when that page is in `RESOLVING_LISTINGS`.
- *
- * 901142 — 115 Beach Lane, Wainscott, $59 million, March 2026.
- * The street is already in SALE_ROWS as "115 beach lane".
- */
-const LISTSHARE_TOKENS: Record<string, string> = {
-  "901142": "7YC7IJZ27QBK5MFNUJBFS2KRDLCRT6IXJCIEJG5ATGNQ",
-};
 
 const SUFFIX_ABBREV: Record<string, string> = {
   ln: "lane",
@@ -60,7 +49,7 @@ const ADDRESS = new RegExp(
   "g"
 );
 
-const PRICE = /\$(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s*(million)?/gi;
+const PRICE = /\$(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s*(million|m\b)?/gi;
 
 type SaleRecord = {
   mlsId: string;
@@ -69,11 +58,13 @@ type SaleRecord = {
   exclusive: boolean;
 };
 
-/** MLS sales whose street line does not spell the address used in the reports. */
+/**
+ * Report streets that do not match the MLS street line.
+ * 125 Mid Ocean Drive is omitted: MLS 933998 is an undisclosed Bridgehampton address.
+ */
 const ADDRESS_ALIASES: { street: string; mlsId: string; price: number }[] = [
   { street: "700 meadow lane", mlsId: "874794", price: 112_500_000 },
   { street: "400 first neck lane", mlsId: "923287", price: 29_500_000 },
-  { street: "125 mid ocean drive", mlsId: "933998", price: 57_000_000 },
   { street: "42 hither lane", mlsId: "922347", price: 30_000_000 },
   { street: "55 middle lane", mlsId: "922347", price: 30_000_000 },
 ];
@@ -96,23 +87,20 @@ export function normalizeStreet(value: string) {
     .join(" ");
 }
 
-export function elyListingUrl(mlsId: string) {
-  const token = LISTSHARE_TOKENS[mlsId];
-  const query = token
-    ? `p=${BARRY_CLIENT_VIEW}&listshare=${encodeURIComponent(token)}&mc=${BARRY_CLIENT_VIEW}`
-    : `p=${BARRY_CLIENT_VIEW}&mc=${BARRY_CLIENT_VIEW}`;
-  return `https://hedgerow.eastendli.com/property/${mlsId}/?${query}`;
+export function elyListingUrl(mlsId: string, street?: string) {
+  const token = street ? clientViewToken(mlsId, normalizeStreet(street)) : undefined;
+  const share = token ? `&listshare=${encodeURIComponent(token)}` : "";
+  return `https://hedgerow.eastendli.com/property/${mlsId}/?p=${BARRY_CLIENT_VIEW}${share}&mc=${BARRY_CLIENT_VIEW}`;
 }
 
 /** Markdown link for a sale or listing. Pass the MLS id from EastEndLI. */
 export function linkListing(label: string, mlsId: string) {
-  return `[${label}](${elyListingUrl(mlsId)})`;
+  return `[${label}](${elyListingUrl(mlsId, label)})`;
 }
 
 /**
- * MLS ids whose public Client View page still opens, checked October 11, 2026.
- * Every other indexed id returns "This listing is no longer active" unless
- * `LISTSHARE_TOKENS` has a harvested share token for it.
+ * MLS ids whose Client View page still opens, checked October 11, 2026.
+ * Every other indexed id returns "This listing is no longer active."
  */
 const RESOLVING_LISTINGS = new Set<string>([
   "923124", "903505", "881727", "923524", "924151", "923032", "903709", "910199",
@@ -133,10 +121,6 @@ const RESOLVING_LISTINGS = new Set<string>([
   "934260", "932217", "935517", "908849", "934942", "932626", "914822",
 ]);
 
-function salePageOpens(mlsId: string) {
-  return RESOLVING_LISTINGS.has(mlsId) || Boolean(LISTSHARE_TOKENS[mlsId]);
-}
-
 const salesByStreet = new Map<string, SaleRecord[]>();
 
 function addRecord(street: string, record: SaleRecord) {
@@ -150,7 +134,7 @@ function addRecord(street: string, record: SaleRecord) {
 }
 
 for (const [mlsId, price, flags, street] of SALE_ROWS) {
-  if (!salePageOpens(mlsId)) continue;
+  if (!RESOLVING_LISTINGS.has(mlsId) && !clientViewToken(mlsId, street)) continue;
   addRecord(street, {
     mlsId,
     price: price > 0 ? price : null,
@@ -160,7 +144,7 @@ for (const [mlsId, price, flags, street] of SALE_ROWS) {
 }
 
 for (const alias of ADDRESS_ALIASES) {
-  if (!salePageOpens(alias.mlsId)) continue;
+  if (!RESOLVING_LISTINGS.has(alias.mlsId) && !clientViewToken(alias.mlsId, alias.street)) continue;
   addRecord(alias.street, { mlsId: alias.mlsId, price: alias.price, exclusive: true, hedgerow: false });
 }
 
@@ -171,6 +155,17 @@ function pick(records: SaleRecord[]) {
     return Number(a.mlsId) - Number(b.mlsId);
   });
   return ranked[0]?.mlsId;
+}
+
+function sentenceStart(text: string) {
+  for (let index = text.length - 1; index >= 0; index -= 1) {
+    if (text[index] !== ".") continue;
+    const prev = text[index - 1];
+    const next = text[index + 1];
+    if (prev && /\d/.test(prev) && next && /\d/.test(next)) continue;
+    return index + 1;
+  }
+  return 0;
 }
 
 function pricesIn(text: string) {
@@ -189,16 +184,36 @@ function priceClose(left: number, right: number) {
   return gap <= 1000 || gap / Math.max(left, right) <= 0.005;
 }
 
-function mlsIdFor(street: string, nearby: number | null) {
+function streetHasOtherPrice(street: string, records: SaleRecord[]) {
+  return SALE_ROWS.some(([mlsId, price, , rowStreet]) => {
+    if (rowStreet !== street || price <= 0) return false;
+    return records.some(
+      (record) => record.mlsId !== mlsId && record.price != null && !priceClose(record.price, price)
+    );
+  });
+}
+
+function mlsIdFor(street: string, nearbyPrices: number[]) {
   const records = salesByStreet.get(street);
   if (!records?.length) return null;
   const priced = records.filter((record) => record.price != null);
-  if (nearby != null) {
-    const hits = priced.filter((record) => priceClose(record.price as number, nearby));
+  if (nearbyPrices.length) {
+    const hits = priced.filter((record) =>
+      nearbyPrices.some((nearby) => priceClose(record.price as number, nearby))
+    );
     if (hits.length) return pick(hits);
+    // A nearby price that matches none of the indexed sales is a different trade
+    // at the same street. Do not attach a share token to that sentence.
+    // Unpublished MLS prices (0) still link, because the report price is the only one.
+    const tokenOnly = records.every((record) => !RESOLVING_LISTINGS.has(record.mlsId));
+    if (tokenOnly && priced.length > 0) return null;
   }
   const distinct = new Set(priced.map((record) => record.price));
-  if (distinct.size === 1) return pick(priced);
+  if (distinct.size === 1) {
+    const tokenOnly = records.every((record) => !RESOLVING_LISTINGS.has(record.mlsId));
+    if (tokenOnly && streetHasOtherPrice(street, records)) return null;
+    return pick(priced);
+  }
   if (priced.length === 0) return pick(records);
   return null;
 }
@@ -225,10 +240,11 @@ function linkifyLine(line: string) {
     const before = masked.slice(cursor, start);
     const afterPrices = pricesIn(after);
     const beforeScope = before.slice(-60);
-    const sentence = beforeScope.slice(beforeScope.lastIndexOf(".") + 1);
+    const sentence = beforeScope.slice(sentenceStart(beforeScope));
     const beforePrices = pricesIn(sentence);
-    const nearby = afterPrices[0] ?? beforePrices.at(-1) ?? null;
-    const mlsId = mlsIdFor(normalizeStreet(match[0]), nearby);
+    const lastBefore = beforePrices.at(-1);
+    const nearbyPrices = afterPrices.length ? afterPrices : lastBefore != null ? [lastBefore] : [];
+    const mlsId = mlsIdFor(normalizeStreet(match[0]), nearbyPrices);
     next += masked.slice(cursor, start);
     next += mlsId ? linkListing(match[0], mlsId) : match[0];
     cursor = end;
