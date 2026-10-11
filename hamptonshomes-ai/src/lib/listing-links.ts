@@ -4,17 +4,32 @@ import { SALE_ROWS } from "./sale-listings";
  * EastEndLI Client View links, the branded page a shared listing opens on.
  * `p` and `mc` are the base64 form of Barry McGovern's member id, 528948.
  * `mc` is Client View and lists Barry only. `mp` is the public view and lists the Hedgerow Exclusive Team first.
- * A share from EastEndLI also adds a one-time `listshare` token (`?tchreq=&mc`).
+ * A share from EastEndLI also adds a one-time `listshare` token (the same value as `tchreq` on `/?tchreq=&mc`).
  * That token is what still opens a sold listing after the public page says it is no longer active.
  * EastEndLI issues it from Members, ViewOne, Share, Client View, and it cannot be created here.
- * Addresses are linked only when the Client View page still resolves. The rest stay plain text.
+ * Harvested tokens live in `LISTSHARE_TOKENS`. When one is on file the href is
+ * `/property/{mls}/?p=NTI4OTQ4&listshare={token}&mc=NTI4OTQ4`.
+ * Addresses are linked when the public Client View page still resolves, or a harvested token is on file.
+ * Everything else stays plain text, including dead sold pages and deed-only sales with no MLS id.
  * Future posts can call `linkListing` directly, or mention a full street address.
- * `linkifySaleMentions` links an address when this index has a resolving MLS id for it.
- * Deed-only sales with no MLS id stay plain text.
+ * `linkifySaleMentions` links an address when this index has an MLS id that can open.
  */
 
 /** Base64 of Barry McGovern's EastEndLI member id, 528948. */
 const BARRY_CLIENT_VIEW = "NTI4OTQ4";
+
+/**
+ * MLS id → Client View `listshare` / `tchreq` token.
+ * Add a pair only after harvesting it from EastEndLI (Members, ViewOne, Share, Client View).
+ * Do not invent tokens. With no token, the public Client View URL is used, and the address
+ * is linked only when that page is in `RESOLVING_LISTINGS`.
+ *
+ * 901142 — 115 Beach Lane, Wainscott, $59 million, March 2026.
+ * The street is already in SALE_ROWS as "115 beach lane".
+ */
+const LISTSHARE_TOKENS: Record<string, string> = {
+  "901142": "7YC7IJZ27QBK5MFNUJBFS2KRDLCRT6IXJCIEJG5ATGNQ",
+};
 
 const SUFFIX_ABBREV: Record<string, string> = {
   ln: "lane",
@@ -82,7 +97,11 @@ export function normalizeStreet(value: string) {
 }
 
 export function elyListingUrl(mlsId: string) {
-  return `https://hedgerow.eastendli.com/property/${mlsId}/?p=${BARRY_CLIENT_VIEW}&mc=${BARRY_CLIENT_VIEW}`;
+  const token = LISTSHARE_TOKENS[mlsId];
+  const query = token
+    ? `p=${BARRY_CLIENT_VIEW}&listshare=${encodeURIComponent(token)}&mc=${BARRY_CLIENT_VIEW}`
+    : `p=${BARRY_CLIENT_VIEW}&mc=${BARRY_CLIENT_VIEW}`;
+  return `https://hedgerow.eastendli.com/property/${mlsId}/?${query}`;
 }
 
 /** Markdown link for a sale or listing. Pass the MLS id from EastEndLI. */
@@ -91,8 +110,9 @@ export function linkListing(label: string, mlsId: string) {
 }
 
 /**
- * MLS ids whose Client View page still opens, checked October 11, 2026.
- * Every other indexed id returns "This listing is no longer active."
+ * MLS ids whose public Client View page still opens, checked October 11, 2026.
+ * Every other indexed id returns "This listing is no longer active" unless
+ * `LISTSHARE_TOKENS` has a harvested share token for it.
  */
 const RESOLVING_LISTINGS = new Set<string>([
   "923124", "903505", "881727", "923524", "924151", "923032", "903709", "910199",
@@ -113,6 +133,10 @@ const RESOLVING_LISTINGS = new Set<string>([
   "934260", "932217", "935517", "908849", "934942", "932626", "914822",
 ]);
 
+function salePageOpens(mlsId: string) {
+  return RESOLVING_LISTINGS.has(mlsId) || Boolean(LISTSHARE_TOKENS[mlsId]);
+}
+
 const salesByStreet = new Map<string, SaleRecord[]>();
 
 function addRecord(street: string, record: SaleRecord) {
@@ -126,7 +150,7 @@ function addRecord(street: string, record: SaleRecord) {
 }
 
 for (const [mlsId, price, flags, street] of SALE_ROWS) {
-  if (!RESOLVING_LISTINGS.has(mlsId)) continue;
+  if (!salePageOpens(mlsId)) continue;
   addRecord(street, {
     mlsId,
     price: price > 0 ? price : null,
@@ -136,7 +160,7 @@ for (const [mlsId, price, flags, street] of SALE_ROWS) {
 }
 
 for (const alias of ADDRESS_ALIASES) {
-  if (!RESOLVING_LISTINGS.has(alias.mlsId)) continue;
+  if (!salePageOpens(alias.mlsId)) continue;
   addRecord(alias.street, { mlsId: alias.mlsId, price: alias.price, exclusive: true, hedgerow: false });
 }
 
