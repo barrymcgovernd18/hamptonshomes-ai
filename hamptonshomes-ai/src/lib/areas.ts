@@ -80,6 +80,35 @@ export const areas: Area[] = [
     domain: "sagharbor.ai",
   },
   {
+    name: "North Haven",
+    slug: "north-haven",
+    tagline: "A Peninsula Between the Harbor and the Sound",
+    metaDescription:
+      "North Haven real estate: 25 sales at $5 million and above since 2023, an $8.25 million median, and a $34.5 million record. Barry McGovern, Hedgerow.",
+    description:
+      "North Haven is its own incorporated village on the peninsula between Sag Harbor Cove and Shelter Island Sound. Waterfront on the sound sets the top of the market. Interior lanes trade in a lower band, a short run from Sag Harbor village.",
+    highlights: [
+      "Incorporated village on the peninsula north of Sag Harbor",
+      "Waterfront on Shelter Island Sound carries the highest prices",
+      "Interior lanes, including Forest Road, trade below the waterfront median",
+      "A short drive into Sag Harbor village",
+      "Since 2023, 25 sales at $5 million and above, at an $8.25 million median",
+    ],
+    beaches: ["Shelter Island Sound", "Sag Harbor Cove"],
+    editorial:
+      "North Haven sits on the peninsula between Sag Harbor Cove and Shelter Island Sound. The useful split is waterfront versus interior: the water holds the records, and the lanes inside the village trade on acreage, privacy, and a short run into Sag Harbor.",
+    marketBrief:
+      "From January 2023 through October 11, 2026, North Haven recorded 25 sales at $5 million and above, totaling $264.9 million, at a median of $8.25 million. The top sale is 6 Bay View Court at $34.5 million in May 2024. Waterfront sales in that set carry a $10.4 million median. Interior sales carry a $6.31 million median.",
+    buyerLens:
+      "For a buyer, the decision is sound frontage or an interior lot with village access. Those two markets carry different prices.",
+    sellerLens:
+      "For a seller, waterfront on the sound is a different conversation from Forest Road and the interior lanes.",
+    heroImage: "/images/hedgerow/sold-48-forest-road-sag-harbor-2023.webp",
+    priceRange: "$2M - $35M+",
+    vibe: "Quiet peninsula living, with the harbor on one side and the sound on the other.",
+    zipCode: "11963",
+  },
+  {
     name: "Bridgehampton",
     slug: "bridgehampton",
     tagline: "Where Oceanfront Meets Horse Country",
