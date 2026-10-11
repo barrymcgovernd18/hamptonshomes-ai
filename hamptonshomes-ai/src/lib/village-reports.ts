@@ -387,7 +387,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     dateModified: "2026-10-11",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/hedgerow/sold-165-surfside-drive-bridgehampton-2025.webp",
+    image: "/images/hedgerow/sold-125-mid-ocean-drive-bridgehampton-2025.webp",
     authorBox: true,
     hideCta: true,
     about: ["Bridgehampton"],
@@ -461,7 +461,7 @@ South of Montauk Highway, Bridgehampton runs from the village down to the ocean:
 
 {{figure:/images/hedgerow/sold-104-quimby-lane-bridgehampton-2026.webp|104 Quimby Lane, Bridgehampton, sold for $22.15 million in April 2026. Hedgerow represented the seller.}}
 
-**Oceanfront** is where the records are set: eight sales, a $30.75 million median, $276.5 million. 165 Surfside Drive at $58 million, where Hedgerow advised the buyer, and 125 Mid Ocean Drive at $57 million, an MLS sale without a street address. A Hedgerow transaction. 35 Dune Road sold off-market for $33.48 million on January 5, 2023. A Hedgerow transaction. 165 Surfside Drive is pictured above.
+**Oceanfront** is where the records are set: eight sales, a $30.75 million median, $276.5 million. 165 Surfside Drive at $58 million, where Hedgerow advised the buyer, and 125 Mid Ocean Drive at $57 million, an MLS sale without a street address. A Hedgerow transaction. 35 Dune Road sold off-market for $33.48 million on January 5, 2023. A Hedgerow transaction. 125 Mid Ocean Drive is pictured above.
 
 **Waterfront** on Mecox Bay and the ponds is two sales since 2023, topping out at $13.45 million.
 
@@ -568,7 +568,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     dateModified: "2026-10-11",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/hedgerow/sold-120-bay-lane-water-mill-2025.webp",
+    image: "/images/hedgerow/sold-180-rose-hill-road-water-mill-2023.webp",
     authorBox: true,
     hideCta: true,
     about: ["Water Mill"],
@@ -640,7 +640,7 @@ The market has been steady rather than spiky. Volume peaked in 2025, with 25 sal
 
 **Inland** is the volume market. It is mostly newer houses on one to three acres between the village and the bay. The top of that range now belongs to 127 Halsey Lane at $27.5 million (April 2026), 53 Fordune Drive at $24.6 million (September 2025) and 951 Flying Point Road at $22.5 million (May 2025).
 
-**Waterfront** on Mecox Bay, Hayground Cove and the ponds roughly doubles the price. 180 Pointe Mecox Lane closed at $24 million (August 2023), 217 Rose Hill Road at $20.5 million (November 2025), and 120 Bay Lane, on Mecox Bay, at $12.625 million (May 2025), pictured above. Hedgerow represented the seller at 120 Bay Lane.
+**Waterfront** on Mecox Bay, Hayground Cove and the ponds roughly doubles the price. 180 Pointe Mecox Lane closed at $24 million (August 2023), 217 Rose Hill Road at $20.5 million (November 2025), and 120 Bay Lane, on Mecox Bay, at $12.625 million (May 2025). Hedgerow represented the seller at 120 Bay Lane and at 180 Rose Hill Road, pictured above.
 
 **Oceanfront** in Water Mill almost never trades. The only oceanfront sale in this window was 1195 Flying Point Road at $14.5 million (October 2024). The village benchmarks sit just outside it:
 - 90 Jule Pond Drive sold for $105 million in 2021. Hedgerow advised the seller.
