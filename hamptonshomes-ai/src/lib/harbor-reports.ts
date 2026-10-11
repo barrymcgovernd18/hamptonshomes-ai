@@ -29,7 +29,7 @@ export const harborReportPosts: BlogPost[] = [
     dateModified: "2026-10-11",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/hedgerow/sold-8-john-street-sag-harbor-2024.webp",
+    image: "/images/hedgerow/sold-46-spring-street-sag-harbor-2023.webp",
     authorBox: true,
     hideCta: true,
     about: ["Sag Harbor"],
@@ -96,7 +96,7 @@ The median jumped from $5.5 million in 2023 to the $7.4 million to $7.8 million 
 
 **In the village**, the top sales are 186 Main Street at $16.25 million (October 2025), 100 Glover Street at $13 million (September 2025), 20 Union Street at $11.8 million (September 2025), and 100 Bay Street at $11.25 million (December 2025).
 
-**On the water**, 53 Glover Street closed at $21 million (February 2025), 8 John Street at $15.52 million (May 2024), where Hedgerow represented the seller, and 2 Bluff Point Lane at $13.5 million (March 2023). 8 John Street is pictured above. The village waterfront also appears in the separate Sag Harbor waterfront report.
+**On the water**, 53 Glover Street closed at $21 million (February 2025), 8 John Street at $15.52 million (May 2024), where Hedgerow represented the seller, and 2 Bluff Point Lane at $13.5 million (March 2023). The village waterfront, including 8 John Street, is pictured in the separate Sag Harbor waterfront report.
 
 ## Price Bands
 
