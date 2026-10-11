@@ -43,6 +43,10 @@ export default function MarketPage() {
   const marketReports = postsByDate.filter(
     (post) => post.slug !== latest?.slug && (post.category === "Market Report" || post.slug === oceanfrontSlug)
   );
+  const oceanfrontReport = marketReports.find((post) => post.slug === oceanfrontSlug);
+  const reportCards = oceanfrontReport
+    ? [oceanfrontReport, ...marketReports.filter((post) => post.slug !== oceanfrontSlug)]
+    : marketReports;
   const commentary = rest.filter((post) => post.category !== "Market Report" && post.slug !== oceanfrontSlug);
 
   const collectionJsonLd = {
@@ -119,10 +123,10 @@ export default function MarketPage() {
         <div className="frame">
           <SectionLabel n="II">Market reports</SectionLabel>
           <p data-reveal style={revealDelay(80)} className="body-copy mt-8 max-w-2xl text-ink-muted">
-            Sold records at $5 million and above, from the south-of-highway villages through Sag Harbor, North Haven, and Shelter Island. The oceanfront study sits with them.
+            The East End at $5 million and above: the ocean from Southampton to Montauk, then the villages south of the highway, Sag Harbor, North Haven, and Shelter Island.
           </p>
           <ul className="mt-14 grid gap-x-12 gap-y-16 md:mt-16 md:grid-cols-2">
-            {marketReports.map((post, i) => (
+            {reportCards.map((post, i) => (
               <li key={post.slug} data-reveal style={revealDelay((i % 4) * 70)} className={i === 0 ? "md:col-span-2" : undefined}>
                 <Link href={`/blog/${post.slug}`} className={`group block ${i === 0 ? "md:grid md:grid-cols-12 md:items-end md:gap-12" : ""}`}>
                   {post.image ? (

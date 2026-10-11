@@ -19,8 +19,6 @@ function count(label: string, n: number, detail: string, highlight = false): Blo
   return { label, value: n, display: String(n), detail, highlight, prefix: "" };
 }
 
-const noShelf = `Active listings and contracts were not part of this sold search, so this report does not include an inventory table.`;
-
 export const harborReportPosts: BlogPost[] = [
   {
     slug: "sag-harbor-village-luxury-market-overview-2026-10",
@@ -140,7 +138,7 @@ About eight in ten village sales at this level close under $10 million. Only 53 
 - **Period.** Closed sales from January 1, 2023 through October 11, 2026. The latest village closing in the search is September 24.
 - **What is included.** Homes, condominiums, and vacant land at $5 million and above. Commercial, business, and multi-family income properties are excluded. Packages and duplicate MLS entries count as one sale. 232 Main Street sold twice, in August 2024 and February 2026, and both closings are counted. 154 Redwood Road has two land sales, in 2023 and 2024.
 - **Sources.** MLS listing data and recorded deeds from the October 11, 2026 search.
-- **Limits.** These figures do not include trades that never appear in public MLS or deed records. ${noShelf}
+- **Limits.** Trades that never appear in the public MLS or deed record are outside this count.
 
 ## FAQ
 
@@ -277,8 +275,8 @@ In the village, Glover Street on Sag Harbor Cove has produced three of the top w
 - **Area.** Waterfront sales of $5 million and above in Sag Harbor, inside and outside the incorporated village. North Haven is reported separately. Waterfront follows the MLS waterfront designation.
 - **Period.** Closed sales from January 1, 2023 through October 11, 2026. The latest closing in this set is September 30.
 - **What is included.** Homes and vacant land at $5 million and above. Commercial, business, and multi-family income properties are excluded. Packages and duplicate MLS entries count as one sale.
-- **Sources.** MLS listing data and recorded deeds from the October 11, 2026 waterfront search, after North Haven rows were removed.
-- **Limits.** These figures do not include trades that never appear in public MLS or deed records. The MLS waterfront flag can include more than direct frontage. ${noShelf}
+- **Sources.** MLS listing data and recorded deeds from the October 11, 2026 waterfront search. North Haven waterfront is reported with North Haven.
+- **Limits.** Trades that never appear in the public MLS or deed record are outside this count. The waterfront designation can include more than direct frontage.
 
 ## FAQ
 
@@ -433,7 +431,7 @@ Interior sales have reached $15 million at 35 Ezekills Hollow in 2023 and $13.8 
 - **Period.** Closed sales from January 1, 2023 through October 11, 2026. The latest closing in this set is September 14.
 - **What is included.** Homes and vacant land at $5 million and above. Commercial property is excluded. Packages and duplicate MLS entries count as one sale. 8 and 10 On The Bluff is counted once, at $25.5 million.
 - **Sources.** MLS listing data and recorded deeds from the October 11, 2026 search.
-- **Limits.** These figures do not include trades that never appear in public MLS or deed records. ${noShelf}
+- **Limits.** Trades that never appear in the public MLS or deed record are outside this count.
 
 ## FAQ
 
@@ -592,7 +590,7 @@ Every sale above $7 million since 2023 has been on the water: 4 Dawn Lane, 2 Cha
 - **Period.** Closed sales from January 1, 2023 through October 11, 2026. The latest closing in this set is September 25.
 - **What is included.** Homes at $5 million and above. The search has no vacant land sale and no commercial sale at this level in the period. Duplicate MLS entries count as one sale.
 - **Sources.** MLS listing data and recorded deeds from the October 11, 2026 search.
-- **Limits.** These figures do not include trades that never appear in public MLS or deed records. ${noShelf}
+- **Limits.** Trades that never appear in the public MLS or deed record are outside this count.
 
 ## FAQ
 
@@ -647,7 +645,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     charts: {
       "sales-by-year": counts(
         "Waterfront sales by year",
-        "Shelter Island waterfront, sales at $5 million and above. The latest waterfront closing in this search is July 31, 2026.",
+        "Shelter Island waterfront, sales at $5 million and above. The latest waterfront closing is July 31, 2026.",
         [
           count("2023", 2, "$10.85M median"),
           count("2024", 2, "$9.50M median"),
@@ -723,7 +721,7 @@ Before 2026, Shelter Island saw one or two waterfront sales a year at this level
 - **Period.** Closed sales from January 1, 2023 through October 11, 2026. The latest waterfront closing is July 31.
 - **What is included.** Homes at $5 million and above. Duplicate MLS entries count as one sale.
 - **Sources.** MLS listing data and recorded deeds from the October 11, 2026 waterfront search.
-- **Limits.** These figures do not include trades that never appear in public MLS or deed records. Frontage type, whether bay, sound, harbor, or creek, is not in the export. ${noShelf}
+- **Limits.** Trades that never appear in the public MLS or deed record are outside this count. Bay, sound, harbor, and creek frontage are read together.
 
 ## FAQ
 

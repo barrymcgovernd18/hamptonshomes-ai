@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { linkifySaleMentions } from "@/lib/listing-links";
 import {
   SEO_TITLES,
   blogPosts,
@@ -72,10 +73,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function formatInline(text: string) {
   return text
-    .replace(
-      /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" class="text-ocean underline decoration-ocean/35 decoration-1 underline-offset-[5px] transition-colors hover:text-ocean-deep hover:decoration-ocean">$1</a>'
-    )
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, label: string, href: string) => {
+      const external = /^https?:\/\//i.test(href);
+      const extra = external ? ' target="_blank" rel="noopener noreferrer"' : "";
+      return `<a href="${href}" class="text-ocean underline decoration-ocean/35 decoration-1 underline-offset-[5px] transition-colors hover:text-ocean-deep hover:decoration-ocean"${extra}>${label}</a>`;
+    })
     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-ink">$1</strong>');
 }
 
@@ -187,19 +189,28 @@ function longDate(date: string) {
 }
 
 // Markdown-style renderer for article content
+function plainText(value: string) {
+  return value.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+}
+
 function renderFigure(src: string, caption: string, key: number) {
   return (
     <figure key={key} className="my-12 lg:-mx-16">
       <div className="relative aspect-[3/2] overflow-hidden bg-paper-deep">
-        <Image src={src} alt={caption} fill sizes="(max-width: 768px) 100vw, 840px" className="photo-mono object-cover" />
+        <Image src={src} alt={plainText(caption)} fill sizes="(max-width: 768px) 100vw, 840px" className="photo-mono object-cover" />
       </div>
-      {caption ? <figcaption className="mt-4 font-serif text-[15px] italic leading-[1.7] text-ink-faint">{caption}</figcaption> : null}
+      {caption ? (
+        <figcaption
+          className="mt-4 font-serif text-[15px] italic leading-[1.7] text-ink-faint"
+          dangerouslySetInnerHTML={{ __html: formatInline(caption) }}
+        />
+      ) : null}
     </figure>
   );
 }
 
 function renderContent(content: string, { dropCap: allowDropCap = true, charts }: { dropCap?: boolean; charts?: Record<string, BlogChart> } = {}) {
-  const lines = content.trim().split("\n");
+  const lines = linkifySaleMentions(content).trim().split("\n");
   const elements: React.ReactNode[] = [];
   let i = 0;
   let dropCapUsed = !allowDropCap;
@@ -242,15 +253,19 @@ function renderContent(content: string, { dropCap: allowDropCap = true, charts }
 
     if (line.startsWith("## ")) {
       elements.push(
-        <h2 key={i} className="display-3 mb-7 mt-20 border-t border-line pt-10 font-light text-ink">
-          {line.replace("## ", "")}
-        </h2>
+        <h2
+          key={i}
+          className="display-3 mb-7 mt-20 border-t border-line pt-10 font-light text-ink"
+          dangerouslySetInnerHTML={{ __html: formatInline(line.replace("## ", "")) }}
+        />
       );
     } else if (line.startsWith("### ")) {
       elements.push(
-        <h3 key={i} className="mb-4 mt-12 font-serif text-[1.55rem] italic leading-snug text-ocean">
-          {line.replace("### ", "")}
-        </h3>
+        <h3
+          key={i}
+          className="mb-4 mt-12 font-serif text-[1.55rem] italic leading-snug text-ocean"
+          dangerouslySetInnerHTML={{ __html: formatInline(line.replace("### ", "")) }}
+        />
       );
     } else if (isPipeRow(line)) {
       const tableLines = [line];

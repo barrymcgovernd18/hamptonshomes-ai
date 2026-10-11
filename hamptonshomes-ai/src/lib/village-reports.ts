@@ -63,7 +63,8 @@ export const villageReportPosts: BlogPost[] = [
 
 - Since January 2023, East Hampton south of the highway has recorded **93 sales at $5 million and above**, totaling **$1.55 billion**, at a **median of $10.9 million**.
 - **2025 was the peak year.** Twenty-eight sales carried an $11.87 million median and $548.2 million in volume. The south record for 2026 still stops on July 28: 18 sales, at a $9.50 million median.
-- **The ocean sets the ceiling.** Ten oceanfront sales posted a **$45 million median**, led by 43 East Dune Lane at $72 million in March 2026, where Hedgerow represented the seller.
+- **The largest single parcel is off-market.** 408 Further Lane closed at **$115 million** on July 31, 2025. It stands above every MLS sale in this record, and below the Cobb compound at $121.5 million.
+- **On the public record, the ocean sets the ceiling.** Ten oceanfront sales posted a **$45 million median**, led by 43 East Dune Lane at $72 million in March 2026, where Hedgerow represented the seller.
 - **The top end is closer to balance here than elsewhere.** Six listings ask $20 million or more, against about six sales a year at that level.
 
 ## East Hampton at a Glance
@@ -72,9 +73,10 @@ export const villageReportPosts: BlogPost[] = [
 |---|---|
 | Sales, Jan 2023 to Jul 28, 2026 | 93 |
 | Median sale price | $10.9 million |
-| Top sale | $72 million, 43 East Dune Lane (Mar 2026) |
+| Largest single parcel | $115 million, 408 Further Lane, off-market (Jul 31, 2025) |
+| Top MLS sale | $72 million, 43 East Dune Lane (Mar 2026) |
 | Sales in 2026, south of the highway | 18 |
-| Latest south closing in this search | July 28, 2026 |
+| Latest south closing | July 28, 2026 |
 | Active listings, Oct 10, 2026 | 23 |
 | Median asking price | $12.5 million |
 | Contracts signed since Sep 1 | 6 |
@@ -94,7 +96,7 @@ South of Montauk Highway, East Hampton runs from the village to the ocean: Lily 
 
 East Hampton South held a median above $10 million from 2023 through 2025. 2025 was the strongest, with three sales above $50 million, including 370 and 372 Further Lane at $70 million and 105 and 111 Lily Pond Lane at $66.75 million. 2026 includes the year's top sale, 43 East Dune Lane at $72 million on March 6, pictured above. No south-of-highway closing at $5 million and above has been recorded since July 28. Summer contracts such as 107 Georgica Road and 24 The Crossways have yet to close.
 
-The MLS search behind this report runs through October 11, 2026. The later East Hampton closings, including sales in early October, sit north of the highway: Springs, Northwest, Two Holes of Water Road, Old Stone Highway, and the roads around them. They are real sales. They are not part of this south count.
+Closings after July 28 that carry an East Hampton address are north of the highway, in Springs, Northwest, and along Two Holes of Water Road and Old Stone Highway. They belong with that northern market.
 
 ## Inland, Waterfront and Ocean
 
@@ -106,15 +108,17 @@ The MLS search behind this report runs through October 11, 2026. The later East 
 | **East Hampton South** | **93** | **$10.9M** | **$72.0M** | **$1,550.7M** |
 | *North of the highway, including Springs and Northwest* | *56* | *$5.95M* | *$18.4M* | *$378.9M* |
 
-**Inland** includes some of the most valuable addresses in the Hamptons that do not touch the ocean. 41 and 47 Cove Hollow Farm Road closed at $55 million in December 2025, listed as land. 121 Further Lane closed at $52 million in August 2023. 51 West End Avenue closed at $35 million in January 2023. 42 Hither Lane and 55 Middle Lane closed at $30 million in January 2026. Hedgerow represented the seller at 11 Amy's Lane ($11.2 million, February 2024) and at 86 Skimhampton Road ($8.85 million, April 2025).
+**Inland** holds addresses that never touch the ocean and still clear extraordinary prices. 121 Further Lane closed at $52 million in August 2023. 51 West End Avenue closed at $35 million in January 2023. 42 Hither Lane and 55 Middle Lane closed at $30 million in January 2026. Hedgerow represented the seller at 11 Amy's Lane ($11.2 million, February 2024) and at 86 Skimhampton Road ($8.85 million, April 2025).
 
-**Waterfront** on Georgica Pond is a single sale in this search: 24 and 36 Jeffreys Lane at $36.25 million in November 2025, where Hedgerow represented the seller.
+41 and 47 Cove Hollow Farm Road is a land sale at $55 million in December 2025, to the Peconic Land Trust. It is in the inland count. It is not ranked with the houses.
+
+**Waterfront** on Georgica Pond is one sale: 24 and 36 Jeffreys Lane at $36.25 million in November 2025, where Hedgerow represented the seller.
 
 **Oceanfront** on Lily Pond Lane, Further Lane, and the dune lanes trades at about four and a half times the inland median. Ten sales, a $45 million median, $473.2 million in all. Beyond 43 East Dune Lane, the benchmarks are 90 and 100 Lily Pond Lane at $52 million (July 2024), 201 Lily Pond Lane at $45 million (November 2023), and 33 Lily Pond Lane at $31.5 million (September 2025), where Hedgerow represented the seller. 9 West Dune Lane closed at $45 million in May 2026, a recorded deed.
 
 {{figure:/images/hedgerow/sold-33-lily-pond-lane-east-hampton-2025.webp|33 Lily Pond Lane, East Hampton, sold for $31.5 million in September 2025. Hedgerow represented the seller.}}
 
-The north-of-highway comparison is a different market: 56 sales, a $5.95 million median, $378.9 million in total, topped at $18.4 million. That row includes Springs and Northwest, which the East Hampton search folds in.
+North of the highway is a different market: 56 sales, a $5.95 million median, $378.9 million in total, topped at $18.4 million. Springs and Northwest are in that comparison.
 
 ## Fall 2026: Inventory Versus Contracts
 
@@ -132,16 +136,32 @@ The north-of-highway comparison is a different market: 56 sales, a $5.95 million
 - **Two listings carry a large share of the asking dollars.** 75 and 69 West End Road at $165 million and 100 and 90 Briar Patch Road at $85 million account for about 45 percent of the $549.5 million shelf.
 - **Fall contracts are steady.** Six deals signed between September 1 and October 9: 5 Spaeth Lane ($19.9 million last ask), 37 Cross Highway ($11.995 million), 381 Further Lane ($11.25 million), 399 Further Lane ($10.9 million), 18 Ruxton Road ($9.95 million) and 28 Pudding Hill Lane ($6.995 million). With 107 Georgica Road ($29.995 million) and 24 The Crossways ($28 million) from the summer, eight East Hampton South properties at $5 million and above are in contract.
 
-Listing and contract counts are from MLS listing data on October 10 and through October 9. They are separate from the sold search, which is why the shelf can be current on October 10 while the south sold record stops in July.
+Active listings are as of October 10, 2026. Contracts run through October 9. The south sold record stops on July 28.
 
-## Top East Hampton South Sales Since 2023
+## The Largest Trades
+
+Off-market trades rank above the MLS list. They are not folded into the 93-sale median.
+
+| Address | Price | Record |
+|---|---|---|
+| 408 Further Lane | $115,000,000 | Off-market, July 31, 2025 |
+| 26 and 32 Windmill Lane | $91,500,000 | Off-market, January 2023 |
+| 43 East Dune Lane | $72,000,000 | MLS, March 2026. Hedgerow represented the seller. |
+| 442 Further Lane | $51,000,000 | Off-market |
+| 294 Further Lane | $48,500,000 | Off-market |
+| 298 Further Lane | $40,000,000 | Off-market |
+| 21 Spaeth Lane | $29,600,000 | Off-market |
+| 31 Two Mile Hollow Road | $29,000,000 | Off-market |
+
+408 Further Lane is the largest single parcel in East Hampton. The Hamptons record remains the Cobb compound, at $121.5 million. No Hedgerow role is claimed on the off-market trades above.
+
+## Top Public-Record Sales Since 2023
 
 | Address | Price | Closed | Setting |
 |---|---|---|---|
 | 43 East Dune Lane | $72,000,000 | Mar 2026 | Oceanfront |
 | 370 and 372 Further Lane | $70,000,000 | Feb 2025 | Oceanfront |
 | 105 and 111 Lily Pond Lane | $66,750,000 | Aug 2025 | Oceanfront |
-| 41 and 47 Cove Hollow Farm Road (land) | $55,000,000 | Dec 2025 | Inland |
 | 90 and 100 Lily Pond Lane | $52,000,000 | Jul 2024 | Oceanfront |
 | 121 Further Lane | $52,000,000 | Aug 2023 | Inland |
 | 201 Lily Pond Lane | $45,000,000 | Nov 2023 | Oceanfront |
@@ -149,11 +169,11 @@ Listing and contract counts are from MLS listing data on October 10 and through 
 | 185 Further Lane | $38,000,000 | Sep 2024 | Oceanfront |
 | 24 and 36 Jeffreys Lane | $36,250,000 | Nov 2025 | Waterfront |
 
-*MLS sold data, October 11, 2026, plus recorded deeds that do not appear in that search. 9 West Dune Lane is a recorded deed. 43 East Dune Lane and 24 and 36 Jeffreys Lane: Hedgerow represented the seller. 33 Lily Pond Lane: Hedgerow represented the seller.*
+*Public MLS and recorded deeds through October 11, 2026. 9 West Dune Lane is a recorded deed. Hedgerow represented the seller at 43 East Dune Lane, 24 and 36 Jeffreys Lane, and 33 Lily Pond Lane.*
 
 {{figure:/images/hedgerow/sold-24-36-jeffreys-lane-east-hampton-2025.webp|24 and 36 Jeffreys Lane, on Georgica Pond, sold for $36.25 million in November 2025. Hedgerow represented the seller.}}
 
-Six closings are in the recorded deeds and not in the MLS search: 9 West Dune Lane at $45 million (May 2026), 35 East Dune Lane at $25 million and 39 East Dune Lane at $15 million (May 2025), 54 Lee Avenue at $22.4 million (April 2025), 5 Hook Pond Lane at $7 million (February 2025), and 28 Ocean Avenue at $6.315 million (March 2026). They are recorded deeds, not a claim about how the sale was marketed.
+Six closings appear in the deed record and not in MLS: 9 West Dune Lane at $45 million (May 2026), 35 East Dune Lane at $25 million and 39 East Dune Lane at $15 million (May 2025), 54 Lee Avenue at $22.4 million (April 2025), 5 Hook Pond Lane at $7 million (February 2025), and 28 Ocean Avenue at $6.315 million (March 2026).
 
 ## For Buyers and Sellers
 
@@ -170,11 +190,11 @@ Six closings are in the recorded deeds and not in the MLS search: 9 West Dune La
 ## How These Figures Were Measured
 
 - **Area.** Closed sales of $5 million and above in East Hampton Village and East Hampton south of Montauk Highway, from January 4, 2023 through October 11, 2026. The latest south closing is July 28. Waterfront means pond frontage. Packages count as one sale, and listings sold under more than one MLS number are counted once.
-- **What is included.** Homes and four vacant land sales. Commercial property and sales to government or land trusts are excluded. Cove Hollow Farm at $55 million is counted as land, the way it was listed.
-- **North comparison.** Fifty-six sales from the same East Hampton search north of Montauk Highway, including Springs and Northwest. It is not a second south market.
-- **Sources.** MLS listing data, checked against a full MLS sold search on October 11, 2026, and supplemented by recorded deeds for sales that did not appear in MLS. Where the two differ, the MLS price is used. The six recorded deeds are named above.
-- **Listings and contracts.** Active listings reflect MLS listing data on October 10, 2026. A parcel offered under two listings is counted once. Contracts reflect MLS listing data through October 9, 2026.
-- **Limits.** These figures do not include trades that never appear in public MLS or deed records. Deed records are complete through late July 2026. Nothing in this search adds a south-of-highway East Hampton sale after July 28, 2026.
+- **What is included.** Homes and four vacant land sales in the 93. Commercial property is excluded. Cove Hollow Farm at $55 million is counted as land, and it is kept out of the house ranking.
+- **North comparison.** Fifty-six sales north of Montauk Highway, including Springs and Northwest.
+- **Sources.** MLS sold data through October 11, 2026, recorded deeds for sales that did not appear in MLS, and the off-market trades named above. Where an MLS price and a deed price differ, the MLS price is used.
+- **Listings and contracts.** Active listings are as of October 10, 2026. A parcel offered under two listings is counted once. Contracts run through October 9, 2026.
+- **Limits.** The 93-sale median is the public MLS and recorded-deed record south of the highway. The off-market trades are shown separately and are not in that median. No south-of-highway closing has been added after July 28, 2026.
 
 ## FAQ
 
@@ -184,7 +204,7 @@ Across 93 sales at $5 million and above south of the highway from January 2023 t
 
 ### What is the most expensive home sold in East Hampton recently?
 
-43 East Dune Lane closed at $72 million in March 2026, the top East Hampton South sale since 2023. Hedgerow represented the seller. It is pictured at the top of this report.
+408 Further Lane closed at $115 million on July 31, 2025, off-market. It is the largest single parcel in East Hampton, and it is below the Cobb compound at $121.5 million. On the public record, 43 East Dune Lane closed at $72 million in March 2026. Hedgerow represented the seller.
 
 ### How many luxury homes are for sale in East Hampton this fall?
 
@@ -477,7 +497,7 @@ South of Montauk Highway, Bridgehampton runs from the village down to the ocean:
 | **Bridgehampton South** | **64** | **$10.2M** | **$58.0M** | **$846.9M** |
 | *North of the highway* | *41* | *$8.45M* | *$48.0M* | *$402.4M* |
 
-**Inland** carries the count, from village lanes to estate parcels on Ocean Road and Highland Terrace. The top inland sales are 1240 Ocean Road at $30 million (2023), 72 Highland Terrace at $24.3 million (July 2023), and 104 Quimby Lane at $22.15 million (April 2026). The MLS date on 1240 Ocean Road is a January 1 placeholder, so the year is 2023 and the month is not stated here.
+**Inland** carries the count, from village lanes to estate parcels on Ocean Road and Highland Terrace. The top inland sales are 1240 Ocean Road at $30 million (2023), 72 Highland Terrace at $24.3 million (July 2023), and 104 Quimby Lane at $22.15 million (April 2026). 1240 Ocean Road closed in 2023. The month is not confirmed.
 
 {{figure:/images/hedgerow/sold-104-quimby-lane-bridgehampton-2026.webp|104 Quimby Lane, Bridgehampton, sold for $22.15 million in April 2026. Hedgerow represented the seller.}}
 
@@ -509,6 +529,7 @@ North of the highway, the same Bridgehampton search shows 41 sales, an $8.45 mil
 |---|---|---|---|
 | 165 Surfside Drive | $58,000,000 | Nov 2025 | Oceanfront |
 | 125 Mid Ocean Drive | $57,000,000 | Oct 2025 | Oceanfront |
+| 35 Dune Road | $33,480,000 | Off-market | Oceanfront |
 | 67 Surfside Drive | $32,000,000 | Apr 2025 | Oceanfront |
 | 1240 Ocean Road | $30,000,000 | 2023 | Inland |
 | 55 Surfside Drive | $29,500,000 | May 2024 | Oceanfront |
@@ -518,7 +539,7 @@ North of the highway, the same Bridgehampton search shows 41 sales, an $8.45 mil
 | 220 Dune Road | $21,000,000 | Feb 2024 | Oceanfront |
 | 474 Jobs Lane | $18,200,000 | Sep 2025 | Inland |
 
-*MLS sold data, October 11, 2026, plus recorded deeds. 125 Mid Ocean Drive was reported in MLS without a street address. A Hedgerow transaction. 1240 Ocean Road is shown by year because the MLS date is a placeholder.*
+*Public MLS and recorded deeds through October 11, 2026. 35 Dune Road is off-market and sits outside the 64-sale median. 125 Mid Ocean Drive was reported in MLS without a street address. A Hedgerow transaction. 1240 Ocean Road closed in 2023. The month is not confirmed.*
 
 ## Hedgerow in Bridgehampton
 
@@ -526,7 +547,7 @@ Hedgerow had a role in 13 of these 64 sales, $281.7 million, about a third of th
 
 {{figure:/images/hedgerow/sold-946-ocean-road-bridgehampton-2026.webp|946 Ocean Road, Bridgehampton, sold for $10.3 million in April 2026. Hedgerow represented both sides.}}
 
-One closing is in the recorded deeds and not in the MLS search: 340 Sagaponack Road at $5.45 million, in 2026. The month is not stated, because the deed month used here is not a confirmed closing month. 1 Mecox Field Lane, 223 Church Lane, and 77 School Street are in the MLS search and are counted as MLS sales.
+340 Sagaponack Road closed at $5.45 million in 2026, a recorded deed. The closing month is not confirmed. 1 Mecox Field Lane, 223 Church Lane, and 77 School Street are MLS sales.
 
 ## For Buyers and Sellers
 
@@ -547,7 +568,7 @@ One closing is in the recorded deeds and not in the MLS search: 340 Sagaponack R
 - **North comparison.** Forty-one sales from the same search north of the highway: median $8.45 million, total $402.4 million, top sale $48 million.
 - **Sources.** MLS listing data, checked against a full MLS sold search on October 11, 2026, plus the recorded deed at 340 Sagaponack Road. Where an MLS price and a deed price differ, the MLS price is used.
 - **Listings and contracts.** Active listings reflect MLS listing data on October 10, 2026. A property offered both alone and as a package is counted once. Contracts reflect MLS listing data through October 9, 2026.
-- **Limits.** These figures do not include trades that never appear in public MLS or deed records. MLS sales are checked through October 11, 2026. Recorded deeds are complete through late July 2026. The latest south closing in this search is September 25.
+- **Limits.** The 64-sale median is the public MLS and recorded-deed record. 35 Dune Road is shown with the largest trades and is not in that median. The latest south closing is September 25, 2026.
 
 ## FAQ
 
@@ -578,7 +599,6 @@ Whether you are weighing a sale or looking for a house that may never reach the 
 ## Related
 
 - [Bridgehampton town page](/bridgehampton)
-- [Bridgehampton Non-Water Luxury Market Overview 2026](/blog/bridgehampton-non-water-market-overview-2026-09)
 - [Sagaponack Luxury Market Overview 2026](/blog/sagaponack-luxury-market-overview-2026-10)
 - [Water Mill Luxury Market Overview 2026](/blog/water-mill-luxury-market-overview-2026-10)
 - [Hamptons Oceanfront, 2021 to 2026](/blog/hamptons-oceanfront-market-2021-2026)
@@ -781,7 +801,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     metaDescription:
       "Wainscott south of the highway: 22 sales at $5 million and above since 2023, a $9.05 million median, led by 115 Beach Lane at $59 million.",
     charts: {
-      "median-by-year": years("Wainscott south of Montauk Highway, sales at $5 million and above. The latest sale in this search closed June 18, 2026.", [
+      "median-by-year": years("Wainscott south of Montauk Highway, sales at $5 million and above. The latest sale closed June 18, 2026.", [
         { label: "2023", value: 7.34, display: "$7.34M", detail: "4 sales" },
         { label: "2024", value: 9.0, display: "$9.00M", detail: "5 sales" },
         { label: "2025", value: 11.65, display: "$11.65M", detail: "8 sales" },
@@ -884,7 +904,7 @@ The ocean accounts for three sales and 39 percent of the dollars: 115 Beach Lane
 ## How These Figures Were Measured
 
 - **Area.** Closed sales of $5 million and above in Wainscott south of Montauk Highway, from January 2023 through June 18, 2026, the latest south closing in the October 11 search. Packages count as one sale. Sayres Path stays in Wainscott when that is the MLS city.
-- **What is included.** Homes and three vacant land sales. Commercial property is excluded. Oceanfront in this search is 115, 111, and 95 Beach Lane. Georgica Pond is 4 Georgica Association Road, counted on its own, not inland.
+- **What is included.** Homes and three vacant land sales. Commercial property is excluded. Oceanfront here is 115, 111, and 95 Beach Lane. Georgica Pond is 4 Georgica Association Road, counted on its own, not inland.
 - **Sources.** MLS listing data, checked against a full MLS sold search on October 11, 2026, plus the recorded deeds at 57 Wainscott Hollow Road and 70 Westwood Road. Where an MLS price and a deed price differ, the MLS price is used.
 - **Listings and contracts.** MLS listing data on October 10, 2026, for listings, and through October 9, 2026, for contracts.
 - **Limits.** These figures do not include trades that never appear in public MLS or deed records. Recorded deeds are complete through late July 2026. The search shows no south closing after June 18, 2026. There is no north-of-highway comparison row in this snapshot.

@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
         destination: "/blog/sag-harbor-village-luxury-market-overview-2026-10",
         statusCode: 301,
       },
+      {
+        source: "/blog/bridgehampton-non-water-market-overview-2026-09",
+        destination: "/blog/bridgehampton-luxury-market-overview-2026-10",
+        statusCode: 301,
+      },
     ];
   },
 };
