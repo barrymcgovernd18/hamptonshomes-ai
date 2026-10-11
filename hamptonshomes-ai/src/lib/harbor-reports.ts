@@ -24,7 +24,7 @@ export const harborReportPosts: BlogPost[] = [
     slug: "sag-harbor-village-luxury-market-overview-2026-10",
     title: "Sag Harbor Village Luxury Real Estate Market Overview 2026",
     excerpt:
-      "Forty-eight sales at $5 million and above in Sag Harbor Village since January 2023, a median of $6.3 million, with 15 already in 2026 and the village record at 53 Glover Street.",
+      "Fifty-one sales at $5 million and above in Sag Harbor Village since January 2023, a median of $6.3 million, with 17 already in 2026 and the village record at 53 Glover Street.",
     date: "2026-10-11",
     dateModified: "2026-10-11",
     author: "Barry McGovern",
@@ -36,20 +36,20 @@ export const harborReportPosts: BlogPost[] = [
     keywords:
       "Sag Harbor Village real estate, Sag Harbor luxury homes, Sag Harbor market 2026, Glover Street, Sag Harbor waterfront",
     metaDescription:
-      "Sag Harbor Village: 48 sales at $5 million and above since 2023, a $6.3 million median, and a $21 million waterfront record at 53 Glover Street.",
+      "Sag Harbor Village: 51 sales at $5 million and above since 2023, a $6.3 million median, and a $21 million waterfront record at 53 Glover Street.",
     charts: {
       "median-by-year": years("Sag Harbor Village, sales at $5 million and above. 2026 runs through September.", [
         { label: "2023", value: 5.5, display: "$5.50M", detail: "8 sales" },
         { label: "2024", value: 7.4, display: "$7.40M", detail: "9 sales" },
-        { label: "2025", value: 7.78, display: "$7.78M", detail: "16 sales" },
-        { label: "2026", value: 6.0, display: "$6.00M", detail: "15 sales", highlight: true },
+        { label: "2025", value: 7.78, display: "$7.78M", detail: "17 sales" },
+        { label: "2026", value: 6.0, display: "$6.00M", detail: "17 sales", highlight: true },
       ]),
       "sales-by-band": counts(
         "Sales by price band",
         "Sag Harbor Village, January 2023 through September 2026. The highlighted band is where most of the sales landed.",
         [
-          count("$5M to $10M", 39, "39 sales", true),
-          count("$10M to $20M", 8, "8 sales"),
+          count("$5M to $10M", 41, "41 sales", true),
+          count("$10M to $20M", 9, "9 sales"),
           count("$20M and above", 1, "1 sale"),
         ]
       ),
@@ -57,21 +57,21 @@ export const harborReportPosts: BlogPost[] = [
     content: `
 ## Key Takeaways
 
-- Since January 2023, Sag Harbor Village has recorded **48 sales at $5 million and above**, totaling **$373.8 million**, at a **median of $6.3 million**.
-- **2026 is on pace for a record count.** Fifteen sales closed through September, against 16 in all of 2025, though at a lower median ($6.0 million versus $7.8 million).
-- **2025 set the high-water mark for value**, $151.1 million across 16 sales, with six closings above $11 million.
+- Since January 2023, Sag Harbor Village has recorded **51 sales at $5 million and above**, totaling **$400.8 million**, at a **median of $6.3 million**.
+- **2026 has already matched 2025's count.** Seventeen sales closed through September, against 17 in all of 2025, at a lower median ($6.0 million versus $7.8 million).
+- **2025 still leads on dollars**, $159.6 million across 17 sales. The village record remains 53 Glover Street at $21 million.
 - **The water sets the ceiling.** Thirteen waterfront sales on the cove, the harbor, and Bluff Point carry a $6.8 million median and include the village record, 53 Glover Street at $21 million.
 
 ## Sag Harbor Village at a Glance
 
 | Sag Harbor Village, $5M and above | |
 |---|---|
-| Sales, Jan 2023 to Oct 11, 2026 | 48 |
+| Sales, Jan 2023 to Oct 11, 2026 | 51 |
 | Median sale price | $6.3 million |
 | Top sale | $21 million, 53 Glover Street (Feb 2025) |
-| Sales in 2026 so far | 15, at a $6.0 million median |
+| Sales in 2026 so far | 17, at a $6.0 million median |
 
-This report is the incorporated village only. North Haven is a separate report. Sag Harbor waterfront, village and town together, is a separate report as well. Thirteen of these 48 sales are also in that waterfront count.
+This report is the incorporated village only. North Haven is a separate report. Sag Harbor waterfront, village and town together, is a separate report as well. Thirteen of these 51 sales are also in that waterfront count.
 
 ## The Price Trend
 
@@ -81,18 +81,18 @@ This report is the incorporated village only. North Haven is a separate report. 
 |---|---|---|---|
 | 2023 | 8 | $5.50M | $53.7M |
 | 2024 | 9 | $7.40M | $75.3M |
-| 2025 | 16 | $7.78M | $151.1M |
-| 2026 (to Sep) | 15 | $6.00M | $93.7M |
+| 2025 | 17 | $7.78M | $159.6M |
+| 2026 (to Sep) | 17 | $6.00M | $112.2M |
 
-The median jumped from $5.5 million in 2023 to the $7.4 million to $7.8 million range in 2024 and 2025, when Main Street, Glover Street, Union Street, and Bay Street produced the village's biggest trades. 2026 has been about breadth rather than height: 15 sales, all between $5 million and $8.8 million, led by 232 Main Street at $8.8 million and 5 Green Street at $7.5 million.
+The median jumped from $5.5 million in 2023 to the $7.4 million to $7.8 million range in 2024 and 2025. 2026 is broader, with one exception: 27 Suffolk Street at $13.5 million, off-market, in July.
 
 ## In the Village and on the Water
 
 | Setting | Sales $5M+ | Median | Top sale | Total |
 |---|---|---|---|---|
-| In-village | 35 | $6.05M | $16.25M | $249.3M |
+| In-village | 38 | $6.05M | $16.25M | $276.3M |
 | Waterfront (cove, harbor, Bluff Point, Redwood) | 13 | $6.80M | $21.0M | $124.5M |
-| **Sag Harbor Village** | **48** | **$6.27M** | **$21.0M** | **$373.8M** |
+| **Sag Harbor Village** | **51** | **$6.3M** | **$21.0M** | **$400.8M** |
 
 **In the village**, the top sales are 186 Main Street at $16.25 million (October 2025), 100 Glover Street at $13 million (September 2025), 20 Union Street at $11.8 million (September 2025), and 100 Bay Street at $11.25 million (December 2025).
 
@@ -104,8 +104,8 @@ The median jumped from $5.5 million in 2023 to the $7.4 million to $7.8 million 
 
 | Price band | Sales since Jan 2023 |
 |---|---|
-| $5M to $10M | 39 |
-| $10M to $20M | 8 |
+| $5M to $10M | 41 |
+| $10M to $20M | 9 |
 | $20M and above | 1 |
 
 About eight in ten village sales at this level close under $10 million. Only 53 Glover Street has cleared $20 million.
@@ -117,6 +117,7 @@ About eight in ten village sales at this level close under $10 million. Only 53 
 | 53 Glover Street | $21,000,000 | Feb 2025 | Waterfront |
 | 186 Main Street | $16,250,000 | Oct 2025 | In-village |
 | 8 John Street | $15,518,174 | May 2024 | Waterfront |
+| 27 Suffolk Street | $13,500,000 | Jul 14, 2026 | In-village, off-market |
 | 2 Bluff Point Lane | $13,500,000 | Mar 2023 | Waterfront |
 | 100 Glover Street | $13,000,000 | Sep 2025 | In-village |
 | 20 Union Street | $11,800,000 | Sep 2025 | In-village |
@@ -125,11 +126,11 @@ About eight in ten village sales at this level close under $10 million. Only 53 
 | 37 Glover Street | $10,900,000 | Apr 2024 | Waterfront |
 | 62 West Water Street | $9,300,000 | Oct 2025 | Waterfront |
 
-*MLS listing data and recorded deeds, October 11, 2026.* Hedgerow represented the seller at 8 John Street.
+*27 Suffolk Street sold off-market on July 14, 2026, recorded deed. Also in the count, and not in MLS: 90 Glover Street, vacant land, $8.5 million on April 11, 2025, and 120 Glover Street, $5 million on August 31, 2026. Water frontage is not confirmed on either, so they are not in the waterfront report. Hedgerow represented the seller at 8 John Street.*
 
 ## For Buyers and Sellers
 
-- **Buyers** will find the deepest part of the market between $5 million and $7.5 million for a renovated village house. Thirty-four of the 48 sales closed in that range. Every sale above $10 million has been on the water or on Main, Glover, Union, or Bay Street.
+- **Buyers** will find the deepest part of the market between $5 million and $7.5 million for a renovated village house. Sales above $10 million have been on the water or on Main, Glover, Union, Bay, or Suffolk Street.
 - **Sellers** are looking at a broad 2026 market, with a sale at $5 million or more about every two and a half weeks. Pricing above $10 million needs water or a top Main Street, Glover Street, or Union Street setting.
 
 ## How These Figures Were Measured
@@ -144,7 +145,7 @@ About eight in ten village sales at this level close under $10 million. Only 53 
 
 ### What is the median price of a luxury home in Sag Harbor Village?
 
-Across 48 sales at $5 million and above from January 2023 through October 11, 2026, the median was about $6.3 million.
+Across 51 sales at $5 million and above from January 2023 through October 11, 2026, the median was about $6.3 million.
 
 ### What is the most expensive home sold in Sag Harbor Village recently?
 
@@ -152,7 +153,7 @@ Across 48 sales at $5 million and above from January 2023 through October 11, 20
 
 ### How busy is the Sag Harbor Village luxury market in 2026?
 
-Fifteen sales at $5 million and above closed from January through September 2026, nearly matching the 16 in all of 2025.
+Seventeen sales at $5 million and above closed from January through September 2026, matching the 17 in all of 2025.
 
 ### Who is Barry McGovern?
 
@@ -311,7 +312,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     slug: "north-haven-luxury-market-2026-10",
     title: "North Haven Luxury Real Estate Market 2026",
     excerpt:
-      "Twenty-five sales at $5 million and above in North Haven since January 2023, a median of $8.25 million, led by 6 Bay View Court at $34.5 million.",
+      "Twenty-seven sales at $5 million and above in North Haven since January 2023, a median of about $8.25 million, led by 6 Bay View Court at $34.5 million.",
     date: "2026-10-11",
     dateModified: "2026-10-11",
     author: "Barry McGovern",
@@ -323,40 +324,40 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     keywords:
       "North Haven real estate, North Haven luxury homes, North Haven market 2026, On The Bluff, Forest Road, North Haven waterfront",
     metaDescription:
-      "North Haven: 25 sales at $5 million and above since 2023, an $8.25 million median, led by 6 Bay View Court at $34.5 million.",
+      "North Haven: 27 sales at $5 million and above since 2023, an $8.25 million median, led by 6 Bay View Court at $34.5 million.",
     charts: {
       "median-by-year": years("North Haven, sales at $5 million and above.", [
         { label: "2023", value: 10.4, display: "$10.40M", detail: "5 sales" },
         { label: "2024", value: 9.96, display: "$9.96M", detail: "9 sales" },
-        { label: "2025", value: 6.33, display: "$6.33M", detail: "4 sales" },
-        { label: "2026", value: 8.25, display: "$8.25M", detail: "7 sales", highlight: true },
+        { label: "2025", value: 6.33, display: "$6.33M", detail: "5 sales" },
+        { label: "2026", value: 8.25, display: "$8.25M", detail: "8 sales", highlight: true },
       ]),
       "setting": {
         title: "Median by setting",
         caption: "North Haven, January 2023 through September 2026. Waterfront is the higher bar.",
         rows: [
           { label: "Waterfront", value: 10.4, display: "$10.40M", detail: "13 sales", highlight: true },
-          { label: "Interior", value: 6.31, display: "$6.31M", detail: "12 sales" },
+          { label: "Interior", value: 6.31, display: "$6.31M", detail: "14 sales" },
         ],
       },
     },
     content: `
 ## Key Takeaways
 
-- Since January 2023, North Haven has recorded **25 sales at $5 million and above**, totaling **$264.9 million**, at a **median of $8.25 million**.
+- Since January 2023, North Haven has recorded **27 sales at $5 million and above**, totaling **$283.0 million**, at a **median of about $8.25 million**.
 - **6 Bay View Court is the record** at $34.5 million (May 2024).
 - **On The Bluff is the address of the moment.** Three trades since December 2024 total $52.9 million: 26 On The Bluff at $12.5 million, 24 On The Bluff at $14.91 million, and 8 and 10 On The Bluff, a land assemblage, at $25.5 million.
-- **2026 is already the second-biggest year**, with seven sales and $80.9 million through September.
-- Hedgerow had a role in four of the 25 sales, $37.9 million in volume.
+- **2026 is already the second-biggest year**, with eight sales and $89.0 million through September.
+- Hedgerow had a role in four of the 27 sales, $37.9 million in volume.
 
 ## North Haven at a Glance
 
 | North Haven, $5M and above | |
 |---|---|
-| Sales, Jan 2023 to Oct 11, 2026 | 25 |
+| Sales, Jan 2023 to Oct 11, 2026 | 27 |
 | Median sale price | $8.25 million |
 | Top sale | $34.5 million, 6 Bay View Court (May 2024) |
-| Sales in 2026 so far | 7, at an $8.25 million median |
+| Sales in 2026 so far | 8, at an $8.25 million median |
 
 North Haven is the incorporated village between Sag Harbor and Shelter Island. Sag Harbor Village and Sag Harbor waterfront are separate reports. This count does not include them.
 
@@ -368,10 +369,10 @@ North Haven is the incorporated village between Sag Harbor and Shelter Island. S
 |---|---|---|---|
 | 2023 | 5 | $10.40M | $50.4M |
 | 2024 | 9 | $9.96M | $105.5M |
-| 2025 | 4 | $6.33M | $28.1M |
-| 2026 (to Sep) | 7 | $8.25M | $80.9M |
+| 2025 | 5 | $6.33M | $38.1M |
+| 2026 (to Sep) | 8 | $8.25M | $89.0M |
 
-2024 was the volume peak at $105.5 million, carried by 6 Bay View Court. 2025 was quieter at the top, with four sales and none above $10.13 million. 2026 has rebounded with three sales above $13.5 million: 8 and 10 On The Bluff at $25.5 million, 24 On The Bluff at $14.91 million, and 29 Barclay Drive at $13.8 million in September.
+2024 remains the dollar peak, carried by 6 Bay View Court. 2026 is second, at $89.0 million. Two off-market deeds are now in the count: 37 Mashomuck Drive at $10 million on September 12, 2025, and 9 Seaponack Drive at $8.125 million on June 25, 2026. Neither changes the record.
 
 ## The Bayfront and the Interior
 
@@ -380,8 +381,8 @@ North Haven is the incorporated village between Sag Harbor and Shelter Island. S
 | Setting | Sales $5M+ | Median | Top sale | Total |
 |---|---|---|---|---|
 | Waterfront | 13 | $10.40M | $34.5M | $168.7M |
-| Interior | 12 | $6.31M | $15.0M | $96.1M |
-| **North Haven** | **25** | **$8.25M** | **$34.5M** | **$264.9M** |
+| Interior | 14 | $6.31M | $15.0M | $114.2M |
+| **North Haven** | **27** | **$8.25M** | **$34.5M** | **$283.0M** |
 
 North Haven is a peninsula village, and frontage on the bays and Shelter Island Sound drives its top prices. Waterfront sales carry a $10.4 million median, about 65 percent above the interior.
 
@@ -397,8 +398,8 @@ Interior sales have reached $15 million at 35 Ezekills Hollow in 2023 and $13.8 
 
 | Price band | Sales since Jan 2023 |
 |---|---|
-| $5M to $10M | 14 |
-| $10M to $20M | 9 |
+| $5M to $10M | 15 |
+| $10M to $20M | 10 |
 | $20M and above | 2 |
 
 ## Top North Haven Sales Since 2023
@@ -416,9 +417,10 @@ Interior sales have reached $15 million at 35 Ezekills Hollow in 2023 and $13.8 
 | 20 Forest Road (land) | $10,995,000 | Mar 2024 | Waterfront |
 | 59 and 61 Ferry Road | $10,400,000 | Dec 2023 | Waterfront |
 | 5 Widow Coopers Path | $10,125,000 | Oct 2025 | Waterfront |
+| 37 Mashomuck Drive | $10,000,000 | Sep 12, 2025 | Interior, off-market |
 | 56 Forest Road | $9,960,000 | Aug 2024 | Waterfront |
 
-*MLS listing data and recorded deeds, October 11, 2026.* Hedgerow represented the seller at 48 Forest Road, 20 Forest Road, and 11 South Harbor Drive, and represented the buyer at 10 Meadowbrook Way ($6.5 million, land, October 2025). 8 and 10 On The Bluff is one sale. The two lot entries from the same day are not counted separately.
+*37 Mashomuck Drive sold off-market on September 12, 2025, recorded deed, $10 million. 9 Seaponack Drive sold off-market on June 25, 2026, recorded deed, $8.125 million. Both are counted with the interior. Hedgerow represented the seller at 48 Forest Road, 20 Forest Road, and 11 South Harbor Drive, and represented the buyer at 10 Meadowbrook Way ($6.5 million, land, October 2025). 8 and 10 On The Bluff is one sale.*
 
 ## For Buyers and Sellers
 
@@ -437,7 +439,7 @@ Interior sales have reached $15 million at 35 Ezekills Hollow in 2023 and $13.8 
 
 ### What is the median price of a luxury home in North Haven?
 
-Across 25 sales at $5 million and above from January 2023 through October 11, 2026, the median was $8.25 million.
+Across 27 sales at $5 million and above from January 2023 through October 11, 2026, the median was about $8.25 million.
 
 ### What is the most expensive home sold in North Haven recently?
 
@@ -577,7 +579,7 @@ Every sale above $7 million since 2023 has been on the water: 4 Dawn Lane, 2 Cha
 | 29 East Brander Parkway | $5,150,000 | Jul 2026 | Waterfront |
 | 79 North Midway Road | $5,100,000 | Dec 2025 | Inland |
 
-*MLS listing data and recorded deeds, October 11, 2026.* Hedgerow represented the seller at 1 Pandion Road and 33 Dinah Rock Road. 41 Manhanset Road is in the Village of Dering Harbor and is included. 2 Charlie's Lane and 1 Pandion Road are counted as two closings.
+*MLS sold data, October 11, 2026. Shelter Island deeds were not in the South Fork deed feed, so this table is MLS only.* Hedgerow represented the seller at 1 Pandion Road and 33 Dinah Rock Road. 41 Manhanset Road is in the Village of Dering Harbor and is included. 2 Charlie's Lane and 1 Pandion Road are counted as two closings.
 
 ## For Buyers and Sellers
 
@@ -589,8 +591,8 @@ Every sale above $7 million since 2023 has been on the water: 4 Dawn Lane, 2 Cha
 - **Area.** Sales of $5 million and above on Shelter Island, including Shelter Island Heights and the Village of Dering Harbor.
 - **Period.** Closed sales from January 1, 2023 through October 11, 2026. The latest closing in this set is September 25.
 - **What is included.** Homes at $5 million and above. The search has no vacant land sale and no commercial sale at this level in the period. Duplicate MLS entries count as one sale.
-- **Sources.** MLS listing data and recorded deeds from the October 11, 2026 search.
-- **Limits.** Trades that never appear in the public MLS or deed record are outside this count.
+- **Sources.** MLS sold data from the October 11, 2026 search. The deed feed used for the South Fork villages does not cover Shelter Island, so this count is MLS only.
+- **Limits.** Off-market trades that never appear in MLS are outside this count.
 
 ## FAQ
 
@@ -708,7 +710,7 @@ Before 2026, Shelter Island saw one or two waterfront sales a year at this level
 | 21 Thompson Road | $5,700,000 | Apr 2026 |
 | 29 East Brander Parkway | $5,150,000 | Jul 2026 |
 
-*MLS listing data and recorded deeds, October 11, 2026.* Hedgerow represented the seller at 1 Pandion Road. 2 Charlie's Lane and 1 Pandion Road are counted as two closings.
+*MLS sold data, October 11, 2026.* Hedgerow represented the seller at 1 Pandion Road. 2 Charlie's Lane and 1 Pandion Road are counted as two closings.
 
 ## For Buyers and Sellers
 
@@ -720,8 +722,8 @@ Before 2026, Shelter Island saw one or two waterfront sales a year at this level
 - **Area.** Waterfront sales of $5 million and above on Shelter Island, including Shelter Island Heights and the Village of Dering Harbor. Waterfront follows the MLS waterfront designation. This report is separate from the island-wide count.
 - **Period.** Closed sales from January 1, 2023 through October 11, 2026. The latest waterfront closing is July 31.
 - **What is included.** Homes at $5 million and above. Duplicate MLS entries count as one sale.
-- **Sources.** MLS listing data and recorded deeds from the October 11, 2026 waterfront search.
-- **Limits.** Trades that never appear in the public MLS or deed record are outside this count. Bay, sound, harbor, and creek frontage are read together.
+- **Sources.** MLS sold data from the October 11, 2026 waterfront search. Shelter Island deeds were not in the South Fork deed feed.
+- **Limits.** Off-market trades that never appear in MLS are outside this count. Bay, sound, harbor, and creek frontage are read together.
 
 ## FAQ
 
