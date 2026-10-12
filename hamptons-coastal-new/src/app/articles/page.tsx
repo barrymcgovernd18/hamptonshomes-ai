@@ -22,23 +22,22 @@ export default async function ArticlesPage({
   })
 
   return (
-    <div className="px-6 py-12">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-12">
-          <h1 className="font-serif text-3xl md:text-4xl text-cream mb-4">Articles</h1>
-          <p className="text-cream/40 text-lg">
+    <div className="px-6 py-12 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-14">
+          <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-ocean">Archive</p>
+          <h1 className="font-serif text-4xl text-ink md:text-6xl">Articles</h1>
+          <p className="mt-4 text-lg text-ink-muted">
             Luxury real estate news and market intelligence.
           </p>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap gap-6 mb-12 pb-6 border-b border-white/5">
-          <div className="flex items-center gap-3">
-            <span className="text-cream/30 text-xs tracking-[0.2em] uppercase">Market</span>
+        <div className="mb-12 flex flex-wrap gap-8 border-b border-line pb-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-ink-faint">Market</span>
             <Link
               href="/articles"
-              className={`text-sm ${!searchParams.market ? 'text-gold' : 'text-cream/50 hover:text-cream'} transition-colors`}
+              className={`text-sm transition-colors ${!searchParams.market ? 'text-ocean' : 'text-ink-muted hover:text-ink'}`}
             >
               All
             </Link>
@@ -46,17 +45,17 @@ export default async function ArticlesPage({
               <Link
                 key={market.id}
                 href={`/articles?market=${market.slug}${searchParams.category ? `&category=${searchParams.category}` : ''}`}
-                className={`text-sm ${searchParams.market === market.slug ? 'text-gold' : 'text-cream/50 hover:text-cream'} transition-colors`}
+                className={`text-sm transition-colors ${searchParams.market === market.slug ? 'text-ocean' : 'text-ink-muted hover:text-ink'}`}
               >
                 {market.name}
               </Link>
             ))}
           </div>
-          <div className="flex items-center gap-3">
-            <span className="text-cream/30 text-xs tracking-[0.2em] uppercase">Category</span>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-ink-faint">Category</span>
             <Link
               href={`/articles${searchParams.market ? `?market=${searchParams.market}` : ''}`}
-              className={`text-sm ${!searchParams.category ? 'text-gold' : 'text-cream/50 hover:text-cream'} transition-colors`}
+              className={`text-sm transition-colors ${!searchParams.category ? 'text-ocean' : 'text-ink-muted hover:text-ink'}`}
             >
               All
             </Link>
@@ -64,7 +63,7 @@ export default async function ArticlesPage({
               <Link
                 key={cat.id}
                 href={`/articles?${searchParams.market ? `market=${searchParams.market}&` : ''}category=${cat.slug}`}
-                className={`text-sm ${searchParams.category === cat.slug ? 'text-gold' : 'text-cream/50 hover:text-cream'} transition-colors`}
+                className={`text-sm transition-colors ${searchParams.category === cat.slug ? 'text-ocean' : 'text-ink-muted hover:text-ink'}`}
               >
                 {cat.name}
               </Link>
@@ -72,16 +71,15 @@ export default async function ArticlesPage({
           </div>
         </div>
 
-        {/* Articles Grid */}
         {articles.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             {articles.map((article) => (
               <ArticleCard key={article.id} article={article} />
             ))}
           </div>
         ) : (
-          <div className="text-center py-20">
-            <p className="text-cream/30 text-lg">No articles found.</p>
+          <div className="py-20 text-center">
+            <p className="text-lg text-ink-faint">No articles found.</p>
           </div>
         )}
       </div>
