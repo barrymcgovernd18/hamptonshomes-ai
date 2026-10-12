@@ -190,14 +190,18 @@ const HAMLETS: readonly Hamlet[] = [
   },
 ];
 
-/** Eight Sag Harbor waterfront sales outside the village. Not a hamlet year row. */
+/** Noyac Bay and Sag Harbor Bay shore. Not a hamlet year row. */
 const OUTSIDE = {
-  label: "Outside village",
+  label: "Noyac and Sag Harbor Bay",
   href: HREF.sagHarborWater,
   sales: 8,
   volumeTenths: 558,
   volumeDisplay: "$55.8M",
+  median: 6.63,
+  medianDisplay: "$6.63M",
 } as const;
+
+const NORTH_MARKETS = "Sag Harbor, North Haven, and Shelter Island";
 
 function sum(values: readonly number[]) {
   return values.reduce((total, value) => total + value, 0);
@@ -289,7 +293,25 @@ const salesRank = ranked(
   (a, b) => b.sales - a.sales
 );
 
-const medianRank = ranked(HAMLETS, (a, b) => b.median - a.median);
+const medianRank = ranked(
+  [
+    ...HAMLETS.map((hamlet) => ({
+      label: hamlet.label,
+      median: hamlet.median,
+      medianDisplay: hamlet.medianDisplay,
+      sales: hamlet.sales,
+      href: hamlet.href,
+    })),
+    {
+      label: OUTSIDE.label,
+      median: OUTSIDE.median,
+      medianDisplay: OUTSIDE.medianDisplay,
+      sales: OUTSIDE.sales,
+      href: OUTSIDE.href,
+    },
+  ],
+  (a, b) => b.median - a.median
+);
 const median2026 = ranked(HAMLETS, (a, b) => b.y2026Median - a.y2026Median || b.y2026 - a.y2026);
 
 const villageTable = HAMLETS.map(
@@ -355,89 +377,81 @@ export const eastEndReportPosts: BlogPost[] = [
     keywords:
       "East End real estate, Hamptons luxury market 2026, Southampton, East Hampton, Sag Harbor, Shelter Island, oceanfront, $5 million",
     metaDescription:
-      "East End at $5 million and above: 554 sales and $7.354 billion since 2023, hamlet medians, and the oceanfront study beside the roll-up.",
+      "East End at $5 million and above: 554 sales and $7.354 billion since 2023, from Southampton through East Hampton, Sag Harbor, North Haven, and Shelter Island.",
     charts: {
       "scope-volume": {
-        title: "Volume, south of the highway and harbor",
+        title: "Volume since January 2023",
         kind: "bars",
-        caption:
-          "Published totals on this roll-up. South of the highway is the six village reports. Harbor and islands are Sag Harbor Village, eight Sag Harbor waterfront sales outside the village, North Haven, and Shelter Island.",
         rows: [
           volumeBar("South of the highway", 6494, "$6.494B", `${SOUTH_SALES} sales`, undefined, true),
-          volumeBar("Harbor and islands", 860.3, "$860.3M", `${HARBOR_SALES} sales`),
+          volumeBar(NORTH_MARKETS, 860.3, "$860.3M", `${HARBOR_SALES} sales`),
         ],
       },
       "scope-sales": {
-        title: "Sales, south of the highway and harbor",
+        title: "Sales since January 2023",
         kind: "bars",
-        caption: "Same scope, counted once, at $5 million and above since January 2023.",
         rows: [
           salesBar("South of the highway", SOUTH_SALES, "$6.494 billion", undefined, true),
-          salesBar("Harbor and islands", HARBOR_SALES, "$860.3 million"),
+          salesBar(NORTH_MARKETS, HARBOR_SALES, "$860.3 million"),
         ],
       },
       "volume-by-village": {
-        title: "Volume by village",
+        title: "Volume by market",
         kind: "bars",
-        caption:
-          "Setting total from each report. Outside village is eight Sag Harbor waterfront sales that are not in the Sag Harbor Village count.",
         rows: volumeRank.map((row, index) =>
           volumeBar(chartLabel(row), row.volume, row.volumeDisplay, `${row.sales} sales`, row.href, index === 0)
         ),
       },
       "sales-by-village": {
-        title: "Sales by village",
+        title: "Sales by market",
         kind: "bars",
-        caption: "Same reports, ranked by the number of sales. Outside village is the same eight Sag Harbor waterfront sales.",
         rows: salesRank.map((row, index) => salesBar(chartLabel(row), row.sales, row.volumeDisplay, row.href, index === 0)),
       },
       "median-by-hamlet": {
-        title: "Median sale by hamlet",
+        title: "Median sale",
         kind: "bars",
-        caption:
-          "Median in each hamlet report. The eight outside-village sales are not a bar. Their median is $6.63 million.",
-        rows: medianRank.map((hamlet, index) =>
-          medianBar(hamlet.label, hamlet.median, hamlet.medianDisplay, `${hamlet.sales} sales`, hamlet.href, index === 0)
+        rows: medianRank.map((row, index) =>
+          medianBar(row.label, row.median, row.medianDisplay, `${row.sales} sales`, row.href, index === 0)
         ),
       },
       "sales-by-year": {
         title: "Sales by year",
         kind: "columns",
-        caption:
-          "Nine hamlet year rows: 117, 136, 171, and 122. 2026 is partial. Wainscott runs through June 18, East Hampton through July 28, the harbor reports through September, Bridgehampton through September 25, Water Mill through early October, and Southampton and Sagaponack through October 9. Eight Sag Harbor waterfront sales outside the village are not in these rows. Sagaponack publishes a dollar total only for 2026, $193.6 million, so this chart is sales, not volume.",
         rows: [
           salesBar("2023", YEAR_SALES[0], `${YEAR_SALES[0]} sales`),
           salesBar("2024", YEAR_SALES[1], `${YEAR_SALES[1]} sales`),
           salesBar("2025", YEAR_SALES[2], `${YEAR_SALES[2]} sales`, undefined, true),
-          salesBar("2026", YEAR_SALES[3], "partial"),
+          salesBar("2026", YEAR_SALES[3], "through early October"),
         ],
       },
       "median-2026": {
-        title: "2026 median by hamlet",
+        title: "2026 median",
         kind: "bars",
-        caption: `Medians from each 2026 year row. The nine counts are ${SALES_2026} sales and $1,585.1 million. Windows differ, as in the sales-by-year chart.`,
         rows: median2026.map((hamlet, index) =>
           medianBar(hamlet.label, hamlet.y2026Median, hamlet.y2026Display, `${hamlet.y2026} sales`, hamlet.href, index === 0)
         ),
       },
       "price-bands": {
-        title: "Sales by price band",
+        title: "South of the highway",
         kind: "bars",
-        caption: `All ${COUNTED_SALES} sales. Harbor reports publish $20 million and above as one band, so the top pair uses that cut. ${SOUTH_50_PLUS} south-of-highway sales closed at $50 million or above: East Hampton 9, Southampton 3, Bridgehampton 2, Wainscott 1.`,
         rows: [
-          salesBar("South, $5M to $10M", SOUTH_UNDER_10, `${SOUTH_UNDER_10} sales`, undefined, true),
-          salesBar("Harbor, $5M to $10M", HARBOR_UNDER_10, `${HARBOR_UNDER_10} sales`),
-          salesBar("South, $10M to $20M", SOUTH_10_20, `${SOUTH_10_20} sales`),
-          salesBar("Harbor, $10M to $20M", HARBOR_10_20, `${HARBOR_10_20} sales`),
-          salesBar("South, $20M and above", SOUTH_20_PLUS, `${SOUTH_20_PLUS} sales`),
-          salesBar("Harbor, $20M and above", HARBOR_20_PLUS, `${HARBOR_20_PLUS} sales`),
+          salesBar("$5M to $10M", SOUTH_UNDER_10, `${SOUTH_UNDER_10} sales`, undefined, true),
+          salesBar("$10M to $20M", SOUTH_10_20, `${SOUTH_10_20} sales`),
+          salesBar("$20M and above", SOUTH_20_PLUS, `${SOUTH_20_PLUS} sales`),
+        ],
+      },
+      "price-bands-north": {
+        title: NORTH_MARKETS,
+        kind: "bars",
+        rows: [
+          salesBar("$5M to $10M", HARBOR_UNDER_10, `${HARBOR_UNDER_10} sales`, undefined, true),
+          salesBar("$10M to $20M", HARBOR_10_20, `${HARBOR_10_20} sales`),
+          salesBar("$20M and above", HARBOR_20_PLUS, `${HARBOR_20_PLUS} sales`),
         ],
       },
       "ocean-median": {
         title: "Oceanfront median, south of the highway",
         kind: "bars",
-        caption:
-          "Oceanfront median in each south-of-highway report since January 2023. Sagaponack and Water Mill are one sale each. This is not the 2021 to 2026 oceanfront study.",
         rows: ranked(oceanRows, (a, b) => b.onValue - a.onValue).map((row, index) =>
           medianBar(row.label, row.onValue, row.onMedian, `${row.on} ${row.on === 1 ? "sale" : "sales"}`, row.href, index === 0)
         ),
@@ -446,32 +460,30 @@ export const eastEndReportPosts: BlogPost[] = [
     content: `
 ## Key Takeaways
 
-- **${COUNTED_SALES} sales, $7.354 billion**, at $5 million and above since January 2023, counted once. South of the highway is ${SOUTH_SALES} sales and $6.494 billion. Harbor and islands are ${HARBOR_SALES} sales and $860.3 million.
-- **${SOUTH_UNDER_10 + HARBOR_UNDER_10} of the ${COUNTED_SALES} closed under $10 million.** South of the highway alone, ${SOUTH_UNDER_10} of ${SOUTH_SALES} did, so that middle sits in the $10 million to $20 million band. East Hampton South median **$11.05 million**. Sag Harbor Village **$6.3 million**.
-- **${OCEAN_ON} south-of-highway oceanfront sales total $1,632.7 million.** The oceanfront study, January 2021 through early October 2026, is 87 sales, $2.61 billion, and a $24.5 million median. Those 87 are not in the ${COUNTED_SALES}.
+- **${COUNTED_SALES} sales, $7.354 billion**, at $5 million and above since January 2023. South of the highway is ${SOUTH_SALES} sales and $6.494 billion. ${NORTH_MARKETS} are ${HARBOR_SALES} sales and $860.3 million.
+- **${SOUTH_UNDER_10 + HARBOR_UNDER_10} of the ${COUNTED_SALES} closed under $10 million.** South of the highway, ${SOUTH_UNDER_10} of ${SOUTH_SALES} did. East Hampton's median is **$11.05 million**. Sag Harbor Village's is **$6.3 million**.
+- **${OCEAN_ON} oceanfront sales south of the highway total $1,632.7 million.** From Southampton to Montauk, January 2021 through early October 2026, oceanfront sales total 87, $2.61 billion, and a $24.5 million median.
 - **408 Further Lane closed at $115 million, off-market.** The largest MLS sale is 700 Meadow Lane at **$112.5 million**.
 
-## Counted Once
+## Since January 2023
+
+South of Montauk Highway, Southampton through East Hampton account for $6.494 billion. ${NORTH_MARKETS} account for $860.3 million.
 
 {{chart:scope-volume}}
 
 {{chart:scope-sales}}
 
-| Scope | Sales | Volume |
+| Market | Sales | Volume |
 |---|---:|---:|
 | South of the highway | ${SOUTH_SALES} | $6.494 billion |
-| Harbor and islands | ${HARBOR_SALES} | $860.3 million |
-| **Counted once** | **${COUNTED_SALES}** | **$7.354 billion** |
+| ${NORTH_MARKETS} | ${HARBOR_SALES} | $860.3 million |
+| **East End** | **${COUNTED_SALES}** | **$7.354 billion** |
 
-Thirteen Sag Harbor waterfront sales are already in the village count. All nine Shelter Island waterfront sales are already in the island count. North-of-highway comparisons are not added.
-
-| Oceanfront study, beside the ${COUNTED_SALES} | Sales | Volume | Median |
+| Oceanfront, Southampton to Montauk | Sales | Volume | Median |
 |---|---:|---:|---:|
-| [Southampton to Montauk, Jan 2021 to early Oct 2026](${HREF.oceanfront}) | 87 | $2.61 billion | $24.5 million |
+| [January 2021 to early October 2026](${HREF.oceanfront}) | 87 | $2.61 billion | $24.5 million |
 
-Amagansett and Montauk enter through that study. 408 Further Lane is one sale: in the East Hampton south count, and listed under Amagansett in the study.
-
-## By Village
+## By Market
 
 {{chart:volume-by-village}}
 
@@ -493,7 +505,9 @@ ${villageTable}
 
 {{chart:price-bands}}
 
-The nine hamlet bands under $10 million are Southampton 74, Water Mill 41, Bridgehampton 31, Sagaponack 24, Wainscott 14, East Hampton 40, Sag Harbor Village 41, North Haven 15, and Shelter Island 10. Seven of the eight outside-village Sag Harbor waterfront sales are under $10 million as well. The eighth, 25 Rawson Road, closed at $12.25 million. These reports do not publish one dollar median for all ${COUNTED_SALES} sales.
+{{chart:price-bands-north}}
+
+Fifteen sales south of the highway closed at $50 million or above: nine in East Hampton, three in Southampton, two in Bridgehampton, and one in Wainscott.
 
 ## On the Water
 
@@ -503,21 +517,15 @@ The nine hamlet bands under $10 million are Southampton 74, Water Mill 41, Bridg
 |---|---:|---:|---:|---:|
 ${oceanTable}
 
-Those two columns are ${OCEAN_OFF + OCEAN_ON} of the ${SOUTH_SALES} south-of-highway sales. The other 18 are bay and pond sales, 14 of them totaling $270.65 million, and four East Hampton off-market sales totaling $147.1 million where ocean frontage is not confirmed. Water Mill's eight bay and pond sales closed at an $18.83 million median.
-
-Sagaponack's oceanfront sale since 2023 is 2 Town Line Road at $10 million. The oceanfront study's Sagaponack median is $14.38 million across four sales back to 2021.
+Water Mill's bay and pond sales closed at an $18.83 million median. Sagaponack's oceanfront sale since 2023 is 2 Town Line Road at $10 million. In the longer oceanfront record, Sagaponack's median is $14.38 million across four sales back to 2021.
 
 | Market | Waterfront | Median | Interior | Median |
 |---|---:|---:|---:|---:|
 ${harborTable}
 
-Eight Sag Harbor waterfront sales outside the village total $55.8 million at a $6.63 million median, led by 25 Rawson Road at $12.25 million. The [Sag Harbor waterfront report](${HREF.sagHarborWater}) is 21 sales and $180.3 million at a $6.7 million median. The [Shelter Island waterfront report](${HREF.shelterWater}) is nine sales and $89.4 million at a $9.0 million median.
-
-In the [oceanfront study](${HREF.oceanfront}), East Hampton's median is $48.5 million, Montauk's is $10.83 million, and Amagansett's is $9.5 million. Three sales cleared $100 million: 90 Jule Pond Drive at $105 million in 2021, where Hedgerow advised the seller, 700 Meadow Lane at $112.5 million, and 408 Further Lane at $115 million. Seven sales in 2026 carry a $43.5 million median.
+In the [oceanfront study](${HREF.oceanfront}), East Hampton's median is $48.5 million, Montauk's is $10.83 million, and Amagansett's is $9.5 million. Three sales cleared $100 million: 90 Jule Pond Drive at $105 million in 2021, where Hedgerow advised the seller, 700 Meadow Lane at $112.5 million, and 408 Further Lane at $115 million. Seven oceanfront sales in 2026 carry a $43.5 million median.
 
 ## The Largest Trades
-
-Off-market, MLS, and recorded deed are labeled as in the source reports.
 
 | Address | Price | Closed | Record |
 |---|---:|---|---|
@@ -533,36 +541,25 @@ Off-market, MLS, and recorded deed are labeled as in the source reports.
 | 125 Mid Ocean Drive | $57,000,000 | Oct 2025 | MLS, oceanfront. A Hedgerow transaction. |
 | 1010 Meadow Lane | $55,750,000 | Aug 2025 | Recorded deed, oceanfront |
 
-408 Further Lane is the largest single residential parcel in the East Hampton report. 26 and 32 Windmill Lane is one trade on two deeds, $77,775,000 and $13,725,000. 700 Meadow Lane is the largest MLS sale in the series. 1010 Meadow Lane is in the Southampton count and was not in the MLS search.
+408 Further Lane is the largest sale in East Hampton. 26 and 32 Windmill Lane closed as one trade on two deeds, $77,775,000 and $13,725,000. 700 Meadow Lane is the largest sale to go through the MLS.
 
-41 and 47 Cove Hollow Farm Road sold for $55 million in December 2025, land bought by the Peconic Land Trust. The East Hampton report keeps that sale in the inland count and out of the house ranking. Southampton's report excludes sales to government or land trusts. This roll-up follows each report.
+41 and 47 Cove Hollow Farm Road, land bought by the Peconic Land Trust, sold for $55 million in December 2025.
 
-70 and 71 Cobb Lane, the four-parcel compound at $121.5 million, closed outside this window. Hedgerow represented both sides.
-
-## How These Figures Were Measured
-
-- **As of.** October 12, 2026. Each hamlet keeps the closing window in its own report. Public MLS solds for East Hampton town hamlets south of the highway were verified through October 12, and that report's last south closing remains July 28.
-- **Area.** South of the highway is Southampton, Water Mill, Bridgehampton, Sagaponack, Wainscott, and East Hampton, each as that report draws the line. Harbor and islands are Sag Harbor Village, the eight Sag Harbor waterfront sales outside the village, North Haven, and Shelter Island. North-of-highway comparisons are excluded. Amagansett and Montauk are in the oceanfront study, not in the ${COUNTED_SALES}, except for sales a south-of-highway report already counts.
-- **Counted once.** Waterfront reports that repeat a village or island sale are not added again. The oceanfront study is not added to the ${COUNTED_SALES}. Land at $5 million and above is included where the village report includes it. Cove Hollow Farm is in the East Hampton count and out of the house ranking. Packages count once, as in the source reports.
-- **Dollars.** Totals are each report's setting table. Year rows can differ by a tenth of a million from that setting total. The $6.494 billion and $7.354 billion figures are the published roll-up totals.
-- **Price bands.** Under $10 million, the hamlet bands sum to 290, and seven outside-village Sag Harbor sales make 297. 25 Rawson Road, $12.25 million, is the one outside-village sale above $10 million in the waterfront report's top twelve. The other three outside-village sales in that list, and the four below it, closed under $10 million.
-- **Years.** The sales chart adds the nine hamlet year rows. It does not add a dollar trend. Sagaponack's 2026 total is $193.6 million, and that report does not publish 2023 to 2025 dollar totals. The nine 2026 year rows are ${SALES_2026} sales and $1,585.1 million.
-- **Sources.** Public MLS sales and recorded deeds, plus the off-market trades the village and harbor reports already name. Shelter Island sits outside the South Fork deed feed, so that count is EastEndLI alone. Where an MLS price and a deed price differ, the source report uses the MLS price.
-- **Limits.** A trade that never appears in the public MLS or the deed record is outside this roll-up, unless one of the source reports has already named it. Recent closings can take weeks to reach the deed record. The 2026 counts will rise as those deeds are recorded.
+70 and 71 Cobb Lane, a four-parcel compound at $121.5 million, closed before January 2023. Hedgerow represented both sides.
 
 ## FAQ
 
 ### How many luxury sales has the East End recorded since 2023?
 
-The live reports, counted once at $5 million and above, show 554 sales since January 2023 and $7.354 billion. South of the highway is 454 sales and $6.494 billion. Harbor and islands are 100 sales and $860.3 million.
+Sales at $5 million and above total ${COUNTED_SALES} and $7.354 billion since January 2023. South of the highway is ${SOUTH_SALES} sales and $6.494 billion. ${NORTH_MARKETS} are ${HARBOR_SALES} sales and $860.3 million.
 
 ### Which hamlet has the highest median?
 
-East Hampton south of the highway, at $11.05 million across 100 sales. Sag Harbor Village is the lowest of the nine hamlet reports, at $6.3 million across 51 sales. Southampton has the most sales, 133, at an $8.84 million median.
+East Hampton, at $11.05 million across 100 sales. Sag Harbor Village is the lowest, at $6.3 million across 51 sales. Southampton has the most sales, 133, at an $8.84 million median.
 
 ### What is the largest sale in this record?
 
-408 Further Lane closed at $115 million on July 31, 2025, off-market. The largest MLS sale is 700 Meadow Lane at $112.5 million in November 2023. The Cobb compound, at $121.5 million, is larger and closed outside this window.
+408 Further Lane closed at $115 million on July 31, 2025, off-market. The largest MLS sale is 700 Meadow Lane at $112.5 million in November 2023. The Cobb compound, at $121.5 million, closed before January 2023.
 
 ### Who is Barry McGovern?
 

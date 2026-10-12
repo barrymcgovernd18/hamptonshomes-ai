@@ -64,8 +64,6 @@ const SHELTER =
   "Sales in this report come from EastEndLI. Shelter Island sits outside the South Fork deed feed, so this count is the listing service alone.";
 
 export const REPORT_SOURCE_LINE: Record<string, string> = {
-  "east-end-luxury-market-overview-2026-10":
-    "The figures in this report are the totals already published in the village, harbor, and oceanfront reports. Those reports draw on EastEndLI, recorded deeds, and the off-market trades they name. Shelter Island is the listing service alone.",
   "east-hampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,
   "southampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,
   "bridgehampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,

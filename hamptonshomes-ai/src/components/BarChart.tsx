@@ -114,6 +114,10 @@ function Horizontal({ rows, dark }: { rows: Row[]; dark: boolean }) {
   const grid = dark ? "border-paper/15" : "border-ink/10";
   const track = dark ? "bg-paper/10" : "bg-ink/[0.05]";
   const fill = (row: Row) => (row.highlight ? (dark ? "bg-paper" : "bg-ocean") : dark ? "bg-paper/45" : "bg-ocean/40");
+  const longLabel = rows.some((row) => row.label.length > 28);
+  const columns = longLabel
+    ? "grid-cols-[minmax(0,9.5rem)_minmax(0,1fr)_max-content] gap-3 sm:grid-cols-[minmax(0,18rem)_minmax(0,1fr)_max-content] sm:gap-5"
+    : "grid-cols-[minmax(0,7.6rem)_minmax(0,1fr)_max-content] gap-3 sm:grid-cols-[12.75rem_minmax(0,1fr)_max-content] sm:gap-5";
 
   return (
     <div className="relative">
@@ -129,7 +133,7 @@ function Horizontal({ rows, dark }: { rows: Row[]; dark: boolean }) {
             </span>
           );
           return (
-            <li key={row.label} className="grid grid-cols-[minmax(0,7.6rem)_minmax(0,1fr)_max-content] items-center gap-3 sm:grid-cols-[12.75rem_minmax(0,1fr)_max-content] sm:gap-5">
+            <li key={row.label} className={`grid items-center ${columns}`}>
               {row.href ? (
                 <Link href={row.href} className={`text-[13px] leading-tight transition-colors hover:text-ocean ${ink}`}>
                   {row.label}

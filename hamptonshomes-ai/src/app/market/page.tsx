@@ -71,7 +71,7 @@ const INDEX_GROUPS: { label: string; slugs: string[] }[] = [
     ],
   },
   {
-    label: "Harbor & islands",
+    label: "Sag Harbor, North Haven, Shelter Island",
     slugs: [
       "sag-harbor-village-luxury-market-overview-2026-10",
       "sag-harbor-waterfront-luxury-market-2026-10",
