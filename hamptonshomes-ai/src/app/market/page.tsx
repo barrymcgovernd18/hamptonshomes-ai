@@ -31,46 +31,70 @@ function formatDate(date: string, withDay = false) {
 
 /** Short names for the in-page report index. Unlisted reports fall back to a trimmed title. */
 const REPORT_INDEX_LABELS: Record<string, string> = {
-  "east-hampton-luxury-market-overview-2026-10": "East Hampton",
   "southampton-luxury-market-overview-2026-10": "Southampton",
-  "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton",
   "water-mill-luxury-market-overview-2026-10": "Water Mill",
-  "wainscott-luxury-market-snapshot-2026-10": "Wainscott",
+  "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton",
   "sagaponack-luxury-market-overview-2026-10": "Sagaponack",
+  "wainscott-luxury-market-snapshot-2026-10": "Wainscott",
+  "east-hampton-luxury-market-overview-2026-10": "East Hampton",
   "sag-harbor-village-luxury-market-overview-2026-10": "Sag Harbor Village",
   "sag-harbor-waterfront-luxury-market-2026-10": "Sag Harbor Waterfront",
   "north-haven-luxury-market-2026-10": "North Haven",
   "shelter-island-luxury-market-2026-10": "Shelter Island",
   "shelter-island-waterfront-luxury-market-2026-10": "Shelter Island Waterfront",
-  "hamptons-oceanfront-market-2021-2026": "Oceanfront",
-  "ai-ipo-wealth-san-francisco-hamptons-market-2026": "AI Wealth",
-  "hamptons-30-million-compound-sale-february-2026": "$30M Compound",
-  "hamptons-62-billion-sales-surge-march-2026": "$6.2 Billion",
-  "wall-street-bonus-season-hamptons-2026": "Bonus Season",
+  "hamptons-oceanfront-market-2021-2026": "Oceanfront, 2021 to 2026",
+  "oceanfront-scarcity-southampton-montauk-2025": "Oceanfront scarcity",
+  "ai-ipo-wealth-san-francisco-hamptons-market-2026": "AI wealth",
+  "hamptons-30-million-compound-sale-february-2026": "The $30 million compound",
+  "hamptons-62-billion-sales-surge-march-2026": "A $6.2 billion year",
+  "wall-street-bonus-season-hamptons-2026": "Bonus season",
   "hamptons-market-update-q4-2025": "Q4 2025",
   "east-hampton-lily-pond-further-lane-2026": "Lily Pond",
-  "oceanfront-scarcity-southampton-montauk-2025": "Oceanfront Scarcity",
 };
+
+/** Geographic reading order, west to east, then the coast and earlier notes. */
+const INDEX_GROUPS: { label: string; slugs: string[] }[] = [
+  {
+    label: "South of the highway",
+    slugs: [
+      "southampton-luxury-market-overview-2026-10",
+      "water-mill-luxury-market-overview-2026-10",
+      "bridgehampton-luxury-market-overview-2026-10",
+      "sagaponack-luxury-market-overview-2026-10",
+      "wainscott-luxury-market-snapshot-2026-10",
+      "east-hampton-luxury-market-overview-2026-10",
+    ],
+  },
+  {
+    label: "Harbor & islands",
+    slugs: [
+      "sag-harbor-village-luxury-market-overview-2026-10",
+      "sag-harbor-waterfront-luxury-market-2026-10",
+      "north-haven-luxury-market-2026-10",
+      "shelter-island-luxury-market-2026-10",
+      "shelter-island-waterfront-luxury-market-2026-10",
+    ],
+  },
+  {
+    label: "Coast",
+    slugs: ["hamptons-oceanfront-market-2021-2026", "oceanfront-scarcity-southampton-montauk-2025"],
+  },
+  {
+    label: "Earlier studies",
+    slugs: [
+      "ai-ipo-wealth-san-francisco-hamptons-market-2026",
+      "hamptons-30-million-compound-sale-february-2026",
+      "hamptons-62-billion-sales-surge-march-2026",
+      "wall-street-bonus-season-hamptons-2026",
+      "hamptons-market-update-q4-2025",
+      "east-hampton-lily-pond-further-lane-2026",
+    ],
+  },
+];
 
 function reportAnchorId(slug: string) {
   return `report-${slug}`;
 }
-
-/** Place and oceanfront reports. Everything else on the index is an earlier study. */
-const VILLAGE_REPORT_SLUGS = new Set([
-  "east-hampton-luxury-market-overview-2026-10",
-  "southampton-luxury-market-overview-2026-10",
-  "bridgehampton-luxury-market-overview-2026-10",
-  "water-mill-luxury-market-overview-2026-10",
-  "wainscott-luxury-market-snapshot-2026-10",
-  "sagaponack-luxury-market-overview-2026-10",
-  "sag-harbor-village-luxury-market-overview-2026-10",
-  "sag-harbor-waterfront-luxury-market-2026-10",
-  "north-haven-luxury-market-2026-10",
-  "shelter-island-luxury-market-2026-10",
-  "shelter-island-waterfront-luxury-market-2026-10",
-  "hamptons-oceanfront-market-2021-2026",
-]);
 
 function reportIndexLabel(post: BlogPost) {
   const known = REPORT_INDEX_LABELS[post.slug];
@@ -79,12 +103,6 @@ function reportIndexLabel(post: BlogPost) {
     .replace(/\s+Luxury Real Estate Market (Overview|Snapshot) \d{4}$/i, "")
     .replace(/:\s.*$/, "")
     .trim();
-}
-
-function isVillageReport(post: BlogPost) {
-  if (VILLAGE_REPORT_SLUGS.has(post.slug)) return true;
-  if (post.slug in REPORT_INDEX_LABELS) return false;
-  return /Luxury Real Estate Market|Oceanfront,/.test(post.title);
 }
 
 /** Headline figures from the oceanfront study (see /blog/hamptons-oceanfront-market-2021-2026). */
@@ -96,40 +114,60 @@ const OCEANFRONT_FIGURES = [
 ];
 
 function ReportIndex({ posts }: { posts: BlogPost[] }) {
-  if (posts.length === 0) return null;
-  const villages = posts.filter(isVillageReport);
-  const studies = posts.filter((post) => !isVillageReport(post));
+  const bySlug = new Map(posts.map((post) => [post.slug, post]));
+  const used = new Set<string>();
+  const groups = INDEX_GROUPS.map((group) => {
+    const items = group.slugs.flatMap((slug) => {
+      const post = bySlug.get(slug);
+      if (!post) return [];
+      used.add(slug);
+      return [post];
+    });
+    return { label: group.label, items };
+  }).filter((group) => group.items.length > 0);
+
+  const extras = posts.filter((post) => !used.has(post.slug));
+  if (extras.length > 0) {
+    const earlier = groups.find((group) => group.label === "Earlier studies");
+    if (earlier) earlier.items.push(...extras);
+    else groups.push({ label: "Earlier studies", items: extras });
+  }
+
+  if (groups.length === 0) return null;
+
+  const numbered = groups.map((group, groupIndex) => {
+    const start = groups.slice(0, groupIndex).reduce((count, earlier) => count + earlier.items.length, 0);
+    return {
+      label: group.label,
+      items: group.items.map((post, itemIndex) => ({
+        post,
+        n: String(start + itemIndex + 1).padStart(2, "0"),
+      })),
+    };
+  });
+
   return (
-    <nav aria-label="Market reports" className="mt-10 border-t border-line pt-7 md:mt-12 md:pt-8">
-      <p className="eyebrow text-ocean">Reports</p>
-      <ul className="mt-4 flex flex-wrap gap-2">
-        {villages.map((post) => (
-          <li key={post.slug}>
-            <a
-              href={`#${reportAnchorId(post.slug)}`}
-              className="inline-flex min-h-11 items-center whitespace-nowrap border border-line bg-paper px-3.5 font-serif text-[17px] font-light leading-none text-ink transition-colors duration-500 hover:border-ocean hover:text-ocean active:border-ocean active:bg-ocean active:text-paper"
-            >
-              {reportIndexLabel(post)}
-            </a>
-          </li>
+    <nav aria-label="Market reports" className="mt-12 md:mt-16">
+      <p className="eyebrow text-ocean">Contents</p>
+      <div className="mt-5 grid border-t border-ink/80 md:mt-6 md:grid-cols-2 md:gap-x-16 md:gap-y-14 lg:grid-cols-4 lg:gap-x-12">
+        {numbered.map((group) => (
+          <div key={group.label} className="border-b border-line py-7 last:border-b-0 md:border-b-0 md:py-8">
+            <p className="eyebrow text-ink-faint">{group.label}</p>
+            <ul className="mt-4 border-t border-line">
+              {group.items.map(({ post, n }) => (
+                <li key={post.slug} className="border-b border-line">
+                  <a href={`#${reportAnchorId(post.slug)}`} className="group flex min-h-11 items-center gap-3">
+                    <span className="eyebrow w-6 shrink-0 text-ink-faint">{n}</span>
+                    <span className="font-serif text-[1.2rem] font-light leading-tight text-ink transition-[color,transform] duration-500 [transition-timing-function:var(--ease-editorial)] group-hover:translate-x-1 group-hover:text-ocean">
+                      {reportIndexLabel(post)}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
-      {studies.length > 0 ? (
-        <ul className="mt-4 flex flex-wrap items-baseline font-serif text-[17px] font-light leading-relaxed">
-          {studies.map((post, i) => (
-            <li key={post.slug} className="inline-flex items-baseline">
-              {i > 0 ? (
-                <span aria-hidden="true" className="px-2.5 text-ink-faint">
-                  ·
-                </span>
-              ) : null}
-              <a href={`#${reportAnchorId(post.slug)}`} className="link-line text-ink-muted hover:text-ocean">
-                {reportIndexLabel(post)}
-              </a>
-            </li>
-          ))}
-        </ul>
-      ) : null}
+      </div>
     </nav>
   );
 }
