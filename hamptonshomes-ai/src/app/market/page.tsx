@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { ClosingInvitation, PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
-import { postsByDate } from "@/lib/blog";
+import { postsByDate, type BlogPost } from "@/lib/blog";
 import { areas } from "@/lib/areas";
 import { SITE_URL, breadcrumbListJsonLd, routeMetadata } from "@/lib/schema";
 import BarChart from "@/components/BarChart";
@@ -29,6 +29,64 @@ function formatDate(date: string, withDay = false) {
   });
 }
 
+/** Short names for the in-page report index. Unlisted reports fall back to a trimmed title. */
+const REPORT_INDEX_LABELS: Record<string, string> = {
+  "east-hampton-luxury-market-overview-2026-10": "East Hampton",
+  "southampton-luxury-market-overview-2026-10": "Southampton",
+  "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton",
+  "water-mill-luxury-market-overview-2026-10": "Water Mill",
+  "wainscott-luxury-market-snapshot-2026-10": "Wainscott",
+  "sagaponack-luxury-market-overview-2026-10": "Sagaponack",
+  "sag-harbor-village-luxury-market-overview-2026-10": "Sag Harbor Village",
+  "sag-harbor-waterfront-luxury-market-2026-10": "Sag Harbor Waterfront",
+  "north-haven-luxury-market-2026-10": "North Haven",
+  "shelter-island-luxury-market-2026-10": "Shelter Island",
+  "shelter-island-waterfront-luxury-market-2026-10": "Shelter Island Waterfront",
+  "hamptons-oceanfront-market-2021-2026": "Oceanfront",
+  "ai-ipo-wealth-san-francisco-hamptons-market-2026": "AI Wealth",
+  "hamptons-30-million-compound-sale-february-2026": "$30M Compound",
+  "hamptons-62-billion-sales-surge-march-2026": "$6.2 Billion",
+  "wall-street-bonus-season-hamptons-2026": "Bonus Season",
+  "hamptons-market-update-q4-2025": "Q4 2025",
+  "east-hampton-lily-pond-further-lane-2026": "Lily Pond",
+  "oceanfront-scarcity-southampton-montauk-2025": "Oceanfront Scarcity",
+};
+
+function reportAnchorId(slug: string) {
+  return `report-${slug}`;
+}
+
+/** Place and oceanfront reports. Everything else on the index is an earlier study. */
+const VILLAGE_REPORT_SLUGS = new Set([
+  "east-hampton-luxury-market-overview-2026-10",
+  "southampton-luxury-market-overview-2026-10",
+  "bridgehampton-luxury-market-overview-2026-10",
+  "water-mill-luxury-market-overview-2026-10",
+  "wainscott-luxury-market-snapshot-2026-10",
+  "sagaponack-luxury-market-overview-2026-10",
+  "sag-harbor-village-luxury-market-overview-2026-10",
+  "sag-harbor-waterfront-luxury-market-2026-10",
+  "north-haven-luxury-market-2026-10",
+  "shelter-island-luxury-market-2026-10",
+  "shelter-island-waterfront-luxury-market-2026-10",
+  "hamptons-oceanfront-market-2021-2026",
+]);
+
+function reportIndexLabel(post: BlogPost) {
+  const known = REPORT_INDEX_LABELS[post.slug];
+  if (known) return known;
+  return post.title
+    .replace(/\s+Luxury Real Estate Market (Overview|Snapshot) \d{4}$/i, "")
+    .replace(/:\s.*$/, "")
+    .trim();
+}
+
+function isVillageReport(post: BlogPost) {
+  if (VILLAGE_REPORT_SLUGS.has(post.slug)) return true;
+  if (post.slug in REPORT_INDEX_LABELS) return false;
+  return /Luxury Real Estate Market|Oceanfront,/.test(post.title);
+}
+
 /** Headline figures from the oceanfront study (see /blog/hamptons-oceanfront-market-2021-2026). */
 const OCEANFRONT_FIGURES = [
   { value: "87", label: "Oceanfront sales", sub: "Southampton to Montauk, 2021 to 2026" },
@@ -36,6 +94,45 @@ const OCEANFRONT_FIGURES = [
   { value: "$24.5M", label: "Median price", sub: "All 87 sales" },
   { value: "$43.5M", label: "2026 median", sub: "Seven sales through early October" },
 ];
+
+function ReportIndex({ posts }: { posts: BlogPost[] }) {
+  if (posts.length === 0) return null;
+  const villages = posts.filter(isVillageReport);
+  const studies = posts.filter((post) => !isVillageReport(post));
+  return (
+    <nav aria-label="Market reports" className="mt-10 border-t border-line pt-7 md:mt-12 md:pt-8">
+      <p className="eyebrow text-ocean">Reports</p>
+      <ul className="mt-4 flex flex-wrap gap-2">
+        {villages.map((post) => (
+          <li key={post.slug}>
+            <a
+              href={`#${reportAnchorId(post.slug)}`}
+              className="inline-flex min-h-11 items-center whitespace-nowrap border border-line bg-paper px-3.5 font-serif text-[17px] font-light leading-none text-ink transition-colors duration-500 hover:border-ocean hover:text-ocean active:border-ocean active:bg-ocean active:text-paper"
+            >
+              {reportIndexLabel(post)}
+            </a>
+          </li>
+        ))}
+      </ul>
+      {studies.length > 0 ? (
+        <ul className="mt-4 flex flex-wrap items-baseline font-serif text-[17px] font-light leading-relaxed">
+          {studies.map((post, i) => (
+            <li key={post.slug} className="inline-flex items-baseline">
+              {i > 0 ? (
+                <span aria-hidden="true" className="px-2.5 text-ink-faint">
+                  ·
+                </span>
+              ) : null}
+              <a href={`#${reportAnchorId(post.slug)}`} className="link-line text-ink-muted hover:text-ocean">
+                {reportIndexLabel(post)}
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </nav>
+  );
+}
 
 export default function MarketPage() {
   const [latest, ...rest] = postsByDate;
@@ -48,6 +145,9 @@ export default function MarketPage() {
     ? [oceanfrontReport, ...marketReports.filter((post) => post.slug !== oceanfrontSlug)]
     : marketReports;
   const commentary = rest.filter((post) => post.category !== "Market Report" && post.slug !== oceanfrontSlug);
+  const featuredReport =
+    latest && (latest.category === "Market Report" || latest.slug === oceanfrontSlug) ? latest : null;
+  const indexedReports = featuredReport ? [featuredReport, ...reportCards] : reportCards;
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
@@ -90,10 +190,11 @@ export default function MarketPage() {
             by Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties.
           </p>
         }
+        footer={<ReportIndex posts={indexedReports} />}
       />
 
       {latest && (
-        <section className="pb-24 md:pb-36">
+        <section id={reportAnchorId(latest.slug)} className="scroll-mt-28 pb-24 md:pb-36">
           <div className="frame">
             <SectionLabel n="I">Latest research</SectionLabel>
             <Link href={`/blog/${latest.slug}`} className="group mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:items-end md:gap-14">
@@ -127,8 +228,17 @@ export default function MarketPage() {
           </p>
           <ul className="mt-14 grid gap-x-12 gap-y-16 md:mt-16 md:grid-cols-2">
             {reportCards.map((post, i) => (
-              <li key={post.slug} data-reveal style={revealDelay((i % 4) * 70)} className={i === 0 ? "md:col-span-2" : undefined}>
-                <Link href={`/blog/${post.slug}`} className={`group block ${i === 0 ? "md:grid md:grid-cols-12 md:items-end md:gap-12" : ""}`}>
+              <li
+                key={post.slug}
+                id={reportAnchorId(post.slug)}
+                className={`scroll-mt-28 ${i === 0 ? "md:col-span-2" : ""}`}
+              >
+                <Link
+                  href={`/blog/${post.slug}`}
+                  data-reveal
+                  style={revealDelay((i % 4) * 70)}
+                  className={`group block ${i === 0 ? "md:grid md:grid-cols-12 md:items-end md:gap-12" : ""}`}
+                >
                   {post.image ? (
                     <div className={`relative aspect-[16/10] overflow-hidden bg-paper-deep ${i === 0 ? "md:col-span-7" : ""}`}>
                       <Image src={post.image} alt="" fill sizes={i === 0 ? "(max-width: 768px) 100vw, 58vw" : "(max-width: 768px) 100vw, 40vw"} className="photo-bw object-cover transition-transform duration-700 [transition-timing-function:var(--ease-editorial)] group-hover:scale-[1.03]" />
