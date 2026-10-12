@@ -42,13 +42,11 @@ function band(label: string, listings: number, pace: string, highlight = false):
 }
 
 export const villageReportPosts: BlogPost[] = [
-  // TODO: Refresh East Hampton south-of-highway 2026 solds past July 28, 2026
-  // once Ely sends the EastEndLI sold TSV. Do not invent closings.
   {
     slug: "east-hampton-luxury-market-overview-2026-10",
     title: "East Hampton Luxury Real Estate Market Overview 2026",
     excerpt:
-      "One hundred sales at $5 million and above south of Montauk Highway since January 2023, a median of $11.05 million, led by 408 Further Lane at $115 million, off-market. The 2026 south record stops on July 28.",
+      "One hundred sales at $5 million and above south of Montauk Highway since January 2023, a median of $11.05 million, led by 408 Further Lane at $115 million, off-market. The 2026 south record stops on July 28, verified in public MLS through October 12.",
     date: "2026-10-11",
     dateModified: "2026-10-12",
     author: "Barry McGovern",
@@ -62,7 +60,7 @@ export const villageReportPosts: BlogPost[] = [
     metaDescription:
       "East Hampton south of the highway: 100 sales at $5 million and above since 2023, an $11.05 million median, led off-market at $115 million.",
     charts: {
-      "median-by-year": years("East Hampton south of Montauk Highway, sales at $5 million and above. The 2026 bar stops on July 28.", [
+      "median-by-year": years("East Hampton south of Montauk Highway, sales at $5 million and above. The 2026 bar stops on July 28, verified through October 12.", [
         { label: "2023", value: 15.0, display: "$15.00M", detail: "21 sales" },
         { label: "2024", value: 10.5, display: "$10.50M", detail: "31 sales" },
         { label: "2025", value: 14.0, display: "$14.00M", detail: "30 sales" },
@@ -78,7 +76,7 @@ export const villageReportPosts: BlogPost[] = [
         ]
       ),
       "sales-by-band": soldBands(
-        "East Hampton south of Montauk Highway, sales at $5 million and above, January 2023 through July 28, 2026. The highlighted band is where most of the sales landed.",
+        "East Hampton south of Montauk Highway, sales at $5 million and above, January 2023 through July 28, 2026, verified through October 12. The highlighted band is where most of the sales landed.",
         [
           { label: "$5M to $10M", sales: 40, highlight: true },
           { label: "$10M to $20M", sales: 30 },
@@ -91,7 +89,7 @@ export const villageReportPosts: BlogPost[] = [
 ## Key Takeaways
 
 - Since January 2023, East Hampton south of the highway has recorded **100 sales at $5 million and above**, totaling **$1.96 billion**, at a **median of $11.05 million**. Seven of those sales were off-market.
-- **2025 was the peak year for volume.** Thirty sales carried about a $14.0 million median and $711.7 million. The south record for 2026 still stops on July 28: 18 sales, at a $9.50 million median.
+- **2025 was the peak year for volume.** Thirty sales carried about a $14.0 million median and $711.7 million. The south record for 2026 still stops on July 28, verified in public MLS through October 12: 18 sales, at a $9.50 million median.
 - **The largest single parcel is off-market.** 408 Further Lane, on the East Hampton and Amagansett line, closed at **$115 million** on July 31, 2025. It is the largest single residential parcel in this record. The Cobb compound, at $121.5 million, is larger.
 - **The top MLS sale is 43 East Dune Lane** at $72 million in March 2026, where Hedgerow represented the seller. With the off-market oceanfront trades included, thirteen oceanfront sales total $730.7 million, at a $51 million median.
 - **The top end is closer to balance here than elsewhere.** Six listings ask $20 million or more, against about eight sales a year at that level.
@@ -105,7 +103,8 @@ export const villageReportPosts: BlogPost[] = [
 | Largest single parcel | $115 million, 408 Further Lane, off-market (Jul 31, 2025) |
 | Top MLS sale | $72 million, 43 East Dune Lane (Mar 2026) |
 | Sales in 2026, south of the highway | 18 |
-| Latest south closing | July 28, 2026 |
+| Latest south closing | July 28, 2026, 25 Davids Lane, $8.25 million, land |
+| Public MLS solds, town hamlets, through Oct 12 | 16 in 2026. No close after July 28. |
 | Active listings, Oct 10, 2026 | 23 |
 | Median asking price | $12.5 million |
 | Contracts signed since Sep 1 | 6 |
@@ -123,7 +122,7 @@ South of Montauk Highway, East Hampton runs from the village to the ocean: Lily 
 | 2025 | 30 | $14.00M | $711.7M |
 | 2026 (through Jul 28) | 18 | $9.50M | $304.7M |
 
-East Hampton South held a median at or above $10.5 million from 2023 through 2025. 2023 has the highest median, at $15.0 million, after off-market trades at 26 and 32 Windmill Lane, 442 Further Lane, 298 Further Lane, and 31 Two Mile Hollow Road. 2025 has the most dollars. Three houses closed at $50 million or more: 408 Further Lane at $115 million, 370 and 372 Further Lane at $70 million, and 105 and 111 Lily Pond Lane at $66.75 million. 294 Further Lane closed at $48.5 million, just under that line. 2026 includes the top MLS sale, 43 East Dune Lane at $72 million on March 6, pictured above. No south-of-highway closing at $5 million and above has been recorded since July 28. Summer contracts such as 107 Georgica Road and 24 The Crossways have yet to close.
+East Hampton South held a median at or above $10.5 million from 2023 through 2025. 2023 has the highest median, at $15.0 million, after off-market trades at 26 and 32 Windmill Lane, 442 Further Lane, 298 Further Lane, and 31 Two Mile Hollow Road. 2025 has the most dollars. Three houses closed at $50 million or more: 408 Further Lane at $115 million, 370 and 372 Further Lane at $70 million, and 105 and 111 Lily Pond Lane at $66.75 million. 294 Further Lane closed at $48.5 million, just under that line. 2026 includes the top MLS sale, 43 East Dune Lane at $72 million on March 6, pictured above. Public MLS solds south of the highway at $5 million and above were verified through October 12, 2026. No close in that set falls after July 28. The last qualifying close is 25 Davids Lane, vacant land of 0.70 acre, at $8.25 million, EastEndLI listing 929247. Summer contracts such as 107 Georgica Road and 24 The Crossways have yet to close.
 
 Closings after July 28 that carry an East Hampton address are north of the highway, in Springs, Northwest, and along Two Holes of Water Road and Old Stone Highway. They belong with that northern market.
 
@@ -138,7 +137,7 @@ Closings after July 28 that carry an East Hampton address are north of the highw
 | **East Hampton South** | **100** | **$11.05M** | **$115.0M** | **$1,955.3M** |
 | *North of the highway, including Springs and Northwest* | *56* | *$5.95M* | *$18.4M* | *$378.9M* |
 
-Oceanfront is about five times the inland median. The gap is the off-market dune and Further Lane trades, not a change in the inland houses. The top inland house is 121 Further Lane at $52 million. Separately, 41 and 47 Cove Hollow Farm Road sold for $55 million in December 2025, land bought by the Peconic Land Trust. That sale is in the inland count. It is not in the top-sales ranking. Hedgerow represented the seller at 11 Amy's Lane ($11.2 million, February 2024) and at 86 Skimhampton Road ($8.85 million, April 2025).
+Oceanfront is about five times the inland median. The gap is the off-market dune and Further Lane trades, not a change in the inland houses. The top inland house is 121 Further Lane at $52 million. Separately, 41 and 47 Cove Hollow Farm Road sold for $55 million in December 2025, land bought by the Peconic Land Trust. That sale is in the inland count. It is not in the top-sales ranking. 25 Davids Lane closed on July 28, 2026 at $8.25 million, vacant land of 0.70 acre, EastEndLI listing 929247. That closing is in this land record, and it is the latest south sale at $5 million and above. Hedgerow represented the seller at 11 Amy's Lane ($11.2 million, February 2024) and at 86 Skimhampton Road ($8.85 million, April 2025).
 
 {{figure:/images/hedgerow/sold-33-lily-pond-lane-east-hampton-2025.webp|33 Lily Pond Lane, East Hampton, sold for $31.5 million in September 2025. Hedgerow represented the seller.}}
 
@@ -193,13 +192,13 @@ Below $10 million the shelf is short. Above $20 million, two listings hold almos
 
 ## How These Figures Were Measured
 
-Closed sales of $5 million and above in East Hampton Village and East Hampton south of Montauk Highway, January 4, 2023 through October 11, 2026. The latest south closing is July 28. The 100 includes homes, four vacant land sales on the public record, and seven off-market trades. Cove Hollow Farm is land, not a house ranking. Packages count once. Where an MLS price and a deed price differ, the MLS price is used. 90 South Briar Patch Road and 96 Further Lane are not included. Active listings are as of October 10, 2026.
+Closed sales of $5 million and above in East Hampton Village and East Hampton south of Montauk Highway, January 4, 2023 through July 28, 2026. Public MLS solds for East Hampton town hamlets south of the highway at $5 million and above were verified through October 12, 2026. That search shows 16 sales in 2026 and no close after July 28. The last qualifying close in that set remains July 28, 2026: 25 Davids Lane, vacant land, 0.70 acre, $8,250,000, EastEndLI listing 929247. This report counts 18 sales in 2026 through that same July 28 date. The 100 includes homes, four vacant land sales on the public record, and seven off-market trades. Cove Hollow Farm is land, not a house ranking. 25 Davids Lane is vacant land in that public record. Packages count once. Where an MLS price and a deed price differ, the MLS price is used. 90 South Briar Patch Road and 96 Further Lane are not included. Active listings are as of October 10, 2026.
 
 ## FAQ
 
 ### What is the median price of a luxury home in East Hampton?
 
-Across 100 sales at $5 million and above south of the highway from January 2023 through July 28, 2026, the median was $11.05 million. In 2026 it is $9.50 million across 18 sales.
+Across 100 sales at $5 million and above south of the highway from January 2023 through July 28, 2026, the median was $11.05 million. In 2026 it is $9.50 million across 18 sales. Public MLS solds south of the highway at $5 million and above were verified through October 12, 2026, and the last qualifying close remains July 28.
 
 ### What is the most expensive home sold in East Hampton recently?
 
