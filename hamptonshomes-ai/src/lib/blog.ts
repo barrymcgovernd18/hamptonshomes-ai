@@ -16,6 +16,8 @@ export type BlogChart = {
   title: string;
   caption?: string;
   rows: BlogChartRow[];
+  /** Trend is a price line. Columns are counts or medians by category. */
+  kind?: "trend" | "columns";
 };
 
 export interface BlogPost {
@@ -170,7 +172,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Fifty-six sales at $5 million and up south of the highway since January 2023, twelve of them in 2026, and just 11 listings there this fall: how Sagaponack South sets the price, where the top of the record sits, and why supply is thin below $50 million.",
     date: "2026-10-09",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/heroes/453-hedges-lane-sagaponack.jpg",
@@ -181,6 +183,31 @@ export const blogPosts: BlogPost[] = [
       "Sagaponack real estate, Sagaponack luxury homes, Sagaponack market 2026, Sagaponack South, Sagaponack oceanfront, Hamptons luxury market",
     metaDescription:
       "Sagaponack luxury real estate 2026: 56 sales of $5M+ south of Montauk Highway from 2023 through October 2026, the oceanfront benchmark, and thin fall inventory.",
+    charts: {
+      "median-by-year": {
+        title: "Median sale price by year",
+        kind: "trend",
+        caption: "Sagaponack South, sales at $5 million and above. 2026 runs through October 9.",
+        rows: [
+          { label: "2023", value: 8.85, display: "$8.85M", detail: "14 sales" },
+          { label: "2024", value: 11.8, display: "$11.8M", detail: "16 sales" },
+          { label: "2025", value: 9.75, display: "$9.75M", detail: "14 sales" },
+          { label: "2026", value: 15.9, display: "$15.9M", detail: "12 sales", highlight: true },
+        ],
+      },
+      "sales-by-band": {
+        title: "Sales by price band",
+        kind: "columns",
+        caption:
+          "Sagaponack South, sales at $5 million and above, January 5, 2023 through October 9, 2026. The highlighted band is where most of the sales landed.",
+        rows: [
+          { label: "$5M to $10M", value: 24, display: "24", detail: "24 sales", highlight: true, prefix: "" },
+          { label: "$10M to $20M", value: 20, display: "20", detail: "20 sales", prefix: "" },
+          { label: "$20M to $50M", value: 12, display: "12", detail: "12 sales", prefix: "" },
+          { label: "$50M and above", value: 0, display: "0", detail: "0 sales", prefix: "" },
+        ],
+      },
+    },
     content: `
 ## Key Takeaways
 
@@ -201,6 +228,8 @@ Sagaponack is the smallest of the South Fork's estate markets and, south of the 
 *Closed sales, January 5, 2023 to October 9, 2026. Sources: MLS sold data, with additional closings from public deed records.*
 
 The year-by-year record has moved up. There were 14 sales at $5 million and above in 2023 (median $8.85 million), 16 in 2024 (median $11.8 million), and 14 in 2025 (median $9.75 million). Through October 9, 2026 there have already been 12, at a median of $15.9 million and a combined $193.6 million. Five of this year's closings were at $19 million or more: 70 Fairfield Pond Lane at $25 million in March, 494 Hedges Lane at $24 million in January, 454 Hedges Lane at $22.5 million in March, 480 Hedges Lane at $22 million in June, and 149 Seascape Lane at $19 million in August.
+
+{{chart:median-by-year}}
 
 ## The Estate Lanes and the Ocean
 
@@ -235,6 +264,8 @@ Since January 2023, the only Sagaponack oceanfront closing in the public record 
 ## Fall 2026: Inventory Versus Contracts
 
 I reviewed Sagaponack's active listings and contracts in MLS listing data on October 6, 2026, alongside the wider market covered in [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory), and rechecked active inventory on October 9. In those three days one new listing arrived, 68 Hedges Lane at $28.95 million, bringing Sagaponack South to 11 listings.
+
+{{chart:sales-by-band}}
 
 | Asking price | Active listings | Sales $5M+, Jan 2023 to Oct 2026 |
 |---|---|---|
@@ -316,9 +347,11 @@ Barry McGovern is a Licensed Real Estate Salesperson with Hedgerow Exclusive Pro
 ## Related
 
 - [Sagaponack town page](/sagaponack)
+- [Wainscott Luxury Market Snapshot 2026](/blog/wainscott-luxury-market-snapshot-2026-10)
+- [East Hampton Luxury Market Overview 2026](/blog/east-hampton-luxury-market-overview-2026-10)
+- [Bridgehampton Luxury Market Overview 2026](/blog/bridgehampton-luxury-market-overview-2026-10)
 - [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory)
 - [Hamptons Oceanfront, 2021 to 2026](/blog/hamptons-oceanfront-market-2021-2026)
-- [Bridgehampton Luxury Market Overview 2026](/blog/bridgehampton-luxury-market-overview-2026-10)
 - [The Hedgerow portfolio](/sales)
 - [Contact](/contact)
 
@@ -496,7 +529,7 @@ In New York, the agreed price on a contract is not public until the sale closes 
     excerpt:
       "Eighty-seven oceanfront sales from Southampton to Montauk since 2021: the median, the village spread, and what repeat sales actually show.",
     date: "2026-10-07",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Research",
     image: "/images/trades/lily-pond-compound-east-hampton.jpg",

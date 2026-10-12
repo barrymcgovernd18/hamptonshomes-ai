@@ -11,6 +11,7 @@ const explore = [
   { href: "/market", label: "Market" },
   { href: "/press", label: "Press" },
   { href: "/about", label: "About" },
+  { href: "/approach", label: "Approach" },
   { href: "/contact", label: "Contact" },
 ];
 

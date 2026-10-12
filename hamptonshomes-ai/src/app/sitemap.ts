@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: baseUrl, lastModified: SITE_UPDATED, changeFrequency: "weekly", priority: 1 },
     { url: `${baseUrl}/about`, lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/approach`, lastModified: "2026-10-12", changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/sales`, lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/listings`, lastModified: LISTINGS_VERIFIED, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/hedgerow-sales`, lastModified: "2026-10-08", changeFrequency: "monthly", priority: 0.8 },
