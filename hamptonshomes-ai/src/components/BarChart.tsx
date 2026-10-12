@@ -2,11 +2,11 @@ import Link from "next/link";
 
 type Row = { label: string; value: number; display: string; detail?: string; href?: string; highlight?: boolean; prefix?: string };
 
-export type ChartKind = "trend" | "columns";
+export type ChartKind = "trend" | "columns" | "bars";
 
 /**
  * Price trend as a line. Counts and category medians as columns.
- * Long rankings (a village list) use a shared horizontal scale.
+ * Long rankings, and any chart with kind "bars", use a shared horizontal scale.
  * The drawing is decorative. The same figures sit in a table for assistive tech.
  */
 export default function BarChart({
@@ -27,7 +27,7 @@ export default function BarChart({
   const dark = tone === "dark";
   const muted = dark ? "text-paper/70" : "text-ink-faint";
   const line = dark ? "border-paper/20" : "border-ink/15";
-  const wide = kind === "columns" && rows.length > 6;
+  const wide = kind === "bars" || (kind === "columns" && rows.length > 6);
 
   return (
     <figure className={className}>
@@ -129,7 +129,7 @@ function Horizontal({ rows, dark }: { rows: Row[]; dark: boolean }) {
             </span>
           );
           return (
-            <li key={row.label} className="grid grid-cols-[6.6rem_1fr_4.6rem] items-center gap-3 sm:grid-cols-[8.5rem_1fr_5.5rem] sm:gap-5">
+            <li key={row.label} className="grid grid-cols-[minmax(0,7.6rem)_minmax(0,1fr)_max-content] items-center gap-3 sm:grid-cols-[12.75rem_minmax(0,1fr)_max-content] sm:gap-5">
               {row.href ? (
                 <Link href={row.href} className={`text-[13px] leading-tight transition-colors hover:text-ocean ${ink}`}>
                   {row.label}
@@ -139,8 +139,8 @@ function Horizontal({ rows, dark }: { rows: Row[]; dark: boolean }) {
               )}
               {bar}
               <span className="text-right">
-                <span className={`block font-serif text-[1.25rem] leading-none sm:text-[1.45rem] ${ink}`}>{row.display}</span>
-                {showDetail(row) ? <span className={`mt-1 block text-[10.5px] ${muted}`}>{row.detail}</span> : null}
+                <span className={`block whitespace-nowrap font-serif text-[1.15rem] leading-none sm:text-[1.35rem] ${ink}`}>{row.display}</span>
+                {showDetail(row) ? <span className={`mt-1 block whitespace-nowrap text-right text-[10.5px] ${muted}`}>{row.detail}</span> : null}
               </span>
             </li>
           );

@@ -11,14 +11,16 @@ export type BlogChartRow = {
   highlight?: boolean;
   /** Screen-reader prefix before `display`. Defaults to "median" in the chart. */
   prefix?: string;
+  /** Horizontal bar charts link the label when set. */
+  href?: string;
 };
 
 export type BlogChart = {
   title: string;
   caption?: string;
   rows: BlogChartRow[];
-  /** Trend is a price line. Columns are counts or medians by category. */
-  kind?: "trend" | "columns";
+  /** Trend is a price line. Columns are short category charts. Bars are a shared horizontal scale. */
+  kind?: "trend" | "columns" | "bars";
 };
 
 export interface BlogPost {
