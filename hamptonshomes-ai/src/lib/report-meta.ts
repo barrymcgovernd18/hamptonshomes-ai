@@ -49,6 +49,10 @@ const shelterWater: ReportNeighbor = {
   href: "/blog/shelter-island-waterfront-luxury-market-2026-10",
   label: "Shelter Island waterfront",
 };
+const oceanfront: ReportNeighbor = {
+  href: "/blog/hamptons-oceanfront-market-2021-2026",
+  label: "Oceanfront, 2021 to 2026",
+};
 
 /** EastEndLI is the Hamptons listing service these reports are built from. */
 const WITH_OFF_MARKET =
@@ -60,6 +64,8 @@ const SHELTER =
   "Sales in this report come from EastEndLI. Shelter Island sits outside the South Fork deed feed, so this count is the listing service alone.";
 
 export const REPORT_SOURCE_LINE: Record<string, string> = {
+  "east-end-luxury-market-overview-2026-10":
+    "The figures in this report are the totals already published in the village, harbor, and oceanfront reports. Those reports draw on EastEndLI, recorded deeds, and the off-market trades they name. Shelter Island is the listing service alone.",
   "east-hampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,
   "southampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,
   "bridgehampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,
@@ -77,6 +83,20 @@ export const REPORT_SOURCE_LINE: Record<string, string> = {
 
 /** Immediate neighbours, including East Hampton, Wainscott, and Sagaponack in both directions. */
 export const REPORT_NEIGHBORS: Record<string, ReportNeighbor[]> = {
+  "east-end-luxury-market-overview-2026-10": [
+    southampton,
+    waterMill,
+    bridgehampton,
+    sagaponack,
+    wainscott,
+    eastHampton,
+    sagHarbor,
+    sagHarborWater,
+    northHaven,
+    shelterIsland,
+    shelterWater,
+    oceanfront,
+  ],
   "southampton-luxury-market-overview-2026-10": [waterMill],
   "water-mill-luxury-market-overview-2026-10": [southampton, bridgehampton],
   "bridgehampton-luxury-market-overview-2026-10": [waterMill, sagaponack],

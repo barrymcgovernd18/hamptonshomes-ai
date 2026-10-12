@@ -1,4 +1,5 @@
 import { PLACE_NAMES, PLACE_SLUGS } from "./schema";
+import { eastEndReportPosts } from "./east-end-report";
 import { harborReportPosts } from "./harbor-reports";
 import { villageReportPosts } from "./village-reports";
 
@@ -46,6 +47,7 @@ export interface BlogPost {
 
 /** Search titles (under ~62 characters, brand included). The on-page H1 keeps the full title. */
 export const SEO_TITLES: Record<string, string> = {
+  "east-end-luxury-market-overview-2026-10": "East End Luxury Market, 2026 | Barry McGovern",
   "east-hampton-luxury-market-overview-2026-10": "East Hampton Luxury Market, 2026 | Barry McGovern",
   "southampton-luxury-market-overview-2026-10": "Southampton Luxury Market, 2026 | Barry McGovern",
   "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton Luxury Market, 2026 | Barry McGovern",
@@ -164,6 +166,7 @@ export function relatedBlogPosts(post: BlogPost, limit = 2): BlogPost[] {
 }
 
 export const blogPosts: BlogPost[] = [
+  ...eastEndReportPosts,
   ...villageReportPosts,
   ...harborReportPosts,
   {

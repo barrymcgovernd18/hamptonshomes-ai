@@ -11,7 +11,7 @@ import { OCEANFRONT_BY_VILLAGE, OCEANFRONT_BY_YEAR, OCEANFRONT_STUDY_PATH, forma
 
 const MARKET_TITLE = "Hamptons Market Research and Reports";
 const MARKET_DESCRIPTION =
-  "Hamptons market research by Barry McGovern: oceanfront data 2021 to 2026, village reports from Southampton to Montauk, and private-market commentary.";
+  "Hamptons market research by Barry McGovern: the East End at $5 million and above, oceanfront data 2021 to 2026, and village reports from Southampton to Montauk.";
 
 export const metadata: Metadata = routeMetadata({
   title: MARKET_TITLE,
@@ -31,6 +31,7 @@ function formatDate(date: string, withDay = false) {
 
 /** Short names for the in-page report index. Unlisted reports fall back to a trimmed title. */
 const REPORT_INDEX_LABELS: Record<string, string> = {
+  "east-end-luxury-market-overview-2026-10": "East End",
   "southampton-luxury-market-overview-2026-10": "Southampton",
   "water-mill-luxury-market-overview-2026-10": "Water Mill",
   "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton",
@@ -54,6 +55,10 @@ const REPORT_INDEX_LABELS: Record<string, string> = {
 
 /** Geographic reading order, west to east, then the coast and earlier notes. */
 const INDEX_GROUPS: { label: string; slugs: string[] }[] = [
+  {
+    label: "East End overview",
+    slugs: ["east-end-luxury-market-overview-2026-10"],
+  },
   {
     label: "South of the highway",
     slugs: [
@@ -262,7 +267,7 @@ export default function MarketPage() {
         <div className="frame">
           <SectionLabel n="II">Market reports</SectionLabel>
           <p data-reveal style={revealDelay(80)} className="body-copy mt-8 max-w-2xl text-ink-muted">
-            The East End at $5 million and above: the ocean from Southampton to Montauk, then the villages south of the highway, Sag Harbor, North Haven, and Shelter Island.
+            The East End at $5 million and above, gathered in the overview, then the ocean from Southampton to Montauk, the villages south of the highway, Sag Harbor, North Haven, and Shelter Island.
           </p>
           <ul className="mt-14 grid gap-x-12 gap-y-16 md:mt-16 md:grid-cols-2">
             {reportCards.map((post, i) => (
