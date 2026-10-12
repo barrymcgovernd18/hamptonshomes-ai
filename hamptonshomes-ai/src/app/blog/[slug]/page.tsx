@@ -16,6 +16,7 @@ import { ClosingInvitation } from "@/components/Editorial";
 import LeadForm from "@/components/LeadForm";
 import BarChart from "@/components/BarChart";
 import { OCEANFRONT_BY_VILLAGE, OCEANFRONT_BY_YEAR, formatMillions } from "@/lib/oceanfront";
+import { REPORT_NEIGHBORS, REPORT_SOURCE_LINE } from "@/lib/report-meta";
 import { OG_POSTS } from "@/lib/og-images";
 import {
   BARRY_BLURB,
@@ -157,12 +158,22 @@ function renderTable(rows: string[], key: number) {
 function renderChart(name: string, key: number, charts?: Record<string, BlogChart>) {
   const spec = charts?.[name];
   if (spec) {
-    return <BarChart key={key} className="my-14 lg:-mx-28" title={spec.title} caption={spec.caption} rows={spec.rows} />;
+    return (
+      <BarChart
+        key={key}
+        className="my-14 lg:-mx-28"
+        kind={spec.kind ?? "columns"}
+        title={spec.title}
+        caption={spec.caption}
+        rows={spec.rows}
+      />
+    );
   }
   if (name === "oceanfront-by-year") {
     return (
       <BarChart
         key={key}
+        kind="trend"
         className="my-14 lg:-mx-28"
         title="Median oceanfront sale price, by year"
         rows={OCEANFRONT_BY_YEAR.map((r) => ({ label: r.label, value: r.median, display: formatMillions(r.median), detail: `${r.sales} sales`, highlight: r.label.startsWith("2026") }))}
@@ -173,6 +184,7 @@ function renderChart(name: string, key: number, charts?: Record<string, BlogChar
     return (
       <BarChart
         key={key}
+        kind="columns"
         className="my-14 lg:-mx-28"
         title="Median oceanfront sale price, by village, 2021 to 2026"
         rows={OCEANFRONT_BY_VILLAGE.map((r) => ({ label: r.label, value: r.median, display: formatMillions(r.median), detail: `${r.sales} sales`, href: `/${r.slug}` }))}
@@ -328,6 +340,8 @@ export default async function BlogPostPage({ params }: Props) {
   const town = inferTownFromPost(post);
   const related = relatedBlogPosts(post, 2);
   const villages = post.about ?? [];
+  const sourceLine = REPORT_SOURCE_LINE[post.slug];
+  const neighbors = REPORT_NEIGHBORS[post.slug] ?? [];
 
   return (
     <div className="bg-paper">
@@ -385,7 +399,20 @@ export default async function BlogPostPage({ params }: Props) {
         ) : null}
 
         <div className="frame">
-          <div className="mx-auto mt-16 max-w-[42rem] md:mt-24 [&>h2:first-child]:mt-0 [&>h2:first-child]:border-t-0 [&>h2:first-child]:pt-0">{renderContent(post.content, { charts: post.charts })}</div>
+          <div className="mx-auto mt-16 max-w-[42rem] md:mt-24 [&>h2:first-child]:mt-0 [&>h2:first-child]:border-t-0 [&>h2:first-child]:pt-0">
+            {sourceLine ? <p className="mb-10 text-[16px] leading-[1.9] text-ink-muted md:text-[17px]">{sourceLine}</p> : null}
+            {neighbors.length > 0 ? (
+              <nav aria-label="Neighbouring reports" className="mb-12 flex flex-wrap items-baseline gap-x-6 gap-y-3 border-b border-line pb-8">
+                <span className="eyebrow text-ink-faint">Neighbouring reports</span>
+                {neighbors.map((item) => (
+                  <Link key={item.href} href={item.href} className="font-serif text-[1.25rem] font-light text-ink transition-colors duration-500 hover:text-ocean">
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            ) : null}
+            {renderContent(post.content, { charts: post.charts })}
+          </div>
 
           <aside aria-label="Valuation and research" className="mx-auto mt-20 grid max-w-[42rem] gap-14 border-t border-ink/80 pt-10 sm:grid-cols-2 sm:gap-10 lg:max-w-[56rem]">
             <div>

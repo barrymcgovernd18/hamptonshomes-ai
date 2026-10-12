@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import TradesShowcase from "@/components/TradesShowcase";
 import LeadBand from "@/components/LeadBand";
+import JsonLd from "@/components/JsonLd";
+import { homePageJsonLd } from "@/lib/schema";
 import { areas } from "@/lib/areas";
 import { blogPosts } from "@/lib/blog";
 import { allPress } from "@/lib/press";
@@ -32,6 +34,7 @@ export default function Home() {
 
   return (
     <>
+      <JsonLd data={homePageJsonLd()} />
       {/* Hero */}
       <section data-hero className="relative isolate h-[100svh] min-h-[640px] max-h-[1080px] overflow-hidden bg-ocean-deep text-paper">
         <Image
@@ -177,7 +180,10 @@ export default function Home() {
                   Buyers and sellers come to me for a clear read of the market, careful underwriting of each property,
                   and complete confidentiality.
                 </p>
-                <Link href="/about" className="eyebrow link-line mt-8 inline-block text-ink">About Barry</Link>
+                <p className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
+                  <Link href="/approach" className="eyebrow link-line text-ink">The approach</Link>
+                  <Link href="/about" className="eyebrow link-line text-ink">About Barry</Link>
+                </p>
               </div>
             </div>
           </div>

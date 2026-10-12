@@ -177,6 +177,7 @@ export default function MarketPage() {
           <div className="mt-16 grid gap-14 md:mt-20 md:grid-cols-2 md:gap-12">
             <BarChart
               tone="dark"
+              kind="trend"
               title="Median oceanfront sale, by year"
               rows={OCEANFRONT_BY_YEAR.map((r) => ({
                 label: r.label,
@@ -188,6 +189,7 @@ export default function MarketPage() {
             />
             <BarChart
               tone="dark"
+              kind="columns"
               title="Median oceanfront sale, by village"
               rows={OCEANFRONT_BY_VILLAGE.map((r) => ({
                 label: r.label,

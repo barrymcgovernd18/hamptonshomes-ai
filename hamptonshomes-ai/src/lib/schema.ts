@@ -198,8 +198,18 @@ export function barryPersonNode() {
       value: "10401353717",
     },
     address: OFFICE_ADDRESS,
-    worksFor: { "@id": HEDGEROW.id },
-    affiliation: { "@id": HEDGEROW.id },
+    worksFor: {
+      "@type": "Organization",
+      "@id": HEDGEROW.id,
+      name: HEDGEROW.name,
+      url: HEDGEROW.url,
+    },
+    affiliation: {
+      "@type": "Organization",
+      "@id": HEDGEROW.id,
+      name: HEDGEROW.name,
+      url: HEDGEROW.url,
+    },
     sameAs: [...BARRY_SAME_AS],
     birthPlace: {
       "@type": "City",
@@ -225,7 +235,39 @@ export function barryPersonNode() {
       "Land and development",
       "Hamptons luxury real estate market",
     ],
-    areaServed: PLACE_NAMES.map(placeRef),
+    areaServed: [
+      {
+        "@type": "AdministrativeArea",
+        name: "East End",
+        alternateName: "The Hamptons",
+        address: {
+          "@type": "PostalAddress",
+          addressRegion: "NY",
+          addressCountry: "US",
+        },
+      },
+      ...PLACE_NAMES.map(placeRef),
+    ],
+  };
+}
+
+/** Homepage WebPage whose main entity is the Person / RealEstateAgent in the site graph. */
+export function homePageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/#webpage`,
+    url: `${SITE_URL}/`,
+    name: "Barry McGovern | Hamptons Oceanfront and Waterfront Homes",
+    description:
+      "Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties. Hamptons oceanfront, waterfront and estate homes, Southampton to Montauk.",
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": PERSON_ID },
+    mainEntity: barryPersonNode(),
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/images/barry-mcgovern.jpg`,
+    },
   };
 }
 

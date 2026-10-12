@@ -6,13 +6,22 @@ function years(
 ) {
   return {
     title: "Median sale price by year",
+    kind: "trend" as const,
     caption,
     rows,
   };
 }
 
 function counts(title: string, caption: string, rows: BlogChartRow[]) {
-  return { title, caption, rows };
+  return { title, kind: "columns" as const, caption, rows };
+}
+
+function soldBands(caption: string, rows: { label: string; sales: number; highlight?: boolean }[]) {
+  return counts(
+    "Sales by price band",
+    caption,
+    rows.map((row) => count(row.label, row.sales, row.sales === 1 ? "1 sale" : `${row.sales} sales`, !!row.highlight))
+  );
 }
 
 function count(label: string, n: number, detail: string, highlight = false): BlogChartRow {
@@ -26,7 +35,7 @@ export const harborReportPosts: BlogPost[] = [
     excerpt:
       "Fifty-one sales at $5 million and above in Sag Harbor Village since January 2023, a median of $6.3 million, with 17 already in 2026 and the village record at 53 Glover Street.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-46-spring-street-sag-harbor-2023.webp",
@@ -180,7 +189,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     excerpt:
       "Twenty-one Sag Harbor waterfront sales at $5 million and above since January 2023, a median of $6.7 million, led by 53 Glover Street at $21 million. North Haven is not in this count.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-8-john-street-sag-harbor-2024.webp",
@@ -198,6 +207,14 @@ Whether you are weighing a sale or looking for a house that may never reach the 
         { label: "2025", value: 7.81, display: "$7.81M", detail: "6 sales" },
         { label: "2026", value: 6.89, display: "$6.89M", detail: "5 sales", highlight: true },
       ]),
+      "sales-by-band": soldBands(
+        "Sag Harbor waterfront, excluding North Haven, January 2023 through September 2026. The highlighted band is where most of the sales landed.",
+        [
+          { label: "$5M to $10M", sales: 15, highlight: true },
+          { label: "$10M to $20M", sales: 5 },
+          { label: "$20M and above", sales: 1 },
+        ]
+      ),
     },
     content: `
 ## Key Takeaways
@@ -240,6 +257,8 @@ This is Sag Harbor on the water, inside the village and on the Sag Harbor side o
 In the village, Glover Street on Sag Harbor Cove has produced three of the top waterfront sales: 53 Glover Street at $21 million, 63 Glover Street at $11.5 million, and 37 Glover Street at $10.9 million. 8 John Street, where Hedgerow represented the seller, closed at $15.52 million in May 2024. It is pictured above. Outside the village, 25 Rawson Road at $12.25 million and 61 Harbor Drive at $7.1 million led 2026.
 
 ## Price Bands
+
+{{chart:sales-by-band}}
 
 | Price band | Sales since Jan 2023 |
 |---|---|
@@ -314,7 +333,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     excerpt:
       "Twenty-seven sales at $5 million and above in North Haven since January 2023, a median of about $8.25 million, led by 6 Bay View Court at $34.5 million.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-48-forest-road-sag-harbor-2023.webp",
@@ -334,12 +353,21 @@ Whether you are weighing a sale or looking for a house that may never reach the 
       ]),
       "setting": {
         title: "Median by setting",
+        kind: "columns" as const,
         caption: "North Haven, January 2023 through September 2026. Waterfront is the higher bar.",
         rows: [
           { label: "Waterfront", value: 10.4, display: "$10.40M", detail: "13 sales", highlight: true },
           { label: "Interior", value: 6.31, display: "$6.31M", detail: "14 sales" },
         ],
       },
+      "sales-by-band": soldBands(
+        "North Haven, January 2023 through September 2026. The highlighted band is where most of the sales landed.",
+        [
+          { label: "$5M to $10M", sales: 15, highlight: true },
+          { label: "$10M to $20M", sales: 10 },
+          { label: "$20M and above", sales: 2 },
+        ]
+      ),
     },
     content: `
 ## Key Takeaways
@@ -395,6 +423,8 @@ Interior sales have reached $15 million at 35 Ezekills Hollow in 2023 and $13.8 
 {{figure:/images/hedgerow/sold-11-south-harbor-drive-sag-harbor-2026.webp|11 South Harbor Drive, North Haven, sold for $6.45 million in February 2026. Hedgerow represented the seller.}}
 
 ## Price Bands
+
+{{chart:sales-by-band}}
 
 | Price band | Sales since Jan 2023 |
 |---|---|
@@ -474,7 +504,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     excerpt:
       "Fourteen sales at $5 million and above on Shelter Island since January 2023, a median of $7.9 million, and a record six sales in 2026, led by 4 Dawn Lane at $15.995 million.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-33-dinah-rock-road-shelter-island-2026.webp",
@@ -498,12 +528,21 @@ Whether you are weighing a sale or looking for a house that may never reach the 
       ),
       "setting": {
         title: "Median by setting",
+        kind: "columns" as const,
         caption: "Nine of the 14 sales are waterfront. Those nine are also the Shelter Island waterfront report.",
         rows: [
           { label: "Waterfront", value: 9, display: "$9.00M", detail: "9 sales", highlight: true },
           { label: "Inland", value: 6.55, display: "$6.55M", detail: "5 sales" },
         ],
       },
+      "sales-by-band": soldBands(
+        "Shelter Island, January 2023 through September 2026. The highlighted band is where most of the sales landed.",
+        [
+          { label: "$5M to $10M", sales: 10, highlight: true },
+          { label: "$10M to $20M", sales: 4 },
+          { label: "$20M and above", sales: 0 },
+        ]
+      ),
     },
     content: `
 ## Key Takeaways
@@ -553,6 +592,8 @@ Every sale above $7 million since 2023 has been on the water: 4 Dawn Lane, 2 Cha
 {{figure:/images/hedgerow/sold-1-pandion-road-shelter-island-2025.webp|1 Pandion Road, Shelter Island, sold for $12.85 million in September 2025. Hedgerow represented the seller.}}
 
 ## Price Bands
+
+{{chart:sales-by-band}}
 
 | Price band | Sales since Jan 2023 |
 |---|---|
@@ -633,7 +674,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     excerpt:
       "Nine Shelter Island waterfront sales at $5 million and above since January 2023, a median of $9 million, four of them in 2026, led by 4 Dawn Lane at $15.995 million.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-1-pandion-road-shelter-island-2025.webp",
@@ -653,6 +694,14 @@ Whether you are weighing a sale or looking for a house that may never reach the 
           count("2024", 2, "$9.50M median"),
           count("2025", 1, "$12.85M median"),
           count("2026", 4, "$7.35M median", true),
+        ]
+      ),
+      "sales-by-band": soldBands(
+        "Shelter Island waterfront, January 2023 through July 31, 2026. The highlighted band is where most of the sales landed.",
+        [
+          { label: "$5M to $10M", sales: 5, highlight: true },
+          { label: "$10M to $20M", sales: 4 },
+          { label: "$20M and above", sales: 0 },
         ]
       ),
     },
@@ -689,6 +738,8 @@ These nine sales are the waterfront rows of the Shelter Island report, published
 Before 2026, Shelter Island saw one or two waterfront sales a year at this level, between $8.75 million and $12.95 million. 2026 added four: 4 Dawn Lane at $15.995 million, 8 Little Ram Island Drive at $9 million, 21 Thompson Road at $5.7 million on 9.4 acres, and 29 East Brander Parkway at $5.15 million. The latest waterfront closing in the search is July 31, 2026.
 
 ## Price Bands
+
+{{chart:sales-by-band}}
 
 | Price band | Sales since Jan 2023 |
 |---|---|

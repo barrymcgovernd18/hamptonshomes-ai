@@ -6,6 +6,7 @@ function years(
 ) {
   return {
     title: "Median sale price by year",
+    kind: "trend" as const,
     caption,
     rows,
   };
@@ -14,8 +15,25 @@ function years(
 function supply(caption: string, rows: BlogChartRow[]) {
   return {
     title: "Active listings by price band",
+    kind: "columns" as const,
     caption,
     rows,
+  };
+}
+
+function soldBands(caption: string, rows: { label: string; sales: number; highlight?: boolean }[]) {
+  return {
+    title: "Sales by price band",
+    kind: "columns" as const,
+    caption,
+    rows: rows.map((row) => ({
+      label: row.label,
+      value: row.sales,
+      display: String(row.sales),
+      detail: row.sales === 1 ? "1 sale" : `${row.sales} sales`,
+      highlight: row.highlight,
+      prefix: "" as const,
+    })),
   };
 }
 
@@ -24,13 +42,15 @@ function band(label: string, listings: number, pace: string, highlight = false):
 }
 
 export const villageReportPosts: BlogPost[] = [
+  // TODO: Refresh East Hampton south-of-highway 2026 solds past July 28, 2026
+  // once Ely sends the EastEndLI sold TSV. Do not invent closings.
   {
     slug: "east-hampton-luxury-market-overview-2026-10",
     title: "East Hampton Luxury Real Estate Market Overview 2026",
     excerpt:
       "One hundred sales at $5 million and above south of Montauk Highway since January 2023, a median of $11.05 million, led by 408 Further Lane at $115 million, off-market. The 2026 south record stops on July 28.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-43-east-dune-lane-east-hampton-2026.webp",
@@ -55,6 +75,15 @@ export const villageReportPosts: BlogPost[] = [
           band("$10M to $20M", 9, "about 8 sales a year"),
           band("$20M to $50M", 4, "about 5.6 sales a year"),
           band("$50M and above", 2, "about 2.4 sales a year"),
+        ]
+      ),
+      "sales-by-band": soldBands(
+        "East Hampton south of Montauk Highway, sales at $5 million and above, January 2023 through July 28, 2026. The highlighted band is where most of the sales landed.",
+        [
+          { label: "$5M to $10M", sales: 40, highlight: true },
+          { label: "$10M to $20M", sales: 30 },
+          { label: "$20M to $50M", sales: 21 },
+          { label: "$50M and above", sales: 9 },
         ]
       ),
     },
@@ -146,6 +175,8 @@ Off-market sales are in the 100. They rank by price. None of them has an EastEnd
 
 {{chart:supply-by-band}}
 
+{{chart:sales-by-band}}
+
 | Price band | Active listings, Oct 10 | Sales since 2023 | Sales per year | Supply |
 |---|---|---|---|---|
 | $5M to $10M | 8 | 40 | about 10.5 | about 9 months |
@@ -195,6 +226,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
 - [East Hampton town page](/east-hampton)
 - [Lily Pond Lane and Further Lane, 2026](/blog/east-hampton-lily-pond-further-lane-2026)
 - [Wainscott Luxury Market Snapshot 2026](/blog/wainscott-luxury-market-snapshot-2026-10)
+- [Sagaponack Luxury Market Overview 2026](/blog/sagaponack-luxury-market-overview-2026-10)
 - [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory)
 - [Recent Hedgerow Exclusive Sales](/hedgerow-sales)
 
@@ -207,7 +239,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     excerpt:
       "One hundred thirty-three sales at $5 million and above south of the highway since January 2023, a median of $8.84 million, and a 2026 median of $13.75 million across 27 sales, led by Mylestone at 700 Meadow Lane.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-109-duck-pond-lane-southampton-2026.webp",
@@ -232,6 +264,15 @@ Whether you are weighing a sale or looking for a house that may never reach the 
           band("$10M to $20M", 11, "about 10 sales a year"),
           band("$20M to $50M", 12, "about 5 sales a year"),
           band("$50M and above", 1, "about 0.8 sales a year"),
+        ]
+      ),
+      "sales-by-band": soldBands(
+        "Southampton south of Montauk Highway and County Road 39, sales at $5 million and above, January 2023 through October 2026. The highlighted band is where most of the sales landed.",
+        [
+          { label: "$5M to $10M", sales: 74, highlight: true },
+          { label: "$10M to $20M", sales: 37 },
+          { label: "$20M to $50M", sales: 19 },
+          { label: "$50M and above", sales: 3 },
         ]
       ),
     },
@@ -293,6 +334,8 @@ North of the highway, the same Southampton search shows 33 sales, a $6.06 millio
 ## Fall 2026: Inventory Versus Contracts
 
 {{chart:supply-by-band}}
+
+{{chart:sales-by-band}}
 
 | Price band | Active listings, Oct 10 | Sales, Jan 2023 to Oct 2026 | Sales per year | Supply at that pace |
 |---|---|---|---|---|
@@ -384,7 +427,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     excerpt:
       "Sixty-five sales at $5 million and above south of the highway since January 2023, a median of $10.2 million and $880.4 million in all, with 2025 still the oceanfront year.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-125-mid-ocean-drive-bridgehampton-2025.webp",
@@ -409,6 +452,15 @@ Whether you are weighing a sale or looking for a house that may never reach the 
           band("$10M to $20M", 10, "about 6.4 sales a year"),
           band("$20M to $50M", 7, "about 2.1 sales a year"),
           band("$50M and above", 2, "about 0.5 sales a year"),
+        ]
+      ),
+      "sales-by-band": soldBands(
+        "Bridgehampton south of Montauk Highway, sales at $5 million and above, January 2023 through September 2026. The highlighted band is where most of the sales landed.",
+        [
+          { label: "$5M to $10M", sales: 31, highlight: true },
+          { label: "$10M to $20M", sales: 24 },
+          { label: "$20M to $50M", sales: 8 },
+          { label: "$50M and above", sales: 2 },
         ]
       ),
     },
@@ -470,6 +522,8 @@ North of the highway, the same Bridgehampton search shows 41 sales, an $8.45 mil
 ## Fall 2026: Inventory Versus Contracts
 
 {{chart:supply-by-band}}
+
+{{chart:sales-by-band}}
 
 | Price band | Active listings, Oct 10 | Sales, Jan 2023 to Sep 2026 | Sales per year | Supply at that pace |
 |---|---|---|---|---|
@@ -565,7 +619,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     excerpt:
       "Seventy-eight sales at $5 million and above south of the highway since January 2023, a median of $9.45 million, and a 2026 median of $10.36 million, with the fall shelf stacked above $20 million.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-180-rose-hill-road-water-mill-2023.webp",
@@ -590,6 +644,15 @@ Whether you are weighing a sale or looking for a house that may never reach the 
           band("$10M to $20M", 5, "about 7.5 sales a year"),
           band("$20M to $50M", 12, "about 2.4 sales a year"),
           band("$50M and above", 1, "no sale since 2023"),
+        ]
+      ),
+      "sales-by-band": soldBands(
+        "Water Mill south of Montauk Highway, sales at $5 million and above, January 2023 through October 2026. The highlighted band is where most of the sales landed.",
+        [
+          { label: "$5M to $10M", sales: 41, highlight: true },
+          { label: "$10M to $20M", sales: 28 },
+          { label: "$20M to $50M", sales: 9 },
+          { label: "$50M and above", sales: 0 },
         ]
       ),
     },
@@ -649,6 +712,8 @@ The market has been steady rather than spiky. Volume peaked in 2025, with 25 sal
 ## Fall 2026: Inventory Versus Contracts
 
 {{chart:supply-by-band}}
+
+{{chart:sales-by-band}}
 
 | Price band | Active listings, Oct 10 | Sales, Jan 2023 to Oct 2026 | Sales per year | Supply at that pace |
 |---|---|---|---|---|
@@ -719,6 +784,8 @@ Whether you are weighing a sale or looking for a house that may never reach the 
 ## Related
 
 - [Water Mill town page](/water-mill)
+- [Southampton Luxury Market Overview 2026](/blog/southampton-luxury-market-overview-2026-10)
+- [Bridgehampton Luxury Market Overview 2026](/blog/bridgehampton-luxury-market-overview-2026-10)
 - [Sagaponack Luxury Market Overview 2026](/blog/sagaponack-luxury-market-overview-2026-10)
 - [The Hamptons Fall 2026 Pipeline](/blog/hamptons-fall-2026-contracts-inventory)
 - [Hamptons Oceanfront, 2021 to 2026](/blog/hamptons-oceanfront-market-2021-2026)
@@ -733,7 +800,7 @@ Whether you are weighing a sale or looking for a house that may never reach the 
     excerpt:
       "Twenty-two sales at $5 million and above south of the highway since 2023, a median of $9.05 million, with three Beach Lane oceanfront sales accounting for $111 million of the $281.8 million total.",
     date: "2026-10-11",
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
     author: "Barry McGovern",
     category: "Market Report",
     image: "/images/hedgerow/sold-51-wainscott-hollow-road-wainscott-2023.webp",
@@ -758,6 +825,15 @@ Whether you are weighing a sale or looking for a house that may never reach the 
           band("$10M to $20M", 2, "about 1.3 sales a year", true),
           band("$20M to $50M", 4, "about 0.5 sales a year"),
           band("$50M and above", 0, "about 0.3 sales a year"),
+        ]
+      ),
+      "sales-by-band": soldBands(
+        "Wainscott south of Montauk Highway, sales at $5 million and above, January 2023 through June 18, 2026. The highlighted band is where most of the sales landed.",
+        [
+          { label: "$5M to $10M", sales: 14, highlight: true },
+          { label: "$10M to $20M", sales: 5 },
+          { label: "$20M to $50M", sales: 2 },
+          { label: "$50M and above", sales: 1 },
         ]
       ),
     },
@@ -810,6 +886,8 @@ The ocean accounts for three sales and 39 percent of the dollars: 115 Beach Lane
 ## Fall 2026: Inventory Versus Sales
 
 {{chart:supply-by-band}}
+
+{{chart:sales-by-band}}
 
 | Price band | Active listings, Oct 10 | Sales, Jan 2023 to Jun 2026 | Sales per year | Supply at that pace |
 |---|---|---|---|---|
