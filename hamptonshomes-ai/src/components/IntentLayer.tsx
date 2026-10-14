@@ -138,12 +138,14 @@ function SlideIn({ village, onChoose, onClose }: { village?: string; onChoose: (
 export default function IntentLayer() {
   const pathname = usePathname();
   const [dialog, setDialog] = useState<{ intent?: Intent; village?: string; source: string } | null>(null);
-  const [slide, setSlide] = useState(false);
+  const [slidePath, setSlidePath] = useState<string | null>(null);
+  const slide = slidePath === pathname;
+  const setSlide = useCallback((on: boolean) => setSlidePath(on ? window.location.pathname : null), []);
 
   const open = useCallback((d: { intent?: Intent; village?: string; source: string }) => {
     setSlide(false);
     setDialog(d);
-  }, []);
+  }, [setSlide]);
 
   useEffect(() => {
     const on = (e: Event) => {
@@ -155,7 +157,6 @@ export default function IntentLayer() {
   }, [open]);
 
   useEffect(() => {
-    setSlide(false);
     if (!pathname.startsWith("/blog/")) return;
     if (sessionFlag(SLIDEIN_SESSION_KEY) || sessionFlag(POPUP_SESSION_KEY) || leadRecently()) return;
     let timeUp = false;
@@ -190,7 +191,7 @@ export default function IntentLayer() {
       window.clearTimeout(timer);
       window.removeEventListener("scroll", onScroll);
     };
-  }, [pathname]);
+  }, [pathname, setSlide]);
 
   const hideBar = NEVER_ON.includes(pathname) || Boolean(dialog);
 
