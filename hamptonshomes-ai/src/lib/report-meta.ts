@@ -58,12 +58,18 @@ const oceanfront: ReportNeighbor = {
 const WITH_OFF_MARKET =
   "Sales in this report come from EastEndLI, together with recorded deeds and the off-market trades named below.";
 
+
 const WITH_DEEDS = "Sales in this report come from EastEndLI, together with recorded deeds.";
 
 const SHELTER =
   "Sales in this report come from EastEndLI. Shelter Island sits outside the South Fork deed feed, so this count is the listing service alone.";
 
 export const REPORT_SOURCE_LINE: Record<string, string> = {
+  "east-end-luxury-market-overview-2026-10": WITH_OFF_MARKET,
+  "hamptons-luxury-market-report-2026-ytd": WITH_OFF_MARKET,
+  "hamptons-market-report-2026-ytd": WITH_OFF_MARKET,
+  "hamptons-luxury-market-report-2021-2026": WITH_OFF_MARKET,
+  "hamptons-market-report-2021-2026": WITH_OFF_MARKET,
   "east-hampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,
   "southampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,
   "bridgehampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,

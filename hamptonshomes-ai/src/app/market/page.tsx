@@ -32,6 +32,10 @@ function formatDate(date: string, withDay = false) {
 /** Short names for the in-page report index. Unlisted reports fall back to a trimmed title. */
 const REPORT_INDEX_LABELS: Record<string, string> = {
   "east-end-luxury-market-overview-2026-10": "East End",
+  "hamptons-luxury-market-report-2026-ytd": "2026 luxury, south of the highway",
+  "hamptons-market-report-2026-ytd": "2026, all markets",
+  "hamptons-luxury-market-report-2021-2026": "Five years, south of the highway",
+  "hamptons-market-report-2021-2026": "Five years, all markets",
   "southampton-luxury-market-overview-2026-10": "Southampton",
   "water-mill-luxury-market-overview-2026-10": "Water Mill",
   "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton",
@@ -57,7 +61,13 @@ const REPORT_INDEX_LABELS: Record<string, string> = {
 const INDEX_GROUPS: { label: string; slugs: string[] }[] = [
   {
     label: "East End overview",
-    slugs: ["east-end-luxury-market-overview-2026-10"],
+    slugs: [
+      "east-end-luxury-market-overview-2026-10",
+      "hamptons-luxury-market-report-2026-ytd",
+      "hamptons-market-report-2026-ytd",
+      "hamptons-luxury-market-report-2021-2026",
+      "hamptons-market-report-2021-2026",
+    ],
   },
   {
     label: "South of the highway",
