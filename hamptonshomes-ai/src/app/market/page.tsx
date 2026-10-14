@@ -175,12 +175,12 @@ function ReportIndex({ posts }: { posts: BlogPost[] }) {
             <ul className="mt-4 border-t border-line">
               {group.items.map(({ post, n }) => (
                 <li key={post.slug} className="border-b border-line">
-                  <a href={`#${reportAnchorId(post.slug)}`} className="group flex min-h-11 items-center gap-3">
+                  <Link href={`/blog/${post.slug}`} className="group flex min-h-11 items-center gap-3">
                     <span className="eyebrow w-6 shrink-0 text-ink-faint">{n}</span>
                     <span className="font-serif text-[1.2rem] font-light leading-tight text-ink transition-[color,transform] duration-500 [transition-timing-function:var(--ease-editorial)] group-hover:translate-x-1 group-hover:text-ocean">
                       {reportIndexLabel(post)}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
