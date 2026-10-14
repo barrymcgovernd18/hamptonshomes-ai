@@ -222,7 +222,7 @@ Amagansett runs from the ocean dunes of Further Lane, Dunes Lane, Bluff Road and
 - **101 sales at $5 million and above** from January 2021 through October 14, 2026, totaling **$883.2 million**, at a **median of $7.50M**.
 - **${linkListing("55 Dunes Lane", "925558")}** is the record at **$43.5 million**, February 2026.
 - **2026 to date: 11 sales, $118.7 million**, a $8.22M median, against 23 sales and $211.2 million in all of 2025.
-- **The ocean sets the top.** 13 oceanfront sales account for 20% of the dollars at a $9.50M median; inland, 88 sales posted a $7.29M median.
+- **The ocean carries the premium.** 13 oceanfront sales account for 20% of the dollars at a $9.50M median; inland, 88 sales posted a $7.29M median.
 - **2 sales closed off-market**, $33.5 million in total, and are counted here: 55 Marine Boulevard at $9.0 million (May 2022), 55 Marine Boulevard at $24.5 million (January 2025).
 
 ## Amagansett at a Glance
@@ -248,7 +248,7 @@ Amagansett runs from the ocean dunes of Further Lane, Dunes Lane, Bluff Road and
 | ${linkListing("140 Fresh Pond Road", "927004")} | $9.20M | Mar 2026 | Inland |
 | ${linkListing("178 Skimhampton Road", "920689")} | $9.20M | May 2026 | Inland |
 | ${linkListing("90 Hedges Lane", "931702")} | $8.49M | Jun 2026 | Inland |
-| ${linkListing("133 Cross Highway To Devon", "912766")} | $8.22M | May 2026 | Inland |
+| ${linkListing("133 Cross Highway to Devon", "912766")} | $8.22M | May 2026 | Inland |
 | ${linkListing("137 Cross Highway to Devon", "917807")} | $7.00M | Jan 2026 | Inland |
 | ${linkListing("8 Heatherwood Lane", "927918")} | $6.45M | Aug 2026 | Inland |
 | ${linkListing("27 Bluff Road", "925539")} | $5.95M | Feb 2026 | Inland |
@@ -562,7 +562,7 @@ Montauk runs from Hither Hills and Old Montauk Highway east through Ditch Plains
 - **72 sales at $5 million and above** from January 2021 through October 14, 2026, totaling **$692.6 million**, at a **median of $8.05M**.
 - **${linkListing("112-114 and 126 Old Montauk Highway", "933703")}** is the record at **$30.0 million**, April 2026.
 - **2026 to date: 8 sales, $104.9 million**, a $9.88M median, against 14 sales and $146.8 million in all of 2025.
-- **The ocean sets the top.** 18 oceanfront sales account for 33% of the dollars at a $9.88M median; inland, 54 sales posted a $7.28M median.
+- **The ocean carries the premium.** 18 oceanfront sales account for 33% of the dollars at a $9.88M median; inland, 54 sales posted a $7.28M median.
 
 ## Montauk at a Glance
 

@@ -91,7 +91,8 @@ export const REPORT_SOURCE_LINE: Record<string, string> = {
   "north-haven-luxury-market-2026-10": WITH_OFF_MARKET,
   "shelter-island-luxury-market-2026-10": SHELTER,
   "shelter-island-waterfront-luxury-market-2026-10": SHELTER,
-  "amagansett-luxury-market-overview-2026-10": WITH_OFF_MARKET,
+  "amagansett-luxury-market-overview-2026-10":
+    "Sales in this report come from EastEndLI, together with the off-market trades named below.",
   "montauk-luxury-market-overview-2026-10": "Sales in this report come from EastEndLI.",
   "hamptons-oceanfront-market-2021-2026":
     "Sales in this study come from EastEndLI comparable sales, recorded deeds, and Hedgerow's oceanfront records, read against lots that reach the beach.",
