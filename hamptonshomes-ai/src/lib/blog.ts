@@ -53,6 +53,8 @@ export const SEO_TITLES: Record<string, string> = {
   "hamptons-market-report-2026-ytd": "2026 Hamptons Market Report | Barry McGovern",
   "hamptons-luxury-market-report-2021-2026": "Hamptons Luxury Market, 2021 to 2026 | Barry McGovern",
   "hamptons-market-report-2021-2026": "Hamptons Market Report, 2021 to 2026 | Barry McGovern",
+  "hamptons-north-of-highway-market-report-2026-ytd": "2026 Hamptons North of the Highway | Barry McGovern",
+  "hamptons-north-of-highway-market-report-2021-2026": "Hamptons North of the Highway, 2021 to 2026 | Barry McGovern",
   "east-end-luxury-market-overview-2026-10": "East End Luxury Market, 2026 | Barry McGovern",
   "east-hampton-luxury-market-overview-2026-10": "East Hampton Luxury Market, 2026 | Barry McGovern",
   "southampton-luxury-market-overview-2026-10": "Southampton Luxury Market, 2026 | Barry McGovern",

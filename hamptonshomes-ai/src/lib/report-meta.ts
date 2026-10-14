@@ -70,6 +70,8 @@ export const REPORT_SOURCE_LINE: Record<string, string> = {
   "hamptons-market-report-2026-ytd": WITH_OFF_MARKET,
   "hamptons-luxury-market-report-2021-2026": WITH_OFF_MARKET,
   "hamptons-market-report-2021-2026": WITH_OFF_MARKET,
+  "hamptons-north-of-highway-market-report-2026-ytd": WITH_DEEDS,
+  "hamptons-north-of-highway-market-report-2021-2026": WITH_DEEDS,
   "east-hampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,
   "southampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,
   "bridgehampton-luxury-market-overview-2026-10": WITH_OFF_MARKET,

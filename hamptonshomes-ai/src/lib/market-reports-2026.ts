@@ -356,6 +356,8 @@ export const marketReports2026Posts: BlogPost[] = [
 - [2026 Hamptons Market Report, All Markets](/blog/hamptons-market-report-2026-ytd)
 - [Five-Year Hamptons Luxury Market Report, 2021 to 2026](/blog/hamptons-luxury-market-report-2021-2026)
 - [Five-Year Hamptons Market Report, 2021 to 2026](/blog/hamptons-market-report-2021-2026)
+- [2026 Hamptons North of the Highway Market Report](/blog/hamptons-north-of-highway-market-report-2026-ytd)
+- [Five-Year Hamptons North of the Highway Market Report, 2021 to 2026](/blog/hamptons-north-of-highway-market-report-2021-2026)
 - [East End Luxury Market Overview](/blog/east-end-luxury-market-overview-2026-10)
 - [Market research](/market)
 
@@ -899,6 +901,8 @@ export const marketReports2026Posts: BlogPost[] = [
 - [2026 Hamptons Luxury Market Report, South of the Highway](/blog/hamptons-luxury-market-report-2026-ytd)
 - [Five-Year Hamptons Luxury Market Report, 2021 to 2026](/blog/hamptons-luxury-market-report-2021-2026)
 - [Five-Year Hamptons Market Report, 2021 to 2026](/blog/hamptons-market-report-2021-2026)
+- [2026 Hamptons North of the Highway Market Report](/blog/hamptons-north-of-highway-market-report-2026-ytd)
+- [Five-Year Hamptons North of the Highway Market Report, 2021 to 2026](/blog/hamptons-north-of-highway-market-report-2021-2026)
 - [East End Luxury Market Overview](/blog/east-end-luxury-market-overview-2026-10)
 - [Market research](/market)
 
@@ -1258,6 +1262,8 @@ export const marketReports2026Posts: BlogPost[] = [
 - [2026 Hamptons Luxury Market Report, South of the Highway](/blog/hamptons-luxury-market-report-2026-ytd)
 - [2026 Hamptons Market Report, All Markets](/blog/hamptons-market-report-2026-ytd)
 - [Five-Year Hamptons Market Report, 2021 to 2026](/blog/hamptons-market-report-2021-2026)
+- [2026 Hamptons North of the Highway Market Report](/blog/hamptons-north-of-highway-market-report-2026-ytd)
+- [Five-Year Hamptons North of the Highway Market Report, 2021 to 2026](/blog/hamptons-north-of-highway-market-report-2021-2026)
 - [East End Luxury Market Overview](/blog/east-end-luxury-market-overview-2026-10)
 - [Market research](/market)
 
@@ -1815,6 +1821,664 @@ export const marketReports2026Posts: BlogPost[] = [
 - [2026 Hamptons Luxury Market Report, South of the Highway](/blog/hamptons-luxury-market-report-2026-ytd)
 - [2026 Hamptons Market Report, All Markets](/blog/hamptons-market-report-2026-ytd)
 - [Five-Year Hamptons Luxury Market Report, 2021 to 2026](/blog/hamptons-luxury-market-report-2021-2026)
+- [2026 Hamptons North of the Highway Market Report](/blog/hamptons-north-of-highway-market-report-2026-ytd)
+- [Five-Year Hamptons North of the Highway Market Report, 2021 to 2026](/blog/hamptons-north-of-highway-market-report-2021-2026)
+- [East End Luxury Market Overview](/blog/east-end-luxury-market-overview-2026-10)
+- [Market research](/market)
+
+*Images courtesy of Hedgerow Exclusive Properties.*
+`,
+  },
+  {
+    slug: "hamptons-north-of-highway-market-report-2026-ytd",
+    title: "2026 Hamptons Market Report: North of the Highway",
+    excerpt: "North of the highway in 2026 to date: 56 sales at $5 million and above, $417.7 million, a $6.24M median. The largest is 14 Two Trees Lane at $15.0 million.",
+    date: "2026-10-14",
+    dateModified: "2026-10-14",
+    author: "Barry McGovern",
+    category: "Market Report",
+    image: "/images/listings/1694-millstone.jpg",
+    authorBox: true,
+    hideCta: true,
+    metaDescription: "North of the highway in 2026 to date: 56 sales at $5 million and above, $417.7 million, a $6.24M median. The largest is 14 Two Trees Lane at $15.0 million.",
+    keywords: "Hamptons real estate market report, Hamptons luxury market 2026, $5 million, south of the highway, East End",
+    charts: {
+ "volume-by-year": {
+  "title": "Volume by year",
+  "kind": "columns",
+  "rows": [
+   {
+    "label": "2021",
+    "value": 335.66,
+    "display": "$335.7M",
+    "detail": "48 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "2022",
+    "value": 400.44,
+    "display": "$400.4M",
+    "detail": "53 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "2023",
+    "value": 191.03,
+    "display": "$191.0M",
+    "detail": "27 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "2024",
+    "value": 436.93,
+    "display": "$436.9M",
+    "detail": "50 sales",
+    "highlight": true,
+    "prefix": "volume"
+   },
+   {
+    "label": "2025",
+    "value": 422.64,
+    "display": "$422.6M",
+    "detail": "54 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "2026 YTD",
+    "value": 417.71,
+    "display": "$417.7M",
+    "detail": "56 sales",
+    "prefix": "volume"
+   }
+  ]
+ },
+ "sales-by-year": {
+  "title": "Sales by year",
+  "kind": "columns",
+  "rows": [
+   {
+    "label": "2021",
+    "value": 48.0,
+    "display": "48",
+    "detail": "$335.7M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2022",
+    "value": 53.0,
+    "display": "53",
+    "detail": "$400.4M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2023",
+    "value": 27.0,
+    "display": "27",
+    "detail": "$191.0M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2024",
+    "value": 50.0,
+    "display": "50",
+    "detail": "$436.9M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2025",
+    "value": 54.0,
+    "display": "54",
+    "detail": "$422.6M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2026 YTD",
+    "value": 56.0,
+    "display": "56",
+    "detail": "$417.7M",
+    "highlight": true,
+    "prefix": "sales"
+   }
+  ]
+ },
+ "median-trend": {
+  "title": "Median sale by year",
+  "kind": "trend",
+  "rows": [
+   {
+    "label": "2021",
+    "value": 6.5,
+    "display": "$6.50M",
+    "detail": "48 sales"
+   },
+   {
+    "label": "2022",
+    "value": 6.15,
+    "display": "$6.15M",
+    "detail": "53 sales"
+   },
+   {
+    "label": "2023",
+    "value": 6.3,
+    "display": "$6.30M",
+    "detail": "27 sales"
+   },
+   {
+    "label": "2024",
+    "value": 7.17,
+    "display": "$7.17M",
+    "detail": "50 sales"
+   },
+   {
+    "label": "2025",
+    "value": 6.84,
+    "display": "$6.84M",
+    "detail": "54 sales"
+   },
+   {
+    "label": "2026 YTD",
+    "value": 6.24,
+    "display": "$6.24M",
+    "detail": "56 sales"
+   }
+  ]
+ },
+ "volume-by-market": {
+  "title": "Volume by market",
+  "kind": "bars",
+  "rows": [
+   {
+    "label": "East Hampton North",
+    "value": 141.78,
+    "display": "$141.8M",
+    "detail": "22 sales",
+    "highlight": true,
+    "prefix": "volume"
+   },
+   {
+    "label": "Bridgehampton North",
+    "value": 97.81,
+    "display": "$97.81M",
+    "detail": "10 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "Water Mill North",
+    "value": 91.61,
+    "display": "$91.61M",
+    "detail": "12 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "Southampton North",
+    "value": 86.51,
+    "display": "$86.51M",
+    "detail": "12 sales",
+    "prefix": "volume"
+   }
+  ]
+ },
+ "median-by-market": {
+  "title": "Median sale by market",
+  "kind": "bars",
+  "rows": [
+   {
+    "label": "Bridgehampton North",
+    "value": 10.21,
+    "display": "$10.21M",
+    "detail": "10 sales",
+    "highlight": true
+   },
+   {
+    "label": "Water Mill North",
+    "value": 6.69,
+    "display": "$6.69M",
+    "detail": "12 sales"
+   },
+   {
+    "label": "East Hampton North",
+    "value": 5.95,
+    "display": "$5.95M",
+    "detail": "22 sales"
+   },
+   {
+    "label": "Southampton North",
+    "value": 5.9,
+    "display": "$5.90M",
+    "detail": "12 sales"
+   }
+  ]
+ },
+ "price-bands": {
+  "title": "Sales by price band",
+  "kind": "bars",
+  "rows": [
+   {
+    "label": "$5M to $10M",
+    "value": 46.0,
+    "display": "46",
+    "detail": "82% of sales",
+    "highlight": true,
+    "prefix": "sales"
+   },
+   {
+    "label": "$10M to $20M",
+    "value": 10.0,
+    "display": "10",
+    "detail": "18% of sales",
+    "prefix": "sales"
+   },
+   {
+    "label": "$20M and above",
+    "value": 0.0,
+    "display": "0",
+    "detail": "0% of sales",
+    "prefix": "sales"
+   }
+  ]
+ }
+},
+    content: `North of Montauk Highway in Southampton, Water Mill, Bridgehampton, Sagaponack and East Hampton.
+
+## Key Takeaways
+
+- **56 sales, $417.7 million**, at $5 million and above, Jan 1 to Oct 14, 2026. Median **$6.24M**, average $7.46M.
+- **East Hampton North** leads on volume at $141.8 million. **Bridgehampton North** carries the highest median at $10.21M.
+- **46 of 56 closed between $5 million and $10 million**; 0 cleared $20 million. Homes are 55 of the total, land 1.
+- The largest trade is **${linkListing("14 Two Trees Lane", "929471")}** at $15.0 million. Buyers paid a median 91.3% of the final asking price.
+
+## By Year
+
+
+
+{{chart:volume-by-year}}
+
+{{chart:sales-by-year}}
+
+{{chart:median-trend}}
+
+## By Market
+
+{{chart:volume-by-market}}
+
+{{chart:median-by-market}}
+
+| Market | Sales | Volume | Median | Average | Land | Sale to list |
+|---|---:|---:|---:|---:|---:|---:|
+| East Hampton North | 22 | $141.8M | $5.95M | $6.44M | 0 | 90.0% |
+| Bridgehampton North | 10 | $97.81M | $10.21M | $9.78M | 1 | 92.5% |
+| Water Mill North | 12 | $91.61M | $6.69M | $7.63M | 0 | 87.7% |
+| Southampton North | 12 | $86.51M | $5.90M | $7.21M | 0 | 92.0% |
+
+## Price Bands
+
+{{chart:price-bands}}
+
+| Band | Sales | Share |
+|---|---:|---:|
+| $5M to $10M | 46 | 82% |
+| $10M to $20M | 10 | 18% |
+| $20M and above | 0 | 0% |
+
+0 of the 56 sales were oceanfront.
+
+## The Largest Trades
+
+| Address | Market | Price | Closed |
+|---|---|---:|---|
+| ${linkListing("14 Two Trees Lane", "929471")} | Bridgehampton North | $15.00M | May 2026 |
+| ${linkListing("261 Millstone Road", "917457")} | Bridgehampton North | $14.65M | Jan 2026 |
+| ${linkListing("915 Seven Ponds Towd Road", "927256")} | Southampton North | $13.10M | Sep 2026 |
+| ${linkListing("861 Butter Lane", "935432")} | Bridgehampton North | $13.00M | Oct 2026 |
+| ${linkListing("394 Seven Ponds Towd Road", "898435")} | Water Mill North | $12.50M | May 2026 |
+| ${linkListing("392 Seven Ponds Towd Road", "898434")} | Water Mill North | $12.15M | Sep 2026 |
+| ${linkListing("361 Mitchell Lane", "922290")} | Bridgehampton North | $11.10M | Apr 2026 |
+| ${linkListing("150 Edge of Woods Road", "922886")} | Southampton North | $10.60M | Jun 2026 |
+| ${linkListing("825 Old Sag Harbor Road", "917896")} | Bridgehampton North | $10.40M | Feb 2026 |
+| ${linkListing("6 Cody Way", "924410")} | Bridgehampton North | $10.02M | Feb 2026 |
+
+## Related
+
+- [2026 Hamptons Luxury Market Report, South of the Highway](/blog/hamptons-luxury-market-report-2026-ytd)
+- [2026 Hamptons Market Report, All Markets](/blog/hamptons-market-report-2026-ytd)
+- [Five-Year Hamptons Luxury Market Report, 2021 to 2026](/blog/hamptons-luxury-market-report-2021-2026)
+- [Five-Year Hamptons Market Report, 2021 to 2026](/blog/hamptons-market-report-2021-2026)
+- [Five-Year Hamptons North of the Highway Market Report, 2021 to 2026](/blog/hamptons-north-of-highway-market-report-2021-2026)
+- [East End Luxury Market Overview](/blog/east-end-luxury-market-overview-2026-10)
+- [Market research](/market)
+
+*Images courtesy of Hedgerow Exclusive Properties.*
+`,
+  },
+  {
+    slug: "hamptons-north-of-highway-market-report-2021-2026",
+    title: "Five-Year Hamptons Market Report, 2021 to 2026: North of the Highway",
+    excerpt: "North of the highway since January 2021: 288 sales at $5 million and above, $2.204 billion, a $6.50M median. The largest is Topping Farm at $48.0 million.",
+    date: "2026-10-14",
+    dateModified: "2026-10-14",
+    author: "Barry McGovern",
+    category: "Market Report",
+    image: "/images/listings/60-two-holes.jpg",
+    authorBox: true,
+    hideCta: true,
+    metaDescription: "North of the highway since January 2021: 288 sales at $5 million and above, $2.204 billion, a $6.50M median. The largest is Topping Farm at $48.0 million.",
+    keywords: "Hamptons real estate market report, Hamptons luxury market 2026, $5 million, south of the highway, East End",
+    charts: {
+ "volume-by-year": {
+  "title": "Volume by year",
+  "kind": "columns",
+  "rows": [
+   {
+    "label": "2021",
+    "value": 335.66,
+    "display": "$335.7M",
+    "detail": "48 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "2022",
+    "value": 400.44,
+    "display": "$400.4M",
+    "detail": "53 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "2023",
+    "value": 191.03,
+    "display": "$191.0M",
+    "detail": "27 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "2024",
+    "value": 436.93,
+    "display": "$436.9M",
+    "detail": "50 sales",
+    "highlight": true,
+    "prefix": "volume"
+   },
+   {
+    "label": "2025",
+    "value": 422.64,
+    "display": "$422.6M",
+    "detail": "54 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "2026 YTD",
+    "value": 417.71,
+    "display": "$417.7M",
+    "detail": "56 sales",
+    "prefix": "volume"
+   }
+  ]
+ },
+ "sales-by-year": {
+  "title": "Sales by year",
+  "kind": "columns",
+  "rows": [
+   {
+    "label": "2021",
+    "value": 48.0,
+    "display": "48",
+    "detail": "$335.7M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2022",
+    "value": 53.0,
+    "display": "53",
+    "detail": "$400.4M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2023",
+    "value": 27.0,
+    "display": "27",
+    "detail": "$191.0M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2024",
+    "value": 50.0,
+    "display": "50",
+    "detail": "$436.9M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2025",
+    "value": 54.0,
+    "display": "54",
+    "detail": "$422.6M",
+    "prefix": "sales"
+   },
+   {
+    "label": "2026 YTD",
+    "value": 56.0,
+    "display": "56",
+    "detail": "$417.7M",
+    "highlight": true,
+    "prefix": "sales"
+   }
+  ]
+ },
+ "median-trend": {
+  "title": "Median sale by year",
+  "kind": "trend",
+  "rows": [
+   {
+    "label": "2021",
+    "value": 6.5,
+    "display": "$6.50M",
+    "detail": "48 sales"
+   },
+   {
+    "label": "2022",
+    "value": 6.15,
+    "display": "$6.15M",
+    "detail": "53 sales"
+   },
+   {
+    "label": "2023",
+    "value": 6.3,
+    "display": "$6.30M",
+    "detail": "27 sales"
+   },
+   {
+    "label": "2024",
+    "value": 7.17,
+    "display": "$7.17M",
+    "detail": "50 sales"
+   },
+   {
+    "label": "2025",
+    "value": 6.84,
+    "display": "$6.84M",
+    "detail": "54 sales"
+   },
+   {
+    "label": "2026 YTD",
+    "value": 6.24,
+    "display": "$6.24M",
+    "detail": "56 sales"
+   }
+  ]
+ },
+ "volume-by-market": {
+  "title": "Volume by market",
+  "kind": "bars",
+  "rows": [
+   {
+    "label": "Bridgehampton North",
+    "value": 648.16,
+    "display": "$648.2M",
+    "detail": "73 sales",
+    "highlight": true,
+    "prefix": "volume"
+   },
+   {
+    "label": "East Hampton North",
+    "value": 638.31,
+    "display": "$638.3M",
+    "detail": "89 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "Water Mill North",
+    "value": 558.17,
+    "display": "$558.2M",
+    "detail": "75 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "Southampton North",
+    "value": 303.66,
+    "display": "$303.7M",
+    "detail": "42 sales",
+    "prefix": "volume"
+   },
+   {
+    "label": "Sagaponack North",
+    "value": 56.12,
+    "display": "$56.12M",
+    "detail": "9 sales",
+    "prefix": "volume"
+   }
+  ]
+ },
+ "median-by-market": {
+  "title": "Median sale by market",
+  "kind": "bars",
+  "rows": [
+   {
+    "label": "Bridgehampton North",
+    "value": 7.3,
+    "display": "$7.30M",
+    "detail": "73 sales",
+    "highlight": true
+   },
+   {
+    "label": "Water Mill North",
+    "value": 7.28,
+    "display": "$7.28M",
+    "detail": "75 sales"
+   },
+   {
+    "label": "East Hampton North",
+    "value": 6.05,
+    "display": "$6.05M",
+    "detail": "89 sales"
+   },
+   {
+    "label": "Southampton North",
+    "value": 6.0,
+    "display": "$6.00M",
+    "detail": "42 sales"
+   },
+   {
+    "label": "Sagaponack North",
+    "value": 6.0,
+    "display": "$6.00M",
+    "detail": "9 sales"
+   }
+  ]
+ },
+ "price-bands": {
+  "title": "Sales by price band",
+  "kind": "bars",
+  "rows": [
+   {
+    "label": "$5M to $10M",
+    "value": 248.0,
+    "display": "248",
+    "detail": "86% of sales",
+    "highlight": true,
+    "prefix": "sales"
+   },
+   {
+    "label": "$10M to $20M",
+    "value": 36.0,
+    "display": "36",
+    "detail": "12% of sales",
+    "prefix": "sales"
+   },
+   {
+    "label": "$20M and above",
+    "value": 4.0,
+    "display": "4",
+    "detail": "1% of sales",
+    "prefix": "sales"
+   }
+  ]
+ }
+},
+    content: `North of Montauk Highway in Southampton, Water Mill, Bridgehampton, Sagaponack and East Hampton.
+
+## Key Takeaways
+
+- **288 sales, $2.204 billion**, at $5 million and above, January 2021 through October 14, 2026. Median **$6.50M**, average $7.65M.
+- **Bridgehampton North** leads on volume at $648.2 million. **Bridgehampton North** carries the highest median at $7.30M.
+- **248 of 288 closed between $5 million and $10 million**; 4 cleared $20 million. Homes are 279 of the total, land 9.
+- The largest trade is **${linkListing("Topping Farm", "900019")}** at $48.0 million. Buyers paid a median 94.5% of the final asking price.
+
+## By Year
+
+2024 was the high-water mark at $436.9 million across 50 sales. 2026 to date stands at 56 sales and $417.7 million.
+
+{{chart:volume-by-year}}
+
+{{chart:sales-by-year}}
+
+{{chart:median-trend}}
+
+## By Market
+
+{{chart:volume-by-market}}
+
+{{chart:median-by-market}}
+
+| Market | Sales | Volume | Median | Average | Land | Sale to list |
+|---|---:|---:|---:|---:|---:|---:|
+| Bridgehampton North | 73 | $648.2M | $7.30M | $8.88M | 4 | 95.1% |
+| East Hampton North | 89 | $638.3M | $6.05M | $7.17M | 2 | 94.6% |
+| Water Mill North | 75 | $558.2M | $7.28M | $7.44M | 1 | 93.9% |
+| Southampton North | 42 | $303.7M | $6.00M | $7.23M | 2 | 92.5% |
+| Sagaponack North | 9 | $56.12M | $6.00M | $6.24M | 0 | 95.2% |
+
+## Price Bands
+
+{{chart:price-bands}}
+
+| Band | Sales | Share |
+|---|---:|---:|
+| $5M to $10M | 248 | 86% |
+| $10M to $20M | 36 | 12% |
+| $20M and above | 4 | 1% |
+
+0 of the 288 sales were oceanfront.
+
+## The Largest Trades
+
+| Address | Market | Price | Closed |
+|---|---|---:|---|
+| ${linkListing("Topping Farm", "900019")} | Bridgehampton North | $48.00M | Apr 2024 |
+| ${linkListing("172 Cedar Street", "875285")} | East Hampton North | $22.70M | Apr 2022 |
+| ${linkListing("172 Cedar Street", "113945")} | East Hampton North | $22.70M | May 2022 |
+| ${linkListing("1953 Scuttle Hole Road", "905783")} | Bridgehampton North | $20.50M | Nov 2024 |
+| ${linkListing("62 Louse Point Road", "892759")} | East Hampton North | $18.40M | Dec 2025 |
+| ${linkListing("320 Majors Path", "905913")} | Southampton North | $17.80M | Sep 2024 |
+| ${linkListing("13 Terry's Trail", "913513")} | East Hampton North | $17.77M | Mar 2025 |
+| ${linkListing("255 Millstone Road", "889094")} | Bridgehampton North | $17.50M | Mar 2023 |
+| ${linkListing("1 Two Trees Lane", "729513")} | Bridgehampton North | $15.50M | Oct 2022 |
+| ${linkListing("14 Two Trees Lane", "929471")} | Bridgehampton North | $15.00M | May 2026 |
+
+## Related
+
+- [2026 Hamptons Luxury Market Report, South of the Highway](/blog/hamptons-luxury-market-report-2026-ytd)
+- [2026 Hamptons Market Report, All Markets](/blog/hamptons-market-report-2026-ytd)
+- [Five-Year Hamptons Luxury Market Report, 2021 to 2026](/blog/hamptons-luxury-market-report-2021-2026)
+- [Five-Year Hamptons Market Report, 2021 to 2026](/blog/hamptons-market-report-2021-2026)
+- [2026 Hamptons North of the Highway Market Report](/blog/hamptons-north-of-highway-market-report-2026-ytd)
 - [East End Luxury Market Overview](/blog/east-end-luxury-market-overview-2026-10)
 - [Market research](/market)
 
@@ -2197,6 +2861,8 @@ export const marketReports2026Posts: BlogPost[] = [
 - [2026 Hamptons Market Report, All Markets](/blog/hamptons-market-report-2026-ytd)
 - [Five-Year Hamptons Luxury Market Report, 2021 to 2026](/blog/hamptons-luxury-market-report-2021-2026)
 - [Five-Year Hamptons Market Report, 2021 to 2026](/blog/hamptons-market-report-2021-2026)
+- [2026 Hamptons North of the Highway Market Report](/blog/hamptons-north-of-highway-market-report-2026-ytd)
+- [Five-Year Hamptons North of the Highway Market Report, 2021 to 2026](/blog/hamptons-north-of-highway-market-report-2021-2026)
 
 - [Market research](/market)
 
@@ -2209,5 +2875,7 @@ export const MARKET_REPORT_2026_SHORT: Record<string, string> = {
  "hamptons-luxury-market-report-2026-ytd": "2026 Luxury, south of the highway",
  "hamptons-market-report-2026-ytd": "2026, all markets",
  "hamptons-luxury-market-report-2021-2026": "Five years, south of the highway",
- "hamptons-market-report-2021-2026": "Five years, all markets"
+ "hamptons-market-report-2021-2026": "Five years, all markets",
+ "hamptons-north-of-highway-market-report-2026-ytd": "2026, north of the highway",
+ "hamptons-north-of-highway-market-report-2021-2026": "Five years, north of the highway"
 };
