@@ -232,7 +232,7 @@ export default function MarketPage() {
       <JsonLd
         data={breadcrumbListJsonLd([
           { name: "Home", path: "/" },
-          { name: "Market", path: "/market" },
+          { name: "Market Reports", path: "/market" },
         ])}
       />
 

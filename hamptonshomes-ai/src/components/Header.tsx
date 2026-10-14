@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const primary = [
   { href: "/sales", label: "Portfolio" },
   { href: "/listings", label: "Listings" },
-  { href: "/market", label: "Market" },
+  { href: "/market", label: "Market Reports" },
   { href: "/press", label: "Press" },
   { href: "/about", label: "About" },
 ];
@@ -170,7 +170,7 @@ export default function Header() {
               <li key={item.href} className="border-b border-paper/12">
                 <Link href={item.href} onClick={() => setMenuOpen(false)} className="flex items-baseline gap-5 py-4">
                   <span className="eyebrow w-6 text-paper/60">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="font-serif text-[2.6rem] font-light leading-none">{item.label}</span>
+                  <span className="whitespace-nowrap font-serif text-[clamp(2rem,9.5vw,2.6rem)] font-light leading-none">{item.label}</span>
                 </Link>
               </li>
             ))}

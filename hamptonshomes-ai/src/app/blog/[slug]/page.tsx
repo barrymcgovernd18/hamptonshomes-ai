@@ -349,7 +349,7 @@ export default async function BlogPostPage({ params }: Props) {
       <JsonLd
         data={breadcrumbListJsonLd([
           { name: "Home", path: "/" },
-          { name: "Market", path: "/market" },
+          { name: "Market Reports", path: "/market" },
           { name: post.title, path: `/blog/${post.slug}` },
         ])}
       />
