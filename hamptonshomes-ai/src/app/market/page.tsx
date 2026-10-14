@@ -36,6 +36,8 @@ const REPORT_INDEX_LABELS: Record<string, string> = {
   "hamptons-market-report-2026-ytd": "2026, all markets",
   "hamptons-luxury-market-report-2021-2026": "Five years, south of the highway",
   "hamptons-market-report-2021-2026": "Five years, all markets",
+  "hamptons-north-of-highway-market-report-2026-ytd": "2026, north of the highway",
+  "hamptons-north-of-highway-market-report-2021-2026": "Five years, north of the highway",
   "southampton-luxury-market-overview-2026-10": "Southampton",
   "water-mill-luxury-market-overview-2026-10": "Water Mill",
   "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton",
@@ -67,6 +69,8 @@ const INDEX_GROUPS: { label: string; slugs: string[] }[] = [
       "hamptons-market-report-2026-ytd",
       "hamptons-luxury-market-report-2021-2026",
       "hamptons-market-report-2021-2026",
+      "hamptons-north-of-highway-market-report-2026-ytd",
+      "hamptons-north-of-highway-market-report-2021-2026",
     ],
   },
   {
