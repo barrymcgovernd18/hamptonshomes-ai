@@ -83,7 +83,7 @@ function IntentDialog({ intent, village, source, onClose }: { intent?: Intent; v
         <h2 id="hh-intent-title" className="mt-3 pr-8 font-serif text-[1.9rem] font-light leading-[1.08] text-ink md:text-[2.1rem]">
           {intent === "valuation" && village ? `A valuation in ${village}` : "How can Barry help?"}
         </h2>
-        <p className="mt-2 text-[13.5px] leading-[1.7] text-ink-muted">Buying, selling, renting or a confidential valuation. A reply within the day.</p>
+        <p className="mt-2 text-[13.5px] leading-[1.7] text-ink-muted">Buying, selling, renting or a confidential valuation.</p>
         <div className="mt-6">
           <IntentForm initialIntent={intent} village={village} source={source} compact />
         </div>
@@ -124,7 +124,7 @@ function SlideIn({ village, onChoose, onClose }: { village?: string; onChoose: (
             key={o.value}
             type="button"
             onClick={() => onChoose(o.value)}
-            className={`eyebrow min-h-11 px-1 py-3 text-[10px] text-ink transition-colors hover:bg-ocean-deep hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ocean-deep ${i ? "border-l border-line" : ""}`}
+            className={`eyebrow min-h-11 px-1 py-3 text-[10px] tracking-[0.12em] text-ink transition-colors hover:bg-ocean-deep hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ocean-deep ${i ? "border-l border-line" : ""}`}
           >
             {o.label}
           </button>
@@ -210,7 +210,7 @@ export default function IntentLayer() {
                   <button
                     type="button"
                     onClick={() => open({ intent: o.value, village: pageVillage(), source: "Mobile bar" })}
-                    className="eyebrow flex h-full w-full items-center justify-center text-[10.5px] text-paper/90 active:bg-paper/10"
+                    className="eyebrow flex h-full w-full items-center justify-center text-[10px] tracking-[0.14em] text-paper/90 active:bg-paper/10"
                   >
                     {o.label}
                   </button>

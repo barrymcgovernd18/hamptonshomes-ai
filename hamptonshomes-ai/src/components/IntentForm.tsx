@@ -94,7 +94,7 @@ export default function IntentForm({
                   setIntent(o.value);
                   if (status === "error") setStatus("idle");
                 }}
-                className={`eyebrow min-h-11 px-1 py-3 text-[10.5px] transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ocean-deep ${i ? "border-l border-line" : ""} ${on ? "bg-ocean-deep text-paper" : "bg-paper-soft text-ink hover:bg-paper-deep"}`}
+                className={`eyebrow min-h-11 px-1 py-3 text-[10px] tracking-[0.12em] transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ocean-deep ${i ? "border-l border-line" : ""} ${on ? "bg-ocean-deep text-paper" : "bg-paper-soft text-ink hover:bg-paper-deep"}`}
               >
                 {o.label}
               </button>
