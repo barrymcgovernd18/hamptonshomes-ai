@@ -372,7 +372,7 @@ export const marketReports2026Posts: BlogPost[] = [
     dateModified: "2026-10-14",
     author: "Barry McGovern",
     category: "Market Report",
-    image: "/images/hedgerow/firm-1076-ocean-road-bridgehampton.webp",
+    image: "/images/trades/55-dunes-lane-amagansett.jpg",
     authorBox: true,
     hideCta: true,
     metaDescription: "Across the East End in 2026 to date: 221 sales at $5 million and above, $2.409 billion, a $8.12M median. The largest is 43 East Dune Lane at $72.0 million.",
