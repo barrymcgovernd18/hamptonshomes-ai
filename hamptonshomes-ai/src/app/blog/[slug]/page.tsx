@@ -331,6 +331,28 @@ function renderContent(content: string, { dropCap: allowDropCap = true, charts }
   return elements;
 }
 
+/** Reports scoped to sales of $5 million and above. */
+const LUXURY_SCOPE_SLUGS = new Set([
+  "east-end-luxury-market-overview-2026-10",
+  "hamptons-luxury-market-report-2026-ytd",
+  "hamptons-market-report-2026-ytd",
+  "hamptons-luxury-market-report-2021-2026",
+  "hamptons-market-report-2021-2026",
+  "hamptons-north-of-highway-market-report-2026-ytd",
+  "hamptons-north-of-highway-market-report-2021-2026",
+  "east-hampton-luxury-market-overview-2026-10",
+  "southampton-luxury-market-overview-2026-10",
+  "bridgehampton-luxury-market-overview-2026-10",
+  "water-mill-luxury-market-overview-2026-10",
+  "wainscott-luxury-market-snapshot-2026-10",
+  "sag-harbor-village-luxury-market-overview-2026-10",
+  "sag-harbor-waterfront-luxury-market-2026-10",
+  "north-haven-luxury-market-2026-10",
+  "shelter-island-luxury-market-2026-10",
+  "shelter-island-waterfront-luxury-market-2026-10",
+  "sagaponack-luxury-market-overview-2026-10",
+]);
+
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
@@ -368,6 +390,11 @@ export default async function BlogPostPage({ params }: Props) {
           <h1 className="display-2 mt-6 max-w-[17em] text-ink">
             {post.title}
           </h1>
+          {LUXURY_SCOPE_SLUGS.has(post.slug) ? (
+            <p className="mt-6 max-w-[34em] font-serif text-[1.25rem] font-light italic leading-snug text-ink/80 md:text-[1.4rem]">
+              A luxury market report covering residential sales of $5 million and above.
+            </p>
+          ) : null}
 
           <div className="mt-10 border-t border-line pt-6 md:mt-14">
             {post.authorBox ? (
