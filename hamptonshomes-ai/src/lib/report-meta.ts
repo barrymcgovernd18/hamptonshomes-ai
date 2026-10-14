@@ -49,6 +49,14 @@ const shelterWater: ReportNeighbor = {
   href: "/blog/shelter-island-waterfront-luxury-market-2026-10",
   label: "Shelter Island waterfront",
 };
+const amagansett: ReportNeighbor = {
+  href: "/blog/amagansett-luxury-market-overview-2026-10",
+  label: "Amagansett",
+};
+const montauk: ReportNeighbor = {
+  href: "/blog/montauk-luxury-market-overview-2026-10",
+  label: "Montauk",
+};
 const oceanfront: ReportNeighbor = {
   href: "/blog/hamptons-oceanfront-market-2021-2026",
   label: "Oceanfront, 2021 to 2026",
@@ -83,6 +91,9 @@ export const REPORT_SOURCE_LINE: Record<string, string> = {
   "north-haven-luxury-market-2026-10": WITH_OFF_MARKET,
   "shelter-island-luxury-market-2026-10": SHELTER,
   "shelter-island-waterfront-luxury-market-2026-10": SHELTER,
+  "amagansett-luxury-market-overview-2026-10":
+    "Sales in this report come from EastEndLI, together with the off-market trades named below.",
+  "montauk-luxury-market-overview-2026-10": "Sales in this report come from EastEndLI.",
   "hamptons-oceanfront-market-2021-2026":
     "Sales in this study come from EastEndLI comparable sales, recorded deeds, and Hedgerow's oceanfront records, read against lots that reach the beach.",
 };
@@ -96,6 +107,8 @@ export const REPORT_NEIGHBORS: Record<string, ReportNeighbor[]> = {
     sagaponack,
     wainscott,
     eastHampton,
+    amagansett,
+    montauk,
     sagHarbor,
     sagHarborWater,
     northHaven,
@@ -108,7 +121,9 @@ export const REPORT_NEIGHBORS: Record<string, ReportNeighbor[]> = {
   "bridgehampton-luxury-market-overview-2026-10": [waterMill, sagaponack],
   "sagaponack-luxury-market-overview-2026-10": [bridgehampton, wainscott, eastHampton],
   "wainscott-luxury-market-snapshot-2026-10": [sagaponack, eastHampton],
-  "east-hampton-luxury-market-overview-2026-10": [wainscott, sagaponack],
+  "east-hampton-luxury-market-overview-2026-10": [wainscott, sagaponack, amagansett],
+  "amagansett-luxury-market-overview-2026-10": [eastHampton, montauk],
+  "montauk-luxury-market-overview-2026-10": [amagansett, eastHampton],
   "sag-harbor-village-luxury-market-overview-2026-10": [northHaven, sagHarborWater],
   "sag-harbor-waterfront-luxury-market-2026-10": [sagHarbor, northHaven],
   "north-haven-luxury-market-2026-10": [sagHarbor, sagHarborWater, shelterIsland],

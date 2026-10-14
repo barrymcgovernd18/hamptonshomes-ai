@@ -333,6 +333,8 @@ function renderContent(content: string, { dropCap: allowDropCap = true, charts }
 
 /** Reports scoped to sales of $5 million and above. */
 const LUXURY_SCOPE_SLUGS = new Set([
+  "amagansett-luxury-market-overview-2026-10",
+  "montauk-luxury-market-overview-2026-10",
   "east-end-luxury-market-overview-2026-10",
   "hamptons-luxury-market-report-2026-ytd",
   "hamptons-market-report-2026-ytd",

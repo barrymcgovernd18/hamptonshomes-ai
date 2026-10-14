@@ -2,6 +2,7 @@ import { PLACE_NAMES, PLACE_SLUGS } from "./schema";
 import { eastEndReportPosts, marketReports2026Posts } from "./market-reports-2026";
 import { harborReportPosts } from "./harbor-reports";
 import { villageReportPosts } from "./village-reports";
+import { amagansettMontaukReportPosts } from "./amagansett-montauk-reports";
 
 export type BlogChartRow = {
   label: string;
@@ -61,6 +62,8 @@ export const SEO_TITLES: Record<string, string> = {
   "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton Luxury Market, 2026 | Barry McGovern",
   "water-mill-luxury-market-overview-2026-10": "Water Mill Luxury Market, 2026 | Barry McGovern",
   "wainscott-luxury-market-snapshot-2026-10": "Wainscott Luxury Market, 2026 | Barry McGovern",
+  "amagansett-luxury-market-overview-2026-10": "Amagansett Luxury Market, 2026 | Barry McGovern",
+  "montauk-luxury-market-overview-2026-10": "Montauk Luxury Market, 2026 | Barry McGovern",
   "sagaponack-luxury-market-overview-2026-10": "Sagaponack Luxury Market, 2026 | Barry McGovern",
   "hamptons-fall-2026-contracts-inventory": "Hamptons Fall 2026 Contracts and Inventory | Barry McGovern",
   "hamptons-oceanfront-market-2021-2026": "Hamptons Oceanfront Market, 2021 to 2026 | Barry McGovern",
@@ -177,6 +180,7 @@ export const blogPosts: BlogPost[] = [
   ...eastEndReportPosts,
   ...marketReports2026Posts,
   ...villageReportPosts,
+  ...amagansettMontaukReportPosts,
   ...harborReportPosts,
   {
     slug: "sagaponack-luxury-market-overview-2026-10",

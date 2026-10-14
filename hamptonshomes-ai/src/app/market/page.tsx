@@ -43,6 +43,8 @@ const REPORT_INDEX_LABELS: Record<string, string> = {
   "bridgehampton-luxury-market-overview-2026-10": "Bridgehampton",
   "sagaponack-luxury-market-overview-2026-10": "Sagaponack",
   "wainscott-luxury-market-snapshot-2026-10": "Wainscott",
+  "amagansett-luxury-market-overview-2026-10": "Amagansett",
+  "montauk-luxury-market-overview-2026-10": "Montauk",
   "east-hampton-luxury-market-overview-2026-10": "East Hampton",
   "sag-harbor-village-luxury-market-overview-2026-10": "Sag Harbor Village",
   "sag-harbor-waterfront-luxury-market-2026-10": "Sag Harbor Waterfront",
@@ -83,6 +85,10 @@ const INDEX_GROUPS: { label: string; slugs: string[] }[] = [
       "wainscott-luxury-market-snapshot-2026-10",
       "east-hampton-luxury-market-overview-2026-10",
     ],
+  },
+  {
+    label: "Amagansett and Montauk",
+    slugs: ["amagansett-luxury-market-overview-2026-10", "montauk-luxury-market-overview-2026-10"],
   },
   {
     label: "Sag Harbor, North Haven, Shelter Island",
