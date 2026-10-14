@@ -301,7 +301,7 @@ export const marketReports2026Posts: BlogPost[] = [
 
 ## By Year
 
-Full-year 2025 closed 148 sales and $2.165 billion at a $9.43M median.
+
 
 {{chart:volume-by-year}}
 
@@ -824,7 +824,7 @@ Full-year 2025 closed 148 sales and $2.165 billion at a $9.43M median.
 
 ## By Year
 
-Full-year 2025 closed 270 sales and $3.207 billion at a $8.00M median.
+
 
 {{chart:volume-by-year}}
 
