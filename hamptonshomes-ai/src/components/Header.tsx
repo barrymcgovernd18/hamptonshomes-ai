@@ -1,5 +1,6 @@
 "use client";
 
+import IntentButton from "@/components/IntentButton";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -133,16 +134,16 @@ export default function Header() {
           <a href="tel:+16463390154" className={`eyebrow hidden transition-colors duration-500 xl:inline ${muted}`}>
             646.339.0154
           </a>
-          <Link
-            href="/contact"
+          <IntentButton
+            source="Header"
             className={`eyebrow hidden border px-5 py-2.5 transition-colors duration-500 lg:inline-block ${
               overHero
                 ? "border-paper/55 text-paper hover:bg-paper hover:text-ink"
                 : "border-ink/70 text-ink hover:bg-ink hover:text-paper"
             }`}
           >
-            Inquire
-          </Link>
+            Buy · Sell · Rent · Valuation
+          </IntentButton>
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}

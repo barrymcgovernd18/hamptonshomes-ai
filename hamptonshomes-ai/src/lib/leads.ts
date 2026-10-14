@@ -8,7 +8,7 @@ import { Resend } from "resend";
 export type LeadForm = "Listing inquiry" | "Home valuation" | "Market brief" | "Email popup" | "Listing search" | "Contact";
 
 export interface Lead {
-  form: LeadForm;
+  form: LeadForm | string;
   name: string;
   email: string;
   phone: string;

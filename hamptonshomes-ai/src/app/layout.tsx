@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import RevealObserver from "@/components/RevealObserver";
+import IntentLayer from "@/components/IntentLayer";
 import PopupLoader from "@/components/PopupLoader";
 import { siteGraphJsonLd } from "@/lib/schema";
 
@@ -91,6 +92,7 @@ export default function RootLayout({
         <Footer />
         <RevealObserver />
         <PopupLoader />
+        <IntentLayer />
       </body>
     </html>
   );

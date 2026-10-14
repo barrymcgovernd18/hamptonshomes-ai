@@ -1,3 +1,4 @@
+import IntentButton from "@/components/IntentButton";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -221,7 +222,10 @@ function renderFigure(src: string, caption: string, key: number) {
   );
 }
 
-function renderContent(content: string, { dropCap: allowDropCap = true, charts }: { dropCap?: boolean; charts?: Record<string, BlogChart> } = {}) {
+function renderContent(
+  content: string,
+  { dropCap: allowDropCap = true, charts, afterTakeaways }: { dropCap?: boolean; charts?: Record<string, BlogChart>; afterTakeaways?: React.ReactNode } = {}
+) {
   const lines = linkifySaleMentions(content).trim().split("\n");
   const elements: React.ReactNode[] = [];
   let i = 0;
@@ -239,6 +243,7 @@ function renderContent(content: string, { dropCap: allowDropCap = true, charts }
           <div className="mt-6">{renderContent(lines.slice(i + 1, j).join("\n"), { dropCap: false, charts })}</div>
         </aside>
       );
+      if (afterTakeaways) elements.push(<div key={`${i}-cta`}>{afterTakeaways}</div>);
       i = j;
       continue;
     }
@@ -378,7 +383,7 @@ export default async function BlogPostPage({ params }: Props) {
         ])}
       />
       {faqs.length > 0 && <JsonLd data={faqPageJsonLd(faqs)} />}
-      <article className="pb-24 pt-36 md:pb-32 md:pt-48">
+      <article className="pb-24 pt-36 md:pb-32 md:pt-48" data-report-village={post.category === "Market Report" && town ? town.name : undefined}>
         <header className="frame">
           <Link href="/market" className="eyebrow link-line text-ink-faint transition-colors duration-500 hover:text-ocean">
             ← Market research
@@ -440,7 +445,17 @@ export default async function BlogPostPage({ params }: Props) {
                 ))}
               </nav>
             ) : null}
-            {renderContent(post.content, { charts: post.charts })}
+            {renderContent(post.content, {
+              charts: post.charts,
+              afterTakeaways: LUXURY_SCOPE_SLUGS.has(post.slug) ? (
+                <p className="mb-10 mt-2 text-[15px] leading-[1.7] text-ink-muted">
+                  <IntentButton intent="valuation" village={town?.name} source="In-report line" className="group font-serif text-[1.15rem] italic text-ink">
+                    <span className="link-line">Selling in {town?.name ?? "the Hamptons"}? A confidential valuation against these sales.</span>
+                    <span aria-hidden="true" className="ml-2 inline-block not-italic text-ocean transition-transform duration-500 group-hover:translate-x-1">→</span>
+                  </IntentButton>
+                </p>
+              ) : undefined,
+            })}
           </div>
 
           <aside aria-label="Valuation and research" className="mx-auto mt-20 grid max-w-[42rem] gap-14 border-t border-ink/80 pt-10 sm:grid-cols-2 sm:gap-10 lg:max-w-[56rem]">

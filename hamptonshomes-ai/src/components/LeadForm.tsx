@@ -7,6 +7,28 @@ export type LeadKind = "listing" | "valuation" | "signup" | "popup" | "search";
 
 import { LEAD_DONE_KEY } from "@/lib/lead-keys";
 
+const INTERESTS = [
+  { value: "", label: "I'm interested in (optional)" },
+  { value: "Buying", label: "Buying" },
+  { value: "Selling", label: "Selling" },
+  { value: "Renting", label: "Renting" },
+  { value: "Just the brief", label: "Just the brief" },
+];
+
+/** Optional interest choice for the email popup. */
+function InterestSelect({ id, className }: { id: string; className: string }) {
+  return (
+    <div>
+      <label htmlFor={id} className="sr-only">I&apos;m interested in</label>
+      <select id={id} name="interest" defaultValue="" className={className}>
+        {INTERESTS.map((o) => (
+          <option key={o.value} value={o.value}>{o.label}</option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
 /** Underlined field, kept for the one-row mobile banner. */
 const inlineFieldClass =
   "w-full rounded-none border-0 border-b border-line bg-transparent px-0 py-3 text-[16px] text-ink placeholder:text-ink-faint transition-[border-color,box-shadow] duration-300 focus:border-ocean-deep focus:shadow-[0_1px_0_0_var(--color-ocean-deep)] focus:outline-none";
@@ -157,6 +179,7 @@ export default function LeadForm({
         <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
           <input name="website" type="text" tabIndex={-1} autoComplete="off" />
         </div>
+        {kind === "popup" ? <InterestSelect id={`${uid}-interest`} className={`${inlineFieldClass} py-2 text-[14px] text-ink-muted`} /> : null}
         <div className="flex items-end gap-3">
           <div className="min-w-0 flex-1">
             <label htmlFor={`${uid}-email`} className="sr-only">Email</label>
@@ -207,6 +230,7 @@ export default function LeadForm({
             )}
           </div>
         ))}
+        {kind === "popup" ? <InterestSelect id={`${uid}-interest`} className={`${st.field} h-[52px] text-ink-muted`} /> : null}
       </div>
       <button
         type="submit"
