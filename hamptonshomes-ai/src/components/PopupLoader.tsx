@@ -3,6 +3,15 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type ComponentType } from "react";
 import { LEAD_DONE_KEY, POPUP_QUIET_MS, POPUP_SEEN_KEY } from "@/lib/lead-keys";
+import { POPUP_SESSION_KEY, SLIDEIN_SESSION_KEY } from "@/lib/intent";
+
+function slideInThisSession() {
+  try {
+    return sessionStorage.getItem(SLIDEIN_SESSION_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
 
 const DELAY_MS = 30_000;
 const NEVER_ON = ["/contact"];
@@ -33,12 +42,14 @@ export default function PopupLoader() {
     const isDesktop = window.matchMedia("(min-width: 768px) and (pointer: fine)").matches;
 
     const open = async () => {
-      if (fired || recently(POPUP_SEEN_KEY) || recently(LEAD_DONE_KEY) || NEVER_ON.includes(window.location.pathname)) return;
+      if (fired || recently(POPUP_SEEN_KEY) || recently(LEAD_DONE_KEY) || NEVER_ON.includes(window.location.pathname) || slideInThisSession()) return;
+      if (document.querySelector("[role=dialog], [aria-labelledby=hh-slide-title]")) return;
       if (document.activeElement && document.activeElement.closest("form")) return; // never interrupt someone typing
       fired = true;
       cleanup();
       try {
         localStorage.setItem(POPUP_SEEN_KEY, String(Date.now()));
+        sessionStorage.setItem(POPUP_SESSION_KEY, "1");
       } catch {}
       const mod = await import("@/components/EmailPopup");
       setDesktop(isDesktop);

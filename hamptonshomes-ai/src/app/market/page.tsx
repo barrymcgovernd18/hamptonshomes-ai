@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import LeadBand from "@/components/LeadBand";
 import JsonLd from "@/components/JsonLd";
 import { ClosingInvitation, PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
 import { postsByDate, type BlogPost } from "@/lib/blog";
@@ -437,8 +438,10 @@ export default function MarketPage() {
         </div>
       </section>
 
+      <LeadBand n="VI" />
+
       <ClosingInvitation
-        n="VI"
+        n="VII"
         label="Private briefings"
         title="A read on your property or search."
         body="Confidential, comps-based analysis for owners and buyers across the East End."

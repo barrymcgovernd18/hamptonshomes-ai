@@ -23,7 +23,11 @@ const KINDS = {
   signup: "Market brief",
   popup: "Email popup",
   search: "Listing search",
+  intent: "Inquiry",
 } as const;
+const INTENT_LABELS: Record<string, string> = { buy: "Buy", sell: "Sell", rent: "Rent", valuation: "Valuation" };
+const TIMING_LABELS: Record<string, string> = { "0-3": "0 to 3 months", "3-12": "3 to 12 months", exploring: "Exploring" };
+const INTERESTS = ["Buying", "Selling", "Renting", "Just the brief"];
 type Kind = keyof typeof KINDS;
 
 const ALLOWED_ORIGINS = /^https:\/\/(hamptonshomes\.ai|[a-z0-9-]+\.vercel\.app)$|^http:\/\/localhost(:\d+)?$/;
@@ -57,7 +61,7 @@ export async function POST(request: Request) {
   const pageUrl = sitePageUrl(body.pageUrl);
 
   if (!EMAIL_RE.test(email)) return bad("Please enter a valid email address.");
-  if ((kind === "listing" || kind === "valuation" || kind === "search") && !name) return bad("Please enter your name.");
+  if ((kind === "listing" || kind === "valuation" || kind === "search" || kind === "intent") && !name) return bad("Please enter your name.");
 
   const details: [string, string][] = [];
   if (kind === "listing") {
@@ -71,9 +75,33 @@ export async function POST(request: Request) {
     details.push(["Property", property]);
   }
 
+  let form: string = KINDS[kind];
+  if (kind === "intent") {
+    const intent = INTENT_LABELS[clean(body.intent, 20)];
+    if (!intent) return bad("Please choose Buy, Sell, Rent or Valuation.");
+    const village = clean(body.village, 60);
+    const property = clean(body.property, 200);
+    if ((intent === "Sell" || intent === "Valuation") && !property) return bad("Please enter the property address.");
+    form = `${intent} inquiry${village ? ` · ${village}` : ""}`;
+    details.push(["Intent", intent]);
+    if (property) details.push(["Property", property]);
+    if (village) details.push(["Village", village]);
+    const timing = TIMING_LABELS[clean(body.timing, 20)];
+    if (timing) details.push(["Timing", timing]);
+    const source = clean(body.source, 40);
+    if (source) details.push(["Opened from", source]);
+  }
+  if (kind === "popup" || kind === "signup") {
+    const interest = clean(body.interest, 40);
+    if (INTERESTS.includes(interest)) {
+      details.push(["Interested in", interest]);
+      if (interest !== "Just the brief") form = `${KINDS[kind]} · ${interest}`;
+    }
+  }
+
   if (!emailConfigured()) return bad("Email service not configured", 503);
 
-  const lead: Lead = { form: KINDS[kind], name, email, phone, message, pageUrl, details };
+  const lead: Lead = { form, name, email, phone, message, pageUrl, details };
   const testToken = process.env.LEADS_TEST_TOKEN;
   const test = Boolean(testToken) && request.headers.get("x-lead-test") === testToken;
 
