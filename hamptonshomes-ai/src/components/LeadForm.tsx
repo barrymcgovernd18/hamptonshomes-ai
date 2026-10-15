@@ -6,6 +6,7 @@ import Link from "next/link";
 export type LeadKind = "listing" | "valuation" | "signup" | "popup" | "search";
 
 import { markLeadSubmitted } from "@/lib/lead-keys";
+import { trackLead } from "@/lib/track";
 
 const INTERESTS = [
   { value: "", label: "I'm interested in" },
@@ -144,6 +145,7 @@ export default function LeadForm({
         throw new Error(res.status === 400 && body.error ? body.error : "");
       }
       markLeadSubmitted();
+      trackLead(kind, { source: listing });
       setStatus("sent");
       onDone?.();
     } catch (err) {

@@ -8,6 +8,9 @@ import RevealObserver from "@/components/RevealObserver";
 import IntentLayer from "@/components/IntentLayer";
 import PopupLoader from "@/components/PopupLoader";
 import { siteGraphJsonLd } from "@/lib/schema";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Analytics from "@/components/Analytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const cormorant = Cormorant_Garamond({
@@ -93,6 +96,9 @@ export default function RootLayout({
         <RevealObserver />
         <PopupLoader />
         <IntentLayer />
+        <Analytics />
+        <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );
