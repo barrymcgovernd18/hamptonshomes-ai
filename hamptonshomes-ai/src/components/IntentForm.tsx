@@ -3,6 +3,7 @@
 import { useId, useState } from "react";
 import Link from "next/link";
 import { markLeadSubmitted } from "@/lib/lead-keys";
+import { trackLead } from "@/lib/track";
 import { INTENTS, TIMINGS, type Intent } from "@/lib/intent";
 import { FORM_STYLES } from "@/components/LeadForm";
 
@@ -52,6 +53,7 @@ export default function IntentForm({
         throw new Error(res.status === 400 && body.error ? body.error : "");
       }
       markLeadSubmitted();
+      trackLead("intent", { hamlet: village, intent, source });
       setStatus("sent");
       onDone?.();
     } catch (err) {

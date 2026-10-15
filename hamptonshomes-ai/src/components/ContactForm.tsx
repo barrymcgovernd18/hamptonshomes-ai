@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { markLeadSubmitted } from "@/lib/lead-keys";
+import { trackLead } from "@/lib/track";
 import { FORM_STYLES } from "@/components/LeadForm";
 
 const st = FORM_STYLES.dark;
@@ -44,6 +45,7 @@ export default function ContactForm() {
 
       if (res.ok) {
         markLeadSubmitted();
+        trackLead("contact", { intent: data.interest || undefined });
         setStatus("sent");
         form.reset();
       } else {
