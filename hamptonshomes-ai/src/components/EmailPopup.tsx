@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import LeadForm from "@/components/LeadForm";
+import { pageVillage } from "@/lib/intent";
 
 const TITLE_ID = "hh-popup-title";
 
@@ -24,6 +25,8 @@ function CloseButton({ onClick, light }: { onClick: () => void; light?: boolean 
 export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onClose: () => void }) {
   const panel = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
+  const [village] = useState(() => pageVillage());
+  const title = village ? `The monthly ${village} brief` : "The monthly East End brief";
 
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
@@ -63,8 +66,10 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
         className={`fixed inset-x-0 bottom-0 z-[60] border-t border-line bg-paper px-5 pb-[calc(env(safe-area-inset-bottom)+14px)] pt-4 shadow-[0_-12px_30px_rgba(12,24,29,0.12)] transition-transform duration-500 ${shown ? "translate-y-0" : "translate-y-full"}`}
       >
         <CloseButton onClick={onClose} />
-        <p id={TITLE_ID} className="pr-10 font-serif text-[1.3rem] font-light leading-tight text-ink">The monthly East End brief</p>
-        <p className="mt-1 pr-10 text-[12.5px] leading-snug text-ink-muted">What sold, what is available, and what is worth watching.</p>
+        <p id={TITLE_ID} className="pr-10 font-serif text-[1.3rem] font-light leading-tight text-ink">{title}</p>
+        <p className="mt-1 pr-10 text-[12.5px] leading-snug text-ink-muted">
+          {village ? `Stay ahead of the ${village} market: what sold, what is available, what is worth watching.` : "What sold, what is available, and what is worth watching."}
+        </p>
         <div className="mt-2">
           <LeadForm kind="popup" inline />
         </div>
@@ -85,10 +90,12 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
         <CloseButton onClick={onClose} />
         <p className="eyebrow text-ocean">Barry McGovern · Research</p>
         <h2 id={TITLE_ID} className="mt-4 font-serif text-[2.1rem] font-light leading-[1.08] text-ink">
-          The monthly East End brief
+          {title}
         </h2>
         <p className="mt-3 text-[14px] leading-[1.75] text-ink-muted">
-          A short note each month on luxury real estate from Southampton to Montauk. Closings, inventory, and the villages that are moving.
+          {village
+            ? `Stay ahead of the ${village} market. A short note each month on its $5M+ sales, new listings, and what is worth watching, alongside the wider East End.`
+            : "A short note each month on luxury real estate from Southampton to Montauk. Closings, inventory, and the villages that are moving."}
         </p>
         <div className="mt-7">
           <LeadForm kind="popup" compact />
