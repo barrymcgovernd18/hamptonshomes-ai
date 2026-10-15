@@ -4,11 +4,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, type ComponentType } from "react";
 import { RETIRED_KEYS, leadThisSession } from "@/lib/lead-keys";
 
-const DELAY_MS = 30_000;
+const DELAY_MS = 15_000;
 const NEVER_ON = ["/contact"];
 
 /**
- * Every page view: waits for the browser to go idle, then arms a 30 second timer (and, on desktop, exit intent).
+ * Every page view: waits for the browser to go idle, then arms a 15 second timer (and, on desktop, exit intent).
  * Dismissed popups stay closed for that page view only. Skipped for the rest of the session once any form is sent.
  */
 export default function PopupLoader() {
