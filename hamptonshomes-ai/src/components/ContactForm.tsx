@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { LEAD_DONE_KEY } from "@/lib/lead-keys";
+import { markLeadSubmitted } from "@/lib/lead-keys";
 import { FORM_STYLES } from "@/components/LeadForm";
 
 const st = FORM_STYLES.dark;
@@ -43,9 +43,7 @@ export default function ContactForm() {
       });
 
       if (res.ok) {
-        try {
-          localStorage.setItem(LEAD_DONE_KEY, String(Date.now()));
-        } catch {}
+        markLeadSubmitted();
         setStatus("sent");
         form.reset();
       } else {

@@ -3,28 +3,12 @@
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import IntentForm from "@/components/IntentForm";
-import { LEAD_DONE_KEY, POPUP_QUIET_MS } from "@/lib/lead-keys";
-import { INTENTS, INTENT_EVENT, POPUP_SESSION_KEY, SLIDEIN_SESSION_KEY, pageVillage, type Intent } from "@/lib/intent";
+import { leadThisSession } from "@/lib/lead-keys";
+import { INTENTS, INTENT_EVENT, pageVillage, type Intent } from "@/lib/intent";
 
 const SLIDE_DELAY_MS = 75_000;
 const SLIDE_SCROLL = 0.65;
 const NEVER_ON = ["/contact"];
-
-function leadRecently() {
-  try {
-    const t = Number(localStorage.getItem(LEAD_DONE_KEY));
-    return Number.isFinite(t) && t > 0 && Date.now() - t < POPUP_QUIET_MS;
-  } catch {
-    return true;
-  }
-}
-function sessionFlag(key: string) {
-  try {
-    return sessionStorage.getItem(key) === "1";
-  } catch {
-    return true;
-  }
-}
 
 function CloseX({ onClick, label = "Close" }: { onClick: () => void; label?: string }) {
   return (
@@ -158,7 +142,7 @@ export default function IntentLayer() {
 
   useEffect(() => {
     if (!pathname.startsWith("/blog/")) return;
-    if (sessionFlag(SLIDEIN_SESSION_KEY) || sessionFlag(POPUP_SESSION_KEY) || leadRecently()) return;
+    if (leadThisSession()) return;
     let timeUp = false;
     let scrolled = false;
     let done = false;
@@ -166,13 +150,10 @@ export default function IntentLayer() {
     const delay = params.has("hh-preview-slidein") ? 1500 : SLIDE_DELAY_MS;
     const tryShow = () => {
       if (done || !timeUp || !scrolled) return;
-      if (sessionFlag(SLIDEIN_SESSION_KEY) || sessionFlag(POPUP_SESSION_KEY) || leadRecently()) return;
-      if (document.querySelector("[role=dialog]")) return;
+      if (leadThisSession()) return;
+      if (document.querySelector("[role=dialog]")) return; // popup still open: wait for its dismissal and the next scroll
       if (document.activeElement && document.activeElement.closest("form")) return;
       done = true;
-      try {
-        sessionStorage.setItem(SLIDEIN_SESSION_KEY, "1");
-      } catch {}
       setSlide(true);
     };
     const onScroll = () => {

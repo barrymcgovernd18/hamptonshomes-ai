@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 import Link from "next/link";
-import { LEAD_DONE_KEY } from "@/lib/lead-keys";
+import { markLeadSubmitted } from "@/lib/lead-keys";
 import { INTENTS, TIMINGS, type Intent } from "@/lib/intent";
 import { FORM_STYLES } from "@/components/LeadForm";
 
@@ -51,9 +51,7 @@ export default function IntentForm({
         const body = await res.json().catch(() => ({}));
         throw new Error(res.status === 400 && body.error ? body.error : "");
       }
-      try {
-        localStorage.setItem(LEAD_DONE_KEY, String(Date.now()));
-      } catch {}
+      markLeadSubmitted();
       setStatus("sent");
       onDone?.();
     } catch (err) {

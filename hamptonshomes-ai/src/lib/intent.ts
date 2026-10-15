@@ -14,9 +14,6 @@ export const TIMINGS = [
 ] as const;
 
 export const INTENT_EVENT = "hh:intent";
-/** Session flags: the reader slide-in and the email popup never appear in the same session. */
-export const SLIDEIN_SESSION_KEY = "hh-slidein-session";
-export const POPUP_SESSION_KEY = "hh-popup-session";
 
 export function openIntent(detail: { intent?: Intent; village?: string } = {}) {
   window.dispatchEvent(new CustomEvent(INTENT_EVENT, { detail }));
