@@ -35,7 +35,8 @@ export default function BarChart({
       <div className="mt-8" aria-hidden="true">
         {kind === "trend" ? <Trend rows={rows} dark={dark} /> : wide ? <Horizontal rows={rows} dark={dark} /> : <Columns rows={rows} dark={dark} />}
       </div>
-      <table className="sr-only">
+      <div className="sr-only">
+      <table>
         <caption>{title}</caption>
         <tbody>
           {rows.map((row) => (
@@ -50,6 +51,7 @@ export default function BarChart({
           ))}
         </tbody>
       </table>
+      </div>
       {caption ? <p className={`mt-6 border-t pt-4 text-[12px] leading-relaxed ${line} ${muted}`}>{caption}</p> : null}
     </figure>
   );
