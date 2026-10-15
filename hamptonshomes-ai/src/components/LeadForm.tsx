@@ -8,7 +8,7 @@ export type LeadKind = "listing" | "valuation" | "signup" | "popup" | "search";
 import { LEAD_DONE_KEY } from "@/lib/lead-keys";
 
 const INTERESTS = [
-  { value: "", label: "I'm interested in (optional)" },
+  { value: "", label: "I'm interested in" },
   { value: "Buying", label: "Buying" },
   { value: "Selling", label: "Selling" },
   { value: "Renting", label: "Renting" },

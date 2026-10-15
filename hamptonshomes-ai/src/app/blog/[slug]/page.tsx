@@ -476,7 +476,7 @@ export default async function BlogPostPage({ params }: Props) {
           </aside>
 
           <section aria-label="About the author" className="mx-auto mt-20 max-w-[42rem] border-t border-ink/80 pt-10">
-            <div className="grid grid-cols-[72px_1fr] gap-6 sm:grid-cols-[96px_1fr] sm:gap-8">
+            <div className="grid grid-cols-[72px_minmax(0,1fr)] gap-6 sm:grid-cols-[96px_minmax(0,1fr)] sm:gap-8">
               <Image
                 src="/images/barry-mcgovern.jpg"
                 alt="Barry McGovern"
@@ -492,7 +492,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <p className="mt-3 text-[14px] leading-[1.8] text-ink-muted">{BARRY_BLURB}</p>
                 <p className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
                   <a href="tel:+16463390154" className="link-line eyebrow text-ink">646.339.0154</a>
-                  <a href="mailto:barry@hedgerowexclusive.com" className="link-line eyebrow text-ink">barry@hedgerowexclusive.com</a>
+                  <a href="mailto:barry@hedgerowexclusive.com" className="link-line eyebrow break-all text-ink">barry@hedgerowexclusive.com</a>
                 </p>
               </div>
             </div>
