@@ -87,8 +87,8 @@ const FIELDS: Record<LeadKind, Field[]> = {
     { name: "name", label: "Name (optional)", type: "text", autoComplete: "name", placeholder: "Your name" },
   ],
   popup: [
+    { name: "name", label: "Name", type: "text", autoComplete: "name", placeholder: "Your name" },
     { name: "email", label: "Email", type: "email", required: true, autoComplete: "email", placeholder: "you@example.com" },
-    { name: "name", label: "Name (optional)", type: "text", autoComplete: "name", placeholder: "Your name" },
   ],
 };
 

@@ -6,22 +6,22 @@ import { pageVillage } from "@/lib/intent";
 
 const TITLE_ID = "hh-popup-title";
 
-function CloseButton({ onClick, light }: { onClick: () => void; light?: boolean }) {
+function CloseButton({ onClick }: { onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
       aria-label="Close"
-      className={`absolute right-2 top-2 flex h-11 w-11 items-center justify-center ${light ? "text-ink-muted hover:text-ink" : "text-ink-muted hover:text-ink"}`}
+      className="absolute right-1 top-1 z-10 flex h-12 w-12 items-center justify-center text-ink hover:text-ocean focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-deep sm:right-2 sm:top-2"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.4">
-        <path d="M5 5l14 14M19 5L5 19" />
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
+        <path d="M6 6l12 12M18 6L6 18" />
       </svg>
     </button>
   );
 }
 
-/** Desktop: a small centered modal. Mobile: a compact bottom banner (never a full-screen interstitial). */
+/** Centered monthly-brief modal on phone and desktop, with a dimmed backdrop. Hamlet copy stays when the page names a village. */
 export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onClose: () => void }) {
   const panel = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
@@ -31,11 +31,16 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     const raf = requestAnimationFrame(() => setShown(true));
-    if (desktop) panel.current?.querySelector<HTMLInputElement>("input[type=email]")?.focus();
+    const focusTarget = desktop
+      ? panel.current?.querySelector<HTMLElement>("input[type=email]")
+      : panel.current?.querySelector<HTMLElement>("button[aria-label='Close']");
+    focusTarget?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      if (desktop && e.key === "Tab" && panel.current) {
-        const items = Array.from(panel.current.querySelectorAll<HTMLElement>("a[href],button:not([disabled]),input:not([tabindex='-1']),textarea"));
+      if (e.key === "Tab" && panel.current) {
+        const items = Array.from(
+          panel.current.querySelectorAll<HTMLElement>("a[href],button:not([disabled]),input:not([tabindex='-1']),select,textarea")
+        );
         if (!items.length) return;
         const first = items[0];
         const last = items[items.length - 1];
@@ -49,56 +54,44 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
       }
     };
     document.addEventListener("keydown", onKey);
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     return () => {
       cancelAnimationFrame(raf);
       document.removeEventListener("keydown", onKey);
-      if (desktop) previous?.focus?.();
+      document.body.style.overflow = overflow;
+      previous?.focus?.();
     };
   }, [desktop, onClose]);
 
-  if (!desktop) {
-    return (
-      <div
-        ref={panel}
-        role="dialog"
-        aria-modal="false"
-        aria-labelledby={TITLE_ID}
-        className={`fixed inset-x-0 bottom-0 z-[60] border-t border-line bg-paper px-5 pb-[calc(env(safe-area-inset-bottom)+14px)] pt-4 shadow-[0_-12px_30px_rgba(12,24,29,0.12)] transition-transform duration-500 ${shown ? "translate-y-0" : "translate-y-full"}`}
-      >
-        <CloseButton onClick={onClose} />
-        <p id={TITLE_ID} className="pr-10 font-serif text-[1.3rem] font-light leading-tight text-ink">{title}</p>
-        <p className="mt-1 pr-10 text-[12.5px] leading-snug text-ink-muted">
-          {village ? `Stay ahead of the ${village} market: what sold, what is available, what is worth watching.` : "What sold, what is available, and what is worth watching."}
-        </p>
-        <div className="mt-2">
-          <LeadForm kind="popup" inline />
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className={`fixed inset-0 z-[60] flex items-center justify-center p-6 transition-opacity duration-500 ${shown ? "opacity-100" : "opacity-0"}`}>
+    <div className={`fixed inset-0 z-[60] flex items-center justify-center p-4 transition-opacity duration-300 sm:p-6 ${shown ? "opacity-100" : "opacity-0"}`}>
       <div aria-hidden="true" onClick={onClose} className="absolute inset-0 bg-[rgba(12,24,29,0.45)]" />
       <div
         ref={panel}
         role="dialog"
         aria-modal="true"
         aria-labelledby={TITLE_ID}
-        className="relative w-full max-w-[460px] border border-line bg-paper px-10 pb-9 pt-11 shadow-[0_30px_80px_rgba(12,24,29,0.28)]"
+        className="relative flex max-h-[min(92svh,760px)] w-full max-w-[460px] flex-col border border-line bg-paper shadow-[0_30px_80px_rgba(12,24,29,0.28)]"
       >
         <CloseButton onClick={onClose} />
-        <p className="eyebrow text-ocean">Barry McGovern · Research</p>
-        <h2 id={TITLE_ID} className="mt-4 font-serif text-[2.1rem] font-light leading-[1.08] text-ink">
-          {title}
-        </h2>
-        <p className="mt-3 text-[14px] leading-[1.75] text-ink-muted">
-          {village
-            ? `Stay ahead of the ${village} market. A short note each month on its $5M+ sales, new listings, and what is worth watching, alongside the wider East End.`
-            : "A short note each month on luxury real estate from Southampton to Montauk. Closings, inventory, and the villages that are moving."}
-        </p>
-        <div className="mt-7">
-          <LeadForm kind="popup" compact />
+        <div className="overflow-y-auto overscroll-contain px-6 pb-[max(2rem,env(safe-area-inset-bottom))] pt-14 sm:px-10 sm:pb-9">
+          <p className="eyebrow pr-8 text-ocean">Barry McGovern · Research</p>
+          <h2 id={TITLE_ID} className="mt-3 pr-2 font-serif text-[1.85rem] font-light leading-[1.08] text-ink sm:mt-4 sm:text-[2.1rem]">
+            {title}
+          </h2>
+          <p className="mt-3 text-[14px] leading-[1.7] text-ink-muted">
+            {village
+              ? desktop
+                ? `Stay ahead of the ${village} market. A short note each month on its $5M+ sales, new listings, and what is worth watching, alongside the wider East End.`
+                : `Stay ahead of the ${village} market: what sold, what is available, what is worth watching.`
+              : desktop
+                ? "A short note each month on luxury real estate from Southampton to Montauk. Closings, inventory, and the villages that are moving."
+                : "What sold, what is available, and what is worth watching."}
+          </p>
+          <div className="mt-6 sm:mt-7">
+            <LeadForm kind="popup" compact />
+          </div>
         </div>
       </div>
     </div>
