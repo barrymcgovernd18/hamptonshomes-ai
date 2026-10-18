@@ -65,7 +65,7 @@ const FIELDS: Record<LeadKind, Field[]> = {
     { name: "name", label: "Name (optional)", type: "text", autoComplete: "name", placeholder: "Your name" },
   ],
   popup: [
-    { name: "name", label: "Name", type: "text", autoComplete: "name", placeholder: "Your name" },
+    { name: "name", label: "Name (optional)", type: "text", autoComplete: "name", placeholder: "Your name" },
     { name: "email", label: "Email", type: "email", required: true, autoComplete: "email", placeholder: "you@example.com" },
   ],
 };
@@ -205,7 +205,7 @@ export default function LeadForm({
             error
           ) : (
             <>
-              The monthly Hamptons market report. Unsubscribe anytime. See the{" "}
+              The Hamptons luxury market, monthly. Unsubscribe anytime. See the{" "}
               <Link href="/privacy" className="underline decoration-ink-faint/40 underline-offset-[3px] hover:text-ocean">
                 Privacy Policy
               </Link>
@@ -288,7 +288,7 @@ export default function LeadForm({
         ) : (
           <>
             {kind === "popup"
-              ? "The monthly Hamptons market report. Unsubscribe anytime. "
+              ? "The Hamptons luxury market, monthly. Unsubscribe anytime. "
               : isSignup
                 ? "The monthly East End brief, and occasional notes on new listings, from Barry. Unsubscribe anytime. "
                 : ""}

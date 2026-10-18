@@ -16,7 +16,7 @@ function CloseButton({ onClick }: { onClick: () => void }) {
       type="button"
       onClick={onClick}
       aria-label="Close"
-      className="absolute right-1 top-1 z-10 flex h-11 w-11 items-center justify-center bg-transparent text-ink/80 hover:text-ink focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-ink"
+      className="absolute right-1 top-1 z-10 flex h-11 w-11 items-center justify-center bg-transparent text-ink/80 outline-none hover:text-ink focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-ink"
     >
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.15">
         <path d="M6 6l12 12M18 6L6 18" />
@@ -29,16 +29,15 @@ function CloseButton({ onClick }: { onClick: () => void }) {
 export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onClose: () => void }) {
   const panel = useRef<HTMLDivElement>(null);
   const [village] = useState(() => pageVillage());
-  const title = village ? `Monthly ${village} Market Report` : "Monthly Hamptons Market Report";
-  const line = village ? `${village}, alongside the East End.` : "From Southampton to Montauk.";
+  const title = village ? `${village} Luxury Market, Monthly` : "Hamptons Luxury Market, Monthly";
 
   useEffect(() => {
     markPopupShown();
     const previous = document.activeElement as HTMLElement | null;
     const focusTarget = desktop
       ? panel.current?.querySelector<HTMLElement>("input[type=email]")
-      : panel.current?.querySelector<HTMLElement>("button[aria-label='Close']");
-    focusTarget?.focus();
+      : panel.current;
+    focusTarget?.focus({ preventScroll: true });
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
       if (e.key === "Tab" && panel.current) {
@@ -78,10 +77,12 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
         role="dialog"
         aria-modal="true"
         aria-labelledby={TITLE_ID}
-        className={`hh-popup-card relative z-10 overflow-hidden border border-ink/15 bg-[#f4f0e8] shadow-[0_28px_80px_rgba(12,24,29,0.38)] ${desktop ? "grid grid-cols-2" : "flex w-full max-w-[400px] flex-col"}`}
+        tabIndex={-1}
+        className={`hh-popup-card relative z-10 overflow-hidden border border-ink/15 bg-[#f4f0e8] shadow-[0_28px_80px_rgba(12,24,29,0.38)] outline-none focus:outline-none focus-visible:outline-none ${desktop ? "grid grid-cols-2" : "flex w-full max-w-[400px] flex-col"}`}
         style={{
           opacity: 1,
           backgroundColor: "#f4f0e8",
+          outline: "none",
           animation: "hh-popup-rise 180ms cubic-bezier(0.22, 0.61, 0.21, 1)",
           ...(desktop
             ? {
@@ -108,7 +109,11 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
             {title}
           </h2>
           <span aria-hidden="true" className="mt-5 block h-px w-8 bg-ink/70" />
-          <p className="mt-4 font-serif text-[1.05rem] font-light italic leading-snug text-ink-muted">{line}</p>
+          <p className="mt-4 font-serif text-[1.05rem] font-light italic leading-[1.35] text-ink-muted">
+            Southampton to Montauk,
+            <br />
+            Sag Harbor &amp; Shelter Island
+          </p>
           <LeadForm kind="popup" editorial />
         </div>
       </div>
