@@ -1,41 +1,49 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import Image from "next/image";
 import LeadForm from "@/components/LeadForm";
+import { markPopupShown } from "@/lib/lead-keys";
 import { pageVillage } from "@/lib/intent";
 
 const TITLE_ID = "hh-popup-title";
+const PHOTO = "/images/heroes/950-meadow-lane-southampton.jpg";
 
-function CloseButton({ onClick, light }: { onClick: () => void; light?: boolean }) {
+function CloseButton({ onClick }: { onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
       aria-label="Close"
-      className={`absolute right-2 top-2 flex h-11 w-11 items-center justify-center ${light ? "text-ink-muted hover:text-ink" : "text-ink-muted hover:text-ink"}`}
+      className="absolute right-1 top-1 z-10 flex h-11 w-11 items-center justify-center bg-transparent text-ink/80 outline-none hover:text-ink focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-ink"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.4">
-        <path d="M5 5l14 14M19 5L5 19" />
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.15">
+        <path d="M6 6l12 12M18 6L6 18" />
       </svg>
     </button>
   );
 }
 
-/** Desktop: a small centered modal. Mobile: a compact bottom banner (never a full-screen interstitial). */
+/** Editorial market-report modal. The card is opaque immediately; only a short rise animates. */
 export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onClose: () => void }) {
   const panel = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
   const [village] = useState(() => pageVillage());
-  const title = village ? `The monthly ${village} brief` : "The monthly East End brief";
+  const title = village ? `${village} Luxury Market, Monthly` : "Hamptons Luxury Market, Monthly";
 
   useEffect(() => {
+    markPopupShown();
     const previous = document.activeElement as HTMLElement | null;
-    const raf = requestAnimationFrame(() => setShown(true));
-    if (desktop) panel.current?.querySelector<HTMLInputElement>("input[type=email]")?.focus();
+    const focusTarget = desktop
+      ? panel.current?.querySelector<HTMLElement>("input[type=email]")
+      : panel.current;
+    focusTarget?.focus({ preventScroll: true });
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      if (desktop && e.key === "Tab" && panel.current) {
-        const items = Array.from(panel.current.querySelectorAll<HTMLElement>("a[href],button:not([disabled]),input:not([tabindex='-1']),textarea"));
+      if (e.key === "Tab" && panel.current) {
+        const items = Array.from(
+          panel.current.querySelectorAll<HTMLElement>("a[href],button:not([disabled]),input:not([tabindex='-1']),select,textarea")
+        );
         if (!items.length) return;
         const first = items[0];
         const last = items[items.length - 1];
@@ -49,58 +57,67 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
       }
     };
     document.addEventListener("keydown", onKey);
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     return () => {
-      cancelAnimationFrame(raf);
       document.removeEventListener("keydown", onKey);
-      if (desktop) previous?.focus?.();
+      document.body.style.overflow = overflow;
+      previous?.focus?.();
     };
   }, [desktop, onClose]);
 
-  if (!desktop) {
-    return (
-      <div
-        ref={panel}
-        role="dialog"
-        aria-modal="false"
-        aria-labelledby={TITLE_ID}
-        className={`fixed inset-x-0 bottom-0 z-[60] border-t border-line bg-paper px-5 pb-[calc(env(safe-area-inset-bottom)+14px)] pt-4 shadow-[0_-12px_30px_rgba(12,24,29,0.12)] transition-transform duration-500 ${shown ? "translate-y-0" : "translate-y-full"}`}
-      >
-        <CloseButton onClick={onClose} />
-        <p id={TITLE_ID} className="pr-10 font-serif text-[1.3rem] font-light leading-tight text-ink">{title}</p>
-        <p className="mt-1 pr-10 text-[12.5px] leading-snug text-ink-muted">
-          {village ? `Stay ahead of the ${village} market: what sold, what is available, what is worth watching.` : "What sold, what is available, and what is worth watching."}
-        </p>
-        <div className="mt-2">
-          <LeadForm kind="popup" inline />
-        </div>
-      </div>
-    );
-  }
+  if (typeof document === "undefined") return null;
 
-  return (
-    <div className={`fixed inset-0 z-[60] flex items-center justify-center p-6 transition-opacity duration-500 ${shown ? "opacity-100" : "opacity-0"}`}>
-      <div aria-hidden="true" onClick={onClose} className="absolute inset-0 bg-[rgba(12,24,29,0.45)]" />
+  return createPortal(
+    <div className="fixed inset-0 z-[80] flex items-center justify-center px-5 py-6 sm:px-8 sm:py-10">
+      <style>{`@keyframes hh-popup-rise{from{transform:translateY(8px)}to{transform:none}}@media (prefers-reduced-motion:reduce){.hh-popup-card{animation:none!important}}`}</style>
+      <div aria-hidden="true" onClick={onClose} className="absolute inset-0" style={{ backgroundColor: "rgba(12, 24, 29, 0.62)" }} />
       <div
         ref={panel}
         role="dialog"
         aria-modal="true"
         aria-labelledby={TITLE_ID}
-        className="relative w-full max-w-[460px] border border-line bg-paper px-10 pb-9 pt-11 shadow-[0_30px_80px_rgba(12,24,29,0.28)]"
+        tabIndex={-1}
+        className={`hh-popup-card relative z-10 overflow-hidden border border-ink/15 bg-[#f4f0e8] shadow-[0_28px_80px_rgba(12,24,29,0.38)] outline-none focus:outline-none focus-visible:outline-none ${desktop ? "grid grid-cols-2" : "flex w-full max-w-[400px] flex-col"}`}
+        style={{
+          opacity: 1,
+          backgroundColor: "#f4f0e8",
+          outline: "none",
+          animation: "hh-popup-rise 180ms cubic-bezier(0.22, 0.61, 0.21, 1)",
+          ...(desktop
+            ? {
+                width: "min(680px, calc(100vw - 4rem), calc(100svh - 4.5rem))",
+                height: "min(680px, calc(100vw - 4rem), calc(100svh - 4.5rem))",
+              }
+            : undefined),
+        }}
       >
         <CloseButton onClick={onClose} />
-        <p className="eyebrow text-ocean">Barry McGovern · Research</p>
-        <h2 id={TITLE_ID} className="mt-4 font-serif text-[2.1rem] font-light leading-[1.08] text-ink">
-          {title}
-        </h2>
-        <p className="mt-3 text-[14px] leading-[1.75] text-ink-muted">
-          {village
-            ? `Stay ahead of the ${village} market. A short note each month on its $5M+ sales, new listings, and what is worth watching, alongside the wider East End.`
-            : "A short note each month on luxury real estate from Southampton to Montauk. Closings, inventory, and the villages that are moving."}
-        </p>
-        <div className="mt-7">
-          <LeadForm kind="popup" compact />
+        {desktop ? (
+          <div className="relative h-full min-h-0 border-r border-ink/10">
+            <Image
+              src={PHOTO}
+              alt="Aerial view of oceanfront estates on Meadow Lane, Southampton"
+              fill
+              sizes="340px"
+              className="object-cover object-[50%_45%]"
+            />
+          </div>
+        ) : null}
+        <div className={`relative min-h-0 ${desktop ? "flex h-full flex-col justify-center overflow-y-auto px-10 py-12" : "overflow-y-auto px-6 pb-7 pt-14"}`}>
+          <h2 id={TITLE_ID} className={`font-serif font-light leading-[1.05] text-ink ${desktop ? "pr-6 text-[2.35rem]" : "pr-6 text-[1.85rem]"}`}>
+            {title}
+          </h2>
+          <span aria-hidden="true" className="mt-5 block h-px w-8 bg-ink/70" />
+          <p className="mt-4 font-serif text-[1.05rem] font-light italic leading-[1.35] text-ink-muted">
+            Southampton to Montauk,
+            <br />
+            Sag Harbor &amp; Shelter Island
+          </p>
+          <LeadForm kind="popup" editorial />
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

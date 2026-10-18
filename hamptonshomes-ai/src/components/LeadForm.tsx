@@ -5,30 +5,8 @@ import Link from "next/link";
 
 export type LeadKind = "listing" | "valuation" | "signup" | "popup" | "search";
 
-import { markLeadSubmitted } from "@/lib/lead-keys";
+import { markLeadSubmitted, markPopupSubscribed } from "@/lib/lead-keys";
 import { trackLead } from "@/lib/track";
-
-const INTERESTS = [
-  { value: "", label: "I'm interested in" },
-  { value: "Buying", label: "Buying" },
-  { value: "Selling", label: "Selling" },
-  { value: "Renting", label: "Renting" },
-  { value: "Just the brief", label: "Just the brief" },
-];
-
-/** Optional interest choice for the email popup. */
-function InterestSelect({ id, className }: { id: string; className: string }) {
-  return (
-    <div>
-      <label htmlFor={id} className="sr-only">I&apos;m interested in</label>
-      <select id={id} name="interest" defaultValue="" className={className}>
-        {INTERESTS.map((o) => (
-          <option key={o.value} value={o.value}>{o.label}</option>
-        ))}
-      </select>
-    </div>
-  );
-}
 
 /** Underlined field, kept for the one-row mobile banner. */
 const inlineFieldClass =
@@ -87,8 +65,8 @@ const FIELDS: Record<LeadKind, Field[]> = {
     { name: "name", label: "Name (optional)", type: "text", autoComplete: "name", placeholder: "Your name" },
   ],
   popup: [
-    { name: "email", label: "Email", type: "email", required: true, autoComplete: "email", placeholder: "you@example.com" },
     { name: "name", label: "Name (optional)", type: "text", autoComplete: "name", placeholder: "Your name" },
+    { name: "email", label: "Email", type: "email", required: true, autoComplete: "email", placeholder: "you@example.com" },
   ],
 };
 
@@ -97,7 +75,7 @@ const CTA: Record<LeadKind, string> = {
   search: "Send to Barry",
   valuation: "Request a valuation",
   signup: "Send the brief",
-  popup: "Send the brief",
+  popup: "Send me the report",
 };
 
 export default function LeadForm({
@@ -106,6 +84,7 @@ export default function LeadForm({
   defaultMessage,
   compact,
   inline,
+  editorial,
   tone = "light",
   onDone,
 }: {
@@ -116,6 +95,8 @@ export default function LeadForm({
   compact?: boolean;
   /** One-row email field and button, for the mobile banner. */
   inline?: boolean;
+  /** Understated fields for the market-report popup. */
+  editorial?: boolean;
   /** Dark for navy inquiry panels; light for valuation and signup on paper. */
   tone?: FormTone;
   onDone?: () => void;
@@ -145,6 +126,7 @@ export default function LeadForm({
         throw new Error(res.status === 400 && body.error ? body.error : "");
       }
       markLeadSubmitted();
+      if (kind === "popup") markPopupSubscribed();
       trackLead(kind, { source: listing });
       setStatus("sent");
       onDone?.();
@@ -152,6 +134,17 @@ export default function LeadForm({
       setError((err as Error).message || "Something went wrong. Please call 646.339.0154 or email barry@hedgerowexclusive.com.");
       setStatus("error");
     }
+  }
+
+  if (status === "sent" && editorial) {
+    return (
+      <div role="status" className="py-1">
+        <p className="font-serif text-[1.7rem] font-light leading-tight text-ink">Thank you.</p>
+        <Link href="/market" className="link-line eyebrow mt-5 inline-block text-ocean">
+          Read the reports <span aria-hidden="true">→</span>
+        </Link>
+      </div>
+    );
   }
 
   if (status === "sent") {
@@ -173,20 +166,70 @@ export default function LeadForm({
     );
   }
 
+  if (editorial) {
+    const fieldClass =
+      "mt-1 block w-full border-0 border-b border-ink/20 bg-transparent px-0 py-2.5 text-[16px] text-ink placeholder:text-transparent transition-colors duration-300 focus:border-ink focus:outline-none";
+    return (
+      <form onSubmit={submit} noValidate className="mt-7">
+        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+          <label htmlFor={`${uid}-website`}>Website</label>
+          <input id={`${uid}-website`} name="website" type="text" tabIndex={-1} autoComplete="off" />
+        </div>
+        <div className="space-y-4">
+          {FIELDS.popup.map((f) => (
+            <div key={f.name}>
+              <label htmlFor={`${uid}-${f.name}`} className="eyebrow block text-ink-muted">
+                {f.label}
+              </label>
+              <input
+                id={`${uid}-${f.name}`}
+                name={f.name}
+                type={f.type}
+                required={f.required}
+                autoComplete={f.autoComplete}
+                maxLength={200}
+                className={fieldClass}
+              />
+            </div>
+          ))}
+        </div>
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="eyebrow mt-7 w-full bg-ink px-6 py-3.5 text-[11px] text-paper transition-colors duration-300 hover:bg-ocean-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink disabled:opacity-60"
+        >
+          {status === "sending" ? "Sending" : "Send me the report"}
+        </button>
+        <p aria-live="polite" className={`mt-4 text-[11.5px] leading-relaxed ${status === "error" ? "text-[#8a2a1a]" : "text-ink-faint"}`}>
+          {status === "error" ? (
+            error
+          ) : (
+            <>
+              The Hamptons luxury market, monthly. Unsubscribe anytime. See the{" "}
+              <Link href="/privacy" className="underline decoration-ink-faint/40 underline-offset-[3px] hover:text-ocean">
+                Privacy Policy
+              </Link>
+              .
+            </>
+          )}
+        </p>
+      </form>
+    );
+  }
+
   if (inline) {
     return (
       <form onSubmit={submit} noValidate>
         <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
           <input name="website" type="text" tabIndex={-1} autoComplete="off" />
         </div>
-        {kind === "popup" ? <InterestSelect id={`${uid}-interest`} className={`${inlineFieldClass} py-2 text-[14px] text-ink-muted`} /> : null}
         <div className="flex items-end gap-3">
           <div className="min-w-0 flex-1">
             <label htmlFor={`${uid}-email`} className="sr-only">Email</label>
             <input id={`${uid}-email`} name="email" type="email" required autoComplete="email" placeholder="Email address" maxLength={200} className={inlineFieldClass} />
           </div>
           <button type="submit" disabled={status === "sending"} className="eyebrow shrink-0 bg-ocean-deep px-5 py-3.5 text-paper disabled:opacity-60">
-            {status === "sending" ? "Sending" : "Send the brief"}
+            {status === "sending" ? "Sending" : "Send me the report"}
           </button>
         </div>
         {status === "error" ? <p aria-live="polite" className="mt-2 text-[12px] text-[#8a2a1a]">{error}</p> : null}
@@ -230,7 +273,6 @@ export default function LeadForm({
             )}
           </div>
         ))}
-        {kind === "popup" ? <InterestSelect id={`${uid}-interest`} className={`${st.field} h-[52px] text-ink-muted`} /> : null}
       </div>
       <button
         type="submit"
@@ -245,7 +287,12 @@ export default function LeadForm({
           error
         ) : (
           <>
-            {isSignup ? "The monthly East End brief, and occasional notes on new listings, from Barry. Unsubscribe anytime. " : ""}See the{" "}
+            {kind === "popup"
+              ? "The Hamptons luxury market, monthly. Unsubscribe anytime. "
+              : isSignup
+                ? "The monthly East End brief, and occasional notes on new listings, from Barry. Unsubscribe anytime. "
+                : ""}
+            See the{" "}
             <Link href="/privacy" className={st.link}>
               Privacy Policy
             </Link>
