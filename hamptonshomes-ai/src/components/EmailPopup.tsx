@@ -2,10 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 import LeadForm from "@/components/LeadForm";
+import { markPopupShown } from "@/lib/lead-keys";
 import { pageVillage } from "@/lib/intent";
 
 const TITLE_ID = "hh-popup-title";
+const PHOTO = "/images/heroes/950-meadow-lane-southampton.jpg";
 
 function CloseButton({ onClick }: { onClick: () => void }) {
   return (
@@ -13,22 +16,24 @@ function CloseButton({ onClick }: { onClick: () => void }) {
       type="button"
       onClick={onClick}
       aria-label="Close"
-      className="flex h-12 w-12 items-center justify-center text-ink hover:text-ocean focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-deep"
+      className="absolute right-1 top-1 z-10 flex h-11 w-11 items-center justify-center bg-transparent text-ink/80 hover:text-ink focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-ink"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.15">
         <path d="M6 6l12 12M18 6L6 18" />
       </svg>
     </button>
   );
 }
 
-/** Centered monthly-brief modal. The card is always opaque; only the page behind the backdrop is dimmed. */
+/** Editorial market-report modal. The card is opaque immediately; only a short rise animates. */
 export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onClose: () => void }) {
   const panel = useRef<HTMLDivElement>(null);
   const [village] = useState(() => pageVillage());
-  const title = village ? `The monthly ${village} brief` : "The monthly East End brief";
+  const title = village ? `Monthly ${village} Market Report` : "Monthly Hamptons Market Report";
+  const line = village ? `${village}, alongside the East End.` : "From Southampton to Montauk.";
 
   useEffect(() => {
+    markPopupShown();
     const previous = document.activeElement as HTMLElement | null;
     const focusTarget = desktop
       ? panel.current?.querySelector<HTMLElement>("input[type=email]")
@@ -66,35 +71,45 @@ export default function EmailPopup({ desktop, onClose }: { desktop: boolean; onC
 
   return createPortal(
     <div className="fixed inset-0 z-[80] flex items-center justify-center px-5 py-6 sm:px-8 sm:py-10">
+      <style>{`@keyframes hh-popup-rise{from{transform:translateY(8px)}to{transform:none}}@media (prefers-reduced-motion:reduce){.hh-popup-card{animation:none!important}}`}</style>
       <div aria-hidden="true" onClick={onClose} className="absolute inset-0" style={{ backgroundColor: "rgba(12, 24, 29, 0.62)" }} />
       <div
         ref={panel}
         role="dialog"
         aria-modal="true"
         aria-labelledby={TITLE_ID}
-        className="relative z-10 flex max-h-full w-full max-w-[440px] flex-col overflow-hidden border border-line shadow-[0_28px_80px_rgba(12,24,29,0.38)] sm:max-w-[460px]"
-        style={{ backgroundColor: "#f4f0e8", opacity: 1 }}
+        className={`hh-popup-card relative z-10 overflow-hidden border border-ink/15 bg-[#f4f0e8] shadow-[0_28px_80px_rgba(12,24,29,0.38)] ${desktop ? "grid grid-cols-2" : "flex w-full max-w-[400px] flex-col"}`}
+        style={{
+          opacity: 1,
+          backgroundColor: "#f4f0e8",
+          animation: "hh-popup-rise 180ms cubic-bezier(0.22, 0.61, 0.21, 1)",
+          ...(desktop
+            ? {
+                width: "min(680px, calc(100vw - 4rem), calc(100svh - 4.5rem))",
+                height: "min(680px, calc(100vw - 4rem), calc(100svh - 4.5rem))",
+              }
+            : undefined),
+        }}
       >
-        <div className="flex shrink-0 justify-end pr-1.5 pt-1.5 sm:pr-2 sm:pt-2">
-          <CloseButton onClick={onClose} />
-        </div>
-        <div className="overflow-y-auto overscroll-contain px-6 pb-8 sm:px-10 sm:pb-10">
-          <p className="eyebrow text-ocean">Barry McGovern · Research</p>
-          <h2 id={TITLE_ID} className="mt-3 font-serif text-[1.85rem] font-light leading-[1.08] text-ink sm:mt-4 sm:text-[2.1rem]">
+        <CloseButton onClick={onClose} />
+        {desktop ? (
+          <div className="relative h-full min-h-0 border-r border-ink/10">
+            <Image
+              src={PHOTO}
+              alt="Aerial view of oceanfront estates on Meadow Lane, Southampton"
+              fill
+              sizes="340px"
+              className="object-cover object-[50%_45%]"
+            />
+          </div>
+        ) : null}
+        <div className={`relative min-h-0 ${desktop ? "flex h-full flex-col justify-center overflow-y-auto px-10 py-12" : "overflow-y-auto px-6 pb-7 pt-14"}`}>
+          <h2 id={TITLE_ID} className={`font-serif font-light leading-[1.05] text-ink ${desktop ? "pr-6 text-[2.35rem]" : "pr-6 text-[1.85rem]"}`}>
             {title}
           </h2>
-          <p className="mt-3 text-[14px] leading-[1.7] text-ink-muted">
-            {village
-              ? desktop
-                ? `Stay ahead of the ${village} market. A short note each month on its $5M+ sales, new listings, and what is worth watching, alongside the wider East End.`
-                : `Stay ahead of the ${village} market: what sold, what is available, what is worth watching.`
-              : desktop
-                ? "A short note each month on luxury real estate from Southampton to Montauk. Closings, inventory, and the villages that are moving."
-                : "What sold, what is available, and what is worth watching."}
-          </p>
-          <div className="mt-6 sm:mt-7">
-            <LeadForm kind="popup" compact />
-          </div>
+          <span aria-hidden="true" className="mt-5 block h-px w-8 bg-ink/70" />
+          <p className="mt-4 font-serif text-[1.05rem] font-light italic leading-snug text-ink-muted">{line}</p>
+          <LeadForm kind="popup" editorial />
         </div>
       </div>
     </div>,
