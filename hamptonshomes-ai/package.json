@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:sitemap": "node scripts/sitemap-smoke.mjs"
+    "test:sitemap": "node scripts/sitemap-smoke.mjs",
+    "test:leads": "node --experimental-strip-types scripts/lead-email-smoke.mts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.98.0",

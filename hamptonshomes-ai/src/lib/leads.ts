@@ -25,6 +25,23 @@ export function clean(value: unknown, max: number) {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
 }
 
+/** Choices the popup offers, plus older values so a submit already in flight still records. */
+export const POPUP_INTERESTS = ["Buying", "Selling", "Renting", "Just the brief", "Following the market"];
+
+/**
+ * Optional interest on the market-report popup and the monthly brief.
+ * Unknown or empty values are dropped. The lead still sends.
+ */
+export function applyPopupInterest(kind: string, raw: unknown, form: string): { form: string; detail?: [string, string] } {
+  if (kind !== "popup" && kind !== "signup") return { form };
+  const interest = clean(raw, 40);
+  if (!POPUP_INTERESTS.includes(interest)) return { form };
+  return {
+    form: interest === "Just the brief" ? form : `${form} · ${interest}`,
+    detail: ["Interested in", interest],
+  };
+}
+
 export function oneLine(value: string) {
   return value.replace(/[\r\n]+/g, " ").trim();
 }
@@ -74,11 +91,8 @@ function row(label: string, value: string) {
   return `<tr><td style="padding:8px 0;color:#8a8a8a;width:130px;vertical-align:top">${escapeHtml(label)}</td><td style="padding:8px 0;color:#222">${value}</td></tr>`;
 }
 
-/** Notification email to Barry. Reply-To is the visitor, so Barry can answer directly. */
-export async function notifyBarry(lead: Lead, opts: { test?: boolean } = {}) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return { ok: false as const, reason: "not-configured" as const };
-  const resend = new Resend(apiKey);
+/** Subject and HTML Barry receives. Detail rows, including Interested in, are part of the body. */
+export function leadNotification(lead: Lead, opts: { test?: boolean; receivedAt?: Date } = {}) {
   const subjectTail = lead.details?.find(([k]) => k === "Listing" || k === "Property")?.[1];
   const subject = `${opts.test ? "[TEST] " : ""}${lead.form}: ${oneLine(lead.name) || oneLine(lead.email)}${subjectTail ? `, ${oneLine(subjectTail)}` : ""}`;
   const rows = [
@@ -87,17 +101,27 @@ export async function notifyBarry(lead: Lead, opts: { test?: boolean } = {}) {
     lead.phone ? row("Phone", `<a href="tel:${escapeHtml(lead.phone.replace(/[^\d+]/g, ""))}" style="color:#1f3a44">${escapeHtml(lead.phone)}</a>`) : "",
     ...(lead.details ?? []).map(([k, v]) => row(k, escapeHtml(v))),
     lead.pageUrl ? row("Page", `<a href="${escapeHtml(lead.pageUrl)}" style="color:#1f3a44">${escapeHtml(lead.pageUrl)}</a>`) : "",
-    row("Received", `${escapeHtml(etTimestamp())} ET`),
+    row("Received", `${escapeHtml(etTimestamp(opts.receivedAt))} ET`),
   ].join("");
   const message = lead.message
     ? `<div style="background:#f4f0e8;padding:20px;margin-top:16px;border-left:3px solid #1f3a44"><p style="margin:0;color:#333;font-size:15px;line-height:1.7">${escapeHtml(lead.message).replace(/\n/g, "<br />")}</p></div>`
     : "";
+  const html = `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;padding:32px 20px"><h2 style="color:#111;font-size:22px;font-weight:normal;border-bottom:1px solid #1f3a44;padding-bottom:12px;margin:0">${escapeHtml(lead.form)}</h2><table style="width:100%;margin:20px 0;font-size:15px">${rows}</table>${message}<p style="color:#999;font-size:12px;margin-top:28px">hamptonshomes.ai</p></div>`;
+  return { subject: subject.slice(0, 180), html };
+}
+
+/** Notification email to Barry. Reply-To is the visitor, so Barry can answer directly. */
+export async function notifyBarry(lead: Lead, opts: { test?: boolean } = {}) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return { ok: false as const, reason: "not-configured" as const };
+  const resend = new Resend(apiKey);
+  const { subject, html } = leadNotification(lead, opts);
   const { data, error } = await resend.emails.send({
     from: FROM(),
     to: [LEAD_TO],
     replyTo: lead.email,
-    subject: subject.slice(0, 180),
-    html: `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;padding:32px 20px"><h2 style="color:#111;font-size:22px;font-weight:normal;border-bottom:1px solid #1f3a44;padding-bottom:12px;margin:0">${escapeHtml(lead.form)}</h2><table style="width:100%;margin:20px 0;font-size:15px">${rows}</table>${message}<p style="color:#999;font-size:12px;margin-top:28px">hamptonshomes.ai</p></div>`,
+    subject,
+    html,
   });
   if (error) {
     console.error("Lead email error:", error);
