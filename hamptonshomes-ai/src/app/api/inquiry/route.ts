@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { listingBySlug } from "@/lib/listing-pages";
 import {
   EMAIL_RE,
+  applyPopupInterest,
   clean,
   emailConfigured,
   logLead,
@@ -27,7 +28,6 @@ const KINDS = {
 } as const;
 const INTENT_LABELS: Record<string, string> = { buy: "Buy", sell: "Sell", rent: "Rent", valuation: "Valuation" };
 const TIMING_LABELS: Record<string, string> = { "0-3": "0 to 3 months", "3-12": "3 to 12 months", exploring: "Exploring" };
-const INTERESTS = ["Buying", "Selling", "Renting", "Just the brief"];
 type Kind = keyof typeof KINDS;
 
 const ALLOWED_ORIGINS = /^https:\/\/(hamptonshomes\.ai|[a-z0-9-]+\.vercel\.app)$|^http:\/\/localhost(:\d+)?$/;
@@ -92,11 +92,9 @@ export async function POST(request: Request) {
     if (source) details.push(["Opened from", source]);
   }
   if (kind === "popup" || kind === "signup") {
-    const interest = clean(body.interest, 40);
-    if (INTERESTS.includes(interest)) {
-      details.push(["Interested in", interest]);
-      if (interest !== "Just the brief") form = `${KINDS[kind]} · ${interest}`;
-    }
+    const applied = applyPopupInterest(kind, body.interest, form);
+    form = applied.form;
+    if (applied.detail) details.push(applied.detail);
   }
 
   if (!emailConfigured()) return bad("Email service not configured", 503);

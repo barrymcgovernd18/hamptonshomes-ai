@@ -8,9 +8,46 @@ export type LeadKind = "listing" | "valuation" | "signup" | "popup" | "search";
 import { markLeadSubmitted, markPopupSubscribed } from "@/lib/lead-keys";
 import { trackLead } from "@/lib/track";
 
-/** Underlined field, kept for the one-row mobile banner. */
+/** Underlined field, kept for the mobile banner. */
 const inlineFieldClass =
   "w-full rounded-none border-0 border-b border-line bg-transparent px-0 py-3 text-[16px] text-ink placeholder:text-ink-faint transition-[border-color,box-shadow] duration-300 focus:border-ocean-deep focus:shadow-[0_1px_0_0_var(--color-ocean-deep)] focus:outline-none";
+
+const POPUP_INTERESTS = [
+  { value: "Buying", label: "Buying" },
+  { value: "Selling", label: "Selling" },
+  { value: "Following the market", label: "Following the market" },
+];
+
+/** Optional interest choice for the market-report popup. An empty choice stays off the lead email. */
+function InterestField({ id, className }: { id: string; className: string }) {
+  const [value, setValue] = useState("");
+  return (
+    <div>
+      <label htmlFor={id} className="eyebrow block text-ink-muted">
+        Interested in
+      </label>
+      <div className="relative">
+        <select
+          id={id}
+          name="interest"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          className={`${className} ${value ? "text-ink" : "text-ink-muted"}`}
+        >
+          <option value="">Optional</option>
+          {POPUP_INTERESTS.map((o) => (
+            <option key={o.value} value={o.value}>
+              {o.label}
+            </option>
+          ))}
+        </select>
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="pointer-events-none absolute right-0 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-ink/50" fill="none" stroke="currentColor" strokeWidth="1.4">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+  );
+}
 
 export type FormTone = "light" | "dark";
 
@@ -85,6 +122,7 @@ export default function LeadForm({
   compact,
   inline,
   editorial,
+  banner,
   tone = "light",
   onDone,
 }: {
@@ -97,6 +135,8 @@ export default function LeadForm({
   inline?: boolean;
   /** Understated fields for the market-report popup. */
   editorial?: boolean;
+  /** Compact bottom banner: interest, email, and the report button. */
+  banner?: boolean;
   /** Dark for navy inquiry panels; light for valuation and signup on paper. */
   tone?: FormTone;
   onDone?: () => void;
@@ -148,13 +188,14 @@ export default function LeadForm({
   }
 
   if (status === "sent") {
+    const tight = inline || banner;
     return (
-      <div role="status" className={inline ? "" : compact ? "py-2" : "py-6"}>
-        <p className={`font-serif font-light leading-tight ${dark ? "text-paper" : "text-ink"} ${inline ? "text-[1.3rem]" : "text-[1.7rem]"}`}>
+      <div role="status" className={tight ? "" : compact ? "py-2" : "py-6"}>
+        <p className={`font-serif font-light leading-tight ${dark ? "text-paper" : "text-ink"} ${tight ? "text-[1.3rem]" : "text-[1.7rem]"}`}>
           {isSignup ? "Thank you. You are on the list." : "Thank you. Barry will be in touch shortly."}
         </p>
         {isSignup ? (
-          <Link href="/market" className={`link-line eyebrow inline-block text-ocean ${inline ? "mt-3" : "mt-5"}`}>
+          <Link href="/market" className={`link-line eyebrow inline-block text-ocean ${tight ? "mt-3" : "mt-5"}`}>
             Read the latest research <span aria-hidden="true">→</span>
           </Link>
         ) : (
@@ -192,6 +233,10 @@ export default function LeadForm({
               />
             </div>
           ))}
+          <InterestField
+            id={`${uid}-interest`}
+            className="mt-1 block w-full appearance-none border-0 border-b border-ink/20 bg-transparent py-2.5 pl-0 pr-6 text-[16px] transition-colors duration-300 focus:border-ink focus:outline-none"
+          />
         </div>
         <button
           type="submit"
@@ -213,6 +258,48 @@ export default function LeadForm({
             </>
           )}
         </p>
+      </form>
+    );
+  }
+
+  if (banner) {
+    return (
+      <form onSubmit={submit} noValidate className="mt-3">
+        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+          <label htmlFor={`${uid}-website`}>Website</label>
+          <input id={`${uid}-website`} name="website" type="text" tabIndex={-1} autoComplete="off" />
+        </div>
+        <InterestField
+          id={`${uid}-interest`}
+          className="mt-1 block w-full appearance-none rounded-none border-0 border-b border-line bg-transparent py-2.5 pl-0 pr-6 text-[16px] focus:border-ocean-deep focus:outline-none"
+        />
+        <div className="mt-3">
+          <label htmlFor={`${uid}-email`} className="sr-only">
+            Email
+          </label>
+          <input
+            id={`${uid}-email`}
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            placeholder="Email address"
+            maxLength={200}
+            className={inlineFieldClass}
+          />
+        </div>
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="eyebrow mt-3 w-full bg-ink px-5 py-3.5 text-[11px] text-paper transition-colors duration-300 hover:bg-ocean-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink disabled:opacity-60"
+        >
+          {status === "sending" ? "Sending" : "Send me the report"}
+        </button>
+        {status === "error" ? (
+          <p aria-live="polite" className="mt-2 text-[12px] text-[#8a2a1a]">
+            {error}
+          </p>
+        ) : null}
       </form>
     );
   }
