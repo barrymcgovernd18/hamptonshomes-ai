@@ -4,7 +4,7 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import InView from "@/components/InView";
 import { ClosingInvitation, PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
-import { personalVolume, firmVolume, firmVolumeLabel } from "@/lib/sales";
+import { firmVolume, firmVolumeLabel } from "@/lib/sales";
 import {
   hedgerowActiveListings,
   hedgerowFirmHistory,
@@ -112,10 +112,6 @@ export default function SalesPage() {
         imagePosition="72% 40%"
         aside={
           <dl className="grid grid-cols-2 gap-8 md:text-right">
-            <div className="flex flex-col-reverse">
-              <dt className="eyebrow mt-3 text-paper/75">Personal volume</dt>
-              <dd className="font-serif text-[2.4rem] font-light leading-none text-paper">{personalVolume}</dd>
-            </div>
             <div className="flex flex-col-reverse">
               <dt className="eyebrow mt-3 text-paper/75">{firmVolumeLabel}</dt>
               <dd className="font-serif text-[2.4rem] font-light leading-none text-paper">{firmVolume}</dd>

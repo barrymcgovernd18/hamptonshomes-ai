@@ -12,7 +12,7 @@ import { allPress } from "@/lib/press";
 const delay = (ms: number) => ({ "--reveal-delay": `${ms}ms` }) as CSSProperties;
 
 const KEY_NUMBERS = [
-  { figure: "$250M+", label: "Personal sales volume" },
+  { figure: "Six years", label: "Hamptons luxury experience" },
   { figure: "Over $2B", label: "Hedgerow transactions since 2020" },
   { figure: "18", label: "Oceanfront trades with Hedgerow since 2021" },
   { figure: "2013", label: "Sag Harbor local since" },

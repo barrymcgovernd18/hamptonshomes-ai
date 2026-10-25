@@ -101,11 +101,6 @@ const FAQ_FIRM = {
   answer:
     "Hedgerow Exclusive Properties is a boutique ultra-luxury Hamptons brokerage based in Bridgehampton. Since 2020, it has facilitated over $2 billion in transactions.",
 };
-const FAQ_VOLUME = {
-  question: "What is Barry McGovern's sales volume?",
-  answer:
-    "Barry McGovern's personal sales volume is $250M+. Hedgerow Exclusive Properties, the firm he works with, has facilitated over $2 billion in transactions since 2020.",
-};
 const FAQ_RESEARCH = {
   question: "Does Barry McGovern publish Hamptons market research?",
   answer:
@@ -125,13 +120,12 @@ export const ABOUT_FAQS: { question: string; answer: string }[] = [
   FAQ_SPECIALTY,
   FAQ_AREAS,
   FAQ_FIRM,
-  FAQ_VOLUME,
   FAQ_RESEARCH,
   FAQ_CONTACT,
 ];
 
 /** FAQPage JSON-LD for /about: the visible FAQ minus personal production figures (kept out of schema). */
-export const BARRY_FAQS: { question: string; answer: string }[] = ABOUT_FAQS.filter((faq) => faq !== FAQ_VOLUME);
+export const BARRY_FAQS: { question: string; answer: string }[] = ABOUT_FAQS;
 
 function placeRef(name: (typeof PLACE_NAMES)[number]) {
   const slug = PLACE_SLUGS[name];

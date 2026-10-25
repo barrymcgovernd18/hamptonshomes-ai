@@ -18,7 +18,6 @@ export const metadata: Metadata = routeMetadata({
 
 /** Facts as published elsewhere on the site, set out so readers (and search and AI tools) can lift them cleanly. */
 const AT_A_GLANCE = [
-  { label: "Personal sales volume", value: "$250M+" },
   { label: "Hamptons luxury experience", value: "Six years" },
   { label: "Originally from", value: "Dublin, Ireland" },
   { label: "On the East End since", value: "2013" },
