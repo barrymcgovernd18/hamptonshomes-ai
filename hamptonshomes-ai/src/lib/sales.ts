@@ -173,6 +173,5 @@ export function formatSaleStatus(status: string) {
   return m ? `${m[1]} ${MONTHS[Number(m[2]) - 1]} ${m[3]}` : status;
 }
 
-export const personalVolume = "$250M+";
 export const firmVolume = "over $2B";
 export const firmVolumeLabel = "Firm transactions";

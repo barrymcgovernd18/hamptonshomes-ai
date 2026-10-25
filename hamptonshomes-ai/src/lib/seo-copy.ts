@@ -44,8 +44,6 @@ export const SALES_PAGE = {
 } as const;
 
 export const SALES_HERO = {
-  personalVolume: "$250M+",
-  personalLabel: "Personal volume",
   firmVolume: "over $2B",
   firmLabel: "Firm transactions",
 } as const;
