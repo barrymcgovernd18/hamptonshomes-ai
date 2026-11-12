@@ -16,7 +16,7 @@ const primary = [
 /** Pages that open on a dark, full-bleed hero: the bar stays transparent over it until scrolled. */
 const AREA_SLUGS = ["east-hampton", "sag-harbor", "bridgehampton", "sagaponack", "southampton", "water-mill", "amagansett", "montauk", "shelter-island", "wainscott"];
 const BAR_HEIGHT = 76;
-const DARK_HERO_PATHS = new Set(["/", "/about", "/sales", "/press", ...AREA_SLUGS.map((slug) => `/${slug}`)]);
+const DARK_HERO_PATHS = new Set(["/", "/about", "/contact", "/sales", "/press", ...AREA_SLUGS.map((slug) => `/${slug}`)]);
 
 export default function Header() {
   const pathname = usePathname();
@@ -93,7 +93,7 @@ export default function Header() {
   return (
     <header
       onFocusCapture={() => setHidden(false)}
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,color] duration-300 ease-out motion-reduce:transition-none lg:transition-[transform,background-color,border-color,color] lg:duration-700 lg:ease-[cubic-bezier(0.22,0.61,0.21,1)] ${
+      className={`header-safe fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,color] duration-300 ease-out motion-reduce:transition-none lg:transition-[transform,background-color,border-color,color] lg:duration-700 lg:ease-[cubic-bezier(0.22,0.61,0.21,1)] ${
         hidden && !menuOpen ? "lg:-translate-y-full" : ""
       } ${
         menuOpen
