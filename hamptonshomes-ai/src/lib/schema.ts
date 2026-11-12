@@ -316,6 +316,22 @@ export function faqPageJsonLd(faqs: { question: string; answer: string }[] = BAR
   };
 }
 
+/** /contact as a ContactPage. Points at the existing person node. No firm or personal volume figures. */
+export function contactPageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": `${SITE_URL}/contact#webpage`,
+    url: `${SITE_URL}/contact`,
+    name: "Contact Barry McGovern",
+    description:
+      "Contact Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties. Hamptons real estate from Southampton to Montauk. Call 646.339.0154 or email barry@hedgerowexclusive.com.",
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": PERSON_ID },
+    mainEntity: { "@id": PERSON_ID },
+  };
+}
+
 export function breadcrumbListJsonLd(items: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",

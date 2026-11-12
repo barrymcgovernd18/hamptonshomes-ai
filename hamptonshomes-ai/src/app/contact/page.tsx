@@ -1,99 +1,174 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
-import { PageHero, SectionLabel, revealDelay } from "@/components/Editorial";
-import { routeMetadata } from "@/lib/schema";
+import { SectionLabel, revealDelay } from "@/components/Editorial";
+import JsonLd from "@/components/JsonLd";
+import { contactPageJsonLd, routeMetadata } from "@/lib/schema";
 
 export const metadata: Metadata = routeMetadata({
   title: "Contact",
   description:
-    "Contact Barry McGovern for Hamptons oceanfront, waterfront and private-market real estate. Licensed Real Estate Salesperson, Hedgerow Exclusive Properties.",
+    "Barry McGovern helps Hamptons sellers from Southampton to Montauk. Part of a Hedgerow team with over $2 billion in sales. Call 646.339.0154.",
   path: "/contact",
   image: "/og/contact.jpg",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
+const PHONE_HREF = "tel:+16463390154";
+const PHONE_LABEL = "646.339.0154";
+const EMAIL_HREF = "mailto:barry@hedgerowexclusive.com";
+const EMAIL_LABEL = "barry@hedgerowexclusive.com";
 
 const SOCIAL = [
   { href: "https://www.instagram.com/barrymcgovern_/", label: "Instagram" },
   { href: "https://www.linkedin.com/in/barry-mcgovern-9346133b/", label: "LinkedIn" },
 ];
 
+const actionClass =
+  "group flex min-h-14 items-center justify-between gap-4 px-5 py-3.5 transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold sm:px-6";
+
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-paper text-ink">
-      <PageHero
-        light
-        eyebrow="Contact"
-        title={
-          <>
-            Let&apos;s
-          </>
-        }
-        italic="Talk"
-        aside={
-          <p className="body-copy text-ink-muted">
-            Every conversation is confidential. Whether buying, selling, renting, or seeking a valuation, reach out directly.
-          </p>
-        }
-      />
+    <div className="bg-paper text-ink">
+      <JsonLd data={contactPageJsonLd()} />
 
-      <section className="border-t border-line pb-28 pt-16 md:pb-40 md:pt-24">
-        <div className="frame grid gap-20 md:grid-cols-12 md:gap-10">
-          <div className="md:col-span-5">
-            <SectionLabel n="I">Direct</SectionLabel>
-            <dl className="mt-10 divide-y divide-line border-y border-line">
-              <div data-reveal className="py-7">
-                <dt className="eyebrow text-ink-faint">Phone</dt>
-                <dd className="mt-3">
-                  <a href="tel:+16463390154" className="font-serif text-[2.4rem] font-light leading-none text-ink transition-colors duration-500 hover:text-ocean">
-                    646.339.0154
-                  </a>
-                </dd>
-              </div>
-              <div data-reveal style={revealDelay(60)} className="py-7">
-                <dt className="eyebrow text-ink-faint">Email</dt>
-                <dd className="mt-3">
-                  <a href="mailto:barry@hedgerowexclusive.com" className="link-line font-serif text-[1.45rem] text-ink">
-                    barry@hedgerowexclusive.com
-                  </a>
-                </dd>
-              </div>
-              <div data-reveal style={revealDelay(120)} className="py-7">
-                <dt className="eyebrow text-ink-faint">Office</dt>
-                <dd className="mt-3 text-[15px] leading-[1.8] text-ink-muted">
-                  Hedgerow Exclusive Properties <br />
-                  2495 Montauk Highway <br />
-                  Bridgehampton, NY 11932
-                </dd>
-              </div>
-              <div data-reveal style={revealDelay(180)} className="py-7">
-                <dt className="eyebrow text-ink-faint">Social</dt>
-                <dd className="mt-4 flex gap-8">
-                  {SOCIAL.map((link) => (
-                    <a key={link.label} href={link.href} target="_blank" rel="noopener" className="link-line eyebrow text-ink-muted">
-                      {link.label}
-                    </a>
-                  ))}
-                </dd>
-              </div>
-            </dl>
-            <p className="mt-8 text-[13px] text-ink-faint">Licensed Real Estate Salesperson · NY License #10401353717</p>
-            <p className="mt-2 text-[13px] text-ink-faint">
-              <Link href="/privacy" className="hover:text-ocean">Privacy</Link> · <Link href="/terms" className="hover:text-ocean">Terms</Link>
+      <section data-hero className="contact-hero relative flex min-h-[100svh] flex-col bg-ocean-deep text-paper lg:block lg:h-[100svh] lg:max-h-[980px] lg:min-h-[720px]">
+        <div className="contact-portrait relative shrink-0">
+          <Image
+            src="/images/barry-mcgovern.jpg"
+            alt="Portrait of Barry McGovern, a Hamptons luxury specialist at Hedgerow Exclusive Properties"
+            fill
+            priority
+            fetchPriority="high"
+            sizes="(max-width: 1024px) 100vw, 46vw"
+            className="photo-mono object-cover object-[center_16%] lg:object-[center_20%]"
+          />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/35 to-transparent lg:h-40 lg:from-black/55" />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 hidden w-2/5 bg-gradient-to-r from-ocean-deep to-transparent lg:block" />
+        </div>
+
+        <div className="frame relative flex flex-1 flex-col justify-end pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] pt-5 lg:h-full lg:flex-none lg:justify-end lg:pb-16 lg:pt-28">
+          <div className="lg:max-w-[46%]">
+            <p className="eyebrow text-paper/80">For Hamptons sellers</p>
+            <h1 className="mt-2 font-serif text-[2.65rem] font-light leading-[0.92] tracking-[-0.015em] text-paper lg:text-[4.75rem]">
+              Barry
+              <span className="block">McGovern</span>
+            </h1>
+            <p className="mt-3 max-w-[28rem] font-serif text-[1.15rem] font-light leading-snug text-paper/95 lg:mt-4 lg:text-[1.55rem]">
+              A Hamptons luxury specialist, <em className="italic">from Southampton to Montauk.</em>
             </p>
-          </div>
+            <p className="mt-2 max-w-[34rem] text-[14.5px] leading-relaxed text-paper/80 lg:mt-3 lg:text-[15px]">
+              Hedgerow Exclusive Properties, Bridgehampton. Every conversation is confidential.
+            </p>
+            <p className="mt-3 text-[14px] leading-relaxed text-gold">Barry replies personally, usually within a few hours.</p>
 
-          <div className="md:col-span-6 md:col-start-7">
-            <SectionLabel n="II">Send a message</SectionLabel>
-            <div data-reveal style={revealDelay(80)} className="mt-10 bg-ocean-deep px-6 py-10 text-paper sm:px-10 md:px-12 md:py-12">
-              <p className="mb-8 flex items-center gap-3 text-[14px] text-gold">
-                <span aria-hidden="true" className="inline-block h-px w-8 bg-gold" />
-                Barry replies personally, usually within a few hours.
-              </p>
-              <ContactForm />
+            <div className="mt-4 grid max-w-md gap-2.5 lg:mt-6 lg:gap-3">
+              <a href={PHONE_HREF} className={`${actionClass} bg-paper text-ocean-deep hover:bg-gold`}>
+                <span>
+                  <span className="eyebrow block text-ocean/75">Call</span>
+                  <span className="mt-1 block font-serif text-[1.85rem] font-light leading-none tracking-[-0.01em]">{PHONE_LABEL}</span>
+                </span>
+                <span aria-hidden="true" className="font-serif text-[1.6rem] leading-none">→</span>
+              </a>
+              <a href={EMAIL_HREF} className={`${actionClass} border border-paper/45 text-paper hover:border-paper hover:bg-paper hover:text-ocean-deep`}>
+                <span className="min-w-0">
+                  <span className="eyebrow block text-paper/75 group-hover:text-ocean/75">Email</span>
+                  <span className="mt-1 block font-serif text-[1.2rem] font-light leading-tight tracking-[-0.01em] sm:text-[1.35rem]">{EMAIL_LABEL}</span>
+                </span>
+                <span aria-hidden="true" className="font-serif text-[1.6rem] leading-none">→</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
+
+      <section className="border-t border-line py-16 md:py-28" aria-labelledby="about-barry">
+        <div className="frame grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-4">
+            <SectionLabel n="I" as="h2" id="about-barry">About Barry</SectionLabel>
+          </div>
+          <div className="lg:col-span-7 lg:col-start-6">
+            <p data-reveal className="max-w-[22ch] font-serif text-[clamp(1.85rem,3vw,2.6rem)] font-light leading-[1.2] text-ink">
+              Quiet advice for a Hamptons sale.
+            </p>
+            <div className="mt-8 max-w-[62ch] space-y-6 text-[16px] leading-[1.85] text-ink-muted md:text-[17px]">
+              <p data-reveal style={revealDelay(60)}>
+                Barry McGovern is a Hamptons luxury specialist at Hedgerow Exclusive Properties. He works with sellers from Southampton to Montauk, and he is part of a team with over $2 billion in sales.
+              </p>
+              <p data-reveal style={revealDelay(100)}>
+                The office is at 2495 Montauk Highway, Bridgehampton, NY 11932. Conversations stay confidential.
+              </p>
+            </div>
+
+            <dl data-reveal style={revealDelay(140)} className="mt-12 grid grid-cols-2 border-t border-ink/80">
+              <div className="flex flex-col-reverse justify-end gap-2 border-b border-line py-6 pr-5">
+                <dt className="eyebrow text-ink-faint">Team sales</dt>
+                <dd className="font-serif text-[2rem] font-light leading-none text-ink md:text-[2.4rem]">Over $2B</dd>
+              </div>
+              <div className="flex flex-col-reverse justify-end gap-2 border-b border-l border-line py-6 pl-5">
+                <dt className="eyebrow text-ink-faint">Office</dt>
+                <dd className="font-serif text-[1.35rem] font-light leading-[1.25] text-ink md:text-[1.55rem]">
+                  2495 Montauk Highway
+                  <span className="mt-1 block text-[0.82em] text-ink-muted">Bridgehampton</span>
+                </dd>
+              </div>
+            </dl>
+
+            <p data-reveal style={revealDelay(180)} className="mt-8 text-[13px] leading-relaxed text-ink-faint">
+              Licensed Real Estate Salesperson · NY License #10401353717
+            </p>
+            <div data-reveal style={revealDelay(200)} className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
+              {SOCIAL.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noopener" className="link-line eyebrow text-ink-muted">
+                  {link.label}
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              ))}
+            </div>
+            <p className="mt-5 text-[13px] text-ink-faint">
+              <Link href="/privacy" className="hover:text-ocean">Privacy</Link>
+              <span aria-hidden="true"> · </span>
+              <Link href="/terms" className="hover:text-ocean">Terms</Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="write" className="border-t border-line pb-24 pt-16 md:pb-36 md:pt-24" aria-labelledby="send-a-message">
+        <div className="frame grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-4">
+            <SectionLabel n="II" as="h2" id="send-a-message">Send a message</SectionLabel>
+            <p data-reveal style={revealDelay(60)} className="mt-6 max-w-[28ch] text-[15px] leading-[1.85] text-ink-muted">
+              A short note is enough. Share the village, the house, or simply that you are thinking of selling.
+            </p>
+          </div>
+          <div className="bg-ocean-deep px-6 py-10 text-paper sm:px-10 lg:col-span-7 lg:col-start-6 lg:px-12 lg:py-12">
+            <p className="mb-8 flex items-center gap-3 text-[14px] text-gold">
+              <span aria-hidden="true" className="inline-block h-px w-8 bg-gold" />
+              Barry replies personally, usually within a few hours.
+            </p>
+            <ContactForm defaultInterest="selling" />
+          </div>
+        </div>
+      </section>
+
+      <nav data-contact-dock aria-label="Call or email Barry" className="contact-dock fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/95 backdrop-blur-md lg:hidden">
+        <div className="grid grid-cols-2 gap-2 px-3 py-2.5">
+          <a href={PHONE_HREF} className="flex min-h-12 flex-col items-center justify-center bg-ocean-deep px-2 py-2 text-center text-paper transition-colors duration-300 hover:bg-ink">
+            <span className="eyebrow text-paper/75">Call</span>
+            <span className="mt-1 font-serif text-[1.12rem] font-light leading-none">{PHONE_LABEL}</span>
+          </a>
+          <a href={EMAIL_HREF} aria-label={`Email Barry at ${EMAIL_LABEL}`} className="flex min-h-12 items-center justify-center border border-ocean-deep px-3 py-2 text-center font-serif text-[1.2rem] font-light leading-none text-ocean-deep transition-colors duration-300 hover:bg-ocean-deep hover:text-paper">
+            Email Barry
+          </a>
+        </div>
+      </nav>
     </div>
   );
 }
