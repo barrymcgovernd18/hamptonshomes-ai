@@ -325,7 +325,7 @@ export function contactPageJsonLd() {
     url: `${SITE_URL}/contact`,
     name: "Contact Barry McGovern",
     description:
-      "Contact Barry McGovern, Licensed Real Estate Salesperson with Hedgerow Exclusive Properties. Hamptons real estate from Southampton to Montauk. Call 646.339.0154 or email barry@hedgerowexclusive.com.",
+      "Contact Barry McGovern about buying, renting, or selling Hamptons real estate, from Southampton to Montauk. Call 646.339.0154 or email barry@hedgerowexclusive.com.",
     isPartOf: { "@id": WEBSITE_ID },
     about: { "@id": PERSON_ID },
     mainEntity: { "@id": PERSON_ID },

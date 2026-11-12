@@ -9,7 +9,7 @@ import { contactPageJsonLd, routeMetadata } from "@/lib/schema";
 export const metadata: Metadata = routeMetadata({
   title: "Contact",
   description:
-    "Barry McGovern helps Hamptons sellers from Southampton to Montauk. Part of a Hedgerow team with over $2 billion in sales. Call 646.339.0154.",
+    "Barry McGovern helps clients buy, rent, or sell from Southampton to Montauk. Part of a Hedgerow team with over $2 billion in sales. Call 646.339.0154.",
   path: "/contact",
   image: "/og/contact.jpg",
 });
@@ -55,7 +55,9 @@ export default function ContactPage() {
 
         <div className="frame relative flex flex-1 flex-col justify-end pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] pt-5 lg:h-full lg:flex-none lg:justify-end lg:pb-16 lg:pt-28">
           <div className="lg:max-w-[46%]">
-            <p className="eyebrow text-paper/80">For Hamptons sellers</p>
+            <p className="eyebrow text-paper/80" style={{ letterSpacing: "0.18em" }}>
+              Buy · Rent · Sell in the Hamptons
+            </p>
             <h1 className="mt-2 font-serif text-[2.65rem] font-light leading-[0.92] tracking-[-0.015em] text-paper lg:text-[4.75rem]">
               Barry
               <span className="block">McGovern</span>
@@ -94,12 +96,12 @@ export default function ContactPage() {
             <SectionLabel n="I" as="h2" id="about-barry">About Barry</SectionLabel>
           </div>
           <div className="lg:col-span-7 lg:col-start-6">
-            <p data-reveal className="max-w-[22ch] font-serif text-[clamp(1.85rem,3vw,2.6rem)] font-light leading-[1.2] text-ink">
-              Quiet advice for a Hamptons sale.
+            <p data-reveal className="max-w-[18em] font-serif text-[clamp(1.85rem,3vw,2.6rem)] font-light leading-[1.2] text-ink">
+              Quiet advice for buying, renting, or selling.
             </p>
             <div className="mt-8 max-w-[62ch] space-y-6 text-[16px] leading-[1.85] text-ink-muted md:text-[17px]">
               <p data-reveal style={revealDelay(60)}>
-                Barry McGovern is a Hamptons luxury specialist at Hedgerow Exclusive Properties. He works with sellers from Southampton to Montauk, and he is part of a team with over $2 billion in sales.
+                Barry McGovern is a Hamptons luxury specialist at Hedgerow Exclusive Properties. He works with people buying, renting, or selling from Southampton to Montauk, and he is part of a team with over $2 billion in sales.
               </p>
               <p data-reveal style={revealDelay(100)}>
                 The office is at 2495 Montauk Highway, Bridgehampton, NY 11932. Conversations stay confidential.
@@ -145,7 +147,7 @@ export default function ContactPage() {
           <div className="lg:col-span-4">
             <SectionLabel n="II" as="h2" id="send-a-message">Send a message</SectionLabel>
             <p data-reveal style={revealDelay(60)} className="mt-6 max-w-[28ch] text-[15px] leading-[1.85] text-ink-muted">
-              A short note is enough. Share the village, the house, or simply that you are thinking of selling.
+              A short note is enough. Share the village, the house, or whether you are buying, renting, or selling.
             </p>
           </div>
           <div className="bg-ocean-deep px-6 py-10 text-paper sm:px-10 lg:col-span-7 lg:col-start-6 lg:px-12 lg:py-12">
@@ -153,7 +155,7 @@ export default function ContactPage() {
               <span aria-hidden="true" className="inline-block h-px w-8 bg-gold" />
               Barry replies personally, usually within a few hours.
             </p>
-            <ContactForm defaultInterest="selling" />
+            <ContactForm />
           </div>
         </div>
       </section>
