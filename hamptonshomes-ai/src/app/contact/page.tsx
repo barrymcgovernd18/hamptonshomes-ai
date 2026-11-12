@@ -38,23 +38,21 @@ export default function ContactPage() {
     <div className="bg-paper text-ink">
       <JsonLd data={contactPageJsonLd()} />
 
-      <section data-hero className="contact-hero relative flex min-h-[100svh] flex-col bg-ocean-deep text-paper lg:block lg:h-[100svh] lg:max-h-[980px] lg:min-h-[720px]">
-        <div className="contact-portrait relative shrink-0">
-          <Image
-            src="/images/barry-mcgovern.jpg"
-            alt="Portrait of Barry McGovern, a Hamptons luxury specialist at Hedgerow Exclusive Properties"
-            fill
-            priority
-            fetchPriority="high"
-            sizes="(max-width: 1024px) 100vw, 46vw"
-            className="photo-mono object-cover object-[center_16%] lg:object-[center_20%]"
-          />
-          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/35 to-transparent lg:h-40 lg:from-black/55" />
-          <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 hidden w-2/5 bg-gradient-to-r from-ocean-deep to-transparent lg:block" />
-        </div>
+      <section data-hero className="contact-hero relative bg-ocean-deep text-paper lg:h-[100svh] lg:max-h-[980px] lg:min-h-[720px]">
+        <div className="frame relative pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] pt-5 lg:flex lg:h-full lg:items-center lg:pb-16 lg:pt-0">
+          <div className="contact-portrait relative shrink-0 overflow-hidden">
+            <Image
+              src="/images/barry-mcgovern.jpg"
+              alt="Portrait of Barry McGovern, a Hamptons luxury specialist at Hedgerow Exclusive Properties"
+              fill
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 1024px) 240px, 440px"
+              className="photo-mono object-cover object-[center_12%]"
+            />
+          </div>
 
-        <div className="frame relative flex flex-1 flex-col justify-end pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] pt-5 lg:h-full lg:flex-none lg:justify-end lg:pb-16 lg:pt-28">
-          <div className="lg:max-w-[46%]">
+          <div className="pt-6 lg:max-w-[48%] lg:pt-28">
             <p className="eyebrow text-paper/80" style={{ letterSpacing: "0.18em" }}>
               Buy · Rent · Sell in the Hamptons
             </p>
@@ -65,10 +63,7 @@ export default function ContactPage() {
             <p className="mt-3 max-w-[28rem] font-serif text-[1.15rem] font-light leading-snug text-paper/95 lg:mt-4 lg:text-[1.55rem]">
               A Hamptons luxury specialist, <em className="italic">from Southampton to Montauk.</em>
             </p>
-            <p className="mt-2 max-w-[34rem] text-[14.5px] leading-relaxed text-paper/80 lg:mt-3 lg:text-[15px]">
-              Hedgerow Exclusive Properties, Bridgehampton. Every conversation is confidential.
-            </p>
-            <p className="mt-3 text-[14px] leading-relaxed text-gold">Barry replies personally, usually within a few hours.</p>
+            <p className="mt-3 text-[14px] leading-relaxed text-gold lg:mt-4">Barry replies personally, usually within a few hours.</p>
 
             <div className="mt-4 grid max-w-md gap-2.5 lg:mt-6 lg:gap-3">
               <a href={PHONE_HREF} className={`${actionClass} bg-paper text-ocean-deep hover:bg-gold`}>
@@ -86,6 +81,9 @@ export default function ContactPage() {
                 <span aria-hidden="true" className="font-serif text-[1.6rem] leading-none">→</span>
               </a>
             </div>
+            <p className="mt-5 hidden max-w-[34rem] text-[15px] leading-relaxed text-paper/80 lg:block">
+              Hedgerow Exclusive Properties, Bridgehampton. Every conversation is confidential.
+            </p>
           </div>
         </div>
       </section>
