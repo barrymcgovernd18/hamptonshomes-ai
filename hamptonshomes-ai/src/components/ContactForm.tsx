@@ -10,7 +10,7 @@ const st = FORM_STYLES.dark;
 const fieldClass = st.field;
 
 /** The /contact form, set on a navy panel to match the listing inquiry. */
-export default function ContactForm({ defaultInterest = "buying" }: { defaultInterest?: string }) {
+export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
@@ -102,10 +102,11 @@ export default function ContactForm({ defaultInterest = "buying" }: { defaultInt
         <label htmlFor="interest" className={st.label}>
           Interest
         </label>
-        <select id="interest" name="interest" defaultValue={defaultInterest} className={`${fieldClass} h-[52px] [&>option]:text-ink`}>
+        <select id="interest" name="interest" defaultValue="" className={`${fieldClass} h-[52px] [&>option]:text-ink`}>
+          <option value="">Choose one</option>
           <option value="buying">Buying</option>
-          <option value="selling">Selling</option>
           <option value="renting">Renting</option>
+          <option value="selling">Selling</option>
           <option value="valuation">Property Valuation</option>
           <option value="other">Other</option>
         </select>
