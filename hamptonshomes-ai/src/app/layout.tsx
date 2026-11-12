@@ -83,6 +83,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"HX5sm92uBs2FTtLpAmjwNy",debug:false});`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(window.__oaiqLeadClick)return;window.__oaiqLeadClick=1;document.addEventListener("click",function(e){var el=e.target;if(el&&el.nodeType===3)el=el.parentElement;if(!el||typeof el.closest!=="function")return;var a=el.closest("a[href^='tel:'], a[href^='mailto:']");if(!a)return;if(typeof window.oaiq==="function")window.oaiq("measure","lead_created",{type:"customer_action"});});})();`,
+          }}
+        />
         <JsonLd data={siteGraphJsonLd()} />
         <noscript>
           <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
